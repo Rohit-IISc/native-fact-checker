@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import json
+from pathlib import Path
 
 from app.llm import LLM, MediaPart
 from app.models import CheckRequest, Extraction, FetchedPost
@@ -39,8 +40,9 @@ def media_parts(req: CheckRequest, fetched: FetchedPost | None) -> list[MediaPar
     limits = get_config().limits["input"]
     low_res = media_seconds(req) > limits["low_media_resolution_over_seconds"]
     parts = [
-        MediaPart(mime_type=m.mime_type, uri=m.uri, low_resolution=low_res and m.kind == "video",
-                  end_offset_s=limits["max_media_seconds"] if m.kind in ("video", "audio") else None)
+        MediaPart(mime_type=m.mime_type, low_resolution=low_res and m.kind == "video",
+                  end_offset_s=limits["max_media_seconds"] if m.kind in ("video", "audio") else None,
+                  **_media_source(m.uri))
         for m in req.media
     ]
     if fetched:
@@ -49,6 +51,13 @@ def media_parts(req: CheckRequest, fetched: FetchedPost | None) -> list[MediaPar
             parts.append(MediaPart(mime_type="video/mp4", uri=fetched.youtube_url,
                                    end_offset_s=limits["max_media_seconds"], low_resolution=True))
     return parts
+
+
+def _media_source(uri: str) -> dict:
+    """gs:// and https:// go by reference; a local path (make try FILE=..., dev only) goes inline."""
+    if uri.startswith(("gs://", "http://", "https://")):
+        return {"uri": uri}
+    return {"data": Path(uri).read_bytes()}
 
 
 def finalize(extraction: Extraction) -> Extraction:

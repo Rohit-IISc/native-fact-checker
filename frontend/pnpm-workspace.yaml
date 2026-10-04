@@ -1,0 +1,5 @@
+# pnpm 10 runs dependency build scripts only when allowed here.
+allowBuilds:
+  '@firebase/util': true
+  esbuild: true
+  protobufjs: true

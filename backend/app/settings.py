@@ -123,7 +123,7 @@ def get_settings() -> Settings:
         gcp_project=project,
         region=os.environ.get("REGION", "asia-south1"),
         vertex_location=os.environ.get("VERTEX_LOCATION", ""),
-        firestore_db=os.environ.get("FIRESTORE_DB", "dev"),
+        firestore_db=os.environ.get("FIRESTORE_DB", "dev-db"),
         firebase_project_id=os.environ.get("FIREBASE_PROJECT_ID", project),
         pipeline_mode=os.environ.get("PIPELINE_MODE", "inline"),
         store=os.environ.get("STORE", "firestore"),

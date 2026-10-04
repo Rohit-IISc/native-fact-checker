@@ -1,0 +1,6 @@
+id: 05-ta-health-remedy
+case: 5
+input:
+  text: "சூடான தண்ணீரில் எலுமிச்சை சாறு கலந்து குடித்தால் கொரோனா வைரஸ் அழியும். அனைவருக்கும் பகிருங்கள்!"
+language: ta
+expected: [FALSE]

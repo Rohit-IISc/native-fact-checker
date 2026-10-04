@@ -29,3 +29,6 @@ firebase-debug.log
 # Eval data (licensing unclear; lives in gs://{project}-eval)
 eval/datasets/*
 !eval/datasets/README.md
+
+# make try / make accept runs
+runs/

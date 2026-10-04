@@ -10,6 +10,8 @@ os.environ.update({
     "FACTCHECK_SKIP_ENV_FILES": "1",
     "PUBLIC_BASE_URL": "https://factcheck.test",
 })
+# Running inside a codespace must not change test results (the forwarded URL wins over PUBLIC_BASE_URL).
+os.environ.pop("CODESPACES", None)
 
 import pytest  # noqa: E402
 

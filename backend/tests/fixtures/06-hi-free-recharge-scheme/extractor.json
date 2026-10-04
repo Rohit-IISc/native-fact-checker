@@ -1,0 +1,42 @@
+{
+  "prompt_version": "extractor-1.0+shared-1.0",
+  "model_id": "gemini-3.8-flash",
+  "recorded_at": "2026-10-04T18:36:15+00:00",
+  "output": {
+    "content_language": "hi-IN",
+    "content_script": "Deva",
+    "summary_en": "The user content claims that Prime Minister Narendra Modi is providing a free three-month mobile recharge to all Indians. It urges users to click a link to claim the recharge, stating that the offer is valid only today.",
+    "checkable": true,
+    "non_checkable_type": null,
+    "claims": [
+      {
+        "claim_id": "claim_1",
+        "claim_original": "प्रधानमंत्री मोदी सभी भारतीयों को 3 महीने का मुफ्त मोबाइल रिचार्ज दे रहे हैं।",
+        "claim_en": "Prime Minister Narendra Modi is offering a free three-month mobile recharge to all Indian citizens.",
+        "claim_type": "GOVERNMENT_SCHEME",
+        "entities": [
+          "Narendra Modi",
+          "Prime Minister of India"
+        ],
+        "place": "India",
+        "claimed_date": "2026-10-04",
+        "time_sensitivity": "EVERGREEN",
+        "search_queries_original": [
+          "मोदी सरकार 3 महीने का फ्री रिचार्ज",
+          "प्रधानमंत्री फ्री मोबाइल रिचार्ज योजना",
+          "PM Modi free recharge offer"
+        ],
+        "search_queries_en": [
+          "PM Modi free mobile recharge scheme 3 months",
+          "free recharge offer Indian government PIB fact check"
+        ]
+      }
+    ],
+    "extra_claims_not_checked": [],
+    "ocr_text": null,
+    "transcript": null,
+    "visual_description_en": null,
+    "ai_generation_signals": null,
+    "origin_hints": []
+  }
+}

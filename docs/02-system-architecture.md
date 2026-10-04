@@ -98,7 +98,7 @@ On timeout:
 
 ## Local development
 
-Rohit's laptop runs backend (`uvicorn`) and frontend (`vite`) together. Backend uses Application Default Credentials against the real GCP project and the Firestore database named `dev`. Set `PIPELINE_MODE=inline` locally to run the pipeline in the same process right after `POST /v1/checks` instead of via Pub/Sub. In Cloud Run `PIPELINE_MODE=pubsub`.
+Rohit's laptop runs backend (`uvicorn`) and frontend (`vite`) together. Backend uses Application Default Credentials against the real GCP project and the Firestore database named `dev-db` (database IDs need at least 4 characters). Set `PIPELINE_MODE=inline` locally to run the pipeline in the same process right after `POST /v1/checks` instead of via Pub/Sub. In Cloud Run `PIPELINE_MODE=pubsub`.
 
 For Web Share Target testing on a phone, the PWA must be served over HTTPS and installed. Use the Firebase Hosting preview channel (`firebase hosting:channel:deploy dev`) pointing at the local backend through a tunnel, or deploy the backend to a `dev` Cloud Run service.
 

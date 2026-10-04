@@ -22,11 +22,11 @@ gcloud services enable \
 echo "== Firestore databases"
 gcloud firestore databases describe --database="(default)" >/dev/null 2>&1 || \
   gcloud firestore databases create --database="(default)" --location="$REGION" --type=firestore-native
-gcloud firestore databases describe --database="dev" >/dev/null 2>&1 || \
-  gcloud firestore databases create --database="dev" --location="$REGION" --type=firestore-native
+gcloud firestore databases describe --database="dev-db" >/dev/null 2>&1 || \
+  gcloud firestore databases create --database="dev-db" --location="$REGION" --type=firestore-native
 
 echo "== Vector index on claims.embedding (both databases)"
-for DB in "(default)" "dev"; do
+for DB in "(default)" "dev-db"; do
   gcloud firestore indexes composite create --database="$DB" \
     --collection-group=claims --query-scope=COLLECTION \
     --field-config=field-path=status,order=ASCENDING \

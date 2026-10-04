@@ -1,0 +1,6 @@
+id: 11-hi-greeting
+case: 11
+input:
+  text: "सुप्रभात! 🌸 भगवान शिव की कृपा आप और आपके परिवार पर सदा बनी रहे। आपका दिन मंगलमय हो। 🙏"
+language: hi
+expected: [NOT_CHECKABLE]

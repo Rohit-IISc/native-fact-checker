@@ -1,0 +1,6 @@
+id: 07-id-vaccine-microchip
+case: 7
+input:
+  text: "Vaksin COVID-19 mengandung microchip untuk melacak setiap orang yang sudah divaksin. Sebarkan ke semua grup sebelum dihapus!"
+language: id
+expected: [FALSE]

@@ -1,10 +1,9 @@
 """Day 0: confirm every model ID in config/models.yaml answers on Vertex AI.
 
-Usage: GCP_PROJECT=my-project uv run python scripts/check_models.py
+Usage: make check-models (GCP_PROJECT from env, backend/.env or backend/.env.defaults)
 Sends one tiny request per model (a fraction of a cent). Prints the first working
 ID for each key so you can update config/models.yaml.
 """
-import os
 import sys
 from pathlib import Path
 
@@ -12,8 +11,12 @@ import yaml
 from google import genai
 from google.genai import types
 
-cfg = yaml.safe_load(open(Path(__file__).resolve().parent.parent / "config" / "models.yaml"))
-project = os.environ["GCP_PROJECT"]
+ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(ROOT / "backend"))
+from app.settings import get_settings  # noqa: E402
+
+cfg = yaml.safe_load(open(ROOT / "config" / "models.yaml"))
+project = get_settings().gcp_project
 client = genai.Client(vertexai=True, project=project, location=cfg["vertex"]["location"])
 
 ok = True

@@ -84,7 +84,7 @@ repo/
 
 ## Commands (define these as you build)
 
-- `make dev` runs backend on :8080 and frontend on :5173 against the real dev Firestore database named `dev` (the Firestore emulator does not support vector search, so we do not use it)
+- `make dev` runs backend on :8080 and frontend on :5173 against the real dev Firestore database named `dev-db` (database IDs need at least 4 characters) (the Firestore emulator does not support vector search, so we do not use it)
 - `make test` runs pytest with recorded model fixtures (no paid calls)
 - `make test-live` runs the 15 acceptance cases in `tests/acceptance-cases.md` against real models (costs money, ask Rohit first)
 - `make deploy` runs scripts/deploy_backend.sh then scripts/deploy_frontend.sh

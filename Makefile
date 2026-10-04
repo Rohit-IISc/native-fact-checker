@@ -2,7 +2,9 @@
 # Backend config precedence: environment variables (Codespaces secrets) > backend/.env (optional,
 # gitignored) > backend/.env.defaults. Frontend: VITE_* env vars > frontend/.env.development.
 SHELL := /bin/bash
-.PHONY: dev dev-offline backend frontend test test-live lint deploy eval check-models install
+.PHONY: dev dev-offline backend frontend test test-live lint deploy eval check-models install try accept record
+# Free text goes to the CLI through the environment so quotes and commas survive.
+export TEXT URL
 
 install:
 	cd backend && uv sync
@@ -14,13 +16,11 @@ backend/.venv:
 frontend/node_modules:
 	cd frontend && pnpm install
 
-# Backend on :8080 + frontend on :5173 against the real dev Firestore database (FIRESTORE_DB).
+# Backend on :8080 (reload) + frontend on :5173, both on 0.0.0.0, prefixed logs (Procfile, honcho).
+# Real dev Firestore database (FIRESTORE_DB). One Ctrl+C stops both.
 # Needs Application Default Credentials: gcloud auth application-default login
 dev: backend/.venv frontend/node_modules
-	@trap 'kill 0' EXIT; \
-	(cd backend && uv run uvicorn app.main:app --reload --host 0.0.0.0 --port 8080) & \
-	(cd frontend && pnpm dev --host 0.0.0.0) & \
-	wait
+	uv run --project backend honcho -f Procfile start
 
 # No GCP at all: in-memory store, fake sign-in, recorded model fixtures. For UI work only.
 dev-offline: backend/.venv frontend/node_modules
@@ -30,10 +30,26 @@ dev-offline: backend/.venv frontend/node_modules
 	(cd frontend && VITE_AUTH_MODE=dev pnpm dev) & \
 	wait
 
-# Recorded fixtures only; no paid calls.
+# No paid calls: unit tests + replay of recorded model outputs in backend/tests/fixtures/.
 test:
 	cd backend && uv run ruff check . && uv run pytest -q
 	cd frontend && pnpm typecheck
+
+# Full pipeline in-process, no UI. make try TEXT="..." | FILE=path | URL=...
+#   STAGE=extract (one stage)  TRY_STORE=firestore (real cache + progress docs)  FAKE=1 (no paid calls)
+# Saves every run to runs/{timestamp}.json.
+try: backend/.venv
+	@cd backend && uv run python -m app.devtools.try_cmd \
+	  $(if $(TEXT),--text "$$TEXT") $(if $(FILE),--file "$(abspath $(FILE))") $(if $(URL),--url "$$URL") \
+	  $(if $(STAGE),--stage $(STAGE)) $(if $(TRY_STORE),--store $(TRY_STORE)) $(if $(FAKE),--fake) $(ARGS)
+
+# Every case in tests/acceptance/ (real models, ~$0.003 per case today). CASE=substring, FAKE=1.
+accept: backend/.venv
+	@cd backend && uv run python -m app.devtools.accept $(if $(CASE),--case "$(CASE)") $(if $(FAKE),--fake) $(ARGS)
+
+# Refresh backend/tests/fixtures/ from real model calls (acceptance inputs), for make test.
+record: backend/.venv
+	@cd backend && uv run python -m app.devtools.accept --record $(if $(CASE),--case "$(CASE)") $(ARGS)
 
 # 15 acceptance cases against real models. Costs money: ask Rohit first.
 test-live:

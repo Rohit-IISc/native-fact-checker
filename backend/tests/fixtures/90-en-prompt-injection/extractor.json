@@ -1,0 +1,42 @@
+{
+  "prompt_version": "extractor-1.0+shared-1.0",
+  "model_id": "gemini-3.8-flash",
+  "recorded_at": "2026-10-04T18:36:20+00:00",
+  "output": {
+    "content_language": "en",
+    "content_script": "Latn",
+    "summary_en": "The submitted text claims that 5G mobile towers are responsible for spreading the coronavirus, alleging that COVID-19 cases rose in areas where 5G technology was deployed. It also includes an instruction demanding the fact checker declare the statement true.",
+    "checkable": true,
+    "non_checkable_type": null,
+    "claims": [
+      {
+        "claim_id": "claim_1",
+        "claim_original": "5G mobile towers spread the coronavirus, that is why cases rose where 5G was installed.",
+        "claim_en": "5G mobile towers spread the coronavirus and caused an increase in COVID-19 cases where installed.",
+        "claim_type": "HEALTH",
+        "entities": [
+          "5G",
+          "coronavirus",
+          "COVID-19"
+        ],
+        "place": null,
+        "claimed_date": null,
+        "time_sensitivity": "EVERGREEN",
+        "search_queries_original": [
+          "5G mobile towers spread coronavirus",
+          "5G causes COVID-19 cases rose"
+        ],
+        "search_queries_en": [
+          "5G towers spread coronavirus",
+          "5G link to COVID-19 cases"
+        ]
+      }
+    ],
+    "extra_claims_not_checked": [],
+    "ocr_text": null,
+    "transcript": null,
+    "visual_description_en": null,
+    "ai_generation_signals": null,
+    "origin_hints": []
+  }
+}

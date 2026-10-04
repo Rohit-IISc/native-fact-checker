@@ -27,6 +27,6 @@ export default defineConfig({
     strictPort: true,
     allowedHosts: codespace ? [`.${forwardDomain}`] : undefined,
     hmr: codespace ? { host: `${codespace}-5173.${forwardDomain}`, protocol: 'wss', clientPort: 443 } : undefined,
-    proxy: { '/api': { target: 'http://localhost:8080', changeOrigin: true } },
+    proxy: { '/api': { target: 'http://127.0.0.1:8080', changeOrigin: true } },
   },
 })

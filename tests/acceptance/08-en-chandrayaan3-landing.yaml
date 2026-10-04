@@ -1,0 +1,6 @@
+id: 08-en-chandrayaan3-landing
+case: 8
+input:
+  text: "Chandrayaan-3's Vikram lander touched down near the Moon's south pole on 23 August 2023, making India the first country to land in that region."
+language: en
+expected: [TRUE]

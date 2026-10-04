@@ -1,0 +1,6 @@
+id: 15-kn-thin-local-claim
+case: 15
+input:
+  text: "ಮೈಸೂರಿನ ಕುಕ್ಕರಹಳ್ಳಿ ಕೆರೆಯಲ್ಲಿ ನಿನ್ನೆ ಸಂಜೆ ಎರಡು ಮೊಸಳೆಗಳು ಕಾಣಿಸಿಕೊಂಡಿವೆ. ಯಾರೂ ವಾಕಿಂಗ್ ಹೋಗಬೇಡಿ!"
+language: kn
+expected: [NOT_ENOUGH_EVIDENCE]

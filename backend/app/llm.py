@@ -116,6 +116,7 @@ class GeminiLLM:
             temperature=0.2,
             thinking_config=_thinking_config(model.get("thinking")),
             media_resolution=types.MediaResolution.MEDIA_RESOLUTION_LOW if low_res else None,
+            automatic_function_calling=types.AutomaticFunctionCallingConfig(disable=True),
         )
         text = prompt
         last_error = ""
