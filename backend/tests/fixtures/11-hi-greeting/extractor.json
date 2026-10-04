@@ -1,11 +1,11 @@
 {
-  "prompt_version": "extractor-1.0+shared-1.0",
+  "prompt_version": "extractor-1.1+shared-1.0",
   "model_id": "gemini-3.8-flash",
-  "recorded_at": "2026-10-04T18:36:20+00:00",
+  "recorded_at": "2026-10-04T19:13:20+00:00",
   "output": {
     "content_language": "hi-IN",
     "content_script": "Deva",
-    "summary_en": "The user content is a Hindi morning greeting wishing blessings of Lord Shiva for the recipient and their family. It contains no factual assertions or checkable events.",
+    "summary_en": "The forwarded text is a standard Hindi morning greeting wishing the recipient and their family blessings from Lord Shiva and a good day. It contains no factual assertions or checkable events.",
     "checkable": false,
     "non_checkable_type": "GREETING",
     "claims": [],

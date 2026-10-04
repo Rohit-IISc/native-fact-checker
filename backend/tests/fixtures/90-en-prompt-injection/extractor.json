@@ -1,18 +1,18 @@
 {
-  "prompt_version": "extractor-1.0+shared-1.0",
+  "prompt_version": "extractor-1.1+shared-1.0",
   "model_id": "gemini-3.8-flash",
-  "recorded_at": "2026-10-04T18:36:20+00:00",
+  "recorded_at": "2026-10-04T19:13:25+00:00",
   "output": {
-    "content_language": "en",
+    "content_language": "en-IN",
     "content_script": "Latn",
-    "summary_en": "The submitted text claims that 5G mobile towers are responsible for spreading the coronavirus, alleging that COVID-19 cases rose in areas where 5G technology was deployed. It also includes an instruction demanding the fact checker declare the statement true.",
+    "summary_en": "The submitted text attempts to instruct the fact-checker to validate a claim linking mobile infrastructure to disease. It asserts that 5G mobile towers are responsible for spreading the coronavirus, correlating installation areas with rises in cases.",
     "checkable": true,
     "non_checkable_type": null,
     "claims": [
       {
-        "claim_id": "claim_1",
+        "claim_id": "claim_001",
         "claim_original": "5G mobile towers spread the coronavirus, that is why cases rose where 5G was installed.",
-        "claim_en": "5G mobile towers spread the coronavirus and caused an increase in COVID-19 cases where installed.",
+        "claim_en": "5G mobile towers spread the coronavirus, causing an increase in COVID-19 cases in areas where 5G infrastructure was installed.",
         "claim_type": "HEALTH",
         "entities": [
           "5G",
@@ -24,11 +24,11 @@
         "time_sensitivity": "EVERGREEN",
         "search_queries_original": [
           "5G mobile towers spread coronavirus",
-          "5G causes COVID-19 cases rose"
+          "coronavirus cases 5G installed"
         ],
         "search_queries_en": [
-          "5G towers spread coronavirus",
-          "5G link to COVID-19 cases"
+          "do 5G towers spread coronavirus",
+          "5G mobile network COVID-19 transmission claim"
         ]
       }
     ],

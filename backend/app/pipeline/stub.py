@@ -6,6 +6,7 @@ that label anyway, so the stub never shows an unsupported verdict.
 from __future__ import annotations
 
 from app.models import AnswerText, Claim, JudgeVerdict, Label, band_for
+from app.settings import get_config
 
 
 def stub_judge(claim: Claim) -> JudgeVerdict:
@@ -21,42 +22,37 @@ def stub_judge(claim: Claim) -> JudgeVerdict:
     )
 
 
-_CONFIDENCE_PHRASE = {"HIGH": "We are very sure.", "MEDIUM": "We are fairly sure.", "LOW": "We are not sure."}
+def messages(language: str | None) -> dict:
+    """Fixed answer text in `language` (BCP-47) from config/messages.yaml, English if not listed."""
+    all_msgs = get_config().messages
+    base = (language or "en").split("-")[0].lower()
+    return all_msgs.get(base) or all_msgs["en"]
+
+
+def non_checkable_message(non_checkable_type: str, language: str | None) -> str:
+    texts = messages(language)["non_checkable"]
+    return texts.get(non_checkable_type) or texts["OTHER"]
 
 
 def stub_answer(claim: Claim, verdict: JudgeVerdict, language: str) -> AnswerText:
+    """The whole answer is in `language` (decision 15); only the English variant quotes claim_en."""
+    m = messages(language)["stub"]
     band = band_for(verdict.confidence)
-    claim_text = claim.claim_original if not language.startswith("en") else claim.claim_en
-    headline = "Not confirmed yet: we could not check this claim"
+    claim_text = claim.claim_en if language.startswith("en") else claim.claim_original
     script = (
-        f"The post claims: {claim.claim_en} "
-        "We could not confirm this either way yet. "
-        f"{verdict.what_is_true_en} "
-        f"{_CONFIDENCE_PHRASE[band]} "
-        "Please do not forward it until it is confirmed by a trusted source."
+        f"{m['post_claims']} {claim_text} {m['could_not_confirm']} {m['what_is_true']} "
+        f"{m['confidence'][band]} {m['do_not_forward']}"
     )
     return AnswerText(
         language=language,
-        headline=headline,
-        summary="We could not confirm this claim either way. Please do not forward it until it is confirmed.",
+        headline=m["headline"],
+        summary=m["summary"],
         what_post_claims=claim_text,
-        what_is_true=verdict.what_is_true_en,
+        what_is_true=m["what_is_true"],
         evidence_for=[],
         evidence_against=[],
-        confidence_phrase=_CONFIDENCE_PHRASE[band],
+        confidence_phrase=m["confidence"][band],
         sources_spoken="",
         audio_script=script,
-        card_lines=["Not confirmed", claim.claim_en[:80], "Do not forward until confirmed"],
+        card_lines=[m["card_title"], claim_text[:80], m["card_footer"]],
     )
-
-
-NON_CHECKABLE_MESSAGES = {
-    "OPINION": "This post is an opinion. There is no fact to check.",
-    "SATIRE": "This post is satire. It is not meant to be read as news.",
-    "JOKE": "This post is a joke. There is no fact to check.",
-    "GREETING": "This is a greeting message. There is nothing to fact-check.",
-    "PROMOTION": "This post is an advertisement or promotion. There is no factual claim to check.",
-    "DEVOTIONAL": "This is a devotional message. There is nothing to fact-check.",
-    "PERSONAL_MESSAGE": "This is a personal message. There is nothing to fact-check.",
-    "OTHER": "We did not find a factual claim to check in this post.",
-}

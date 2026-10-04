@@ -1,35 +1,35 @@
 {
-  "prompt_version": "extractor-1.0+shared-1.0",
+  "prompt_version": "extractor-1.1+shared-1.0",
   "model_id": "gemini-3.8-flash",
-  "recorded_at": "2026-10-04T18:36:15+00:00",
+  "recorded_at": "2026-10-04T19:13:17+00:00",
   "output": {
     "content_language": "ta-IN",
     "content_script": "Taml",
-    "summary_en": "A forwarded message in Tamil claims that drinking hot water mixed with lemon juice can kill or cure the coronavirus. It urges users to share the advice with everyone.",
+    "summary_en": "A Tamil forwarded message claims that drinking hot water mixed with lemon juice kills the coronavirus. It urges users to share the advice with everyone.",
     "checkable": true,
     "non_checkable_type": null,
     "claims": [
       {
         "claim_id": "claim_1",
         "claim_original": "சூடான தண்ணீரில் எலுமிச்சை சாறு கலந்து குடித்தால் கொரோனா வைரஸ் அழியும்.",
-        "claim_en": "Drinking hot water mixed with lemon juice kills or cures the coronavirus.",
+        "claim_en": "Drinking hot water mixed with lemon juice kills the coronavirus.",
         "claim_type": "HEALTH",
         "entities": [
-          "lemon juice",
-          "hot water",
           "coronavirus",
-          "COVID-19"
+          "COVID-19",
+          "lemon juice",
+          "hot water"
         ],
         "place": null,
         "claimed_date": null,
         "time_sensitivity": "EVERGREEN",
         "search_queries_original": [
           "சூடான தண்ணீர் எலுமிச்சை சாறு கொரோனா வைரஸ்",
-          "எலுமிச்சை சாறு கொரோனா அழியும் உண்மை"
+          "எலுமிச்சை சாறு கொரோனா தீர்வு"
         ],
         "search_queries_en": [
           "drinking hot water lemon juice kills coronavirus",
-          "warm lemon water cure covid 19"
+          "lemon warm water cure COVID-19 fact check"
         ]
       }
     ],

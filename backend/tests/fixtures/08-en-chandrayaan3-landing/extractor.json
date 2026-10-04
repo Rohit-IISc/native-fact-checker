@@ -1,36 +1,35 @@
 {
-  "prompt_version": "extractor-1.0+shared-1.0",
+  "prompt_version": "extractor-1.1+shared-1.0",
   "model_id": "gemini-3.8-flash",
-  "recorded_at": "2026-10-04T18:36:13+00:00",
+  "recorded_at": "2026-10-04T19:13:21+00:00",
   "output": {
-    "content_language": "en-US",
+    "content_language": "en-IN",
     "content_script": "Latn",
-    "summary_en": "The post asserts that India's Chandrayaan-3 Vikram lander made a touchdown near the lunar south pole on August 23, 2023. It states that this achievement made India the first nation to successfully land a spacecraft in the south polar region of the Moon.",
+    "summary_en": "The post asserts that India's Chandrayaan-3 Vikram lander touched down near the Moon's south pole on 23 August 2023. It states this achievement made India the first country to land in the lunar south pole region.",
     "checkable": true,
     "non_checkable_type": null,
     "claims": [
       {
         "claim_id": "claim_1",
         "claim_original": "Chandrayaan-3's Vikram lander touched down near the Moon's south pole on 23 August 2023, making India the first country to land in that region.",
-        "claim_en": "Chandrayaan-3's Vikram lander landed near the lunar south pole on August 23, 2023, making India the first country to land in that region.",
-        "claim_type": "SCIENCE",
+        "claim_en": "Chandrayaan-3's Vikram lander landed near the lunar south pole on 23 August 2023, making India the first nation to successfully land in that region.",
+        "claim_type": "EVENT",
         "entities": [
           "Chandrayaan-3",
           "Vikram lander",
-          "Moon",
           "India",
-          "ISRO"
+          "Moon"
         ],
-        "place": "Moon's south pole",
+        "place": "Moon",
         "claimed_date": "2023-08-23",
         "time_sensitivity": "EVERGREEN",
         "search_queries_original": [
-          "Chandrayaan-3 Vikram lander Moon south pole 23 August 2023",
-          "first country to land near lunar south pole India"
+          "Chandrayaan 3 Vikram lander south pole landing 23 August 2023",
+          "India first country moon south pole landing Chandrayaan 3"
         ],
         "search_queries_en": [
-          "Chandrayaan-3 Vikram lander Moon south pole 23 August 2023",
-          "India first country lunar south pole landing"
+          "Chandrayaan 3 Vikram lander south pole landing 23 August 2023",
+          "India first country moon south pole landing Chandrayaan 3"
         ]
       }
     ],

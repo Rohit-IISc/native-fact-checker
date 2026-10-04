@@ -33,3 +33,10 @@ i18n.on('languageChanged', (lng) => {
 })
 
 export default i18n
+
+/** i18n language for content in `bcp47` (e.g. "hi-IN" -> "hi"); unsupported languages fall back to English. */
+export function contentLng(bcp47: string | null | undefined): string | undefined {
+  if (!bcp47) return undefined
+  const base = (bcp47.split('-')[0] ?? '').toLowerCase()
+  return UI_LANGUAGES.some((l) => l.code === base) ? base : 'en'
+}

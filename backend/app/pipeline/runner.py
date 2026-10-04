@@ -126,7 +126,7 @@ async def _investigate(store, req, extraction, cache_keys, prompt_versions, time
 
 async def _finish_not_checkable(store, req, extraction, cache_keys) -> CheckResult:
     nct = extraction.non_checkable_type.value if extraction.non_checkable_type else "OTHER"
-    message = stub.NON_CHECKABLE_MESSAGES[nct]
+    message = stub.non_checkable_message(nct, extraction.content_language)
     if cache_keys:
         await tier1.write(store, cache_keys, [], non_checkable={
             "type": nct, "message": message, "content_language": extraction.content_language,

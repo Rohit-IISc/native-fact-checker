@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { BrowserRouter, Link, NavLink, Route, Routes, useLocation } from 'react-router-dom'
 import { UI_LANGUAGES } from './i18n'
-import { getMe, giveConsent } from './lib/api'
+import { ApiError, getMe, giveConsent } from './lib/api'
 import { AuthProvider, useAuth } from './lib/auth'
 import { CheckPage, SharedCheck } from './screens/CheckPage'
 import { History } from './screens/History'
@@ -50,17 +50,21 @@ function Header() {
 
 function Gate() {
   const { user, loading, signIn } = useAuth()
-  const { i18n } = useTranslation()
+  const { i18n, t } = useTranslation()
   const location = useLocation()
   const [consented, setConsented] = useState<boolean | null>(null)
   const [busy, setBusy] = useState(false)
+  const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
     setConsented(null)
     if (!user) return
     getMe(user)
       .then((me) => setConsented(Boolean(me.consent_at)))
-      .catch(() => setConsented(false))
+      .catch((e: unknown) => {
+        console.error('GET /v1/me failed', e)
+        setConsented(false)
+      })
   }, [user])
 
   if (location.pathname.startsWith('/r/')) {
@@ -76,15 +80,23 @@ function Gate() {
       <Welcome
         signedIn={Boolean(user)}
         busy={busy}
+        error={error}
         onSignIn={() => {
           setBusy(true)
+          setError(null)
           signIn().finally(() => setBusy(false))
         }}
         onAgree={() => {
           if (!user) return
           setBusy(true)
+          setError(null)
           giveConsent(user, i18n.resolvedLanguage ?? 'en')
             .then(() => setConsented(true))
+            .catch((e: unknown) => {
+              console.error('POST /v1/me/consent failed', e)
+              const code = e instanceof ApiError ? e.code : 'generic'
+              setError(t(`errors.${code}`, { defaultValue: t('errors.generic') }))
+            })
             .finally(() => setBusy(false))
         }}
       />

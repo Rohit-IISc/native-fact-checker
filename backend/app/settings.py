@@ -157,6 +157,7 @@ class AppConfig:
     languages: dict[str, Any]
     agents: dict[str, Any]
     source_tiers: dict[str, Any]
+    messages: dict[str, Any]
 
     def model_for_stage(self, stage: str) -> dict[str, Any]:
         """Model entry for a pipeline stage, via stage_models -> models."""
@@ -185,4 +186,5 @@ def get_config() -> AppConfig:
         languages=_load_yaml("languages.yaml"),
         agents=_load_yaml("agents.yaml"),
         source_tiers=_load_yaml("source_tiers.yaml"),
+        messages=_load_yaml("messages.yaml"),
     )

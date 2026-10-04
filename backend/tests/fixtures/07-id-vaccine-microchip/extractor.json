@@ -1,18 +1,18 @@
 {
-  "prompt_version": "extractor-1.0+shared-1.0",
+  "prompt_version": "extractor-1.1+shared-1.0",
   "model_id": "gemini-3.8-flash",
-  "recorded_at": "2026-10-04T18:36:09+00:00",
+  "recorded_at": "2026-10-04T19:13:55+00:00",
   "output": {
     "content_language": "id-ID",
     "content_script": "Latn",
-    "summary_en": "A forwarded message in Indonesian claims that COVID-19 vaccines contain microchips designed to track individuals who receive them. The message urges recipients to share the warning across all groups before it gets deleted.",
+    "summary_en": "The forwarded Indonesian message claims that COVID-19 vaccines contain microchips designed to track vaccinated individuals. It urges recipients to share the warning across all groups before it gets deleted.",
     "checkable": true,
     "non_checkable_type": null,
     "claims": [
       {
         "claim_id": "claim_1",
         "claim_original": "Vaksin COVID-19 mengandung microchip untuk melacak setiap orang yang sudah divaksin.",
-        "claim_en": "COVID-19 vaccines contain microchips to track individuals who receive them.",
+        "claim_en": "COVID-19 vaccines contain microchips to track vaccinated individuals.",
         "claim_type": "HEALTH",
         "entities": [
           "COVID-19 vaccine",
@@ -22,12 +22,12 @@
         "claimed_date": null,
         "time_sensitivity": "EVERGREEN",
         "search_queries_original": [
-          "vaksin covid mengandung microchip melacak",
-          "microchip dalam vaksin covid"
+          "vaksin covid-19 mengandung microchip pelacak",
+          "cek fakta vaksin covid microchip"
         ],
         "search_queries_en": [
-          "COVID-19 vaccine microchip tracking",
-          "COVID vaccine contains microchip"
+          "COVID-19 vaccine microchip tracking fact check",
+          "do COVID-19 vaccines contain microchips"
         ]
       }
     ],

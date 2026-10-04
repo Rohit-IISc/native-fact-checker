@@ -1,0 +1,121 @@
+# Fixed user-facing answer text, per content language (decision 15: answers are in the language of
+# the forwarded content, not the UI language). Keys are i18n base codes from languages.yaml.
+# English is the fallback for any other language.
+#
+# non_checkable: shown when the extractor finds nothing to fact-check (by non_checkable_type).
+# stub: Day 1 stand-in answer until the composer lands (Day 5). Always NOT_ENOUGH_EVIDENCE.
+en:
+  non_checkable:
+    OPINION: This post is an opinion. There is no fact to check.
+    SATIRE: This post is satire. It is not meant to be read as news.
+    JOKE: This post is a joke. There is no fact to check.
+    GREETING: This is a greeting message. There is nothing to fact-check.
+    PROMOTION: This post is an advertisement or promotion. There is no factual claim to check.
+    DEVOTIONAL: This is a devotional message. There is nothing to fact-check.
+    PERSONAL_MESSAGE: This is a personal message. There is nothing to fact-check.
+    OTHER: We did not find a factual claim to check in this post.
+  stub:
+    headline: "Not confirmed yet: we could not check this claim"
+    summary: We could not confirm this claim either way. Please do not forward it until it is confirmed.
+    what_is_true: We have not searched for evidence on this claim yet.
+    post_claims: "The post claims:"
+    could_not_confirm: We could not confirm this either way yet.
+    do_not_forward: Please do not forward it until it is confirmed by a trusted source.
+    card_title: Not confirmed
+    card_footer: Do not forward until confirmed
+    confidence:
+      HIGH: We are very sure.
+      MEDIUM: We are fairly sure.
+      LOW: We are not sure.
+hi:
+  non_checkable:
+    OPINION: यह पोस्ट एक राय है। इसमें जाँचने लायक कोई तथ्य नहीं है।
+    SATIRE: यह पोस्ट व्यंग्य है। इसे समाचार की तरह नहीं पढ़ना चाहिए।
+    JOKE: यह पोस्ट एक मज़ाक है। इसमें जाँचने लायक कोई तथ्य नहीं है।
+    GREETING: यह एक शुभकामना संदेश है। इसमें जाँचने लायक कुछ नहीं है।
+    PROMOTION: यह पोस्ट एक विज्ञापन या प्रचार है। इसमें जाँचने लायक कोई तथ्यात्मक दावा नहीं है।
+    DEVOTIONAL: यह एक भक्ति संदेश है। इसमें जाँचने लायक कुछ नहीं है।
+    PERSONAL_MESSAGE: यह एक निजी संदेश है। इसमें जाँचने लायक कुछ नहीं है।
+    OTHER: हमें इस पोस्ट में जाँचने लायक कोई तथ्यात्मक दावा नहीं मिला।
+  stub:
+    headline: "अभी पुष्टि नहीं: हम इस दावे की जाँच नहीं कर सके"
+    summary: हम इस दावे की न पुष्टि कर सके, न खंडन। पुष्टि होने तक इसे आगे न भेजें।
+    what_is_true: हमने अभी इस दावे पर सबूत नहीं खोजे हैं।
+    post_claims: "पोस्ट का दावा है:"
+    could_not_confirm: हम अभी इसकी पुष्टि या खंडन नहीं कर सके।
+    do_not_forward: किसी भरोसेमंद स्रोत से पुष्टि होने तक कृपया इसे आगे न भेजें।
+    card_title: पुष्टि नहीं हुई
+    card_footer: पुष्टि होने तक आगे न भेजें
+    confidence:
+      HIGH: हमें पूरा भरोसा है।
+      MEDIUM: हमें काफ़ी भरोसा है।
+      LOW: हमें पक्का नहीं पता।
+ta:
+  non_checkable:
+    OPINION: இந்தப் பதிவு ஒரு கருத்து. இதில் சரிபார்க்க எந்த உண்மைத் தகவலும் இல்லை.
+    SATIRE: இந்தப் பதிவு ஒரு நையாண்டி. இதைச் செய்தியாகப் படிக்கக் கூடாது.
+    JOKE: இந்தப் பதிவு ஒரு நகைச்சுவை. இதில் சரிபார்க்க எந்த உண்மைத் தகவலும் இல்லை.
+    GREETING: இது ஒரு வாழ்த்துச் செய்தி. இதில் சரிபார்க்க எதுவும் இல்லை.
+    PROMOTION: இந்தப் பதிவு ஒரு விளம்பரம். இதில் சரிபார்க்க எந்த உண்மைக் கூற்றும் இல்லை.
+    DEVOTIONAL: இது ஒரு பக்திச் செய்தி. இதில் சரிபார்க்க எதுவும் இல்லை.
+    PERSONAL_MESSAGE: இது ஒரு தனிப்பட்ட செய்தி. இதில் சரிபார்க்க எதுவும் இல்லை.
+    OTHER: இந்தப் பதிவில் சரிபார்க்கக்கூடிய உண்மைக் கூற்று எதுவும் எங்களுக்குக் கிடைக்கவில்லை.
+  stub:
+    headline: "இன்னும் உறுதிசெய்யப்படவில்லை: இந்தக் கூற்றை எங்களால் சரிபார்க்க முடியவில்லை"
+    summary: இந்தக் கூற்று சரியா தவறா என்று எங்களால் உறுதிசெய்ய முடியவில்லை. உறுதியாகும் வரை இதைப் பகிர வேண்டாம்.
+    what_is_true: இந்தக் கூற்றுக்கான ஆதாரங்களை நாங்கள் இன்னும் தேடவில்லை.
+    post_claims: "இந்தப் பதிவு கூறுவது:"
+    could_not_confirm: இது சரியா தவறா என்று எங்களால் இன்னும் உறுதிசெய்ய முடியவில்லை.
+    do_not_forward: நம்பகமான மூலம் உறுதிசெய்யும் வரை தயவுசெய்து இதைப் பகிர வேண்டாம்.
+    card_title: உறுதிசெய்யப்படவில்லை
+    card_footer: உறுதியாகும் வரை பகிர வேண்டாம்
+    confidence:
+      HIGH: நாங்கள் மிக உறுதியாக இருக்கிறோம்.
+      MEDIUM: நாங்கள் ஓரளவு உறுதியாக இருக்கிறோம்.
+      LOW: எங்களுக்கு உறுதியாகத் தெரியவில்லை.
+kn:
+  non_checkable:
+    OPINION: ಈ ಪೋಸ್ಟ್ ಒಂದು ಅಭಿಪ್ರಾಯ. ಇದರಲ್ಲಿ ಪರಿಶೀಲಿಸಲು ಯಾವುದೇ ಸತ್ಯಾಂಶವಿಲ್ಲ.
+    SATIRE: ಈ ಪೋಸ್ಟ್ ವಿಡಂಬನೆ. ಇದನ್ನು ಸುದ್ದಿಯೆಂದು ಓದಬಾರದು.
+    JOKE: ಈ ಪೋಸ್ಟ್ ಒಂದು ತಮಾಷೆ. ಇದರಲ್ಲಿ ಪರಿಶೀಲಿಸಲು ಯಾವುದೇ ಸತ್ಯಾಂಶವಿಲ್ಲ.
+    GREETING: ಇದು ಶುಭಾಶಯ ಸಂದೇಶ. ಇದರಲ್ಲಿ ಪರಿಶೀಲಿಸಲು ಏನೂ ಇಲ್ಲ.
+    PROMOTION: ಈ ಪೋಸ್ಟ್ ಜಾಹೀರಾತು ಅಥವಾ ಪ್ರಚಾರ. ಇದರಲ್ಲಿ ಪರಿಶೀಲಿಸಲು ಯಾವುದೇ ವಾಸ್ತವಿಕ ಹೇಳಿಕೆ ಇಲ್ಲ.
+    DEVOTIONAL: ಇದು ಭಕ್ತಿ ಸಂದೇಶ. ಇದರಲ್ಲಿ ಪರಿಶೀಲಿಸಲು ಏನೂ ಇಲ್ಲ.
+    PERSONAL_MESSAGE: ಇದು ವೈಯಕ್ತಿಕ ಸಂದೇಶ. ಇದರಲ್ಲಿ ಪರಿಶೀಲಿಸಲು ಏನೂ ಇಲ್ಲ.
+    OTHER: ಈ ಪೋಸ್ಟ್‌ನಲ್ಲಿ ಪರಿಶೀಲಿಸಬಹುದಾದ ಯಾವುದೇ ವಾಸ್ತವಿಕ ಹೇಳಿಕೆ ನಮಗೆ ಸಿಗಲಿಲ್ಲ.
+  stub:
+    headline: "ಇನ್ನೂ ದೃಢಪಟ್ಟಿಲ್ಲ: ಈ ಹೇಳಿಕೆಯನ್ನು ನಮಗೆ ಪರಿಶೀಲಿಸಲು ಆಗಲಿಲ್ಲ"
+    summary: ಈ ಹೇಳಿಕೆ ಸರಿಯೋ ತಪ್ಪೋ ಎಂದು ನಮಗೆ ದೃಢಪಡಿಸಲು ಆಗಲಿಲ್ಲ. ದೃಢಪಡುವವರೆಗೆ ಇದನ್ನು ಫಾರ್ವರ್ಡ್ ಮಾಡಬೇಡಿ.
+    what_is_true: ಈ ಹೇಳಿಕೆಗೆ ನಾವು ಇನ್ನೂ ಪುರಾವೆಗಳನ್ನು ಹುಡುಕಿಲ್ಲ.
+    post_claims: "ಪೋಸ್ಟ್ ಹೇಳುವುದು:"
+    could_not_confirm: ಇದು ಸರಿಯೋ ತಪ್ಪೋ ಎಂದು ನಮಗೆ ಇನ್ನೂ ದೃಢಪಡಿಸಲು ಆಗಿಲ್ಲ.
+    do_not_forward: ವಿಶ್ವಾಸಾರ್ಹ ಮೂಲದಿಂದ ದೃಢಪಡುವವರೆಗೆ ದಯವಿಟ್ಟು ಇದನ್ನು ಫಾರ್ವರ್ಡ್ ಮಾಡಬೇಡಿ.
+    card_title: ದೃಢಪಟ್ಟಿಲ್ಲ
+    card_footer: ದೃಢಪಡುವವರೆಗೆ ಫಾರ್ವರ್ಡ್ ಮಾಡಬೇಡಿ
+    confidence:
+      HIGH: ನಮಗೆ ಸಂಪೂರ್ಣ ಖಚಿತವಿದೆ.
+      MEDIUM: ನಮಗೆ ಸಾಕಷ್ಟು ಖಚಿತವಿದೆ.
+      LOW: ನಮಗೆ ಖಚಿತವಿಲ್ಲ.
+id:
+  non_checkable:
+    OPINION: Unggahan ini adalah opini. Tidak ada fakta yang perlu diperiksa.
+    SATIRE: Unggahan ini adalah satire. Ini tidak dimaksudkan untuk dibaca sebagai berita.
+    JOKE: Unggahan ini adalah lelucon. Tidak ada fakta yang perlu diperiksa.
+    GREETING: Ini adalah pesan ucapan salam. Tidak ada yang perlu diperiksa.
+    PROMOTION: Unggahan ini adalah iklan atau promosi. Tidak ada klaim faktual yang perlu diperiksa.
+    DEVOTIONAL: Ini adalah pesan renungan keagamaan. Tidak ada yang perlu diperiksa.
+    PERSONAL_MESSAGE: Ini adalah pesan pribadi. Tidak ada yang perlu diperiksa.
+    OTHER: Kami tidak menemukan klaim faktual yang bisa diperiksa dalam unggahan ini.
+  stub:
+    headline: "Belum terkonfirmasi: kami belum bisa memeriksa klaim ini"
+    summary: Kami belum bisa memastikan benar atau salahnya klaim ini. Jangan sebarkan sampai terkonfirmasi.
+    what_is_true: Kami belum mencari bukti untuk klaim ini.
+    post_claims: "Unggahan ini mengklaim:"
+    could_not_confirm: Kami belum bisa memastikan benar atau salahnya.
+    do_not_forward: Mohon jangan sebarkan sampai dikonfirmasi oleh sumber tepercaya.
+    card_title: Belum terkonfirmasi
+    card_footer: Jangan sebarkan sebelum terkonfirmasi
+    confidence:
+      HIGH: Kami sangat yakin.
+      MEDIUM: Kami cukup yakin.
+      LOW: Kami tidak yakin.

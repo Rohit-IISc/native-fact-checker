@@ -1,11 +1,11 @@
 {
-  "prompt_version": "extractor-1.0+shared-1.0",
+  "prompt_version": "extractor-1.1+shared-1.0",
   "model_id": "gemini-3.8-flash",
-  "recorded_at": "2026-10-04T18:36:22+00:00",
+  "recorded_at": "2026-10-04T19:13:24+00:00",
   "output": {
     "content_language": "kn-IN",
     "content_script": "Knda",
-    "summary_en": "A Kannada social media message warns people not to go walking around Kukkarahalli Lake in Mysuru. It claims that two crocodiles were spotted at the lake yesterday evening.",
+    "summary_en": "A Kannada social media message claims that two crocodiles were spotted at Kukkarahalli Lake in Mysuru yesterday evening. It advises people not to go for walks around the lake.",
     "checkable": true,
     "non_checkable_type": null,
     "claims": [
@@ -16,18 +16,20 @@
         "claim_type": "EVENT",
         "entities": [
           "Kukkarahalli Lake",
-          "Mysuru"
+          "Mysuru",
+          "crocodiles"
         ],
         "place": "Kukkarahalli Lake, Mysuru, Karnataka, India",
         "claimed_date": "2026-10-03",
         "time_sensitivity": "LIVE_EVENT",
         "search_queries_original": [
           "ಕುಕ್ಕರಹಳ್ಳಿ ಕೆರೆ ಮೊಸಳೆ",
-          "ಮೈಸೂರು ಕುಕ್ಕರಹಳ್ಳಿ ಕೆರೆ ಎರಡು ಮೊಸಳೆಗಳು"
+          "ಮೈಸೂರು ಕುಕ್ಕರಹಳ್ಳಿ ಕೆರೆಯಲ್ಲಿ ಮೊಸಳೆಗಳು",
+          "Kukkarahalli lake mosale Mysuru"
         ],
         "search_queries_en": [
-          "Kukkarahalli lake crocodile spotted Mysuru",
-          "two crocodiles Kukkarahalli lake Mysore"
+          "crocodiles spotted Kukkarahalli lake Mysuru",
+          "Mysuru Kukkarahalli lake crocodile warning"
         ]
       }
     ],
