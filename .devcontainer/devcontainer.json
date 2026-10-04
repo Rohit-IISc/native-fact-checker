@@ -1,0 +1,19 @@
+{
+  "name": "native-fact-checker",
+  "build": { "dockerfile": "Dockerfile" },
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": { "version": "20" }
+  },
+  "remoteUser": "root",
+  "mounts": [
+    "source=gcloud-config,target=/root/.config/gcloud,type=volume",
+    "source=firebase-config,target=/root/.config/configstore,type=volume",
+    "source=claude-config,target=/root/.claude,type=volume"
+  ],
+  "forwardPorts": [8080, 5173],
+  "containerEnv": {
+    "WATCHFILES_FORCE_POLLING": "true",
+    "CHOKIDAR_USEPOLLING": "true"
+  },
+  "postCreateCommand": "npm i -g pnpm firebase-tools @anthropic-ai/claude-code"
+}
