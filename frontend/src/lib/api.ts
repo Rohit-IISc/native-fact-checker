@@ -26,7 +26,7 @@ async function headers(user: AppUser | null): Promise<Record<string, string>> {
 }
 
 async function request<T>(user: AppUser | null, path: string, init: RequestInit = {}): Promise<T> {
-  const res = await fetch(`/api${path}`, { ...init, headers: { ...(await headers(user)), ...(init.headers ?? {}) } })
+  const res = await fetch(`${config.apiBaseUrl}${path}`, { ...init, headers: { ...(await headers(user)), ...(init.headers ?? {}) } })
   if (res.status === 204) return undefined as T
   const body = (await res.json().catch(() => ({}))) as Record<string, unknown>
   if (!res.ok) throw new ApiError(res.status, body)

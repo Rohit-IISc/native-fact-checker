@@ -20,7 +20,7 @@ def _firebase():
         import firebase_admin
 
         s = get_settings()
-        opts = {"projectId": s.gcp_project} if s.gcp_project else None
+        opts = {"projectId": s.firebase_project_id} if s.firebase_project_id else None
         _firebase_app = firebase_admin.initialize_app(options=opts)
     return _firebase_app
 
@@ -63,12 +63,13 @@ async def current_user(
             claims = await asyncio.to_thread(fb_auth.verify_id_token, token, app)
         except Exception as e:  # noqa: BLE001
             raise HTTPException(401, detail={"error_code": "UNAUTHENTICATED"}) from e
-        if not x_firebase_appcheck:
-            raise HTTPException(403, detail={"error_code": "APP_CHECK_REQUIRED"})
-        try:
-            await asyncio.to_thread(app_check.verify_token, x_firebase_appcheck, app)
-        except Exception as e:  # noqa: BLE001
-            raise HTTPException(403, detail={"error_code": "APP_CHECK_FAILED"}) from e
+        if s.app_check_enforce:
+            if not x_firebase_appcheck:
+                raise HTTPException(403, detail={"error_code": "APP_CHECK_REQUIRED"})
+            try:
+                await asyncio.to_thread(app_check.verify_token, x_firebase_appcheck, app)
+            except Exception as e:  # noqa: BLE001
+                raise HTTPException(403, detail={"error_code": "APP_CHECK_FAILED"}) from e
         user = User(uid=claims["uid"], email=claims.get("email"), name=claims.get("name"))
     uid_hash_var.set(hash_uid(user.uid))
     return user

@@ -34,7 +34,7 @@ log = logging.getLogger(__name__)
 
 @asynccontextmanager
 async def lifespan(_: FastAPI):
-    setup_logging()
+    setup_logging(getattr(logging, get_settings().log_level, logging.INFO))
     from app.observability.bq_schemas import ensure_tables
 
     asyncio.get_running_loop().run_in_executor(None, ensure_tables)

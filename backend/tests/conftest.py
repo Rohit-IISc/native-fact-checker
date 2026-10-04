@@ -7,6 +7,7 @@ os.environ.update({
     "PIPELINE_MODE": "inline",
     "BIGQUERY_ENABLED": "0",
     "GCP_PROJECT": "",
+    "FACTCHECK_SKIP_ENV_FILES": "1",
     "PUBLIC_BASE_URL": "https://factcheck.test",
 })
 

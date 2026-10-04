@@ -75,7 +75,8 @@ class GeminiLLM:
 
         s = get_settings()
         cfg = get_config().models
-        self._client = genai.Client(vertexai=True, project=s.gcp_project, location=cfg["vertex"]["location"])
+        location = s.vertex_location or cfg["vertex"]["location"]
+        self._client = genai.Client(vertexai=True, project=s.gcp_project, location=location)
 
     def _parts(self, prompt: str, media: list[MediaPart] | None) -> list[Any]:
         from google.genai import types

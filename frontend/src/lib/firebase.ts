@@ -12,6 +12,9 @@ export function firebaseApp(): FirebaseApp {
     if (!config.firebase.apiKey) throw new Error('Firebase is not configured (see frontend/.env.example)')
     app = initializeApp(config.firebase)
     if (config.recaptchaSiteKey) {
+      if (config.appCheckDebug) {
+        ;(self as unknown as { FIREBASE_APPCHECK_DEBUG_TOKEN?: boolean }).FIREBASE_APPCHECK_DEBUG_TOKEN = true
+      }
       appCheck = initializeAppCheck(app, {
         provider: new ReCaptchaEnterpriseProvider(config.recaptchaSiteKey),
         isTokenAutoRefreshEnabled: true,

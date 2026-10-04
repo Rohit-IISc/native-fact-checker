@@ -19,12 +19,27 @@ Start with [`CLAUDE.md`](CLAUDE.md), then `docs/` in numeric order. `docs/16-dec
 
 ## Run locally
 
+The devcontainer (`.devcontainer/`) works in GitHub Codespaces or VS Code locally.
+
 ```bash
-make install
+gcloud auth application-default login   # once per container (the gcloud volume keeps it)
+make dev           # backend :8080 + PWA :5173 against the dev Firestore DB and real Gemini
 make dev-offline   # no GCP: in-memory store, fake sign-in, recorded model fixtures
-make dev           # real dev Firestore + Gemini; needs backend/.env and frontend/.env.local (see .env.example files)
 make test          # ruff + pytest (no paid calls) + frontend typecheck
 ```
+
+Configuration:
+
+| Where | Backend | Frontend |
+| --- | --- | --- |
+| Secrets | Codespaces secrets (`FACTCHECK_API_KEY`); Secret Manager in Cloud Run | Codespaces secrets (`VITE_FIREBASE_API_KEY`, `VITE_FIREBASE_APP_ID`, `VITE_FIREBASE_VAPID_KEY`, `VITE_RECAPTCHA_ENTERPRISE_SITE_KEY`) |
+| Optional local override (gitignored) | `backend/.env` | `frontend/.env.development.local` |
+| Committed non-secret defaults | `backend/.env.defaults` | `frontend/.env.development` |
+
+Precedence is top to bottom: environment variables win, then the override file, then the defaults.
+In Codespaces (`CODESPACES=true`) the backend sets `PUBLIC_BASE_URL` to the forwarded URL of port 5173
+and adds it to `CORS_ORIGINS`; Vite accepts the forwarded host. Add that host to Firebase Auth
+authorized domains for Google sign-in. Env files are excluded from the Cloud Run image.
 
 ## Build status
 

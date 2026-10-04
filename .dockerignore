@@ -7,3 +7,7 @@ tests/
 .git
 .env
 *.env
+# Dev env files must never reach the Cloud Run image (they set dev-db, App Check off)
+backend/.env
+backend/.env.*
+**/.env.development*

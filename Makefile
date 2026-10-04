@@ -1,4 +1,6 @@
-# See CLAUDE.md "Commands". Backend env comes from backend/.env (copy .env.example).
+# See CLAUDE.md "Commands".
+# Backend config precedence: environment variables (Codespaces secrets) > backend/.env (optional,
+# gitignored) > backend/.env.defaults. Frontend: VITE_* env vars > frontend/.env.development.
 SHELL := /bin/bash
 .PHONY: dev dev-offline backend frontend test test-live lint deploy eval check-models install
 
@@ -6,17 +8,24 @@ install:
 	cd backend && uv sync
 	cd frontend && pnpm install
 
-# Backend on :8080 + frontend on :5173 against the real dev Firestore database ("dev").
-dev:
+backend/.venv:
+	cd backend && uv sync
+
+frontend/node_modules:
+	cd frontend && pnpm install
+
+# Backend on :8080 + frontend on :5173 against the real dev Firestore database (FIRESTORE_DB).
+# Needs Application Default Credentials: gcloud auth application-default login
+dev: backend/.venv frontend/node_modules
 	@trap 'kill 0' EXIT; \
-	(cd backend && set -a && [ -f .env ] && . ./.env; set +a; uv run uvicorn app.main:app --reload --port 8080) & \
-	(cd frontend && pnpm dev) & \
+	(cd backend && uv run uvicorn app.main:app --reload --host 0.0.0.0 --port 8080) & \
+	(cd frontend && pnpm dev --host 0.0.0.0) & \
 	wait
 
 # No GCP at all: in-memory store, fake sign-in, recorded model fixtures. For UI work only.
-dev-offline:
+dev-offline: backend/.venv frontend/node_modules
 	@trap 'kill 0' EXIT; \
-	(cd backend && STORE=memory AUTH_MODE=dev LLM_MODE=fake PIPELINE_MODE=inline BIGQUERY_ENABLED=0 \
+	(cd backend && FACTCHECK_SKIP_ENV_FILES=1 STORE=memory AUTH_MODE=dev LLM_MODE=fake PIPELINE_MODE=inline BIGQUERY_ENABLED=0 \
 	  uv run uvicorn app.main:app --reload --port 8080) & \
 	(cd frontend && VITE_AUTH_MODE=dev pnpm dev) & \
 	wait
