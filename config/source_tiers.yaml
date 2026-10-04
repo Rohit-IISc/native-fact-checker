@@ -1,0 +1,88 @@
+# Assigned by code. Verify fact-checker list against the IFCN signatories page before Oct 11.
+# Matching: exact domain or any subdomain of it. Entries with a path (site.com/fact-check)
+# match that URL prefix. Suffix rules match the end of the host.
+tier_1:
+  suffixes: [.gov.in, .nic.in, .gov, .go.id, .gov.uk, .int]
+  domains:
+    # Official India
+    - pib.gov.in
+    - rbi.org.in
+    - eci.gov.in
+    - mohfw.gov.in
+    - imd.gov.in
+    - ndma.gov.in
+    - cybercrime.gov.in
+    - mygov.in
+    # Official Indonesia
+    - komdigi.go.id
+    - bmkg.go.id
+    - bnpb.go.id
+    # International bodies
+    - who.int
+    - un.org
+    # Wire agencies
+    - reuters.com
+    - apnews.com
+    - afp.com
+    - factcheck.afp.com
+    - ptinews.com
+    # Fact-checkers (verify IFCN status)
+    - boomlive.in
+    - altnews.in
+    - factly.in
+    - newschecker.in
+    - vishvasnews.com
+    - indiatoday.in/fact-check
+    - factcrescendo.com
+    - newsmeter.in
+    - thequint.com/news/webqoof
+    - youturn.in
+    - digiteye.in
+    - turnbackhoax.id
+    - cekfakta.tempo.co
+    - cekfakta.com
+tier_2:
+  domains:
+    - thehindu.com
+    - indianexpress.com
+    - hindustantimes.com
+    - ndtv.com
+    - timesofindia.indiatimes.com
+    - deccanherald.com
+    - prajavani.net
+    - dinamani.com
+    - bbc.com
+    - bbc.co.uk
+    - nytimes.com
+    - theguardian.com
+    - washingtonpost.com
+    - aljazeera.com
+    - kompas.com
+    - tempo.co
+    - thejakartapost.com
+    - scroll.in
+    - livemint.com
+    - business-standard.com
+not_a_source:
+  domains:
+    - x.com
+    - twitter.com
+    - facebook.com
+    - fb.watch
+    - instagram.com
+    - threads.net
+    - reddit.com
+    - youtube.com
+    - youtu.be
+    - t.me
+    - telegram.org
+    - sharechat.com
+    - mojapp.in
+    - quora.com
+    - medium.com
+    - blogspot.com
+    - wordpress.com
+    - whatsapp.com
+    - tiktok.com
+    - linkedin.com
+default_tier: tier_3

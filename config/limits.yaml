@@ -1,0 +1,43 @@
+quota:
+  checks_per_user_per_day: 10
+  judge_checks_per_day: 50
+  judge_allowlist: []            # add judge emails before Oct 17
+  day_boundary_tz: Asia/Kolkata
+  count_cache_hits: true
+global_daily_new_checks: 1500    # circuit breaker on full investigations
+input:
+  max_share_bytes: 52428800      # 50 MB
+  max_images: 10
+  max_media_seconds: 180
+  max_text_chars: 10000
+  max_claims_per_check: 3
+  low_media_resolution_over_seconds: 60
+timeouts_s:
+  tier1: 5
+  link_fetch: 10
+  extraction_base: 15
+  extraction_per_media_second: 0.2
+  tier2: 6
+  sub_agent: 28
+  packager: 10
+  judge: 20
+  critic: 15
+  judge_revision: 15
+  composer: 10
+  tts: 12
+  card: 12
+  total_base: 90
+  background_retry_total: 120
+web_search:
+  max_grounded_queries: 4
+cache:
+  phash_max_hamming: 6
+  video_keyframe_every_s: 5
+  video_keyframe_match_ratio: 0.6
+  tier2_strong_distance: 0.10
+  tier2_weak_distance: 0.18
+  live_event_active_days: 90
+  not_enough_evidence_ttl_days: 3
+evidence:
+  max_items_per_claim: 12
+media_retention_hours: 24

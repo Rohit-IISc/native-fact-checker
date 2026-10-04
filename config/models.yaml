@@ -1,0 +1,46 @@
+# Model registry. Python reads models by key, never by name.
+# IDs are candidates as of Oct 4, 2026. Run scripts/check_models.py on Day 0 and
+# replace any ID that Vertex AI does not list. Prices are USD per 1M tokens.
+vertex:
+  location: global          # Gemini endpoint
+models:
+  flash:
+    id: gemini-3.8-flash    # fallbacks in order if not available
+    fallbacks: [gemini-3.7-flash, gemini-3-flash-preview, gemini-2.5-flash]
+    price_in: 0.75          # introductory through 2026-12-31, then 1.50
+    price_out: 3.75         # introductory through 2026-12-31, then 7.50
+    thinking: low
+  pro:
+    id: gemini-3.1-pro-preview
+    fallbacks: [gemini-3-pro-preview, gemini-2.5-pro]
+    price_in: 2.00
+    price_out: 12.00
+    thinking: medium
+  embedding:
+    id: gemini-embedding-001
+    dims: 768
+    price_in: 0.15
+  tts:
+    id: gemini-2.5-flash-tts
+    fallbacks: [gemini-2.5-pro-tts]
+    location: global
+    est_cost_per_answer: 0.01
+grounding:
+  free_queries_per_month: 5000
+  price_per_1000: 14.00
+vision:
+  web_detection_price_per_1000: 3.50
+stage_models:
+  extractor: flash
+  near_match: flash
+  web_search: flash
+  factcheck_sites: flash
+  source_credibility: flash
+  media_provenance: flash
+  packager: flash
+  judge: pro
+  critic: pro
+  judge_revision: pro
+  composer: flash
+  translator: flash
+  panel_timeout_fallback: flash

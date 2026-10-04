@@ -1,0 +1,60 @@
+# 16. Decisions log (source of truth)
+
+Decided with Rohit and Shubham on Oct 4, 2026. If anything elsewhere conflicts, this wins.
+
+| # | Topic | Decision |
+| --- | --- | --- |
+| 1 | Scope | Workflow diagram scope. Sub-agents: web search, fact-check sites, source credibility, plus media provenance (added by Claude because reverse image search is the only way to catch old riot and war photos reused with new captions, which the team named as the most common case). Bank SMS, phishing, scam checker out |
+| 1b | Satellite | Stretch goal on Oct 14, narrow to fires and floods (doc 15) |
+| 2 | Extractor output | Claims in original language and English; search both |
+| 3 | Verdict scale | 5 labels: TRUE, FALSE, MISLEADING, SCAM, NOT_ENOUGH_EVIDENCE. Plus NOT_CHECKABLE status with type |
+| 4 | Review | Judge plus Critic, both Gemini Pro. Disagreement leads to one revision; a remaining split gives NOT_ENOUGH_EVIDENCE with all evidence for and against. AI-generation questions always show signals both ways |
+| 5 | Correction card | In scope, drawn by code (Pillow), no generated imagery |
+| 6 | Cache tiers | Tier 1 hash before extraction, tier 2 semantic after |
+| 7 | Near match | Goes through a quick Flash check |
+| 8 | Expiry | LIVE_EVENT active 90 days then archived; EVERGREEN never expires; archived verdicts used as context evidence. Every claim stores event date and claimed date; date mismatch gives MISLEADING |
+| 9 | New language on cached verdict | Translate and TTS on the fly, store it |
+| 10 | Vector store | Firestore vector search |
+| 11 | Link fetching | Ladder: YouTube URL straight to Gemini, X oEmbed, Meta oEmbed, Open Graph and page text, then ask for screenshot. See below |
+| 12 | Limits | Video and audio 3 min, 50 MB per share, 10 images per share |
+| 13 | Multi-claim | One verdict per claim, max 3 claims per share |
+| 14 | Non-checkable | Return NOT_CHECKABLE with the type (opinion, satire, joke, greeting and so on) |
+| 15 | Answer language | Language of the forwarded content |
+| 16 | Languages | Hindi, Tamil, Kannada, Indonesian, English (Telugu removed) |
+| 17 | TTS | Gemini TTS preferred; Chirp 3 HD fallback for Kannada if preview quality is poor |
+| 18 | Orchestration | Fixed parallel fan-out now; LLM router later for cost |
+| 19 | Source credibility | No hand-curated bad list. Offender list derived from published fact checks (ClaimReview) and auto-updated weekly plus from our own agreed verdicts. Domain age and lookalike checks. Badges near-zero weight |
+| 20 | Models | All Gemini. Flash for sub-agents, Pro for Judge and Critic |
+| 21 | Latency | 90 s base; extraction timeout scales with media length; on overrun return NOT_ENOUGH_EVIDENCE with partial evidence and retry once in background |
+| 22 | Escalation | Dropped for now |
+| 23 | Platform | Android-first PWA |
+| 24 | Progress | Live progress screen plus push |
+| 25 | Stack | React + Vite PWA, Python + ADK on Cloud Run |
+| 26 | Sign-in | Mandatory Google sign-in + App Check + server quota + global daily cap (doc 08) |
+| 27 | History | Yes, behind sign-in |
+| 28 | API | Documented only |
+| 29 | Sources | No verdict without credible sources, enforced in code. Social posts never sources. Sources cited aloud in audio; links under the audio |
+| 30 | Retention | Raw media deleted after 24 hours; consent on first use |
+| 31 | Quota | 10 checks per user per day |
+| 32 | Region | asia-south1 (Mumbai); Gemini via global endpoint. Project ID and credits set up by Rohit later |
+| 33 | Infra | gcloud and firebase CLI scripts, not Terraform |
+| 34 | CI/CD | Cloud Build on push to main |
+| 35 | Evaluation | Built in; every 3 days; recall at 5 on FactDRIL or ClaimReview-derived set plus verdict regression; drift alert; human-approved model swap |
+| 36 | Observability | BigQuery, Cloud Logging, Cloud Trace from day one |
+| 37 | Prompts | Drafted in `prompts/` |
+| 38 | Build | Single laptop, single Claude Code workspace |
+| 39 | Dates | Prototype Oct 11, test week Oct 12 to 17, submit Oct 18 |
+
+## Link fetching: oEmbed and public metadata, what it misses (answer to question 11)
+
+| Platform | What oEmbed or public metadata gives | What we miss |
+| --- | --- | --- |
+| YouTube | Title from oEmbed; Gemini reads the full public video from the URL | Private and age-restricted videos |
+| X / Twitter | Post text and author handle via publish.twitter.com oEmbed, no login | Attached images and videos |
+| Instagram | Since Nov 2025 Meta removed author name and thumbnail from oEmbed; caption sometimes present in embed HTML; needs a Meta app token | Reel video and audio, images, Stories, private accounts |
+| Facebook | Same as Instagram | Videos, images, group posts, friends-only posts |
+| LinkedIn | Open Graph description often holds the post text | Images, documents, video |
+| News sites, blogs | Full article text, headline image, publish date | Paywalled text |
+| Telegram public channels | Open Graph preview text and image | Videos |
+
+The biggest gap is video inside Instagram, Facebook and X. Scraping services (Firecrawl, Apify) would close part of it, but they break Meta's terms, are not Google, and cost money. Our answer: use the ladder, and when media is missing, ask the user for a screenshot or screen recording in one tap. Note that WhatsApp forwards, the main use case, usually arrive as the media file itself, so this gap matters less than it looks.

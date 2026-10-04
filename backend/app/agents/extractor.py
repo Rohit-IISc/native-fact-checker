@@ -1,0 +1,74 @@
+"""Information extractor (Gemini Flash, prompts/01_extractor.md)."""
+from __future__ import annotations
+
+import json
+
+from app.llm import LLM, MediaPart
+from app.models import CheckRequest, Extraction, FetchedPost
+from app.prompts import load_prompt
+from app.settings import get_config
+
+PROMPT = "01_extractor.md"
+
+
+def media_seconds(req: CheckRequest) -> float:
+    return sum(m.duration_s or 0 for m in req.media if m.kind in ("video", "audio"))
+
+
+def build_prompt(req: CheckRequest, fetched: FetchedPost | None) -> tuple[str, str]:
+    prompt = load_prompt(PROMPT)
+    link_meta = {}
+    if fetched:
+        link_meta = {
+            "source_url": fetched.source_url, "title": fetched.title,
+            "author_handle": fetched.author_handle,
+            "published_at": fetched.published_at.isoformat() if fetched.published_at else None,
+            "media_missing": fetched.media_missing,
+        }
+    text = prompt.render(
+        share_date=req.share_date.isoformat(),
+        platform=fetched.platform if fetched else "none",
+        link_metadata=json.dumps(link_meta, ensure_ascii=False) if link_meta else "none",
+        shared_text=req.text or "",
+        fetched_text=(fetched.text or "") if fetched else "",
+    )
+    return text, prompt.version
+
+
+def media_parts(req: CheckRequest, fetched: FetchedPost | None) -> list[MediaPart]:
+    limits = get_config().limits["input"]
+    low_res = media_seconds(req) > limits["low_media_resolution_over_seconds"]
+    parts = [
+        MediaPart(mime_type=m.mime_type, uri=m.uri, low_resolution=low_res and m.kind == "video",
+                  end_offset_s=limits["max_media_seconds"] if m.kind in ("video", "audio") else None)
+        for m in req.media
+    ]
+    if fetched:
+        parts += [MediaPart(mime_type="image/jpeg", uri=u) for u in fetched.image_uris]
+        if fetched.youtube_url:
+            parts.append(MediaPart(mime_type="video/mp4", uri=fetched.youtube_url,
+                                   end_offset_s=limits["max_media_seconds"], low_resolution=True))
+    return parts
+
+
+def finalize(extraction: Extraction) -> Extraction:
+    """Assign stable claim ids, enforce the claim cap, keep NOT_CHECKABLE consistent."""
+    max_claims = int(get_config().limits["input"]["max_claims_per_check"])
+    claims = extraction.claims[:max_claims]
+    extra = list(extraction.extra_claims_not_checked) + [c.claim_en for c in extraction.claims[max_claims:]]
+    claims = [c.model_copy(update={"claim_id": f"c{i + 1}"}) for i, c in enumerate(claims)]
+    checkable = extraction.checkable and bool(claims)
+    update = {"claims": claims if checkable else [], "extra_claims_not_checked": extra, "checkable": checkable}
+    if not checkable and extraction.non_checkable_type is None:
+        update["non_checkable_type"] = "OTHER"
+    return extraction.model_copy(update=update)
+
+
+async def extract(llm: LLM, req: CheckRequest, fetched: FetchedPost | None = None) -> Extraction:
+    text, version = build_prompt(req, fetched)
+    timeout = get_config().extraction_timeout(media_seconds(req))
+    result = await llm.generate(
+        stage="extractor", prompt=text, prompt_version=version, schema=Extraction,
+        media=media_parts(req, fetched), timeout_s=timeout,
+    )
+    return finalize(result)

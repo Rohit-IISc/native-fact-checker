@@ -1,0 +1,103 @@
+{
+  "app": { "name": "Sach Check", "tagline": "Is that forward true? Check it in your own language." },
+  "nav": { "home": "Home", "history": "History", "signOut": "Sign out", "language": "Language" },
+  "welcome": {
+    "title": "Check any forward before you share it",
+    "point1": "Share a WhatsApp forward, photo, video or link to this app",
+    "point2": "We check it with trusted news sources and fact-checkers",
+    "point3": "You get the answer in your language, to read or to listen",
+    "privacy": "Your photos and videos are deleted within 24 hours. We keep only the claims and verdicts, without any personal details, so others with the same forward get an answer faster.",
+    "agree": "I agree. Continue",
+    "signin": "Sign in with Google"
+  },
+  "home": {
+    "pasteLabel": "Paste the forward or a link",
+    "pastePlaceholder": "Paste the message text or a link here…",
+    "check": "Check it",
+    "upload": "Add photo, video or audio",
+    "quota": "{{left}} of {{limit}} checks left today",
+    "howToShare": "How to check a WhatsApp forward",
+    "step1": "Add this app to your home screen (menu ⋮ then 'Install app')",
+    "step2": "In WhatsApp, long-press the message and tap Share",
+    "step3": "Pick Sach Check from the list",
+    "install": "Install app",
+    "recent": "Recent checks",
+    "filesSelected": "{{count}} file(s) added",
+    "clearFiles": "Remove"
+  },
+  "check": {
+    "title": "Checking your forward",
+    "leaveNote": "You can leave this screen. We will notify you when the answer is ready.",
+    "failed": "Sorry, we could not finish this check. It did not count against your daily limit.",
+    "tryAgain": "Try again",
+    "sending": "Sending…"
+  },
+  "stage": {
+    "received": "Received",
+    "cache_lookup": "Looking for earlier checks",
+    "fetching_link": "Opening link",
+    "extracting": "Reading the post",
+    "searching": "Searching news and fact-checkers",
+    "packaging": "Collecting the evidence",
+    "judging": "Weighing evidence",
+    "reviewing": "Second opinion",
+    "composing": "Writing your answer",
+    "speaking": "Recording audio",
+    "done": "Done"
+  },
+  "agent": {
+    "web_search": "News search",
+    "factcheck_sites": "Fact-checkers",
+    "source_credibility": "Checking the source",
+    "media_provenance": "Checking where the image came from"
+  },
+  "label": {
+    "TRUE": "True",
+    "FALSE": "False",
+    "MISLEADING": "Misleading",
+    "SCAM": "Scam",
+    "NOT_ENOUGH_EVIDENCE": "Not confirmed",
+    "NOT_CHECKABLE": "Nothing to check"
+  },
+  "result": {
+    "confidence": "Confidence {{n}} out of 100",
+    "whatPostClaims": "What the post claims",
+    "whatIsTrue": "What is true",
+    "evidenceFor": "Evidence for the claim",
+    "evidenceAgainst": "Evidence against the claim",
+    "sources": "Sources",
+    "showEnglish": "Show in English",
+    "showNative": "Show in original language",
+    "copyLink": "Copy result link",
+    "copied": "Link copied",
+    "shareCard": "Share card to WhatsApp",
+    "helpful": "Was this helpful?",
+    "yes": "Yes",
+    "no": "No",
+    "thanks": "Thank you",
+    "cached": "Checked earlier: instant answer",
+    "extraClaims": "Other claims in this post we did not check",
+    "audioSoon": "Audio is being prepared…",
+    "none": "None found",
+    "aiTitle": "Is this image AI-made?",
+    "aiLikelihood": "{{n}} out of 100 likely AI-made",
+    "aiSignalsAi": "Signs it may be AI-made",
+    "aiSignalsReal": "Signs it is a real photo"
+  },
+  "limit": {
+    "title": "You have used today's checks",
+    "body": "You can check again after {{time}}."
+  },
+  "history": { "title": "Your checks", "empty": "No checks yet.", "more": "Load more" },
+  "public": { "cta": "Check your own forward", "notFound": "This result was not found." },
+  "errors": {
+    "TOO_LARGE": "This is too large. The limit is 50 MB per share.",
+    "TOO_MANY_FILES": "Share up to 10 photos, or one video or audio clip.",
+    "UNSUPPORTED_TYPE": "This kind of file is not supported yet.",
+    "VIDEO_TOO_LONG": "Videos over 3 minutes: only the first 3 minutes are checked.",
+    "EMPTY": "Paste a message, add a link, or add a photo first.",
+    "BUSY": "We are very busy right now. Please try again later.",
+    "UNAUTHENTICATED": "Please sign in again.",
+    "generic": "Something went wrong. Please try again."
+  }
+}

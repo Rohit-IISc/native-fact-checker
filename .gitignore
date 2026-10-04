@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+.ruff_cache/
+
+# Node
+node_modules/
+frontend/dist/
+frontend/dev-dist/
+
+# Env and secrets (never commit; repo is public for judging)
+.env
+.env.*
+!.env.example
+frontend/.env.local
+*.pem
+*-key.json
+service-account*.json
+
+# Firebase
+.firebase/
+firebase-debug.log
+
+# Eval data (licensing unclear; lives in gs://{project}-eval)
+eval/datasets/*
+!eval/datasets/README.md

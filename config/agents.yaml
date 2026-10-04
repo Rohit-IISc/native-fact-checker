@@ -1,0 +1,17 @@
+# Fixed fan-out for the prototype. A future LLM router replaces this list per claim.
+fan_out:
+  - name: web_search
+    prompt: 03_web_search_agent.md
+    skip_if: []
+  - name: factcheck_sites
+    prompt: 04_factcheck_agent.md
+    skip_if: []
+  - name: source_credibility
+    prompt: 05_source_credibility_agent.md
+    skip_if: [no_origin_info]
+  - name: media_provenance
+    prompt: 06_media_provenance_agent.md
+    skip_if: [text_only]
+  # - name: satellite        # stretch goal, doc 15
+  #   prompt: 12_satellite_agent.md
+  #   skip_if: [not_flood_or_fire]

@@ -1,0 +1,36 @@
+# Demo languages. Voices: pick on Day 5 by listening; names below are placeholders
+# to be replaced with voices listed for Gemini TTS.
+demo_languages:
+  hi:
+    bcp47: hi-IN
+    name_native: हिन्दी
+    tts_engine: gemini
+    tts_voice: Kore
+    font: NotoSansDevanagari
+  ta:
+    bcp47: ta-IN
+    name_native: தமிழ்
+    tts_engine: gemini
+    tts_voice: Kore
+    font: NotoSansTamil
+  kn:
+    bcp47: kn-IN
+    name_native: ಕನ್ನಡ
+    tts_engine: gemini          # Gemini TTS lists kn-IN as Preview; switch to chirp3_hd if quality is poor
+    tts_voice: Kore
+    font: NotoSansKannada
+  id:
+    bcp47: id-ID
+    name_native: Bahasa Indonesia
+    tts_engine: gemini
+    tts_voice: Kore
+    font: NotoSans
+  en:
+    bcp47: en-IN
+    name_native: English
+    tts_engine: gemini
+    tts_voice: Kore
+    font: NotoSans
+other_languages:
+  text_answer: true             # any language Gemini can write
+  audio_if_tts_supports: true

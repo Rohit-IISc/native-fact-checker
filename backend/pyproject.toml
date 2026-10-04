@@ -1,0 +1,44 @@
+[project]
+name = "factcheck-backend"
+version = "0.1.0"
+description = "Native-language fact checker: API and pipeline"
+requires-python = ">=3.12"
+dependencies = [
+  "fastapi>=0.115",
+  "uvicorn[standard]>=0.30",
+  "python-multipart>=0.0.9",
+  "pydantic>=2.8",
+  "pyyaml>=6.0",
+  "httpx>=0.27",
+  "google-genai>=1.20",
+  "google-adk>=1.0",
+  "google-cloud-firestore>=2.16",
+  "google-cloud-pubsub>=2.21",
+  "google-cloud-storage>=2.17",
+  "google-cloud-bigquery>=3.25",
+  "firebase-admin>=6.5",
+  "google-auth>=2.30",
+]
+
+[dependency-groups]
+dev = [
+  "pytest>=8.2",
+  "pytest-asyncio>=0.23",
+  "ruff>=0.5",
+]
+
+[tool.uv]
+package = false
+
+[tool.ruff]
+line-length = 120
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "ASYNC"]
+ignore = ["B008", "UP042"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+pythonpath = ["."]

@@ -1,0 +1,100 @@
+{
+  "app": { "name": "Sach Check", "tagline": "Apakah pesan terusan itu benar? Periksa dalam bahasa Anda." },
+  "nav": { "home": "Beranda", "history": "Riwayat", "signOut": "Keluar", "language": "Bahasa" },
+  "welcome": {
+    "title": "Periksa setiap pesan terusan sebelum membagikannya",
+    "point1": "Bagikan pesan terusan WhatsApp, foto, video, atau tautan ke aplikasi ini",
+    "point2": "Kami memeriksanya dengan sumber berita tepercaya dan pemeriksa fakta",
+    "point3": "Jawaban dalam bahasa Anda, untuk dibaca atau didengarkan",
+    "privacy": "Foto dan video Anda dihapus dalam 24 jam. Kami hanya menyimpan klaim dan hasil pemeriksaan, tanpa data pribadi, agar orang lain yang menerima pesan yang sama mendapat jawaban lebih cepat.",
+    "agree": "Saya setuju. Lanjutkan",
+    "signin": "Masuk dengan Google"
+  },
+  "home": {
+    "pasteLabel": "Tempel pesan terusan atau tautan",
+    "pastePlaceholder": "Tempel teks pesan atau tautan di sini…",
+    "check": "Periksa",
+    "upload": "Tambah foto, video, atau audio",
+    "quota": "Sisa {{left}} dari {{limit}} pemeriksaan hari ini",
+    "howToShare": "Cara memeriksa pesan terusan WhatsApp",
+    "step1": "Tambahkan aplikasi ini ke layar utama (menu ⋮ lalu 'Instal aplikasi')",
+    "step2": "Di WhatsApp, tekan lama pesan lalu ketuk Bagikan",
+    "step3": "Pilih Sach Check dari daftar",
+    "install": "Instal aplikasi",
+    "recent": "Pemeriksaan terbaru",
+    "filesSelected": "{{count}} berkas ditambahkan",
+    "clearFiles": "Hapus"
+  },
+  "check": {
+    "title": "Memeriksa pesan Anda",
+    "leaveNote": "Anda boleh meninggalkan layar ini. Kami akan memberi tahu saat jawabannya siap.",
+    "failed": "Maaf, pemeriksaan ini tidak dapat diselesaikan. Ini tidak dihitung dalam batas harian Anda.",
+    "tryAgain": "Coba lagi",
+    "sending": "Mengirim…"
+  },
+  "stage": {
+    "received": "Diterima",
+    "cache_lookup": "Mencari pemeriksaan sebelumnya",
+    "fetching_link": "Membuka tautan",
+    "extracting": "Membaca unggahan",
+    "searching": "Mencari berita dan pemeriksa fakta",
+    "packaging": "Mengumpulkan bukti",
+    "judging": "Menimbang bukti",
+    "reviewing": "Pendapat kedua",
+    "composing": "Menulis jawaban Anda",
+    "speaking": "Merekam audio",
+    "done": "Selesai"
+  },
+  "agent": {
+    "web_search": "Pencarian berita",
+    "factcheck_sites": "Pemeriksa fakta",
+    "source_credibility": "Memeriksa sumber",
+    "media_provenance": "Memeriksa asal gambar"
+  },
+  "label": {
+    "TRUE": "Benar",
+    "FALSE": "Salah",
+    "MISLEADING": "Menyesatkan",
+    "SCAM": "Penipuan",
+    "NOT_ENOUGH_EVIDENCE": "Belum terkonfirmasi",
+    "NOT_CHECKABLE": "Tidak ada yang perlu diperiksa"
+  },
+  "result": {
+    "confidence": "Keyakinan {{n}} dari 100",
+    "whatPostClaims": "Klaim unggahan",
+    "whatIsTrue": "Yang sebenarnya",
+    "evidenceFor": "Bukti yang mendukung klaim",
+    "evidenceAgainst": "Bukti yang membantah klaim",
+    "sources": "Sumber",
+    "showEnglish": "Tampilkan dalam bahasa Inggris",
+    "showNative": "Tampilkan dalam bahasa asli",
+    "copyLink": "Salin tautan hasil",
+    "copied": "Tautan disalin",
+    "shareCard": "Bagikan kartu ke WhatsApp",
+    "helpful": "Apakah ini membantu?",
+    "yes": "Ya",
+    "no": "Tidak",
+    "thanks": "Terima kasih",
+    "cached": "Sudah diperiksa sebelumnya: jawaban instan",
+    "extraClaims": "Klaim lain dalam unggahan ini yang tidak kami periksa",
+    "audioSoon": "Audio sedang disiapkan…",
+    "none": "Tidak ditemukan",
+    "aiTitle": "Apakah gambar ini buatan AI?",
+    "aiLikelihood": "Kemungkinan buatan AI: {{n}} dari 100",
+    "aiSignalsAi": "Tanda-tanda buatan AI",
+    "aiSignalsReal": "Tanda-tanda foto asli"
+  },
+  "limit": { "title": "Jatah pemeriksaan hari ini sudah habis", "body": "Anda dapat memeriksa lagi setelah {{time}}." },
+  "history": { "title": "Pemeriksaan Anda", "empty": "Belum ada pemeriksaan.", "more": "Muat lagi" },
+  "public": { "cta": "Periksa pesan terusan Anda sendiri", "notFound": "Hasil ini tidak ditemukan." },
+  "errors": {
+    "TOO_LARGE": "Terlalu besar. Batasnya 50 MB per kiriman.",
+    "TOO_MANY_FILES": "Bagikan hingga 10 foto, atau satu video atau audio.",
+    "UNSUPPORTED_TYPE": "Jenis berkas ini belum didukung.",
+    "VIDEO_TOO_LONG": "Untuk video lebih dari 3 menit, hanya 3 menit pertama yang diperiksa.",
+    "EMPTY": "Tempel pesan, tambahkan tautan, atau tambahkan foto terlebih dahulu.",
+    "BUSY": "Kami sedang sangat sibuk. Silakan coba lagi nanti.",
+    "UNAUTHENTICATED": "Silakan masuk lagi.",
+    "generic": "Terjadi kesalahan. Silakan coba lagi."
+  }
+}
