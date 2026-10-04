@@ -28,7 +28,7 @@ Store `source_url`, `platform`, `fetched_at`, `published_at`, `author_handle` wh
 - Input: all media parts (images inline, video/audio by GCS URI or YouTube URL), shared text, fetched page text, platform metadata
 - Output `Extraction`: content language (BCP-47) and script; content summary in English; `checkable` flag and `non_checkable_type`; up to 3 claims, each with `claim_original` (in the content's language), `claim_en`, `claim_type` (EVENT, STATISTIC, QUOTE, HEALTH, SCIENCE, GOVERNMENT_SCHEME, FINANCIAL_OFFER, MEDIA_AUTHENTICITY, OTHER), entities, place, `claimed_date`, `time_sensitivity` (LIVE_EVENT or EVERGREEN), `search_queries_original` and `search_queries_en`; OCR text; transcript; visual description; `ai_generation_signals` (visual cues only, not a verdict)
 - Video over 60 s uses low media resolution
-- Timeout: 15 s + 0.2 s per media second
+- Timeout: 25 s + 0.2 s per media second (raised from 15 s after measuring: text 4 to 6 s, images 7 to 10 s, rare stalls past 15 s)
 
 ## Stage 3. Tier 2 cache (code + Flash)
 

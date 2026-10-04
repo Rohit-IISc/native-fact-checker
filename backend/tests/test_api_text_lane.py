@@ -121,9 +121,8 @@ async def test_extraction_failure_marks_failed_and_refunds(client, llm):
     assert (await client.get("/v1/me/quota", headers=AUTH)).json()["used"] == 0
 
 
-async def test_media_not_yet_supported(client):
-    png = b"\x89PNG\r\n\x1a\n" + b"0" * 100
-    r = await client.post("/v1/checks", headers=AUTH, files={"files": ("a.png", png, "image/png")})
+async def test_unknown_file_type_rejected(client):
+    r = await client.post("/v1/checks", headers=AUTH, files={"files": ("a.bin", b"not a media file" * 10, None)})
     assert r.status_code == 400 and r.json()["error_code"] == "UNSUPPORTED_TYPE"
 
 

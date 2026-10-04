@@ -2,8 +2,10 @@
 from __future__ import annotations
 
 import json
+import mimetypes
 from pathlib import Path
 
+from app.intake.links import platform_of
 from app.llm import LLM, MediaPart
 from app.models import CheckRequest, Extraction, FetchedPost
 from app.prompts import load_prompt
@@ -13,7 +15,14 @@ PROMPT = "01_extractor.md"
 
 
 def media_seconds(req: CheckRequest) -> float:
-    return sum(m.duration_s or 0 for m in req.media if m.kind in ("video", "audio"))
+    """Seconds of audio/video Gemini will watch; sets the extraction timeout and the check budget.
+
+    A YouTube link has no known duration here, so it counts as the full max_media_seconds clip.
+    """
+    seconds = sum(m.duration_s or 0 for m in req.media if m.kind in ("video", "audio"))
+    if req.url and platform_of(req.url) == "youtube":
+        seconds += float(get_config().limits["input"]["max_media_seconds"])
+    return seconds
 
 
 def build_prompt(req: CheckRequest, fetched: FetchedPost | None) -> tuple[str, str]:
@@ -46,7 +55,8 @@ def media_parts(req: CheckRequest, fetched: FetchedPost | None) -> list[MediaPar
         for m in req.media
     ]
     if fetched:
-        parts += [MediaPart(mime_type="image/jpeg", uri=u) for u in fetched.image_uris]
+        parts += [MediaPart(mime_type=mimetypes.guess_type(u)[0] or "image/jpeg", **_media_source(u))
+                  for u in fetched.image_uris]
         if fetched.youtube_url:
             parts.append(MediaPart(mime_type="video/mp4", uri=fetched.youtube_url,
                                    end_offset_s=limits["max_media_seconds"], low_resolution=True))
@@ -73,7 +83,16 @@ def finalize(extraction: Extraction) -> Extraction:
     return extraction.model_copy(update=update)
 
 
+def has_content(req: CheckRequest, fetched: FetchedPost | None) -> bool:
+    """Anything for the model to read. With nothing, Gemini has been seen inventing a claim."""
+    fetched_any = bool(fetched and (fetched.text or fetched.title or fetched.image_uris or fetched.youtube_url))
+    return bool((req.text or "").strip() or req.media or fetched_any)
+
+
 async def extract(llm: LLM, req: CheckRequest, fetched: FetchedPost | None = None) -> Extraction:
+    if not has_content(req, fetched):
+        return Extraction(content_language="en-IN", content_script="Latn", summary_en="Nothing readable was shared.",
+                          checkable=False, non_checkable_type="OTHER")
     text, version = build_prompt(req, fetched)
     timeout = get_config().extraction_timeout(media_seconds(req))
     result = await llm.generate(

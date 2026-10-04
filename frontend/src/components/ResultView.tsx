@@ -126,11 +126,18 @@ export function ClaimCard({
 
 export function ResultView({ result, onFeedback }: { result: CheckResult; onFeedback?: (helpful: boolean) => void }) {
   const { t } = useTranslation()
+  // Part of the answer, so in the post's language; the display language if we could not read the post.
+  const { t: tc } = useTranslation(undefined, { lng: contentLng(result.content_language) })
   const [sent, setSent] = useState(false)
 
   return (
     <div className="result">
       {result.cache_tier_hit !== 'NONE' && <p className="pill">{t('result.cached')}</p>}
+      {result.media_missing_prompt && (
+        <p className="card notice" role="status" lang={result.content_language ?? undefined}>
+          {tc('result.mediaMissing')}
+        </p>
+      )}
       {result.non_checkable_type && (
         <article className="card">
           <VerdictBadge label="NOT_CHECKABLE" large lang={result.content_language} />

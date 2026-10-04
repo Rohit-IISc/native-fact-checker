@@ -78,7 +78,7 @@ async def run_case(case: Case, runs_dir: Path, record: bool) -> Outcome:
     if file and not Path(file).is_absolute():
         file = str(ROOT / file)
     try:
-        req, _keys, _notes = harness.build_request(inp.get("text"), file, inp.get("url"))
+        req, _keys, _notes = await harness.build_request(inp.get("text"), file, inp.get("url"))
     except (InvalidInput, OSError) as e:
         return Outcome(case, "ERROR", reasons=[f"bad input: {e}"])
 

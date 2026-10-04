@@ -292,6 +292,8 @@ class MediaRef(BaseModel):
     size_bytes: int
     sha256: str
     duration_s: float | None = None
+    phash: str | None = None            # images: 64-bit pHash, 16 hex chars (tier 1 near match)
+    frame_phashes: list[str] = []       # video: pHash of one keyframe every 5 s
 
 
 class CheckRequest(BaseModel):

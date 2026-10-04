@@ -123,7 +123,7 @@ async def amain(a: argparse.Namespace) -> int:
     setup_logging(logging.WARNING)  # the report already shows every model call
     s = get_settings()
     try:
-        req, keys, notes = harness.build_request(a.text, a.file, a.url)
+        req, keys, notes = await harness.build_request(a.text, a.file, a.url)
     except InvalidInput as e:
         print(f"{RED}invalid input:{RESET} {e.error_code}: {e.message}")
         return 2

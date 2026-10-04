@@ -1,0 +1,7 @@
+id: 06b-hi-laptop-scheme-image
+case: 6
+# Synthetic WhatsApp-style image (rendered for this repo): Hindi text in the image only, no caption.
+input:
+  file: tests/acceptance/media/hi-free-laptop-scheme.jpg
+language: hi
+expected: [SCAM, FALSE]

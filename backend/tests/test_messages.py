@@ -25,7 +25,7 @@ def test_unknown_language_falls_back_to_english():
 
 
 async def test_hindi_post_gets_hindi_answer(llm):
-    req, _, _ = harness.build_request("सरकार सभी को मुफ्त लैपटॉप दे रही है।")
+    req, _, _ = await harness.build_request("सरकार सभी को मुफ्त लैपटॉप दे रही है।")
     run, _ = await harness.run(req, store=MemoryStore(), llm=llm)
     hi = get_config().messages["hi"]["stub"]
     claim = run.result.claims[0]

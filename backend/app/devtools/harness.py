@@ -6,7 +6,7 @@ that sees every set_stage() write, so the runner itself stays unaware of the CLI
 from __future__ import annotations
 
 import asyncio
-import hashlib
+import functools
 import json
 import time
 from dataclasses import dataclass, field
@@ -19,10 +19,12 @@ from pydantic import BaseModel
 from app.agents import extractor
 from app.devtools.recording import CapturingLLM
 from app.ids import ulid
+from app.intake import links
+from app.intake import media as media_lane
 from app.intake.hashing import extract_urls, text_key, url_key
 from app.intake.validate import UploadedFile, sniff, validate
 from app.llm import LLM, StageFailed
-from app.models import CheckRequest, CheckResult, Extraction, MediaRef
+from app.models import CheckRequest, CheckResult, Extraction
 from app.observability.calls import CheckLedger, ledger_var
 from app.observability.logging import check_id_var
 from app.pipeline import runner
@@ -117,33 +119,31 @@ class Run:
         }
 
 
-def build_request(
+async def build_request(
     text: str | None = None, file: str | None = None, url: str | None = None
 ) -> tuple[CheckRequest, list[str], list[str]]:
-    """Same validation and cache keys as POST /v1/checks, plus local media the API cannot take yet."""
+    """Same validation, fingerprints, storage and cache keys as POST /v1/checks."""
     notes: list[str] = []
     uploads = []
     if file:
-        path = Path(file).expanduser().resolve()
+        path = Path(file).expanduser().resolve()  # noqa: ASYNC240  dev CLI, one local file
         data = path.read_bytes()
         if sniff(data) is None and file.endswith((".txt", ".md")):
             text = ((text or "") + "\n" + data.decode("utf-8")).strip()
         else:
             uploads.append(UploadedFile(path.name, data))
     typed = validate(text, url, uploads)
-    media = [
-        MediaRef(kind=kind, mime_type=mime, uri=str(Path(file).expanduser().resolve()), size_bytes=len(f.data),
-                 sha256=hashlib.sha256(f.data).hexdigest())
-        for f, kind, mime in typed
-    ]
-    if media:
-        notes.append("media sent inline from a local path; the API media lane (GCS upload, pHash) is Day 2")
-    url = (url or "").strip() or next(iter(extract_urls(text)), None)
-    if url:
-        notes.append("link fetch ladder is not built yet (Day 2): the extractor sees only the shared text")
-    keys = [k for k in [text_key(text) if text else None, url_key(url) if url else None] if k]
     check_id = ulid()
-    req = CheckRequest(check_id=check_id, uid=DEV_UID, text=text, url=url, media=media,
+    ingested = await media_lane.fingerprint(typed) if typed else []
+    stored = await media_lane.store(check_id, ingested) if ingested else []
+    if any(i.trimmed for i in ingested):
+        notes.append("media longer than the limit: only the first part is checked")
+    url = (url or "").strip() or next(iter(extract_urls(text)), None)
+    if ingested:
+        keys = [f"sha256:{i.sha256}" for i in ingested]
+    else:
+        keys = [k for k in [text_key(text) if text else None, url_key(url) if url else None] if k]
+    req = CheckRequest(check_id=check_id, uid=DEV_UID, text=text, url=url, media=stored,
                        share_date=datetime.now(UTC).date())
     return req, keys, notes
 
@@ -162,7 +162,9 @@ async def run(req: CheckRequest, *, store: Store, llm: LLM, stage: str = "full",
         ledger_var.set(out.ledger)
         tracing._mark("extracting")
         try:
-            out.extraction = await extractor.extract(llm, req)
+            fetched = await links.fetch(req.url, store_image=functools.partial(
+                media_lane.store_link_image, req.check_id)) if req.url else None
+            out.extraction = await extractor.extract(llm, req, fetched)
         except StageFailed as e:
             out.error = str(e)
         tracing._mark("done")

@@ -1,0 +1,45 @@
+{
+  "prompt_version": "extractor-1.1+shared-1.0",
+  "model_id": "gemini-3.8-flash",
+  "recorded_at": "2026-10-04T19:36:15+00:00",
+  "output": {
+    "content_language": "hi-IN",
+    "content_script": "Deva",
+    "summary_en": "The image advertises a purported government scheme called 'Pradhan Mantri Muft Laptop Yojana 2026' promising free laptops to all students. It instructs readers to register their names through a provided website link before October 15.",
+    "checkable": true,
+    "non_checkable_type": null,
+    "claims": [
+      {
+        "claim_id": "claim_1",
+        "claim_original": "प्रधानमंत्री मुफ्त लैपटॉप योजना 2026: सभी छात्रों को सरकार की ओर से मुफ्त लैपटॉप दिया जा रहा है।",
+        "claim_en": "The government is offering free laptops to all students under the 'Pradhan Mantri Muft Laptop Yojana 2026'.",
+        "claim_type": "GOVERNMENT_SCHEME",
+        "entities": [
+          "Government of India",
+          "Pradhan Mantri Muft Laptop Yojana"
+        ],
+        "place": "India",
+        "claimed_date": null,
+        "time_sensitivity": "EVERGREEN",
+        "search_queries_original": [
+          "प्रधानमंत्री मुफ्त लैपटॉप योजना 2026",
+          "PM free laptop yojana sach ya jhooth",
+          "मुफ्त लैपटॉप योजना सरकार"
+        ],
+        "search_queries_en": [
+          "Pradhan Mantri Muft Laptop Yojana fact check",
+          "PM Free Laptop Scheme PIB fact check",
+          "free laptop scheme for all students government"
+        ]
+      }
+    ],
+    "extra_claims_not_checked": [],
+    "ocr_text": "बड़ी खुशखबरी\n\nप्रधानमंत्री मुफ्त लैपटॉप योजना 2026\nसभी छात्रों को सरकार की ओर से\nमुफ्त लैपटॉप दिया जा रहा है।\nआवेदन की अंतिम तिथि: 15 अक्टूबर\nनीचे दिए लिंक पर क्लिक करके\nअपना नाम दर्ज करें।\nwww.pm-free-laptop-yojana.in\nइसे सभी ग्रुप में फॉरवर्ड करें",
+    "transcript": null,
+    "visual_description_en": "A graphic with an orange header displaying Hindi text saying 'Big Good News', followed by a white background with black text announcing a free laptop scheme for students with a registration deadline of October 15, a website link written in blue, and a red note asking users to forward the message to all groups.",
+    "ai_generation_signals": null,
+    "origin_hints": [
+      "www.pm-free-laptop-yojana.in"
+    ]
+  }
+}

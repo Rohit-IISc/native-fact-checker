@@ -92,6 +92,7 @@ repo/
 
 ## How to work
 
+- Keep `docs/PROGRESS.md` up to date. After finishing any task, and before Rohit stops working, update it with: current build-plan day, what's done, what's in progress (file and function), what's broken, the exact next step, and the latest `make accept` results. Commit it together with the code it describes.
 - Build vertically: one input type working end to end before adding the next. Day 1 target is text-only end to end with a stub verdict.
 - Put a deadline on every external call. Use `asyncio.wait_for` with values from `config/limits.yaml`.
 - Every model call returns structured JSON validated by Pydantic. On validation failure retry once with the error appended, then fail the stage gracefully.

@@ -3,8 +3,10 @@ real pipeline. Free and fast; catches pipeline regressions on real-shaped model 
 import pytest
 
 from app.devtools import harness
-from app.devtools.accept import load_cases, same_language
+from app.devtools.accept import ROOT, load_cases, same_language
 from app.devtools.recording import load_fixtures, recorded_cases, replay_llm
+from app.intake import links
+from app.models import FetchedPost
 from app.prompts import load_prompt
 from app.store import MemoryStore
 
@@ -14,9 +16,16 @@ RECORDED = [cid for cid in recorded_cases() if cid in CASES]
 
 
 @pytest.mark.parametrize("case_id", RECORDED)
-async def test_recorded_case_replays(case_id):
+async def test_recorded_case_replays(case_id, monkeypatch):
     case = CASES[case_id]
-    req, _, _ = harness.build_request(case.input.get("text"), None, case.input.get("url"))
+
+    async def offline_fetch(url, **_):
+        # make test stays offline; the extractor output is replayed, so the page text is not needed.
+        return FetchedPost(source_url=url, platform="news", text="(recorded)", fetch_method="html")
+
+    monkeypatch.setattr(links, "fetch", offline_fetch)
+    file = case.input.get("file")
+    req, _, _ = await harness.build_request(case.input.get("text"), file and str(ROOT / file), case.input.get("url"))
     run, _ = await harness.run(req, store=MemoryStore(), llm=replay_llm(case_id))
     assert run.error is None
     assert run.result is not None and run.result.status == "DONE"

@@ -15,7 +15,7 @@ input:
 timeouts_s:
   tier1: 5
   link_fetch: 10
-  extraction_base: 15
+  extraction_base: 25            # measured Oct 4: text 4-6 s, image 7-10 s, rare stalls past 15 s
   extraction_per_media_second: 0.2
   tier2: 6
   sub_agent: 28

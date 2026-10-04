@@ -19,9 +19,10 @@ from app import quota
 from app.auth import User, current_user, verify_pubsub_push
 from app.cache import tier1
 from app.ids import ulid
+from app.intake import media
 from app.intake.hashing import extract_urls, text_key, url_key
 from app.intake.validate import InvalidInput, UploadedFile, validate
-from app.models import CheckRequest, CheckResult, Stage
+from app.models import CheckRequest, CheckResult, MediaRef, Stage
 from app.observability.logging import check_id_var, log_event, setup_logging
 from app.pipeline.dispatch import dispatch
 from app.pipeline.progress import CHECKS, PROGRESS, now_iso
@@ -98,12 +99,16 @@ async def create_check(
         typed = validate(text, url, uploads)
     except InvalidInput as e:
         return error(400, e.error_code, e.message)
-    if typed:
-        # Media lane (upload to GCS, hashing, pHash, ffprobe) lands on Day 2.
-        return error(400, "UNSUPPORTED_TYPE", "Images, video and audio are not supported yet")
+    # Fingerprint media before anything else: the tier 1 lookup needs the hashes, and files are
+    # stored only on a cache miss.
+    ingested = await media.fingerprint(typed) if typed else []
 
     url = (url or "").strip() or next(iter(extract_urls(text)), None)
-    keys = [k for k in [text_key(text) if text else None, url_key(url) if url else None] if k]
+    if ingested:
+        # With media, only media keys identify the share: the same photo with a new caption is a hit.
+        keys = [f"sha256:{i.sha256}" for i in ingested]
+    else:
+        keys = [k for k in [text_key(text) if text else None, url_key(url) if url else None] if k]
 
     allowed, status = await quota.consume(store, user)
     if not allowed:
@@ -114,11 +119,17 @@ async def create_check(
     now = datetime.now(UTC)
     base = {
         "check_id": check_id, "uid": user.uid, "created_at": now.isoformat(),
-        "input_types": _input_types(text, url, []), "source_url": url, "client_lang": client_lang,
+        "input_types": _input_types(text, url, [i.kind for i in ingested]), "source_url": url,
+        "client_lang": client_lang, "media_trimmed": any(i.trimmed for i in ingested),
     }
 
     # Tier 1 cache (shared by all users). Cache hits count against quota (docs/08).
-    hit = await tier1.lookup(store, keys)
+    if ingested:
+        probe = [MediaRef(kind=i.kind, mime_type=i.mime_type, uri="", size_bytes=len(i.file.data), sha256=i.sha256,
+                          phash=i.phash, frame_phashes=i.frame_phashes) for i in ingested]
+        hit = await tier1.lookup_media(store, probe)
+    else:
+        hit = await tier1.lookup(store, keys)
     if hit:
         result = _cached_result(check_id, hit)
         await store.set(CHECKS, check_id, {
@@ -136,7 +147,8 @@ async def create_check(
         await quota.refund(store, user.uid)
         return error(503, "BUSY", "We are very busy right now. Please try again later.")
 
-    req = CheckRequest(check_id=check_id, uid=user.uid, text=text, url=url, client_lang=client_lang,
+    stored = await media.store(check_id, ingested) if ingested else []
+    req = CheckRequest(check_id=check_id, uid=user.uid, text=text, url=url, media=stored, client_lang=client_lang,
                        share_date=quota.local_date(now))
     await store.set(CHECKS, check_id, {
         **base, "status": "RUNNING", "stage": Stage.RECEIVED.value, "stage_label_key": "stage.received",

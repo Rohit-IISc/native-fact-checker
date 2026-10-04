@@ -79,6 +79,7 @@
     "extraClaims": "Other claims in this post we did not check",
     "audioSoon": "Audio is being prepared…",
     "none": "None found",
+    "mediaMissing": "We could not open the photo or video in this link. Share a screenshot or screen recording for a full check.",
     "aiTitle": "Is this image AI-made?",
     "aiLikelihood": "{{n}} out of 100 likely AI-made",
     "aiSignalsAi": "Signs it may be AI-made",

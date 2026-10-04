@@ -45,7 +45,10 @@ if ! gcloud pubsub subscriptions describe check-jobs-push >/dev/null 2>&1; then
     --ack-deadline=600 \
     --dead-letter-topic=check-jobs-dlq --max-delivery-attempts=5
 else
-  gcloud pubsub subscriptions update check-jobs-push --push-endpoint="${URL}/internal/pipeline"
+  # Repeat the auth flags: an update with only --push-endpoint drops the OIDC token, and every push
+  # then fails with 401 at /internal/pipeline.
+  gcloud pubsub subscriptions update check-jobs-push --push-endpoint="${URL}/internal/pipeline" \
+    --push-auth-service-account="$PUSH_SA" --push-auth-token-audience="${URL}/internal/pipeline"
 fi
 # Pub/Sub's service agent must be able to publish to the DLQ and ack the source subscription:
 PNUM=$(gcloud projects describe "$PROJECT_ID" --format='value(projectNumber)')
