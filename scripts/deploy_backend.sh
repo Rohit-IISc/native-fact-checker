@@ -8,6 +8,17 @@ API_SA="api-sa@${PROJECT_ID}.iam.gserviceaccount.com"
 PUSH_SA="push-sa@${PROJECT_ID}.iam.gserviceaccount.com"
 MIN_INSTANCES="${MIN_INSTANCES:-0}"   # set to 1 during judging
 
+# Mount only secrets that have a version (meta-oembed-token stays empty until Instagram/Facebook
+# links need it); an empty secret would fail the whole deploy.
+SECRETS=""
+for pair in FACTCHECK_API_KEY=factcheck-tools-api-key META_OEMBED_TOKEN=meta-oembed-token; do
+  if [ -n "$(gcloud secrets versions list "${pair#*=}" --project="$PROJECT_ID" --limit=1 --format='value(name)' 2>/dev/null)" ]; then
+    SECRETS="${SECRETS:+$SECRETS,}${pair}:latest"
+  else
+    echo "Skipping secret ${pair#*=}: no versions"
+  fi
+done
+
 gcloud run deploy "$SERVICE" \
   --source=. \
   --region="$REGION" \
@@ -16,7 +27,8 @@ gcloud run deploy "$SERVICE" \
   --cpu=2 --memory=2Gi --concurrency=10 --timeout=300 \
   --min-instances="$MIN_INSTANCES" --max-instances=20 \
   --set-env-vars="^;^GCP_PROJECT=${PROJECT_ID};REGION=${REGION};FIRESTORE_DB=(default);PIPELINE_MODE=pubsub;STORE=firestore;AUTH_MODE=firebase;LLM_MODE=gemini;BIGQUERY_ENABLED=1;APP_CHECK_ENFORCE=true;LOG_LEVEL=INFO;PUSH_SA=${PUSH_SA};PUBLIC_BASE_URL=${PUBLIC_BASE_URL:-https://${PROJECT_ID}.web.app};CORS_ORIGINS=${CORS_ORIGINS:-https://${PROJECT_ID}.web.app,https://${PROJECT_ID}.firebaseapp.com}" \
-  --set-secrets="FACTCHECK_API_KEY=factcheck-tools-api-key:latest,META_OEMBED_TOKEN=meta-oembed-token:latest"
+  --project="$PROJECT_ID" \
+  --set-secrets="$SECRETS"
 
 URL=$(gcloud run services describe "$SERVICE" --region="$REGION" --format='value(status.url)')
 echo "Service URL: $URL"

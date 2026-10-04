@@ -17,6 +17,7 @@ frontend/dev-dist/
 # Non-secret committed defaults (secrets come from Codespaces secrets / Secret Manager)
 !backend/.env.defaults
 !frontend/.env.development
+!frontend/.env.production
 frontend/.env.local
 *.pem
 *-key.json
