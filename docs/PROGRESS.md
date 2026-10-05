@@ -2,66 +2,82 @@
 
 Updated after every task (see CLAUDE.md, "How to work"). Newest state only; history is in git.
 
-**Last updated:** Sun Oct 4, 2026, evening
-**Build-plan day:** Day 2 (media and links), started early. Day 0 and Day 1 done.
-**Deployed:** https://ai-builder-2026.web.app (Hosting) -> Cloud Run `factcheck-api` revision 00002, asia-south1
+**Last updated:** Mon Oct 5, 2026, evening
+**Build-plan day:** Day 1 of the calendar, but Days 0 to 4 are done (Day 5 composer done; TTS and card not yet).
+**Deployed:** https://ai-builder-2026.web.app -> Cloud Run `factcheck-api` (asia-south1). `make smoke` verified it.
 
 ## Done
 
-- Day 0: GCP bootstrap, Firestore `(default)` + `dev-db` (IDs need 4+ chars, so not `dev`), rules on both,
-  Cloud Run + Hosting deployed, Pub/Sub push wired.
-- Day 1: text lane end to end (sign-in, consent, live progress, extractor, stub verdict, history).
-- Dev loop: `make dev` (honcho), `make try`, `make accept`, `make record`, `make test` (replays fixtures).
-- Answers in the content language (decision 15): `config/messages.yaml` (5 languages), result screen
-  headings in the post's language, UI chrome in the display language.
-- Extractor prompt 1.1: JOKE/SATIRE only for clear humour; fixed language codes (`en-IN` etc.).
-- Day 2 media lane (`backend/app/intake/media.py`): magic-byte validation, GCS upload to
-  `{project}-media/{check_id}/`, ffprobe duration (over 3 min: flagged `media_trimmed`, first 3 min
-  checked), image pHash, video keyframe pHashes (1 every 5 s).
-- Day 2 tier 1 media cache (`backend/app/cache/tier1.py`: `lookup_media`, `write_media`): exact sha256,
-  near-duplicate image (Hamming <= 6), re-encoded video (60% of keyframes). Same photo + new caption hits.
-- Day 2 link ladder (`backend/app/intake/links.py`: `fetch`): shorteners, YouTube (URL straight to
-  Gemini), X oEmbed (marks `media_missing`), Meta oEmbed (needs token), generic page (Open Graph +
-  trafilatura + og:image). SSRF guard at every hop, 5 MB cap, 10 s deadline. Unreadable link with no
-  other content: "share a screenshot" prompt, quota refunded.
-- Extractor is never called with empty input (Gemini invented a claim when it was).
-- `extraction_base` timeout 15 s -> 25 s after measuring (text 4-6 s, images 7-10 s, rare stalls > 15 s).
-- Fixed: `deploy_backend.sh` redeploys wiped the Pub/Sub push OIDC token (every push then 401).
+- Days 0-2: deploy, text/media/link lanes, tier 1 cache (exact + near-duplicate media), dev loop
+  (`make dev`, `make try`, `make accept`, `make record`, `make test`, `make smoke`), answers in the
+  content language.
+- Day 3 fan-out (`backend/app/agents/`, run by `pipeline/investigate.py:fan_out`):
+  - `web_search.py`: grounded Google Search (free text with [n] citations), then a classify call that cites
+    sources by number. Every evidence URL is a page search returned; the model never types a URL.
+  - `factcheck_sites.py`: Fact Check Tools API (original language, English, Hindi for other Indian
+    languages; queries also without years), then Flash classifies.
+  - `source_credibility.py`: offender record, RDAP domain age, lookalike domains, then Flash.
+  - `media_provenance.py`: Cloud Vision web detection on images and 3 video keyframes, page publish dates.
+  - Tool calls live in `agents/tools.py` (record/replay for tests).
+- Day 3 tier 2 cache (`cache/tier2.py`): embeddings + Firestore vector search + Flash near-match.
+  Paraphrases sit at 0.030-0.065 cosine distance but near-miss different claims at 0.013-0.052, so the
+  near-match check decides (16/16 correct on test pairs incl. Rs 5 vs Rs 15). A repeat claim in other
+  words, even another language: ~5-7 s and ~$0.001.
+- Day 3 `scripts/seed_sources.py`: offender list from published fact checks (53 sources, 0 repeat
+  offenders yet). Skips claimants that are the reviewing fact-checker (tempo.co, suara.com, tirto.id do this).
+- Day 4 panel (`agents/packager.py`, `agents/panel_agents.py`, `pipeline/panel.py`): packager ->
+  judge -> critic -> revision -> source policy. NOT_ENOUGH_EVIDENCE confidence capped at 50.
+- Day 5 (part): composer writes native and English answers in parallel; checks the answer is in the
+  expected script (en-IN answers came back in Hindi 1 in 3 before the fix); translate mode for cache reuse.
+- Reliability: every stage has a deadline from the remaining 90 s budget and degrades instead of failing;
+  hedged model calls for tail stalls; one retry on Vertex 5xx/429; stage errors recorded on the check doc
+  (`stage_errors`, hidden from the API).
+- Models (measured, see comments in `config/models.yaml`): flash = gemini-2.5-flash (3.8-flash took
+  13-23 s per extraction), pro = gemini-2.5-pro with a 1024-token thinking budget (3.1-pro-preview 35-51 s).
+- Meta oEmbed is tokenless since June 2026; Instagram/Facebook use oEmbed then Open Graph with an honest
+  link-preview bot user agent (caption, @handle, date, photo).
 
 ## In progress
 
-- Nothing mid-edit. Day 2 code is complete and deployed; Android share-target test is pending (below).
+- Nothing mid-edit.
 
 ## Broken or risky
 
-- Verdicts are still the Day 1 stub (always NOT_ENOUGH_EVIDENCE) until Day 3 (sub-agents) and Day 4 (panel).
-  Because stub verdicts are never cached, repeat shares of checkable content are not cache hits yet;
-  not-checkable results (greetings) are.
-- Cloud Run caps request bodies at 32 MB, below our 50 MB share limit. Large videos need direct-to-GCS
-  signed-URL upload. Most WhatsApp forwards are well under 32 MB.
-- `meta-oembed-token` secret is empty: Instagram/Facebook links fall back to Open Graph (caption only).
-- Extraction has no retry: one stalled Gemini call fails the check (refunded). Consider one retry.
-- Not tested yet: Web Share Target from WhatsApp on a real Android phone (needs Rohit's phone).
+- **Decision for Rohit: source tiers.** VOA, PBS, TIME, Astronomy.com, The Tribune, Lead Stories (IFCN)
+  are TIER_3 because they are not in `config/source_tiers.yaml`, so a TRUE claim covered only by such
+  outlets ends NOT_ENOUGH_EVIDENCE (case 08 does this in about 1 of 3 runs). Adding outlets changes what
+  can back a verdict, so it needs your sign-off.
+- Not built with Google ADK: the fan-out uses asyncio over our instrumented model wrapper (cheaper, faster,
+  testable). If ADK use matters for judging, wrap the agent functions in ADK agents.
+- Cost ~$0.10 per full check, mostly grounding ($14 per 1000 queries after 5000 free per month; hedged
+  searches duplicate queries). Cache hits ~$0.001.
+- Latency 36-77 s per full check (target < 90 s); image checks are the slowest.
+- Offender list is thin: the Fact Check API's claimant is usually a name, not a domain. A richer list needs
+  appearance URLs from each fact check page's ClaimReview markup.
+- Tier 1 cache hit for the same media with a caption in another language returns the original language
+  (acceptance case 3 wants a new-language answer). Translate mode exists; wire it into the T1 path.
+- Not built yet: TTS audio, correction card, FCM push, BigQuery dashboards, eval runner, Cloud Build trigger.
+- Cloud Run caps uploads at 32 MB (our limit is 50 MB): large videos need signed-URL upload.
 
 ## Next step
 
-1. Rohit: install the PWA from https://ai-builder-2026.web.app on Android (Chrome menu -> Install app),
-   then share a WhatsApp image, a video and a link to it. Report what happens.
-2. Then start Day 3: `backend/app/agents/` web_search, factcheck_sites, source_credibility,
-   media_provenance with timeouts; `scripts/seed_sources.py`; tier 2 cache.
+1. Rohit: decide on the source-tier additions above; test the deployed app with WhatsApp shares on Android.
+2. Day 5 rest: `backend/app/output/tts.py` (Gemini TTS), `output/card.py` (Pillow + libraqm + Noto),
+   `output/notify.py` (FCM), then the public result page.
 
-## Latest `make accept` (Oct 4, real Gemini)
+## Latest `make accept` (Oct 5, real models, after extractor 1.2)
 
-| case | result | label | lang | latency |
+| case | result | label (primary first) | lang | latency |
 | --- | --- | --- | --- | --- |
-| 05-ta-health-remedy | FAIL (stub verdict) | NOT_ENOUGH_EVIDENCE | ta-IN | 4.9 s |
-| 06-hi-free-recharge-scheme | FAIL (stub verdict) | NOT_ENOUGH_EVIDENCE | hi-IN | 6.7 s |
-| 06b-hi-laptop-scheme-image | FAIL (stub verdict) | NOT_ENOUGH_EVIDENCE | hi-IN | 8.2 s |
-| 07-id-vaccine-microchip | FAIL (stub verdict) | NOT_ENOUGH_EVIDENCE | id-ID | 4.9 s |
-| 08-en-chandrayaan3-landing | FAIL (stub verdict) | NOT_ENOUGH_EVIDENCE | en-IN | 4.0 s |
-| 11-hi-greeting | PASS | NOT_CHECKABLE | hi-IN | 2.3 s |
-| 13-en-news-link | FAIL (stub verdict) | NOT_ENOUGH_EVIDENCE | en-IN | 8.0 s |
-| 15-kn-thin-local-claim | PASS | NOT_ENOUGH_EVIDENCE | kn-IN | 3.5 s |
-| 90-en-prompt-injection | FAIL (stub verdict) | NOT_ENOUGH_EVIDENCE | en-IN | 4.1 s |
+| 05-ta-health-remedy | PASS | FALSE | ta-IN | 42.6 s |
+| 06-hi-free-recharge-scheme | PASS | SCAM | hi-IN | 62.2 s |
+| 06b-hi-laptop-scheme-image | PASS | SCAM | hi-IN | 77.6 s |
+| 07-id-vaccine-microchip | PASS | FALSE | id-ID | 40.3 s |
+| 08-en-chandrayaan3-landing | FAIL | NOT_ENOUGH_EVIDENCE (only TIER_3 sources found this run) | en-IN | 45.1 s |
+| 11-hi-greeting | PASS | NOT_CHECKABLE | hi-IN | 1.5 s |
+| 13-en-news-link | PASS | TRUE | en-IN | 59.6 s |
+| 15-kn-thin-local-claim | PASS | NOT_ENOUGH_EVIDENCE | kn-IN | 50.1 s |
+| 90-en-prompt-injection | PASS | FALSE | en-IN | 45.3 s |
 
-2/9 pass on label (expected while verdicts are stubbed); language 9/9; about $0.003 to $0.006 per case.
+8/9 pass; language 9/9; average 47 s; $0.95 for the suite. `make test`: 172 passed offline.
+Latest `make smoke` (production): 5/5 full checks correct in 36-77 s, tier 2 repeat in 4.9 s.

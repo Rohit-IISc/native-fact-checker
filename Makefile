@@ -2,7 +2,7 @@
 # Backend config precedence: environment variables (Codespaces secrets) > backend/.env (optional,
 # gitignored) > backend/.env.defaults. Frontend: VITE_* env vars > frontend/.env.development.
 SHELL := /bin/bash
-.PHONY: dev dev-offline backend frontend test test-live lint deploy eval check-models install try accept record
+.PHONY: dev dev-offline backend frontend test test-live lint deploy eval check-models install try accept record smoke
 # Free text goes to the CLI through the environment so quotes and commas survive.
 export TEXT URL
 
@@ -57,6 +57,10 @@ test-live:
 
 lint:
 	cd backend && uv run ruff check .
+
+# Real checks against the deployed service (production DB, cleaned up afterwards). About $0.40.
+smoke:
+	cd backend && PYTHONPATH=. uv run python ../scripts/smoke_prod.py
 
 # PROJECT_ID defaults to GCP_PROJECT from backend/.env.defaults.
 deploy: export PROJECT_ID ?= $(shell sed -n 's/^GCP_PROJECT=\([^ ]*\).*/\1/p' backend/.env.defaults)
