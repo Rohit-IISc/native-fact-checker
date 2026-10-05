@@ -7,8 +7,10 @@ LLM_MODE=fake swaps in FakeLLM (recorded fixtures) so tests make no paid calls.
 from __future__ import annotations
 
 import asyncio
+import hashlib
 import json
 import logging
+import re
 import time
 from collections.abc import Awaitable, Callable
 from dataclasses import dataclass
@@ -57,6 +59,8 @@ class LLM(Protocol):
     ) -> T: ...
 
     async def search(self, *, stage: str, prompt: str, prompt_version: str, timeout_s: float) -> GroundedText: ...
+
+    async def embed(self, texts: list[str], *, timeout_s: float) -> list[list[float]]: ...
 
 
 def _thinking_config(model: dict[str, Any]):
@@ -166,6 +170,29 @@ class GeminiLLM:
                     f"Return corrected JSON only.\n{last_error}"
                 )
         raise StageFailed(stage, f"invalid output after retry: {last_error[:300]}")
+
+    async def embed(self, texts: list[str], *, timeout_s: float) -> list[list[float]]:
+        """Embeddings for tier 2 (config/models.yaml `embedding`), one vector per text."""
+        from google.genai import types
+
+        m = get_config().models["models"]["embedding"]
+        call = ModelCall(check_id=check_id_var.get(), stage="embedding", model_id=m["id"], prompt_version="-")
+        started = time.monotonic()
+        try:
+            resp = await _retry_once(lambda: _hedged(lambda: self._client.aio.models.embed_content(
+                model=m["id"], contents=texts,
+                config=types.EmbedContentConfig(output_dimensionality=int(m["dims"]), task_type="SEMANTIC_SIMILARITY"),
+            ), timeout_s, m.get("hedge_after_s"), "embedding"))
+        except Exception as e:  # noqa: BLE001  tier 2 is an optimisation; never fail the check for it
+            call.success = False
+            call.latency_ms = int((time.monotonic() - started) * 1000)
+            _record(call)
+            raise StageFailed("embedding", f"{type(e).__name__}: {str(e)[:200]}") from e
+        call.latency_ms = int((time.monotonic() - started) * 1000)
+        call.input_tokens = sum(len(t) // 4 for t in texts)  # the API does not report tokens; estimate
+        call.cost_usd = model_cost("embedding", call.input_tokens, 0)
+        _record(call)
+        return [list(e.values) for e in resp.embeddings]
 
     async def search(self, *, stage: str, prompt: str, prompt_version: str, timeout_s: float) -> GroundedText:
         """Grounding with Google Search, free-text answer. JSON output mode would drop the grounding
@@ -354,6 +381,17 @@ class FakeLLM:
         if isinstance(value, BaseModel):
             return schema.model_validate(value.model_dump())
         return schema.model_validate(json.loads(json.dumps(value, default=str)))
+
+    async def embed(self, texts: list[str], *, timeout_s: float) -> list[list[float]]:
+        """Deterministic bag-of-words vectors: identical or reworded texts land close, unrelated ones far."""
+        dims = int(get_config().models["models"]["embedding"]["dims"])
+        out = []
+        for t in texts:
+            v = [0.0] * dims
+            for w in re.findall(r"\w+", t.lower()):
+                v[int(hashlib.md5(w.encode()).hexdigest(), 16) % dims] += 1.0
+            out.append(v)
+        return out
 
     async def search(self, *, stage: str, prompt: str, prompt_version: str, timeout_s: float) -> GroundedText:
         self.prompts.setdefault(stage, []).append(prompt)

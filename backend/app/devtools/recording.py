@@ -48,6 +48,10 @@ class CapturingLLM:
         self.outputs[stage][slot] = result
         return result
 
+    async def embed(self, texts: list[str], *, timeout_s: float) -> list[list[float]]:
+        # Not recorded: replay uses FakeLLM's deterministic embeddings against an empty store.
+        return await self.inner.embed(texts, timeout_s=timeout_s)
+
     def _reserve(self, stage: str, prompt_version: str) -> int:
         """Record outputs in call-start order, which is the order replay hands them out. Parallel calls
         (native and English composer) finish in any order; recording on completion swapped them."""

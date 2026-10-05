@@ -1,68 +1,68 @@
 {
   "prompt_version": "web-search-classify-1.0+shared-1.0",
   "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-05T17:40:32+00:00",
+  "recorded_at": "2026-10-05T18:12:25+00:00",
   "outputs": [
     {
       "items": [
         {
           "source_n": 1,
           "claim_id": "c1",
-          "publisher": "Jala Hoaks Jakarta",
-          "title": "[HOAKS] - VAKSIN COVID-19 MEMILIKI CHIP YANG DAPAT MELACAK KEBERADAAN ORANG",
-          "published_at": "2021-01-21",
+          "publisher": "Mayo Clinic News Network",
+          "title": "COVID Queries: Altered DNA and Microchips",
+          "published_at": "2021-10-11",
           "language": null,
-          "snippet_en": "Jala Hoaks Jakarta states that the claim of COVID-19 vaccines containing chips to track vaccinated individuals is a hoax. Barcodes on vaccine products are for tracking distribution, not people.",
+          "snippet_en": "Dr. Martin Herrmann of Mayo Clinic Health System states that COVID-19 vaccines do not contain microchips and cannot track people or gather personal information. The myth originated from Bill Gates' comments on a digital certificate of vaccine records, not a microchip.",
           "stance": "CONTRADICTS"
         },
         {
           "source_n": 2,
           "claim_id": "c1",
-          "publisher": "Mayo Clinic News Network",
-          "title": "Covid Queries: Altered DNA and microchips",
-          "published_at": "2021-10-11",
+          "publisher": "CDC Archive",
+          "title": null,
+          "published_at": "2023-02-16",
           "language": null,
-          "snippet_en": "Dr. Martin Herrmann of Mayo Clinic Health System confirms there is no microchip in the vaccine and no way for it to track people or gather personal information.",
+          "snippet_en": "The CDC explicitly states that COVID-19 vaccines do not contain microchips. Vaccines are designed to stimulate the immune system to fight disease, not for tracking purposes. They do not contain preservatives, tissues, antibiotics, food proteins, latex, or metals.",
           "stance": "CONTRADICTS"
         },
         {
           "source_n": 3,
           "claim_id": "c1",
-          "publisher": "Komdigi",
-          "title": "Vaksin Covid-19 Punya Chip untuk Lacak Orang? Itu Disinformasi!",
-          "published_at": null,
+          "publisher": "Mayo Clinic",
+          "title": null,
+          "published_at": "2026-08-30",
           "language": null,
-          "snippet_en": "Komdigi, referencing the Ministry of Communication and Informatics (Kominfo), states that the claim of COVID-19 vaccines containing chips to track people is false.",
+          "snippet_en": "Mayo Clinic reiterates that COVID-19 vaccines do not contain microchips. The vaccines are made only with ingredients that help the body recognize and clear the virus.",
           "stance": "CONTRADICTS"
         },
         {
           "source_n": 4,
           "claim_id": "c1",
-          "publisher": "KlikDokter",
-          "title": "Medfact: Ada Chip di Vaksin Sinovac?",
-          "published_at": "2021-01-29",
+          "publisher": "Pfizer",
+          "title": null,
+          "published_at": null,
           "language": null,
-          "snippet_en": "KlikDokter addresses the rumor of microchips in Sinovac vaccines, stating it is a hoax. Similar claims were circulating in the US, often linked to Bill Gates.",
+          "snippet_en": "Pfizer's website states that no Pfizer vaccine, including the COVID-19 vaccine, contains microchips or any other tracking devices.",
           "stance": "CONTRADICTS"
         },
         {
           "source_n": 5,
           "claim_id": "c1",
-          "publisher": "Kemenkes",
-          "title": "HOAX : Vaksin COVID-19 Mengandung Mikrocip Magnetis",
-          "published_at": "2021-05-28",
+          "publisher": "Business Insider",
+          "title": null,
+          "published_at": "2020-12-21",
           "language": null,
-          "snippet_en": "The Indonesian Ministry of Health (Kemenkes) explicitly states that the narrative claiming COVID-19 vaccines contain magnetic microchips is untrue and urges the public not to be influenced.",
+          "snippet_en": "Business Insider reports that claims of microchips in COVID-19 vaccines are false and based on misconstrued information. Bill Gates called the conspiracy theory bizarre. The myth may stem from an idea for smart syringe packaging with an optional barcode-like label, not a tracking microchip.",
           "stance": "CONTRADICTS"
         },
         {
           "source_n": 6,
           "claim_id": "c1",
-          "publisher": "Kementerian Komunikasi dan Informatika",
+          "publisher": "FactCheck.org",
           "title": null,
-          "published_at": "2021-02-07",
+          "published_at": "2020-12-15",
           "language": null,
-          "snippet_en": "A Facebook post from the Ministry of Communication and Informatics directly refutes the claim, stating that no chips or barcodes are implanted in COVID-19 vaccines to track people.",
+          "snippet_en": "FactCheck.org debunks a video falsely claiming COVID-19 vaccine vials have microchips to track patients. The claim misrepresents an interview about an optional RFID tag on vials to store vaccine dose information, not to track individuals or personal data.",
           "stance": "CONTRADICTS"
         }
       ],

@@ -1,12 +1,12 @@
 {
-  "prompt_version": "extractor-1.1+shared-1.0",
+  "prompt_version": "extractor-1.2+shared-1.0",
   "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-05T17:40:23+00:00",
+  "recorded_at": "2026-10-05T18:12:25+00:00",
   "outputs": [
     {
       "content_language": "hi-IN",
       "content_script": "Deva",
-      "summary_en": "The content is a morning greeting in Hindi, wishing the recipient and their family well and invoking the blessings of Lord Shiva.",
+      "summary_en": "The content is a morning greeting in Hindi, wishing the recipient and their family the blessings of Lord Shiva for a prosperous day. It includes emojis of a flower and folded hands.",
       "checkable": false,
       "non_checkable_type": "GREETING",
       "claims": [],

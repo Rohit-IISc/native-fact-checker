@@ -193,13 +193,16 @@ async def run_panel(llm: LLM, claims: list[Claim], pack: EvidencePack, budget: B
 
 async def investigate(store: Store, llm: LLM, tools: Tools, req: CheckRequest, extraction: Extraction,
                       fetched: FetchedPost | None, budget: Budget,
-                      timed: Callable[[str, Awaitable[Any]], Awaitable[Any]]) -> Investigation:
+                      timed: Callable[[str, Awaitable[Any]], Awaitable[Any]],
+                      extra_findings: list[AgentFindings] | None = None) -> Investigation:
+    """`extra_findings`: e.g. earlier verdicts on the same claim with a different date (tier 2 context)."""
     inv = Investigation()
     claims = extraction.claims
 
     await set_stage(store, req.check_id, Stage.SEARCHING)
     inv.findings, inv.missing_lanes = await timed("searching", fan_out(store, llm, tools, req, extraction, fetched,
                                                                         budget, inv.stage_errors))
+    inv.findings += extra_findings or []
     for f in inv.findings:
         prompt = {"web_search": web_search.PROMPT, "factcheck_sites": factcheck_sites.PROMPT,
                   "source_credibility": source_credibility.PROMPT,

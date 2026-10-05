@@ -1,28 +1,26 @@
 {
   "prompt_version": "packager-1.1+shared-1.0",
   "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-05T17:45:39+00:00",
+  "recorded_at": "2026-10-05T18:13:21+00:00",
   "outputs": [
     {
       "briefs": [
         {
           "claim_id": "c1",
-          "claim_en": "Two crocodiles were seen in Kukkarahalli Lake in Mysuru yesterday evening, October 4, 2026.",
+          "claim_en": "Two crocodiles were seen in Kukkarahalli Lake in Mysuru yesterday evening.",
           "claimed_date": "2026-10-04",
-          "place": "Kukkarahalli Lake, Mysuru",
-          "brief_en": "Crocodiles have been sighted in Kukkarahalli Lake in Mysuru on multiple occasions. The Hindu reported a 10-foot crocodile on March 26, 2010. Another crocodile was found dead on April 24, 2017, with The Hindu and Vijaya Karnataka reporting starvation as the cause. More recently, the Star of Mysore reported sightings on September 8, 2023, December 1, 2024, and January 28, 2026. News18 Kannada also reported a sighting on September 7, 2023. These reports confirm the presence of crocodiles in the lake over several years.",
+          "place": "Mysuru",
+          "brief_en": "Evidence indicates that crocodiles have been sighted in Kukkarahalli Lake in Mysuru on multiple occasions. The Hindu reported a giant crocodile sighting on March 26, 2010. News18 Kannada and Local18 reported a crocodile sighting on September 7, 2023. Star of Mysore reported a large crocodile sighting on November 30, 2024, and another sighting in January 2026. These reports confirm the presence of crocodiles in the lake but do not specifically mention two crocodiles being seen on October 3, 2026.",
           "evidence_ids": [
-            "ws-3",
-            "ws-7",
-            "ws-8",
-            "ws-2",
-            "ws-1",
-            "ws-4",
             "ws-5",
-            "ws-6"
+            "ws-1",
+            "ws-2",
+            "ws-3",
+            "ws-4"
           ],
           "gaps_en": [
-            "No evidence was found to corroborate the specific claim of two crocodiles being seen on October 4, 2026."
+            "No evidence directly confirms two crocodiles were seen in Kukkarahalli Lake on October 3, 2026.",
+            "No official statements or specific reports for the claimed date were found."
           ]
         }
       ]

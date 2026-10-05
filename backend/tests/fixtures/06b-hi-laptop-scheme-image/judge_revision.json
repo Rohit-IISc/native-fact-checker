@@ -1,0 +1,85 @@
+{
+  "prompt_version": "judge-1.0+shared-1.0+judge-revision-1.0",
+  "model_id": "gemini-2.5-pro",
+  "recorded_at": "2026-10-05T18:12:21+00:00",
+  "outputs": [
+    {
+      "verdicts": [
+        {
+          "claim_id": "c1",
+          "label": "SCAM",
+          "confidence": 100,
+          "what_is_true_en": "The Indian government has not announced any 'Prime Minister Free Laptop Scheme 2026'. Messages promoting this are fake and often part of scams to steal personal information.",
+          "event_date": null,
+          "evidence_for_ids": [],
+          "evidence_against_ids": [
+            "ws-1",
+            "ws-2",
+            "ws-3",
+            "fc-1",
+            "fc-2",
+            "fc-3",
+            "fc-4",
+            "fc-5",
+            "fc-6",
+            "fc-8",
+            "fc-10"
+          ],
+          "cited_ids": [
+            "ws-1",
+            "ws-2",
+            "fc-1",
+            "fc-2",
+            "fc-3"
+          ],
+          "reasoning_en": "Multiple TIER_1 sources, including the government's official broadcaster (newsonair.gov.in) and the Press Information Bureau (PIB), have explicitly stated that the 'Prime Minister Free Laptop Scheme 2026' is fake and no such central government scheme exists. Numerous fact-checking organizations have repeatedly debunked similar claims over several years, identifying them as scams or phishing attempts designed to steal personal data. While some state governments have their own laptop distribution programs, there is no nationwide scheme from the Prime Minister's office.",
+          "ai_generation": null
+        },
+        {
+          "claim_id": "c2",
+          "label": "SCAM",
+          "confidence": 100,
+          "what_is_true_en": "There is no 'Prime Minister Free Laptop Scheme 2026', so there is no application deadline. Claims about a deadline are part of a scam to create false urgency and steal personal information.",
+          "event_date": null,
+          "evidence_for_ids": [],
+          "evidence_against_ids": [
+            "ws-1",
+            "ws-2",
+            "fc-1",
+            "fc-3"
+          ],
+          "cited_ids": [
+            "ws-1",
+            "ws-2",
+            "fc-1",
+            "fc-3"
+          ],
+          "reasoning_en": "The claim about an October 15 deadline is a component of a larger scam. The 'Prime Minister Free Laptop Scheme 2026' itself does not exist, as confirmed by government sources (ws-1, ws-2). The fabricated deadline is a tactic used in these scams to create a false sense of urgency, pressuring individuals to provide personal information through phishing links (fc-1, fc-3). Since the entire scheme is a scam, any associated details like a deadline are also part of the fraudulent activity.",
+          "ai_generation": null
+        },
+        {
+          "claim_id": "c3",
+          "label": "SCAM",
+          "confidence": 100,
+          "what_is_true_en": "The website www.pm-free-laptop-yojana.in is not an official government website. The government has confirmed that claims about a 'Prime Minister Free Laptop Scheme' and associated websites are fake and part of scams.",
+          "event_date": null,
+          "evidence_for_ids": [],
+          "evidence_against_ids": [
+            "ws-13",
+            "ws-14",
+            "ws-15",
+            "fc-11"
+          ],
+          "cited_ids": [
+            "ws-13",
+            "ws-14",
+            "ws-15",
+            "fc-11"
+          ],
+          "reasoning_en": "Government sources, including newsonair.gov.in and the Press Information Bureau (PIB), have explicitly stated that messages and links related to a Prime Minister's free laptop scheme are fake and part of a scam (ws-13, ws-14, ws-15). They advise citizens to use official portals like myscheme.gov.in for authentic information on government schemes. Fact-checkers have also reported on imposter government websites used for free laptop scams (fc-11). Therefore, the website mentioned in the claim is not official and is associated with a known scam.",
+          "ai_generation": null
+        }
+      ]
+    }
+  ]
+}

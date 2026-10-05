@@ -30,6 +30,7 @@ models:
     id: gemini-embedding-001
     dims: 768
     price_in: 0.15
+    hedge_after_s: 2        # usually 0.6-1.7 s; one call stalled past 6 s on Oct 5 (cheap to duplicate)
   tts:
     id: gemini-2.5-flash-tts
     fallbacks: [gemini-2.5-pro-tts]

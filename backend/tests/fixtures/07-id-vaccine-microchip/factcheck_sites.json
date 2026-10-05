@@ -1,7 +1,7 @@
 {
   "prompt_version": "factcheck-1.1+shared-1.0",
   "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-05T17:40:32+00:00",
+  "recorded_at": "2026-10-05T18:12:25+00:00",
   "outputs": [
     {
       "agent": "factcheck_sites",
@@ -16,7 +16,7 @@
           "title": "Keliru, Vaksin Covid-19 Mengandung Microchip yang Bisa ...",
           "published_at": "2021-06-22",
           "language": "en",
-          "snippet_en": "Tempo.co rated as \"Keliru\" the claim that COVID-19 vaccines contain microchips that can light up, stating this claim is false.",
+          "snippet_en": "Tempo.co rated as \"Keliru\" the claim that COVID-19 vaccines contain microchips that can light up lamps, indicating the claim is false.",
           "stance": "CONTRADICTS",
           "rating_text": "Keliru",
           "tier": "TIER_1"
@@ -31,7 +31,7 @@
           "title": "Vaksin Covid-19 tidak mengandung microchip magnetik",
           "published_at": "2021-06-07",
           "language": "id",
-          "snippet_en": "Periksa Fakta rated as \"Salah\" the claim that COVID-19 vaccines contain magnetic microchips, stating this claim is false.",
+          "snippet_en": "Periksa Fakta rated as \"Salah\" the claim that COVID-19 vaccines contain magnetic microchips, indicating the claim is false.",
           "stance": "CONTRADICTS",
           "rating_text": "Salah",
           "tier": "TIER_1"
@@ -46,7 +46,7 @@
           "title": "[Fakta atau Hoaks] Benarkah Bill Gates Bikin Vaksin Corona yang ...",
           "published_at": "2020-04-22",
           "language": "en",
-          "snippet_en": "Tempo.co rated as \"Keliru\" the claim that Bill Gates created a COVID-19 vaccine with an implanted microchip, stating this claim is false.",
+          "snippet_en": "Tempo.co rated as \"Keliru\" the claim that Bill Gates created COVID-19 vaccines with microchips, indicating the claim is false.",
           "stance": "CONTRADICTS",
           "rating_text": "Keliru",
           "tier": "TIER_1"
@@ -61,10 +61,10 @@
           "title": "Vaksin Covid-19 Mengandung Magnet dan Microchip, Mitos atau ...",
           "published_at": null,
           "language": "id",
-          "snippet_en": "Suara.com rated as \"Salah\" the claim that COVID-19 vaccines contain magnets and microchips, stating this claim is false.",
+          "snippet_en": "Suara.com rated as \"Salah\" the claim that COVID-19 vaccines contain magnets and microchips, indicating the claim is false.",
           "stance": "CONTRADICTS",
           "rating_text": "Salah",
-          "tier": "TIER_1"
+          "tier": "TIER_2"
         },
         {
           "evidence_id": "",
@@ -76,7 +76,7 @@
           "title": "Keliru, Konten tentang Pemasangan Microchip Melalui Vaksinasi di ...",
           "published_at": null,
           "language": "id",
-          "snippet_en": "Tempo.co rated as \"keliru\" the content about microchip installation through vaccination in Indonesia, stating this claim is false.",
+          "snippet_en": "Tempo.co rated as \"keliru\" the content about microchip installation through vaccination in Indonesia, indicating the claim is false.",
           "stance": "CONTRADICTS",
           "rating_text": "keliru",
           "tier": "TIER_1"
@@ -91,7 +91,7 @@
           "title": "[Fakta atau Hoaks] Benarkah Vaksin Covid-19 Tanamkan Microchip ...",
           "published_at": "2020-09-18",
           "language": "en",
-          "snippet_en": "Tempo.co rated as \"Keliru\" the claim that COVID-19 vaccines implant microchips programmed to kill 7.5 billion lives and enable global slavery, stating this claim is false.",
+          "snippet_en": "Tempo.co rated as \"Keliru\" the claim that COVID-19 vaccines implant microchips programmed to kill 7.5 billion lives, indicating the claim is false.",
           "stance": "CONTRADICTS",
           "rating_text": "Keliru",
           "tier": "TIER_1"
@@ -100,13 +100,13 @@
           "evidence_id": "",
           "agent": "factcheck_sites",
           "claim_id": "c1",
-          "url": "https://www.tempo.co/cekfakta/keliru-vaksin-covid-19-terkait-dengan-jaringan-5g-dan-sebabkan-wabah-penyakit-baru-358554",
+          "url": "https://www.tempo.co/cekfakta/keliru-klaim-vaksin-pfizer-mengandung-chip-sehingga-magnet-menempel-di-lengan-yang-disuntik-357397",
           "domain": "tempo.co",
           "publisher": "Tempo.co",
-          "title": "Keliru, Vaksin Covid-19 Terkait dengan Jaringan 5G dan Sebabkan ...",
-          "published_at": "2021-01-27",
+          "title": "Keliru, Klaim Vaksin Pfizer Mengandung Chip sehingga Magnet ...",
+          "published_at": "2021-05-22",
           "language": "en",
-          "snippet_en": "Tempo.co rated as \"Keliru\" the claim that COVID-19 vaccines cause short-term paralysis and death, long-term new disease outbreaks, and are linked to chips and 5G networks, stating this claim is false.",
+          "snippet_en": "Tempo.co rated as \"Keliru\" the claim that Pfizer's COVID-19 vaccine contains a chip causing magnets to stick to the injected arm, indicating the claim is false.",
           "stance": "CONTRADICTS",
           "rating_text": "Keliru",
           "tier": "TIER_1"
@@ -121,7 +121,7 @@
           "title": "COVID-19 Vaccines Don't Have Patient-Tracking Devices",
           "published_at": null,
           "language": "en",
-          "snippet_en": "FactCheck.org rated as \"False\" the claim that COVID-19 vaccines have a microchip that tracks the patient's location, stating this claim is false.",
+          "snippet_en": "FactCheck.org rated as \"False\" the claim that COVID-19 vaccines have a microchip that \"tracks the location of the patient,\" indicating the claim is false.",
           "stance": "CONTRADICTS",
           "rating_text": "False",
           "tier": "TIER_1"
@@ -136,7 +136,7 @@
           "title": "Health Sensors Misconstrued as Government Tracking 'Microchips'",
           "published_at": null,
           "language": "en",
-          "snippet_en": "FactCheck.org rated as \"False\" the claim that a new '60 Minutes' report includes an interview with a Pentagon scientist who says there is now a COVID microchip, stating this claim is false.",
+          "snippet_en": "FactCheck.org rated as \"False\" the claim that a \"60 Minutes\" report includes an interview with a Pentagon scientist who says there is a COVID microchip, indicating the claim is false.",
           "stance": "CONTRADICTS",
           "rating_text": "False",
           "tier": "TIER_1"
@@ -151,7 +151,7 @@
           "title": "Magnet Videos Refuel Bogus Claim of Vaccine Microchips",
           "published_at": null,
           "language": "en",
-          "snippet_en": "FactCheck.org rated as \"False\" the claim that videos of magnets sticking to arms prove COVID-19 vaccines contain microchips, stating this claim is false.",
+          "snippet_en": "FactCheck.org rated as \"False\" the claim that videos of magnets sticking to arms prove COVID-19 vaccines contain microchips, indicating the claim is false.",
           "stance": "CONTRADICTS",
           "rating_text": "False",
           "tier": "TIER_1"
@@ -166,7 +166,7 @@
           "title": "FDA-Approved ‘Electronic Pill’ Isn't Evidence That COVID-19 ...",
           "published_at": null,
           "language": "en",
-          "snippet_en": "FactCheck.org rated as \"False\" the claim that 2018 remarks by Pfizer CEO and claims about microchips in COVID-19 vaccines prove \"Another Conspiracy Proven True!\", stating this claim is false.",
+          "snippet_en": "FactCheck.org rated as \"False\" the claim that \"Another Conspiracy Proven True!\" referring to Pfizer CEO remarks and microchips in COVID-19 vaccines, indicating the claim is false.",
           "stance": "CONTRADICTS",
           "rating_text": "False",
           "tier": "TIER_1"
@@ -181,7 +181,7 @@
           "title": "Conspiracy Theory Misinterprets Goals of Gates Foundation",
           "published_at": null,
           "language": "en",
-          "snippet_en": "FactCheck.org rated as \"False\" the claim that Bill Gates will use microchip implants to fight coronavirus, stating this claim is false.",
+          "snippet_en": "FactCheck.org rated as \"False\" the claim that \"Bill Gates will use microchip implants to fight coronavirus,\" indicating the claim is false.",
           "stance": "CONTRADICTS",
           "rating_text": "False",
           "tier": "TIER_1"
@@ -196,7 +196,7 @@
           "title": "Spoof Video Furthers Microchip Conspiracy Theory",
           "published_at": null,
           "language": "en",
-          "snippet_en": "FactCheck.org rated as \"False\" the claim that a microchip reader for pets detected a chip in the arm of a woman vaccinated against COVID-19, stating this claim is false.",
+          "snippet_en": "FactCheck.org rated as \"False\" the claim that a microchip reader for pets detected a chip in the arm of a woman vaccinated against COVID-19, indicating the claim is false.",
           "stance": "CONTRADICTS",
           "rating_text": "False",
           "tier": "TIER_1"
@@ -211,24 +211,9 @@
           "title": "Hoax about Bill Gates' plan to 'microchip the vaccine' circulates online",
           "published_at": "2020-06-25",
           "language": "en",
-          "snippet_en": "AFP Fact Check rated as \"1\" (false) the claim that Bill Gates' ultimate goal is to microchip COVID-19 vaccines to create virtual IDs, stating this claim is false.",
+          "snippet_en": "AFP Fact Check rated as \"1\" the claim that Bill Gates' \"ultimate goal\" is to microchip COVID-19 vaccines to create virtual IDs, indicating the claim is false.",
           "stance": "CONTRADICTS",
           "rating_text": "1",
-          "tier": "TIER_1"
-        },
-        {
-          "evidence_id": "",
-          "agent": "factcheck_sites",
-          "claim_id": "c1",
-          "url": "https://factcheck.afp.com/doc.afp.com.9EG2NX",
-          "domain": "factcheck.afp.com",
-          "publisher": "AFP Fact Check",
-          "title": "Hoax posts about microchips in Pfizer-BioNTech Covid-19 vaccine ...",
-          "published_at": "2021-07-14",
-          "language": "en",
-          "snippet_en": "AFP Fact Check rated as \"Missing context\" the claim of a video showing a microchip found in a Pfizer vaccine, indicating the claim is misleading.",
-          "stance": "CONTEXT",
-          "rating_text": "Missing context",
           "tier": "TIER_1"
         }
       ],

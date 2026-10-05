@@ -89,6 +89,20 @@ async def compose(llm: LLM, claim: Claim, verdict: JudgeVerdict, outcome: PanelO
     return ComposerOutput(native=native, english=english)
 
 
+async def translate(llm: LLM, answer_en: AnswerText, language: str, script: str) -> AnswerText:
+    """Composer TRANSLATE MODE: a cached verdict's English answer, written in a new content language."""
+    prompt = load_prompt(PROMPT, section="translate")
+    name = LANGUAGE_NAMES.get(language.split("-")[0].lower(), language)
+    text = (prompt.render(answer_language_name=name)
+            + f"\n\nEnglish AnswerText:\n<user_content>\n{answer_en.model_dump_json(indent=1)}\n</user_content>")
+    timeout = get_config().timeout("composer")
+    out = await llm.generate(stage="composer", prompt=text, prompt_version=prompt.version, schema=AnswerText,
+                             timeout_s=timeout)
+    if not script_matches(out, script):
+        raise StageFailed("composer", f"translation not in {name}")
+    return out.model_copy(update={"language": language})
+
+
 _HEADLINE = {"TRUE": "True", "FALSE": "False", "MISLEADING": "Misleading", "SCAM": "Scam",
              "NOT_ENOUGH_EVIDENCE": "Not confirmed"}
 

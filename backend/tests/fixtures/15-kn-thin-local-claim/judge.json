@@ -1,32 +1,26 @@
 {
   "prompt_version": "judge-1.0+shared-1.0",
   "model_id": "gemini-2.5-pro",
-  "recorded_at": "2026-10-05T17:45:39+00:00",
+  "recorded_at": "2026-10-05T18:13:21+00:00",
   "outputs": [
     {
       "verdicts": [
         {
           "claim_id": "c1",
-          "label": "MISLEADING",
-          "confidence": 90,
-          "what_is_true_en": "Crocodiles have been sighted in Kukkarahalli Lake in Mysuru on many occasions over several years. However, there is no evidence to confirm a specific sighting of two crocodiles on October 4, 2026.",
+          "label": "NOT_ENOUGH_EVIDENCE",
+          "confidence": 30,
+          "what_is_true_en": "While crocodiles have been sighted in Kukkarahalli Lake in Mysuru on several occasions over the years, there is no evidence to confirm a sighting of two crocodiles on October 3, 2026.",
           "event_date": null,
           "evidence_for_ids": [],
-          "evidence_against_ids": [
-            "ws-1",
-            "ws-2",
-            "ws-3",
-            "ws-4",
-            "ws-7"
-          ],
+          "evidence_against_ids": [],
           "cited_ids": [
             "ws-1",
             "ws-2",
             "ws-3",
             "ws-4",
-            "ws-7"
+            "ws-5"
           ],
-          "reasoning_en": "Multiple news reports from sources like The Hindu and Star of Mysore confirm that crocodiles have been sighted in Kukkarahalli Lake over many years, including in 2010, 2017, 2023, 2024, and 2026. While the presence of crocodiles in the lake is well-documented, no evidence supports the specific claim that two crocodiles were seen on October 4, 2026. The claim is therefore misleading as it presents an unverified specific event as fact.",
+          "reasoning_en": "Multiple news reports from 2010, 2023, 2024, and early 2026 confirm that crocodiles have been seen in Kukkarahalli Lake. However, none of the provided evidence supports the specific claim that two crocodiles were seen on the evening of October 3, 2026. Without a specific report for the claimed date and number of crocodiles, the claim cannot be verified.",
           "ai_generation": null
         }
       ]

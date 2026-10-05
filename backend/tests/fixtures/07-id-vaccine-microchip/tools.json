@@ -1,5 +1,55 @@
 {
- "factcheck_search:[\"vaksin COVID-19 microchip\", \"id\"]": [
+ "factcheck_search:[\"Apakah vaksin COVID-19 mengandung microchip?\", \"id\"]": [
+  {
+   "claim_text": "Vaksin Covid-19 mengandung microchip yang bisa menyalakan lampu",
+   "claimant": "Akun Facebook",
+   "claim_date": "2021-05-31T00:00:00Z",
+   "url": "https://www.tempo.co/cekfakta/keliru-vaksin-covid-19-mengandung-microchip-yang-bisa-nyalakan-lampu-356853",
+   "publisher": "Tempo.co",
+   "publisher_site": "tempo.co",
+   "rating": "Keliru",
+   "review_date": "2021-06-22T00:00:00Z",
+   "title": "Keliru, Vaksin Covid-19 Mengandung Microchip yang Bisa ...",
+   "language": "en"
+  },
+  {
+   "claim_text": "Vaksin Covid-19 buatan Pfizer mengandung chip sehingga magnet menempel di lengan yang disuntik",
+   "claimant": "Akun Instagram",
+   "claim_date": "2021-05-10T00:00:00Z",
+   "url": "https://www.tempo.co/cekfakta/keliru-klaim-vaksin-pfizer-mengandung-chip-sehingga-magnet-menempel-di-lengan-yang-disuntik-357397",
+   "publisher": "Tempo.co",
+   "publisher_site": "tempo.co",
+   "rating": "Keliru",
+   "review_date": "2021-05-22T00:00:00Z",
+   "title": "Keliru, Klaim Vaksin Pfizer Mengandung Chip sehingga Magnet ...",
+   "language": "en"
+  },
+  {
+   "claim_text": "Vaksin Covid-19 mengandung microchip magnetik",
+   "claimant": "Berbagai sumber",
+   "claim_date": "2021-05-26T00:00:00Z",
+   "url": "https://periksafakta.afp.com/vaksin-covid-19-tidak-mengandung-mikrochip-magnetik",
+   "publisher": "Periksa Fakta",
+   "publisher_site": "periksafakta.afp.com",
+   "rating": "Salah",
+   "review_date": "2021-06-07T12:35:00Z",
+   "title": "Vaksin Covid-19 tidak mengandung microchip magnetik",
+   "language": "id"
+  },
+  {
+   "claim_text": "Vaksin Covid-19 Mengandung Magnet dan Microchip, Mitos atau Fakta?",
+   "claimant": "Suara.com",
+   "claim_date": "2022-05-19T12:46:54Z",
+   "url": "https://www.suara.com/health/2022/05/19/194654/vaksin-covid-19-mengandung-magnet-dan-microchip-mitos-atau-fakta",
+   "publisher": "Suara.com",
+   "publisher_site": "suara.com",
+   "rating": "Salah",
+   "review_date": null,
+   "title": "Vaksin Covid-19 Mengandung Magnet dan Microchip, Mitos atau ...",
+   "language": "id"
+  }
+ ],
+ "factcheck_search:[\"Vaksin COVID-19 microchip\", \"id\"]": [
   {
    "claim_text": "Vaksin Covid-19 mengandung microchip yang bisa menyalakan lampu",
    "claimant": "Akun Facebook",
@@ -183,20 +233,7 @@
    "language": "en"
   }
  ],
- "factcheck_search:[\"vaksin melacak orang\", \"id\"]": [],
- "factcheck_search:[\"vaccine microchip\", \"en\"]": [
-  {
-   "claim_text": "Videos of magnets sticking to arms prove that the COVID-19 vaccines contain microchips.",
-   "claimant": "Social media posts",
-   "claim_date": "2021-05-12T00:00:00Z",
-   "url": "https://www.factcheck.org/2021/05/scicheck-magnet-videos-refuel-bogus-claim-of-vaccine-microchips/",
-   "publisher": "FactCheck.org",
-   "publisher_site": "factcheck.org",
-   "rating": "False",
-   "review_date": null,
-   "title": "Magnet Videos Refuel Bogus Claim of Vaccine Microchips",
-   "language": "en"
-  },
+ "factcheck_search:[\"Do COVID-19 vaccines contain microchips?\", \"en\"]": [
   {
    "claim_text": "COVID-19 vaccines have a microchip that \"tracks the location of the patient.\"",
    "claimant": "Viral video",
@@ -207,6 +244,18 @@
    "rating": "False",
    "review_date": null,
    "title": "COVID-19 Vaccines Don't Have Patient-Tracking Devices",
+   "language": "en"
+  },
+  {
+   "claim_text": "Videos of magnets sticking to arms prove that the COVID-19 vaccines contain microchips.",
+   "claimant": "Social media posts",
+   "claim_date": "2021-05-12T00:00:00Z",
+   "url": "https://www.factcheck.org/2021/05/scicheck-magnet-videos-refuel-bogus-claim-of-vaccine-microchips/",
+   "publisher": "FactCheck.org",
+   "publisher_site": "factcheck.org",
+   "rating": "False",
+   "review_date": null,
+   "title": "Magnet Videos Refuel Bogus Claim of Vaccine Microchips",
    "language": "en"
   },
   {
@@ -258,6 +307,18 @@
    "language": "en"
   },
   {
+   "claim_text": "A microchip reader for pets detected a chip in the arm of a woman vaccinated against COVID-19.",
+   "claimant": "Viral video",
+   "claim_date": "2021-06-15T00:00:00Z",
+   "url": "https://www.factcheck.org/2021/07/scicheck-spoof-video-furthers-microchip-conspiracy-theory/",
+   "publisher": "FactCheck.org",
+   "publisher_site": "factcheck.org",
+   "rating": "False",
+   "review_date": null,
+   "title": "Spoof Video Furthers Microchip Conspiracy Theory",
+   "language": "en"
+  },
+  {
    "claim_text": "The government is implanting microchips into human bodies through COVID-19 vaccine in order to take them under control",
    "claimant": "SOCIAL MEDIA POST",
    "claim_date": "2021-06-16T00:00:00Z",
@@ -267,18 +328,6 @@
    "rating": "FALSE",
    "review_date": "2021-06-21T00:00:00Z",
    "title": "No, Government is not implanting microchips into human bodies ...",
-   "language": "en"
-  },
-  {
-   "claim_text": "New microchip technology could fit inside a vaccine needle",
-   "claimant": "Social media users",
-   "claim_date": "2021-05-17T00:00:00Z",
-   "url": "https://www.usatoday.com/story/news/factcheck/2021/05/26/fact-check-missing-context-posts-new-microchip-development/5232378001/",
-   "publisher": "USA Today",
-   "publisher_site": "usatoday.com",
-   "rating": "Missing Context",
-   "review_date": "2021-05-26T23:50:28Z",
-   "title": "Fact check: Missing context posts on a new microchip development",
    "language": "en"
   }
  ]

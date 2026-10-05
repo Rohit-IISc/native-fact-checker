@@ -1,43 +1,53 @@
 {
   "prompt_version": "web-search-2.1+shared-1.0",
   "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-05T17:40:45+00:00",
+  "recorded_at": "2026-10-05T18:13:00+00:00",
   "outputs": [
     {
-      "text": "c1:\n* **ISRO (Indian Space Research Organisation)** - \"DISCOVERY OF A BURIED CRATER ON THE MOON! CHANDRAYAAN-3 VIKRAM LANDER AND PRAGYAN ROVER LANDED WITHIN IT\" published on September 30, 2024. This official press release from ISRO confirms that the Chandrayaan-3 mission, with its Vikram lander and Pragyan rover, landed in the high latitude highland region near the south pole of the Moon. [1]\n* **Wikipedia** - \"Chandrayaan-3\" last updated on October 5, 2026. This article states that Chandrayaan-3 entered lunar orbit on August 5, 2023, and touched down near the lunar south pole, at 69°S, on August 23, 2023, at 18:04 IST (12:33 UTC). [2] It also mentions that the mission consists of the Vikram lander and Pragyan rover. [2]\n* **NDTV** - \"How India Created History With Chandrayaan-3 Landing On The Lunar South Pole\" published on August 23, 2023. This article reports that India's Chandrayaan-3 spacecraft successfully landed on the moon's south pole region on August 23, 2023, becoming the first country to touch down in this uncharted lunar region. [3] It also states that the lander, named Vikram, touched down at 18:04 local time (12:34 GMT). [3]\n* **PBS** - \"India becomes only the 4th country to successfully land a spacecraft on the moon\" published on August 23, 2023. This source confirms that India landed a spacecraft near the moon's south pole on August 23, 2023, becoming the first country to touch down near the little-explored south pole region. [4] It also notes that India joins the United States, the Soviet Union, and China in achieving a moon landing. [4]\n* **Space.com** - \"India on the moon! Chandrayaan-3 lander touches down in lunar south pole region\" published on August 23, 2023. This article states that India's Vikram lander, part of the Chandrayaan-3 mission, touched down near the lunar south pole on August 23, 2023, at 8:33 a.m. EDT (1233 GMT; 6:03 p.m. Indian Standard Time, or IST). [5] It also highlights that India has become the fourth country in history to successfully land a robotic spacecraft on the moon. [5]\n* **BBC News** - \"India Moon landing: Chandrayaan-3 spacecraft lands near south pole\" published on August 23, 2023. This report confirms that India's Moon mission became the first to land in the lunar south pole region on August 23, 2023, with the Vikram lander from Chandrayaan-3 successfully touching down at 18:04 local time (12:34 GMT). [6]",
+      "text": "Claim c1: Chandrayaan-3's Vikram lander touched down near the Moon's south pole on 23 August 2023.\n*   **VOA News** - \"India's Chandrayaan-3 Spacecraft Lands on Moon's South Pole\" - August 23, 2023.\n    VOA News reports that India successfully placed a lander in the moon's southern polar region on Wednesday evening, August 23, 2023. The unmanned lander, called Vikram, made its final descent, sparking celebrations at the Indian Space Research Organization (ISRO) mission command center. [1]\n*   **PBS.org** - \"India becomes fourth country to land on moon, first to reach south pole\" - August 23, 2023.\n    PBS.org states that India landed a spacecraft near the moon's south pole on Wednesday, August 23, 2023. A lander with a rover inside touched down on the lunar surface at 6:04 local time. [2]\n*   **Astronomy.com** - \"India’s Chandrayaan-3 lands on the Moon’s south pole\" - August 24, 2023.\n    Astronomy.com confirms that on August 23, 2023, the Indian Space Research Organization's (ISRO) Chandrayaan-3 mission landed near the Moon's south pole. The Vikram lander, carrying the Pragyan rover, made a soft landing. [3]\n*   **Time.com** - \"How India Beat Russia to the Moon’s South Pole\" - August 23, 2023.\n    Time.com reports that on August 23, 2023, India's Chandrayaan-3 set down gently in the polar dust at 8:34 AM ET. [4]\n*   **Wikipedia.org** - \"Chandrayaan-3\" - Accessed October 5, 2026.\n    Wikipedia states that Chandrayaan-3 touched down near the lunar south pole on August 23, 2023, at 18:04 IST (12:33 UTC). [5]\n*   **ResearchExperts.in** - \"Chandrayaan-3: India’s Historic Lunar South Pole Landing\" - June 15, 2026.\n    ResearchExperts.in confirms that on August 23, 2023, both the Vikram lander and the Pragyan rover successfully touched down near the lunar south pole area. The powered descent began around 17:45 IST, and landing was confirmed at 18:04 IST. [6]\n\nClaim c2: making India the first country to land in that region\n*   **VOA News** - \"India's Chandrayaan-3 Spacecraft Lands on Moon's South Pole\" - August 23, 2023.\n    VOA News reports that India made history by becoming the first country to touch down on an uncharted part of the lunar surface, the moon's southern polar region. [1]\n*   **PBS.org** - \"India becomes fourth country to land on moon, first to reach south pole\" - August 23, 2023.\n    PBS.org states that India made history by becoming the first country to touch down near the little-explored south pole region. [2]\n*   **TheGuardian.com** - \"India becomes first country to land spacecraft on moon’s south pole\" - August 22, 2023.\n    TheGuardian.com reports that India became the first country to successfully land a spacecraft near the south pole of the moon. [7]\n*   **Wikipedia.org** - \"Chandrayaan-3\" - Accessed October 5, 2026.\n    Wikipedia states that with this landing, ISRO became the first in human history to achieve a soft landing near the lunar south pole. [5]\n*   **ResearchExperts.in** - \"Chandrayaan-3: India’s Historic Lunar South Pole Landing\" - June 15, 2026.\n    ResearchExperts.in notes that the landing on August 23, 2023, was a historic first for India, as both the Vikram lander and the Pragyan rover successfully touched down near the lunar south pole area. [6]\n*   **Eoportal.org** - \"Chandrayaan-3\" - March 14, 2024.\n    Eoportal.org states that the mission demonstrated the first soft landing in the Southern Polar region of the Moon. [8]",
       "sources": [
         {
           "n": 1,
-          "url": "https://www.isro.gov.in/ch3_Discovery_of_a_buried_crater_on_the_moon.html",
-          "domain": "isro.gov.in"
+          "url": "https://www.voanews.com/a/india-lands-craft-on-moon-s-unexplored-south-pole/7237740.html",
+          "domain": "voanews.com"
         },
         {
           "n": 2,
-          "url": "https://en.wikipedia.org/wiki/Chandrayaan-3",
-          "domain": "wikipedia.org"
-        },
-        {
-          "n": 3,
-          "url": "https://www.facebook.com/secretsofuniverse/posts/how-india-created-history-with-chandrayaan-3-landing-on-the-lunar-south-pole/848700300236906/",
-          "domain": "facebook.com"
-        },
-        {
-          "n": 4,
           "url": "https://www.pbs.org/newshour/world/india-becomes-the-only-the-4th-country-to-successfully-land-a-spacecraft-on-the-moon",
           "domain": "pbs.org"
         },
         {
+          "n": 3,
+          "url": "https://www.astronomy.com/space-exploration/india-makes-history-with-its-first-moon-landing/",
+          "domain": "astronomy.com"
+        },
+        {
+          "n": 4,
+          "url": "https://time.com/6307329/india-moon-landing-south-pole/",
+          "domain": "time.com"
+        },
+        {
           "n": 5,
-          "url": "https://www.collectspace.com/news/news-082323a-india-chandrayaan-3-moon-landing.html",
-          "domain": "collectspace.com"
+          "url": "https://en.wikipedia.org/wiki/Chandrayaan-3",
+          "domain": "wikipedia.org"
         },
         {
           "n": 6,
-          "url": "https://www.youtube.com/watch?v=QQKSASFdoDw",
-          "domain": "youtube.com"
+          "url": "https://www.researchexperts.in/landing-of-chandrayaan-3/",
+          "domain": "researchexperts.in"
+        },
+        {
+          "n": 7,
+          "url": "https://www.theguardian.com/science/2023/aug/23/india-chandrayaan-3-moon-landing-mission",
+          "domain": "theguardian.com"
+        },
+        {
+          "n": 8,
+          "url": "https://www.eoportal.org/satellite-missions/chandrayaan-3",
+          "domain": "eoportal.org"
         }
       ],
-      "queries": 4
+      "queries": 2
     }
   ]
 }

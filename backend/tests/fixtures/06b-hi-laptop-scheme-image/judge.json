@@ -1,7 +1,7 @@
 {
   "prompt_version": "judge-1.0+shared-1.0",
   "model_id": "gemini-2.5-pro",
-  "recorded_at": "2026-10-05T17:44:39+00:00",
+  "recorded_at": "2026-10-05T18:12:21+00:00",
   "outputs": [
     {
       "verdicts": [
@@ -9,70 +9,73 @@
           "claim_id": "c1",
           "label": "SCAM",
           "confidence": 100,
-          "what_is_true_en": "The Indian government has not announced any \"Prime Minister Free Laptop Scheme\". Messages promoting such a scheme are fake and part of a scam. While some state governments have their own laptop schemes, there is no such national scheme.",
+          "what_is_true_en": "The Indian government has not announced any 'Prime Minister Free Laptop Scheme 2026'. Messages promoting this are fake and often part of scams to steal personal information.",
           "event_date": null,
           "evidence_for_ids": [],
           "evidence_against_ids": [
             "ws-1",
             "ws-2",
+            "ws-3",
             "fc-1",
             "fc-2",
             "fc-3",
-            "fc-8"
+            "fc-4",
+            "fc-5",
+            "fc-6",
+            "fc-8",
+            "fc-10"
           ],
           "cited_ids": [
             "ws-1",
             "ws-2",
+            "ws-3",
             "fc-1",
             "fc-2",
-            "fc-3",
-            "fc-8"
+            "fc-3"
           ],
-          "reasoning_en": "The Indian government's Press Information Bureau (PIB) has explicitly stated that the \"Prime Minister Free Laptop Scheme 2026\" is fake and a scam. Multiple independent fact-checking organizations have debunked similar claims repeatedly over several years, confirming that no such central government scheme exists. These claims are part of recurring scams.",
+          "reasoning_en": "Multiple TIER_1 sources, including the government's official broadcaster (newsonair.gov.in) and the Press Information Bureau (PIB), have explicitly stated that the 'Prime Minister Free Laptop Scheme 2026' is fake and no such central government scheme exists. Numerous fact-checking organizations have repeatedly debunked similar claims over several years, identifying them as scams or phishing attempts designed to steal personal data. While some state governments have their own laptop distribution programs, there is no nationwide scheme from the Prime Minister's office.",
           "ai_generation": null
         },
         {
           "claim_id": "c2",
-          "label": "SCAM",
+          "label": "FALSE",
           "confidence": 100,
-          "what_is_true_en": "There is no deadline for the \"Prime Minister Free Laptop Scheme\" because the scheme itself does not exist. This claim is part of a fraudulent message.",
+          "what_is_true_en": "There is no 'Prime Minister Free Laptop Scheme 2026', so there is no application deadline. The Indian government has confirmed that claims about such a scheme are fake.",
           "event_date": null,
           "evidence_for_ids": [],
           "evidence_against_ids": [
-            "ws-9",
-            "ws-10"
+            "ws-1",
+            "ws-2",
+            "ws-3"
           ],
           "cited_ids": [
-            "ws-9",
-            "ws-10"
+            "ws-1",
+            "ws-2",
+            "ws-3"
           ],
-          "reasoning_en": "Since the \"Prime Minister Free Laptop Scheme 2026\" has been confirmed to be fake by government sources, any associated deadline, including October 15, is also false. The claim is part of a larger scam.",
+          "reasoning_en": "The claim about an October 15 deadline is false because the 'Prime Minister Free Laptop Scheme 2026' itself does not exist. This is confirmed by multiple government sources and fact-checkers (as established for claim c1). Since the scheme is non-existent, any associated deadline is also fabricated. The provided evidence lacks any credible source mentioning this specific scheme and deadline.",
           "ai_generation": null
         },
         {
           "claim_id": "c3",
           "label": "SCAM",
           "confidence": 100,
-          "what_is_true_en": "The website www.pm-free-laptop-yojana.in is not an official government website and is associated with a fake scheme. The government's Press Information Bureau has warned that such links are part of a scam.",
+          "what_is_true_en": "The website www.pm-free-laptop-yojana.in is not an official government website. The government has confirmed that claims about a 'Prime Minister Free Laptop Scheme' and associated websites are fake and part of scams.",
           "event_date": null,
           "evidence_for_ids": [],
           "evidence_against_ids": [
-            "ws-16",
-            "ws-17",
-            "fc-11",
-            "fc-13",
-            "fc-18",
-            "fc-19"
+            "ws-13",
+            "ws-14",
+            "ws-15",
+            "fc-11"
           ],
           "cited_ids": [
-            "ws-16",
-            "ws-17",
-            "fc-11",
-            "fc-13",
-            "fc-18",
-            "fc-19"
+            "ws-13",
+            "ws-14",
+            "ws-15",
+            "fc-11"
           ],
-          "reasoning_en": "The Indian government's Press Information Bureau (PIB) has debunked the \"Prime Minister Free Laptop Scheme\" and warned that associated registration links are part of a scam. Multiple fact-checking organizations have identified similar links as fraudulent or phishing attempts designed to steal personal information. Official Indian government websites end in \".gov.in\".",
+          "reasoning_en": "Government sources, including newsonair.gov.in and the Press Information Bureau (PIB), have explicitly stated that messages and links related to a Prime Minister's free laptop scheme are fake. They advise citizens to use official portals like myscheme.gov.in for authentic information on government schemes. Fact-checkers have also reported on imposter government websites used for free laptop scams. Therefore, the website mentioned in the claim is not official and is associated with a known scam.",
           "ai_generation": null
         }
       ]

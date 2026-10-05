@@ -1,28 +1,30 @@
 {
   "prompt_version": "composer-1.1+shared-1.0",
   "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-05T17:41:25+00:00",
+  "recorded_at": "2026-10-05T18:13:46+00:00",
   "outputs": [
     {
       "language": "en",
       "headline": "False: 5G mobile towers do not spread coronavirus",
-      "summary": "5G mobile towers do not spread the coronavirus; COVID-19 is a viral disease that spreads from person to person.",
-      "what_post_claims": "The post claims that 5G mobile towers spread the coronavirus, causing an increase in COVID-19 cases in areas where 5G was installed.",
-      "what_is_true": "COVID-19 is a viral disease that spreads through respiratory droplets from person to person. It cannot be transmitted through radio waves or mobile networks like 5G.",
-      "evidence_for": [],
+      "summary": "There is no scientific evidence that 5G technology spreads the coronavirus or causes an increase in COVID-19 cases.",
+      "what_post_claims": "The post claims that 5G mobile towers spread the coronavirus, leading to more COVID-19 cases in areas where 5G was installed.",
+      "what_is_true": "International health and telecommunication bodies, including the World Health Organization, confirm there is no scientific evidence linking 5G technology to the spread of COVID-19. Viruses cannot travel on radio waves.",
+      "evidence_for": [
+        "A study in Medical Research Archives from April 2021 found a statistical increase in COVID-19 cases and deaths in US states with 5G millimeter wave technology."
+      ],
       "evidence_against": [
-        "The UN's International Telecommunications Union confirmed that 5G broadband is not responsible for the spread of COVID-19.",
-        "The World Health Organization and the US Federal Emergency Management Agency state that viruses cannot travel via radio waves or mobile networks.",
-        "Experts emphasize that 5G technology uses non-ionizing radiation, which does not damage DNA."
+        "The International Telecommunication Union, a UN agency, stated in April 2020 that viruses cannot travel on radio waves and COVID-19 spread in countries without 5G.",
+        "La Trobe University stated in January 2023 that radiation and viruses are different and do not interact.",
+        "GOV.UK stated in May 2020 there is no evidence of a link between 5G and coronavirus."
       ],
       "confidence_phrase": "we are very sure",
-      "sources_spoken": "the UN's International Telecommunications Union, the World Health Organization, and the US Federal Emergency Management Agency",
-      "audio_script": "The post claims that 5G mobile towers spread the coronavirus, causing an increase in COVID-19 cases where 5G was installed. This is false. COVID-19 is a viral disease that spreads through respiratory droplets from person to person. It cannot be transmitted through radio waves or mobile networks like 5G. We are very sure about this. This information comes from the UN's International Telecommunications Union, the World Health Organization, and the US Federal Emergency Management Agency.",
+      "sources_spoken": "the International Telecommunication Union and La Trobe University",
+      "audio_script": "A post claims that 5G mobile towers spread the coronavirus, causing an increase in COVID-19 cases where 5G was installed. This is false. There is no scientific evidence that 5G technology spreads the coronavirus or causes an increase in COVID-19 cases. Viruses cannot travel on radio waves. We are very sure of this. This information comes from the International Telecommunication Union, a UN agency, and La Trobe University, who have both confirmed there is no link.",
       "card_lines": [
         "False: 5G does not spread coronavirus",
         "Claim: 5G towers spread COVID-19.",
-        "Truth: COVID-19 is a viral disease, not spread by 5G.",
-        "Source: UN, WHO, FEMA"
+        "Truth: No scientific link between 5G and viruses.",
+        "Source: UN's ITU and La Trobe University."
       ]
     }
   ]

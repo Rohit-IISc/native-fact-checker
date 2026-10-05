@@ -1,7 +1,7 @@
 {
   "prompt_version": "web-search-classify-1.0+shared-1.0",
   "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-05T17:45:39+00:00",
+  "recorded_at": "2026-10-05T18:13:21+00:00",
   "outputs": [
     {
       "items": [
@@ -12,7 +12,7 @@
           "title": null,
           "published_at": "2024-12-01",
           "language": null,
-          "snippet_en": "A crocodile was sighted in Kukkarahalli Lake near the fishermen's shed between 8:30 am and 9:30 am on December 1, 2024. The lake is a known habitat for Mugger crocodiles.",
+          "snippet_en": "A large crocodile was seen in Kukkarahalli Lake near the fishermen's shed between 8:30 am and 9:30 am on November 30, 2024. This is not the first sighting, and people are advised to stay away from the water.",
           "stance": "CONTEXT"
         },
         {
@@ -22,71 +22,41 @@
           "title": null,
           "published_at": "2026-01-28",
           "language": null,
-          "snippet_en": "A crocodile was spotted at the bank of Kukkarahalli Lake on January 28, 2026, causing panic among morning walkers. An environmental lover reported seeing the crocodile four times.",
+          "snippet_en": "A crocodile was recently spotted at Kukkarahalli Lake, causing panic among morning walkers. The lake is a known crocodile habitat, but sightings are rare.",
           "stance": "CONTEXT"
         },
         {
           "source_n": 3,
           "claim_id": "c1",
-          "publisher": "The Hindu",
+          "publisher": "News18 Kannada",
           "title": null,
-          "published_at": "2010-03-26",
+          "published_at": "2023-09-07",
           "language": null,
-          "snippet_en": "A giant crocodile, about 10 ft long, was spotted on the Kukkarahalli Lake bund on March 26, 2010, reaffirming the presence of crocodiles in the lake after several years.",
+          "snippet_en": "News18 Kannada reported on September 7, 2023, about a crocodile found in Kukkarahalli Lake.",
           "stance": "CONTEXT"
         },
         {
           "source_n": 4,
           "claim_id": "c1",
-          "publisher": "Star of Mysore",
+          "publisher": "Local18",
           "title": null,
-          "published_at": "2023-09-08",
+          "published_at": "2023-09-07",
           "language": null,
-          "snippet_en": "Morning walkers were concerned after spotting a crocodile in Kukkarahalli Lake on September 8, 2023. Crocodiles had been spotted and rescued previously, leading walkers to assume the lake was clear.",
+          "snippet_en": "Local18 reported on September 7, 2023, about a crocodile found in Kukkarahalli Lake.",
           "stance": "CONTEXT"
         },
         {
           "source_n": 5,
           "claim_id": "c1",
-          "publisher": "News18 Kannada",
-          "title": null,
-          "published_at": null,
-          "language": null,
-          "snippet_en": "A Facebook post from News18 Kannada reported a crocodile found in Kukkarahalli Lake on September 7, 2023.",
-          "stance": "CONTEXT"
-        },
-        {
-          "source_n": 6,
-          "claim_id": "c1",
-          "publisher": "News18 Kannada",
-          "title": null,
-          "published_at": null,
-          "language": null,
-          "snippet_en": "A YouTube video from News18 Kannada reported a crocodile found in Kukkarahalli Lake on September 7, 2023.",
-          "stance": "CONTEXT"
-        },
-        {
-          "source_n": 7,
-          "claim_id": "c1",
           "publisher": "The Hindu",
           "title": null,
-          "published_at": "2017-04-24",
+          "published_at": "2010-03-26",
           "language": null,
-          "snippet_en": "A crocodile was found dead in Kukkarahalli Lake on April 24, 2017. Post-mortem suggested it died of starvation.",
-          "stance": "CONTEXT"
-        },
-        {
-          "source_n": 8,
-          "claim_id": "c1",
-          "publisher": "Vijaya Karnataka",
-          "title": null,
-          "published_at": "2017-04-24",
-          "language": null,
-          "snippet_en": "A crocodile was found dead in Kukkarahalli Lake on April 24, 2017. Post-mortem suggested it died of starvation.",
+          "snippet_en": "The Hindu reported on March 26, 2010, that a giant crocodile was spotted on the Kukkarahalli Lake bund, confirming the presence of crocodiles in the lake.",
           "stance": "CONTEXT"
         }
       ],
-      "notes_en": "While crocodiles are known to inhabit Kukkarahalli Lake and have been sighted multiple times, there is no evidence to support the claim of two crocodiles being seen on October 4, 2026."
+      "notes_en": "The claim states two crocodiles were seen 'yesterday evening' (October 3, 2026). The sources confirm crocodile sightings in Kukkarahalli Lake but on different dates (November 30, 2024, January 2026, September 7, 2023, and March 26, 2010), not specifically two crocodiles on October 3, 2026. Therefore, the sources provide context about crocodile presence but do not directly support or contradict the specific claim."
     }
   ]
 }

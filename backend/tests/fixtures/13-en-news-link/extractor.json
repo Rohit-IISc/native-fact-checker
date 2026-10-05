@@ -1,88 +1,89 @@
 {
-  "prompt_version": "extractor-1.1+shared-1.0",
+  "prompt_version": "extractor-1.2+shared-1.0",
   "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-05T17:41:25+00:00",
+  "recorded_at": "2026-10-05T18:13:34+00:00",
   "outputs": [
     {
       "content_language": "en-IN",
       "content_script": "Latn",
-      "summary_en": "The image shows a woman yawning in a crowd, with other people visible in the background. The BBC News logo is present in the bottom left corner of the image. The accompanying article discusses India's historic Chandrayaan-3 mission, which successfully landed near the Moon's south pole.",
+      "summary_en": "The image shows a woman shouting in a crowd, with other people in the background. The BBC News logo is visible in the bottom left corner. The accompanying text from a news article describes India's Chandrayaan-3 mission successfully landing near the Moon's south pole, making India the first country to achieve this feat.",
       "checkable": true,
       "non_checkable_type": null,
       "claims": [
         {
           "claim_id": "claim1",
-          "claim_original": "Chandrayaan-3: India makes historic landing near Moon's south pole",
-          "claim_en": "India's Chandrayaan-3 mission made a historic landing near the Moon's south pole.",
+          "claim_original": "India has made history as its Moon mission becomes the first to land in the lunar south pole region.",
+          "claim_en": "India's Chandrayaan-3 mission became the first to land in the lunar south pole region on August 23, 2023.",
           "claim_type": "EVENT",
           "entities": [
             "India",
-            "Chandrayaan-3",
-            "Moon's south pole"
+            "Moon",
+            "Chandrayaan-3"
           ],
           "place": "Moon's south pole",
-          "claimed_date": null,
+          "claimed_date": "2023-08-23",
           "time_sensitivity": "EVERGREEN",
           "search_queries_original": [
-            "Chandrayaan-3 historic landing Moon south pole"
+            "India Moon mission first south pole landing"
           ],
           "search_queries_en": [
-            "Chandrayaan-3 historic landing Moon south pole"
+            "India first country to land on Moon's south pole",
+            "Chandrayaan-3 south pole landing"
           ]
         },
         {
           "claim_id": "claim2",
-          "claim_original": "India joins an elite club of countries to achieve a soft landing on the Moon, after the US, the former Soviet Union and China.",
-          "claim_en": "India has joined the United States, the former Soviet Union, and China as countries that have achieved a soft landing on the Moon.",
-          "claim_type": "STATISTIC",
-          "entities": [
-            "India",
-            "US",
-            "former Soviet Union",
-            "China",
-            "Moon"
-          ],
-          "place": "Moon",
-          "claimed_date": null,
-          "time_sensitivity": "EVERGREEN",
-          "search_queries_original": [
-            "Countries soft landing Moon",
-            "India soft landing Moon club"
-          ],
-          "search_queries_en": [
-            "Countries soft landing Moon",
-            "India soft landing Moon club"
-          ]
-        },
-        {
-          "claim_id": "claim3",
           "claim_original": "The Vikram lander from Chandrayaan-3 successfully touched down as planned at 18:04 local time (12:34 GMT).",
-          "claim_en": "The Vikram lander of Chandrayaan-3 successfully touched down at 18:04 local time (12:34 GMT).",
+          "claim_en": "The Vikram lander from Chandrayaan-3 successfully touched down at 18:04 local time (12:34 GMT) on August 23, 2023.",
           "claim_type": "EVENT",
           "entities": [
             "Vikram lander",
             "Chandrayaan-3"
           ],
-          "place": null,
-          "claimed_date": null,
+          "place": "Moon",
+          "claimed_date": "2023-08-23",
           "time_sensitivity": "EVERGREEN",
           "search_queries_original": [
             "Vikram lander touchdown time",
             "Chandrayaan-3 landing time"
           ],
           "search_queries_en": [
-            "Vikram lander touchdown time",
+            "Vikram lander touchdown time GMT",
             "Chandrayaan-3 landing time"
+          ]
+        },
+        {
+          "claim_id": "claim3",
+          "claim_original": "India joins an elite club of countries to achieve a soft landing on the Moon, after the US, the former Soviet Union and China.",
+          "claim_en": "India joined the US, the former Soviet Union, and China in achieving a soft landing on the Moon on August 23, 2023.",
+          "claim_type": "STATISTIC",
+          "entities": [
+            "India",
+            "US",
+            "Soviet Union",
+            "China",
+            "Moon"
+          ],
+          "place": "Moon",
+          "claimed_date": "2023-08-23",
+          "time_sensitivity": "EVERGREEN",
+          "search_queries_original": [
+            "Countries soft landing Moon",
+            "India Moon soft landing club"
+          ],
+          "search_queries_en": [
+            "Countries with soft moon landing",
+            "India moon landing club"
           ]
         }
       ],
       "extra_claims_not_checked": [],
-      "ocr_text": "BBC NEWS",
+      "ocr_text": "BBCNEWS",
       "transcript": null,
-      "visual_description_en": "A close-up shot shows a woman in a yellow garment yawning, covering her mouth with her hand. She has a red bindi on her forehead and is wearing gold earrings. In the background, other people are visible, some with their hands raised. To the left, a man with glasses and a beard is partially visible. To the right, a brown wallet or book is seen. The BBC News logo is in the bottom left corner of the image.",
+      "visual_description_en": "A close-up image shows a woman in a yellow outfit with a green scarf, shouting with her hand near her mouth. She has a bindi on her forehead and is wearing earrings and a ring. In the background, other people are visible, some with their hands raised. A man with glasses and a beard is partially visible on the left. The BBC News logo is in the bottom left corner.",
       "ai_generation_signals": null,
       "origin_hints": [
-        "BBC NEWS"
+        "BBC News"
       ]
     }
   ]

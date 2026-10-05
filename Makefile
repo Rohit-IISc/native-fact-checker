@@ -58,7 +58,10 @@ test-live:
 lint:
 	cd backend && uv run ruff check .
 
+# PROJECT_ID defaults to GCP_PROJECT from backend/.env.defaults.
+deploy: export PROJECT_ID ?= $(shell sed -n 's/^GCP_PROJECT=\([^ ]*\).*/\1/p' backend/.env.defaults)
 deploy:
+	@test -n "$$PROJECT_ID" || (echo "Set PROJECT_ID" && exit 1)
 	./scripts/deploy_backend.sh
 	./scripts/deploy_frontend.sh
 

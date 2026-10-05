@@ -1,7 +1,7 @@
 {
   "prompt_version": "judge-1.0+shared-1.0",
   "model_id": "gemini-2.5-pro",
-  "recorded_at": "2026-10-05T17:42:38+00:00",
+  "recorded_at": "2026-10-05T18:11:43+00:00",
   "outputs": [
     {
       "verdicts": [
@@ -9,33 +9,32 @@
           "claim_id": "c1",
           "label": "FALSE",
           "confidence": 100,
-          "what_is_true_en": "Health experts and fact-checking organizations have confirmed that drinking hot water with lemon juice does not prevent or cure COVID-19. This is a widely debunked myth from the early pandemic.",
+          "what_is_true_en": "There is no scientific evidence that drinking hot water with lemon juice can destroy, cure, or prevent the coronavirus. Health organizations and fact-checkers have widely debunked this claim.",
           "event_date": null,
           "evidence_for_ids": [],
           "evidence_against_ids": [
-            "ws-1",
-            "ws-3",
-            "fc-3",
-            "fc-4",
-            "fc-8",
-            "ws-2",
-            "ws-4",
-            "ws-5",
-            "ws-6",
-            "fc-5",
             "fc-6",
-            "fc-7"
+            "ws-12",
+            "fc-3",
+            "ws-4",
+            "ws-2",
+            "ws-3",
+            "fc-4",
+            "ws-7",
+            "ws-8",
+            "ws-9",
+            "fc-2",
+            "ws-10"
           ],
           "cited_ids": [
-            "ws-1",
-            "ws-3",
+            "fc-6",
+            "ws-12",
             "fc-3",
-            "fc-4",
-            "fc-8",
+            "ws-4",
             "ws-2",
-            "ws-4"
+            "ws-3"
           ],
-          "reasoning_en": "The claim that drinking hot water with lemon juice can destroy the coronavirus has been widely debunked by numerous fact-checking organizations and health experts. Sources like AFP, AP News, BOOM, and Alt News explicitly state this is false. Health institutions such as The University of Queensland and the National Academies confirm that consuming acidic drinks like lemon juice has no effect on the virus's replication process and does not provide a cure or prevention for COVID-19. There is no scientific evidence to support this claim.",
+          "reasoning_en": "An overwhelming consensus of evidence from multiple TIER_1 fact-checkers (Associated Press, AFP, BOOM Fact Check, Alt News) and health organizations contradicts the claim. They state there is no scientific basis for the idea that drinking hot water with lemon can destroy the coronavirus or prevent COVID-19. The UK government has referred to such claims as \"dangerous quack cures.\"",
           "ai_generation": null
         }
       ]

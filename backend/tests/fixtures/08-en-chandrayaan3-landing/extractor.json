@@ -1,35 +1,51 @@
 {
-  "prompt_version": "extractor-1.1+shared-1.0",
+  "prompt_version": "extractor-1.2+shared-1.0",
   "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-05T17:40:45+00:00",
+  "recorded_at": "2026-10-05T18:13:00+00:00",
   "outputs": [
     {
       "content_language": "en-IN",
       "content_script": "Latn",
-      "summary_en": "The content states that Chandrayaan-3's Vikram lander successfully touched down near the Moon's south pole on August 23, 2023. It claims this event made India the first country to achieve a landing in that specific lunar region.",
+      "summary_en": "The content states that Chandrayaan-3's Vikram lander successfully touched down near the Moon's south pole on August 23, 2023. It also claims that this achievement made India the first country to land in that specific lunar region.",
       "checkable": true,
       "non_checkable_type": null,
       "claims": [
         {
           "claim_id": "claim1",
-          "claim_original": "Chandrayaan-3's Vikram lander touched down near the Moon's south pole on 23 August 2023, making India the first country to land in that region.",
-          "claim_en": "Chandrayaan-3's Vikram lander touched down near the Moon's south pole on August 23, 2023, making India the first country to land in that region.",
+          "claim_original": "Chandrayaan-3's Vikram lander touched down near the Moon's south pole on 23 August 2023",
+          "claim_en": "Chandrayaan-3's Vikram lander touched down near the Moon's south pole on August 23, 2023.",
           "claim_type": "EVENT",
           "entities": [
             "Chandrayaan-3",
             "Vikram lander",
-            "India",
             "Moon's south pole"
           ],
           "place": "Moon's south pole",
           "claimed_date": "2023-08-23",
           "time_sensitivity": "EVERGREEN",
           "search_queries_original": [
-            "Chandrayaan-3 Vikram lander south pole",
+            "Chandrayaan-3 Vikram lander south pole landing date"
+          ],
+          "search_queries_en": [
+            "Chandrayaan-3 Vikram lander south pole landing date"
+          ]
+        },
+        {
+          "claim_id": "claim2",
+          "claim_original": "making India the first country to land in that region",
+          "claim_en": "India became the first country to land a spacecraft in the Moon's south pole region.",
+          "claim_type": "EVENT",
+          "entities": [
+            "India",
+            "Moon's south pole"
+          ],
+          "place": "Moon's south pole",
+          "claimed_date": null,
+          "time_sensitivity": "EVERGREEN",
+          "search_queries_original": [
             "India first country moon south pole landing"
           ],
           "search_queries_en": [
-            "Chandrayaan-3 Vikram lander south pole",
             "India first country moon south pole landing"
           ]
         }

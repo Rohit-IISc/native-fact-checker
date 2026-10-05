@@ -12,19 +12,19 @@ import time
 from datetime import datetime
 
 from app import quota
-from app.agents import extractor
+from app.agents import composer, extractor
 from app.agents.tools import Tools, default_tools
-from app.cache import tier1
+from app.cache import tier1, tier2
 from app.intake import links, media
 from app.intake.hashing import extract_urls
 from app.llm import LLM, StageFailed, get_llm
-from app.models import CheckRequest, CheckResult, Extraction, FetchedPost, Stage
+from app.models import AnswerText, CheckRequest, CheckResult, ClaimResult, Extraction, FetchedPost, Stage
 from app.observability.calls import CheckLedger, ledger_var
 from app.observability.logging import check_id_var, hash_uid, log_event, uid_hash_var
 from app.observability.runs import write_check_run
 from app.pipeline import investigate, stub
 from app.pipeline.progress import CHECKS, now_iso, set_stage
-from app.pipeline.results import VERDICTS, claim_result_from_doc, persist_verdict
+from app.pipeline.results import VERDICTS, claim_result_from_doc, lang_key, persist_verdict
 from app.settings import get_config
 from app.store import Store, get_store
 
@@ -121,29 +121,45 @@ async def run_check(
 
 
 async def _investigate(store, llm, tools, req, extraction, fetched, budget, cache_keys, prompt_versions, timed):
-    inv = await investigate.investigate(store, llm, tools, req, extraction, fetched, budget, timed)
-    versions = prompt_versions | inv.prompt_versions
-    cfg = get_config()
-    models = {stage: cfg.model_for_stage(stage)["id"] for stage in ("extractor", *inv.prompt_versions)
-              if stage in cfg.models["stage_models"]}
-    claim_results = []
-    for claim in extraction.claims:
-        d = inv.decisions[claim.claim_id]
-        native, english = inv.answers[claim.claim_id]
-        vid = await persist_verdict(
-            store, check_id=req.check_id, claim=claim, verdict=d.verdict, outcome=d.outcome,
-            evidence=inv.pack.evidence if inv.pack else [], answer=native, answer_en=english,
-            prompt_versions=versions, model_versions=models, policy_reason=d.policy_reason,
-            split_readings=d.split_readings,
-        )
-        claim_results.append(claim_result_from_doc(await store.get(VERDICTS, vid), extraction.content_language))
-    await store.set(CHECKS, req.check_id, {
-        "missing_lanes": inv.missing_lanes,
-        "stage_errors": inv.stage_errors,  # debugging; not shown to users
-        "source_assessment": inv.pack.source_assessment.model_dump(mode="json")
-        if inv.pack and inv.pack.source_assessment else None,
-    }, merge=True)
-    if not inv.degraded:
+    # Stage 3: tier 2 cache. Claims that match an earlier verdict are answered from it; only the rest
+    # go through the fan-out, panel and composer.
+    t2 = await timed("tier2", tier2.lookup(store, llm, extraction, req.share_date))
+    todo = [c for c in extraction.claims if c.claim_id not in t2.hits]
+    by_claim: dict[str, ClaimResult] = {}
+    for c in extraction.claims:
+        if c.claim_id in t2.hits:
+            by_claim[c.claim_id] = await _from_cache(store, llm, t2.hits[c.claim_id], extraction)
+    degraded = False
+    if todo:
+        sub = extraction.model_copy(update={"claims": todo})
+        extra = [f for f in [t2.context_findings()] if f]
+        inv = await investigate.investigate(store, llm, tools, req, sub, fetched, budget, timed, extra)
+        degraded = inv.degraded
+        versions = prompt_versions | inv.prompt_versions
+        cfg = get_config()
+        models = {stage: cfg.model_for_stage(stage)["id"] for stage in ("extractor", *inv.prompt_versions)
+                  if stage in cfg.models["stage_models"]}
+        for claim in todo:
+            d = inv.decisions[claim.claim_id]
+            native, english = inv.answers[claim.claim_id]
+            vid = await persist_verdict(
+                store, check_id=req.check_id, claim=claim, verdict=d.verdict, outcome=d.outcome,
+                evidence=inv.pack.evidence if inv.pack else [], answer=native, answer_en=english,
+                prompt_versions=versions, model_versions=models, policy_reason=d.policy_reason,
+                split_readings=d.split_readings,
+            )
+            if not degraded:
+                await tier2.index(store, vid, claim.claim_id, t2.embeddings.get(claim.claim_id))
+            by_claim[claim.claim_id] = claim_result_from_doc(await store.get(VERDICTS, vid),
+                                                             extraction.content_language)
+        await store.set(CHECKS, req.check_id, {
+            "missing_lanes": inv.missing_lanes,
+            "stage_errors": inv.stage_errors,  # debugging; not shown to users
+            "source_assessment": inv.pack.source_assessment.model_dump(mode="json")
+            if inv.pack and inv.pack.source_assessment else None,
+        }, merge=True)
+    claim_results = [by_claim[c.claim_id] for c in extraction.claims]
+    if not degraded:
         vids = [c.verdict_id for c in claim_results]
         if cache_keys:
             await tier1.write(store, cache_keys, vids)
@@ -151,8 +167,25 @@ async def _investigate(store, llm, tools, req, extraction, fetched, budget, cach
     return CheckResult(
         check_id=req.check_id, status="DONE", content_language=extraction.content_language,
         claims=claim_results, extra_claims_not_checked=extraction.extra_claims_not_checked,
-        degraded=inv.degraded,
+        degraded=degraded, cache_tier_hit="T2" if not todo else "NONE",
     )
+
+
+async def _from_cache(store, llm, verdict: dict, extraction) -> ClaimResult:
+    """A cached verdict in this post's language; translated once and stored if it is missing."""
+    lang = extraction.content_language
+    answers = verdict.get("answers") or {}
+    if not any(k.split("-")[0] == lang.split("-")[0] for k in answers):
+        english = AnswerText.model_validate(answers.get(verdict.get("answer_en_key") or "en")
+                                            or next(iter(answers.values())))
+        try:
+            native = await composer.translate(llm, english, lang, extraction.content_script)
+            answers = {**answers, lang_key(lang): native.model_dump(mode="json")}
+            await store.set(VERDICTS, verdict["verdict_id"], {"answers": answers}, merge=True)
+            verdict = {**verdict, "answers": answers}
+        except StageFailed as e:
+            log_event(log, "translation failed", logging.WARNING, reason=str(e)[:300])
+    return claim_result_from_doc(verdict, lang)
 
 
 async def _finish_degraded(store, req, extraction, prompt_versions) -> CheckResult:

@@ -1,7 +1,7 @@
 {
   "prompt_version": "judge-1.0+shared-1.0",
   "model_id": "gemini-2.5-pro",
-  "recorded_at": "2026-10-05T17:43:30+00:00",
+  "recorded_at": "2026-10-05T18:12:05+00:00",
   "outputs": [
     {
       "verdicts": [
@@ -9,10 +9,12 @@
           "claim_id": "c1",
           "label": "SCAM",
           "confidence": 100,
-          "what_is_true_en": "The Indian government is not offering a 3-month free mobile recharge. Messages claiming this are scams designed to steal personal information.",
+          "what_is_true_en": "The Indian government has not announced any scheme for three months of free mobile recharge. Messages and videos promoting this offer are fake and part of a scam to trick people into clicking malicious links.",
           "event_date": null,
           "evidence_for_ids": [],
           "evidence_against_ids": [
+            "ws-1",
+            "ws-4",
             "fc-1",
             "fc-2",
             "fc-3",
@@ -21,20 +23,36 @@
             "fc-6",
             "fc-7",
             "fc-8",
-            "fc-12",
-            "ws-5",
-            "ws-7",
-            "ws-2"
+            "ws-2",
+            "ws-3"
           ],
           "cited_ids": [
-            "fc-2",
-            "fc-4",
-            "fc-8",
-            "fc-12",
-            "ws-5",
-            "ws-7"
+            "ws-1",
+            "ws-4",
+            "fc-1",
+            "ws-2"
           ],
-          "reasoning_en": "Multiple fact-checking organizations and the Indian government's Press Information Bureau (PIB) have repeatedly debunked claims of a free mobile recharge scheme from the Prime Minister. The evidence shows these are recurring hoaxes that use malicious links to defraud people and steal personal data. Some viral videos promoting this scam have been identified as edited or created with AI.",
+          "reasoning_en": "Multiple TIER_1 sources, including government news agency Akashvani News and fact-checking organizations like BOOM Live and Vishvas News, have repeatedly debunked this claim. The government's Press Information Bureau (PIB) has clarified that no such scheme exists and that the viral messages are fraudulent attempts by cybercriminals to steal data. Some of the videos circulating are reportedly AI-generated or edited.",
+          "ai_generation": null
+        },
+        {
+          "claim_id": "c2",
+          "label": "SCAM",
+          "confidence": 100,
+          "what_is_true_en": "There is no free mobile recharge offer from the government. The claim that it is valid only for a specific day is a common tactic used in scams to create false urgency and trick people into clicking malicious links.",
+          "event_date": null,
+          "evidence_for_ids": [],
+          "evidence_against_ids": [
+            "ws-7",
+            "ws-8",
+            "ws-9",
+            "ws-11"
+          ],
+          "cited_ids": [
+            "ws-7",
+            "ws-9"
+          ],
+          "reasoning_en": "The underlying claim of a free recharge offer has been thoroughly debunked as a scam by multiple news and fact-checking organizations. Sources like Hindustan Times and Jagran explain that creating a sense of urgency with a limited-time offer, such as being valid for 'today only', is a common tactic used by cybercriminals in these fraudulent schemes to pressure users into acting without thinking.",
           "ai_generation": null
         }
       ]

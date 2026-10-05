@@ -1,7 +1,7 @@
 {
   "prompt_version": "packager-1.1+shared-1.0",
   "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-05T17:43:30+00:00",
+  "recorded_at": "2026-10-05T18:12:05+00:00",
   "outputs": [
     {
       "briefs": [
@@ -10,8 +10,10 @@
           "claim_en": "Prime Minister Modi is giving all Indians 3 months of free mobile recharge.",
           "claimed_date": null,
           "place": "India",
-          "brief_en": "Multiple fact-checking organizations and news outlets, including Vishvas News, FACTLY, and NewsMobile, have debunked claims that Prime Minister Modi or the BJP are offering 3 months of free mobile recharge to all Indians. These reports, published between March 2023 and June 2024, indicate that such messages are hoaxes, often circulating with suspicious links designed to mislead and defraud people, potentially leading to data theft or security breaches. The Press Information Bureau (PIB) Fact Check unit has repeatedly clarified that these claims are fake. The government advises citizens to verify information through official websites like http://myscheme.gov.in and to be cautious of fraudulent messages. Some viral videos making these claims have been identified as being created using artificial intelligence (AI).",
+          "brief_en": "Multiple sources, including Akashvani News (Newsonair), Hindustan Times, LatestLY, and Prabhat Khabar, debunk the claim that Prime Minister Modi is offering three months of free mobile recharge to all Indians. These reports, published between June 2024 and September 2026, state that no such scheme exists and that viral messages and videos promoting it are fake, often AI-generated, and used by cybercriminals to spread fraudulent links. Fact-checking organizations like BOOM Live, Vishvas News, ThePrint, NewsMobile, DigitEye India, Telugu Post, and PTI also consistently rate this claim as false, with some noting that videos of PM Modi announcing such schemes are edited or misused.",
           "evidence_ids": [
+            "ws-1",
+            "ws-4",
             "fc-1",
             "fc-2",
             "fc-3",
@@ -20,10 +22,23 @@
             "fc-6",
             "fc-7",
             "fc-8",
-            "fc-12",
-            "ws-5",
+            "ws-2",
+            "ws-3"
+          ],
+          "gaps_en": []
+        },
+        {
+          "claim_id": "c2",
+          "claim_en": "The offer for free mobile recharge is only valid today, October 5, 2026.",
+          "claimed_date": "2026-10-05",
+          "place": null,
+          "brief_en": "Reports from Hindustan Times (June 2024), LatestLY (September 2026), Jagran (June 2024), and Prabhat Khabar (September 2026) indicate that claims of free mobile recharge offers from PM Modi are fake and often part of scams. These sources suggest that the inclusion of limited-time validity, such as \"only valid today,\" is a common tactic used by cybercriminals to create urgency and trick users into clicking malicious links. A YouTube video from Sambad (January 2026) also warns against such viral videos as dangerous traps.",
+          "evidence_ids": [
             "ws-7",
-            "ws-2"
+            "ws-8",
+            "ws-9",
+            "ws-11",
+            "ws-10"
           ],
           "gaps_en": []
         }

@@ -23,6 +23,21 @@ class Store(Protocol):
     async def list_recent(
         self, collection: str, order_by: str, limit: int, start_after: str | None = None
     ) -> list[tuple[str, dict[str, Any]]]: ...
+    async def set_vector(self, collection: str, doc_id: str, field: str, vector: list[float]) -> None: ...
+    async def find_nearest(
+        self, collection: str, field: str, vector: list[float], limit: int, where_eq: dict[str, Any]
+    ) -> list[tuple[str, dict[str, Any], float]]:
+        """(doc_id, doc without the vector, cosine distance), nearest first."""
+        ...
+
+
+def _cosine_distance(a: list[float], b: list[float]) -> float:
+    dot = sum(x * y for x, y in zip(a, b, strict=False))
+    na = sum(x * x for x in a) ** 0.5
+    nb = sum(y * y for y in b) ** 0.5
+    return 1.0 - dot / (na * nb) if na and nb else 1.0
+
+
 
 
 class MemoryStore:
@@ -70,6 +85,19 @@ class MemoryStore:
             if start_after in ids:
                 items = items[ids.index(start_after) + 1 :]
         return [(k, copy.deepcopy(v)) for k, v in items[:limit]]
+
+    async def set_vector(self, collection: str, doc_id: str, field: str, vector: list[float]) -> None:
+        await self.set(collection, doc_id, {field: list(vector)}, merge=True)
+
+    async def find_nearest(
+        self, collection: str, field: str, vector: list[float], limit: int, where_eq: dict[str, Any]
+    ) -> list[tuple[str, dict[str, Any], float]]:
+        hits = []
+        for doc_id, doc in self.data.get(collection, {}).items():
+            if field in doc and all(doc.get(k) == v for k, v in where_eq.items()):
+                hits.append((doc_id, {k: v for k, v in doc.items() if k != field},
+                             _cosine_distance(vector, doc[field])))
+        return copy.deepcopy(sorted(hits, key=lambda h: h[2])[:limit])
 
 
 class FirestoreStore:
@@ -120,6 +148,32 @@ class FirestoreStore:
             if cursor.exists:
                 q = q.start_after(cursor)
         return [(d.id, d.to_dict()) async for d in q.limit(limit).stream()]
+
+    async def set_vector(self, collection: str, doc_id: str, field: str, vector: list[float]) -> None:
+        from google.cloud.firestore_v1.vector import Vector
+
+        await self._ref(collection, doc_id).set({field: Vector(vector)}, merge=True)
+
+    async def find_nearest(
+        self, collection: str, field: str, vector: list[float], limit: int, where_eq: dict[str, Any]
+    ) -> list[tuple[str, dict[str, Any], float]]:
+        """Firestore vector search (needs the composite vector index in firestore.indexes.json)."""
+        from google.cloud.firestore_v1.base_query import FieldFilter
+        from google.cloud.firestore_v1.base_vector_query import DistanceMeasure
+        from google.cloud.firestore_v1.vector import Vector
+
+        q = self._db.collection(collection)
+        for k, v in where_eq.items():
+            q = q.where(filter=FieldFilter(k, "==", v))
+        vq = q.find_nearest(vector_field=field, query_vector=Vector(vector), distance_measure=DistanceMeasure.COSINE,
+                            limit=limit, distance_result_field="_distance")
+        out = []
+        async for d in vq.stream():
+            doc = d.to_dict()
+            dist = float(doc.pop("_distance", 1.0))
+            doc.pop(field, None)
+            out.append((d.id, doc, dist))
+        return out
 
 
 _store: Store | None = None

@@ -1,7 +1,7 @@
 {
   "prompt_version": "critic-1.0+shared-1.0",
   "model_id": "gemini-2.5-pro",
-  "recorded_at": "2026-10-05T17:44:39+00:00",
+  "recorded_at": "2026-10-05T18:12:21+00:00",
   "outputs": [
     {
       "reviews": [
@@ -14,10 +14,12 @@
         },
         {
           "claim_id": "c2",
-          "decision": "AGREE",
+          "decision": "DISAGREE",
           "proposed_label": "SCAM",
           "proposed_confidence": 100,
-          "objections_en": []
+          "objections_en": [
+            "The label should be SCAM, not FALSE. The claim about a deadline is a component of the larger scam designed to create false urgency and trick people into sharing their data. The evidence for claim c1 (e.g., ws-2, fc-1, fc-3) establishes the fraudulent nature of the entire 'scheme', which applies to all its fabricated details, including this deadline."
+          ]
         },
         {
           "claim_id": "c3",

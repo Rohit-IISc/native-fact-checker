@@ -1,7 +1,7 @@
 {
   "prompt_version": "packager-1.1+shared-1.0",
   "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-05T17:42:38+00:00",
+  "recorded_at": "2026-10-05T18:11:43+00:00",
   "outputs": [
     {
       "briefs": [
@@ -10,20 +10,20 @@
           "claim_en": "Drinking hot water mixed with lemon juice will destroy the coronavirus.",
           "claimed_date": null,
           "place": null,
-          "brief_en": "Multiple fact-checking organizations and health experts, including AFP, AP News, Hackensack Meridian Health, and the University of Queensland, have debunked the claim that drinking hot water with lemon juice can prevent or cure COVID-19. These sources, published between March and May 2020, state that home remedies like warm water or lemon juice are not effective against the coronavirus. Some claims specifically mentioned adding baking soda, which was also found to be ineffective. Experts confirm that consuming acidic liquids does not destroy the virus or stop its replication process.",
+          "brief_en": "Multiple sources, including the Associated Press on April 2, 2020, AFP on March 12, 2020, and BOOM Fact Check on March 13, 2020, contradict the claim that drinking hot water with lemon juice will destroy or protect against the coronavirus. The UK government, as reported by The Guardian on March 26, 2020, urged people to report \"dangerous quack cures\" for coronavirus, including lemon juice and hot water. Hackensack Meridian Health on March 3, 2020, and the National Academies of Sciences, Engineering, and Medicine on April 22, 2020, stated there is no evidence that home remedies like lemon juice are effective against COVID-19. IndiaToday.in on April 26, 2021, noted that lemon juice in warm water can boost immunity but did not claim it destroys coronavirus.",
           "evidence_ids": [
-            "ws-1",
-            "ws-3",
-            "fc-3",
-            "fc-4",
-            "fc-8",
-            "ws-2",
-            "ws-4",
-            "ws-5",
-            "ws-6",
-            "fc-5",
             "fc-6",
-            "fc-7"
+            "ws-12",
+            "fc-3",
+            "ws-2",
+            "ws-3",
+            "fc-4",
+            "ws-4",
+            "ws-7",
+            "ws-8",
+            "ws-9",
+            "fc-2",
+            "ws-10"
           ],
           "gaps_en": []
         }

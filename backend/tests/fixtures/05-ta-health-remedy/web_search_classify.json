@@ -1,72 +1,132 @@
 {
   "prompt_version": "web-search-classify-1.0+shared-1.0",
   "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-05T17:42:38+00:00",
+  "recorded_at": "2026-10-05T18:11:43+00:00",
   "outputs": [
     {
       "items": [
         {
           "source_n": 1,
           "claim_id": "c1",
-          "publisher": "AFP",
-          "title": "False claims that drinking water with lemon can prevent COVID-19 circulate online",
-          "published_at": "2020-03-12",
+          "publisher": "indiatoday.in",
+          "title": "Build your immunity to fight COVID: Lemon juice in warm water",
+          "published_at": "2021-04-26",
           "language": null,
-          "snippet_en": "Claims that drinking warm water with lemon can prevent coronavirus are false, as experts have found no proof of its effectiveness.",
-          "stance": "CONTRADICTS"
+          "snippet_en": "An article from IndiaToday.in states that lemon juice in warm water can boost immunity and fight cold/flu due to Vitamin C and antioxidants, but does not claim it destroys coronavirus.",
+          "stance": "CONTEXT"
         },
         {
           "source_n": 2,
           "claim_id": "c1",
-          "publisher": "Hackensack Meridian Health",
-          "title": "Common Myths about Coronavirus Explained",
-          "published_at": "2020-03-03",
+          "publisher": "theguardian.com",
+          "title": "Report coronavirus 'quack cures' immediately, says UK government",
+          "published_at": "2020-03-27",
           "language": null,
-          "snippet_en": "Home remedies, including warm water or lemon juice, are not effective against COVID-19 or any other virus.",
+          "snippet_en": "The Guardian reported on March 26, 2020, that the UK government urged people to report \"dangerous quack cures\" for coronavirus, including lemon juice, liquid silver, and hot water.",
           "stance": "CONTRADICTS"
         },
         {
           "source_n": 3,
           "claim_id": "c1",
-          "publisher": "AP News",
-          "title": "Drinking hot water, lemon and baking soda will not cure coronavirus",
-          "published_at": "2020-04-02",
+          "publisher": "hackensackmeridianhealth.org",
+          "title": "Common Myths About Coronavirus Explained",
+          "published_at": "2020-03-03",
           "language": null,
-          "snippet_en": "Social media posts claiming hot water with lemon and bicarbonate of soda can cure coronavirus are false; deaths occurred in Israel despite such claims.",
+          "snippet_en": "Hackensack Meridian Health stated on March 3, 2020, that there is no evidence that home remedies like lemon juice are effective against COVID-19 or any other virus.",
           "stance": "CONTRADICTS"
         },
         {
           "source_n": 4,
           "claim_id": "c1",
-          "publisher": "The University of Queensland",
-          "title": "What about drinking lemon in hot water, or other home remedies?",
-          "published_at": "2020-03-18",
+          "publisher": "apnews.com",
+          "title": null,
+          "published_at": "2020-04-02",
           "language": null,
-          "snippet_en": "Hot drinks with lemon do not eliminate the virus and have no impact on immune response or virus elimination.",
+          "snippet_en": "The Associated Press debunked the claim on April 2, 2020, stating that drinking hot water with lemon is not a cure for coronavirus.",
           "stance": "CONTRADICTS"
         },
         {
           "source_n": 5,
           "claim_id": "c1",
-          "publisher": "National Academies",
-          "title": "Does drinking lemon juice mixed with baking soda or aspirin kill COVID-19?",
-          "published_at": "2020-04-22",
+          "publisher": "ndtv.com",
+          "title": "COVID-19: Popular Food Myths Busted - Lemon Water",
+          "published_at": "2021-05-05",
           "language": null,
-          "snippet_en": "Consuming acidic drinks like lemon juice has no effect on coronavirus infections and will not destroy viruses or stop their copying process.",
+          "snippet_en": "NDTV reported on May 5, 2021, that the claim of hot water and lemon killing coronavirus was fact-checked by PIB and found to be false.",
           "stance": "CONTRADICTS"
         },
         {
           "source_n": 6,
           "claim_id": "c1",
-          "publisher": "CBS News",
-          "title": "Will Drinking Lemon Juice Kill The Coronavirus? Dr. Mallika Marshall Answers Your Questions - CBS Boston",
+          "publisher": "facebook.com",
+          "title": null,
+          "published_at": "2020-05-03",
+          "language": null,
+          "snippet_en": "A Facebook post from May 3, 2020, clarified that drinking lemon juice or water will not kill COVID-19, and the theory about acidic environments is incorrect.",
+          "stance": "CONTRADICTS"
+        },
+        {
+          "source_n": 7,
+          "claim_id": "c1",
+          "publisher": "nationalacademies.org",
+          "title": "Lemon Juice Does Not Cure COVID-19",
+          "published_at": "2020-04-22",
+          "language": null,
+          "snippet_en": "The National Academies of Sciences, Engineering, and Medicine published on April 22, 2020, that consuming acidic drinks like lemon juice has no effect on coronavirus infections.",
+          "stance": "CONTRADICTS"
+        },
+        {
+          "source_n": 8,
+          "claim_id": "c1",
+          "publisher": "cbsnews.com",
+          "title": "Coronavirus Pandemic: Acid Kill COVID-19 Takeout Food? Dr. Mallika Marshall WBZ-TV",
           "published_at": "2020-05-05",
           "language": null,
-          "snippet_en": "Consuming acidic liquids will not kill the coronavirus.",
+          "snippet_en": "CBS News on May 5, 2020, confirmed that consuming acidic liquids will not kill the coronavirus.",
+          "stance": "CONTRADICTS"
+        },
+        {
+          "source_n": 9,
+          "claim_id": "c1",
+          "publisher": "stvincents.org",
+          "title": null,
+          "published_at": "2020-06-24",
+          "language": null,
+          "snippet_en": "St. Vincent's Hospital stated on June 24, 2020, that you cannot change the pH inside your body to fight off coronavirus by sucking a lemon or drinking lemon-infused water.",
+          "stance": "CONTRADICTS"
+        },
+        {
+          "source_n": 10,
+          "claim_id": "c1",
+          "publisher": "voanews.com",
+          "title": "The Infodemic: Lemon Juice Won't Cure COVID-19",
+          "published_at": "2021-05-18",
+          "language": null,
+          "snippet_en": "VOA News published an article on May 18, 2021, titled \"The Infodemic: Lemon Juice Won't Cure COVID-19.\"",
+          "stance": "CONTRADICTS"
+        },
+        {
+          "source_n": 11,
+          "claim_id": "c1",
+          "publisher": "youtube.com",
+          "title": null,
+          "published_at": "2020-04-27",
+          "language": null,
+          "snippet_en": "A YouTube video from April 27, 2020, featuring a microbiology expert, explained that lemon water cannot penetrate and kill the virus inside cells.",
+          "stance": "CONTRADICTS"
+        },
+        {
+          "source_n": 12,
+          "claim_id": "c1",
+          "publisher": "afp.com",
+          "title": "False claims drinking water, lemon can prevent COVID-19 circulate online",
+          "published_at": "2020-03-12",
+          "language": null,
+          "snippet_en": "AFP reported on March 12, 2020, that consuming a high amount of vitamin C has never been proven effective against coronavirus.",
           "stance": "CONTRADICTS"
         }
       ],
-      "notes_en": ""
+      "notes_en": "Multiple sources contradict the claim that drinking hot water with lemon juice will destroy the coronavirus. While lemon water may offer some health benefits, it is not effective against COVID-19."
     }
   ]
 }

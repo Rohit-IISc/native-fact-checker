@@ -1,11 +1,27 @@
 {
   "prompt_version": "factcheck-1.1+shared-1.0",
   "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-05T17:40:45+00:00",
+  "recorded_at": "2026-10-05T18:13:00+00:00",
   "outputs": [
     {
       "agent": "factcheck_sites",
-      "evidence": [],
+      "evidence": [
+        {
+          "evidence_id": "",
+          "agent": "factcheck_sites",
+          "claim_id": "c2",
+          "url": "https://www.boomlive.in/fact-check/claims-of-china-being-the-first-country-to-land-on-the-south-pole-of-the-moon-is-false-22899",
+          "domain": "boomlive.in",
+          "publisher": "BOOM Fact Check",
+          "title": "Claims Of China Being The First Country To Land On The South ...",
+          "published_at": "2023-08-29",
+          "language": "en",
+          "snippet_en": "BOOM Fact Check rated as false the claim that China was the first country to land on the moon's South Pole, contradicting the idea that India was not the first.",
+          "stance": "CONTRADICTS",
+          "rating_text": "False",
+          "tier": "TIER_1"
+        }
+      ],
       "source_assessment": null,
       "ai_generation_signals": null,
       "earliest_appearance": null,
