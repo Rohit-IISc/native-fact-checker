@@ -191,7 +191,7 @@ async def _owned_check(check_id: str, user: User) -> dict:
 @app.get("/v1/checks/{check_id}")
 async def get_check(check_id: str, user: User = Depends(current_user)) -> dict:
     doc = await _owned_check(check_id, user)
-    public = {k: v for k, v in doc.items() if k not in ("request", "cache_keys", "uid")}
+    public = {k: v for k, v in doc.items() if k not in ("request", "cache_keys", "uid", "error_detail", "stage_errors")}
     return public
 
 

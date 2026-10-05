@@ -1,0 +1,33 @@
+{
+  "prompt_version": "packager-1.1+shared-1.0",
+  "model_id": "gemini-2.5-flash",
+  "recorded_at": "2026-10-05T17:42:38+00:00",
+  "outputs": [
+    {
+      "briefs": [
+        {
+          "claim_id": "c1",
+          "claim_en": "Drinking hot water mixed with lemon juice will destroy the coronavirus.",
+          "claimed_date": null,
+          "place": null,
+          "brief_en": "Multiple fact-checking organizations and health experts, including AFP, AP News, Hackensack Meridian Health, and the University of Queensland, have debunked the claim that drinking hot water with lemon juice can prevent or cure COVID-19. These sources, published between March and May 2020, state that home remedies like warm water or lemon juice are not effective against the coronavirus. Some claims specifically mentioned adding baking soda, which was also found to be ineffective. Experts confirm that consuming acidic liquids does not destroy the virus or stop its replication process.",
+          "evidence_ids": [
+            "ws-1",
+            "ws-3",
+            "fc-3",
+            "fc-4",
+            "fc-8",
+            "ws-2",
+            "ws-4",
+            "ws-5",
+            "ws-6",
+            "fc-5",
+            "fc-6",
+            "fc-7"
+          ],
+          "gaps_en": []
+        }
+      ]
+    }
+  ]
+}

@@ -66,6 +66,7 @@ def same_language(actual: str | None, expected: str) -> bool:
 
 
 async def run_case(case: Case, runs_dir: Path, record: bool) -> Outcome:
+    from app.agents.tools import RecordingTools, Tools
     from app.devtools import harness
     from app.intake.validate import InvalidInput
     from app.llm import get_llm
@@ -83,17 +84,21 @@ async def run_case(case: Case, runs_dir: Path, record: bool) -> Outcome:
         return Outcome(case, "ERROR", reasons=[f"bad input: {e}"])
 
     # Fresh memory store per case: acceptance measures the pipeline, not the shared cache.
-    run, captured = await harness.run(req, store=MemoryStore(), llm=get_llm())
+    store = MemoryStore()
+    tools = RecordingTools(Tools(store)) if record else None
+    run, captured = await harness.run(req, store=store, llm=get_llm(), tools=tools)
     harness.save_run(run, runs_dir, case.id)
     if record and not run.error:
-        captured.save(case.id)
+        captured.save(case.id, tools.calls if tools else None)
 
     budget = case.budget_s or harness.total_budget_s(req)
     reasons = []
     if run.error:
         reasons.append(f"error {run.error}")
-    if run.label not in case.expected:
-        reasons.append(f"label {run.label}, want {'|'.join(case.expected)}")
+    # The primary claim decides; secondary claims are shown in the table but may legitimately differ
+    # (a news link also mentions things nobody has checked).
+    if run.primary_label not in case.expected:
+        reasons.append(f"label {run.primary_label}, want {'|'.join(case.expected)}")
     if not same_language(run.language, case.language):
         reasons.append(f"language {run.language}, want {case.language}")
     if run.latency_ms > budget * 1000:

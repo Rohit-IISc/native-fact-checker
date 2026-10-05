@@ -1,19 +1,21 @@
 {
   "prompt_version": "extractor-1.1+shared-1.0",
-  "model_id": "gemini-3.8-flash",
-  "recorded_at": "2026-10-04T19:13:20+00:00",
-  "output": {
-    "content_language": "hi-IN",
-    "content_script": "Deva",
-    "summary_en": "The forwarded text is a standard Hindi morning greeting wishing the recipient and their family blessings from Lord Shiva and a good day. It contains no factual assertions or checkable events.",
-    "checkable": false,
-    "non_checkable_type": "GREETING",
-    "claims": [],
-    "extra_claims_not_checked": [],
-    "ocr_text": null,
-    "transcript": null,
-    "visual_description_en": null,
-    "ai_generation_signals": null,
-    "origin_hints": []
-  }
+  "model_id": "gemini-2.5-flash",
+  "recorded_at": "2026-10-05T17:40:23+00:00",
+  "outputs": [
+    {
+      "content_language": "hi-IN",
+      "content_script": "Deva",
+      "summary_en": "The content is a morning greeting in Hindi, wishing the recipient and their family well and invoking the blessings of Lord Shiva.",
+      "checkable": false,
+      "non_checkable_type": "GREETING",
+      "claims": [],
+      "extra_claims_not_checked": [],
+      "ocr_text": null,
+      "transcript": null,
+      "visual_description_en": null,
+      "ai_generation_signals": null,
+      "origin_hints": []
+    }
+  ]
 }

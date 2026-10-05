@@ -1,0 +1,73 @@
+{
+  "prompt_version": "composer-1.1+shared-1.0",
+  "model_id": "gemini-2.5-flash",
+  "recorded_at": "2026-10-05T17:41:25+00:00",
+  "outputs": [
+    {
+      "language": "en",
+      "headline": "Not enough evidence: India is fourth country to soft-land on Moon",
+      "summary": "We could not confirm if India is the fourth country to achieve a soft landing on the Moon, as some sources say Japan is also on the list.",
+      "what_post_claims": "The post claims that India has joined the United States, the former Soviet Union, and China as countries that have achieved a soft landing on the Moon.",
+      "what_is_true": "With the successful landing of Chandrayaan-3 in August 2023, India became the fourth country to achieve a soft landing on the Moon, after the United States, the former Soviet Union, and China.",
+      "evidence_for": [
+        "Several news outlets like downtoearth.org.in and indiatvnews.com state that India is the fourth country to achieve a soft landing on the Moon.",
+        "Space.com and worldpopulationreview.com also report India as the fourth country.",
+        "Wikipedia's page on Chandrayaan-3 confirms India as the fourth country to successfully soft-land on the lunar surface."
+      ],
+      "evidence_against": [],
+      "confidence_phrase": "we are not sure",
+      "sources_spoken": "according to various news outlets and Wikipedia",
+      "audio_script": "The post claims that India has joined the United States, the former Soviet Union, and China as countries that have achieved a soft landing on the Moon. We could not confirm this claim. With the successful landing of Chandrayaan-3 in August 2023, India became the fourth country to achieve a soft landing on the Moon, after the United States, the former Soviet Union, and China. We are not sure about this because some sources also mention Japan as having achieved a soft landing. This information comes from various news outlets like downtoearth.org.in, indiatvnews.com, space.com, and Wikipedia.",
+      "card_lines": [
+        "Not enough evidence",
+        "India is fourth country to soft-land on Moon?",
+        "India is the fourth country to soft-land on the Moon.",
+        "Source: Various news outlets"
+      ]
+    },
+    {
+      "language": "en",
+      "headline": "True: India's Chandrayaan-3 made a historic landing near Moon's south pole",
+      "summary": "India's Chandrayaan-3 mission successfully landed near the Moon's south pole on August 23, 2023, making it the first country to achieve this.",
+      "what_post_claims": "The post claims that India's Chandrayaan-3 mission made a historic landing near the Moon's south pole.",
+      "what_is_true": "India's Chandrayaan-3 mission successfully landed near the Moon's south pole on August 23, 2023, making it the first country to achieve this.",
+      "evidence_for": [
+        "NASA confirms India's Chandrayaan-3 mission successfully landed near the Moon's south pole on August 23, 2023.",
+        "NDTV reported that India's Chandrayaan-3 mission successfully landed near the Moon's south pole on August 23, 2023.",
+        "The Guardian stated that India became the first country to achieve a soft landing in the Moon's south pole region."
+      ],
+      "evidence_against": [],
+      "confidence_phrase": "we are very sure",
+      "sources_spoken": "NASA, NDTV, and The Guardian",
+      "audio_script": "The post claims that India's Chandrayaan-3 mission made a historic landing near the Moon's south pole. This is true. India's Chandrayaan-3 mission successfully landed near the Moon's south pole on August 23, 2023, making it the first country to achieve this. We are very sure of this information. This comes from reliable sources like NASA, NDTV, and The Guardian, all confirming the successful landing and its historic significance.",
+      "card_lines": [
+        "True: Chandrayaan-3 landed on Moon",
+        "India's Chandrayaan-3 made a historic landing",
+        "It landed near the Moon's south pole on August 23, 2023",
+        "Source: NASA"
+      ]
+    },
+    {
+      "language": "en",
+      "headline": "True: Chandrayaan-3 lander successfully touched down on Moon at 18:04 IST.",
+      "summary": "The Vikram lander of India's Chandrayaan-3 mission successfully landed on the Moon at 6:04 PM Indian Standard Time on August 23, 2023.",
+      "what_post_claims": "The post claims that the Vikram lander from Chandrayaan-3 successfully touched down as planned at 6:04 PM local time, which is 12:34 PM GMT.",
+      "what_is_true": "The Vikram lander of India's Chandrayaan-3 mission successfully touched down on the Moon at 6:04 PM Indian Standard Time (IST) on August 23, 2023, which is equivalent to 12:34 PM GMT.",
+      "evidence_for": [
+        "NDTV.com reported that the Vikram lander of Chandrayaan-3 successfully touched down on the lunar surface at 6:04 PM IST on August 23, 2023.",
+        "Hindustan Times confirmed the successful touchdown of the Vikram lander at 6:04 PM IST on August 23, 2023.",
+        "Space.com stated that the Vikram lander successfully touched down at 6:04 PM IST on August 23, 2023, corresponding to 12:34 PM GMT."
+      ],
+      "evidence_against": [],
+      "confidence_phrase": "we are very sure",
+      "sources_spoken": "NDTV.com, Hindustan Times, and Space.com",
+      "audio_script": "The post claims that the Vikram lander from Chandrayaan-3 successfully touched down as planned at 6:04 PM local time, which is 12:34 PM GMT. This is true. The Vikram lander of India's Chandrayaan-3 mission successfully touched down on the Moon at 6:04 PM Indian Standard Time on August 23, 2023, which is 12:34 PM GMT. We are very sure of this. This information comes from multiple reputable sources including NDTV.com, Hindustan Times, and Space.com, all confirming the successful landing and the exact time.",
+      "card_lines": [
+        "True: Chandrayaan-3 lander touched down.",
+        "Claim: Vikram lander landed at 6:04 PM IST.",
+        "What is true: It landed at 6:04 PM IST on August 23, 2023.",
+        "Source: NDTV.com, Hindustan Times, Space.com."
+      ]
+    }
+  ]
+}

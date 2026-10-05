@@ -74,7 +74,7 @@ class PanelOutcome(str, Enum):
 
 class FetchedPost(BaseModel):
     source_url: str
-    platform: Literal["youtube", "x", "instagram", "facebook", "linkedin", "telegram", "news", "other"]
+    platform: Literal["youtube", "x", "instagram", "facebook", "threads", "linkedin", "telegram", "news", "other"]
     title: str | None = None
     text: str | None = None
     author_handle: str | None = None
@@ -125,6 +125,38 @@ class NearMatchResult(BaseModel):
     reason: str
 
 
+# ---------- Grounded web search ----------
+
+class GroundedSource(BaseModel):
+    n: int                      # citation number used in GroundedText.text ("[n]")
+    url: str                    # real page URL (Google's redirect link resolved)
+    domain: str | None = None
+
+
+class GroundedText(BaseModel):
+    """Free-text answer from Grounding with Google Search, with [n] citation markers after each
+    sentence Google attributes to a source. Only these sources may become evidence."""
+    text: str
+    sources: list[GroundedSource] = []
+    queries: int = 0
+
+
+class CitedEvidence(BaseModel):
+    source_n: int = Field(description="Number of the source in the list; never invent one")
+    claim_id: str
+    publisher: str | None = None
+    title: str | None = None
+    published_at: date | None = None
+    language: str | None = None
+    snippet_en: str = Field(description="What this source says, in English, max 60 words")
+    stance: Stance
+
+
+class WebSearchOutput(BaseModel):
+    items: list[CitedEvidence] = []
+    notes_en: str = ""
+
+
 # ---------- Evidence ----------
 
 class Evidence(BaseModel):
@@ -173,6 +205,11 @@ class ClaimBrief(BaseModel):
     brief_en: str = Field(description="Neutral summary of what the evidence says. No verdict.")
     evidence_ids: list[str]
     gaps_en: list[str] = []
+
+
+class PackagerOutput(BaseModel):
+    """What the packager model returns; code builds the EvidencePack around it."""
+    briefs: list[ClaimBrief]
 
 
 class EvidencePack(BaseModel):

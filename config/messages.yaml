@@ -3,7 +3,7 @@
 # English is the fallback for any other language.
 #
 # non_checkable: shown when the extractor finds nothing to fact-check (by non_checkable_type).
-# stub: Day 1 stand-in answer until the composer lands (Day 5). Always NOT_ENOUGH_EVIDENCE.
+# stub: answer when a check runs out of time before the panel finishes. Always NOT_ENOUGH_EVIDENCE.
 en:
   non_checkable:
     OPINION: This post is an opinion. There is no fact to check.
@@ -17,7 +17,7 @@ en:
   stub:
     headline: "Not confirmed yet: we could not check this claim"
     summary: We could not confirm this claim either way. Please do not forward it until it is confirmed.
-    what_is_true: We have not searched for evidence on this claim yet.
+    what_is_true: We could not finish checking this claim in time.
     post_claims: "The post claims:"
     could_not_confirm: We could not confirm this either way yet.
     do_not_forward: Please do not forward it until it is confirmed by a trusted source.
@@ -40,7 +40,7 @@ hi:
   stub:
     headline: "अभी पुष्टि नहीं: हम इस दावे की जाँच नहीं कर सके"
     summary: हम इस दावे की न पुष्टि कर सके, न खंडन। पुष्टि होने तक इसे आगे न भेजें।
-    what_is_true: हमने अभी इस दावे पर सबूत नहीं खोजे हैं।
+    what_is_true: हम समय पर इस दावे की जाँच पूरी नहीं कर सके।
     post_claims: "पोस्ट का दावा है:"
     could_not_confirm: हम अभी इसकी पुष्टि या खंडन नहीं कर सके।
     do_not_forward: किसी भरोसेमंद स्रोत से पुष्टि होने तक कृपया इसे आगे न भेजें।
@@ -63,7 +63,7 @@ ta:
   stub:
     headline: "இன்னும் உறுதிசெய்யப்படவில்லை: இந்தக் கூற்றை எங்களால் சரிபார்க்க முடியவில்லை"
     summary: இந்தக் கூற்று சரியா தவறா என்று எங்களால் உறுதிசெய்ய முடியவில்லை. உறுதியாகும் வரை இதைப் பகிர வேண்டாம்.
-    what_is_true: இந்தக் கூற்றுக்கான ஆதாரங்களை நாங்கள் இன்னும் தேடவில்லை.
+    what_is_true: இந்தக் கூற்றின் சரிபார்ப்பை எங்களால் நேரத்தில் முடிக்க முடியவில்லை.
     post_claims: "இந்தப் பதிவு கூறுவது:"
     could_not_confirm: இது சரியா தவறா என்று எங்களால் இன்னும் உறுதிசெய்ய முடியவில்லை.
     do_not_forward: நம்பகமான மூலம் உறுதிசெய்யும் வரை தயவுசெய்து இதைப் பகிர வேண்டாம்.
@@ -86,7 +86,7 @@ kn:
   stub:
     headline: "ಇನ್ನೂ ದೃಢಪಟ್ಟಿಲ್ಲ: ಈ ಹೇಳಿಕೆಯನ್ನು ನಮಗೆ ಪರಿಶೀಲಿಸಲು ಆಗಲಿಲ್ಲ"
     summary: ಈ ಹೇಳಿಕೆ ಸರಿಯೋ ತಪ್ಪೋ ಎಂದು ನಮಗೆ ದೃಢಪಡಿಸಲು ಆಗಲಿಲ್ಲ. ದೃಢಪಡುವವರೆಗೆ ಇದನ್ನು ಫಾರ್ವರ್ಡ್ ಮಾಡಬೇಡಿ.
-    what_is_true: ಈ ಹೇಳಿಕೆಗೆ ನಾವು ಇನ್ನೂ ಪುರಾವೆಗಳನ್ನು ಹುಡುಕಿಲ್ಲ.
+    what_is_true: ಈ ಹೇಳಿಕೆಯ ಪರಿಶೀಲನೆಯನ್ನು ನಮಗೆ ಸಮಯಕ್ಕೆ ಪೂರ್ಣಗೊಳಿಸಲು ಆಗಲಿಲ್ಲ.
     post_claims: "ಪೋಸ್ಟ್ ಹೇಳುವುದು:"
     could_not_confirm: ಇದು ಸರಿಯೋ ತಪ್ಪೋ ಎಂದು ನಮಗೆ ಇನ್ನೂ ದೃಢಪಡಿಸಲು ಆಗಿಲ್ಲ.
     do_not_forward: ವಿಶ್ವಾಸಾರ್ಹ ಮೂಲದಿಂದ ದೃಢಪಡುವವರೆಗೆ ದಯವಿಟ್ಟು ಇದನ್ನು ಫಾರ್ವರ್ಡ್ ಮಾಡಬೇಡಿ.
@@ -109,7 +109,7 @@ id:
   stub:
     headline: "Belum terkonfirmasi: kami belum bisa memeriksa klaim ini"
     summary: Kami belum bisa memastikan benar atau salahnya klaim ini. Jangan sebarkan sampai terkonfirmasi.
-    what_is_true: Kami belum mencari bukti untuk klaim ini.
+    what_is_true: Kami belum bisa menyelesaikan pemeriksaan klaim ini tepat waktu.
     post_claims: "Unggahan ini mengklaim:"
     could_not_confirm: Kami belum bisa memastikan benar atau salahnya.
     do_not_forward: Mohon jangan sebarkan sampai dikonfirmasi oleh sumber tepercaya.

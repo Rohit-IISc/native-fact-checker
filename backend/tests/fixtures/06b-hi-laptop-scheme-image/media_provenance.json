@@ -1,0 +1,19 @@
+{
+  "prompt_version": "media-provenance-1.1+shared-1.0",
+  "model_id": "gemini-2.5-flash",
+  "recorded_at": "2026-10-05T17:44:39+00:00",
+  "outputs": [
+    {
+      "agent": "media_provenance",
+      "evidence": [],
+      "source_assessment": null,
+      "ai_generation_signals": {
+        "signals_ai": [],
+        "signals_real": []
+      },
+      "earliest_appearance": null,
+      "notes_en": "No pages were found for the image, so its origin and earliest appearance cannot be determined.",
+      "timed_out": false
+    }
+  ]
+}

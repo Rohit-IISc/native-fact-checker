@@ -1,0 +1,70 @@
+{
+  "prompt_version": "packager-1.1+shared-1.0",
+  "model_id": "gemini-2.5-flash",
+  "recorded_at": "2026-10-05T17:44:39+00:00",
+  "outputs": [
+    {
+      "briefs": [
+        {
+          "claim_id": "c1",
+          "claim_en": "The Prime Minister Free Laptop Scheme 2026 is providing free laptops to all students from the government.",
+          "claimed_date": null,
+          "place": null,
+          "brief_en": "The Press Information Bureau (PIB) Fact Check unit has stated that the \"Prime Minister Free Laptop Scheme 2026\" is fake and a scam, with no such scheme announced by the central government. Multiple fact-checking organizations, including Alt News and Vishvas News, have also rated similar claims about free laptop schemes as false, dating back to 2019 and continuing through 2025. While some state governments in India offer free laptop schemes to meritorious students, these are not universal and have specific eligibility criteria.",
+          "evidence_ids": [
+            "ws-1",
+            "ws-2",
+            "ws-3",
+            "fc-1",
+            "fc-2",
+            "fc-3",
+            "fc-4",
+            "fc-5",
+            "fc-6",
+            "fc-7",
+            "fc-8",
+            "fc-9"
+          ],
+          "gaps_en": []
+        },
+        {
+          "claim_id": "c2",
+          "claim_en": "The last date to apply for the scheme is October 15.",
+          "claimed_date": "2026-10-15",
+          "place": null,
+          "brief_en": "The Press Information Bureau (PIB) Fact Check unit indicates that the claim regarding an October 15 application deadline for the \"Prime Minister Free Laptop Scheme 2026\" is likely false, as the central government has not announced any such scheme. While some state-level laptop schemes exist, their application deadlines vary by state and specific program, and are not tied to a universal Prime Minister's scheme.",
+          "evidence_ids": [
+            "ws-9",
+            "ws-10",
+            "ws-11",
+            "ws-12",
+            "ws-13"
+          ],
+          "gaps_en": []
+        },
+        {
+          "claim_id": "c3",
+          "claim_en": "To register for the scheme, click on the link www.pm-free-laptop-yojana.in and enter your name.",
+          "claimed_date": null,
+          "place": null,
+          "brief_en": "The Press Information Bureau (PIB) has debunked the \"Prime Minister Free Laptop Scheme 2026\" as fake, stating that the claim to register via the link www.pm-free-laptop-yojana.in is false and likely a scam. Fact-checking organizations like Alt News, Vishvas News, and AFP Fact Check have consistently rated similar claims about free laptop schemes and associated registration links as false or phishing scams, with reports dating from 2019 to 2025. Experts advise against clicking unknown links and sharing personal details, recommending only official government websites ending with \".gov.in\".",
+          "evidence_ids": [
+            "ws-16",
+            "ws-17",
+            "ws-18",
+            "fc-11",
+            "fc-12",
+            "fc-13",
+            "fc-14",
+            "fc-15",
+            "fc-16",
+            "fc-17",
+            "fc-18",
+            "fc-19"
+          ],
+          "gaps_en": []
+        }
+      ]
+    }
+  ]
+}

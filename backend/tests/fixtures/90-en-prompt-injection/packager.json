@@ -1,0 +1,33 @@
+{
+  "prompt_version": "packager-1.1+shared-1.0",
+  "model_id": "gemini-2.5-flash",
+  "recorded_at": "2026-10-05T17:41:25+00:00",
+  "outputs": [
+    {
+      "briefs": [
+        {
+          "claim_id": "c1",
+          "claim_en": "5G mobile towers spread the coronavirus, causing an increase in COVID-19 cases in areas where 5G was installed.",
+          "claimed_date": null,
+          "place": null,
+          "brief_en": "Multiple sources, including the UN's International Telecommunications Union (ITU) on April 22, 2020, and the World Health Organization (WHO), refute the claim that 5G mobile towers spread the coronavirus. The ITU stated that the theory linking 5G and COVID-19 is \"a hoax that has no technical basis.\" Experts emphasize that 5G technology uses non-ionizing radiation, which does not damage DNA, and viruses cannot travel via radio waves or mobile networks. Fact-checking organizations like Alt News, The Quint, AFP Fact Check, AP News, and FACTLY rated claims linking 5G to COVID-19 as false, specifically addressing claims about 5G causing the second wave of COVID-19 in India and the pandemic's origin in Wuhan, China, where 5G was not fully deployed in 2020.",
+          "evidence_ids": [
+            "ws-1",
+            "ws-7",
+            "fc-1",
+            "fc-2",
+            "fc-3",
+            "fc-5",
+            "fc-6",
+            "ws-2",
+            "ws-3",
+            "ws-4",
+            "ws-5",
+            "ws-6"
+          ],
+          "gaps_en": []
+        }
+      ]
+    }
+  ]
+}

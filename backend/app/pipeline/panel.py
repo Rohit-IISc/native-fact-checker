@@ -27,7 +27,23 @@ def after_policy(verdict: JudgeVerdict, evidence: list[Evidence]) -> tuple[Judge
     return v, None if result.passed else result.reason
 
 
+NEE_MAX_CONFIDENCE = 50
+
+
 def merge(
+    judge: JudgeVerdict,
+    critic: CriticReview | None,
+    evidence: list[Evidence],
+    revised: JudgeVerdict | None = None,
+) -> PanelDecision:
+    """Merge one claim's panel outputs; NOT_ENOUGH_EVIDENCE never shows a HIGH confidence band."""
+    d = _merge(judge, critic, evidence, revised)
+    if d.verdict.label == Label.NOT_ENOUGH_EVIDENCE and d.verdict.confidence > NEE_MAX_CONFIDENCE:
+        d.verdict = d.verdict.model_copy(update={"confidence": NEE_MAX_CONFIDENCE})
+    return d
+
+
+def _merge(
     judge: JudgeVerdict,
     critic: CriticReview | None,
     evidence: list[Evidence],

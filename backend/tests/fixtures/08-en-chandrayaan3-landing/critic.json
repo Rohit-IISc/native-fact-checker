@@ -1,0 +1,18 @@
+{
+  "prompt_version": "critic-1.0+shared-1.0",
+  "model_id": "gemini-2.5-pro",
+  "recorded_at": "2026-10-05T17:40:45+00:00",
+  "outputs": [
+    {
+      "reviews": [
+        {
+          "claim_id": "c1",
+          "decision": "AGREE",
+          "proposed_label": "TRUE",
+          "proposed_confidence": 95,
+          "objections_en": []
+        }
+      ]
+    }
+  ]
+}

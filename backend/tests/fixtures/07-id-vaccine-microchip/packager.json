@@ -1,0 +1,33 @@
+{
+  "prompt_version": "packager-1.1+shared-1.0",
+  "model_id": "gemini-2.5-flash",
+  "recorded_at": "2026-10-05T17:40:32+00:00",
+  "outputs": [
+    {
+      "briefs": [
+        {
+          "claim_id": "c1",
+          "claim_en": "COVID-19 vaccines contain microchips that are used to track every vaccinated person.",
+          "claimed_date": null,
+          "place": null,
+          "brief_en": "Multiple sources, including the Indonesian Ministry of Health (Kemenkes), Jala Hoaks Jakarta, Komdigi, Mayo Clinic Health System, and various fact-checking organizations like AFP Fact Check, Periksa Fakta, Tempo.co, and FactCheck.org, refute the claim that COVID-19 vaccines contain microchips for tracking individuals. These sources, published between April 2020 and October 2021, consistently state that such claims are false or hoaxes. Some explain that barcodes on vaccine products are for distribution tracking, not people, and address specific rumors like those involving Bill Gates or magnets sticking to arms. One AFP Fact Check article from July 2021 notes that a video claiming to show a microchip in a Pfizer vaccine was presented with \"missing context.\"",
+          "evidence_ids": [
+            "ws-1",
+            "ws-3",
+            "ws-5",
+            "fc-2",
+            "fc-14",
+            "fc-15",
+            "fc-1",
+            "fc-3",
+            "fc-5",
+            "fc-6",
+            "fc-7",
+            "ws-2"
+          ],
+          "gaps_en": []
+        }
+      ]
+    }
+  ]
+}

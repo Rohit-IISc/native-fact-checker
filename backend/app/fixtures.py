@@ -1,6 +1,7 @@
 """Recorded-style model outputs for LLM_MODE=fake (offline UI work) and tests. No paid calls."""
 from __future__ import annotations
 
+import json
 import re
 
 from app.models import Claim, ClaimType, Extraction, NonCheckableType, TimeSensitivity
@@ -56,5 +57,51 @@ def fake_extraction(prompt: str) -> Extraction:
     )
 
 
+def _claim_ids(prompt: str) -> list[str]:
+    return list(dict.fromkeys(re.findall(r'"claim_id": "([^"]+)"', prompt)))
+
+
+def fake_judge(prompt: str) -> dict:
+    """No evidence offline, so the honest verdict is NOT_ENOUGH_EVIDENCE."""
+    return {"verdicts": [{
+        "claim_id": cid, "label": "NOT_ENOUGH_EVIDENCE", "confidence": 20,
+        "what_is_true_en": "No credible source confirms or denies this claim.",
+        "evidence_for_ids": [], "evidence_against_ids": [], "cited_ids": [],
+        "reasoning_en": "Offline mode: no evidence was gathered.",
+    } for cid in _claim_ids(prompt)]}
+
+
+def fake_critic(prompt: str) -> dict:
+    ids = list(dict.fromkeys(re.findall(r'"claim_id": "([^"]+)"', prompt.split("Judge's verdicts:")[-1])))
+    return {"reviews": [{"claim_id": cid, "decision": "AGREE", "proposed_label": "NOT_ENOUGH_EVIDENCE",
+                         "proposed_confidence": 20, "objections_en": []} for cid in ids]}
+
+
+def fake_composer(prompt: str) -> dict:
+    from app.models import Claim, ClaimType, JudgeVerdict, Label, TimeSensitivity
+    from app.pipeline.stub import stub_answer
+
+    lang = (re.search(r"\(([a-z]{2,3}-[A-Za-z]{2,4}|[a-z]{2,3}), script", prompt) or [None, "en"])[1]
+    lang = "en" if lang.startswith("en") else lang
+    data = json.loads(prompt.split("Verdict data:", 1)[1].split("Return JSON", 1)[0])
+    claim = Claim(claim_id="c1", claim_original=data["claim_original"], claim_en=data["claim_en"],
+                  claim_type=ClaimType.OTHER, time_sensitivity=TimeSensitivity.EVERGREEN)
+    v = JudgeVerdict(claim_id="c1", label=Label(data["label"]), confidence=data["confidence"],
+                     what_is_true_en=data["what_is_true_en"], evidence_for_ids=[], evidence_against_ids=[],
+                     cited_ids=[], reasoning_en="")
+    return stub_answer(claim, v, lang).model_dump()
+
+
 def demo_fixtures() -> dict:
-    return {"extractor": fake_extraction}
+    """Offline outputs for every stage (LLM_MODE=fake). Agents find nothing, so verdicts are NEE."""
+    return {
+        "extractor": fake_extraction,
+        "web_search": {"text": "Offline mode: no search was run.", "sources": [], "queries": 0},
+        "factcheck_sites": {"agent": "factcheck_sites", "evidence": [], "notes_en": "offline"},
+        "source_credibility": {"agent": "source_credibility", "evidence": [], "source_assessment": {
+            "origin_type": "UNKNOWN", "note_en": "Offline mode: origin not assessed."}},
+        "media_provenance": {"agent": "media_provenance", "evidence": [], "notes_en": "offline"},
+        "judge": fake_judge,
+        "critic": fake_critic,
+        "composer": fake_composer,
+    }

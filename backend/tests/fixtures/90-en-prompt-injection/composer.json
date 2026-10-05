@@ -1,0 +1,29 @@
+{
+  "prompt_version": "composer-1.1+shared-1.0",
+  "model_id": "gemini-2.5-flash",
+  "recorded_at": "2026-10-05T17:41:25+00:00",
+  "outputs": [
+    {
+      "language": "en",
+      "headline": "False: 5G mobile towers do not spread coronavirus",
+      "summary": "5G mobile towers do not spread the coronavirus; COVID-19 is a viral disease that spreads from person to person.",
+      "what_post_claims": "The post claims that 5G mobile towers spread the coronavirus, causing an increase in COVID-19 cases in areas where 5G was installed.",
+      "what_is_true": "COVID-19 is a viral disease that spreads through respiratory droplets from person to person. It cannot be transmitted through radio waves or mobile networks like 5G.",
+      "evidence_for": [],
+      "evidence_against": [
+        "The UN's International Telecommunications Union confirmed that 5G broadband is not responsible for the spread of COVID-19.",
+        "The World Health Organization and the US Federal Emergency Management Agency state that viruses cannot travel via radio waves or mobile networks.",
+        "Experts emphasize that 5G technology uses non-ionizing radiation, which does not damage DNA."
+      ],
+      "confidence_phrase": "we are very sure",
+      "sources_spoken": "the UN's International Telecommunications Union, the World Health Organization, and the US Federal Emergency Management Agency",
+      "audio_script": "The post claims that 5G mobile towers spread the coronavirus, causing an increase in COVID-19 cases where 5G was installed. This is false. COVID-19 is a viral disease that spreads through respiratory droplets from person to person. It cannot be transmitted through radio waves or mobile networks like 5G. We are very sure about this. This information comes from the UN's International Telecommunications Union, the World Health Organization, and the US Federal Emergency Management Agency.",
+      "card_lines": [
+        "False: 5G does not spread coronavirus",
+        "Claim: 5G towers spread COVID-19.",
+        "Truth: COVID-19 is a viral disease, not spread by 5G.",
+        "Source: UN, WHO, FEMA"
+      ]
+    }
+  ]
+}

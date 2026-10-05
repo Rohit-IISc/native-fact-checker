@@ -10,12 +10,13 @@ import asyncio
 import json
 import logging
 import time
-from collections.abc import Callable
+from collections.abc import Awaitable, Callable
 from dataclasses import dataclass
 from typing import Any, Protocol, TypeVar
 
 from pydantic import BaseModel, ValidationError
 
+from app.models import GroundedSource, GroundedText
 from app.observability.calls import ModelCall, current_ledger, model_cost
 from app.observability.logging import check_id_var, log_event
 from app.settings import get_config, get_settings
@@ -55,18 +56,18 @@ class LLM(Protocol):
         model_key: str | None = None,
     ) -> T: ...
 
+    async def search(self, *, stage: str, prompt: str, prompt_version: str, timeout_s: float) -> GroundedText: ...
 
-def _thinking_config(level: str | None):
+
+def _thinking_config(model: dict[str, Any]):
+    """Gemini 3 models take `thinking: low|medium|high`; 2.5 models take `thinking_budget` (tokens)."""
     from google.genai import types
 
-    if not level:
-        return None
-    # Gemini 3 models take a thinking level; older models ignore unknown levels at our risk,
-    # so fall back to no explicit config if construction fails.
-    try:
-        return types.ThinkingConfig(thinking_level=level.upper())
-    except Exception:  # noqa: BLE001
-        return None
+    if model.get("thinking_budget") is not None:
+        return types.ThinkingConfig(thinking_budget=int(model["thinking_budget"]))
+    if model.get("thinking"):
+        return types.ThinkingConfig(thinking_level=str(model["thinking"]).upper())
+    return None
 
 
 class GeminiLLM:
@@ -114,7 +115,7 @@ class GeminiLLM:
             response_mime_type="application/json",
             response_schema=schema,
             temperature=0.2,
-            thinking_config=_thinking_config(model.get("thinking")),
+            thinking_config=_thinking_config(model),
             media_resolution=types.MediaResolution.MEDIA_RESOLUTION_LOW if low_res else None,
             automatic_function_calling=types.AutomaticFunctionCallingConfig(disable=True),
         )
@@ -126,18 +127,25 @@ class GeminiLLM:
                 check_id=check_id_var.get(), stage=stage, model_id=model["id"],
                 prompt_version=prompt_version, retry=attempt > 0,
             )
+            contents = self._parts(text, media)
             try:
-                resp = await asyncio.wait_for(
-                    self._client.aio.models.generate_content(
-                        model=model["id"], contents=self._parts(text, media), config=gen_cfg
-                    ),
-                    timeout=timeout_s,
-                )
+                resp = await _hedged(
+                    lambda c=contents: self._client.aio.models.generate_content(model=model["id"], contents=c,
+                                                                                config=gen_cfg),
+                    timeout_s, model.get("hedge_after_s"), stage)
             except TimeoutError as e:
                 call.success = False
                 call.latency_ms = int((time.monotonic() - started) * 1000)
                 _record(call)
                 raise StageFailed(stage, f"timeout after {timeout_s}s") from e
+            except Exception as e:  # noqa: BLE001  API errors (5xx, 429, 400) fail the stage, not the check
+                call.success = False
+                call.latency_ms = int((time.monotonic() - started) * 1000)
+                _record(call)
+                if attempt == 0 and _retryable(e) and call.latency_ms / 1000 < timeout_s / 2:
+                    await asyncio.sleep(RETRY_BACKOFF_S)
+                    continue
+                raise StageFailed(stage, f"model API error: {type(e).__name__}: {str(e)[:200]}") from e
             call.latency_ms = int((time.monotonic() - started) * 1000)
             usage = resp.usage_metadata
             if usage:
@@ -158,6 +166,153 @@ class GeminiLLM:
                     f"Return corrected JSON only.\n{last_error}"
                 )
         raise StageFailed(stage, f"invalid output after retry: {last_error[:300]}")
+
+    async def search(self, *, stage: str, prompt: str, prompt_version: str, timeout_s: float) -> GroundedText:
+        """Grounding with Google Search, free-text answer. JSON output mode would drop the grounding
+        sources, so structuring happens in a separate call that cites sources by number."""
+        from google.genai import types
+
+        model = get_config().model_for_stage(stage)
+        gen_cfg = types.GenerateContentConfig(
+            temperature=0.2, thinking_config=_thinking_config(model),
+            tools=[types.Tool(google_search=types.GoogleSearch())],
+            automatic_function_calling=types.AutomaticFunctionCallingConfig(disable=True),
+        )
+        call = ModelCall(check_id=check_id_var.get(), stage=stage, model_id=model["id"], prompt_version=prompt_version)
+        started = time.monotonic()
+        try:
+            resp = await _retry_once(lambda: _hedged(
+                lambda: self._client.aio.models.generate_content(model=model["id"], contents=prompt, config=gen_cfg),
+                # Measured Oct 5: identical searches take 8-9 s or 35-55 s (server side), so hedge early.
+                # A hedge duplicates the grounding queries (billed per query); watch the cost.
+                timeout_s, model.get("search_hedge_after_s"), stage))
+        except TimeoutError as e:
+            call.success = False
+            call.latency_ms = int((time.monotonic() - started) * 1000)
+            _record(call)
+            raise StageFailed(stage, f"timeout after {timeout_s}s") from e
+        except Exception as e:  # noqa: BLE001
+            call.success = False
+            call.latency_ms = int((time.monotonic() - started) * 1000)
+            _record(call)
+            raise StageFailed(stage, f"model API error: {type(e).__name__}: {str(e)[:200]}") from e
+        call.latency_ms = int((time.monotonic() - started) * 1000)
+        usage = resp.usage_metadata
+        if usage:
+            call.input_tokens = usage.prompt_token_count or 0
+            call.output_tokens = usage.candidates_token_count or 0
+            call.thinking_tokens = usage.thoughts_token_count or 0
+        call.cost_usd = model_cost(model["key"], call.input_tokens, call.output_tokens, call.thinking_tokens)
+        out = await grounded_text(resp)
+        call.grounding_queries = out.queries
+        current_ledger().grounding_queries += out.queries
+        _record(call)
+        return out
+
+
+RETRY_BACKOFF_S = 1.0
+
+
+def _retryable(e: BaseException) -> bool:
+    """Transient Vertex errors worth one quick retry: 5xx and 429 (seen Oct 5: a judge call failed in 1 s
+    with an API error; the identical request then succeeded three times)."""
+    from google.genai import errors
+
+    if isinstance(e, errors.ServerError):
+        return True
+    return isinstance(e, errors.ClientError) and getattr(e, "code", None) == 429
+
+
+async def _retry_once(make: Callable[[], Awaitable[Any]]) -> Any:
+    try:
+        return await make()
+    except TimeoutError:
+        raise
+    except Exception as e:  # noqa: BLE001
+        if not _retryable(e):
+            raise
+        await asyncio.sleep(RETRY_BACKOFF_S)
+        return await make()
+
+
+async def _hedged(make_call: Callable[[], Awaitable[Any]], timeout_s: float, hedge_after_s: float | None,
+                  stage: str) -> Any:
+    """Tail-latency guard. If the call has not returned after hedge_after_s (about the model's p90),
+    start an identical second call and take whichever finishes first. Vertex occasionally stalls a
+    call for 20+ s that normally takes 5; a duplicate usually lands in normal time.
+    Raises TimeoutError when neither finishes within timeout_s."""
+    loop = asyncio.get_running_loop()
+    deadline = loop.time() + timeout_s
+    first = asyncio.ensure_future(make_call())
+    tasks = {first}
+    try:
+        if hedge_after_s and hedge_after_s < timeout_s * 0.8:
+            done, _ = await asyncio.wait(tasks, timeout=hedge_after_s)
+            if not done:
+                log_event(log, "hedging slow model call", stage=stage, after_s=hedge_after_s)
+                tasks.add(asyncio.ensure_future(make_call()))
+        while tasks:
+            remaining = deadline - loop.time()
+            if remaining <= 0:
+                raise TimeoutError
+            done, _ = await asyncio.wait(tasks, timeout=remaining, return_when=asyncio.FIRST_COMPLETED)
+            if not done:
+                raise TimeoutError
+            for t in done:
+                tasks.discard(t)
+                if t.exception() is None:
+                    return t.result()
+                if not tasks:
+                    raise t.exception()  # type: ignore[misc]
+        raise TimeoutError
+    finally:
+        for t in tasks:
+            t.cancel()
+
+
+_REDIRECT = "https://vertexaisearch.cloud.google.com/grounding-api-redirect/"
+
+
+async def _resolve(uris: list[str]) -> dict[str, str | None]:
+    """Google's grounding redirect links -> real page URLs (one 302 hop each, in parallel)."""
+    import httpx
+
+    async def one(client: httpx.AsyncClient, uri: str) -> tuple[str, str | None]:
+        if not uri.startswith(_REDIRECT):
+            return uri, uri
+        try:
+            r = await client.get(uri, follow_redirects=False)
+            return uri, r.headers.get("location") if r.is_redirect else None
+        except httpx.HTTPError:
+            return uri, None
+
+    async with httpx.AsyncClient(timeout=3.0) as client:
+        return dict(await asyncio.gather(*(one(client, u) for u in dict.fromkeys(uris))))
+
+
+async def grounded_text(resp: Any) -> GroundedText:
+    """Text with [n] after each segment Google attributes to source n, plus the resolved sources.
+    Segment offsets are UTF-8 byte offsets."""
+    text = resp.text or ""
+    gm = resp.candidates[0].grounding_metadata if resp.candidates else None
+    if not gm or not gm.grounding_chunks:
+        return GroundedText(text=text, queries=len(gm.web_search_queries or []) if gm else 0)
+    uris = [c.web.uri if c.web else "" for c in gm.grounding_chunks]
+    real = await _resolve([u for u in uris if u])
+    sources = [GroundedSource(n=i + 1, url=real[u], domain=c.web.title if c.web else None)
+               for i, (u, c) in enumerate(zip(uris, gm.grounding_chunks, strict=True)) if u and real.get(u)]
+    known = {s.n for s in sources}
+    raw = text.encode("utf-8")
+    inserts: dict[int, list[int]] = {}
+    for sp in gm.grounding_supports or []:
+        ns = [i + 1 for i in sp.grounding_chunk_indices or [] if i + 1 in known]
+        if ns and sp.segment and sp.segment.end_index is not None:
+            inserts.setdefault(sp.segment.end_index, []).extend(ns)
+    for end in sorted(inserts, reverse=True):
+        marks = "".join(f" [{n}]" for n in dict.fromkeys(inserts[end]))
+        raw = raw[:end] + marks.encode() + raw[end:]
+    return GroundedText(text=raw.decode("utf-8", errors="replace"), sources=sources,
+                        queries=len(gm.web_search_queries or []))
 
 
 def _record(call: ModelCall) -> None:
@@ -191,12 +346,26 @@ class FakeLLM:
             raise StageFailed(stage, "no fixture")
         fx = self.fixtures[stage]
         value = fx(prompt) if callable(fx) and not isinstance(fx, BaseModel) else fx
+        if isinstance(value, Exception):
+            raise value
         model_id = get_config().model_for_stage(stage)["id"] if model_key is None else model_key
         _record(ModelCall(check_id=check_id_var.get(), stage=stage, model_id=model_id,
                           prompt_version=prompt_version))
         if isinstance(value, BaseModel):
             return schema.model_validate(value.model_dump())
         return schema.model_validate(json.loads(json.dumps(value, default=str)))
+
+    async def search(self, *, stage: str, prompt: str, prompt_version: str, timeout_s: float) -> GroundedText:
+        self.prompts.setdefault(stage, []).append(prompt)
+        if stage not in self.fixtures:
+            raise StageFailed(stage, "no fixture")
+        fx = self.fixtures[stage]
+        value = fx(prompt) if callable(fx) and not isinstance(fx, BaseModel) else fx
+        if isinstance(value, Exception):
+            raise value
+        _record(ModelCall(check_id=check_id_var.get(), stage=stage,
+                          model_id=get_config().model_for_stage(stage)["id"], prompt_version=prompt_version))
+        return GroundedText.model_validate(value.model_dump() if isinstance(value, BaseModel) else value)
 
 
 _llm: LLM | None = None
@@ -217,3 +386,4 @@ def get_llm() -> LLM:
 def set_llm(llm: LLM | None) -> None:
     global _llm
     _llm = llm
+

@@ -157,3 +157,61 @@ async def test_extractor_never_called_without_content(llm):
     result = await extractor.extract(llm, req, empty)
     assert result.checkable is False and result.non_checkable_type.value == "OTHER"
     assert "extractor" not in llm.prompts  # no model call
+
+
+def test_instagram_description_is_split_into_caption_handle_and_date():
+    caption, handle, when = links._instagram_desc(
+        '143 likes, 0 comments - pibfactcheck on September 13, 2026: "Explosion video is OLD #PIBFactCheck"')
+    assert caption == "Explosion video is OLD #PIBFactCheck" and handle == "@pibfactcheck"
+    assert (when.year, when.month, when.day) == (2026, 9, 13)
+
+
+IG_PAGE = """<html><head>
+<meta property="og:type" content="article">
+<meta property="og:title" content="PIB Fact Check on Instagram">
+<meta property="og:description"
+  content="232 likes, 23 comments - pibfactcheck on October 4, 2026: &quot;CCTV image is fake&quot;">
+<meta property="og:image" content="https://cdn.example.com/ig.jpg">
+</head><body>login wall</body></html>"""
+
+
+async def test_instagram_photo_post_without_token_uses_open_graph(monkeypatch):
+    monkeypatch.delenv("META_OEMBED_TOKEN", raising=False)
+    seen = []
+
+    def ig(request: httpx.Request) -> httpx.Response:
+        seen.append(str(request.url))
+        if "graph.facebook.com/v25.0/instagram_oembed" in str(request.url):
+            assert "access_token" not in str(request.url)  # tokenless since June 2026
+            return httpx.Response(200, json={"html": "<blockquote>View this post on Instagram</blockquote>"})
+        if str(request.url).startswith("https://www.instagram.com/p/abc"):
+            return httpx.Response(200, headers={"content-type": "text/html"}, text=IG_PAGE)
+        if str(request.url) == "https://cdn.example.com/ig.jpg":
+            return httpx.Response(200, content=jpeg())
+        return httpx.Response(404)
+
+    async def store_image(data, mime):
+        return "gs://b/ig.jpeg"
+
+    post = await links.fetch("https://www.instagram.com/p/abc/", store_image=store_image,
+                             transport=httpx.MockTransport(ig), resolver=public_resolver)
+    assert post.fetch_method == "open_graph" and post.platform == "instagram"
+    assert post.text == "CCTV image is fake" and post.author_handle == "@pibfactcheck"
+    assert post.image_uris == ["gs://b/ig.jpeg"] and post.media_missing is False
+    assert "FactCheckBot" in links.UA
+
+
+async def test_instagram_reel_still_asks_for_screen_recording():
+    def ig(request: httpx.Request) -> httpx.Response:
+        if "graph.facebook.com" in str(request.url):
+            return httpx.Response(400, json={"error": {"code": 24}})
+        if "instagram.com/reel/abc" in str(request.url):
+            return httpx.Response(200, headers={"content-type": "text/html"}, text=IG_PAGE)
+        return httpx.Response(200, content=jpeg())
+
+    async def store_image(data, mime):
+        return "gs://b/thumb.jpeg"
+
+    post = await links.fetch("https://www.instagram.com/reel/abc/", store_image=store_image,
+                             transport=httpx.MockTransport(ig), resolver=public_resolver)
+    assert post.text == "CCTV image is fake" and post.media_missing is True

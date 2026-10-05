@@ -1,0 +1,48 @@
+{
+  "prompt_version": "web-search-2.1+shared-1.0",
+  "model_id": "gemini-2.5-flash",
+  "recorded_at": "2026-10-05T17:41:25+00:00",
+  "outputs": [
+    {
+      "text": "c1:\nThe International Telecommunications Union (ITU), a UN agency, confirmed on April 22, 2020, that 5G broadband is not responsible for the spread of COVID-19. [1] A spokesperson for ITU stated that the theory linking 5G and COVID-19 is \"a hoax that has no technical basis\" and that \"the coronavirus is not being spread by radio waves.\" [1] The World Health Organization (WHO) and the US Federal Emergency Management Agency (FEMA) have also stated that viruses cannot travel via radio waves or mobile networks, and that COVID-19 is appearing in countries without advanced wireless systems. [2] [3] [4] The Centers for Disease Control and Prevention (CDC) notes that exposure to intense non-ionizing radiation can cause tissue damage due to heat, but this is uncommon and mainly a workplace concern. [5] Experts emphasize that 5G technology uses non-ionizing radiation, which does not damage DNA, and there is no scientific basis for the theory that 5G might compromise the immune system. [2] [5] [6] Despite the COVID-19 pandemic starting during the deployment of 5G technology, the two are not connected, and there is indisputable evidence that COVID-19 is a viral disease. [5] Some conspiracy theories suggested that 5G was first tested in Wuhan, China, the city linked to the first cases of COVID-19, but 5G technology was not fully deployed in Wuhan as of 2020. [7] [5]",
+      "sources": [
+        {
+          "n": 1,
+          "url": "https://news.un.org/en/story/2020/04/1062362",
+          "domain": "un.org"
+        },
+        {
+          "n": 2,
+          "url": "https://www.washingtonpost.com/national-security/dhs-to-advise-telecom-firms-on-preventing-5g-cell-tower-attacks-linked-to-coronavirus-conspiracy-theories/2020/05/13/6aa9eaa6-951f-11ea-82b4-c8db161ff6e5_story.html",
+          "domain": "washingtonpost.com"
+        },
+        {
+          "n": 3,
+          "url": "https://www.ucc.org/daily_covid_19_brief_issue_62/",
+          "domain": "ucc.org"
+        },
+        {
+          "n": 4,
+          "url": "https://www.gov.uk/guidance/5g-and-coronavirus-covid-19",
+          "domain": "www.gov.uk"
+        },
+        {
+          "n": 5,
+          "url": "https://en.wikipedia.org/wiki/5G_misinformation",
+          "domain": "wikipedia.org"
+        },
+        {
+          "n": 6,
+          "url": "https://www.latrobe.edu.au/news/articles/2020/opinion/5g-and-covid-19-conspiracy-theories",
+          "domain": "latrobe.edu.au"
+        },
+        {
+          "n": 7,
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8576388/",
+          "domain": "nih.gov"
+        }
+      ],
+      "queries": 4
+    }
+  ]
+}

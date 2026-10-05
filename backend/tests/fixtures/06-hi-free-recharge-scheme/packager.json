@@ -1,0 +1,33 @@
+{
+  "prompt_version": "packager-1.1+shared-1.0",
+  "model_id": "gemini-2.5-flash",
+  "recorded_at": "2026-10-05T17:43:30+00:00",
+  "outputs": [
+    {
+      "briefs": [
+        {
+          "claim_id": "c1",
+          "claim_en": "Prime Minister Modi is giving all Indians 3 months of free mobile recharge.",
+          "claimed_date": null,
+          "place": "India",
+          "brief_en": "Multiple fact-checking organizations and news outlets, including Vishvas News, FACTLY, and NewsMobile, have debunked claims that Prime Minister Modi or the BJP are offering 3 months of free mobile recharge to all Indians. These reports, published between March 2023 and June 2024, indicate that such messages are hoaxes, often circulating with suspicious links designed to mislead and defraud people, potentially leading to data theft or security breaches. The Press Information Bureau (PIB) Fact Check unit has repeatedly clarified that these claims are fake. The government advises citizens to verify information through official websites like http://myscheme.gov.in and to be cautious of fraudulent messages. Some viral videos making these claims have been identified as being created using artificial intelligence (AI).",
+          "evidence_ids": [
+            "fc-1",
+            "fc-2",
+            "fc-3",
+            "fc-4",
+            "fc-5",
+            "fc-6",
+            "fc-7",
+            "fc-8",
+            "fc-12",
+            "ws-5",
+            "ws-7",
+            "ws-2"
+          ],
+          "gaps_en": []
+        }
+      ]
+    }
+  ]
+}

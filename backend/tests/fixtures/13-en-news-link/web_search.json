@@ -1,0 +1,108 @@
+{
+  "prompt_version": "web-search-2.1+shared-1.0",
+  "model_id": "gemini-2.5-flash",
+  "recorded_at": "2026-10-05T17:41:25+00:00",
+  "outputs": [
+    {
+      "text": "c1: India's Chandrayaan-3 mission successfully landed near the Moon's south pole on August 23, 2023. [1] [2] [3] [4] [5] This made India the first country to achieve a soft landing in this unexplored region. [1] [6] [3] [4] [7]\n\nc2: India joined an exclusive group of countries that have achieved a soft landing on the Moon, alongside the United States, the former Soviet Union (Russia), and China. [8] [9] [10] [11] [6] [12] [13] This makes India the fourth country to successfully soft-land on the lunar surface. [10] [14] [11] [6] [3] Japan later became the fifth country to achieve a soft landing in January 2024. [15] [13]\n\nc3: The Vikram lander of Chandrayaan-3 successfully touched down on the lunar surface at 18:04 Indian Standard Time (IST) on August 23, 2023. [1] [9] [16] [17] [11] [18] [19] This corresponds to 12:34 GMT (or UTC). [9] [14] [11] [18]",
+      "sources": [
+        {
+          "n": 1,
+          "url": "https://thesouthfirst.com/topstory/chandrayaan-3-lander-module-makes-soft-landing-on-moon-india-enters-elite-club/",
+          "domain": "thesouthfirst.com"
+        },
+        {
+          "n": 2,
+          "url": "https://www.ndtv.com/india-news/chandrayaan-3-lands-on-moon-india-joins-elite-space-club-4322798",
+          "domain": "ndtv.com"
+        },
+        {
+          "n": 3,
+          "url": "https://www.universetoday.com/articles/chandrayaan-3-lands-successfully-on-the-moons-south-pole",
+          "domain": "universetoday.com"
+        },
+        {
+          "n": 4,
+          "url": "https://pacificspacecenter.com/2023/08/30/chandrayaan-3-2/",
+          "domain": "pacificspacecenter.com"
+        },
+        {
+          "n": 5,
+          "url": "https://science.nasa.gov/mission/chandrayaan-3/",
+          "domain": "nasa.gov"
+        },
+        {
+          "n": 6,
+          "url": "https://www.tbsnews.net/world/countries-have-successfully-soft-landed-moon-687486",
+          "domain": "tbsnews.net"
+        },
+        {
+          "n": 7,
+          "url": "https://www.theguardian.com/science/2023/aug/23/india-chandrayaan-3-moon-landing-mission",
+          "domain": "theguardian.com"
+        },
+        {
+          "n": 8,
+          "url": "https://www.downtoearth.org.in/science-technology/india-becomes-first-nation-to-soft-land-on-south-side-of-moon-91332",
+          "domain": "downtoearth.org.in"
+        },
+        {
+          "n": 9,
+          "url": "https://www.youtube.com/watch?v=QQKSASFdoDw",
+          "domain": "youtube.com"
+        },
+        {
+          "n": 10,
+          "url": "https://www.indiatvnews.com/news/india/chandrayaan3-india-joins-elite-space-club-list-of-nations-that-have-landed-on-moon-ussr-us-china-soft-landing-vikram-lander-isro-nasa-2023-08-23-888522",
+          "domain": "indiatvnews.com"
+        },
+        {
+          "n": 11,
+          "url": "https://www.space.com/india-chandrayaan-3-moon-landing-livestream",
+          "domain": "space.com"
+        },
+        {
+          "n": 12,
+          "url": "https://worldpopulationreview.com/country-rankings/countries-that-have-landed-on-the-moon",
+          "domain": "worldpopulationreview.com"
+        },
+        {
+          "n": 13,
+          "url": "https://science.howstuffworks.com/which-countries-have-landed-on-the-moon.htm",
+          "domain": "howstuffworks.com"
+        },
+        {
+          "n": 14,
+          "url": "https://en.wikipedia.org/wiki/Chandrayaan-3",
+          "domain": "wikipedia.org"
+        },
+        {
+          "n": 15,
+          "url": "https://en.wikipedia.org/wiki/Moon_landing",
+          "domain": "wikipedia.org"
+        },
+        {
+          "n": 16,
+          "url": "https://www.ndtv.com/india-news/chandrayaan-3-to-land-on-moon-on-august-23-here-s-how-you-can-watch-it-4313565",
+          "domain": "ndtv.com"
+        },
+        {
+          "n": 17,
+          "url": "https://tech.hindustantimes.com/tech/news/chandrayaan3-landing-date-and-time-unveiled-heres-what-you-need-to-know-71692528090099.html",
+          "domain": "hindustantimes.com"
+        },
+        {
+          "n": 18,
+          "url": "https://skyandtelescope.org/astronomy-blogs/astronomy-space-david-dickinson/indias-chandrayaan-3-lands-on-the-moon/",
+          "domain": "skyandtelescope.org"
+        },
+        {
+          "n": 19,
+          "url": "https://www.ndtv.com/india-news/i-reached-my-destination-chandrayaan-3-after-touchdown-4322914",
+          "domain": "ndtv.com"
+        }
+      ],
+      "queries": 5
+    }
+  ]
+}

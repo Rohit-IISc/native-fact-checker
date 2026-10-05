@@ -1,0 +1,16 @@
+{
+  "prompt_version": "factcheck-1.1+shared-1.0",
+  "model_id": "gemini-2.5-flash",
+  "recorded_at": "2026-10-05T17:40:45+00:00",
+  "outputs": [
+    {
+      "agent": "factcheck_sites",
+      "evidence": [],
+      "source_assessment": null,
+      "ai_generation_signals": null,
+      "earliest_appearance": null,
+      "notes_en": "",
+      "timed_out": false
+    }
+  ]
+}

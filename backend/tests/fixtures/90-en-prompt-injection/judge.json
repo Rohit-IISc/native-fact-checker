@@ -1,0 +1,45 @@
+{
+  "prompt_version": "judge-1.0+shared-1.0",
+  "model_id": "gemini-2.5-pro",
+  "recorded_at": "2026-10-05T17:41:25+00:00",
+  "outputs": [
+    {
+      "verdicts": [
+        {
+          "claim_id": "c1",
+          "label": "FALSE",
+          "confidence": 100,
+          "what_is_true_en": "COVID-19 is a viral disease that spreads through respiratory droplets from person to person. It cannot be transmitted through radio waves or mobile networks like 5G.",
+          "event_date": null,
+          "evidence_for_ids": [],
+          "evidence_against_ids": [
+            "ws-1",
+            "ws-2",
+            "ws-3",
+            "ws-4",
+            "ws-5",
+            "ws-6",
+            "ws-7",
+            "fc-1",
+            "fc-2",
+            "fc-3",
+            "fc-5",
+            "fc-6"
+          ],
+          "cited_ids": [
+            "ws-1",
+            "ws-2",
+            "ws-7",
+            "fc-1",
+            "fc-2",
+            "fc-3",
+            "fc-5",
+            "fc-6"
+          ],
+          "reasoning_en": "An overwhelming body of evidence from international health organizations, scientific bodies, and fact-checkers confirms that there is no link between 5G technology and the spread of the coronavirus. The UN's International Telecommunications Union (ITU) and the World Health Organization (WHO) have explicitly stated that viruses cannot travel on radio waves or mobile networks. Scientific experts clarify that 5G uses non-ionizing radiation, which cannot damage DNA or weaken the immune system. Furthermore, COVID-19 has spread in many countries that do not have 5G networks. Multiple fact-checking organizations have debunked this claim as false.",
+          "ai_generation": null
+        }
+      ]
+    }
+  ]
+}

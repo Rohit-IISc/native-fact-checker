@@ -1,0 +1,58 @@
+{
+  "prompt_version": "web-search-2.1+shared-1.0",
+  "model_id": "gemini-2.5-flash",
+  "recorded_at": "2026-10-05T17:43:30+00:00",
+  "outputs": [
+    {
+      "text": "c1:\nThe Press Information Bureau (PIB) Fact Check unit has repeatedly debunked claims that Prime Minister Modi is offering free mobile recharge to all Indians. These claims are fake and often circulate via messages with suspicious links, which are attempts to mislead and defraud people. [1] [2] [3] [4] [5] [6] The government has advised citizens to verify information through official websites like http://myscheme.gov.in and to be wary of such fraudulent messages and links, as they can lead to data theft or security breaches. [7] [1] [2] [3] [8] [9] [4] Some viral videos making these claims have been identified as being created using artificial intelligence (AI). [7] [8]",
+      "sources": [
+        {
+          "n": 1,
+          "url": "https://www.telugupost.com/english-factcheck/viral-message-claiming-bjp-is-providing-three-months-of-free-recharge-to-all-indian-mobile-service-customers-is-hoax-1501939",
+          "domain": "telugupost.com"
+        },
+        {
+          "n": 2,
+          "url": "https://www.hindustantimes.com/india-news/fact-check-viral-posts-claim-bjp-pm-modi-are-offering-free-recharge-after-lok-sabha-election-results-heres-the-truth-101717742707645.html",
+          "domain": "hindustantimes.com"
+        },
+        {
+          "n": 3,
+          "url": "https://www.latestly.com/fact-check/is-pm-narendra-modi-offering-3-months-of-mobile-recharge-for-free-fact-check-calls-claim-fake-7589632.html",
+          "domain": "latestly.com"
+        },
+        {
+          "n": 4,
+          "url": "https://www.etnownews.com/news/pm-modi-offering-3-months-of-free-mobile-recharge-pib-fact-check-debunks-viral-claim-check-details-article-156046145",
+          "domain": "etnownews.com"
+        },
+        {
+          "n": 5,
+          "url": "https://digiteye.in/bjp-offering-3-month-free-mobile-recharge-ahead-of-2024-elections-fact-check/",
+          "domain": "digiteye.in"
+        },
+        {
+          "n": 6,
+          "url": "https://www.prabhatkhabar.com/technology/pm-modi-free-recharge-claim-fake-pib-fact-check",
+          "domain": "prabhatkhabar.com"
+        },
+        {
+          "n": 7,
+          "url": "https://newsonair.gov.in/govt-debunks-pm-modis-video-promising-school-children-will-receive-free-recharge-on-their-mobiles/",
+          "domain": "newsonair.gov.in"
+        },
+        {
+          "n": 8,
+          "url": "https://www.thestatesman.com/india/fack-check-centre-giving-free-mobile-recharge-to-school-going-children-key-details-here-1503587974.html",
+          "domain": "thestatesman.com"
+        },
+        {
+          "n": 9,
+          "url": "https://theprint.in/hoaxposed/fact-check-modi-bjp-havent-announced-any-free-recharge-scheme-on-return-to-power/2121149/",
+          "domain": "theprint.in"
+        }
+      ],
+      "queries": 4
+    }
+  ]
+}

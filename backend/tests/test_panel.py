@@ -59,3 +59,11 @@ def test_agree_with_mismatched_label_is_treated_as_disagree():
 def test_critic_missing_caps_confidence():
     d = panel.merge(verdict(Label.FALSE, ["fc-1"], 95), None, PACK)
     assert d.verdict.label == Label.FALSE and d.verdict.confidence == 84
+
+
+def test_not_enough_evidence_never_shows_high_confidence():
+    v = verdict(Label.NOT_ENOUGH_EVIDENCE, [], confidence=100, against=[])
+    agree = CriticReview(claim_id="c1", decision="AGREE", proposed_label=Label.NOT_ENOUGH_EVIDENCE,
+                         proposed_confidence=95)
+    d = panel.merge(v, agree, evidence=[])
+    assert d.verdict.label == Label.NOT_ENOUGH_EVIDENCE and d.verdict.confidence == 50

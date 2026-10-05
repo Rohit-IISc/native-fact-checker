@@ -165,5 +165,42 @@ def _upload_gcs(bucket: str, name: str, data: bytes, mime: str) -> None:
     _gcs.bucket(bucket).blob(name).upload_from_string(data, content_type=mime)
 
 
+async def read_media(uri: str) -> bytes:
+    """Bytes of stored media: gs:// from the media bucket, or a local path (dev, tests)."""
+    if uri.startswith("gs://"):
+        bucket, _, name = uri[5:].partition("/")
+        return await asyncio.to_thread(_download_gcs, bucket, name)
+    return await asyncio.to_thread(Path(uri).read_bytes)
+
+
+def _download_gcs(bucket: str, name: str) -> bytes:
+    global _gcs
+    if _gcs is None:
+        from google.cloud import storage
+
+        _gcs = storage.Client(project=get_settings().gcp_project)
+    return _gcs.bucket(bucket).blob(name).download_as_bytes()
+
+
+async def keyframes(uri: str, count: int = 3, duration_s: float | None = None) -> list[bytes]:
+    """`count` JPEG frames spread over the clip (media provenance looks them up on the web)."""
+    data = await read_media(uri)
+    span = min(duration_s or 30.0, float(get_config().limits["input"]["max_media_seconds"]))
+    times = [span * (i + 0.5) / count for i in range(count)]
+    frames = []
+    with tempfile.NamedTemporaryFile(suffix=".mp4") as src, tempfile.TemporaryDirectory() as tmp:
+        src.write(data)
+        src.flush()
+        for i, t in enumerate(times):
+            out = Path(tmp) / f"k{i}.jpg"
+            try:
+                await _run("ffmpeg", "-v", "error", "-ss", f"{t:.1f}", "-i", src.name, "-frames:v", "1",
+                           "-vf", "scale=640:-2", str(out), limit_s=20)
+                frames.append(await asyncio.to_thread(out.read_bytes))
+            except Exception as e:  # noqa: BLE001
+                log.warning("keyframe at %.1fs failed: %s", t, e)
+    return frames
+
+
 def clear_local_media() -> None:
     shutil.rmtree(LOCAL_MEDIA_DIR, ignore_errors=True)

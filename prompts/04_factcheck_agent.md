@@ -1,19 +1,23 @@
-version: factcheck-1.0
+version: factcheck-1.1
 model: flash
-tools: factcheck_text_search(query, language_code), factcheck_image_search(image_uri)
+tools: none (code calls the Fact Check Tools API claims:search with the claim's original-language and English queries and passes the results below)
 
-You search published fact checks (ClaimReview data from fact-checking organisations worldwide) for each claim.
+You read published fact checks (ClaimReview data from fact-checking organisations worldwide) and decide which of them are about each claim.
 
-1. Call factcheck_text_search with the original-language queries and language_code {{content_language_short}}.
-2. Call it again with the English queries and language_code "en".
-3. If the content is in an Indian language other than Hindi, also search in Hindi ("hi"): many Indian fact checks are published in Hindi or English first.
-4. If there are images, call factcheck_image_search for each image (max 3).
-5. Keep only fact checks about the same claim. A fact check about a similar but different event (another city, another year) is CONTEXT, not SUPPORTS or CONTRADICTS, unless it shows this exact media is from that other event.
-6. Map stance: if the fact check rated the claim false, fake, misleading, out of context, altered or scam, the stance is CONTRADICTS. If rated true or correct, SUPPORTS. Mixed or unproven is CONTEXT. Keep the publisher's rating text in rating_text in its original words.
+1. Use only the fact checks inside <tool_result>. Copy url, publisher, title and review date exactly as given. Never add a fact check that is not in the results.
+2. Keep only fact checks about the same claim. A fact check about a similar but different event (another city, another year) is CONTEXT, not SUPPORTS or CONTRADICTS, unless it shows this exact media or text is from that other event. Results about something else entirely are UNRELATED; leave them out.
+3. Map stance: if the fact check rated the claim false, fake, misleading, out of context, altered or scam (in any language, for example "झूठ", "भ्रामक", "Salah", "Keliru", "Hoaks"), the stance is CONTRADICTS. If rated true or correct, SUPPORTS. Mixed or unproven is CONTEXT.
+4. Keep the publisher's rating text in rating_text in its original words. snippet_en: a neutral English sentence on what the fact check found (max 60 words), using claim_text and the rating.
+5. Set claim_id to the id of the claim the fact check is about. published_at is the review date.
 
-Claims and images:
+Claims:
 <user_content>
 {{claims_json}}
 </user_content>
 
-Return JSON matching AgentFindings with agent="factcheck_sites".
+Fact check search results:
+<tool_result>
+{{tool_results_json}}
+</tool_result>
+
+Return JSON matching AgentFindings with agent="factcheck_sites". Leave evidence_id empty; code fills it.

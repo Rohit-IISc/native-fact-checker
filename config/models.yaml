@@ -5,17 +5,27 @@ vertex:
   location: global          # Gemini endpoint
 models:
   flash:
-    id: gemini-3.8-flash    # fallbacks in order if not available
-    fallbacks: [gemini-3.7-flash, gemini-3-flash-preview, gemini-2.5-flash]
-    price_in: 0.75          # introductory through 2026-12-31, then 1.50
-    price_out: 3.75         # introductory through 2026-12-31, then 7.50
-    thinking: low
+    # Measured Oct 5 on the extractor prompt (4 runs each): gemini-3.8-flash 13.6-22.8 s,
+    # gemini-3.7-flash 4.8-8.4 s with one 60 s timeout, gemini-2.5-flash 2.3-2.8 s. Preview models are
+    # slow and erratic on Vertex today; 2.5 Flash is GA. Re-check with scripts/check_models.py.
+    id: gemini-2.5-flash
+    fallbacks: [gemini-3.8-flash, gemini-3.7-flash]
+    price_in: 0.30
+    price_out: 2.50
+    thinking_budget: 0      # 2.5 models: budget in tokens, 0 = off (fast). Gemini 3 models use `thinking: low`
+    hedge_after_s: 9        # tail stalls happen on every model; llm._hedged duplicates a slow call
+    search_hedge_after_s: 12  # grounded search: 8-9 s or 35-55 s for the same request on 3.8 Flash
   pro:
-    id: gemini-3.1-pro-preview
-    fallbacks: [gemini-3-pro-preview, gemini-2.5-pro]
-    price_in: 2.00
-    price_out: 12.00
-    thinking: medium
+    # Measured Oct 5 on the same judge prompt: gemini-3.1-pro-preview took 35-51 s (one call > 120 s);
+    # gemini-2.5-pro took 9-10 s with the same verdict. gemini-3-pro-preview returns 404 on Vertex.
+    id: gemini-2.5-pro
+    fallbacks: [gemini-3.1-pro-preview]
+    price_in: 1.25            # <= 200k input tokens
+    price_out: 10.00
+    # Judge on a 12-item pack, Oct 5: dynamic thinking 15.7-15.9 s (1100-1400 thinking tokens, tails > 30 s);
+    # budget 1024: 11.7-12.5 s; budget 256: 5.8-6.4 s. Same verdict in all six runs. 1024 keeps room to reason.
+    thinking_budget: 1024
+    hedge_after_s: 14
   embedding:
     id: gemini-embedding-001
     dims: 768
@@ -34,6 +44,7 @@ stage_models:
   extractor: flash
   near_match: flash
   web_search: flash
+  web_search_classify: flash
   factcheck_sites: flash
   source_credibility: flash
   media_provenance: flash

@@ -17,6 +17,7 @@ from typing import Any
 from pydantic import BaseModel
 
 from app.agents import extractor
+from app.agents.tools import Tools
 from app.devtools.recording import CapturingLLM
 from app.ids import ulid
 from app.intake import links
@@ -83,6 +84,7 @@ class Run:
     ledger: CheckLedger = field(default_factory=CheckLedger)
     latency_ms: int = 0
     notes: list[str] = field(default_factory=list)
+    agents: dict[str, str] = field(default_factory=dict)
 
     @property
     def label(self) -> str:
@@ -94,6 +96,13 @@ class Run:
             return "NOT_CHECKABLE"
         labels = [c.label.value for c in self.result.claims]
         return labels[0] if len(set(labels)) == 1 else "/".join(labels)
+
+    @property
+    def primary_label(self) -> str:
+        """Label of the first claim (the extractor orders claims most viral or harmful first)."""
+        if self.result and self.result.status == "DONE" and self.result.claims:
+            return self.result.claims[0].label.value
+        return self.label
 
     @property
     def language(self) -> str | None:
@@ -108,7 +117,7 @@ class Run:
         return {
             "input": self.input, "mode": self.mode, "started_at": self.started_at,
             "latency_ms": self.latency_ms, "label": self.label, "language": self.language,
-            "error": self.error, "notes": self.notes,
+            "error": self.error, "notes": self.notes, "agents": self.agents,
             "stages": [s.__dict__ for s in self.stages],
             "extraction": dump(self.extraction), "result": dump(self.result),
             "cost": {
@@ -149,8 +158,10 @@ async def build_request(
 
 
 async def run(req: CheckRequest, *, store: Store, llm: LLM, stage: str = "full",
-              cache_keys: list[str] | None = None, on_stage=None) -> tuple[Run, CapturingLLM]:
-    """Returns the run and the capturing LLM (its outputs are what `make record` saves)."""
+              cache_keys: list[str] | None = None, on_stage=None, tools: Tools | None = None
+              ) -> tuple[Run, CapturingLLM]:
+    """Returns the run and the capturing LLM (its outputs are what `make record` saves).
+    `tools`: RecordingTools for make record, ReplayTools for make test, None for the real ones."""
     llm = CapturingLLM(llm)
     out = Run(input=req.model_dump(mode="json", include={"text", "url", "media"}), mode=stage,
               started_at=datetime.now(UTC).isoformat())
@@ -174,13 +185,18 @@ async def run(req: CheckRequest, *, store: Store, llm: LLM, stage: str = "full",
             "created_at": datetime.now(UTC).isoformat(), "request": req.model_dump(mode="json"),
         })
         # run_check sets its own ledger in this context; we read it back afterwards.
-        out.result = await runner.run_check(req, store=tracing, llm=llm, cache_keys=cache_keys or [])
+        out.result = await runner.run_check(req, store=tracing, llm=llm, cache_keys=cache_keys or [], tools=tools)
         out.ledger = ledger_var.get() or out.ledger
         doc = await store.get(CHECKS, req.check_id) or {}
         if out.result.status == "FAILED":
-            out.error = doc.get("error_code")
-        raw = llm.outputs.get("extractor")
+            out.error = f"{doc.get('error_code')}: {doc.get('error_detail', '')[:300]}"
+        raw = (llm.outputs.get("extractor") or [None])[-1]
         out.extraction = extractor.finalize(raw) if isinstance(raw, Extraction) else None
+        out.agents = doc.get("agents") or {}
+        for stage, why in (doc.get("stage_errors") or {}).items():
+            out.notes.append(f"{stage} failed: {why}")
+        if doc.get("missing_lanes"):
+            out.notes.append(f"agents that failed or timed out: {', '.join(doc['missing_lanes'])}")
     out.latency_ms = int((time.monotonic() - t0) * 1000)
     out.stages = tracing.stages
     await _drain_background_tasks(tasks_before)

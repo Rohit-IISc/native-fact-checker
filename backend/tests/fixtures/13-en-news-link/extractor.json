@@ -1,76 +1,89 @@
 {
   "prompt_version": "extractor-1.1+shared-1.0",
-  "model_id": "gemini-3.8-flash",
-  "recorded_at": "2026-10-04T19:35:05+00:00",
-  "output": {
-    "content_language": "en-IN",
-    "content_script": "Latn",
-    "summary_en": "The submission shares an article and image from BBC News reporting on the successful landing of India's Chandrayaan-3 mission near the Moon's south pole. The accompanying photo shows crowds cheering and celebrating the event.",
-    "checkable": true,
-    "non_checkable_type": null,
-    "claims": [
-      {
-        "claim_id": "claim_1",
-        "claim_original": "India has made history as its Moon mission becomes the first to land in the lunar south pole region.",
-        "claim_en": "India became the first country to land a spacecraft near the lunar south pole with Chandrayaan-3.",
-        "claim_type": "EVENT",
-        "entities": [
-          "India",
-          "Chandrayaan-3",
-          "Moon",
-          "ISRO"
-        ],
-        "place": "Moon",
-        "claimed_date": null,
-        "time_sensitivity": "EVERGREEN",
-        "search_queries_original": [
-          "Chandrayaan-3 Moon south pole landing first country",
-          "India first lunar south pole landing ISRO"
-        ],
-        "search_queries_en": [
-          "Chandrayaan-3 Moon south pole landing first country",
-          "India first lunar south pole landing ISRO"
-        ]
-      },
-      {
-        "claim_id": "claim_2",
-        "claim_original": "With this, India joins an elite club of countries to achieve a soft landing on the Moon, after the US, the former Soviet Union and China.",
-        "claim_en": "India is the fourth country to achieve a soft landing on the Moon, after the United States, the Soviet Union, and China.",
-        "claim_type": "EVENT",
-        "entities": [
-          "India",
-          "United States",
-          "Soviet Union",
-          "China",
-          "Moon"
-        ],
-        "place": "Moon",
-        "claimed_date": null,
-        "time_sensitivity": "EVERGREEN",
-        "search_queries_original": [
-          "countries soft landing Moon US USSR China India"
-        ],
-        "search_queries_en": [
-          "countries soft landing Moon US USSR China India"
-        ]
-      }
-    ],
-    "extra_claims_not_checked": [
-      "The Vikram lander from Chandrayaan-3 successfully touched down at 18:04 local time (12:34 GMT)."
-    ],
-    "ocr_text": "BBC NEWS",
-    "transcript": null,
-    "visual_description_en": "A crowd of people celebrating, with a woman in the foreground wearing a yellow salwar kameez with her mouth open cheering or shouting, wearing a bindi and earrings. A BBC News logo is overlaid at the bottom left.",
-    "ai_generation_signals": {
-      "signals_ai": [],
-      "signals_real": [
-        "Natural crowd depth of field and realistic facial expressions",
-        "Authentic photographic grain, lighting, and natural hand details",
-        "Standard BBC News photo journalism presentation"
+  "model_id": "gemini-2.5-flash",
+  "recorded_at": "2026-10-05T17:41:25+00:00",
+  "outputs": [
+    {
+      "content_language": "en-IN",
+      "content_script": "Latn",
+      "summary_en": "The image shows a woman yawning in a crowd, with other people visible in the background. The BBC News logo is present in the bottom left corner of the image. The accompanying article discusses India's historic Chandrayaan-3 mission, which successfully landed near the Moon's south pole.",
+      "checkable": true,
+      "non_checkable_type": null,
+      "claims": [
+        {
+          "claim_id": "claim1",
+          "claim_original": "Chandrayaan-3: India makes historic landing near Moon's south pole",
+          "claim_en": "India's Chandrayaan-3 mission made a historic landing near the Moon's south pole.",
+          "claim_type": "EVENT",
+          "entities": [
+            "India",
+            "Chandrayaan-3",
+            "Moon's south pole"
+          ],
+          "place": "Moon's south pole",
+          "claimed_date": null,
+          "time_sensitivity": "EVERGREEN",
+          "search_queries_original": [
+            "Chandrayaan-3 historic landing Moon south pole"
+          ],
+          "search_queries_en": [
+            "Chandrayaan-3 historic landing Moon south pole"
+          ]
+        },
+        {
+          "claim_id": "claim2",
+          "claim_original": "India joins an elite club of countries to achieve a soft landing on the Moon, after the US, the former Soviet Union and China.",
+          "claim_en": "India has joined the United States, the former Soviet Union, and China as countries that have achieved a soft landing on the Moon.",
+          "claim_type": "STATISTIC",
+          "entities": [
+            "India",
+            "US",
+            "former Soviet Union",
+            "China",
+            "Moon"
+          ],
+          "place": "Moon",
+          "claimed_date": null,
+          "time_sensitivity": "EVERGREEN",
+          "search_queries_original": [
+            "Countries soft landing Moon",
+            "India soft landing Moon club"
+          ],
+          "search_queries_en": [
+            "Countries soft landing Moon",
+            "India soft landing Moon club"
+          ]
+        },
+        {
+          "claim_id": "claim3",
+          "claim_original": "The Vikram lander from Chandrayaan-3 successfully touched down as planned at 18:04 local time (12:34 GMT).",
+          "claim_en": "The Vikram lander of Chandrayaan-3 successfully touched down at 18:04 local time (12:34 GMT).",
+          "claim_type": "EVENT",
+          "entities": [
+            "Vikram lander",
+            "Chandrayaan-3"
+          ],
+          "place": null,
+          "claimed_date": null,
+          "time_sensitivity": "EVERGREEN",
+          "search_queries_original": [
+            "Vikram lander touchdown time",
+            "Chandrayaan-3 landing time"
+          ],
+          "search_queries_en": [
+            "Vikram lander touchdown time",
+            "Chandrayaan-3 landing time"
+          ]
+        }
+      ],
+      "extra_claims_not_checked": [],
+      "ocr_text": "BBC NEWS",
+      "transcript": null,
+      "visual_description_en": "A close-up shot shows a woman in a yellow garment yawning, covering her mouth with her hand. She has a red bindi on her forehead and is wearing gold earrings. In the background, other people are visible, some with their hands raised. To the left, a man with glasses and a beard is partially visible. To the right, a brown wallet or book is seen. The BBC News logo is in the bottom left corner of the image.",
+      "ai_generation_signals": null,
+      "origin_hints": [
+        "BBC NEWS"
       ]
-    },
-    "origin_hints": [
-      "BBC NEWS"
-    ]
-  }
+    }
+  ]
 }

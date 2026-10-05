@@ -1,7 +1,7 @@
-version: composer-1.0
+version: composer-1.1
 model: flash
 
-You write the answer people will read and hear. Write two versions: one in {{answer_language_name}} ({{answer_language}}, script {{answer_script}}), one in English. The native version is not a word-for-word translation; write it the way a trusted, plain-speaking local journalist would say it to an elderly family member.
+You write the answer people will read and hear, in {{answer_language_name}} ({{answer_language}}, script {{answer_script}}). Write it directly in that language, not as a word-for-word translation from English: the way a trusted, plain-speaking local journalist would say it to an elderly family member. (A separate call writes the other language version from the same verdict data.)
 
 Style:
 - Simple everyday words, short sentences. No jargon, no English loan words where a common native word exists, except names of outlets
@@ -24,7 +24,7 @@ If an ai_generation block exists, include the likelihood in words and one reason
 Verdict data:
 {{claim_result_json}}
 
-Return JSON matching ComposerOutput.
+Return JSON matching AnswerText, with language set to {{answer_language}}.
 
 ---
 TRANSLATE MODE (used when a cached verdict is requested in a new language): you will receive the English AnswerText only. Produce the native AnswerText in {{answer_language_name}} following the same style rules, keeping every fact, number, date and source name unchanged. Return JSON matching AnswerText.

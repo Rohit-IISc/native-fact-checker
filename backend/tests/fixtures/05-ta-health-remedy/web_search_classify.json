@@ -1,0 +1,72 @@
+{
+  "prompt_version": "web-search-classify-1.0+shared-1.0",
+  "model_id": "gemini-2.5-flash",
+  "recorded_at": "2026-10-05T17:42:38+00:00",
+  "outputs": [
+    {
+      "items": [
+        {
+          "source_n": 1,
+          "claim_id": "c1",
+          "publisher": "AFP",
+          "title": "False claims that drinking water with lemon can prevent COVID-19 circulate online",
+          "published_at": "2020-03-12",
+          "language": null,
+          "snippet_en": "Claims that drinking warm water with lemon can prevent coronavirus are false, as experts have found no proof of its effectiveness.",
+          "stance": "CONTRADICTS"
+        },
+        {
+          "source_n": 2,
+          "claim_id": "c1",
+          "publisher": "Hackensack Meridian Health",
+          "title": "Common Myths about Coronavirus Explained",
+          "published_at": "2020-03-03",
+          "language": null,
+          "snippet_en": "Home remedies, including warm water or lemon juice, are not effective against COVID-19 or any other virus.",
+          "stance": "CONTRADICTS"
+        },
+        {
+          "source_n": 3,
+          "claim_id": "c1",
+          "publisher": "AP News",
+          "title": "Drinking hot water, lemon and baking soda will not cure coronavirus",
+          "published_at": "2020-04-02",
+          "language": null,
+          "snippet_en": "Social media posts claiming hot water with lemon and bicarbonate of soda can cure coronavirus are false; deaths occurred in Israel despite such claims.",
+          "stance": "CONTRADICTS"
+        },
+        {
+          "source_n": 4,
+          "claim_id": "c1",
+          "publisher": "The University of Queensland",
+          "title": "What about drinking lemon in hot water, or other home remedies?",
+          "published_at": "2020-03-18",
+          "language": null,
+          "snippet_en": "Hot drinks with lemon do not eliminate the virus and have no impact on immune response or virus elimination.",
+          "stance": "CONTRADICTS"
+        },
+        {
+          "source_n": 5,
+          "claim_id": "c1",
+          "publisher": "National Academies",
+          "title": "Does drinking lemon juice mixed with baking soda or aspirin kill COVID-19?",
+          "published_at": "2020-04-22",
+          "language": null,
+          "snippet_en": "Consuming acidic drinks like lemon juice has no effect on coronavirus infections and will not destroy viruses or stop their copying process.",
+          "stance": "CONTRADICTS"
+        },
+        {
+          "source_n": 6,
+          "claim_id": "c1",
+          "publisher": "CBS News",
+          "title": "Will Drinking Lemon Juice Kill The Coronavirus? Dr. Mallika Marshall Answers Your Questions - CBS Boston",
+          "published_at": "2020-05-05",
+          "language": null,
+          "snippet_en": "Consuming acidic liquids will not kill the coronavirus.",
+          "stance": "CONTRADICTS"
+        }
+      ],
+      "notes_en": ""
+    }
+  ]
+}

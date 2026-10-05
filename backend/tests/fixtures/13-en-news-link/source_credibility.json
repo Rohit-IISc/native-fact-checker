@@ -1,0 +1,24 @@
+{
+  "prompt_version": "source-cred-1.1+shared-1.0",
+  "model_id": "gemini-2.5-flash",
+  "recorded_at": "2026-10-05T17:41:25+00:00",
+  "outputs": [
+    {
+      "agent": "source_credibility",
+      "evidence": [],
+      "source_assessment": {
+        "origin_type": "KNOWN_OUTLET",
+        "origin_name": "BBC News",
+        "repeat_offender_count": 0,
+        "repeat_offender_examples": [],
+        "domain_age_days": null,
+        "red_flags": [],
+        "note_en": "The content originates from bbc.com, which is the domain for BBC News."
+      },
+      "ai_generation_signals": null,
+      "earliest_appearance": null,
+      "notes_en": "The user provided a URL from bbc.com and indicated 'BBC NEWS' as an origin hint.",
+      "timed_out": false
+    }
+  ]
+}

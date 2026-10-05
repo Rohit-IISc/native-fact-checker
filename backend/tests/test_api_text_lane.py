@@ -157,3 +157,13 @@ async def test_api_prefix_from_hosting_rewrite(client):
     assert r.status_code == 200
     r = await client.get("/api/v1/me/quota", headers=AUTH)
     assert r.status_code == 200 and r.json()["used"] == 0
+
+
+async def test_model_api_error_fails_the_stage_not_the_check(client, store, llm):
+    """A Vertex 5xx in the extractor is a graceful EXTRACTION_FAILED, never an INTERNAL crash."""
+    llm.fixtures["extractor"] = lambda _p: StageFailed("extractor", "model API error: ServerError: 503")
+    r = await post(client, text="सरकार सभी को मुफ्त लैपटॉप दे रही है")
+    await drain()
+    doc = await store.get("checks", r.json()["check_id"])
+    assert doc["status"] == "FAILED" and doc["error_code"] == "EXTRACTION_FAILED"
+    assert "error_detail" not in (await client.get(f"/v1/checks/{doc['check_id']}", headers=AUTH)).json()

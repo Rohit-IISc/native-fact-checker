@@ -1,0 +1,43 @@
+{
+  "prompt_version": "web-search-2.1+shared-1.0",
+  "model_id": "gemini-2.5-flash",
+  "recorded_at": "2026-10-05T17:42:38+00:00",
+  "outputs": [
+    {
+      "text": "Claim c1: Drinking hot water mixed with lemon juice will destroy the coronavirus.\n\nSources:\n1. AFP (March 12, 2020) titled \"False claims that drinking water with lemon can prevent COVID-19 circulate online\". This article states that claims of drinking warm water with lemon preventing coronavirus are false, and experts have found no proof of its effectiveness. [1]\n2. Hackensack Meridian Health (March 3, 2020) titled \"Common Myths about Coronavirus Explained\". This source explicitly states that home remedies including warm water or lemon juice are not effective against COVID-19 or any other virus. [2]\n3. AP News (April 2, 2020) titled \"Drinking hot water, lemon and baking soda will not cure coronavirus\". This article reports that social media posts claiming hot water with lemon and bicarbonate of soda can cure coronavirus are false, and there have been deaths from coronavirus in Israel despite such claims. [3]\n4. The University of Queensland (March 18, 2020) titled \"What about drinking lemon in hot water, or other home remedies?\". This source debunks the myth that hot drinks with lemon can eliminate the virus, stating they have no impact on immune response or virus elimination. [4]\n5. National Academies (April 22, 2020) titled \"Does drinking lemon juice mixed with baking soda or aspirin kill COVID-19?\". This article clarifies that consuming acidic drinks like lemon juice has no effect on coronavirus infections and will not destroy viruses in the body or stop the copying process. [5]\n6. CBS News (May 5, 2020) titled \"Will Drinking Lemon Juice Kill The Coronavirus? Dr. Mallika Marshall Answers Your Questions - CBS Boston\". This article states that consuming acidic liquids will not kill the coronavirus. [6]",
+      "sources": [
+        {
+          "n": 1,
+          "url": "https://factcheck.afp.com/false-claims-drinking-water-lemon-can-prevent-covid-19-circulate-online",
+          "domain": "afp.com"
+        },
+        {
+          "n": 2,
+          "url": "https://www.hackensackmeridianhealth.org/en/healthier-you/2020/03/03/common-myths-about-coronavirus-explained-2",
+          "domain": "hackensackmeridianhealth.org"
+        },
+        {
+          "n": 3,
+          "url": "https://apnews.com/article/archive-fact-checking-8736262219",
+          "domain": "apnews.com"
+        },
+        {
+          "n": 4,
+          "url": "https://news.uq.edu.au/2020-03-18-coronavirus-claims-checked-experts",
+          "domain": "uq.edu.au"
+        },
+        {
+          "n": 5,
+          "url": "https://www.nationalacademies.org/news/lemon-juice-does-not-cure-covid-19",
+          "domain": "nationalacademies.org"
+        },
+        {
+          "n": 6,
+          "url": "https://www.cbsnews.com/boston/news/coronavirus-pandemic-acid-kill-covid-19-takeout-food-dr-mallika-marshall-wbz-tv/",
+          "domain": "cbsnews.com"
+        }
+      ],
+      "queries": 4
+    }
+  ]
+}

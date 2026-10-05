@@ -1,0 +1,43 @@
+{
+  "prompt_version": "web-search-2.1+shared-1.0",
+  "model_id": "gemini-2.5-flash",
+  "recorded_at": "2026-10-05T17:40:32+00:00",
+  "outputs": [
+    {
+      "text": "<user_content>\n[\n {\n  \"claim_id\": \"c1\",\n  \"claim_original\": \"Vaksin COVID-19 mengandung microchip untuk melacak setiap orang yang sudah divaksin.\",\n  \"claim_en\": \"COVID-19 vaccines contain microchips that are used to track every vaccinated person.\",\n  \"claim_type\": \"HEALTH\",\n  \"place\": null,\n  \"claimed_date\": null,\n  \"entities\": [\n   \"COVID-19 vaccine\",\n   \"microchip\"\n  ],\n  \"search_queries_original\": [\n   \"vaksin COVID-19 microchip\",\n   \"vaksin melacak orang\"\n  ],\n  \"search_queries_en\": [\n   \"COVID-19 vaccine microchip tracking\",\n   \"vaccine microchip\"\n  ]\n }\n]\n</user_content>\nFor claim c1:\n1. Jala Hoaks Jakarta, \"[HOAKS] - VAKSIN COVID-19 MEMILIKI CHIP YANG DAPAT MELACAK KEBERADAAN ORANG\", January 21, 2021. The article states that the information claiming COVID-19 vaccines contain chips or components to track vaccinated individuals is a hoax. It clarifies that barcodes on vaccine products are for tracking distribution, not for tracking people. [1]\n2. Mayo Clinic News Network, \"Covid Queries: Altered DNA and microchips\", October 11, 2021. Dr. Martin Herrmann, medical director of Mayo Clinic Health System, explicitly states that there is no microchip in the vaccine and no way for the vaccine to track people or gather personal information. [2]\n3. Komdigi, \"Vaksin Covid-19 Punya Chip untuk Lacak Orang? Itu Disinformasi!\", The article, referencing the Ministry of Communication and Informatics (Kominfo), states that the claim of COVID-19 vaccines containing chips to track people is false. [3]\n4. KlikDokter, \"Medfact: Ada Chip di Vaksin Sinovac?\", January 29, 2021. This article addresses the rumor of microchips in Sinovac vaccines, stating it is a hoax. It mentions that such claims were also circulating in the US and were often linked to Bill Gates due to his funding for COVID-19 efforts. [4]\n5. Kemenkes, \"HOAX : Vaksin COVID-19 Mengandung Mikrocip Magnetis\", May 28, 2021. The Indonesian Ministry of Health (Kemenkes) explicitly states that the narrative claiming COVID-19 vaccines contain magnetic microchips is untrue and urges the public not to be influenced by it. [5]\n6. Kementerian Komunikasi dan Informatika, Facebook post, February 7, 2021. This Facebook post from the Ministry of Communication and Informatics (Kementerian Kominfo) directly refutes the claim, stating that there are no chips or barcodes implanted in COVID-19 vaccines to track people. [6]",
+      "sources": [
+        {
+          "n": 1,
+          "url": "https://jalahoaks.jakarta.go.id/detail/HOAKS-Vaksin-Covid-19-Memiliki-Chip-yang-Dapat-Melacak-Keberadaan-Orang",
+          "domain": "jakarta.go.id"
+        },
+        {
+          "n": 2,
+          "url": "https://newsnetwork.mayoclinic.org/discussion/covid-queries-altered-dna-and-microchips/",
+          "domain": "mayoclinic.org"
+        },
+        {
+          "n": 3,
+          "url": "https://www.komdigi.go.id/berita/berita-komdigi/detail/vaksin-covid-19-punya-chip-untuk-lacak-orang-itu-disinformasi",
+          "domain": "komdigi.go.id"
+        },
+        {
+          "n": 4,
+          "url": "https://www.klikdokter.com/info-sehat/kesehatan-umum/medfact-vaksin-sinovac-mengandung-chip-pemantau-ini-faktanya",
+          "domain": "klikdokter.com"
+        },
+        {
+          "n": 5,
+          "url": "https://www.kemkes.go.id/id/hoax-vaksin-covid-19-mengandung-mikrocip-magnetis",
+          "domain": "kemkes.go.id"
+        },
+        {
+          "n": 6,
+          "url": "https://www.facebook.com/kemenkomdigi/photos/sobatkom-tidak-ada-chip-atau-barcode-yang-ditanamkan-pada-vaksin-hoaks-covid-19-/3648148818572907/",
+          "domain": "facebook.com"
+        }
+      ],
+      "queries": 2
+    }
+  ]
+}

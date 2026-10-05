@@ -1,0 +1,242 @@
+{
+  "prompt_version": "web-search-classify-1.0+shared-1.0",
+  "model_id": "gemini-2.5-flash",
+  "recorded_at": "2026-10-05T17:41:25+00:00",
+  "outputs": [
+    {
+      "items": [
+        {
+          "source_n": 1,
+          "claim_id": "c1",
+          "publisher": "thesouthfirst.com",
+          "title": "Chandrayaan-3 lander module makes soft landing on Moon, India enters elite club",
+          "published_at": null,
+          "language": null,
+          "snippet_en": "India's Chandrayaan-3 mission successfully landed near the Moon's south pole on August 23, 2023, making India the first country to achieve a soft landing in this unexplored region.",
+          "stance": "SUPPORTS"
+        },
+        {
+          "source_n": 2,
+          "claim_id": "c1",
+          "publisher": "ndtv.com",
+          "title": "Chandrayaan-3 Lands On Moon, India Joins Elite Space Club",
+          "published_at": null,
+          "language": null,
+          "snippet_en": "India's Chandrayaan-3 mission successfully landed near the Moon's south pole on August 23, 2023.",
+          "stance": "SUPPORTS"
+        },
+        {
+          "source_n": 3,
+          "claim_id": "c1",
+          "publisher": "universetoday.com",
+          "title": "Chandrayaan-3 Lands Successfully on the Moon’s South Pole",
+          "published_at": null,
+          "language": null,
+          "snippet_en": "India's Chandrayaan-3 mission successfully landed near the Moon's south pole on August 23, 2023, making India the first country to achieve a soft landing in this unexplored region.",
+          "stance": "SUPPORTS"
+        },
+        {
+          "source_n": 4,
+          "claim_id": "c1",
+          "publisher": "pacificspacecenter.com",
+          "title": "Chandrayaan-3",
+          "published_at": null,
+          "language": null,
+          "snippet_en": "India's Chandrayaan-3 mission successfully landed near the Moon's south pole on August 23, 2023, making India the first country to achieve a soft landing in this unexplored region.",
+          "stance": "SUPPORTS"
+        },
+        {
+          "source_n": 5,
+          "claim_id": "c1",
+          "publisher": "nasa.gov",
+          "title": "Chandrayaan-3",
+          "published_at": null,
+          "language": null,
+          "snippet_en": "India's Chandrayaan-3 mission successfully landed near the Moon's south pole on August 23, 2023.",
+          "stance": "SUPPORTS"
+        },
+        {
+          "source_n": 6,
+          "claim_id": "c1",
+          "publisher": "tbsnews.net",
+          "title": "Countries that have successfully soft-landed on the Moon",
+          "published_at": null,
+          "language": null,
+          "snippet_en": "India became the first country to achieve a soft landing in the Moon's south pole region.",
+          "stance": "SUPPORTS"
+        },
+        {
+          "source_n": 7,
+          "claim_id": "c1",
+          "publisher": "theguardian.com",
+          "title": "India’s Chandrayaan-3 moon landing mission",
+          "published_at": null,
+          "language": null,
+          "snippet_en": "India became the first country to achieve a soft landing in the Moon's south pole region.",
+          "stance": "SUPPORTS"
+        },
+        {
+          "source_n": 8,
+          "claim_id": "c2",
+          "publisher": "downtoearth.org.in",
+          "title": "India becomes first nation to soft-land on south side of Moon",
+          "published_at": null,
+          "language": null,
+          "snippet_en": "India joined the US, former Soviet Union, and China as countries that have achieved a soft landing on the Moon.",
+          "stance": "SUPPORTS"
+        },
+        {
+          "source_n": 9,
+          "claim_id": "c2",
+          "publisher": "youtube.com",
+          "title": null,
+          "published_at": null,
+          "language": null,
+          "snippet_en": "India joined the US, former Soviet Union, and China as countries that have achieved a soft landing on the Moon.",
+          "stance": "SUPPORTS"
+        },
+        {
+          "source_n": 10,
+          "claim_id": "c2",
+          "publisher": "indiatvnews.com",
+          "title": "Chandrayaan-3: India joins elite space club; list of nations that have landed on Moon - US, USSR, China",
+          "published_at": null,
+          "language": null,
+          "snippet_en": "India joined the US, former Soviet Union, and China as countries that have achieved a soft landing on the Moon, making it the fourth country to do so.",
+          "stance": "SUPPORTS"
+        },
+        {
+          "source_n": 11,
+          "claim_id": "c2",
+          "publisher": "space.com",
+          "title": "India's Chandrayaan-3 moon landing livestream",
+          "published_at": null,
+          "language": null,
+          "snippet_en": "India joined the US, former Soviet Union, and China as countries that have achieved a soft landing on the Moon, making it the fourth country to do so.",
+          "stance": "SUPPORTS"
+        },
+        {
+          "source_n": 12,
+          "claim_id": "c2",
+          "publisher": "worldpopulationreview.com",
+          "title": "Countries That Have Landed On The Moon 2024",
+          "published_at": null,
+          "language": null,
+          "snippet_en": "India joined the US, former Soviet Union, and China as countries that have achieved a soft landing on the Moon.",
+          "stance": "SUPPORTS"
+        },
+        {
+          "source_n": 13,
+          "claim_id": "c2",
+          "publisher": "howstuffworks.com",
+          "title": "Which Countries Have Landed on the Moon?",
+          "published_at": null,
+          "language": null,
+          "snippet_en": "India joined the US, former Soviet Union, and China as countries that have achieved a soft landing on the Moon. Japan later became the fifth country in January 2024.",
+          "stance": "SUPPORTS"
+        },
+        {
+          "source_n": 14,
+          "claim_id": "c2",
+          "publisher": "wikipedia.org",
+          "title": "Chandrayaan-3",
+          "published_at": null,
+          "language": null,
+          "snippet_en": "India became the fourth country to successfully soft-land on the lunar surface.",
+          "stance": "SUPPORTS"
+        },
+        {
+          "source_n": 15,
+          "claim_id": "c2",
+          "publisher": "wikipedia.org",
+          "title": "Moon landing",
+          "published_at": null,
+          "language": null,
+          "snippet_en": "Japan later became the fifth country to achieve a soft landing in January 2024.",
+          "stance": "CONTEXT"
+        },
+        {
+          "source_n": 1,
+          "claim_id": "c3",
+          "publisher": "thesouthfirst.com",
+          "title": "Chandrayaan-3 lander module makes soft landing on Moon, India enters elite club",
+          "published_at": null,
+          "language": null,
+          "snippet_en": "The Vikram lander of Chandrayaan-3 successfully touched down on the lunar surface at 18:04 Indian Standard Time (IST) on August 23, 2023.",
+          "stance": "SUPPORTS"
+        },
+        {
+          "source_n": 9,
+          "claim_id": "c3",
+          "publisher": "youtube.com",
+          "title": null,
+          "published_at": null,
+          "language": null,
+          "snippet_en": "The Vikram lander of Chandrayaan-3 successfully touched down on the lunar surface at 18:04 IST on August 23, 2023, which corresponds to 12:34 GMT.",
+          "stance": "SUPPORTS"
+        },
+        {
+          "source_n": 16,
+          "claim_id": "c3",
+          "publisher": "ndtv.com",
+          "title": "Chandrayaan-3 To Land On Moon On August 23. Here's How You Can Watch It",
+          "published_at": null,
+          "language": null,
+          "snippet_en": "The Vikram lander of Chandrayaan-3 successfully touched down on the lunar surface at 18:04 Indian Standard Time (IST) on August 23, 2023.",
+          "stance": "SUPPORTS"
+        },
+        {
+          "source_n": 17,
+          "claim_id": "c3",
+          "publisher": "hindustantimes.com",
+          "title": "Chandrayaan-3 landing date and time unveiled: Here's what you need to know",
+          "published_at": null,
+          "language": null,
+          "snippet_en": "The Vikram lander of Chandrayaan-3 successfully touched down on the lunar surface at 18:04 Indian Standard Time (IST) on August 23, 2023.",
+          "stance": "SUPPORTS"
+        },
+        {
+          "source_n": 11,
+          "claim_id": "c3",
+          "publisher": "space.com",
+          "title": "India's Chandrayaan-3 moon landing livestream",
+          "published_at": null,
+          "language": null,
+          "snippet_en": "The Vikram lander of Chandrayaan-3 successfully touched down on the lunar surface at 18:04 IST on August 23, 2023, which corresponds to 12:34 GMT.",
+          "stance": "SUPPORTS"
+        },
+        {
+          "source_n": 18,
+          "claim_id": "c3",
+          "publisher": "skyandtelescope.org",
+          "title": "India’s Chandrayaan-3 Lands on the Moon!",
+          "published_at": null,
+          "language": null,
+          "snippet_en": "The Vikram lander of Chandrayaan-3 successfully touched down on the lunar surface at 18:04 IST on August 23, 2023, which corresponds to 12:34 GMT.",
+          "stance": "SUPPORTS"
+        },
+        {
+          "source_n": 19,
+          "claim_id": "c3",
+          "publisher": "ndtv.com",
+          "title": "\"I Reached My Destination\": Chandrayaan-3 After Touchdown",
+          "published_at": null,
+          "language": null,
+          "snippet_en": "The Vikram lander of Chandrayaan-3 successfully touched down on the lunar surface at 18:04 Indian Standard Time (IST) on August 23, 2023.",
+          "stance": "SUPPORTS"
+        },
+        {
+          "source_n": 14,
+          "claim_id": "c3",
+          "publisher": "wikipedia.org",
+          "title": "Chandrayaan-3",
+          "published_at": null,
+          "language": null,
+          "snippet_en": "The Vikram lander of Chandrayaan-3 successfully touched down on the lunar surface at 12:34 GMT.",
+          "stance": "SUPPORTS"
+        }
+      ],
+      "notes_en": ""
+    }
+  ]
+}

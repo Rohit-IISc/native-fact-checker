@@ -1,0 +1,82 @@
+{
+  "prompt_version": "web-search-classify-1.0+shared-1.0",
+  "model_id": "gemini-2.5-flash",
+  "recorded_at": "2026-10-05T17:41:25+00:00",
+  "outputs": [
+    {
+      "items": [
+        {
+          "source_n": 1,
+          "claim_id": "c1",
+          "publisher": "un.org",
+          "title": "COVID-19: UN agency debunks 5G coronavirus conspiracy theory | UN News",
+          "published_at": "2020-04-22",
+          "language": null,
+          "snippet_en": "The International Telecommunications Union (ITU), a UN agency, confirmed on April 22, 2020, that 5G broadband is not responsible for the spread of COVID-19. A spokesperson for ITU stated that the theory linking 5G and COVID-19 is \"a hoax that has no technical basis\" and that \"the coronavirus is not being spread by radio waves.\"",
+          "stance": "CONTRADICTS"
+        },
+        {
+          "source_n": 2,
+          "claim_id": "c1",
+          "publisher": "washingtonpost.com",
+          "title": "DHS to advise telecom firms on preventing 5G cell tower attacks linked to coronavirus conspiracy theories - The Washington Post",
+          "published_at": "2020-05-13",
+          "language": null,
+          "snippet_en": "The World Health Organization (WHO) and the US Federal Emergency Management Agency (FEMA) have stated that viruses cannot travel via radio waves or mobile networks. Experts emphasize that 5G technology uses non-ionizing radiation, which does not damage DNA, and there is no scientific basis for the theory that 5G might compromise the immune system.",
+          "stance": "CONTRADICTS"
+        },
+        {
+          "source_n": 3,
+          "claim_id": "c1",
+          "publisher": "ucc.org",
+          "title": "Daily COVID-19 Brief, Issue #62",
+          "published_at": null,
+          "language": null,
+          "snippet_en": "The World Health Organization (WHO) has stated that viruses cannot travel via radio waves or mobile networks, and that COVID-19 is appearing in countries without advanced wireless systems.",
+          "stance": "CONTRADICTS"
+        },
+        {
+          "source_n": 4,
+          "claim_id": "c1",
+          "publisher": "www.gov.uk",
+          "title": "5G and coronavirus (COVID-19)",
+          "published_at": null,
+          "language": null,
+          "snippet_en": "The World Health Organization (WHO) has stated that viruses cannot travel via radio waves or mobile networks, and that COVID-19 is appearing in countries without advanced wireless systems.",
+          "stance": "CONTRADICTS"
+        },
+        {
+          "source_n": 5,
+          "claim_id": "c1",
+          "publisher": "wikipedia.org",
+          "title": "5G misinformation",
+          "published_at": null,
+          "language": null,
+          "snippet_en": "The Centers for Disease Control and Prevention (CDC) notes that exposure to intense non-ionizing radiation can cause tissue damage due to heat, but this is uncommon and mainly a workplace concern. Experts emphasize that 5G technology uses non-ionizing radiation, which does not damage DNA, and there is no scientific basis for the theory that 5G might compromise the immune system. Despite the COVID-19 pandemic starting during the deployment of 5G technology, the two are not connected, and there is indisputable evidence that COVID-19 is a viral disease. Some conspiracy theories suggested that 5G was first tested in Wuhan, China, the city linked to the first cases of COVID-19, but 5G technology was not fully deployed in Wuhan as of 2020.",
+          "stance": "CONTRADICTS"
+        },
+        {
+          "source_n": 6,
+          "claim_id": "c1",
+          "publisher": "latrobe.edu.au",
+          "title": "5G and COVID-19 conspiracy theories",
+          "published_at": "2020-05-06",
+          "language": null,
+          "snippet_en": "Experts emphasize that 5G technology uses non-ionizing radiation, which does not damage DNA, and there is no scientific basis for the theory that 5G might compromise the immune system.",
+          "stance": "CONTRADICTS"
+        },
+        {
+          "source_n": 7,
+          "claim_id": "c1",
+          "publisher": "nih.gov",
+          "title": "5G and COVID-19: A Review of the Evidence",
+          "published_at": "2021-11-08",
+          "language": null,
+          "snippet_en": "Some conspiracy theories suggested that 5G was first tested in Wuhan, China, the city linked to the first cases of COVID-19, but 5G technology was not fully deployed in Wuhan as of 2020.",
+          "stance": "CONTRADICTS"
+        }
+      ],
+      "notes_en": ""
+    }
+  ]
+}

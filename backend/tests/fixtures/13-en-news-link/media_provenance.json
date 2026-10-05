@@ -1,0 +1,62 @@
+{
+  "prompt_version": "media-provenance-1.1+shared-1.0",
+  "model_id": "gemini-2.5-flash",
+  "recorded_at": "2026-10-05T17:41:25+00:00",
+  "outputs": [
+    {
+      "agent": "media_provenance",
+      "evidence": [
+        {
+          "evidence_id": "",
+          "agent": "web_search",
+          "claim_id": "c1",
+          "url": "https://www.linkedin.com/posts/sowmya-subramanian-pro_chandrayaan-3-india-makes-historic-landing-activity-7100100522522615808-fU2H",
+          "domain": "linkedin.com",
+          "publisher": null,
+          "title": "Chandrayaan-3: India makes historic landing near Moon's south pole",
+          "published_at": null,
+          "language": null,
+          "snippet_en": "A LinkedIn post showing a crowd celebrating the Chandrayaan-3 landing, with the title \"Chandrayaan-3: India makes historic landing near Moon's south pole\".",
+          "stance": "SUPPORTS",
+          "rating_text": null,
+          "tier": "TIER_3"
+        },
+        {
+          "evidence_id": "",
+          "agent": "web_search",
+          "claim_id": "c1",
+          "url": "https://www.bbc.com/news/live/world-asia-india-47640058?page=47",
+          "domain": "bbc.com",
+          "publisher": null,
+          "title": "India news stream - BBC",
+          "published_at": null,
+          "language": null,
+          "snippet_en": "A BBC News live stream page related to India news, which may contain information about the Chandrayaan-3 landing.",
+          "stance": "CONTEXT",
+          "rating_text": null,
+          "tier": "TIER_1"
+        },
+        {
+          "evidence_id": "",
+          "agent": "web_search",
+          "claim_id": "c1",
+          "url": "https://www.bbc.com/news/topics/cm2j3qv09mpt?page=5",
+          "domain": "bbc.com",
+          "publisher": null,
+          "title": "Exploration of the Moon - BBC News",
+          "published_at": null,
+          "language": null,
+          "snippet_en": "A BBC News topic page about the exploration of the Moon, which could provide context for the Chandrayaan-3 mission.",
+          "stance": "CONTEXT",
+          "rating_text": null,
+          "tier": "TIER_1"
+        }
+      ],
+      "source_assessment": null,
+      "ai_generation_signals": null,
+      "earliest_appearance": null,
+      "notes_en": "The image shows a crowd celebrating, likely related to the Chandrayaan-3 landing based on the LinkedIn post title. No specific date for the image's first appearance could be determined from the provided search results.",
+      "timed_out": false
+    }
+  ]
+}

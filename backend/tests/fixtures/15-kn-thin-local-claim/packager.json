@@ -1,0 +1,31 @@
+{
+  "prompt_version": "packager-1.1+shared-1.0",
+  "model_id": "gemini-2.5-flash",
+  "recorded_at": "2026-10-05T17:45:39+00:00",
+  "outputs": [
+    {
+      "briefs": [
+        {
+          "claim_id": "c1",
+          "claim_en": "Two crocodiles were seen in Kukkarahalli Lake in Mysuru yesterday evening, October 4, 2026.",
+          "claimed_date": "2026-10-04",
+          "place": "Kukkarahalli Lake, Mysuru",
+          "brief_en": "Crocodiles have been sighted in Kukkarahalli Lake in Mysuru on multiple occasions. The Hindu reported a 10-foot crocodile on March 26, 2010. Another crocodile was found dead on April 24, 2017, with The Hindu and Vijaya Karnataka reporting starvation as the cause. More recently, the Star of Mysore reported sightings on September 8, 2023, December 1, 2024, and January 28, 2026. News18 Kannada also reported a sighting on September 7, 2023. These reports confirm the presence of crocodiles in the lake over several years.",
+          "evidence_ids": [
+            "ws-3",
+            "ws-7",
+            "ws-8",
+            "ws-2",
+            "ws-1",
+            "ws-4",
+            "ws-5",
+            "ws-6"
+          ],
+          "gaps_en": [
+            "No evidence was found to corroborate the specific claim of two crocodiles being seen on October 4, 2026."
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,41 +1,43 @@
 {
   "prompt_version": "extractor-1.1+shared-1.0",
-  "model_id": "gemini-3.8-flash",
-  "recorded_at": "2026-10-04T19:13:17+00:00",
-  "output": {
-    "content_language": "hi-IN",
-    "content_script": "Deva",
-    "summary_en": "The forwarded Hindi message claims that Prime Minister Narendra Modi is providing a free 3-month mobile recharge to all Indians. It urges users to click a link to claim the recharge, stating that the offer is valid only for today.",
-    "checkable": true,
-    "non_checkable_type": null,
-    "claims": [
-      {
-        "claim_id": "claim_1",
-        "claim_original": "प्रधानमंत्री मोदी सभी भारतीयों को 3 महीने का मुफ्त मोबाइल रिचार्ज दे रहे हैं।",
-        "claim_en": "Prime Minister Narendra Modi is offering a free 3-month mobile recharge to all Indians.",
-        "claim_type": "GOVERNMENT_SCHEME",
-        "entities": [
-          "Narendra Modi",
-          "Prime Minister of India"
-        ],
-        "place": "India",
-        "claimed_date": "2026-10-04",
-        "time_sensitivity": "EVERGREEN",
-        "search_queries_original": [
-          "प्रधानमंत्री मोदी 3 महीने फ्री रिचार्ज योजना",
-          "पीएम मोदी मुफ्त मोबाइल रिचार्ज सच"
-        ],
-        "search_queries_en": [
-          "PM Modi free 3 month recharge scheme",
-          "government offering free mobile recharge 3 months"
-        ]
-      }
-    ],
-    "extra_claims_not_checked": [],
-    "ocr_text": null,
-    "transcript": null,
-    "visual_description_en": null,
-    "ai_generation_signals": null,
-    "origin_hints": []
-  }
+  "model_id": "gemini-2.5-flash",
+  "recorded_at": "2026-10-05T17:43:30+00:00",
+  "outputs": [
+    {
+      "content_language": "hi-IN",
+      "content_script": "Deva",
+      "summary_en": "A message claims that Prime Minister Modi is offering all Indians 3 months of free mobile recharge. It instructs users to click a link to avail the offer, stating it is valid only for today.",
+      "checkable": true,
+      "non_checkable_type": null,
+      "claims": [
+        {
+          "claim_id": "claim1",
+          "claim_original": "प्रधानमंत्री मोदी सभी भारतीयों को 3 महीने का मुफ्त मोबाइल रिचार्ज दे रहे हैं।",
+          "claim_en": "Prime Minister Modi is giving all Indians 3 months of free mobile recharge.",
+          "claim_type": "GOVERNMENT_SCHEME",
+          "entities": [
+            "Prime Minister Modi",
+            "Indians"
+          ],
+          "place": "India",
+          "claimed_date": null,
+          "time_sensitivity": "EVERGREEN",
+          "search_queries_original": [
+            "प्रधानमंत्री मोदी मुफ्त मोबाइल रिचार्ज",
+            "मोदी 3 महीने फ्री रिचार्ज"
+          ],
+          "search_queries_en": [
+            "PM Modi free mobile recharge",
+            "Modi 3 months free recharge scheme"
+          ]
+        }
+      ],
+      "extra_claims_not_checked": [],
+      "ocr_text": null,
+      "transcript": null,
+      "visual_description_en": null,
+      "ai_generation_signals": null,
+      "origin_hints": []
+    }
+  ]
 }

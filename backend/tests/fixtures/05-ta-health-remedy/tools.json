@@ -1,0 +1,201 @@
+{
+ "factcheck_search:[\"சூடான தண்ணீர் எலுமிச்சை சாறு கொரோனா\", \"ta\"]": [],
+ "factcheck_search:[\"எலுமிச்சை சாறு கொரோனா வைரஸ் அழிக்குமா\", \"ta\"]": [],
+ "factcheck_search:[\"Drinking hot water mixed with lemon juice will destroy the coronavirus.\", \"hi\"]": [],
+ "factcheck_search:[\"hot water lemon juice coronavirus\", \"en\"]": [
+  {
+   "claim_text": "Israel has had no deaths from coronavirus because people in the country have been cured by drinking hot water with lemon and bicarbonate of soda at night.",
+   "claimant": "social media users",
+   "claim_date": "2020-04-02T15:27:30Z",
+   "url": "https://apnews.com/article/archive-fact-checking-8736262219",
+   "publisher": "AP News",
+   "publisher_site": "apnews.com",
+   "rating": "False",
+   "review_date": null,
+   "title": "Drinking hot water, lemon and baking soda will not cure coronavirus",
+   "language": "en"
+  },
+  {
+   "claim_text": "Drinking lemon and warm water can prevent novel coronavirus disease",
+   "claimant": "[site:name]",
+   "claim_date": "2020-03-08T00:00:00Z",
+   "url": "https://factcheck.afp.com/false-claims-drinking-water-lemon-can-prevent-covid-19-circulate-online",
+   "publisher": "AFP Fact Check",
+   "publisher_site": "factcheck.afp.com",
+   "rating": "False",
+   "review_date": "2020-03-12T12:53:00Z",
+   "title": "False claims that drinking water with lemon can prevent COVID-19 ...",
+   "language": "en"
+  },
+  {
+   "claim_text": "Vietnam has no Covid-19 deaths due to widespread consumption of hot lemon tea",
+   "claimant": "Multiple sources",
+   "claim_date": "2021-01-22T00:00:00Z",
+   "url": "https://factcheck.afp.com/social-media-posts-falsely-claim-vietnam-has-recorded-no-deaths-covid-19",
+   "publisher": "AFP Fact Check",
+   "publisher_site": "factcheck.afp.com",
+   "rating": "False",
+   "review_date": "2021-02-23T12:10:00Z",
+   "title": "Social media posts falsely claim Vietnam has recorded no deaths ...",
+   "language": "en"
+  },
+  {
+   "claim_text": "Drinking warm water with lemon slice protects against the novel Coronavirus.",
+   "claimant": "Social Media pages",
+   "claim_date": "2020-03-13T12:20:36Z",
+   "url": "https://www.boomlive.in/world/coronavirus/drinking-warm-water-with-lemon-does-not-protect-you-from-coronavirus-7204",
+   "publisher": "BOOM Fact Check",
+   "publisher_site": "boomlive.in",
+   "rating": "False",
+   "review_date": "2020-03-13T12:20:36Z",
+   "title": "Drinking Warm Water With Lemon Does Not Protect You From ...",
+   "language": "en"
+  },
+  {
+   "claim_text": "Vit C and lemon in hot water protect against coronavirus",
+   "claimant": "Social Media",
+   "claim_date": "2016-06-20T00:00:00Z",
+   "url": "https://www.altnews.in/no-vitamin-c-and-lemon-infused-hot-water-do-not-protect-against-coronavirus-or-cancer/",
+   "publisher": "Alt News",
+   "publisher_site": "altnews.in",
+   "rating": "False",
+   "review_date": "2020-03-18T00:00:00Z",
+   "title": "No, Vitamin C and lemon-infused hot water do not protect against ...",
+   "language": "en"
+  },
+  {
+   "claim_text": "Vit C and lemon in hot water protect against coronavirus",
+   "claimant": null,
+   "claim_date": null,
+   "url": "https://www.altnews.in/no-vitamin-c-and-lemon-infused-hot-water-do-not-protect-against-coronavirus-or-cancer/",
+   "publisher": "Alt News",
+   "publisher_site": "altnews.in",
+   "rating": "False",
+   "review_date": "2020-03-18T15:07:09Z",
+   "title": "No, Vitamin C and lemon-infused hot water do not protect against ...",
+   "language": "en"
+  },
+  {
+   "claim_text": "\"Slices of lemon in a cup of hot water can save your life. The hot lemon can kill the proliferation of\" the novel coronavirus.",
+   "claimant": "Chain message",
+   "claim_date": "2020-03-23T00:00:00Z",
+   "url": "https://politifact.com/factchecks/2020/mar/24/chain-message/facebook-messenger-video-falsely-claims-hot-lemon/",
+   "publisher": "PolitiFact",
+   "publisher_site": "politifact.com",
+   "rating": "False",
+   "review_date": null,
+   "title": "Video falsely claims hot lemon juice can kill coronavirus",
+   "language": "en"
+  },
+  {
+   "claim_text": "Drinking hot water with lemons will cure or prevent COVID-19; drinking hot water with lemons and sodium bicarbonate will “alkalize the immune system” and cure or prevent COVID-19.",
+   "claimant": null,
+   "claim_date": null,
+   "url": "https://www.snopes.com/fact-check/lemons-coronavirus/",
+   "publisher": "Snopes.com",
+   "publisher_site": "snopes.com",
+   "rating": "False",
+   "review_date": "2020-03-26T06:11:00Z",
+   "title": "Will Lemons and Hot Water Cure or Prevent COVID-19?",
+   "language": "en"
+  }
+ ],
+ "factcheck_search:[\"lemon juice kill coronavirus\", \"en\"]": [
+  {
+   "claim_text": "\"Everyone in Israel drinks a cup of hot water with lemon and a little baking soda at night, as this is proven to kill\" coronavirus, and has prevented COVID-19 deaths in Israel.",
+   "claimant": "Facebook posts",
+   "claim_date": "2020-04-01T00:00:00Z",
+   "url": "https://www.factcheck.org/2020/04/lemon-juice-tea-does-not-cure-covid-19-in-israel-or-anywhere-else/",
+   "publisher": "FactCheck.org",
+   "publisher_site": "factcheck.org",
+   "rating": "False",
+   "review_date": null,
+   "title": "Lemon Juice Tea Does Not Cure COVID-19 in Israel, or Anywhere ...",
+   "language": "en"
+  },
+  {
+   "claim_text": "Eat red onions three times a day and use natural lemon drops in nostrils to treat COVID-19",
+   "claimant": "Social media users",
+   "claim_date": "2021-05-01T00:00:00Z",
+   "url": "https://www.usatoday.com/story/news/factcheck/2021/05/31/fact-check-lemon-drops-and-red-onions-wont-cure-prevent-covid-19/5271922001/",
+   "publisher": "USA Today",
+   "publisher_site": "usatoday.com",
+   "rating": "False",
+   "review_date": "2021-05-31T18:22:08Z",
+   "title": "Fact check: Lemon drops and red onions will not cure or prevent ...",
+   "language": "en"
+  },
+  {
+   "claim_text": "Aspirin, lemon juice and honey mixture as home remedy for COVID-19",
+   "claimant": "Multiple sources",
+   "claim_date": "2020-04-27T00:00:00Z",
+   "url": "https://factcheck.afp.com/who-warns-against-self-medicating-covid-19-aspirin-lemon-juice-and-honey-remedy",
+   "publisher": "AFP Fact Check",
+   "publisher_site": "factcheck.afp.com",
+   "rating": "Misleading",
+   "review_date": "2020-04-30T09:10:00Z",
+   "title": "WHO warns against self-medicating for COVID-19 with aspirin ...",
+   "language": "en"
+  },
+  {
+   "claim_text": "Israel has had no deaths from coronavirus because people in the country have been cured by drinking hot water with lemon and bicarbonate of soda at night.",
+   "claimant": "social media users",
+   "claim_date": "2020-04-02T15:27:30Z",
+   "url": "https://apnews.com/article/archive-fact-checking-8736262219",
+   "publisher": "AP News",
+   "publisher_site": "apnews.com",
+   "rating": "False",
+   "review_date": null,
+   "title": "Drinking hot water, lemon and baking soda will not cure coronavirus",
+   "language": "en"
+  },
+  {
+   "claim_text": "No COVID-19 deaths in Israel as they found a cure for COVID-19 – a mixture of lemon and baking soda",
+   "claimant": "SOCIAL MEDIA POST",
+   "claim_date": "2020-04-05T00:00:00Z",
+   "url": "https://factly.in/no-evidence-to-suggest-that-the-mixture-of-lemon-and-baking-soda-can-kill-sars-cov-2-virus/",
+   "publisher": "FACTLY",
+   "publisher_site": "factly.in",
+   "rating": "FALSE",
+   "review_date": "2020-04-17T00:00:00Z",
+   "title": "No evidence to suggest that the mixture of lemon and baking soda ...",
+   "language": "en"
+  },
+  {
+   "claim_text": "Vietnam has no Covid-19 deaths due to widespread consumption of hot lemon tea",
+   "claimant": "Multiple sources",
+   "claim_date": "2021-01-22T00:00:00Z",
+   "url": "https://factcheck.afp.com/social-media-posts-falsely-claim-vietnam-has-recorded-no-deaths-covid-19",
+   "publisher": "AFP Fact Check",
+   "publisher_site": "factcheck.afp.com",
+   "rating": "False",
+   "review_date": "2021-02-23T12:10:00Z",
+   "title": "Social media posts falsely claim Vietnam has recorded no deaths ...",
+   "language": "en"
+  },
+  {
+   "claim_text": "Drinking lemon and warm water can prevent novel coronavirus disease",
+   "claimant": "[site:name]",
+   "claim_date": "2020-03-08T00:00:00Z",
+   "url": "https://factcheck.afp.com/false-claims-drinking-water-lemon-can-prevent-covid-19-circulate-online",
+   "publisher": "AFP Fact Check",
+   "publisher_site": "factcheck.afp.com",
+   "rating": "False",
+   "review_date": "2020-03-12T12:53:00Z",
+   "title": "False claims that drinking water with lemon can prevent COVID-19 ...",
+   "language": "en"
+  },
+  {
+   "claim_text": "Tonic of onions, ginger and garlic cures Covid-19",
+   "claimant": "Men and Women for Christ",
+   "claim_date": "2021-01-12T00:00:00Z",
+   "url": "https://factcheck.afp.com/theres-no-scientific-proof-tonic-onions-ginger-garlic-and-lemon-can-cure-covid-19",
+   "publisher": "AFP Fact Check",
+   "publisher_site": "factcheck.afp.com",
+   "rating": "False",
+   "review_date": "2021-01-29T15:27:00Z",
+   "title": "There's no scientific proof that a tonic of onions, ginger, garlic and ...",
+   "language": "en"
+  }
+ ]
+}

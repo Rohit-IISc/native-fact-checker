@@ -1,0 +1,51 @@
+{
+  "prompt_version": "composer-1.1+shared-1.0",
+  "model_id": "gemini-2.5-flash",
+  "recorded_at": "2026-10-05T17:42:38+00:00",
+  "outputs": [
+    {
+      "language": "ta-IN",
+      "headline": "தவறு: எலுமிச்சை சாறு கலந்த சூடான நீர் கொரோனாவை அழிக்காது",
+      "summary": "எலுமிச்சை சாறு கலந்த சூடான நீர் கொரோனா வைரஸை அழிக்கும் என்ற கூற்று தவறானது.",
+      "what_post_claims": "சூடான தண்ணீரில் எலுமிச்சை சாறு கலந்து குடித்தால் கொரோனா வைரஸ் அழியும் என்று ஒரு பதிவு கூறுகிறது.",
+      "what_is_true": "எலுமிச்சை சாறு கலந்த சூடான நீர் கொரோனா வைரஸை அழிக்காது அல்லது கோவிட்-19 நோயைத் தடுக்காது என்று சுகாதார நிபுணர்களும் உண்மைச் சரிபார்ப்பு அமைப்புகளும் உறுதிப்படுத்தியுள்ளன. இது ஆரம்பகால தொற்றுநோயிலிருந்து பரவிய ஒரு தவறான தகவல்.",
+      "evidence_for": [],
+      "evidence_against": [
+        "AFP செய்தி நிறுவனம்: எலுமிச்சை கலந்த சூடான நீர் கொரோனாவைத் தடுக்கும் என்பதற்கு எந்த ஆதாரமும் இல்லை.",
+        "AP செய்தி நிறுவனம்: எலுமிச்சை மற்றும் பேக்கிங் சோடா கலந்த சூடான நீர் கொரோனாவை குணப்படுத்தாது.",
+        "BOOM Fact Check: எலுமிச்சை கலந்த சூடான நீர் கொரோனாவிலிருந்து பாதுகாக்காது என்று கூறியுள்ளது."
+      ],
+      "confidence_phrase": "நாங்கள் மிகவும் உறுதியாக இருக்கிறோம்",
+      "sources_spoken": "AFP, AP செய்தி நிறுவனம் மற்றும் BOOM Fact Check போன்ற உண்மைச் சரிபார்ப்பு அமைப்புகளின்படி",
+      "audio_script": "சூடான தண்ணீரில் எலுமிச்சை சாறு கலந்து குடித்தால் கொரோனா வைரஸ் அழியும் என்று ஒரு பதிவு கூறுகிறது. இந்த தகவல் தவறானது. எலுமிச்சை சாறு கலந்த சூடான நீர் கொரோனா வைரஸை அழிக்காது அல்லது கோவிட்-19 நோயைத் தடுக்காது என்று சுகாதார நிபுணர்களும் உண்மைச் சரிபார்ப்பு அமைப்புகளும் உறுதிப்படுத்தியுள்ளன. இது ஆரம்பகால தொற்றுநோயிலிருந்து பரவிய ஒரு தவறான தகவல். நாங்கள் மிகவும் உறுதியாக இருக்கிறோம். AFP, AP செய்தி நிறுவனம் மற்றும் BOOM Fact Check போன்ற உண்மைச் சரிபார்ப்பு அமைப்புகளின்படி இந்த தகவல் உறுதிப்படுத்தப்பட்டுள்ளது.",
+      "card_lines": [
+        "தவறு: எலுமிச்சை நீர் கொரோனாவை அழிக்காது",
+        "சூடான எலுமிச்சை நீர் கொரோனாவை அழிக்கும் என்ற கூற்று தவறானது.",
+        "இது கோவிட்-19 நோயைத் தடுக்காது அல்லது குணப்படுத்தாது.",
+        "AFP மற்றும் AP செய்தி நிறுவனங்கள் இதை உறுதிப்படுத்தியுள்ளன."
+      ]
+    },
+    {
+      "language": "en",
+      "headline": "False: Hot lemon water does not destroy coronavirus",
+      "summary": "Drinking hot water with lemon juice does not prevent or cure COVID-19, according to health experts and fact-checking organizations.",
+      "what_post_claims": "The post claims that drinking hot water mixed with lemon juice will destroy the coronavirus.",
+      "what_is_true": "Health experts and fact-checking organizations have confirmed that drinking hot water with lemon juice does not prevent or cure COVID-19. This is a widely debunked myth from the early pandemic.",
+      "evidence_for": [],
+      "evidence_against": [
+        "AFP reported in March 2020 that claims about warm water with lemon preventing coronavirus are false.",
+        "AP News stated in April 2020 that hot water, lemon, and baking soda will not cure coronavirus.",
+        "Hackensack Meridian Health confirmed that home remedies, including warm water or lemon juice, are not effective against COVID-19."
+      ],
+      "confidence_phrase": "we are very sure",
+      "sources_spoken": "AFP, AP News, and Hackensack Meridian Health",
+      "audio_script": "A social media post claims that drinking hot water mixed with lemon juice will destroy the coronavirus. This is false. Health experts and fact-checking organizations have confirmed that drinking hot water with lemon juice does not prevent or cure COVID-19. This was a widely debunked myth from the early pandemic. We are very sure about this. Our information comes from reputable sources like AFP, AP News, and Hackensack Meridian Health, all of whom have debunked this claim.",
+      "card_lines": [
+        "FALSE",
+        "Hot lemon water does not destroy coronavirus",
+        "Health experts confirm it does not prevent or cure COVID-19",
+        "Source: AFP, AP News"
+      ]
+    }
+  ]
+}

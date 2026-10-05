@@ -1,0 +1,63 @@
+{
+  "prompt_version": "web-search-2.1+shared-1.0",
+  "model_id": "gemini-2.5-flash",
+  "recorded_at": "2026-10-05T17:44:39+00:00",
+  "outputs": [
+    {
+      "text": "For claim c1:\nThe claim that the Prime Minister Free Laptop Scheme 2026 is providing free laptops to all students from the government is false. The Press Information Bureau (PIB) Fact Check unit has stated that this claim is fake and part of a scam, and no such scheme has been announced by the central government. [1] [2] [3] While some state governments in India do offer free laptop schemes to meritorious students, there is no universal \"Prime Minister Free Laptop Scheme\" for all students across the country. [4] [5] [6] [7] These state-level schemes often have specific eligibility criteria, such as academic performance and domicile requirements. [4] [8] [5] [6] [7]\n\nFor claim c2:\nThe claim that the last date to apply for the scheme is October 15 is likely false, as the central government has not announced a \"Prime Minister Free Laptop Scheme 2026.\" [1] [2] [3] While some state-level laptop schemes exist, their application deadlines would vary by state and specific program. [4] [6] [9] One source mentions that some scholarship applications for students were ending on September 20th, but this is not directly related to a universal free laptop scheme. [10]\n\nFor claim c3:\nThe claim to register for the scheme by clicking on the link www.pm-free-laptop-yojana.in is false and likely a scam. The Press Information Bureau (PIB) has debunked the \"Prime Minister Free Laptop Scheme 2026\" as fake and advised citizens not to fall for such schemes and to verify news only from government sources. [1] [2] [3] Experts also warn against clicking on unknown links and sharing personal details, advising to only apply on official government websites ending with \".gov.in\". [7]",
+      "sources": [
+        {
+          "n": 1,
+          "url": "https://newsonair.gov.in/hi/government-refutes-message-of-free-laptop-distribution-under-student-laptop-scheme-2026/",
+          "domain": "newsonair.gov.in"
+        },
+        {
+          "n": 2,
+          "url": "https://newsonair.gov.in/hi/%E0%A4%B8%E0%A4%B0%E0%A4%95%E0%A4%BE%E0%A4%B0-%E0%A4%A8%E0%A5%87-%E0%A4%AE%E0%A5%81%E0%A4%AB%E0%A5%8D%E0%A4%A4-%E0%A4%B2%E0%A5%88%E0%A4%AA%E0%A4%9F%E0%A5%89%E0%A4%AA-%E0%A4%AF%E0%A5%8B%E0%A4%9C/",
+          "domain": "newsonair.gov.in"
+        },
+        {
+          "n": 3,
+          "url": "https://www.abplive.com/education/pib-fact-check-free-laptop-scheme-to-students-modi-government-know-what-did-ministry-of-education-say-3173087",
+          "domain": "abplive.com"
+        },
+        {
+          "n": 4,
+          "url": "https://hindi.buddy4study.com/free-laptop-yojna",
+          "domain": "buddy4study.com"
+        },
+        {
+          "n": 5,
+          "url": "https://schemesinindia.in/schemes/uttar-pradesh/up-free-laptop-yojana",
+          "domain": "schemesinindia.in"
+        },
+        {
+          "n": 6,
+          "url": "https://www.buddy4study.com/article/free-laptop-scheme-for-students",
+          "domain": "buddy4study.com"
+        },
+        {
+          "n": 7,
+          "url": "https://laptopyojana.in/",
+          "domain": "laptopyojana.in"
+        },
+        {
+          "n": 8,
+          "url": "https://taazarozgar.com/pm-free-laptop-yojana-official/",
+          "domain": "taazarozgar.com"
+        },
+        {
+          "n": 9,
+          "url": "https://www.facebook.com/jankarbane/videos/-free-laptop-scheme-2026-%E0%A4%95%E0%A5%80-%E0%A4%9C%E0%A4%B0%E0%A5%82%E0%A4%B0%E0%A5%80-%E0%A4%9C%E0%A4%BE%E0%A4%A8%E0%A4%95%E0%A4%BE%E0%A4%B0%E0%A5%80-students-%E0%A4%95%E0%A5%87-%E0%A4%B2%E0%A4%BF%E0%A4%8F-free-laptop-%E0%A4%B8%E0%A5%87-%E0%A4%9C%E0%A5%81%E0%A4%A1%E0%A4%BC%E0%A5%80-%E0%A4%AF/1444386367625694/",
+          "domain": "facebook.com"
+        },
+        {
+          "n": 10,
+          "url": "https://www.youtube.com/watch?v=VYmQa23NQQU",
+          "domain": "youtube.com"
+        }
+      ],
+      "queries": 3
+    }
+  ]
+}

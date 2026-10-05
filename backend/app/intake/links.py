@@ -1,6 +1,6 @@
 """Link fetch ladder (docs/03 stage 1): turn a shared URL into text and media for the extractor.
 
-Order: expand redirects -> YouTube -> X oEmbed -> Meta oEmbed -> generic page (Open Graph +
+Order: expand redirects -> YouTube -> X oEmbed -> Meta oEmbed (tokenless) -> page (Open Graph +
 trafilatura + og:image). Every hop passes the SSRF guard; 10 s total, 5 MB max body. Returns a
 FetchedPost; fetch_method="failed" when nothing usable came back.
 """
@@ -25,7 +25,14 @@ from app.settings import get_config
 log = logging.getLogger(__name__)
 MAX_BODY = 5 * 1024 * 1024
 MAX_REDIRECTS = 5
-UA = "Mozilla/5.0 (Linux; Android 14) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129 Mobile Safari/537.36"
+# An honest link-preview bot UA. Instagram and Facebook serve Open Graph tags (caption, author,
+# date, photo) to link-preview bots and a login wall to browser UAs.
+UA = "Mozilla/5.0 (compatible; FactCheckBot/1.0; +https://ai-builder-2026.web.app)"
+META_GRAPH = "https://graph.facebook.com/v25.0"
+# Instagram og:description: '143 likes, 0 comments - pibfactcheck on September 13, 2026: "caption..."'
+_IG_DESC = re.compile(
+    r'^.*?-\s*(?P<handle>[\w.]+) on (?P<date>[A-Z][a-z]+ \d{1,2}, \d{4}):\s*"?(?P<caption>.*?)"?\s*$', re.S)
+_VIDEO_PATH = re.compile(r"/(reel|reels|videos?|watch|tv)/|fb\.watch", re.I)
 # What a post with a photo or video looks like in its text when the platform does not give us the media.
 _MEDIA_HINT = re.compile(r"pic\.twitter\.com|pic\.x\.com|/photo/|/video/|https://t\.co/", re.I)
 
@@ -48,6 +55,8 @@ def platform_of(url: str) -> str:
         return "instagram"
     if host.endswith("facebook.com") or host == "fb.watch":
         return "facebook"
+    if host in ("threads.net", "threads.com"):
+        return "threads"
     if host.endswith("linkedin.com"):
         return "linkedin"
     if host in ("t.me", "telegram.me"):
@@ -176,20 +185,39 @@ async def _x(f: Fetcher, url: str) -> FetchedPost | None:
 
 
 async def _meta(f: Fetcher, url: str, platform: str) -> FetchedPost | None:
-    token = os.environ.get("META_OEMBED_TOKEN")
-    if not token:
-        return None
-    kind = "instagram_oembed" if platform == "instagram" else "oembed_post"
+    """Tokenless Meta oEmbed (since June 2026). Used only when the embed carries caption text, which
+    it often does not; then the page's Open Graph tags (_page) give caption, author, date and photo."""
+    if platform == "instagram":
+        endpoint = "instagram_oembed"
+    elif platform == "threads":
+        endpoint = "threads_oembed"
+    else:
+        endpoint = "oembed_video" if _VIDEO_PATH.search(url) else "oembed_post"
+    token = os.environ.get("META_OEMBED_TOKEN")  # optional: higher rate limits with App Review
     try:
-        data = await f.json(f"https://graph.facebook.com/v21.0/{kind}?url={quote(url, safe='')}&access_token={token}")
+        data = await f.json(f"{META_GRAPH}/{endpoint}?url={quote(url, safe='')}"
+                            + (f"&access_token={token}" if token else ""))
     except Exception as e:  # noqa: BLE001
         log.info("meta oembed failed: %s", e)
         return None
-    text = _strip_tags(data.get("html") or "") or data.get("title")
-    if not text:
+    embed = re.sub(r"<script.*?</script>", "", data.get("html") or "", flags=re.S)
+    text = _strip_tags(embed)
+    if not text or text.lower().startswith("view this post on"):
         return None
-    return FetchedPost(source_url=url, platform=platform, text=text, media_missing=True,  # type: ignore[arg-type]
-                       fetch_method="meta_oembed")
+    return FetchedPost(source_url=url, platform=platform, text=text,  # type: ignore[arg-type]
+                       author_handle=data.get("author_name"), media_missing=True, fetch_method="meta_oembed")
+
+
+def _instagram_desc(desc: str) -> tuple[str, str | None, datetime | None]:
+    """Split Instagram's og:description into (caption, @handle, date)."""
+    m = _IG_DESC.match(desc)
+    if not m:
+        return desc, None, None
+    try:
+        when = datetime.strptime(m["date"], "%B %d, %Y")
+    except ValueError:
+        when = None
+    return m["caption"].strip(), f"@{m['handle']}", when
 
 
 async def _page(f: Fetcher, url: str, platform: str, store_image) -> FetchedPost | None:
@@ -216,13 +244,26 @@ async def _page(f: Fetcher, url: str, platform: str, store_image) -> FetchedPost
                 image_uris.append(await store_image(data, sniff(data)[1]))
         except Exception as e:  # noqa: BLE001  the page text alone is still useful
             log.info("og:image fetch failed: %s", e)
-    is_social = platform in ("instagram", "facebook", "x")
+    published = _date(meta.get("article:published_time") or meta.get("og:published_time"))
+    author = meta.get("author") or meta.get("article:author")
+    if platform in ("instagram", "facebook", "threads", "x"):
+        # Social pages: the caption is the post; trafilatura output is page chrome. A photo post is
+        # complete with its og:image; a video post only gives a thumbnail.
+        caption = desc or og_title or ""
+        if platform == "instagram" and caption:
+            caption, ig_handle, ig_date = _instagram_desc(caption)
+            author, published = ig_handle or author, ig_date or published
+        return FetchedPost(
+            source_url=url, platform=platform, title=og_title, text=caption or None,  # type: ignore[arg-type]
+            published_at=published, author_handle=author, image_uris=image_uris,
+            media_missing=not image_uris or bool(_VIDEO_PATH.search(url)) or "video" in meta.get("og:type", ""),
+            fetch_method="open_graph",
+        )
     return FetchedPost(
         source_url=url, platform=platform if platform != "other" else "news",  # type: ignore[arg-type]
         title=og_title, text=(f"{desc}\n\n{main}" if desc and main and desc not in main else text),
-        published_at=_date(meta.get("article:published_time") or meta.get("og:published_time")),
-        author_handle=meta.get("author") or meta.get("article:author"),
-        image_uris=image_uris, media_missing=is_social, fetch_method="open_graph" if not main else "html",
+        published_at=published, author_handle=author,
+        image_uris=image_uris, media_missing=False, fetch_method="open_graph" if not main else "html",
     )
 
 
@@ -245,7 +286,7 @@ async def fetch(url: str, *, store_image=None, transport=None, resolver=None) ->
                 post = await _youtube(f, url)
             elif platform == "x":
                 post = await _x(f, url)
-            elif platform in ("instagram", "facebook"):
+            elif platform in ("instagram", "facebook", "threads"):
                 post = await _meta(f, url, platform)
             if post is None:
                 post = await _page(f, url, platform, store_image)

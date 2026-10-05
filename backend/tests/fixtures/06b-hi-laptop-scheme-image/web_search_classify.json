@@ -1,0 +1,202 @@
+{
+  "prompt_version": "web-search-classify-1.0+shared-1.0",
+  "model_id": "gemini-2.5-flash",
+  "recorded_at": "2026-10-05T17:44:39+00:00",
+  "outputs": [
+    {
+      "items": [
+        {
+          "source_n": 1,
+          "claim_id": "c1",
+          "publisher": null,
+          "title": null,
+          "published_at": null,
+          "language": null,
+          "snippet_en": "The Press Information Bureau (PIB) Fact Check unit stated that the claim of a Prime Minister Free Laptop Scheme 2026 is fake and a scam, with no such scheme announced by the central government.",
+          "stance": "CONTRADICTS"
+        },
+        {
+          "source_n": 2,
+          "claim_id": "c1",
+          "publisher": null,
+          "title": null,
+          "published_at": null,
+          "language": null,
+          "snippet_en": "The Press Information Bureau (PIB) Fact Check unit stated that the claim of a Prime Minister Free Laptop Scheme 2026 is fake and a scam, with no such scheme announced by the central government.",
+          "stance": "CONTRADICTS"
+        },
+        {
+          "source_n": 3,
+          "claim_id": "c1",
+          "publisher": "abplive.com",
+          "title": "PIB Fact Check: Free Laptop Scheme To Students Modi Government, Know What Did Ministry Of Education Say",
+          "published_at": null,
+          "language": null,
+          "snippet_en": "The Press Information Bureau (PIB) Fact Check unit stated that the claim of a Prime Minister Free Laptop Scheme 2026 is fake and a scam, with no such scheme announced by the central government.",
+          "stance": "CONTRADICTS"
+        },
+        {
+          "source_n": 4,
+          "claim_id": "c1",
+          "publisher": "buddy4study.com",
+          "title": "Free Laptop Yojana",
+          "published_at": null,
+          "language": null,
+          "snippet_en": "While some state governments in India offer free laptop schemes to meritorious students, there is no universal \"Prime Minister Free Laptop Scheme\" for all students across the country. These state-level schemes often have specific eligibility criteria, such as academic performance and domicile requirements.",
+          "stance": "CONTEXT"
+        },
+        {
+          "source_n": 5,
+          "claim_id": "c1",
+          "publisher": "schemesinindia.in",
+          "title": "UP Free Laptop Yojana",
+          "published_at": null,
+          "language": null,
+          "snippet_en": "While some state governments in India offer free laptop schemes to meritorious students, there is no universal \"Prime Minister Free Laptop Scheme\" for all students across the country. These state-level schemes often have specific eligibility criteria, such as academic performance and domicile requirements.",
+          "stance": "CONTEXT"
+        },
+        {
+          "source_n": 6,
+          "claim_id": "c1",
+          "publisher": "buddy4study.com",
+          "title": "Free Laptop Scheme for Students",
+          "published_at": null,
+          "language": null,
+          "snippet_en": "While some state governments in India offer free laptop schemes to meritorious students, there is no universal \"Prime Minister Free Laptop Scheme\" for all students across the country. These state-level schemes often have specific eligibility criteria, such as academic performance and domicile requirements.",
+          "stance": "CONTEXT"
+        },
+        {
+          "source_n": 7,
+          "claim_id": "c1",
+          "publisher": "laptopyojana.in",
+          "title": null,
+          "published_at": null,
+          "language": null,
+          "snippet_en": "While some state governments in India offer free laptop schemes to meritorious students, there is no universal \"Prime Minister Free Laptop Scheme\" for all students across the country. These state-level schemes often have specific eligibility criteria, such as academic performance and domicile requirements.",
+          "stance": "CONTEXT"
+        },
+        {
+          "source_n": 8,
+          "claim_id": "c1",
+          "publisher": "taazarozgar.com",
+          "title": "PM Free Laptop Yojana Official",
+          "published_at": null,
+          "language": null,
+          "snippet_en": "State-level schemes often have specific eligibility criteria, such as academic performance and domicile requirements.",
+          "stance": "CONTEXT"
+        },
+        {
+          "source_n": 1,
+          "claim_id": "c2",
+          "publisher": null,
+          "title": null,
+          "published_at": null,
+          "language": null,
+          "snippet_en": "The claim that the last date to apply for the scheme is October 15 is likely false, as the central government has not announced a \"Prime Minister Free Laptop Scheme 2026.\"",
+          "stance": "CONTRADICTS"
+        },
+        {
+          "source_n": 2,
+          "claim_id": "c2",
+          "publisher": null,
+          "title": null,
+          "published_at": null,
+          "language": null,
+          "snippet_en": "The claim that the last date to apply for the scheme is October 15 is likely false, as the central government has not announced a \"Prime Minister Free Laptop Scheme 2026.\"",
+          "stance": "CONTRADICTS"
+        },
+        {
+          "source_n": 3,
+          "claim_id": "c2",
+          "publisher": "abplive.com",
+          "title": "PIB Fact Check: Free Laptop Scheme To Students Modi Government, Know What Did Ministry Of Education Say",
+          "published_at": null,
+          "language": null,
+          "snippet_en": "The claim that the last date to apply for the scheme is October 15 is likely false, as the central government has not announced a \"Prime Minister Free Laptop Scheme 2026.\"",
+          "stance": "CONTRADICTS"
+        },
+        {
+          "source_n": 4,
+          "claim_id": "c2",
+          "publisher": "buddy4study.com",
+          "title": "Free Laptop Yojana",
+          "published_at": null,
+          "language": null,
+          "snippet_en": "While some state-level laptop schemes exist, their application deadlines would vary by state and specific program.",
+          "stance": "CONTEXT"
+        },
+        {
+          "source_n": 6,
+          "claim_id": "c2",
+          "publisher": "buddy4study.com",
+          "title": "Free Laptop Scheme for Students",
+          "published_at": null,
+          "language": null,
+          "snippet_en": "While some state-level laptop schemes exist, their application deadlines would vary by state and specific program.",
+          "stance": "CONTEXT"
+        },
+        {
+          "source_n": 9,
+          "claim_id": "c2",
+          "publisher": "facebook.com",
+          "title": null,
+          "published_at": null,
+          "language": null,
+          "snippet_en": "While some state-level laptop schemes exist, their application deadlines would vary by state and specific program.",
+          "stance": "CONTEXT"
+        },
+        {
+          "source_n": 10,
+          "claim_id": "c2",
+          "publisher": "youtube.com",
+          "title": null,
+          "published_at": null,
+          "language": null,
+          "snippet_en": "One source mentions that some scholarship applications for students were ending on September 20th, but this is not directly related to a universal free laptop scheme.",
+          "stance": "CONTEXT"
+        },
+        {
+          "source_n": 1,
+          "claim_id": "c3",
+          "publisher": null,
+          "title": null,
+          "published_at": null,
+          "language": null,
+          "snippet_en": "The claim to register for the scheme by clicking on the link www.pm-free-laptop-yojana.in is false and likely a scam. The Press Information Bureau (PIB) has debunked the \"Prime Minister Free Laptop Scheme 2026\" as fake.",
+          "stance": "CONTRADICTS"
+        },
+        {
+          "source_n": 2,
+          "claim_id": "c3",
+          "publisher": null,
+          "title": null,
+          "published_at": null,
+          "language": null,
+          "snippet_en": "The claim to register for the scheme by clicking on the link www.pm-free-laptop-yojana.in is false and likely a scam. The Press Information Bureau (PIB) has debunked the \"Prime Minister Free Laptop Scheme 2026\" as fake.",
+          "stance": "CONTRADICTS"
+        },
+        {
+          "source_n": 3,
+          "claim_id": "c3",
+          "publisher": "abplive.com",
+          "title": "PIB Fact Check: Free Laptop Scheme To Students Modi Government, Know What Did Ministry Of Education Say",
+          "published_at": null,
+          "language": null,
+          "snippet_en": "The claim to register for the scheme by clicking on the link www.pm-free-laptop-yojana.in is false and likely a scam. The Press Information Bureau (PIB) has debunked the \"Prime Minister Free Laptop Scheme 2026\" as fake.",
+          "stance": "CONTRADICTS"
+        },
+        {
+          "source_n": 7,
+          "claim_id": "c3",
+          "publisher": "laptopyojana.in",
+          "title": null,
+          "published_at": null,
+          "language": null,
+          "snippet_en": "Experts warn against clicking on unknown links and sharing personal details, advising to only apply on official government websites ending with \".gov.in\".",
+          "stance": "CONTEXT"
+        }
+      ],
+      "notes_en": ""
+    }
+  ]
+}
