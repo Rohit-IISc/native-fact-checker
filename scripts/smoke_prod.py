@@ -14,6 +14,7 @@ import json
 import time
 from datetime import UTC, datetime
 
+import httpx
 from google.cloud import firestore, pubsub_v1, storage
 from google.cloud.firestore_v1.base_query import FieldFilter
 
@@ -57,11 +58,13 @@ def start(spec):
 
 def wait(ids):
     t0, done = time.time(), {}
-    while len(done) < len(ids) and time.time() - t0 < 180:
+    while len(done) < len(ids) and time.time() - t0 < 240:
         for n, cid in ids.items():
             if n not in done:
                 d = db.collection("checks").document(cid).get().to_dict() or {}
-                if d.get("status") in ("DONE", "FAILED"):
+                # Audio is written after DONE; wait for it so cleanup never races the audio write.
+                if d.get("status") == "FAILED" or (d.get("status") == "DONE"
+                                                   and not (d.get("result") or {}).get("audio_pending")):
                     done[n] = d
         time.sleep(2)
     return done
@@ -75,16 +78,25 @@ def report(n, d):
           f"errors={d.get('stage_errors') or d.get('error_detail')}")
     for c in r.get("claims", [])[:1]:
         print(f"             headline: {c['answer']['headline']}")
+        if c.get("audio_url"):
+            a = httpx.get(c["audio_url"].replace(get_settings().public_base_url, f"https://{P}.web.app"), timeout=20)
+            kind = a.headers.get("content-type")
+            print(f"             audio: HTTP {a.status_code} {kind} {len(a.content) // 1024} KB")
+        else:
+            print("             audio: none")
         print(f"             sources: {[(e.get('publisher'), e['tier']) for e in c['evidence'][:4]]}")
 
 
 def cleanup(check_ids: list[str]) -> None:
     mine = set(check_ids)
+    outputs = storage.Client(project=P).bucket(get_settings().outputs_bucket)
     for cid in check_ids:
         for v in db.collection("verdicts").where(filter=FieldFilter("check_id", "==", cid)).stream():
             if (v.to_dict() or {}).get("check_id") in mine:  # created by our check, not reused from cache
                 for cd in db.collection("claims").where(filter=FieldFilter("verdict_id", "==", v.id)).stream():
                     cd.reference.delete()
+                for blob in outputs.list_blobs(prefix=f"audio/{v.id}_"):
+                    blob.delete()
                 v.reference.delete()
         db.collection("checks").document(cid).delete()
         db.collection("users").document(UID).collection("history").document(cid).delete()
