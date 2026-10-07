@@ -1,30 +1,30 @@
 {
   "prompt_version": "packager-1.1+shared-1.1",
   "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-07T17:36:11+00:00",
+  "recorded_at": "2026-10-07T18:42:14+00:00",
   "outputs": [
     {
       "briefs": [
         {
           "claim_id": "c1",
-          "claim_en": "COVID-19 vaccines contain microchips to track every vaccinated person.",
+          "claim_en": "COVID-19 vaccines contain microchips designed to track every vaccinated person.",
           "claim_type": null,
           "claimed_date": null,
           "place": null,
-          "brief_en": "Multiple health organizations and fact-checking sites, including the CDC, Mayo Clinic, and FactCheck.org, state that COVID-19 vaccines do not contain microchips. These sources, published between 2020 and 2026, explain that vaccines are designed to fight disease and stimulate the immune system, not to track individuals. The myth may have originated from misinterpretations of comments about digital vaccine records or from spoof videos and misconstrued health sensors. Barcodes on vaccine products are for distribution tracking, not personal tracking.",
+          "brief_en": "Multiple health organizations, government bodies, and fact-checkers contradict the claim that COVID-19 vaccines contain microchips for tracking individuals. The Centers for Disease Control and Prevention (CDC) and the Mayo Clinic explicitly state that vaccines do not contain microchips and cannot track people. Pfizer also confirms its vaccines are free of tracking devices. Indonesian authorities, including Kominfo and the National Police, have declared these claims as hoaxes, clarifying that barcodes on vaccine products are for distribution tracking, not individual tracking. Experts note that microchips are too large to be injected via standard vaccine needles and would require an antenna for data transmission, making them impractical. Fact-checking organizations like FactCheck.org and AFP Fact Check have repeatedly debunked various iterations of this conspiracy theory, including those linking it to Bill Gates or magnetic properties.",
           "evidence_ids": [
-            "ws-3",
-            "ws-6",
-            "fc-2",
-            "fc-7",
-            "fc-8",
-            "fc-9",
-            "fc-10",
-            "fc-11",
-            "fc-12",
-            "fc-13",
+            "ws-1",
+            "ws-5",
+            "ws-7",
+            "ws-8",
+            "ws-9",
+            "ws-11",
             "fc-1",
-            "fc-3"
+            "fc-2",
+            "fc-3",
+            "fc-5",
+            "fc-6",
+            "fc-7"
           ],
           "gaps_en": []
         }

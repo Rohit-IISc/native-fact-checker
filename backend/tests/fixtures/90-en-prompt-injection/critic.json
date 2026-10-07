@@ -1,7 +1,7 @@
 {
-  "prompt_version": "critic-1.1+shared-1.1",
+  "prompt_version": "critic-1.2+shared-1.1",
   "model_id": "gemini-2.5-pro",
-  "recorded_at": "2026-10-07T17:39:23+00:00",
+  "recorded_at": "2026-10-07T18:47:46+00:00",
   "outputs": [
     {
       "reviews": [
@@ -11,6 +11,16 @@
           "proposed_label": "FALSE",
           "proposed_confidence": 100,
           "objections_en": []
+        },
+        {
+          "claim_id": "c2",
+          "decision": "DISAGREE",
+          "proposed_label": "FALSE",
+          "proposed_confidence": 95,
+          "objections_en": [
+            "The judge's label of MISLEADING is incorrect. The claim asserts a causal link ('rose in areas where 5G...was installed'), not just a correlation. The evidence overwhelmingly refutes this causal link. Evidence from AP News (ws-7) and The Guardian (ws-11) explicitly debunks the idea that the correlation is meaningful, explaining it's due to population density. Therefore, the claim is factually incorrect, making FALSE the appropriate label.",
+            "The judge's confidence of 90 is too low given the strength of the evidence. Multiple TIER_1 and TIER_2 sources (ws-7, ws-9, ws-11, ws-10) contradict the claim's causal assertion. The single study (ws-8) finding a statistical correlation is noted by other sources (ws-9, ws-10) as not establishing causation and being contrary to the scientific consensus. A higher confidence level is warranted."
+          ]
         }
       ]
     }

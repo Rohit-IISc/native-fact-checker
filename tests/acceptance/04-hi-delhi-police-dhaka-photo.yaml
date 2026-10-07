@@ -1,0 +1,12 @@
+# From Rohit's notes (2026-10-07). Media lives in samples/ (gitignored, real third-party posts): the case is
+# skipped where samples/ is absent, and make record never stores its model outputs.
+id: 04-hi-delhi-police-dhaka-photo
+case: 4
+note: Facebook screenshot (Anil Kumar Yadav). The photo is from Dhaka, Bangladesh, 30 June 2010.
+input:
+  file: samples/4.jpg
+  text: "बहुत बड़े आतंक को पीटते हुए दिल्ली पुलिस"
+language: hi
+expected: [MISLEADING]
+gold:
+  - https://www.aajtak.in/fact-check/story/fact-check-10-year-old-pics-of-bangladesh-got-viral-on-delhi-violence-name-1032015-2020-02-29

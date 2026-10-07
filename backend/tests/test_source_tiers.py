@@ -11,10 +11,11 @@ from app.verify.source_tiers import tier_for_url
     ("https://www.reuters.com/world/india/x", SourceTier.TIER_1),
     ("https://factcheck.afp.com/x", SourceTier.TIER_1),
     ("https://www.indiatoday.in/fact-check/story/x", SourceTier.TIER_1),
-    ("https://www.indiatoday.in/india/story/x", SourceTier.TIER_3),
     ("https://www.thequint.com/news/webqoof/x", SourceTier.TIER_1),
-    ("https://www.tempo.co/cekfakta/x", SourceTier.TIER_2),   # not an active IFCN signatory (2026-10-07)
-    ("https://www.altnews.in/hindi/x", SourceTier.TIER_2),    # last IFCN verification 2019
+    ("https://www.tempo.co/cekfakta/x", SourceTier.TIER_1),   # IFCN in renewal (Rohit, 2026-10-07)
+    ("https://cekfakta.tempo.co/x", SourceTier.TIER_1),
+    ("https://www.tempo.co/politik/x", SourceTier.TIER_2),
+    ("https://www.altnews.in/hindi/x", SourceTier.TIER_2),    # not on the IFCN list
     ("https://tempo.co/x", SourceTier.TIER_2),
     # Rohit's additions (2026-10-07)
     ("https://www.voanews.com/a/x", SourceTier.TIER_2),
@@ -30,13 +31,29 @@ from app.verify.source_tiers import tier_for_url
     ("https://hindi.boomlive.in/fact-check/x", SourceTier.TIER_1),
     ("https://malayalam.indiatoday.in/fact-check/x", SourceTier.TIER_1),
     ("https://www.telugupost.com/factcheck/x", SourceTier.TIER_1),
-    ("https://www.telugupost.com/politics/x", SourceTier.TIER_3),
+    ("https://www.telugupost.com/politics/x", SourceTier.TIER_2),  # rest of a fact-checker's news site
     ("https://www.newsmobile.in/nm-fact-checker/x", SourceTier.TIER_1),
     ("https://www.thelallantop.com/factcheck/x", SourceTier.TIER_1),
     ("https://kannada.digiteye.in/x", SourceTier.TIER_1),
     ("https://www.liputan6.com/cek-fakta/read/x", SourceTier.TIER_1),
-    ("https://www.liputan6.com/news/x", SourceTier.TIER_3),
+    ("https://www.liputan6.com/news/x", SourceTier.TIER_2),
     ("https://www.kompas.com/cekfakta/read/x", SourceTier.TIER_1),
+    ("https://cekfakta.kompas.com/read/x", SourceTier.TIER_1),
+    ("https://tirto.id/keliru-video-sppg-di-ntb-dibakar-warga-hCYQ", SourceTier.TIER_1),
+    ("https://tirto.id/sebut-hoaks-tapi-keliru-cek-fakta-kominfo-egKs", SourceTier.TIER_2),  # a news story
+    ("https://www.dw.com/en/fact-check-viral-video-is-ai/a-6912345", SourceTier.TIER_1),
+    ("https://www.dw.com/en/fact-check/t-56584214", SourceTier.TIER_1),
+    ("https://www.dw.com/en/germany-election/a-123", SourceTier.TIER_2),
+    ("https://medicaldialogues.in/fact-check/x", SourceTier.TIER_1),
+    ("https://medicaldialogues.in/news/x", SourceTier.TIER_2),
+    ("https://www.thequint.com/hindi/webqoof/x", SourceTier.TIER_1),
+    ("https://www.thequint.com/entertainment/x", SourceTier.TIER_2),
+    ("https://www.indiatoday.in/india/story/x", SourceTier.TIER_2),
+    ("https://www.lighthousejournalism.com/viral/x", SourceTier.TIER_1),
+    ("https://www.fact-watch.org/x", SourceTier.TIER_1),
+    ("https://www.rappler.com/newsbreak/fact-check/x", SourceTier.TIER_1),
+    ("https://www.rappler.com/philippines/x", SourceTier.TIER_2),
+    ("https://www.aap.com.au/factcheck/x", SourceTier.TIER_3),   # not on Rohit's list
     ("https://www.kompas.com/tren/read/x", SourceTier.TIER_2),
     ("https://turnbackhoax.id/articles/x", SourceTier.TIER_1),
     ("https://www.thehindu.com/news/x", SourceTier.TIER_2),

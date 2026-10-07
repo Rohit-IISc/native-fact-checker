@@ -1,0 +1,15 @@
+# From Rohit's notes (2026-10-07). Media lives in samples/ (gitignored, real third-party posts): the case is
+# skipped where samples/ is absent, and make record never stores its model outputs.
+id: 01-kn-bengaluru-flood-video
+case: 1
+note: >
+  Real Bengaluru flood (Sept 2022) shared as "today". The video has "DELHI संकट मे" printed on it, but the
+  caption is Kannada, and the caption decides the answer language (extractor 1.7). BMRCL/Afcons boards,
+  KA number plates. 360p.
+input:
+  file: samples/1a.mp4
+  text: "ಇಂದು ಬೆಂಗಳೂರಿನಲ್ಲಿ ಭಾರೀ ಪ್ರವಾಹ"
+language: kn
+expected: [MISLEADING]
+gold:
+  - https://www.newschecker.in/fact-check/viral-video-claiming-to-show-delhi-floods-is-actually-oid-footage-from-bengaluru

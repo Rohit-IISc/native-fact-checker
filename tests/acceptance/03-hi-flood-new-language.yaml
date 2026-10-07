@@ -1,0 +1,15 @@
+# From Rohit's notes (2026-10-07). Media lives in samples/ (gitignored, real third-party posts): the case is
+# skipped where samples/ is absent, and make record never stores its model outputs.
+id: 03-hi-flood-new-language
+case: 3
+note: >
+  The case 01 video again (exact hash) with a Hindi caption: the cached verdict, answered in Hindi
+  (translated once and stored), under 12 s.
+input:
+  file: samples/1a.mp4
+  text: "दिल्ली में आज भारी बाढ़"
+after: 02-kn-flood-reshare-720p
+expect_cache: T1
+budget_s: 12
+language: hi
+expected: [MISLEADING]

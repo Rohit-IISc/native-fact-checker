@@ -1,92 +1,72 @@
 {
   "prompt_version": "web-search-classify-1.3+shared-1.1",
   "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-07T17:38:30+00:00",
+  "recorded_at": "2026-10-07T18:45:52+00:00",
   "outputs": [
     {
       "items": [
         {
           "source_n": 1,
           "claim_id": "c1",
-          "publisher": "DD India",
+          "publisher": "youtube.com",
           "title": null,
-          "published_at": "2025-07-14",
+          "published_at": null,
           "language": null,
-          "snippet_en": "DD India reported that India made history on August 23, 2023, when Chandrayaan-3 successfully achieved a soft landing near the Moon's south pole, making it the first country to do so.",
-          "stance": "SUPPORTS"
+          "snippet_en": "India successfully landed its Chandrayaan-3 mission near the Moon's south pole on August 23, 2023. Celebrations erupted across India following the successful landing. Prime Minister Narendra Modi declared that \"India is now on the Moon\" and announced that August 23 would be celebrated as National Space Day.",
+          "stance": "CONTEXT"
         },
         {
           "source_n": 2,
           "claim_id": "c1",
-          "publisher": "NASA",
-          "title": null,
+          "publisher": "abplive.com",
+          "title": "Chandrayaan-3 Lands On The Moon, India Unites In Celebration: School Children Dance, Sweets | Watch Video",
           "published_at": null,
           "language": null,
-          "snippet_en": "NASA states that Chandrayaan-3 is an Indian Space Research Organization mission that landed near the south pole of the Moon on August 23, 2023.",
-          "stance": "SUPPORTS"
+          "snippet_en": "Celebrations erupted across India following the successful landing of Chandrayaan-3, with people cheering, dancing, sharing sweets, and waving national flags.",
+          "stance": "CONTEXT"
         },
         {
           "source_n": 3,
           "claim_id": "c1",
-          "publisher": "Space.com",
-          "title": null,
-          "published_at": "2023-08-22",
+          "publisher": "indianexpress.com",
+          "title": "‘We won’: Crowd bursts in celebration at Delhi’s Nehru Planetarium as Chandrayaan-3 lands on Moon",
+          "published_at": "2023-08-23",
           "language": null,
-          "snippet_en": "Space.com reported that the Indian Space Research Organisation successfully landed its Chandrayaan-3 Vikram lander near the lunar south pole, marking its first moon landing and the first probe ever to land at the Moon's south pole.",
-          "stance": "SUPPORTS"
+          "snippet_en": "Celebrations erupted across India following the successful landing of Chandrayaan-3, with people cheering, dancing, sharing sweets, and waving national flags.",
+          "stance": "CONTEXT"
         },
         {
           "source_n": 4,
           "claim_id": "c1",
-          "publisher": "Al Jazeera",
-          "title": null,
-          "published_at": "2023-08-23",
+          "publisher": "indiatoday.in",
+          "title": "National Space Day celebrates Chandrayaan-3 landing as India pushes newer space frontiers",
+          "published_at": "2026-08-23",
           "language": null,
-          "snippet_en": "Al Jazeera reported on August 23, 2023, that India could become the first nation to land a spacecraft on the Moon's south pole.",
+          "snippet_en": "Prime Minister Narendra Modi announced that August 23 would be celebrated as National Space Day following the successful landing of Chandrayaan-3.",
           "stance": "CONTEXT"
         },
         {
           "source_n": 5,
-          "claim_id": "c2",
-          "publisher": "BBC News",
+          "claim_id": "c1",
+          "publisher": "facebook.com",
           "title": null,
-          "published_at": "2023-08-23",
+          "published_at": null,
           "language": null,
-          "snippet_en": "BBC News reported on August 23, 2023, that the Vikram lander from Chandrayaan-3 successfully touched down as planned at 18:04 local time (12:34 GMT).",
-          "stance": "SUPPORTS"
+          "snippet_en": "Prime Minister Narendra Modi announced that August 23 would be celebrated as National Space Day following the successful landing of Chandrayaan-3.",
+          "stance": "CONTEXT"
         },
         {
           "source_n": 6,
-          "claim_id": "c2",
-          "publisher": "NDTV",
-          "title": null,
-          "published_at": "2023-08-23",
+          "claim_id": "c1",
+          "publisher": "factcrescendo.com",
+          "title": "Is this an image of women scientists of ISRO celebrating the success of Chandrayaan-3? Know the truth",
+          "published_at": null,
           "language": null,
-          "snippet_en": "NDTV reported on August 23, 2023, that the Vikram lander touched down at 6:04 PM on Wednesday, August 23, and ISRO celebrated the occasion with a post on X at the exact time of touchdown.",
-          "stance": "SUPPORTS"
-        },
-        {
-          "source_n": 3,
-          "claim_id": "c2",
-          "publisher": "Space.com",
-          "title": null,
-          "published_at": "2023-08-22",
-          "language": null,
-          "snippet_en": "Space.com reported on August 22, 2023, that Chandrayaan-3 was expected to touch down at 8:34 a.m. EDT (1:34 p.m. GMT, or 6:04 p.m. in India).",
-          "stance": "CONTEXT"
-        },
-        {
-          "source_n": 4,
-          "claim_id": "c2",
-          "publisher": "Al Jazeera",
-          "title": null,
-          "published_at": "2023-08-23",
-          "language": null,
-          "snippet_en": "Al Jazeera reported on August 23, 2023, that Chandrayaan-3 was scheduled to touch down shortly after 6 PM India time (12:30 GMT).",
+          "snippet_en": "Some images circulating online, purportedly showing celebrations for Chandrayaan-3, have been identified as being from the 2014 Mars Orbiter Mission (Mangalyaan) success.",
           "stance": "CONTEXT"
         }
       ],
-      "notes_en": ""
+      "notes_en": "The claim states that the image shows people celebrating the Chandrayaan-3 landing. While celebrations did occur across India, some images circulating online, purportedly showing these celebrations, are actually from the 2014 Mars Orbiter Mission. Therefore, the sources provide context about the celebrations and the potential misattribution of images, but do not directly confirm or contradict the specific image in the post."
     }
   ]
 }

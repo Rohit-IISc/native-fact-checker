@@ -1,0 +1,15 @@
+# From Rohit's notes (2026-10-07). Media lives in samples/ (gitignored, real third-party posts): the case is
+# skipped where samples/ is absent, and make record never stores its model outputs.
+id: 02-kn-flood-reshare-720p
+case: 2
+note: >
+  The same clip as case 01 at 720p, right after it. The bytes differ, so this must hit the video keyframe
+  pHash match (tier 1 near-duplicate), not the exact hash. Same verdict from cache, under 3 s.
+input:
+  file: samples/1b.mp4
+  text: "ಇಂದು ಬೆಂಗಳೂರಿನಲ್ಲಿ ಭಾರೀ ಪ್ರವಾಹ"
+after: 01-kn-bengaluru-flood-video
+expect_cache: T1
+budget_s: 3
+language: kn
+expected: [MISLEADING]

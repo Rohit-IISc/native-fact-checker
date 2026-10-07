@@ -1,0 +1,23 @@
+{
+  "prompt_version": "judge-1.2+shared-1.1+judge-revision-1.0",
+  "model_id": "gemini-2.5-pro",
+  "recorded_at": "2026-10-07T18:47:29+00:00",
+  "outputs": [
+    {
+      "verdicts": [
+        {
+          "claim_id": "c1",
+          "label": "NOT_ENOUGH_EVIDENCE",
+          "confidence": 50,
+          "what_is_true_en": "There is no evidence in the provided information to confirm or deny the sighting of crocodiles in Kukkarahalli Lake in Mysuru.",
+          "event_date": null,
+          "evidence_for_ids": [],
+          "evidence_against_ids": [],
+          "cited_ids": [],
+          "reasoning_en": "The evidence pack contains no information regarding the claim. Crucially, the evidence gathering process was incomplete as a web search was not performed. Without a web search, it is impossible to be confident about what evidence may or may not exist online. Therefore, while the label is NOT_ENOUGH_EVIDENCE due to the empty evidence pack, the confidence is low to reflect the incomplete search.",
+          "ai_generation": null
+        }
+      ]
+    }
+  ]
+}

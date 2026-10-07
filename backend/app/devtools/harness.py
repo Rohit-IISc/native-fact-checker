@@ -29,9 +29,8 @@ from app.llm import LLM, StageFailed
 from app.models import CheckRequest, CheckResult, Extraction
 from app.observability.calls import CheckLedger, ledger_var
 from app.observability.logging import check_id_var
-from app.pipeline import runner
+from app.pipeline import reuse, runner
 from app.pipeline.progress import CHECKS
-from app.pipeline.results import cached_result
 from app.settings import get_config
 from app.store import Store
 
@@ -184,8 +183,10 @@ async def run(req: CheckRequest, *, store: Store, llm: LLM, stage: str = "full",
             out.error = str(e)
         tracing._mark("done")
     elif tier1 and (hit := await _tier1_lookup(store, req, cache_keys or [])):
+        # Same as POST /v1/checks: the caption decides the answer language (translated if needed).
+        ledger_var.set(out.ledger)
         tracing._mark("cache_lookup")
-        out.result = cached_result(req.check_id, hit)
+        out.result = await reuse.tier1_answer(store, llm, req.check_id, hit, req.text)
         tracing._mark("done")
     else:
         await store.set(CHECKS, req.check_id, {

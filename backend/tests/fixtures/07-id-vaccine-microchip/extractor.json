@@ -1,34 +1,36 @@
 {
-  "prompt_version": "extractor-1.6+shared-1.1",
+  "prompt_version": "extractor-1.8+shared-1.1",
   "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-07T17:36:11+00:00",
+  "recorded_at": "2026-10-07T18:42:14+00:00",
   "outputs": [
     {
       "content_language": "id-ID",
       "content_script": "Latn",
-      "summary_en": "The post claims that COVID-19 vaccines contain microchips designed to track vaccinated individuals. It urges readers to share this information widely before it is removed.",
+      "summary_en": "The post claims that COVID-19 vaccines contain microchips designed to track vaccinated individuals. It urges users to share this information widely before it is removed.",
       "checkable": true,
       "non_checkable_type": null,
       "claims": [
         {
           "claim_id": "claim1",
           "claim_original": "Vaksin COVID-19 mengandung microchip untuk melacak setiap orang yang sudah divaksin.",
-          "claim_en": "COVID-19 vaccines contain microchips to track every vaccinated person.",
+          "claim_en": "COVID-19 vaccines contain microchips designed to track every vaccinated person.",
           "claim_type": "HEALTH",
           "entities": [
             "COVID-19 vaccines",
-            "microchips"
+            "microchip"
           ],
           "place": null,
           "claimed_date": null,
           "time_sensitivity": "EVERGREEN",
           "search_queries_original": [
-            "Vaksin COVID-19 microchip",
-            "Vaksin melacak orang"
+            "vaksin COVID-19 microchip",
+            "vaksin melacak orang",
+            "microchip dalam vaksin"
           ],
           "search_queries_en": [
-            "COVID-19 vaccine microchip",
-            "vaccine tracking people"
+            "COVID-19 vaccine microchip tracking",
+            "vaccine microchip conspiracy",
+            "microchips in vaccines"
           ]
         }
       ],

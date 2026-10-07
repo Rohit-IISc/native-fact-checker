@@ -70,6 +70,8 @@ class CapturingLLM:
         cfg = get_config()
         paths = []
         for stage, outputs in self.outputs.items():
+            if not any(o is not None for o in outputs):
+                continue  # every call to this stage failed (e.g. timed out): nothing to replay
             path = case_dir / f"{stage}.json"
             path.write_text(json.dumps({
                 "prompt_version": self.versions[stage],
@@ -111,8 +113,9 @@ def _sequence(outputs: list[dict]):
 def replay_llm(case_id: str, fixtures_dir: Path = FIXTURES_DIR) -> FakeLLM:
     fixtures = {}
     for stage, rec in load_fixtures(case_id, fixtures_dir).items():
-        outputs = rec.get("outputs") or [rec["output"]]
-        fixtures[stage] = _sequence(outputs)
+        outputs = rec.get("outputs") or ([rec["output"]] if "output" in rec else [])
+        if outputs:
+            fixtures[stage] = _sequence(outputs)
     return FakeLLM(fixtures)
 
 

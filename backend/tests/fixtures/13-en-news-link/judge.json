@@ -1,45 +1,24 @@
 {
-  "prompt_version": "judge-1.1+shared-1.1",
+  "prompt_version": "judge-1.2+shared-1.1",
   "model_id": "gemini-2.5-pro",
-  "recorded_at": "2026-10-07T17:38:30+00:00",
+  "recorded_at": "2026-10-07T18:45:52+00:00",
   "outputs": [
     {
       "verdicts": [
         {
           "claim_id": "c1",
-          "label": "TRUE",
-          "confidence": 100,
-          "what_is_true_en": "India's Chandrayaan-3 mission successfully landed near the Moon's south pole on August 23, 2023, making it the first country to achieve a landing in that region.",
-          "event_date": "2023-08-23",
-          "evidence_for_ids": [
-            "ws-2",
-            "ws-3",
-            "ws-4"
-          ],
-          "evidence_against_ids": [],
-          "cited_ids": [
-            "ws-2",
-            "ws-3"
-          ],
-          "reasoning_en": "Multiple credible sources, including a TIER_1 source, NASA (ws-2), and TIER_3 source Space.com (ws-3), confirm that India's Chandrayaan-3 mission successfully landed near the Moon's south pole on August 23, 2023. These sources explicitly state that this made India the first country to achieve a landing in this specific lunar region. There is no credible evidence contradicting this fact. Several fact-checking articles are provided, but they debunk unrelated fake videos and images, not the landing event itself.",
-          "ai_generation": null
-        },
-        {
-          "claim_id": "c2",
-          "label": "TRUE",
-          "confidence": 95,
-          "what_is_true_en": "The Vikram lander of the Chandrayaan-3 mission successfully touched down on the Moon on August 23, 2023, at 18:04 local time (12:34 GMT).",
-          "event_date": "2023-08-23",
-          "evidence_for_ids": [
-            "ws-5",
+          "label": "MISLEADING",
+          "confidence": 90,
+          "what_is_true_en": "While there were widespread celebrations in India for the Chandrayaan-3 moon landing in August 2023, some images shared online to show this event are actually from the 2014 Mars Orbiter Mission (Mangalyaan) success.",
+          "event_date": "2014-09-24",
+          "evidence_for_ids": [],
+          "evidence_against_ids": [
             "ws-6"
           ],
-          "evidence_against_ids": [],
           "cited_ids": [
-            "ws-5",
             "ws-6"
           ],
-          "reasoning_en": "Multiple news outlets confirm the specific time of the Chandrayaan-3 landing. BBC News (ws-5) and NDTV (ws-6) both report that the Vikram lander touched down at 18:04 local time on August 23, 2023. BBC News specifies this corresponds to 12:34 GMT. Other sources like Space.com (ws-7) and Al Jazeera (ws-8) reported the same scheduled time just before the landing occurred, adding to the consistency of the evidence. There is no evidence to contradict this specific time.",
+          "reasoning_en": "The evidence confirms that India's Chandrayaan-3 mission did successfully land on the moon on August 23, 2023, leading to widespread celebrations (ws-3, ws-2). However, a TIER_1 fact-check (ws-6) reports that some images circulating online, purportedly showing these celebrations, are actually from the 2014 Mars Orbiter Mission (Mangalyaan). The claim is therefore misleading because it uses an old image to represent a recent event.",
           "ai_generation": null
         }
       ]

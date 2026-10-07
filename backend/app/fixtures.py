@@ -81,6 +81,11 @@ def fake_composer(prompt: str) -> dict:
     from app.models import Claim, ClaimType, JudgeVerdict, Label, TimeSensitivity
     from app.pipeline.stub import stub_answer
 
+    if "English AnswerText:" in prompt:
+        # Translate mode (cache reuse in a new language): offline, keep the English text.
+        english = json.loads(prompt.split("<user_content>", 2)[-1].split("</user_content>")[0])
+        return english
+
     lang = (re.search(r"\(([a-z]{2,3}-[A-Za-z]{2,4}|[a-z]{2,3}), script", prompt) or [None, "en"])[1]
     lang = "en" if lang.startswith("en") else lang
     data = json.loads(prompt.split("Verdict data:", 1)[1].split("Return JSON", 1)[0])

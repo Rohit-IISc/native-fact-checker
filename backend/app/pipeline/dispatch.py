@@ -22,17 +22,22 @@ def _topic_path() -> str:
     return _publisher.topic_path(s.gcp_project, s.pubsub_topic)
 
 
-async def dispatch(check_id: str) -> None:
+async def dispatch(check_id: str, task: str = "run") -> None:
+    """task "run": the full pipeline. task "speak": audio for a check that is already DONE (a cache hit
+    answered in a new language). Via Pub/Sub in Cloud Run so the work keeps CPU after the API responds."""
     s = get_settings()
     if s.pipeline_mode == "inline":
+        from app.pipeline.reuse import speak_check
         from app.pipeline.runner import run_check_by_id
+        from app.store import get_store
 
-        task = asyncio.get_running_loop().create_task(run_check_by_id(check_id))
-        _background.add(task)
-        task.add_done_callback(_background.discard)
+        coro = run_check_by_id(check_id) if task == "run" else speak_check(get_store(), check_id)
+        job = asyncio.get_running_loop().create_task(coro)
+        _background.add(job)
+        job.add_done_callback(_background.discard)
         return
     topic = _topic_path()
-    data = json.dumps({"check_id": check_id}).encode()
+    data = json.dumps({"check_id": check_id, "task": task}).encode()
     future = _publisher.publish(topic, data)
     await asyncio.to_thread(future.result, 10)
 

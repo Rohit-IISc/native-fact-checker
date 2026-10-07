@@ -1,7 +1,7 @@
 {
-  "prompt_version": "judge-1.1+shared-1.1",
+  "prompt_version": "judge-1.2+shared-1.1",
   "model_id": "gemini-2.5-pro",
-  "recorded_at": "2026-10-07T17:36:12+00:00",
+  "recorded_at": "2026-10-07T18:42:54+00:00",
   "outputs": [
     {
       "verdicts": [
@@ -9,25 +9,26 @@
           "claim_id": "c1",
           "label": "TRUE",
           "confidence": 100,
-          "what_is_true_en": "On 23 August 2023, India's Chandrayaan-3 mission successfully landed its Vikram lander near the Moon's south pole, making it the first country to achieve this feat.",
+          "what_is_true_en": "India's Chandrayaan-3 mission successfully landed its Vikram lander near the Moon's south pole on August 23, 2023, making it the first country to achieve this.",
           "event_date": "2023-08-23",
           "evidence_for_ids": [
-            "ws-3",
-            "ws-4",
-            "ws-5",
             "fc-1",
             "ws-1",
             "ws-2",
-            "ws-6"
+            "ws-3",
+            "ws-6",
+            "ws-4",
+            "ws-5"
           ],
           "evidence_against_ids": [],
           "cited_ids": [
+            "fc-1",
+            "ws-1",
+            "ws-2",
             "ws-3",
-            "ws-4",
-            "ws-5",
-            "fc-1"
+            "ws-6"
           ],
-          "reasoning_en": "Multiple reputable news sources (PBS, VOA, The Guardian) and a fact-checking organization (BOOM Fact Check) confirm that India's Chandrayaan-3 mission landed near the Moon's south pole on August 23, 2023. All sources corroborate that this made India the first country to successfully land a spacecraft in that specific lunar region. There is no credible evidence contradicting this claim.",
+          "reasoning_en": "Multiple reputable news organizations (Voice of America, PBS, The Guardian, The Hindu) and a fact-checking organization (BOOM Fact Check) confirm that India's Chandrayaan-3 mission landed near the Moon's south pole on August 23, 2023. All sources corroborate that this made India the first country to land a spacecraft in that specific lunar region. There is no contradictory evidence.",
           "ai_generation": null
         }
       ]

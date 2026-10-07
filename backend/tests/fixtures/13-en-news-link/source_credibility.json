@@ -1,7 +1,7 @@
 {
   "prompt_version": "source-cred-1.1+shared-1.1",
   "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-07T17:38:30+00:00",
+  "recorded_at": "2026-10-07T18:45:52+00:00",
   "outputs": [
     {
       "agent": "source_credibility",
@@ -13,7 +13,7 @@
         "repeat_offender_examples": [],
         "domain_age_days": null,
         "red_flags": [],
-        "note_en": "The content originates from bbc.com, which is identified as BBC News."
+        "note_en": "The content originates from bbc.com, which is identified as BBC News. The domain is a TIER_2 source."
       },
       "ai_generation_signals": null,
       "earliest_appearance": null,

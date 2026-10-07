@@ -8,26 +8,24 @@ from __future__ import annotations
 import asyncio
 import functools
 import logging
-import os
 import time
 from datetime import datetime
 
 from app import quota
-from app.agents import composer, extractor
+from app.agents import extractor
 from app.agents.tools import Tools, default_tools
 from app.cache import tier1, tier2
 from app.intake import links, media
 from app.intake.hashing import extract_urls
 from app.llm import LLM, StageFailed, get_llm
-from app.models import AnswerText, CheckRequest, CheckResult, ClaimResult, Extraction, FetchedPost, Stage
+from app.models import CheckRequest, CheckResult, ClaimResult, Extraction, FetchedPost, Stage
 from app.observability.calls import CheckLedger, ledger_var
 from app.observability.logging import check_id_var, hash_uid, log_event, uid_hash_var
 from app.observability.runs import write_check_run
-from app.output import tts
-from app.pipeline import investigate, stub
+from app.pipeline import investigate, reuse, stub
 from app.pipeline.progress import CHECKS, now_iso, set_stage
-from app.pipeline.results import VERDICTS, claim_result_from_doc, lang_key, persist_verdict
-from app.settings import get_config, get_settings
+from app.pipeline.results import VERDICTS, claim_result_from_doc, persist_verdict
+from app.settings import get_config
 from app.store import Store, get_store
 
 log = logging.getLogger(__name__)
@@ -129,47 +127,10 @@ async def run_check(
     await _write_history(store, req, result)
     # Audio after DONE: the text answer shows at once; Gemini TTS takes 18-24 s per answer (Oct 7).
     # The Pub/Sub handler awaits this, so Cloud Run keeps CPU until the audio is stored.
-    result = await timed("speaking", _speak(store, req, result))
+    result = await timed("speaking", reuse.speak(store, req.check_id, result))
     ledger.stage_latency_ms = timings
     asyncio.get_running_loop().create_task(write_check_run(req, result, ledger))
     return result
-
-
-async def _speak(store: Store, req: CheckRequest, result: CheckResult) -> CheckResult:
-    """Spoken answer in the content language for each claim that has none yet (cache hits reuse it)."""
-    todo = [i for i, c in enumerate(result.claims) if not c.audio_url and c.answer.audio_script.strip()]
-    if not todo or not tts_enabled():
-        return result
-    await store.set(CHECKS, req.check_id, {"result": {**result.model_dump(mode="json"), "audio_pending": True}},
-                    merge=True)
-
-    async def one(i: int) -> tuple[int, str | None]:
-        c = result.claims[i]
-        try:
-            mp3 = await tts.synthesize(c.answer.audio_script, c.answer.language)
-            await tts.store_audio(c.verdict_id, c.answer.language, mp3)
-        except StageFailed as e:
-            log_event(log, "tts failed", logging.WARNING, reason=str(e)[:300])
-            return i, None
-        url = tts.audio_url(c.verdict_id, c.answer.language)
-        doc = await store.get(VERDICTS, c.verdict_id) or {}
-        answers = dict(doc.get("answers") or {})
-        base = c.answer.language.split("-")[0]
-        key = next((k for k in answers if k.split("-")[0] == base), lang_key(c.answer.language))
-        answers[key] = {**answers.get(key, c.answer.model_dump(mode="json")), "audio_url": url}
-        await store.set(VERDICTS, c.verdict_id, {"answers": answers}, merge=True)
-        return i, url
-
-    urls = dict(await asyncio.gather(*(one(i) for i in todo)))
-    claims = [c.model_copy(update={"audio_url": urls.get(i) or c.audio_url}) for i, c in enumerate(result.claims)]
-    result = result.model_copy(update={"claims": claims, "audio_pending": False})
-    await store.set(CHECKS, req.check_id, {"result": result.model_dump(mode="json")}, merge=True)
-    return result
-
-
-def tts_enabled() -> bool:
-    """Off in LLM_MODE=fake (tests, offline UI) and when TTS_ENABLED=0."""
-    return get_settings().llm_mode != "fake" and os.environ.get("TTS_ENABLED", "1") != "0"
 
 
 async def _investigate(store, llm, tools, req, extraction, fetched, budget, cache_keys, prompt_versions, timed):
@@ -180,7 +141,8 @@ async def _investigate(store, llm, tools, req, extraction, fetched, budget, cach
     by_claim: dict[str, ClaimResult] = {}
     for c in extraction.claims:
         if c.claim_id in t2.hits:
-            by_claim[c.claim_id] = await _from_cache(store, llm, t2.hits[c.claim_id], extraction)
+            by_claim[c.claim_id] = await reuse.in_language(store, llm, t2.hits[c.claim_id],
+                                                           extraction.content_language, extraction.content_script)
     degraded = False
     if todo:
         sub = extraction.model_copy(update={"claims": todo})
@@ -210,7 +172,7 @@ async def _investigate(store, llm, tools, req, extraction, fetched, budget, cach
             "source_assessment": inv.pack.source_assessment.model_dump(mode="json")
             if inv.pack and inv.pack.source_assessment else None,
         }, merge=True)
-    claim_results = [by_claim[c.claim_id] for c in extraction.claims]
+    claim_results = order_by_severity([by_claim[c.claim_id] for c in extraction.claims])
     if not degraded:
         vids = [c.verdict_id for c in claim_results]
         if cache_keys:
@@ -223,21 +185,14 @@ async def _investigate(store, llm, tools, req, extraction, fetched, budget, cach
     )
 
 
-async def _from_cache(store, llm, verdict: dict, extraction) -> ClaimResult:
-    """A cached verdict in this post's language; translated once and stored if it is missing."""
-    lang = extraction.content_language
-    answers = verdict.get("answers") or {}
-    if not any(k.split("-")[0] == lang.split("-")[0] for k in answers):
-        english = AnswerText.model_validate(answers.get(verdict.get("answer_en_key") or "en")
-                                            or next(iter(answers.values())))
-        try:
-            native = await composer.translate(llm, english, lang, extraction.content_script)
-            answers = {**answers, lang_key(lang): native.model_dump(mode="json")}
-            await store.set(VERDICTS, verdict["verdict_id"], {"answers": answers}, merge=True)
-            verdict = {**verdict, "answers": answers}
-        except StageFailed as e:
-            log_event(log, "translation failed", logging.WARNING, reason=str(e)[:300])
-    return claim_result_from_doc(verdict, lang)
+# The first claim is the headline (live screen, history, card). A post that wraps a fake quote in a true
+# background fact must not lead with TRUE (seen Oct 7: "Modi and Putin spoke on 24 Feb" TRUE, the quote FALSE).
+_SEVERITY = {"SCAM": 0, "FALSE": 1, "MISLEADING": 2, "NOT_ENOUGH_EVIDENCE": 3, "TRUE": 4}
+
+
+def order_by_severity(claims: list[ClaimResult]) -> list[ClaimResult]:
+    """Most harmful verdict first; ties keep the extractor's order (most viral first)."""
+    return sorted(claims, key=lambda c: _SEVERITY.get(c.label.value, 3))
 
 
 async def _finish_degraded(store, req, extraction, prompt_versions) -> CheckResult:

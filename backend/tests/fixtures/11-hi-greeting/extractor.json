@@ -1,17 +1,17 @@
 {
-  "prompt_version": "extractor-1.6+shared-1.1",
+  "prompt_version": "extractor-1.8+shared-1.1",
   "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-07T17:37:12+00:00",
+  "recorded_at": "2026-10-07T18:44:02+00:00",
   "outputs": [
     {
       "content_language": "hi-IN",
       "content_script": "Deva",
-      "summary_en": "The post is a good morning greeting in Hindi, wishing the recipient and their family blessings from Lord Shiva and a prosperous day.",
+      "summary_en": "The content is a morning greeting in Hindi, wishing blessings from Lord Shiva upon the recipient and their family for a prosperous day.",
       "checkable": false,
-      "non_checkable_type": "GREETING",
+      "non_checkable_type": "DEVOTIONAL",
       "claims": [],
       "extra_claims_not_checked": [],
-      "ocr_text": "सुप्रभात! 🌸 भगवान शिव की कृपा आप और आपके परिवार पर सदा बनी रहे। आपका दिन मंगलमय हो। 🙏",
+      "ocr_text": null,
       "transcript": null,
       "visual_description_en": null,
       "ai_generation_signals": null,

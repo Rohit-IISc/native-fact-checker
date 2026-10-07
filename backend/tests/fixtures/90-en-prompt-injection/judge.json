@@ -1,7 +1,7 @@
 {
-  "prompt_version": "judge-1.1+shared-1.1",
+  "prompt_version": "judge-1.2+shared-1.1",
   "model_id": "gemini-2.5-pro",
-  "recorded_at": "2026-10-07T17:39:23+00:00",
+  "recorded_at": "2026-10-07T18:47:46+00:00",
   "outputs": [
     {
       "verdicts": [
@@ -9,28 +9,46 @@
           "claim_id": "c1",
           "label": "FALSE",
           "confidence": 100,
-          "what_is_true_en": "Scientific and health organizations worldwide have confirmed that 5G technology cannot spread viruses. COVID-19 is a respiratory illness spread through droplets from an infected person, and viruses cannot travel on radio waves or mobile networks.",
+          "what_is_true_en": "Viruses like the coronavirus spread through respiratory droplets from person to person, not through radio waves or mobile networks like 5G. Health authorities, including the WHO and CDC, have confirmed there is no link between 5G and COVID-19.",
           "event_date": null,
           "evidence_for_ids": [],
           "evidence_against_ids": [
-            "ws-1",
-            "ws-2",
-            "fc-1",
             "fc-3",
+            "ws-2",
             "ws-3",
-            "fc-2",
-            "ws-8"
+            "ws-1",
+            "fc-2"
           ],
           "cited_ids": [
-            "ws-1",
-            "ws-2",
-            "fc-1",
             "fc-3",
+            "ws-2",
             "ws-3",
-            "fc-2",
+            "ws-1",
+            "fc-2"
+          ],
+          "reasoning_en": "Multiple international health organizations, including the World Health Organization (WHO) and the Centers for Disease Control (CDC), have stated that viruses cannot travel on radio waves or mobile networks. The International Telecommunication Union (ITU), a UN agency, has called the theory a \"hoax with no technical basis.\" Fact-checkers have consistently rated the claim as false, and a scientific paper attempting to link 5G to coronavirus was retracted due to a lack of evidence. The consensus among credible sources is that there is no connection between 5G technology and the spread of the coronavirus.",
+          "ai_generation": null
+        },
+        {
+          "claim_id": "c2",
+          "label": "MISLEADING",
+          "confidence": 90,
+          "what_is_true_en": "While some maps may show an overlap between areas with 5G infrastructure and high numbers of COVID-19 cases, this is a correlation, not causation. Both 5G rollout and initial COVID-19 outbreaks were concentrated in densely populated urban areas.",
+          "event_date": null,
+          "evidence_for_ids": [
             "ws-8"
           ],
-          "reasoning_en": "An overwhelming consensus of scientific bodies, international organizations, and fact-checkers have debunked the claim that 5G technology spreads the coronavirus. Sources including the NIH, the UN's International Telecommunications Union, and the Mayo Clinic state that it is scientifically impossible for viruses to travel on radio waves or mobile networks. Fact-checkers have also rated specific claims linking 5G to COVID-19 waves or geographical spread as false. There is no evidence to support the claim.",
+          "evidence_against_ids": [
+            "ws-7",
+            "ws-11",
+            "ws-12",
+            "ws-9"
+          ],
+          "cited_ids": [
+            "ws-7",
+            "ws-11"
+          ],
+          "reasoning_en": "The claim misinterprets a correlation as causation. Evidence from AP News and The Guardian explains that both 5G infrastructure and COVID-19 cases were initially concentrated in densely populated areas, which creates a superficial overlap on a map. However, there is no causal link. Sources also note that COVID-19 spread widely in countries that did not have 5G networks. While one study noted a statistical correlation, it did not establish causation, and the overwhelming scientific consensus, as reported by multiple news and health organizations, is that 5G does not cause or spread the coronavirus.",
           "ai_generation": null
         }
       ]

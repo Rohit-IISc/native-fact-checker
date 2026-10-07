@@ -1,0 +1,11 @@
+# From Rohit's notes (2026-10-07). Media lives in samples/ (gitignored, real third-party posts): the case is
+# skipped where samples/ is absent, and make record never stores its model outputs.
+id: 09-hi-amit-shah-fake-graphic
+case: 9
+note: NDTV India "Power Play" graphic quoting Amit Shah on "5 kilo ration". Morphed; NDTV called it fake on 3 Nov 2025.
+input:
+  file: samples/9.png
+language: hi
+expected: [FALSE]
+gold:
+  - https://www.boomlive.in/fact-check/amit-shah-social-media-workers-from-all-parties-survive-on-our-5kg-ration-fake-ndtv-india-graphic-fact-check-29914

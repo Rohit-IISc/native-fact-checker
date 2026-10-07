@@ -3,7 +3,7 @@ import httpx
 
 from app.main import app
 from app.output import tts
-from app.pipeline import runner
+from app.pipeline import reuse
 from app.pipeline.dispatch import drain
 from app.pipeline.results import VERDICTS
 
@@ -18,7 +18,7 @@ async def test_audio_is_generated_after_done_and_served(store, llm, monkeypatch,
         spoken.append((language, script))
         return MP3
 
-    monkeypatch.setattr(runner, "tts_enabled", lambda: True)
+    monkeypatch.setattr(reuse, "tts_enabled", lambda: True)
     monkeypatch.setattr(tts, "synthesize", fake_synth)
     async with httpx.AsyncClient(transport=httpx.ASGITransport(app=app), base_url="http://test") as c:
         r = await c.post("/v1/checks", headers=AUTH, data={"text": "सरकार सभी को मुफ्त लैपटॉप दे रही है"})
@@ -40,7 +40,7 @@ async def test_tts_failure_keeps_the_text_answer(store, llm, monkeypatch):
     async def broken(*a, **k):
         raise StageFailed("tts", "quota")
 
-    monkeypatch.setattr(runner, "tts_enabled", lambda: True)
+    monkeypatch.setattr(reuse, "tts_enabled", lambda: True)
     monkeypatch.setattr(tts, "synthesize", broken)
     async with httpx.AsyncClient(transport=httpx.ASGITransport(app=app), base_url="http://test") as c:
         r = await c.post("/v1/checks", headers=AUTH, data={"text": "सरकार सभी को मुफ्त लैपटॉप दे रही है"})

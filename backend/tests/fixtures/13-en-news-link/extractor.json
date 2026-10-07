@@ -1,67 +1,42 @@
 {
-  "prompt_version": "extractor-1.6+shared-1.1",
+  "prompt_version": "extractor-1.8+shared-1.1",
   "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-07T17:38:30+00:00",
+  "recorded_at": "2026-10-07T18:45:52+00:00",
   "outputs": [
     {
       "content_language": "en-IN",
       "content_script": "Latn",
-      "summary_en": "The image shows a crowd of people, likely in India, with one woman in the foreground appearing to shout or cheer, possibly in celebration. The BBC News logo is visible at the bottom left. The accompanying news article reports on India's Chandrayaan-3 mission successfully landing near the Moon's south pole, making it the first country to achieve this feat.",
+      "summary_en": "The image shows a crowd of people, likely in India, reacting with excitement and celebration. A woman in the foreground is seen with her mouth open, hand near her face, and a bindi on her forehead, suggesting she is shouting or cheering. The background shows other people also appearing to be in a celebratory mood. The image is watermarked with the BBC News logo and is associated with an article about India's Chandrayaan-3 mission successfully landing on the Moon's south pole.",
       "checkable": true,
       "non_checkable_type": null,
       "claims": [
         {
           "claim_id": "claim1",
-          "claim_original": "India has made history as its Moon mission becomes the first to land in the lunar south pole region.",
-          "claim_en": "India's Chandrayaan-3 mission successfully landed near the Moon's south pole, making it the first country to achieve a landing in that region.",
+          "claim_original": "The image shows people in India celebrating the successful landing of Chandrayaan-3 near the Moon's south pole.",
+          "claim_en": "The image in this post shows people in India celebrating the successful landing of the Chandrayaan-3 mission near the Moon's south pole.",
           "claim_type": "EVENT",
           "entities": [
             "India",
             "Chandrayaan-3",
             "Moon's south pole"
           ],
-          "place": "Moon's south pole",
-          "claimed_date": null,
+          "place": "India",
+          "claimed_date": "2023-08-23",
           "time_sensitivity": "EVERGREEN",
           "search_queries_original": [
-            "India Moon mission south pole landing",
-            "Chandrayaan-3 historic landing"
+            "Chandrayaan-3 landing celebration India",
+            "BBC News Chandrayaan-3 celebration image"
           ],
           "search_queries_en": [
-            "India Moon mission south pole landing",
-            "Chandrayaan-3 historic landing",
-            "First country to land on lunar south pole"
-          ]
-        },
-        {
-          "claim_id": "claim2",
-          "claim_original": "The Vikram lander from Chandrayaan-3 successfully touched down as planned at 18:04 local time (12:34 GMT).",
-          "claim_en": "The Vikram lander of the Chandrayaan-3 mission successfully touched down at 18:04 local time (12:34 GMT).",
-          "claim_type": "EVENT",
-          "entities": [
-            "Vikram lander",
-            "Chandrayaan-3"
-          ],
-          "place": null,
-          "claimed_date": null,
-          "time_sensitivity": "EVERGREEN",
-          "search_queries_original": [
-            "Vikram lander touchdown time",
-            "Chandrayaan-3 landing time"
-          ],
-          "search_queries_en": [
-            "Vikram lander touchdown time",
-            "Chandrayaan-3 landing time GMT"
+            "Chandrayaan-3 landing celebration India",
+            "BBC News Chandrayaan-3 celebration image"
           ]
         }
       ],
-      "extra_claims_not_checked": [
-        "India joins an elite club of countries to achieve a soft landing on the Moon, after the US, the former Soviet Union and China.",
-        "The lander and the rover are carrying five scientific instruments which will help discover the physical characteristics of the surface of the Moon, the atmosphere close to the surface and the tectonic activity to study what goes on below the surface."
-      ],
-      "ocr_text": "BBC NEWS",
+      "extra_claims_not_checked": [],
+      "ocr_text": "BBCNEWS",
       "transcript": null,
-      "visual_description_en": "A medium shot shows a crowd of people, with a woman in the foreground in profile, wearing a yellow-green scarf and a bindi on her forehead. Her mouth is open wide as if shouting or cheering, and her right hand is raised to her mouth. She wears gold heart-shaped earrings and a ring with a red stone on her right ring finger. To her left, a man with glasses and a beard is partially visible. In the background, other people are seen, some with their arms raised. The BBC News logo is visible in white text on a black bar at the bottom left of the image.",
+      "visual_description_en": "A close-up image shows a crowd of people, with a woman in the foreground. She has dark hair, a bindi on her forehead, and is wearing a yellow garment. Her mouth is open as if shouting or cheering, and her right hand is raised near her face. She is wearing a ring on her finger and heart-shaped earrings. In the background, other people are visible, some with their hands raised in celebration. A man with glasses and a beard is partially visible to the left. The bottom left corner features the 'BBC NEWS' logo. The overall scene suggests excitement and celebration.",
       "ai_generation_signals": null,
       "origin_hints": [
         "BBC News"

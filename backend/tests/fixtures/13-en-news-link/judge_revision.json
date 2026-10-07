@@ -1,0 +1,27 @@
+{
+  "prompt_version": "judge-1.2+shared-1.1+judge-revision-1.0",
+  "model_id": "gemini-2.5-pro",
+  "recorded_at": "2026-10-07T18:45:52+00:00",
+  "outputs": [
+    {
+      "verdicts": [
+        {
+          "claim_id": "c1",
+          "label": "NOT_ENOUGH_EVIDENCE",
+          "confidence": 50,
+          "what_is_true_en": "India's Chandrayaan-3 mission did successfully land on the moon on August 23, 2023, leading to widespread celebrations. However, the origin of the specific image used in the post to depict these celebrations could not be verified.",
+          "event_date": "2023-08-23",
+          "evidence_for_ids": [
+            "ws-3",
+            "ws-2",
+            "ws-4"
+          ],
+          "evidence_against_ids": [],
+          "cited_ids": [],
+          "reasoning_en": "The evidence confirms that India's Chandrayaan-3 mission successfully landed on the moon on August 23, 2023, and that this was followed by widespread celebrations across the country (ws-3, ws-2, ws-4). However, there is no evidence that directly verifies the specific image used in the post. A fact-check (ws-6) notes that some images from the 2014 Mars Orbiter Mission have been circulated as showing the 2023 celebrations, but it does not identify the image in this claim as one of them. The evidence brief explicitly states, 'No direct matches were found for the specific image in the post.' Without verification of the image itself, it is not possible to confirm or deny that it shows the Chandrayaan-3 celebrations. Therefore, there is not enough evidence to support a definitive verdict.",
+          "ai_generation": null
+        }
+      ]
+    }
+  ]
+}

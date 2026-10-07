@@ -1,7 +1,7 @@
 {
-  "prompt_version": "critic-1.1+shared-1.1",
+  "prompt_version": "critic-1.2+shared-1.1",
   "model_id": "gemini-2.5-pro",
-  "recorded_at": "2026-10-07T17:35:48+00:00",
+  "recorded_at": "2026-10-07T18:42:11+00:00",
   "outputs": [
     {
       "reviews": [
@@ -18,7 +18,7 @@
           "proposed_label": "SCAM",
           "proposed_confidence": 100,
           "objections_en": [
-            "The judge's label is FALSE, but the evidence indicates the claim is part of a fraudulent scheme. Evidence ws-9 and ws-7 state that messages about the non-existent scheme are fraudulent attempts to gather personal information. Therefore, the more precise label is SCAM, which aligns with the verdicts for the related claims c1 and c3."
+            "The judge's label of FALSE is an underreach. This claim is a component of a fraudulent scheme designed to create false urgency and trick victims. The evidence (e.g., ws-17, ws-15, ws-16) explicitly refers to these claims as scams. For consistency with the verdicts for c1 and c3, and to accurately reflect the malicious intent, the label should be SCAM."
           ]
         },
         {

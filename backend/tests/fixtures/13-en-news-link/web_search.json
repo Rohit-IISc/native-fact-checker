@@ -1,43 +1,43 @@
 {
   "prompt_version": "web-search-2.1+shared-1.1",
   "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-07T17:38:30+00:00",
+  "recorded_at": "2026-10-07T18:45:52+00:00",
   "outputs": [
     {
-      "text": "c1:\nDD India (YouTube) published a video on July 14, 2025, stating that India made history on August 23, 2023, when Chandrayaan-3 successfully achieved a soft landing near the Moon's south pole, making it the first country to do so. [1] NASA states that Chandrayaan-3 is an Indian Space Research Organization mission that landed near the south pole of the Moon on August 23, 2023. [2] Space.com reported on August 22, 2023, that the Indian Space Research Organisation successfully landed its Chandrayaan-3 Vikram lander near the lunar south pole, marking its first moon landing and the first probe ever to land at the Moon's south pole. [3] Al Jazeera reported on August 23, 2023, that India could become the first nation to land a spacecraft on the Moon's south pole. [4]\n\nc2:\nBBC News (YouTube) reported on August 23, 2023, that the Vikram lander from Chandrayaan-3 successfully touched down as planned at 18:04 local time (12:34 GMT). [5] NDTV reported on August 23, 2023, that the Vikram lander touched down at 6:04 PM on Wednesday, August 23, and ISRO celebrated the occasion with a post on X at the exact time of touchdown. [6] Space.com reported on August 22, 2023, that Chandrayaan-3 was expected to touch down at 8:34 a.m. EDT (1:34 p.m. GMT, or 6:04 p.m. in India). [3] Al Jazeera also reported on August 23, 2023, that Chandrayaan-3 was scheduled to touch down shortly after 6 PM India time (12:30 GMT). [4]",
+      "text": "c1:\nIndia successfully landed its Chandrayaan-3 mission near the Moon's south pole on August 23, 2023, making it the first country to achieve this feat. [1] Celebrations erupted across India following the successful landing, with people cheering, dancing, sharing sweets, and waving national flags. [2] [3] [1] Prime Minister Narendra Modi declared that \"India is now on the Moon\" and announced that August 23 would be celebrated as National Space Day. [4] [5] [1] However, some images circulating online, purportedly showing celebrations for Chandrayaan-3, have been identified as being from the 2014 Mars Orbiter Mission (Mangalyaan) success. [6]",
       "sources": [
         {
           "n": 1,
-          "url": "https://www.youtube.com/watch?v=UjX5MnCa2f8",
-          "domain": "youtube.com"
-        },
-        {
-          "n": 2,
-          "url": "https://science.nasa.gov/mission/chandrayaan-3/",
-          "domain": "nasa.gov"
-        },
-        {
-          "n": 3,
-          "url": "https://www.space.com/chandrayaan-3-india-moon-landing-what-time",
-          "domain": "space.com"
-        },
-        {
-          "n": 4,
-          "url": "https://www.aljazeera.com/news/2023/8/23/chandrayaan-3-historic-india-mission-for-moons-south-pole-set-for-landing",
-          "domain": "aljazeera.com"
-        },
-        {
-          "n": 5,
           "url": "https://www.youtube.com/watch?v=QQKSASFdoDw",
           "domain": "youtube.com"
         },
         {
+          "n": 2,
+          "url": "https://news.abplive.com/news/india/chandrayaan-3-lands-on-the-moon-india-unites-in-celebration-school-children-dance-sweets-watch-video-1624923",
+          "domain": "abplive.com"
+        },
+        {
+          "n": 3,
+          "url": "https://indianexpress.com/article/india/we-won-crowd-bursts-celebration-delhis-nehru-planetarium-chandrayaan-3-lands-moon-8906146/",
+          "domain": "indianexpress.com"
+        },
+        {
+          "n": 4,
+          "url": "https://www.indiatoday.in/technology/video/national-space-day-celebrates-chandrayaan-3-landing-as-india-pushes-newer-space-frontiers-ytvd-2977834-2026-08-23",
+          "domain": "indiatoday.in"
+        },
+        {
+          "n": 5,
+          "url": "https://www.facebook.com/groups/346735499382018/posts/1492185068170383/",
+          "domain": "facebook.com"
+        },
+        {
           "n": 6,
-          "url": "https://www.ndtv.com/india-news/i-reached-my-destination-chandrayaan-3-after-touchdown-4322914",
-          "domain": "ndtv.com"
+          "url": "https://afghanistan.factcrescendo.com/english/is-this-an-image-of-women-scientists-of-isro-celebrating-the-success-of-chandrayaan-3-know-the-truth/",
+          "domain": "factcrescendo.com"
         }
       ],
-      "queries": 5
+      "queries": 4
     }
   ]
 }

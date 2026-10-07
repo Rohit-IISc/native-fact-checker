@@ -56,7 +56,11 @@ def tier_for_url(url: str | None, domain: str | None = None) -> SourceTier:
             entry_host, _, entry_path = entry.partition("/")
             if not _host_matches(host, entry_host):
                 continue
-            if entry_path:
+            if entry_path.endswith("*"):
+                # "dw.com/en/fact-check*" also matches /en/fact-check-some-story/a-123 (no section folder).
+                if not path.startswith("/" + entry_path[:-1]):
+                    continue
+            elif entry_path:
                 prefix = "/" + entry_path.rstrip("/")
                 if not (path == prefix or path.startswith(prefix + "/")):
                     continue

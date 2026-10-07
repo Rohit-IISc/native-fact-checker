@@ -1,30 +1,30 @@
 {
   "prompt_version": "packager-1.1+shared-1.1",
   "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-07T17:35:12+00:00",
+  "recorded_at": "2026-10-07T18:41:18+00:00",
   "outputs": [
     {
       "briefs": [
         {
           "claim_id": "c1",
-          "claim_en": "Prime Minister Modi is giving all Indians 3 months of free mobile recharge.",
+          "claim_en": "Prime Minister Modi is offering all Indians 3 months of free mobile recharge.",
           "claim_type": null,
-          "claimed_date": "2026-10-07",
+          "claimed_date": null,
           "place": "India",
-          "brief_en": "Multiple fact-checking organizations and government sources, including PIB Fact Check, have debunked the claim that Prime Minister Modi is offering three months of free mobile recharge to all Indian citizens. These sources, published between March 2023 and September 2026, state that no such scheme exists and warn against fraudulent links. Some reports, like one from newsonair.gov.in on August 18, 2026, specifically mention that viral videos making this claim are AI-generated. Vishvas News, BOOM, and FACTLY have also rated similar claims as false, often linking them to various events or schemes.",
+          "brief_en": "Multiple fact-checking organizations and news outlets, including Hindustan Times, Telugu Post, The Quint, LatestLY, Prabhat Khabar, BOOM, Vishvas News, FACTLY, and ThePrint, report that claims of Prime Minister Modi offering free mobile recharge to all Indians are false. These claims have circulated widely, often through viral messages and digitally altered videos, sometimes linked to events like the Lok Sabha Elections or Raksha Bandhan. The Press Information Bureau (PIB) has clarified that neither the Indian Government nor PM Modi is running any such scheme, warning that associated links may lead to data theft and scams. Fact-checkers have consistently debunked these claims, advising users not to click on suspicious links.",
           "evidence_ids": [
-            "ws-1",
+            "ws-2",
+            "ws-3",
             "fc-1",
             "fc-2",
-            "fc-3",
             "fc-4",
             "fc-5",
             "fc-6",
+            "fc-7",
+            "fc-8",
             "fc-9",
-            "ws-5",
-            "ws-6",
-            "ws-2",
-            "ws-3"
+            "fc-10",
+            "ws-1"
           ],
           "gaps_en": []
         }

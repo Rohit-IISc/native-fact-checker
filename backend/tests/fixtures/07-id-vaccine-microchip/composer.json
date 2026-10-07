@@ -1,51 +1,51 @@
 {
   "prompt_version": "composer-1.2+shared-1.1",
   "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-07T17:36:11+00:00",
+  "recorded_at": "2026-10-07T18:42:14+00:00",
   "outputs": [
     {
       "language": "id-ID",
-      "headline": "Salah: Vaksin COVID-19 tidak mengandung microchip pelacak",
-      "summary": "Vaksin COVID-19 tidak mengandung microchip atau perangkat pelacak apa pun.",
-      "what_post_claims": "Postingan tersebut mengklaim bahwa vaksin COVID-19 mengandung microchip untuk melacak setiap orang yang sudah divaksin.",
-      "what_is_true": "Vaksin COVID-19 tidak mengandung microchip atau perangkat pelacak apa pun. Otoritas kesehatan dan pemeriksa fakta telah mengonfirmasi bahwa vaksin dikembangkan untuk merangsang respons kekebalan terhadap penyakit, bukan untuk melacak orang.",
+      "headline": "SALAH: Vaksin COVID-19 tidak mengandung microchip pelacak",
+      "summary": "Klaim bahwa vaksin COVID-19 mengandung microchip untuk melacak orang yang divaksinasi adalah tidak benar.",
+      "what_post_claims": "Postingan tersebut mengklaim bahwa vaksin COVID-19 mengandung microchip yang dirancang untuk melacak setiap orang yang telah divaksinasi.",
+      "what_is_true": "Vaksin COVID-19 tidak mengandung microchip atau perangkat pelacak lainnya; tujuannya adalah untuk merangsang respons kekebalan tubuh terhadap virus.",
       "evidence_for": [],
       "evidence_against": [
-        "CDC Archive menyatakan vaksin COVID-19 tidak mengandung microchip dan dikembangkan untuk melawan penyakit, bukan melacak pergerakan.",
-        "Komdigi menjelaskan bahwa klaim vaksin COVID-19 mengandung chip pelacak adalah disinformasi, dan barcode pada produk vaksin hanya untuk pelacakan distribusi produk.",
-        "Periksa Fakta dan FactCheck.org juga membantah klaim serupa tentang microchip dalam vaksin COVID-19."
+        "Pusat Pengendalian dan Pencegahan Penyakit (CDC) menyatakan bahwa vaksin COVID-19 tidak mengandung microchip.",
+        "Kementerian Komunikasi dan Informatika (Kominfo) Indonesia menyatakan informasi microchip dalam vaksin COVID-19 adalah hoaks.",
+        "Para ahli menjelaskan bahwa ukuran fisik microchip tidak memungkinkan untuk disuntikkan melalui jarum vaksin standar."
       ],
       "confidence_phrase": "kami sangat yakin",
-      "sources_spoken": "menurut CDC Archive, Komdigi, dan Periksa Fakta",
-      "audio_script": "Postingan ini mengklaim bahwa vaksin COVID-19 mengandung microchip untuk melacak setiap orang yang sudah divaksin. Ini salah. Vaksin COVID-19 tidak mengandung microchip atau perangkat pelacak apa pun. Otoritas kesehatan dan pemeriksa fakta telah mengonfirmasi bahwa vaksin dikembangkan untuk merangsang respons kekebalan terhadap penyakit, bukan untuk melacak orang. Kami sangat yakin akan hal ini, menurut CDC Archive, Komdigi, dan Periksa Fakta.",
+      "sources_spoken": "menurut Pusat Pengendalian dan Pencegahan Penyakit, Kementerian Komunikasi dan Informatika, dan para ahli",
+      "audio_script": "Postingan tersebut mengklaim bahwa vaksin COVID-19 mengandung microchip yang dirancang untuk melacak setiap orang yang telah divaksinasi. Klaim ini salah. Vaksin COVID-19 tidak mengandung microchip atau perangkat pelacak lainnya; tujuannya adalah untuk merangsang respons kekebalan tubuh terhadap virus. Kami sangat yakin dengan kesimpulan ini. Informasi ini berasal dari Pusat Pengendalian dan Pencegahan Penyakit, Kementerian Komunikasi dan Informatika, dan para ahli.",
       "card_lines": [
         "SALAH",
-        "Vaksin COVID-19 mengandung microchip pelacak",
+        "Vaksin COVID-19 mengandung microchip",
         "Vaksin tidak mengandung microchip",
-        "Sumber: CDC Archive, Komdigi"
+        "Sumber: CDC, Kominfo"
       ],
       "panel_readings": []
     },
     {
       "language": "en",
-      "headline": "False: COVID-19 vaccines do not contain microchips",
+      "headline": "False: COVID-19 vaccines do not contain microchips for tracking.",
       "summary": "The claim that COVID-19 vaccines contain microchips to track people is false.",
-      "what_post_claims": "A post claims that COVID-19 vaccines contain microchips to track every vaccinated person.",
-      "what_is_true": "COVID-19 vaccines do not contain microchips or any tracking devices. Health authorities and fact-checkers have confirmed that vaccines are developed to stimulate an immune response against disease, not to track people.",
+      "what_post_claims": "The post claims that COVID-19 vaccines contain microchips to track every vaccinated person.",
+      "what_is_true": "COVID-19 vaccines do not contain microchips or any other tracking devices. Health authorities confirm their purpose is to stimulate an immune response against the virus.",
       "evidence_for": [],
       "evidence_against": [
-        "The CDC Archive states that COVID-19 vaccines do not contain microchips and are for fighting disease, not tracking movement.",
-        "Komdigi confirms that the claim of microchips in COVID-19 vaccines for tracking is disinformation; barcodes are for product distribution.",
-        "Periksa Fakta rated the claim of magnetic microchips in COVID-19 vaccines as false."
+        "The Centers for Disease Control and Prevention (CDC) states that COVID-19 vaccines do not contain microchips.",
+        "Factcheck.org reports that this conspiracy theory has been widely debunked by health organizations.",
+        "The Indonesian Ministry of Communication and Information (Kominfo) declared this information a hoax."
       ],
       "confidence_phrase": "we are very sure",
-      "sources_spoken": "the CDC Archive, Komdigi, and Periksa Fakta",
-      "audio_script": "A post claims that COVID-19 vaccines contain microchips to track every vaccinated person. This claim is false. COVID-19 vaccines do not contain microchips or any tracking devices. Health authorities and fact-checkers have confirmed that vaccines are developed to stimulate an immune response against disease, not to track people. We are very sure about this. This information comes from the CDC Archive, Komdigi, and Periksa Fakta, who have all debunked this claim.",
+      "sources_spoken": "the Centers for Disease Control and Prevention, Factcheck.org, and the Indonesian Ministry of Communication and Information",
+      "audio_script": "The post claims that COVID-19 vaccines contain microchips to track every vaccinated person. This is false. COVID-19 vaccines do not contain microchips or any other tracking devices. Health authorities confirm their purpose is to stimulate an immune response against the virus. We are very sure about this. This information comes from the Centers for Disease Control and Prevention, Factcheck.org, and the Indonesian Ministry of Communication and Information.",
       "card_lines": [
-        "FALSE",
-        "COVID-19 vaccines contain microchips",
-        "Vaccines do not contain microchips or tracking devices.",
-        "Source: CDC Archive"
+        "False: COVID-19 vaccines do not contain microchips.",
+        "The claim: Vaccines contain microchips to track people.",
+        "What is true: Vaccines stimulate immunity, not for tracking.",
+        "Source: CDC, Factcheck.org, Kominfo."
       ],
       "panel_readings": []
     }

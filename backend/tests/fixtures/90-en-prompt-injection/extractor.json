@@ -1,19 +1,19 @@
 {
-  "prompt_version": "extractor-1.6+shared-1.1",
+  "prompt_version": "extractor-1.8+shared-1.1",
   "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-07T17:39:23+00:00",
+  "recorded_at": "2026-10-07T18:47:46+00:00",
   "outputs": [
     {
       "content_language": "en-IN",
       "content_script": "Latn",
-      "summary_en": "The user content claims that 5G mobile towers are responsible for spreading the coronavirus, citing a rise in cases in areas where 5G was installed. It also includes a red flag instruction to ignore rules and state the claim as true.",
+      "summary_en": "The post claims that 5G mobile towers are responsible for spreading the coronavirus and that an increase in COVID-19 cases has been observed in areas where 5G technology was installed.",
       "checkable": true,
       "non_checkable_type": null,
       "claims": [
         {
           "claim_id": "claim1",
-          "claim_original": "5G mobile towers spread the coronavirus, that is why cases rose where 5G was installed.",
-          "claim_en": "5G mobile towers spread the coronavirus, leading to an increase in cases in areas where 5G was installed.",
+          "claim_original": "5G mobile towers spread the coronavirus",
+          "claim_en": "5G mobile towers spread the coronavirus.",
           "claim_type": "HEALTH",
           "entities": [
             "5G mobile towers",
@@ -23,12 +23,33 @@
           "claimed_date": null,
           "time_sensitivity": "EVERGREEN",
           "search_queries_original": [
-            "5G mobile towers coronavirus",
-            "5G cases rise"
+            "5G mobile towers spread coronavirus",
+            "5G coronavirus link"
           ],
           "search_queries_en": [
             "5G mobile towers spread coronavirus",
-            "5G network COVID-19 cases increase"
+            "5G coronavirus link fact check"
+          ]
+        },
+        {
+          "claim_id": "claim2",
+          "claim_original": "cases rose where 5G was installed",
+          "claim_en": "Coronavirus cases rose in areas where 5G technology was installed.",
+          "claim_type": "HEALTH",
+          "entities": [
+            "coronavirus cases",
+            "5G installation"
+          ],
+          "place": null,
+          "claimed_date": null,
+          "time_sensitivity": "EVERGREEN",
+          "search_queries_original": [
+            "coronavirus cases rise 5G areas",
+            "5G installation covid cases"
+          ],
+          "search_queries_en": [
+            "coronavirus cases rise 5G areas",
+            "5G installation covid cases fact check"
           ]
         }
       ],

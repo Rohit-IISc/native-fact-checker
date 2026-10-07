@@ -26,7 +26,7 @@ from app.models import CheckRequest, CheckResult, MediaRef, Stage
 from app.observability.logging import check_id_var, log_event, setup_logging
 from app.pipeline.dispatch import dispatch
 from app.pipeline.progress import CHECKS, PROGRESS, now_iso
-from app.pipeline.results import VERDICTS, cached_result, public_result
+from app.pipeline.results import VERDICTS, public_result
 from app.settings import get_settings
 from app.store import get_store
 
@@ -131,7 +131,12 @@ async def create_check(
     else:
         hit = await tier1.lookup(store, keys)
     if hit:
-        result = cached_result(check_id, hit)
+        # The caption decides the answer language: the same video with a caption in another language
+        # gets the cached verdict translated (once, then stored) and its own audio (acceptance case 3).
+        from app.llm import get_llm
+        from app.pipeline import reuse
+
+        result = await reuse.tier1_answer(store, get_llm(), check_id, hit, text)
         await store.set(CHECKS, check_id, {
             **base, "status": "DONE", "stage": Stage.DONE.value, "stage_label_key": "stage.done",
             "progress": 100, "cache_tier_hit": "T1", "result": result.model_dump(mode="json"),
@@ -139,7 +144,9 @@ async def create_check(
             "verdict_ids": [c.verdict_id for c in result.claims],
         })
         await _history(user.uid, check_id, result)
-        log_event(log, "tier1 hit", key=hit["key"])
+        log_event(log, "tier1 hit", key=hit["key"], language=result.content_language)
+        if reuse.needs_audio(result):
+            await dispatch(check_id, task="speak")
         return {"check_id": check_id, "status": "DONE", "cache_tier_hit": "T1",
                 "result": result.model_dump(mode="json")}
 
@@ -316,5 +323,10 @@ async def pipeline(request: Request) -> Response:
         log_event(log, "bad pubsub envelope", logging.WARNING)
         return Response(status_code=204)
     check_id_var.set(check_id)
-    await run_check_by_id(check_id)
+    if payload.get("task") == "speak":
+        from app.pipeline.reuse import speak_check
+
+        await speak_check(get_store(), check_id)
+    else:
+        await run_check_by_id(check_id)
     return Response(status_code=204)

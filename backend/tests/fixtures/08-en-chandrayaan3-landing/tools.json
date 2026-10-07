@@ -38,18 +38,6 @@
   },
   {
    "claim_text": "NASA released footage of CHandrayaan landing on moon; Ashoka Stambh will be imprinted on lunar surface",
-   "claimant": null,
-   "claim_date": null,
-   "url": "https://www.altnews.in/nasa-footage-ashoka-stambh-on-lunar-surface-fake-visuals-related-to-chandrayaan-3-flood-social-media/",
-   "publisher": "Alt News",
-   "publisher_site": "altnews.in",
-   "rating": "False",
-   "review_date": "2023-08-28T14:29:43Z",
-   "title": "'NASA footage', 'Ashoka Stambh on lunar surface': Fake visuals ...",
-   "language": "en"
-  },
-  {
-   "claim_text": "NASA released footage of CHandrayaan landing on moon; Ashoka Stambh will be imprinted on lunar surface",
    "claimant": "social media users",
    "claim_date": "2016-06-20T00:00:00Z",
    "url": "https://www.altnews.in/nasa-footage-ashoka-stambh-on-lunar-surface-fake-visuals-related-to-chandrayaan-3-flood-social-media/",
@@ -57,6 +45,18 @@
    "publisher_site": "altnews.in",
    "rating": "False",
    "review_date": "2023-08-28T00:00:00Z",
+   "title": "'NASA footage', 'Ashoka Stambh on lunar surface': Fake visuals ...",
+   "language": "en"
+  },
+  {
+   "claim_text": "NASA released footage of CHandrayaan landing on moon; Ashoka Stambh will be imprinted on lunar surface",
+   "claimant": null,
+   "claim_date": null,
+   "url": "https://www.altnews.in/nasa-footage-ashoka-stambh-on-lunar-surface-fake-visuals-related-to-chandrayaan-3-flood-social-media/",
+   "publisher": "Alt News",
+   "publisher_site": "altnews.in",
+   "rating": "False",
+   "review_date": "2023-08-28T14:29:43Z",
    "title": "'NASA footage', 'Ashoka Stambh on lunar surface': Fake visuals ...",
    "language": "en"
   },
@@ -183,15 +183,15 @@
    "language": "en"
   },
   {
-   "claim_text": "Washington Post praises India for Chandrayaan-3's success despite having \"second string\" talent",
-   "claimant": "Facebook, X users",
-   "claim_date": "2023-09-01T08:07:33Z",
-   "url": "https://www.boomlive.in/fact-check/washington-post-chandrayaan-3-isro-fact-check-22931",
+   "claim_text": "Photo shows an imprint of ISRO's logo and national emblem on the moon's surface.",
+   "claimant": "X, Facebook users",
+   "claim_date": "2023-08-24T09:15:52Z",
+   "url": "https://www.boomlive.in/fact-check/isro-chandrayaan-3-space-mission-national-emblem-moon-fact-check-22844",
    "publisher": "BOOM Fact Check",
    "publisher_site": "boomlive.in",
    "rating": "False",
-   "review_date": "2023-09-01T08:07:33Z",
-   "title": "Reader Comment Peddled As Washington Post's Article On ...",
+   "review_date": "2023-08-24T09:15:52Z",
+   "title": "Picture Of National Emblem, ISRO Logo Imprint On Moon's Surface ...",
    "language": "en"
   }
  ],

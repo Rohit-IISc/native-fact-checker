@@ -112,3 +112,14 @@ def test_ai_generation_survives_a_revision_that_omits_it():
     revised = verdict(Label.MISLEADING, ["ws-1"])
     d = panel.merge(judge, disagree, evidence, revised=revised)
     assert d.verdict.label == Label.MISLEADING and d.verdict.ai_generation == ai
+
+
+def test_claims_are_ordered_most_harmful_first():
+    from app.pipeline.runner import order_by_severity
+
+    class C:
+        def __init__(self, label):
+            self.label = Label(label)
+
+    got = [c.label.value for c in order_by_severity([C("TRUE"), C("FALSE"), C("NOT_ENOUGH_EVIDENCE"), C("SCAM")])]
+    assert got == ["SCAM", "FALSE", "NOT_ENOUGH_EVIDENCE", "TRUE"]

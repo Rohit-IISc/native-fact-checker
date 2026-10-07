@@ -11,6 +11,9 @@ Case fields beyond input/language/expected (see tests/acceptance/README.md):
   after: <case id>          run right after that case in the same store, with the API's tier 1 lookup
   expect_cache: T1|T2       the case must be answered from that cache tier
   expect_ai_generation: true  the verdict must carry an AI-generation assessment
+  expect_ai_likelihood_min: N  ...with likelihood_ai at least N (implies expect_ai_generation)
+  expect_ai_signals_both_ways: true  ...listing signals for AI and for a real capture
+  note: free text for humans (ignored by the runner)
 """
 from __future__ import annotations
 
@@ -45,6 +48,8 @@ class Case:
     after: str | None = None
     expect_cache: str | None = None
     expect_ai_generation: bool = False
+    expect_ai_likelihood_min: int | None = None
+    expect_ai_signals_both_ways: bool = False
 
     @property
     def local_media(self) -> bool:
@@ -73,7 +78,9 @@ def load_cases(match: str | None = None) -> list[Case]:
         c = Case(id=raw["id"], input=raw["input"], language=str(raw["language"]),
                  expected=[_label(x) for x in raw["expected"]], budget_s=raw.get("budget_s"), case=raw.get("case"),
                  gold=list(raw.get("gold") or []), after=raw.get("after"), expect_cache=raw.get("expect_cache"),
-                 expect_ai_generation=bool(raw.get("expect_ai_generation")))
+                 expect_ai_generation=bool(raw.get("expect_ai_generation")),
+                 expect_ai_likelihood_min=raw.get("expect_ai_likelihood_min"),
+                 expect_ai_signals_both_ways=bool(raw.get("expect_ai_signals_both_ways")))
         cases.append(c)
     if match:
         # Keep the cases a selected case depends on (after:), so a chain runs whole.
@@ -163,8 +170,15 @@ async def run_case(case: Case, runs_dir: Path, record: bool, store=None) -> Outc
     tier = run.result.cache_tier_hit if run.result else "-"
     if case.expect_cache and tier != case.expect_cache:
         reasons.append(f"cache {tier}, want {case.expect_cache}")
-    if case.expect_ai_generation and not (claims and claims[0].ai_generation):
+    ai = claims[0].ai_generation if claims else None
+    wants_ai = (case.expect_ai_generation or case.expect_ai_likelihood_min is not None
+                or case.expect_ai_signals_both_ways)
+    if wants_ai and not ai:
         reasons.append("no AI-generation assessment")
+    elif ai and case.expect_ai_likelihood_min is not None and ai.likelihood_ai < case.expect_ai_likelihood_min:
+        reasons.append(f"AI likelihood {ai.likelihood_ai} < {case.expect_ai_likelihood_min}")
+    elif ai and case.expect_ai_signals_both_ways and not (ai.signals_ai and ai.signals_real):
+        reasons.append(f"AI signals one-sided ({len(ai.signals_ai)} for AI, {len(ai.signals_real)} for real)")
     gold = gold_match(case.gold, [e.url for c in claims for e in c.evidence if e.url])
     audio = ("yes" if claims[0].audio_url else "no") if claims else "-"
     return Outcome(case, "FAIL" if reasons else "PASS", run.label, run.language, run.latency_ms,

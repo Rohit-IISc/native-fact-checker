@@ -1,0 +1,14 @@
+# From Rohit's notes (2026-10-07). Media lives in samples/ (gitignored, real third-party posts): the case is
+# skipped where samples/ is absent, and make record never stores its model outputs.
+id: 14-en-putin-cnn-morphed
+case: 14
+note: >
+  X post by @Manav_SS_Gupta (26 Feb 2022) with a morphed CNN graphic "PUTIN'S NEW PUNCHLINE: India should not
+  interfere..."; the original CNN report (12 Nov 2019) had a different headline. This is a screenshot, so it
+  does not test X link fetching: the X link case stays open until Rohit sends a live post URL.
+input:
+  file: samples/14.png
+language: en
+expected: [FALSE]
+gold:
+  - https://www.deccanherald.com/amp/international/fact-check-morphed-cnn-graphic-portrays-putin-warning-india-to-not-interfere-in-ukraine-crisis-1085629.html

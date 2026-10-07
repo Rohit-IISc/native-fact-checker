@@ -1,7 +1,7 @@
 {
   "prompt_version": "factcheck-1.4+shared-1.1",
   "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-07T17:35:12+00:00",
+  "recorded_at": "2026-10-07T18:40:47+00:00",
   "outputs": [
     {
       "agent": "factcheck_sites",
@@ -16,7 +16,7 @@
           "title": "False claims that drinking water with lemon can prevent COVID-19 ...",
           "published_at": "2020-03-12",
           "language": "en",
-          "snippet_en": "AFP Fact Check rated as False the claim that drinking lemon and warm water can prevent novel coronavirus disease.",
+          "snippet_en": "AFP Fact Check rated the claim that drinking lemon and warm water can prevent novel coronavirus disease as False.",
           "stance": "CONTRADICTS",
           "rating_text": "False",
           "tier": "TIER_1"
@@ -31,7 +31,7 @@
           "title": "Drinking Warm Water With Lemon Does Not Protect You From ...",
           "published_at": "2020-03-13",
           "language": "en",
-          "snippet_en": "BOOM Fact Check rated as False the claim that drinking warm water with lemon slice protects against the novel Coronavirus.",
+          "snippet_en": "BOOM Fact Check rated the claim that drinking warm water with lemon slice protects against the novel Coronavirus as False.",
           "stance": "CONTRADICTS",
           "rating_text": "False",
           "tier": "TIER_1"
@@ -46,7 +46,7 @@
           "title": "No, Vitamin C and lemon-infused hot water do not protect against ...",
           "published_at": "2020-03-18",
           "language": "en",
-          "snippet_en": "Alt News rated as False the claim that Vit C and lemon in hot water protect against coronavirus.",
+          "snippet_en": "Alt News rated the claim that Vit C and lemon in hot water protect against coronavirus as False.",
           "stance": "CONTRADICTS",
           "rating_text": "False",
           "tier": "TIER_1"
@@ -61,7 +61,7 @@
           "title": "Will Lemons and Hot Water Cure or Prevent COVID-19?",
           "published_at": "2020-03-26",
           "language": "en",
-          "snippet_en": "Snopes.com rated as False the claim that drinking hot water with lemons will cure or prevent COVID-19.",
+          "snippet_en": "Snopes.com rated the claim that drinking hot water with lemons will cure or prevent COVID-19 as False.",
           "stance": "CONTRADICTS",
           "rating_text": "False",
           "tier": "TIER_1"
@@ -70,7 +70,7 @@
       "source_assessment": null,
       "ai_generation_signals": null,
       "earliest_appearance": null,
-      "notes_en": "",
+      "notes_en": "The claim that drinking hot water mixed with lemon juice will destroy the coronavirus is contradicted by multiple fact checks. These fact checks consistently rate similar claims as false, stating that hot water with lemon does not prevent or cure COVID-19.",
       "timed_out": false
     }
   ]

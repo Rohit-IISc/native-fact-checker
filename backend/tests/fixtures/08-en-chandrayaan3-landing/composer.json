@@ -1,30 +1,30 @@
 {
   "prompt_version": "composer-1.2+shared-1.1",
   "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-07T17:36:12+00:00",
+  "recorded_at": "2026-10-07T18:42:54+00:00",
   "outputs": [
     {
       "language": "en",
-      "headline": "True: India was first to land near Moon's south pole",
+      "headline": "True: India's Chandrayaan-3 landed near Moon's south pole on August 23, 2023",
       "summary": "India's Chandrayaan-3 mission successfully landed its Vikram lander near the Moon's south pole on August 23, 2023, making it the first country to achieve this.",
       "what_post_claims": "The post claims that Chandrayaan-3's Vikram lander touched down near the Moon's south pole on August 23, 2023, making India the first country to land in that region.",
-      "what_is_true": "On August 23, 2023, India's Chandrayaan-3 mission successfully landed its Vikram lander near the Moon's south pole, making it the first country to achieve this feat.",
+      "what_is_true": "India's Chandrayaan-3 mission successfully landed its Vikram lander near the Moon's south pole on August 23, 2023, making it the first country to achieve this.",
       "evidence_for": [
-        "PBS reported that India landed a spacecraft near the Moon's south pole on August 23, 2023, becoming the first country to touch down in that region.",
-        "VOA confirmed that India successfully placed a lander in the Moon's southern polar region on August 23, 2023, making history as the first country to land there.",
-        "The Guardian stated that India became the first country to successfully land a spacecraft near the south pole of the Moon with the Chandrayaan-3's Vikram lander."
+        "Voice of America reported that India successfully placed a lander in the moon's southern polar region on August 23, 2023, making it the first country to touch down on this uncharted part of the lunar surface.",
+        "PBS confirmed that India landed a spacecraft near the moon's south pole on August 23, 2023, becoming the first country to touch down near this little-explored region.",
+        "The Guardian stated that India became the first country to successfully land a spacecraft near the south pole of the moon on August 23, 2023."
       ],
       "evidence_against": [
-        "BOOM Fact Check rated as false the claim that China was the first country to land on the Moon's South Pole."
+        "BOOM Fact Check rated as false the claim that China was the first country to land on the moon's South Pole, which would contradict the claim that India was the first."
       ],
       "confidence_phrase": "we are very sure",
-      "sources_spoken": "according to PBS, VOA, and The Guardian",
-      "audio_script": "The post claims that Chandrayaan-3's Vikram lander touched down near the Moon's south pole on August 23, 2023, making India the first country to land in that region. This is true. On August 23, 2023, India's Chandrayaan-3 mission successfully landed its Vikram lander near the Moon's south pole, making it the first country to achieve this feat. We are very sure of this. This information comes from reports by PBS, VOA, and The Guardian.",
+      "sources_spoken": "according to Voice of America, PBS, and The Guardian",
+      "audio_script": "The post claims that Chandrayaan-3's Vikram lander touched down near the Moon's south pole on August 23, 2023, making India the first country to land in that region. This is true. India's Chandrayaan-3 mission successfully landed its Vikram lander near the Moon's south pole on August 23, 2023, making it the first country to achieve this. We are very sure about this. This information comes from multiple reputable sources including Voice of America, PBS, and The Guardian.",
       "card_lines": [
         "True: India first to land near Moon's south pole",
-        "Chandrayaan-3 landed near the Moon's south pole on August 23, 2023.",
-        "India is the first country to achieve this.",
-        "Source: PBS, VOA, The Guardian"
+        "Chandrayaan-3 landed on August 23, 2023",
+        "India is the first country to achieve this",
+        "Source: Voice of America, PBS"
       ],
       "panel_readings": []
     }

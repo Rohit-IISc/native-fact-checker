@@ -1,7 +1,7 @@
 {
   "prompt_version": "packager-1.1+shared-1.1",
   "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-07T17:36:12+00:00",
+  "recorded_at": "2026-10-07T18:42:54+00:00",
   "outputs": [
     {
       "briefs": [
@@ -11,15 +11,15 @@
           "claim_type": null,
           "claimed_date": "2023-08-23",
           "place": "Moon's south pole",
-          "brief_en": "On August 23, 2023, India's Chandrayaan-3 mission successfully landed its Vikram lander near the Moon's south pole. This event made India the first country to achieve a soft landing in the lunar south pole region and the fourth country overall to land on the Moon. Sources like PBS, VOA, and The Guardian reported this historic achievement, with the landing occurring around 12:33 UTC (18:04 IST). A fact check by BOOM Fact Check rated as false the claim that China was the first country to land on the moon's South Pole.",
+          "brief_en": "Multiple sources confirm that India's Chandrayaan-3 mission successfully landed its Vikram lander near the Moon's south pole on August 23, 2023. This achievement made India the first country to land in this specific region. Voice of America, PBS, The Guardian, Astronomy.com, Wikipedia, and The Hindu all report this event, with The Guardian publishing on August 22, 2023, and others on August 23 or 24, 2023. A fact-check from BOOM Fact Check on August 29, 2023, rated as false claims that China was the first to land on the Moon's South Pole, reinforcing India's pioneering status.",
           "evidence_ids": [
             "fc-1",
-            "ws-3",
-            "ws-4",
-            "ws-5",
             "ws-1",
             "ws-2",
-            "ws-6"
+            "ws-3",
+            "ws-6",
+            "ws-4",
+            "ws-5"
           ],
           "gaps_en": []
         }

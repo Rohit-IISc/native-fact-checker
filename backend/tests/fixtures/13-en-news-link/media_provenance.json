@@ -1,7 +1,7 @@
 {
   "prompt_version": "media-provenance-1.2+shared-1.1",
   "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-07T17:38:30+00:00",
+  "recorded_at": "2026-10-07T18:45:52+00:00",
   "outputs": [
     {
       "agent": "media_provenance",
@@ -10,67 +10,55 @@
           "evidence_id": "",
           "agent": "media_provenance",
           "claim_id": "c1",
-          "url": "https://www.linkedin.com/posts/sowmya-subramanian-pro_chandrayaan-3-india-makes-historic-landing-activity-7100100522522615808-fU2H",
-          "domain": "linkedin.com",
-          "publisher": "LinkedIn",
-          "title": "Chandrayaan-3: India makes historic landing near Moon's south pole",
+          "url": "https://www.bbc.co.uk/news/uk-wales-66687056",
+          "domain": "bbc.co.uk",
+          "publisher": "BBC News",
+          "title": "Moon base: Bangor scientists design fuel to live in space - BBC News",
           "published_at": null,
           "language": null,
-          "snippet_en": "This LinkedIn post discusses India's Chandrayaan-3 mission making a historic landing near the Moon's south pole.",
-          "stance": "SUPPORTS",
+          "snippet_en": "This article is about scientists designing fuel for a moon base, not related to Chandrayaan-3 celebrations.",
+          "stance": "UNRELATED",
           "rating_text": null,
-          "tier": "TIER_3"
-        },
-        {
-          "evidence_id": "",
-          "agent": "media_provenance",
-          "claim_id": "c2",
-          "url": "https://www.linkedin.com/posts/sowmya-subramanian-pro_chandrayaan-3-india-makes-historic-landing-activity-7100100522522615808-fU2H",
-          "domain": "linkedin.com",
-          "publisher": "LinkedIn",
-          "title": "Chandrayaan-3: India makes historic landing near Moon's south pole",
-          "published_at": null,
-          "language": null,
-          "snippet_en": "This LinkedIn post discusses India's Chandrayaan-3 mission making a historic landing near the Moon's south pole.",
-          "stance": "SUPPORTS",
-          "rating_text": null,
-          "tier": "TIER_3"
+          "tier": "TIER_2"
         },
         {
           "evidence_id": "",
           "agent": "media_provenance",
           "claim_id": "c1",
-          "url": "https://www.bbc.co.uk/news/world-asia-india-67142307",
-          "domain": "bbc.co.uk",
-          "publisher": "BBC News",
-          "title": "India aims to send astronaut to the Moon by 2040 - BBC News",
+          "url": "https://www.bbc.com/news/live/world-asia-india-47640058?page=47",
+          "domain": "bbc.com",
+          "publisher": "BBC",
+          "title": "India news stream - BBC",
           "published_at": null,
           "language": null,
-          "snippet_en": "This BBC News article discusses India's future space ambitions, including sending an astronaut to the Moon by 2040.",
-          "stance": "CONTEXT",
+          "snippet_en": "This is a live news stream about India, but the specific page does not contain information about Chandrayaan-3 celebrations.",
+          "stance": "UNRELATED",
           "rating_text": null,
-          "tier": "TIER_1"
+          "tier": "TIER_2"
         },
         {
           "evidence_id": "",
           "agent": "media_provenance",
-          "claim_id": "c2",
-          "url": "https://www.bbc.co.uk/news/world-asia-india-67142307",
-          "domain": "bbc.co.uk",
-          "publisher": "BBC News",
-          "title": "India aims to send astronaut to the Moon by 2040 - BBC News",
+          "claim_id": "c1",
+          "url": "https://za.linkedin.com/in/chernayj",
+          "domain": "linkedin.com",
+          "publisher": "LinkedIn",
+          "title": "Chernay Johnson | Est. 1989 | #planetaryIMPACT #WomenInTech",
           "published_at": null,
           "language": null,
-          "snippet_en": "This BBC News article discusses India's future space ambitions, including sending an astronaut to the Moon by 2040.",
-          "stance": "CONTEXT",
+          "snippet_en": "This is a LinkedIn profile and is not related to the Chandrayaan-3 landing or celebrations.",
+          "stance": "UNRELATED",
           "rating_text": null,
-          "tier": "TIER_1"
+          "tier": "NOT_A_SOURCE"
         }
       ],
       "source_assessment": null,
-      "ai_generation_signals": null,
+      "ai_generation_signals": {
+        "signals_ai": [],
+        "signals_real": []
+      },
       "earliest_appearance": null,
-      "notes_en": "The web detection results provided do not contain specific dates for the articles, making it difficult to determine the earliest appearance. The results also do not provide enough information to assess AI generation signals.",
+      "notes_en": "No direct matches were found for the image. The search results are generic and do not show the image in the context of Chandrayaan-3 celebrations.",
       "timed_out": false
     }
   ]

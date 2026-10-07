@@ -1,62 +1,73 @@
 {
   "prompt_version": "packager-1.1+shared-1.1",
   "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-07T17:35:48+00:00",
+  "recorded_at": "2026-10-07T18:42:11+00:00",
   "outputs": [
     {
       "briefs": [
         {
           "claim_id": "c1",
-          "claim_en": "The 'PM Free Laptop Scheme 2026' is providing free laptops to all students from the government.",
+          "claim_en": "Under the Pradhan Mantri Free Laptop Scheme 2026, the government is providing free laptops to all students.",
           "claim_type": null,
           "claimed_date": null,
           "place": "India",
-          "brief_en": "The Government of India has not announced any \"PM Free Laptop Scheme 2026\" or similar program providing free laptops to all students, according to the PIB Fact Check on September 21, 2026. Multiple fact-checking organizations, including Livemint, Alt News, Vishvas News, FACTLY, and DigitEye India, have debunked these claims as false and part of a scam to collect personal information. While some state-level free laptop schemes exist in India, such as Uttar Pradesh's Swami Vivekananda Yuva Sashaktikaran Yojana, there is no central government scheme.",
+          "brief_en": "Multiple sources, including the PIB Fact Check unit and various news outlets (shiksha.com, timesnownews.com, livemint.com, hindustantimes.com, newsonair.gov.in, abplive.com), state that the claim about the Pradhan Mantri Free Laptop Scheme 2026 providing free laptops to all students is false. The Government of India has not announced any such scheme. Fact-checking organizations like Alt News and Vishvas News have also debunked similar claims dating back to 2019, 2023, 2024, and 2025, identifying them as scams or phishing attempts. While some Indian state governments may have their own free laptop or tablet schemes, there is no central government initiative for this purpose.",
           "evidence_ids": [
-            "ws-3",
+            "ws-5",
             "fc-2",
             "fc-3",
             "fc-4",
+            "fc-5",
             "fc-6",
-            "fc-7",
-            "fc-8",
-            "fc-9",
-            "ws-1",
+            "ws-3",
+            "ws-4",
+            "ws-6",
             "fc-1",
-            "fc-10",
-            "ws-2",
-            "ws-5"
+            "ws-1",
+            "ws-2"
           ],
           "gaps_en": []
         },
         {
           "claim_id": "c2",
-          "claim_en": "The application deadline for the 'PM Free Laptop Scheme 2026' is October 15.",
+          "claim_en": "The last date to apply for the Pradhan Mantri Free Laptop Scheme 2026 is October 15.",
           "claim_type": null,
           "claimed_date": "2026-10-15",
           "place": null,
-          "brief_en": "The PIB Fact Check has debunked claims about a \"National Student Laptop Scheme 2026\" and any associated application deadlines, stating that the Government of India has not announced any such scheme. Livemint reported on September 21, 2026, that these messages are fraudulent attempts to gather personal information. TV9 Bharatvarsh also reported on September 14, 2026, that messages circulating on social media about a \"Students Laptop Scheme 2026\" with an application deadline are fake.",
+          "brief_en": "According to the PIB Fact Check unit and various news sources (shiksha.com, timesnownews.com, livemint.com, hindustantimes.com, newsonair.gov.in, abplive.com), there is no official \"Pradhan Mantri Free Laptop Scheme 2026\" by the Government of India. Consequently, there is no application deadline of October 15 for such a scheme. These claims are frequently debunked as fake news and scams. While some state-level schemes or scholarship programs might have application deadlines around October, they are not related to a central government free laptop scheme.",
           "evidence_ids": [
-            "ws-9",
-            "ws-7",
-            "ws-8",
-            "ws-6"
+            "ws-17",
+            "ws-15",
+            "ws-16",
+            "ws-18",
+            "ws-13",
+            "ws-14",
+            "ws-19",
+            "ws-20",
+            "ws-22",
+            "ws-23",
+            "ws-24",
+            "ws-25"
           ],
           "gaps_en": []
         },
         {
           "claim_id": "c3",
-          "claim_en": "Users can register their name for the 'PM Free Laptop Scheme 2026' by clicking on the link www.pm-free-laptop-yojana.in.",
+          "claim_en": "To apply for the Pradhan Mantri Free Laptop Scheme 2026, one must register their name on the website www.pm-free-laptop-yojana.in.",
           "claim_type": null,
           "claimed_date": null,
           "place": null,
-          "brief_en": "The PIB Fact Check has repeatedly debunked claims about a \"PM Free Laptop Scheme\" or \"National Student Laptop Scheme 2026,\" confirming these are scams designed to collect personal information. Livemint reported on September 21, 2026, that citizens should verify information through official government sources. Vishvas News rated as false the claim that free laptops would be given under a scheme, noting that a clickbait link went viral. TV9 Bharatvarsh found that the website mentioned in the viral message about a \"Students Laptop Scheme 2026\" was blocked, indicating its fraudulent nature.",
+          "brief_en": "The website www.pm-free-laptop-yojana.in is not an official government website for any \"Pradhan Mantri Free Laptop Scheme 2026.\" The PIB Fact Check unit and news outlets (shiksha.com, timesnownews.com, livemint.com, hindustantimes.com, newsonair.gov.in, abplive.com) have consistently identified such websites as fake and fraudulent, designed to mislead people and collect personal information. Official government websites in India typically end with \".gov.in.\"",
           "evidence_ids": [
-            "ws-13",
-            "ws-11",
-            "ws-12",
-            "fc-5",
-            "ws-10"
+            "ws-30",
+            "ws-28",
+            "ws-29",
+            "ws-31",
+            "ws-26",
+            "ws-27",
+            "ws-32",
+            "ws-33",
+            "ws-35"
           ],
           "gaps_en": []
         }

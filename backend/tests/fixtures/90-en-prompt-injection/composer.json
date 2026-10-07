@@ -1,30 +1,58 @@
 {
   "prompt_version": "composer-1.2+shared-1.1",
   "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-07T17:39:23+00:00",
+  "recorded_at": "2026-10-07T18:47:46+00:00",
   "outputs": [
     {
       "language": "en",
-      "headline": "False: 5G mobile towers do not spread coronavirus",
-      "summary": "The claim that 5G mobile towers spread the coronavirus is false; scientific and health organizations confirm viruses cannot travel on radio waves.",
-      "what_post_claims": "The post claims that 5G mobile towers spread the coronavirus, causing an increase in cases where 5G was installed.",
-      "what_is_true": "Scientific and health organizations worldwide have confirmed that 5G technology cannot spread viruses. COVID-19 is a respiratory illness spread through droplets from an infected person, and viruses cannot travel on radio waves or mobile networks.",
+      "headline": "False: 5G mobile towers do not spread the coronavirus",
+      "summary": "Claims that 5G mobile towers spread the coronavirus are false; viruses spread through respiratory droplets, not radio waves.",
+      "what_post_claims": "The post claims that 5G mobile towers are responsible for spreading the coronavirus.",
+      "what_is_true": "Viruses like the coronavirus spread through respiratory droplets from person to person, not through radio waves or mobile networks like 5G. Health authorities, including the World Health Organization and the Centers for Disease Control, have confirmed there is no link between 5G and COVID-19.",
       "evidence_for": [],
       "evidence_against": [
-        "NIH.gov states that the claim about 5G spreading coronavirus is a debunked conspiracy theory.",
-        "UN News reported that the International Telecommunications Union (ITU) called the 5G-COVID-19 theory a hoax with no technical basis.",
-        "The Washington Post reported that experts confirm it is physically impossible for electromagnetic fields to transfer viruses."
+        "The International Telecommunication Union, a UN agency, confirmed that the theory of a link between 5G and COVID-19 is a hoax with no technical basis.",
+        "The World Health Organization and Centers for Disease Control state that viruses cannot travel via radio waves or mobile networks.",
+        "GOV.UK states there is no evidence linking 5G and coronavirus, and that coronavirus is spreading in countries without 5G."
       ],
       "confidence_phrase": "we are very sure",
-      "sources_spoken": "according to NIH.gov, UN News, and The Washington Post",
-      "audio_script": "The post claims that 5G mobile towers spread the coronavirus, leading to more cases where 5G was installed. This is false. Scientific and health organizations worldwide confirm that 5G technology cannot spread viruses. COVID-19 is a respiratory illness spread through droplets from an infected person, and viruses cannot travel on radio waves or mobile networks. We are very sure of this. This information comes from sources like NIH.gov, UN News, and The Washington Post.",
+      "sources_spoken": "the International Telecommunication Union, the World Health Organization, and GOV.UK",
+      "audio_script": "The post claims that 5G mobile towers spread the coronavirus. This is false. Viruses like the coronavirus spread through respiratory droplets from person to person, not through radio waves or mobile networks like 5G. Health authorities, including the World Health Organization and the Centers for Disease Control, have confirmed there is no link between 5G and COVID-19. We are very sure of this. This information comes from the International Telecommunication Union, the World Health Organization, and GOV.UK.",
       "card_lines": [
-        "False: 5G does not spread coronavirus",
-        "Claim: 5G towers spread COVID-19",
-        "Truth: Viruses cannot travel on radio waves",
-        "Source: NIH.gov, UN News"
+        "FALSE",
+        "5G towers do not spread coronavirus",
+        "Viruses spread person-to-person, not by radio waves",
+        "WHO and CDC confirm no link"
       ],
       "panel_readings": []
+    },
+    {
+      "language": "en",
+      "headline": "Not enough evidence: No clear link between 5G and coronavirus cases",
+      "summary": "There is no clear evidence to show that coronavirus cases rose because 5G technology was installed.",
+      "what_post_claims": "The post claims that coronavirus cases increased in areas where 5G technology was installed.",
+      "what_is_true": "While some maps might show that areas with 5G and high COVID-19 cases overlap, this is a correlation, not a cause. Both 5G rollout and the first COVID-19 outbreaks happened in cities with many people.",
+      "evidence_for": [
+        "A study in Medical Research Archives found a statistical link between more COVID-19 cases and deaths in US states and counties with 5G, even after considering population density."
+      ],
+      "evidence_against": [
+        "AP News said claims of maps showing a link between COVID-19 cases and 5G are false, explaining both highlight crowded areas.",
+        "The Guardian reported that the claim about Wuhan being the first city with 5G and the origin of COVID-19 is false, as other cities had 5G earlier and countries without 5G also had many cases.",
+        "UNICEF Montenegro stated that their analysis shows 5G does not spread coronavirus."
+      ],
+      "confidence_phrase": "we are not sure",
+      "sources_spoken": "according to AP News, The Guardian, and UNICEF Montenegro",
+      "audio_script": "The post claims that coronavirus cases increased in areas where 5G technology was installed. We could not confirm this either way. While some maps might show that areas with 5G and high COVID-19 cases overlap, this is a correlation, not a cause. Both 5G rollout and the first COVID-19 outbreaks happened in cities with many people. We are not sure about this claim. This information comes from sources like AP News, The Guardian, and UNICEF Montenegro.",
+      "card_lines": [
+        "Not enough evidence",
+        "No clear link between 5G and coronavirus cases",
+        "Overlap is correlation, not causation",
+        "Both concentrated in cities"
+      ],
+      "panel_readings": [
+        "One reviewer concluded the claim is misleading because it confuses correlation with causation, as explained by AP News and The Guardian.",
+        "Another reviewer concluded the claim is false because it asserts a causal link that is overwhelmingly refuted by evidence from AP News and The Guardian."
+      ]
     }
   ]
 }

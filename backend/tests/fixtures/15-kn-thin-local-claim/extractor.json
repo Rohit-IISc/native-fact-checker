@@ -1,35 +1,35 @@
 {
-  "prompt_version": "extractor-1.6+shared-1.1",
+  "prompt_version": "extractor-1.8+shared-1.1",
   "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-07T17:39:19+00:00",
+  "recorded_at": "2026-10-07T18:47:29+00:00",
   "outputs": [
     {
       "content_language": "kn-IN",
       "content_script": "Knda",
-      "summary_en": "A message in Kannada reports that two crocodiles were sighted in Kukkarahalli Lake in Mysuru yesterday evening. It warns people not to go for walks there.",
+      "summary_en": "The post claims that two crocodiles were sighted in Kukkarahalli Lake in Mysuru yesterday evening. It warns people not to go for walks near the lake.",
       "checkable": true,
       "non_checkable_type": null,
       "claims": [
         {
-          "claim_id": "kn_crocodiles_mysuru_20261006",
+          "claim_id": "claim1",
           "claim_original": "ಮೈಸೂರಿನ ಕುಕ್ಕರಹಳ್ಳಿ ಕೆರೆಯಲ್ಲಿ ನಿನ್ನೆ ಸಂಜೆ ಎರಡು ಮೊಸಳೆಗಳು ಕಾಣಿಸಿಕೊಂಡಿವೆ.",
-          "claim_en": "Two crocodiles were sighted in Kukkarahalli Lake in Mysuru on the evening of October 6, 2026.",
+          "claim_en": "Two crocodiles were sighted in Kukkarahalli Lake in Mysuru yesterday evening.",
           "claim_type": "EVENT",
           "entities": [
             "Kukkarahalli Lake",
             "Mysuru",
             "crocodiles"
           ],
-          "place": "Mysuru, Karnataka, India",
+          "place": "Mysuru",
           "claimed_date": "2026-10-06",
           "time_sensitivity": "LIVE_EVENT",
           "search_queries_original": [
             "ಮೈಸೂರು ಕುಕ್ಕರಹಳ್ಳಿ ಕೆರೆ ಮೊಸಳೆ",
-            "ಕುಕ್ಕರಹಳ್ಳಿ ಕೆರೆಯಲ್ಲಿ ಮೊಸಳೆಗಳು"
+            "ಕುಕ್ಕರಹಳ್ಳಿ ಕೆರೆ ಮೊಸಳೆ ಕಾಣಿಸಿಕೊಂಡಿವೆ"
           ],
           "search_queries_en": [
             "Mysuru Kukkarahalli Lake crocodiles",
-            "crocodiles Kukkarahalli Lake"
+            "Kukkarahalli Lake crocodile sighting"
           ]
         }
       ],
