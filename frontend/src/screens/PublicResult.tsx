@@ -25,7 +25,8 @@ export function PublicResult() {
       {missing && <p className="card">{t('public.notFound')}</p>}
       {result && (
         <ClaimCard
-          claim={{ label: result.label, confidence: result.confidence, result_url: window.location.href }}
+          claim={{ label: result.label, confidence: result.confidence, result_url: window.location.href,
+                   panel_outcome: result.panel_outcome }}
           answer={result.answer}
           answerEn={result.answer_en}
           audioUrl={result.audio_url}

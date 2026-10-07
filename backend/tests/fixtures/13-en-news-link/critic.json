@@ -1,7 +1,7 @@
 {
-  "prompt_version": "critic-1.0+shared-1.0",
+  "prompt_version": "critic-1.1+shared-1.1",
   "model_id": "gemini-2.5-pro",
-  "recorded_at": "2026-10-05T18:13:34+00:00",
+  "recorded_at": "2026-10-07T17:38:30+00:00",
   "outputs": [
     {
       "reviews": [
@@ -14,17 +14,13 @@
         },
         {
           "claim_id": "c2",
-          "decision": "AGREE",
+          "decision": "DISAGREE",
           "proposed_label": "TRUE",
-          "proposed_confidence": 95,
-          "objections_en": []
-        },
-        {
-          "claim_id": "c3",
-          "decision": "AGREE",
-          "proposed_label": "TRUE",
-          "proposed_confidence": 95,
-          "objections_en": []
+          "proposed_confidence": 90,
+          "objections_en": [
+            "The judge's reasoning relies on ws-5 (BBC News), which is categorized as NOT_A_SOURCE. While the information is correct and corroborated by other sources, a verdict should not be primarily based on a source of this tier.",
+            "The confidence of 95 is slightly too high given the reliance on a NOT_A_SOURCE and the minor discrepancy in GMT time reported by Al Jazeera (ws-8, 12:30 GMT) and Space.com (ws-7, 1:34 p.m. GMT), even though the latter was a prediction."
+          ]
         }
       ]
     }

@@ -30,6 +30,7 @@ from app.store import Store, get_store
 
 log = logging.getLogger(__name__)
 HARD_LIMIT_GRACE_S = 15
+EXTRACTION_RETRY_MIN_LEFT_S = 50
 
 
 async def run_check_by_id(check_id: str, store: Store | None = None, llm: LLM | None = None) -> CheckResult | None:
@@ -83,7 +84,16 @@ async def run_check(
                 if fetched.fetch_method == "failed" and not _has_own_content(req):
                     return await _finish_unreadable_link(store, req, ledger, timings, started)
             await set_stage(store, req.check_id, Stage.EXTRACTING)
-            extraction = await timed("extracting", extractor.extract(llm, req, fetched))
+            try:
+                extraction = await timed("extracting", extractor.extract(llm, req, fetched))
+            except StageFailed as e:
+                # Seen Oct 7: an image extraction (normally 3-8 s) stalled past 25 s even with a hedged
+                # duplicate. With time left, one fresh attempt beats failing the user's check.
+                left = budget - (time.monotonic() - started)
+                if "timeout" not in e.reason or left < EXTRACTION_RETRY_MIN_LEFT_S:
+                    raise
+                log_event(log, "extraction retry", logging.WARNING, left_s=round(left, 1))
+                extraction = await timed("extracting", extractor.extract(llm, req, fetched))
             prompt_versions["extractor"] = extractor.load_prompt(extractor.PROMPT).version
             await store.set(CHECKS, req.check_id, {
                 "content_language": extraction.content_language,

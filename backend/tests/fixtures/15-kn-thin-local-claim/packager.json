@@ -1,26 +1,28 @@
 {
-  "prompt_version": "packager-1.1+shared-1.0",
+  "prompt_version": "packager-1.1+shared-1.1",
   "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-05T18:13:21+00:00",
+  "recorded_at": "2026-10-07T17:39:19+00:00",
   "outputs": [
     {
       "briefs": [
         {
           "claim_id": "c1",
-          "claim_en": "Two crocodiles were seen in Kukkarahalli Lake in Mysuru yesterday evening.",
-          "claimed_date": "2026-10-04",
-          "place": "Mysuru",
-          "brief_en": "Evidence indicates that crocodiles have been sighted in Kukkarahalli Lake in Mysuru on multiple occasions. The Hindu reported a giant crocodile sighting on March 26, 2010. News18 Kannada and Local18 reported a crocodile sighting on September 7, 2023. Star of Mysore reported a large crocodile sighting on November 30, 2024, and another sighting in January 2026. These reports confirm the presence of crocodiles in the lake but do not specifically mention two crocodiles being seen on October 3, 2026.",
+          "claim_en": "Two crocodiles were sighted in Kukkarahalli Lake in Mysuru on the evening of October 6, 2026.",
+          "claim_type": null,
+          "claimed_date": "2026-10-06",
+          "place": "Mysuru, Karnataka, India",
+          "brief_en": "Kukkarahalli Lake in Mysuru is a known habitat for crocodiles, with multiple sightings reported over the years. In January 2026, a crocodile was spotted on the bank, causing panic. Other sightings include December 2024 and 2010, when a giant crocodile was seen on the lake bund. There were also reports of a crocodile found dead in the lake in April 2017.",
           "evidence_ids": [
-            "ws-5",
             "ws-1",
             "ws-2",
-            "ws-3",
-            "ws-4"
+            "ws-5",
+            "ws-6",
+            "ws-7",
+            "ws-3"
           ],
           "gaps_en": [
-            "No evidence directly confirms two crocodiles were seen in Kukkarahalli Lake on October 3, 2026.",
-            "No official statements or specific reports for the claimed date were found."
+            "No evidence specifically confirms the sighting of two crocodiles on the evening of October 6, 2026.",
+            "No official statements or reports from authorities regarding the claimed sighting were found."
           ]
         }
       ]

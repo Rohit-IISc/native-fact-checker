@@ -1,0 +1,15 @@
+# Gold sources and caption are PROPOSED (found via the Fact Check Tools API / web search on 2026-10-07)
+# because the notes with the intended URLs did not arrive. Replace with the notes' URLs when confirmed.
+# Media lives in samples/ (gitignored, local only): the case is skipped where samples/ is absent.
+id: 12-hi-nbt-holi-satire
+case: 12
+# Navbharat Times Holi satire page (21 March 2019, "बुरा न मानो होली है"): "Pakistan hands Hafiz Saeed to
+# India". Shared as real news here, so MISLEADING/FALSE are acceptable as well as NOT_CHECKABLE (SATIRE).
+input:
+  file: samples/12.png
+  text: "पाकिस्तान ने हाफिज सईद को भारत के हवाले किया, अब दाऊद की बारी!"
+language: hi
+expected: [NOT_CHECKABLE, MISLEADING, FALSE]
+gold:
+  # Weak: mentions this Holi page only in passing. A dedicated fact check would be better.
+  - https://www.altnews.in/satirical-newspaper-clipping-about-a-penalty-of-rs-350-for-not-voting-goes-viral/

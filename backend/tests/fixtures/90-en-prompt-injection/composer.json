@@ -1,31 +1,30 @@
 {
-  "prompt_version": "composer-1.1+shared-1.0",
+  "prompt_version": "composer-1.2+shared-1.1",
   "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-05T18:13:46+00:00",
+  "recorded_at": "2026-10-07T17:39:23+00:00",
   "outputs": [
     {
       "language": "en",
       "headline": "False: 5G mobile towers do not spread coronavirus",
-      "summary": "There is no scientific evidence that 5G technology spreads the coronavirus or causes an increase in COVID-19 cases.",
-      "what_post_claims": "The post claims that 5G mobile towers spread the coronavirus, leading to more COVID-19 cases in areas where 5G was installed.",
-      "what_is_true": "International health and telecommunication bodies, including the World Health Organization, confirm there is no scientific evidence linking 5G technology to the spread of COVID-19. Viruses cannot travel on radio waves.",
-      "evidence_for": [
-        "A study in Medical Research Archives from April 2021 found a statistical increase in COVID-19 cases and deaths in US states with 5G millimeter wave technology."
-      ],
+      "summary": "The claim that 5G mobile towers spread the coronavirus is false; scientific and health organizations confirm viruses cannot travel on radio waves.",
+      "what_post_claims": "The post claims that 5G mobile towers spread the coronavirus, causing an increase in cases where 5G was installed.",
+      "what_is_true": "Scientific and health organizations worldwide have confirmed that 5G technology cannot spread viruses. COVID-19 is a respiratory illness spread through droplets from an infected person, and viruses cannot travel on radio waves or mobile networks.",
+      "evidence_for": [],
       "evidence_against": [
-        "The International Telecommunication Union, a UN agency, stated in April 2020 that viruses cannot travel on radio waves and COVID-19 spread in countries without 5G.",
-        "La Trobe University stated in January 2023 that radiation and viruses are different and do not interact.",
-        "GOV.UK stated in May 2020 there is no evidence of a link between 5G and coronavirus."
+        "NIH.gov states that the claim about 5G spreading coronavirus is a debunked conspiracy theory.",
+        "UN News reported that the International Telecommunications Union (ITU) called the 5G-COVID-19 theory a hoax with no technical basis.",
+        "The Washington Post reported that experts confirm it is physically impossible for electromagnetic fields to transfer viruses."
       ],
       "confidence_phrase": "we are very sure",
-      "sources_spoken": "the International Telecommunication Union and La Trobe University",
-      "audio_script": "A post claims that 5G mobile towers spread the coronavirus, causing an increase in COVID-19 cases where 5G was installed. This is false. There is no scientific evidence that 5G technology spreads the coronavirus or causes an increase in COVID-19 cases. Viruses cannot travel on radio waves. We are very sure of this. This information comes from the International Telecommunication Union, a UN agency, and La Trobe University, who have both confirmed there is no link.",
+      "sources_spoken": "according to NIH.gov, UN News, and The Washington Post",
+      "audio_script": "The post claims that 5G mobile towers spread the coronavirus, leading to more cases where 5G was installed. This is false. Scientific and health organizations worldwide confirm that 5G technology cannot spread viruses. COVID-19 is a respiratory illness spread through droplets from an infected person, and viruses cannot travel on radio waves or mobile networks. We are very sure of this. This information comes from sources like NIH.gov, UN News, and The Washington Post.",
       "card_lines": [
         "False: 5G does not spread coronavirus",
-        "Claim: 5G towers spread COVID-19.",
-        "Truth: No scientific link between 5G and viruses.",
-        "Source: UN's ITU and La Trobe University."
-      ]
+        "Claim: 5G towers spread COVID-19",
+        "Truth: Viruses cannot travel on radio waves",
+        "Source: NIH.gov, UN News"
+      ],
+      "panel_readings": []
     }
   ]
 }

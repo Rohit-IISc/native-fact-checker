@@ -50,3 +50,22 @@ async def test_native_and_english_are_written_separately_for_indic_posts():
     out = await composer.compose(llm, CLAIM, VERDICT, PanelOutcome.AGREED, [], None, "hi-IN", "Deva")
     assert out.native.language == "hi-IN" and out.native.headline == HINDI
     assert out.english.language == "en" and out.english.headline == ENGLISH
+
+
+async def test_split_readings_reach_the_stored_result():
+    from app.models import Claim as _C
+    from app.pipeline.results import VERDICTS, claim_result_from_doc, persist_verdict
+    from app.store import MemoryStore
+
+    store = MemoryStore()
+    nee = VERDICT.model_copy(update={"label": Label.NOT_ENOUGH_EVIDENCE, "confidence": 40})
+    readings = ["One reviewer: MISLEADING, The Hindu shows the video from 2022.",
+                "The other reviewer: TRUE, Deccan Herald reports flooding today."]
+    native = answer(HINDI, "hi-IN").model_copy(update={"panel_readings": ["पहला", "दूसरा"]})
+    english = composer.fallback_answer(CLAIM, nee, [], readings)
+    assert english.panel_readings == readings
+    vid = await persist_verdict(store, check_id="c", claim=_C.model_validate(CLAIM.model_dump()), verdict=nee,
+                                outcome=PanelOutcome.SPLIT, evidence=[], answer=native, answer_en=english,
+                                prompt_versions={}, model_versions={}, split_readings=readings)
+    result = claim_result_from_doc(await store.get(VERDICTS, vid), "hi-IN")
+    assert result.panel_outcome == PanelOutcome.SPLIT and result.answer.panel_readings == ["पहला", "दूसरा"]

@@ -1,7 +1,7 @@
 {
-  "prompt_version": "judge-1.0+shared-1.0",
+  "prompt_version": "judge-1.1+shared-1.1",
   "model_id": "gemini-2.5-pro",
-  "recorded_at": "2026-10-05T18:12:21+00:00",
+  "recorded_at": "2026-10-07T17:35:48+00:00",
   "outputs": [
     {
       "verdicts": [
@@ -9,73 +9,67 @@
           "claim_id": "c1",
           "label": "SCAM",
           "confidence": 100,
-          "what_is_true_en": "The Indian government has not announced any 'Prime Minister Free Laptop Scheme 2026'. Messages promoting this are fake and often part of scams to steal personal information.",
+          "what_is_true_en": "The Government of India has not announced a 'PM Free Laptop Scheme 2026'. Messages promoting this are a scam designed to steal personal information. While some state governments have their own laptop schemes, no such national program exists.",
           "event_date": null,
           "evidence_for_ids": [],
           "evidence_against_ids": [
-            "ws-1",
-            "ws-2",
             "ws-3",
-            "fc-1",
+            "ws-1",
             "fc-2",
             "fc-3",
             "fc-4",
-            "fc-5",
-            "fc-6",
-            "fc-8",
-            "fc-10"
+            "fc-7",
+            "fc-8"
           ],
           "cited_ids": [
-            "ws-1",
-            "ws-2",
             "ws-3",
-            "fc-1",
+            "ws-1",
             "fc-2",
-            "fc-3"
+            "fc-7",
+            "fc-8",
+            "ws-2"
           ],
-          "reasoning_en": "Multiple TIER_1 sources, including the government's official broadcaster (newsonair.gov.in) and the Press Information Bureau (PIB), have explicitly stated that the 'Prime Minister Free Laptop Scheme 2026' is fake and no such central government scheme exists. Numerous fact-checking organizations have repeatedly debunked similar claims over several years, identifying them as scams or phishing attempts designed to steal personal data. While some state governments have their own laptop distribution programs, there is no nationwide scheme from the Prime Minister's office.",
+          "reasoning_en": "Multiple TIER_1 and TIER_2 sources, including the government's Press Information Bureau (PIB), have explicitly stated that the 'PM Free Laptop Scheme 2026' does not exist and that messages about it are part of a scam to collect personal data. While one source mentions that some state-level laptop schemes are real, all evidence confirms there is no such central government scheme.",
           "ai_generation": null
         },
         {
           "claim_id": "c2",
           "label": "FALSE",
           "confidence": 100,
-          "what_is_true_en": "There is no 'Prime Minister Free Laptop Scheme 2026', so there is no application deadline. The Indian government has confirmed that claims about such a scheme are fake.",
+          "what_is_true_en": "There is no 'PM Free Laptop Scheme 2026', so there is no application deadline. The Government of India has confirmed that messages about such a scheme are fake.",
           "event_date": null,
           "evidence_for_ids": [],
           "evidence_against_ids": [
-            "ws-1",
-            "ws-2",
-            "ws-3"
+            "ws-9",
+            "ws-7",
+            "ws-6"
           ],
           "cited_ids": [
-            "ws-1",
-            "ws-2",
-            "ws-3"
+            "ws-9",
+            "ws-7"
           ],
-          "reasoning_en": "The claim about an October 15 deadline is false because the 'Prime Minister Free Laptop Scheme 2026' itself does not exist. This is confirmed by multiple government sources and fact-checkers (as established for claim c1). Since the scheme is non-existent, any associated deadline is also fabricated. The provided evidence lacks any credible source mentioning this specific scheme and deadline.",
+          "reasoning_en": "Since the underlying 'PM Free Laptop Scheme 2026' does not exist, any claim about its application deadline is also false. This is confirmed by the Press Information Bureau (PIB) and other news reports, which state that the Government of India has not announced any such scheme.",
           "ai_generation": null
         },
         {
           "claim_id": "c3",
           "label": "SCAM",
           "confidence": 100,
-          "what_is_true_en": "The website www.pm-free-laptop-yojana.in is not an official government website. The government has confirmed that claims about a 'Prime Minister Free Laptop Scheme' and associated websites are fake and part of scams.",
+          "what_is_true_en": "The link provided is for a fraudulent website. The 'PM Free Laptop Scheme 2026' is not a real government program, and any links associated with it are part of a scam to collect personal information.",
           "event_date": null,
           "evidence_for_ids": [],
           "evidence_against_ids": [
             "ws-13",
-            "ws-14",
-            "ws-15",
-            "fc-11"
+            "ws-11",
+            "fc-5",
+            "ws-10"
           ],
           "cited_ids": [
             "ws-13",
-            "ws-14",
-            "ws-15",
-            "fc-11"
+            "ws-11",
+            "fc-5"
           ],
-          "reasoning_en": "Government sources, including newsonair.gov.in and the Press Information Bureau (PIB), have explicitly stated that messages and links related to a Prime Minister's free laptop scheme are fake. They advise citizens to use official portals like myscheme.gov.in for authentic information on government schemes. Fact-checkers have also reported on imposter government websites used for free laptop scams. Therefore, the website mentioned in the claim is not official and is associated with a known scam.",
+          "reasoning_en": "The evidence overwhelmingly shows that the 'PM Free Laptop Scheme' is a fabrication used for fraudulent purposes. Multiple sources, including the government's PIB and fact-checking organizations, identify links associated with this fake scheme as phishing or clickbait attempts designed to steal personal data. One report notes that a similar fraudulent website was blocked.",
           "ai_generation": null
         }
       ]

@@ -1,7 +1,7 @@
 {
-  "prompt_version": "media-provenance-1.1+shared-1.0",
+  "prompt_version": "media-provenance-1.2+shared-1.1",
   "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-05T18:13:34+00:00",
+  "recorded_at": "2026-10-07T17:38:30+00:00",
   "outputs": [
     {
       "agent": "media_provenance",
@@ -16,7 +16,7 @@
           "title": "Chandrayaan-3: India makes historic landing near Moon's south pole",
           "published_at": null,
           "language": null,
-          "snippet_en": "This LinkedIn post celebrates India's Chandrayaan-3 mission making a historic landing near the Moon's south pole.",
+          "snippet_en": "This LinkedIn post discusses India's Chandrayaan-3 mission making a historic landing near the Moon's south pole.",
           "stance": "SUPPORTS",
           "rating_text": null,
           "tier": "TIER_3"
@@ -31,7 +31,7 @@
           "title": "Chandrayaan-3: India makes historic landing near Moon's south pole",
           "published_at": null,
           "language": null,
-          "snippet_en": "This LinkedIn post celebrates India's Chandrayaan-3 mission making a historic landing near the Moon's south pole.",
+          "snippet_en": "This LinkedIn post discusses India's Chandrayaan-3 mission making a historic landing near the Moon's south pole.",
           "stance": "SUPPORTS",
           "rating_text": null,
           "tier": "TIER_3"
@@ -39,26 +39,38 @@
         {
           "evidence_id": "",
           "agent": "media_provenance",
-          "claim_id": "c3",
-          "url": "https://www.linkedin.com/posts/sowmya-subramanian-pro_chandrayaan-3-india-makes-historic-landing-activity-7100100522522615808-fU2H",
-          "domain": "linkedin.com",
-          "publisher": "LinkedIn",
-          "title": "Chandrayaan-3: India makes historic landing near Moon's south pole",
+          "claim_id": "c1",
+          "url": "https://www.bbc.co.uk/news/world-asia-india-67142307",
+          "domain": "bbc.co.uk",
+          "publisher": "BBC News",
+          "title": "India aims to send astronaut to the Moon by 2040 - BBC News",
           "published_at": null,
           "language": null,
-          "snippet_en": "This LinkedIn post celebrates India's Chandrayaan-3 mission making a historic landing near the Moon's south pole.",
-          "stance": "SUPPORTS",
+          "snippet_en": "This BBC News article discusses India's future space ambitions, including sending an astronaut to the Moon by 2040.",
+          "stance": "CONTEXT",
           "rating_text": null,
-          "tier": "TIER_3"
+          "tier": "TIER_1"
+        },
+        {
+          "evidence_id": "",
+          "agent": "media_provenance",
+          "claim_id": "c2",
+          "url": "https://www.bbc.co.uk/news/world-asia-india-67142307",
+          "domain": "bbc.co.uk",
+          "publisher": "BBC News",
+          "title": "India aims to send astronaut to the Moon by 2040 - BBC News",
+          "published_at": null,
+          "language": null,
+          "snippet_en": "This BBC News article discusses India's future space ambitions, including sending an astronaut to the Moon by 2040.",
+          "stance": "CONTEXT",
+          "rating_text": null,
+          "tier": "TIER_1"
         }
       ],
       "source_assessment": null,
-      "ai_generation_signals": {
-        "signals_ai": [],
-        "signals_real": []
-      },
+      "ai_generation_signals": null,
       "earliest_appearance": null,
-      "notes_en": "The image is a stock photo of a crowd, not directly related to the Chandrayaan-3 mission. The full matches found are for pages discussing the Chandrayaan-3 mission or general crowd topics, but the image itself is generic.",
+      "notes_en": "The web detection results provided do not contain specific dates for the articles, making it difficult to determine the earliest appearance. The results also do not provide enough information to assess AI generation signals.",
       "timed_out": false
     }
   ]

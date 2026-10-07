@@ -1,35 +1,36 @@
 {
-  "prompt_version": "judge-1.0+shared-1.0",
+  "prompt_version": "judge-1.1+shared-1.1",
   "model_id": "gemini-2.5-pro",
-  "recorded_at": "2026-10-05T18:13:46+00:00",
+  "recorded_at": "2026-10-07T17:39:23+00:00",
   "outputs": [
     {
       "verdicts": [
         {
           "claim_id": "c1",
           "label": "FALSE",
-          "confidence": 95,
-          "what_is_true_en": "International health and telecommunication bodies, including the World Health Organization and the International Telecommunication Union, have confirmed there is no scientific evidence linking 5G technology to the spread of COVID-19. Viruses cannot travel on radio waves.",
+          "confidence": 100,
+          "what_is_true_en": "Scientific and health organizations worldwide have confirmed that 5G technology cannot spread viruses. COVID-19 is a respiratory illness spread through droplets from an infected person, and viruses cannot travel on radio waves or mobile networks.",
           "event_date": null,
-          "evidence_for_ids": [
-            "ws-7"
-          ],
+          "evidence_for_ids": [],
           "evidence_against_ids": [
+            "ws-1",
             "ws-2",
-            "ws-3",
             "fc-1",
             "fc-3",
-            "ws-4",
-            "ws-6"
+            "ws-3",
+            "fc-2",
+            "ws-8"
           ],
           "cited_ids": [
+            "ws-1",
             "ws-2",
-            "ws-3",
             "fc-1",
             "fc-3",
-            "ws-4"
+            "ws-3",
+            "fc-2",
+            "ws-8"
           ],
-          "reasoning_en": "Multiple Tier 1 sources, including the International Telecommunication Union (a UN agency), AFP Fact Check, and AP News, explicitly state there is no scientific basis for the claim that 5G is linked to COVID-19. They explain that viruses cannot travel on radio waves and that the pandemic also spread in countries without 5G networks. While one study (ws-7) found a statistical correlation between 5G presence and COVID-19 cases in the US, correlation does not imply causation. This single study is outweighed by the global scientific consensus and direct refutations from numerous expert bodies and fact-checkers.",
+          "reasoning_en": "An overwhelming consensus of scientific bodies, international organizations, and fact-checkers have debunked the claim that 5G technology spreads the coronavirus. Sources including the NIH, the UN's International Telecommunications Union, and the Mayo Clinic state that it is scientifically impossible for viruses to travel on radio waves or mobile networks. Fact-checkers have also rated specific claims linking 5G to COVID-19 waves or geographical spread as false. There is no evidence to support the claim.",
           "ai_generation": null
         }
       ]

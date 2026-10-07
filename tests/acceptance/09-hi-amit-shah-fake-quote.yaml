@@ -1,0 +1,13 @@
+# Gold sources and caption are PROPOSED (found via the Fact Check Tools API / web search on 2026-10-07)
+# because the notes with the intended URLs did not arrive. Replace with the notes' URLs when confirmed.
+# Media lives in samples/ (gitignored, local only): the case is skipped where samples/ is absent.
+id: 09-hi-amit-shah-fake-quote
+case: 9
+# Fake NDTV India graphic attributing a quote about social media workers and 5 kg ration to Amit Shah.
+input:
+  file: samples/9.png
+  text: "अमित शाह जी ने खुद कहा, सुनिए"
+language: hi
+expected: [FALSE, NOT_ENOUGH_EVIDENCE]   # acceptance case 9: FALSE or NOT_ENOUGH_EVIDENCE, never TRUE
+gold:
+  - https://factly.in/the-viral-ndtv-graphic-claiming-amit-shah-said-party-workers-on-social-media-survive-on-the-5-kg-ration-provided-by-their-government-is-fake/

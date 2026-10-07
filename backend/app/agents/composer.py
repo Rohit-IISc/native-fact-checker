@@ -107,7 +107,8 @@ _HEADLINE = {"TRUE": "True", "FALSE": "False", "MISLEADING": "Misleading", "SCAM
              "NOT_ENOUGH_EVIDENCE": "Not confirmed"}
 
 
-def fallback_answer(claim: Claim, verdict: JudgeVerdict, evidence: list[Evidence]) -> AnswerText:
+def fallback_answer(claim: Claim, verdict: JudgeVerdict, evidence: list[Evidence],
+                    split_readings: list[str] | None = None) -> AnswerText:
     """English answer from the verdict itself, used only if the composer fails."""
     by_id = {e.evidence_id: e for e in evidence}
     name = lambda i: by_id[i].publisher or by_id[i].domain or "a source"  # noqa: E731
@@ -125,4 +126,5 @@ def fallback_answer(claim: Claim, verdict: JudgeVerdict, evidence: list[Evidence
         audio_script=f"The post claims: {claim.claim_en}. Our verdict: {head}. {verdict.what_is_true_en} "
                      f"{phrase} {spoken}".strip(),
         card_lines=[head, claim.claim_en[:80], verdict.what_is_true_en[:80]],
+        panel_readings=list(split_readings or []),
     )

@@ -7,6 +7,7 @@ from typing import Any
 from app.ids import ulid
 from app.models import (
     AnswerText,
+    CheckResult,
     Claim,
     ClaimResult,
     Evidence,
@@ -145,6 +146,18 @@ def claim_result_from_doc(doc: dict[str, Any], language: str | None = None) -> C
     )
 
 
+def cached_result(check_id: str, hit: dict) -> CheckResult:
+    """CheckResult for a tier 1 cache hit (API and harness)."""
+    if hit["non_checkable"]:
+        nc = hit["non_checkable"]
+        return CheckResult(check_id=check_id, status="DONE", content_language=nc.get("content_language"),
+                           non_checkable_type=nc["type"], non_checkable_message=nc.get("message"),
+                           cache_tier_hit="T1", latency_ms=0)
+    claims = [claim_result_from_doc(v) for v in hit["verdicts"]]
+    return CheckResult(check_id=check_id, status="DONE", content_language=hit["verdicts"][0].get("content_language"),
+                       claims=claims, cache_tier_hit="T1", latency_ms=0)
+
+
 def public_result(doc: dict[str, Any], language: str | None) -> dict[str, Any]:
     """Whitelisted fields for the public result page. No user data."""
     cr = claim_result_from_doc(doc, language)
@@ -155,6 +168,7 @@ def public_result(doc: dict[str, Any], language: str | None) -> dict[str, Any]:
         "label": cr.label.value,
         "confidence": cr.confidence,
         "band": cr.band,
+        "panel_outcome": cr.panel_outcome.value,
         "what_is_true": cr.answer.what_is_true,
         "answer": cr.answer.model_dump(mode="json"),
         "answer_en": cr.answer_en.model_dump(mode="json"),

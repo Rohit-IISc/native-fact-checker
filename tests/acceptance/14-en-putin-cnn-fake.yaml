@@ -1,0 +1,15 @@
+# Gold sources and caption are PROPOSED (found via the Fact Check Tools API / web search on 2026-10-07)
+# because the notes with the intended URLs did not arrive. Replace with the notes' URLs when confirmed.
+# Media lives in samples/ (gitignored, local only): the case is skipped where samples/ is absent.
+id: 14-en-putin-cnn-fake
+case: 14
+# X post screenshot: a morphed CNN graphic claiming Putin warned India not to interfere (Feb 2022).
+input:
+  file: samples/14.png
+  text: "Putin's warning to India: do not interfere, otherwise be ready to face the consequences"
+language: en
+expected: [FALSE]
+gold:
+  - https://www.altnews.in/did-putin-warns-india-and-say-not-to-interfare-otherwise-be-ready-to-face-the-consequences/
+  - https://factly.in/morphed-cnn-news-bulletin-reporting-shared-as-putins-threatening-message-to-india/
+  - https://www.boomlive.in/fact-check/world/russia-ukraine-crisis-war-kyiv-vladimir-putin-india-viral-post-fake-news-fact-check-16949

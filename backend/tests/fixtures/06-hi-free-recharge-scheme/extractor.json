@@ -1,12 +1,12 @@
 {
-  "prompt_version": "extractor-1.2+shared-1.0",
+  "prompt_version": "extractor-1.6+shared-1.1",
   "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-05T18:12:05+00:00",
+  "recorded_at": "2026-10-07T17:35:12+00:00",
   "outputs": [
     {
       "content_language": "hi-IN",
       "content_script": "Deva",
-      "summary_en": "The message claims that Prime Minister Modi is offering 3 months of free mobile recharge to all Indians. It instructs users to click a provided link to avail the offer, stating it is valid only for today.",
+      "summary_en": "A social media post claims that Prime Minister Modi is offering all Indians 3 months of free mobile recharge. It instructs users to click a link to avail the offer, stating it is only valid until today.",
       "checkable": true,
       "non_checkable_type": null,
       "claims": [
@@ -16,41 +16,26 @@
           "claim_en": "Prime Minister Modi is giving all Indians 3 months of free mobile recharge.",
           "claim_type": "FINANCIAL_OFFER",
           "entities": [
-            "Prime Minister Modi"
+            "Prime Minister Modi",
+            "Indians"
           ],
           "place": "India",
-          "claimed_date": null,
+          "claimed_date": "2026-10-07",
           "time_sensitivity": "EVERGREEN",
           "search_queries_original": [
             "प्रधानमंत्री मोदी मुफ्त मोबाइल रिचार्ज",
             "मोदी 3 महीने फ्री रिचार्ज"
           ],
           "search_queries_en": [
-            "Prime Minister Modi free mobile recharge",
+            "PM Modi free mobile recharge",
             "Modi 3 months free recharge scheme"
-          ]
-        },
-        {
-          "claim_id": "claim2",
-          "claim_original": "ऑफर सिर्फ आज तक!",
-          "claim_en": "The offer for free mobile recharge is only valid today, October 5, 2026.",
-          "claim_type": "FINANCIAL_OFFER",
-          "entities": [],
-          "place": null,
-          "claimed_date": "2026-10-05",
-          "time_sensitivity": "LIVE_EVENT",
-          "search_queries_original": [
-            "मुफ्त रिचार्ज आज अंतिम दिन",
-            "फ्री मोबाइल रिचार्ज ऑफर"
-          ],
-          "search_queries_en": [
-            "free recharge offer today last day",
-            "mobile recharge offer validity"
           ]
         }
       ],
-      "extra_claims_not_checked": [],
-      "ocr_text": "प्रधानमंत्री मोदी सभी भारतीयों को 3 महीने का मुफ्त मोबाइल रिचार्ज दे रहे हैं। नीचे दिए गए लिंक पर क्लिक करके अभी अपना रिचार्ज पाएं, ऑफर सिर्फ आज तक!",
+      "extra_claims_not_checked": [
+        "The offer is only valid until today."
+      ],
+      "ocr_text": null,
       "transcript": null,
       "visual_description_en": null,
       "ai_generation_signals": null,

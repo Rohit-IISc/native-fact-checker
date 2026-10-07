@@ -1,0 +1,16 @@
+# Gold sources and caption are PROPOSED (found via the Fact Check Tools API / web search on 2026-10-07)
+# because the notes with the intended URLs did not arrive. Replace with the notes' URLs when confirmed.
+# Media lives in samples/ (gitignored, local only): the case is skipped where samples/ is absent.
+id: 10b-en-modi-shah-old-photo-ai
+case: 10
+# Instagram post: an AI-generated image passed off as an old photograph of Narendra Modi and Amit Shah.
+input:
+  file: samples/10b.png
+  text: "An old photograph of our Prime Minister and Home Minister Amit Shah."
+language: en
+expected: [FALSE, MISLEADING]
+expect_ai_generation: true
+gold:
+  - https://www.boomlive.in/fact-check/ai-image-of-narendra-modi-amit-shah-passed-off-as-old-photo-32067
+  - https://www.thequint.com/news/webqoof/ai-generated-image-shared-to-show-an-old-photograph-of-pm-modi-and-amit-shah-false-claim-fact-check
+  - https://www.vishvasnews.com/ai-check/fact-check-pm-modi-and-amit-shah-young-viral-photo-reveals-it-is-ai-generated-image/

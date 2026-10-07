@@ -1,45 +1,40 @@
 {
-  "prompt_version": "web-search-2.1+shared-1.0",
+  "prompt_version": "web-search-2.1+shared-1.1",
   "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-05T18:12:05+00:00",
+  "recorded_at": "2026-10-07T17:35:12+00:00",
   "outputs": [
     {
-      "text": "Claim c1: प्रधानमंत्री मोदी सभी भारतीयों को 3 महीने का मुफ्त मोबाइल रिचार्ज दे रहे हैं। (Prime Minister Modi is giving all Indians 3 months of free mobile recharge.)\n\n1.  **Publisher**: Newsonair (Akashvani News)\n    **Page title**: Govt debunks PM Modi's video promising school children will receive free recharge on their mobiles\n    **Publish date**: September 17, 2026\n    **What it says about the claim**: The government has debunked a video purportedly showing Prime Minister Narendra Modi promising free recharges for school-going children, stating that the claim is fake and the video was created by artificial intelligence (AI). [1] The Press Information Bureau's (PIB) Fact Check Unit advised verifying such information only through the official website http://myscheme.gov.in. [1]\n\n2.  **Publisher**: Hindustan Times\n    **Page title**: Fact Check: Viral posts claim BJP, PM Modi are offering free recharge after Lok Sabha election results, here's the truth\n    **Publish date**: June 7, 2024\n    **What it says about the claim**: Similar posts claiming PM Modi's free recharge schemes have been debunked by the PIB, which clarified that neither the government nor PM Modi is running any such scheme. [2] The article warns against clicking on unknown or suspicious links, as they may lead to malware or data theft. [2]\n\n3.  **Publisher**: LatestLY\n    **Page title**: Is PM Narendra Modi Offering 3 Months of Mobile Recharge for Free? Fact Check Calls Claim Fake\n    **Publish date**: September 4, 2026\n    **What it says about the claim**: PIB Fact Check debunked a viral message claiming PM Narendra Modi is offering three months of free mobile recharge to all Indian users, confirming that no such scheme exists. [3] The government warned citizens against fraudulent links and advised against falling for misleading content. [3]\n\n4.  **Publisher**: Akashvani News\n    **Page title**: Govt debunks fake video claiming PM Modi announced free three-month recharge\n    **Publish date**: August 18, 2026\n    **What it says about the claim**: The government debunked a social media video claiming Prime Minister Narendra Modi announced a free three-month recharge for all citizens, stating the claim is fake and the video is AI-generated. [4] The PIB Fact Check Unit clarified that no such investment scheme has been endorsed by the Prime Minister. [4]\n\n5.  **Publisher**: Jagran\n    **Page title**: तीन महीने वाला रिचार्ज फ्री दे रहे मोदी, लिंक पर क्लिक कीजिए... क्‍या आपके पास आ रहा है ऐसा मैसेज? पढ़ें इसका सच - Cyber Crime cyber thugs modi give three month free recharge\n    **Publish date**: June 13, 2024\n    **What it says about the claim**: This article reports on cybercriminals sharing links on social media, particularly WhatsApp, claiming that PM Narendra Modi is giving a free three-month recharge worth 599 rupees to all mobile users. [5] It highlights that many people, including government officials, have been duped by such messages. [5]\n\n6.  **Publisher**: Prabhat Khabar\n    **Page title**: पीएम मोदी दे रहे हैं 3 महीने का मुफ्त रिचार्ज? जानिए सच क्या है\n    **Publish date**: September 7, 2026\n    **What it says about the claim**: PIB Fact Check clarified that neither the Prime Minister nor the central government is running any such scheme, and there has been no official announcement or confirmation from telecom companies. [6] The claim is described as misleading and fake, and people are advised to be cautious and not forward such messages. [6]\n\nClaim c2: ऑफर सिर्फ आज तक! (The offer for free mobile recharge is only valid today, October 5, 2026.)\n\n1.  **Publisher**: Hindustan Times\n    **Page title**: Fact Check: Viral posts claim BJP, PM Modi are offering free recharge after Lok Sabha election results, here's the truth\n    **Publish date**: June 7, 2024\n    **What it says about the claim**: This article debunks claims of free recharge schemes by PM Modi, stating that such posts are fake and often contain links to dubious websites. [2] It implies that any urgency or limited-time offer associated with such schemes is a tactic to defraud users. [2]\n\n2.  **Publisher**: LatestLY\n    **Page title**: Is PM Narendra Modi Offering 3 Months of Mobile Recharge for Free? Fact Check Calls Claim Fake\n    **Publish date**: September 4, 2026\n    **What it says about the claim**: This article debunks the claim of PM Modi offering free mobile recharge, stating that the message is a fraudulent attempt to mislead and cheat people. [3] The mention of a limited-time offer is a common characteristic of such scams. [3]\n\n3.  **Publisher**: Jagran\n    **Page title**: तीन महीने वाला रिचार्ज फ्री दे रहे मोदी, लिंक पर क्लिक कीजिए... क्‍या आपके पास आ रहा है ऐसा मैसेज? पढ़ें इसका सच - Cyber Crime cyber thugs modi give three month free recharge\n    **Publish date**: June 13, 2024\n    **What it says about the claim**: This article discusses how cybercriminals use messages claiming free recharge offers from PM Modi to trick people into clicking malicious links. [5] The urgency implied by \"today only\" or similar phrases is a common tactic in these scams to pressure users. [5]\n\n4.  **Publisher**: Sambad - YouTube\n    **Page title**: PM Modi 3-Month Free Recharge: Real or Fake? || Sambad\n    **Publish date**: January 27, 2026\n    **What it says about the claim**: This video warns about a viral video claiming PM Modi is offering a free 3-month mobile recharge, identifying it as a dangerous trap. [7] Such scams often create a sense of urgency to entice users to act quickly without verifying the information. [7]\n\n5.  **Publisher**: Prabhat Khabar\n    **Page title**: पीएम मोदी दे रहे हैं 3 महीने का मुफ्त रिचार्ज? जानिए सच क्या है\n    **Publish date**: September 7, 2026\n    **What it says about the claim**: This article clarifies that claims of PM Modi offering free mobile recharge are misleading and fake, with no official announcement or confirmation. [6] The implication is that any claim of a limited-time offer is part of the fraudulent nature of these messages. [6]",
+      "text": "- **Claim c1**: Prime Minister Modi is giving all Indians 3 months of free mobile recharge.\n  - **Source 1**: newsonair.gov.in, \"Govt debunks fake video claiming PM Modi announced free three-month recharge ...\", August 18 2026. The government has debunked a video circulating on social media claiming that Prime Minister Narendra Modi announced a free three-month recharge for all citizens. The Press Information Bureau (PIB) Fact Check Unit stated that the claim is fake and the viral video is AI-generated, adding that no such investment scheme has been endorsed by the Prime Minister. [1]\n  - **Source 2**: latestly.com, \"Is PM Narendra Modi Offering 3 Months of Mobile Recharge for Free? Fact Check Calls Claim Fake.\", September 04 2026. PIB Fact Check explicitly debunked the claim that PM Narendra Modi is offering three months of free mobile recharge to all Indian users, confirming that no such scheme exists and warning citizens against fraudulent links. [2]\n  - **Source 3**: etnownews.com, \"PIB Fact Check: PM Modi is NOT giving 3 months free mobile recharge to all Indian users; here's the truth\", September 05 2026. PIB Fact Check confirmed that the claim of Prime Minister Narendra Modi giving 3 months of free mobile recharge to all Indian users is a new online scam and completely fake. They advised citizens to stay vigilant and avoid falling victim to such fraudulent schemes. [3]\n  - **Source 4**: prabhatkhabar.com, \"PM Modi Free Recharge: क्या पीएम मोदी दे रहे हैं 3 महीने का फ्री रिचार्ज? जानें क्या है सच्चाई\", September 07 2026. PIB Fact Check clarified that neither the Prime Minister nor the central government is running any such scheme, and there has been no official announcement or confirmation from any telecom company. [4]\n  - **Source 5**: indiatimes.com, \"PIB Fact Check Debunks Viral WhatsApp Message Claiming PM Modi Is Offering 3 Months Free Recharge\", June 11 2024. PIB Fact Check debunked a viral WhatsApp message offering free recharge by PM Narendra Modi, clarifying that the claim is fake and the Government of India is not running any such scheme. [5]\n  - **Source 6**: hindustantimes.com, \"Fact Check: Is PM Modi offering free mobile recharge for 3 months? Here's the truth\", June 07 2024. The Press Information Bureau (PIB) clarified that the Indian Government or PM Modi is not running any such free recharge scheme, and such posts often contain links to dubious websites that can lead to spam or phishing. [6]",
       "sources": [
         {
           "n": 1,
-          "url": "https://newsonair.gov.in/govt-debunks-pm-modis-video-promising-school-children-will-receive-free-recharge-on-their-mobiles/",
-          "domain": "newsonair.gov.in"
-        },
-        {
-          "n": 2,
-          "url": "https://www.hindustantimes.com/india-news/fact-check-viral-posts-claim-bjp-pm-modi-are-offering-free-recharge-after-lok-sabha-election-results-heres-the-truth-101717742707645.html",
-          "domain": "hindustantimes.com"
-        },
-        {
-          "n": 3,
-          "url": "https://www.latestly.com/fact-check/is-pm-narendra-modi-offering-3-months-of-mobile-recharge-for-free-fact-check-calls-claim-fake-7589632.html",
-          "domain": "latestly.com"
-        },
-        {
-          "n": 4,
           "url": "https://newsonair.gov.in/govt-debunks-fake-video-claiming-pm-modi-announced-free-three-month-recharge/",
           "domain": "newsonair.gov.in"
         },
         {
-          "n": 5,
-          "url": "https://www.jagran.com/uttarakhand/nainital-cyber-crime-cyber-thugs-modi-give-three-month-free-recharge-23738070.html",
-          "domain": "jagran.com"
+          "n": 2,
+          "url": "https://www.latestly.com/fact-check/is-pm-narendra-modi-offering-3-months-of-mobile-recharge-for-free-fact-check-calls-claim-fake-7589632.html",
+          "domain": "latestly.com"
         },
         {
-          "n": 6,
+          "n": 3,
+          "url": "https://www.etnownews.com/news/pm-modi-offering-3-months-of-free-mobile-recharge-pib-fact-check-debunks-viral-claim-check-details-article-156046145",
+          "domain": "etnownews.com"
+        },
+        {
+          "n": 4,
           "url": "https://www.prabhatkhabar.com/technology/pm-modi-free-recharge-claim-fake-pib-fact-check",
           "domain": "prabhatkhabar.com"
         },
         {
-          "n": 7,
-          "url": "https://www.youtube.com/watch?v=c3DYoHu3XgY",
-          "domain": "youtube.com"
+          "n": 5,
+          "url": "https://timesofindia.indiatimes.com/technology/tech-news/this-whatsapp-message-about-governments-free-recharge-scheme-is-fake/articleshow/110879642.cms",
+          "domain": "indiatimes.com"
+        },
+        {
+          "n": 6,
+          "url": "https://www.hindustantimes.com/india-news/fact-check-viral-posts-claim-bjp-pm-modi-are-offering-free-recharge-after-lok-sabha-election-results-heres-the-truth-101717742707645.html",
+          "domain": "hindustantimes.com"
         }
       ],
       "queries": 4

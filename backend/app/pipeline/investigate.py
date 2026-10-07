@@ -230,7 +230,7 @@ async def investigate(store: Store, llm: LLM, tools: Tools, req: CheckRequest, e
             log_event(log, "composer failed", logging.WARNING, reason=str(e)[:300])
             inv.stage_errors["composer"] = str(e)[:300]
             inv.degraded = True
-            en = composer.fallback_answer(c, d.verdict, inv.pack.evidence)
+            en = composer.fallback_answer(c, d.verdict, inv.pack.evidence, d.split_readings)
             return en, en
 
     pairs = await timed("composing", asyncio.gather(*(answer(c) for c in claims)))

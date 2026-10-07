@@ -1,0 +1,15 @@
+# Gold sources and caption are PROPOSED (found via the Fact Check Tools API / web search on 2026-10-07)
+# because the notes with the intended URLs did not arrive. Replace with the notes' URLs when confirmed.
+# Media lives in samples/ (gitignored, local only): the case is skipped where samples/ is absent.
+id: 10a-en-mumbai-flyover-bus-ai
+case: 10
+# X post: AI-generated image of a bus stuck where a Mira-Bhayandar flyover narrows.
+input:
+  file: samples/10a.png
+  text: "Gujarat model of development in Mumbai."
+language: en
+expected: [FALSE, MISLEADING]   # BOOM: False (AI image); Alt News: Misleading (the narrowing is real, the photo is AI)
+expect_ai_generation: true
+gold:
+  - https://www.boomlive.in/fact-check/fake-news-mira-road-flyover-bus-stuck-ai-generated-factcheck-30657
+  - https://www.altnews.in/bus-stuck-at-narrowing-of-lanes-on-mumbai-flyover-no-photo-shared-by-kerala-congress-is-ai-generated/

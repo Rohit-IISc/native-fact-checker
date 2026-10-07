@@ -32,6 +32,8 @@ export interface AnswerText {
   sources_spoken: string
   audio_script: string
   card_lines: string[]
+  /** Only when the reviewers disagreed (panel_outcome SPLIT): one item per reading. */
+  panel_readings?: string[]
 }
 
 export interface AIGeneration {
@@ -124,6 +126,7 @@ export interface PublicResult {
   claim_en: string
   label: Label
   confidence: number
+  panel_outcome?: string
   band: Band
   answer: AnswerText
   answer_en: AnswerText

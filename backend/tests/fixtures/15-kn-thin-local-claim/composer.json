@@ -1,43 +1,45 @@
 {
-  "prompt_version": "composer-1.1+shared-1.0",
+  "prompt_version": "composer-1.2+shared-1.1",
   "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-05T18:13:21+00:00",
+  "recorded_at": "2026-10-07T17:39:19+00:00",
   "outputs": [
     {
       "language": "kn-IN",
-      "headline": "ಸಾಕಷ್ಟು ಪುರಾವೆಗಳಿಲ್ಲ: ಮೈಸೂರಿನ ಕುಕ್ಕರಹಳ್ಳಿ ಕೆರೆಯಲ್ಲಿ ಮೊಸಳೆಗಳು ಕಾಣಿಸಿಕೊಂಡ ಬಗ್ಗೆ ಖಚಿತವಿಲ್ಲ",
-      "summary": "ಮೈಸೂರಿನ ಕುಕ್ಕರಹಳ್ಳಿ ಕೆರೆಯಲ್ಲಿ ಮೊಸಳೆಗಳು ಕಾಣಿಸಿಕೊಂಡ ಬಗ್ಗೆ ಸಾಮಾಜಿಕ ಮಾಧ್ಯಮದಲ್ಲಿ ಹರಿದಾಡುತ್ತಿರುವ ಪೋಸ್ಟ್ ಅನ್ನು ಪರಿಶೀಲಿಸಲಾಗಿದೆ, ಆದರೆ ಇದಕ್ಕೆ ಯಾವುದೇ ಖಚಿತ ಪುರಾವೆಗಳು ಲಭ್ಯವಿಲ್ಲ.",
-      "what_post_claims": "ಮೈಸೂರಿನ ಕುಕ್ಕರಹಳ್ಳಿ ಕೆರೆಯಲ್ಲಿ ನಿನ್ನೆ ಸಂಜೆ ಎರಡು ಮೊಸಳೆಗಳು ಕಾಣಿಸಿಕೊಂಡಿವೆ ಎಂದು ಪೋಸ್ಟ್ ಹೇಳುತ್ತದೆ.",
-      "what_is_true": "ವರ್ಷಗಳಲ್ಲಿ ಮೈಸೂರಿನ ಕುಕ್ಕರಹಳ್ಳಿ ಕೆರೆಯಲ್ಲಿ ಮೊಸಳೆಗಳು ಕಾಣಿಸಿಕೊಂಡಿರುವ ಹಲವು ನಿದರ್ಶನಗಳಿದ್ದರೂ, ಅಕ್ಟೋಬರ್ 3, 2026 ರಂದು ಎರಡು ಮೊಸಳೆಗಳು ಕಾಣಿಸಿಕೊಂಡಿವೆ ಎಂಬುದಕ್ಕೆ ಯಾವುದೇ ಪುರಾವೆಗಳಿಲ್ಲ.",
+      "headline": "ಸಾಕಷ್ಟು ಪುರಾವೆಗಳಿಲ್ಲ: ಮೈಸೂರಿನ ಕುಕ್ಕರಹಳ್ಳಿ ಕೆರೆಯಲ್ಲಿ ಮೊಸಳೆಗಳ ದೃಶ್ಯದ ಬಗ್ಗೆ",
+      "summary": "ಮೈಸೂರಿನ ಕುಕ್ಕರಹಳ್ಳಿ ಕೆರೆಯಲ್ಲಿ ಅಕ್ಟೋಬರ್ 6, 2026 ರಂದು ಎರಡು ಮೊಸಳೆಗಳು ಕಾಣಿಸಿಕೊಂಡಿವೆ ಎಂಬ ಹೇಳಿಕೆಯನ್ನು ನಾವು ದೃಢೀಕರಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ.",
+      "what_post_claims": "ಮೈಸೂರಿನ ಕುಕ್ಕರಹಳ್ಳಿ ಕೆರೆಯಲ್ಲಿ ಅಕ್ಟೋಬರ್ 6, 2026 ರಂದು ಸಂಜೆ ಎರಡು ಮೊಸಳೆಗಳು ಕಾಣಿಸಿಕೊಂಡಿವೆ ಎಂದು ಪೋಸ್ಟ್ ಹೇಳುತ್ತದೆ.",
+      "what_is_true": "ಮೈಸೂರಿನ ಕುಕ್ಕರಹಳ್ಳಿ ಕೆರೆಯು ಮೊಸಳೆಗಳಿಗೆ ಹೆಸರುವಾಸಿಯಾಗಿದೆ ಮತ್ತು ವರ್ಷಗಳಿಂದ ಅಲ್ಲಿ ಮೊಸಳೆಗಳು ಕಾಣಿಸಿಕೊಂಡಿವೆ. ಆದರೆ, ಅಕ್ಟೋಬರ್ 6, 2026 ರಂದು ಎರಡು ಮೊಸಳೆಗಳು ಕಾಣಿಸಿಕೊಂಡಿವೆ ಎಂಬುದಕ್ಕೆ ಯಾವುದೇ ವಿಶ್ವಾಸಾರ್ಹ ಪುರಾವೆಗಳು ಲಭ್ಯವಿಲ್ಲ.",
       "evidence_for": [],
       "evidence_against": [],
       "confidence_phrase": "ನಾವು ಖಚಿತವಾಗಿಲ್ಲ",
-      "sources_spoken": "ಯಾವುದೇ ನಿರ್ದಿಷ್ಟ ಮೂಲಗಳು ಲಭ್ಯವಿಲ್ಲ",
-      "audio_script": "ಮೈಸೂರಿನ ಕುಕ್ಕರಹಳ್ಳಿ ಕೆರೆಯಲ್ಲಿ ನಿನ್ನೆ ಸಂಜೆ ಎರಡು ಮೊಸಳೆಗಳು ಕಾಣಿಸಿಕೊಂಡಿವೆ ಎಂದು ಸಾಮಾಜಿಕ ಮಾಧ್ಯಮದಲ್ಲಿ ಒಂದು ಪೋಸ್ಟ್ ಹರಿದಾಡುತ್ತಿದೆ. ಆದರೆ, ಈ ಹೇಳಿಕೆಗೆ ಸಾಕಷ್ಟು ಪುರಾವೆಗಳು ಲಭ್ಯವಿಲ್ಲ. ಕುಕ್ಕರಹಳ್ಳಿ ಕೆರೆಯಲ್ಲಿ ಮೊಸಳೆಗಳು ಕಾಣಿಸಿಕೊಂಡಿರುವ ಹಲವು ನಿದರ್ಶನಗಳು ಹಿಂದೆ ಇವೆ. ಆದರೆ, ಅಕ್ಟೋಬರ್ 3, 2026 ರಂದು ಎರಡು ಮೊಸಳೆಗಳು ಕಾಣಿಸಿಕೊಂಡಿವೆ ಎಂಬುದಕ್ಕೆ ಯಾವುದೇ ಖಚಿತ ಮಾಹಿತಿ ಇಲ್ಲ. ನಾವು ಈ ಬಗ್ಗೆ ಖಚಿತವಾಗಿಲ್ಲ. ಈ ಮಾಹಿತಿಗೆ ಯಾವುದೇ ನಿರ್ದಿಷ್ಟ ಮೂಲಗಳು ಲಭ್ಯವಿಲ್ಲ.",
+      "sources_spoken": "ನಮ್ಮ ಸಂಶೋಧನೆಯ ಪ್ರಕಾರ",
+      "audio_script": "ಮೈಸೂರಿನ ಕುಕ್ಕರಹಳ್ಳಿ ಕೆರೆಯಲ್ಲಿ ಅಕ್ಟೋಬರ್ 6, 2026 ರಂದು ಸಂಜೆ ಎರಡು ಮೊಸಳೆಗಳು ಕಾಣಿಸಿಕೊಂಡಿವೆ ಎಂದು ಪೋಸ್ಟ್ ಹೇಳುತ್ತದೆ. ಈ ಹೇಳಿಕೆಯನ್ನು ದೃಢೀಕರಿಸಲು ನಮಗೆ ಸಾಕಷ್ಟು ಪುರಾವೆಗಳು ಸಿಕ್ಕಿಲ್ಲ. ಮೈಸೂರಿನ ಕುಕ್ಕರಹಳ್ಳಿ ಕೆರೆಯು ಮೊಸಳೆಗಳಿಗೆ ಹೆಸರುವಾಸಿಯಾಗಿದೆ ಮತ್ತು ವರ್ಷಗಳಿಂದ ಅಲ್ಲಿ ಮೊಸಳೆಗಳು ಕಾಣಿಸಿಕೊಂಡಿವೆ. ಆದರೆ, ಅಕ್ಟೋಬರ್ 6, 2026 ರಂದು ಎರಡು ಮೊಸಳೆಗಳು ಕಾಣಿಸಿಕೊಂಡಿವೆ ಎಂಬುದಕ್ಕೆ ಯಾವುದೇ ವಿಶ್ವಾಸಾರ್ಹ ಪುರಾವೆಗಳು ಲಭ್ಯವಿಲ್ಲ. ನಾವು ಖಚಿತವಾಗಿಲ್ಲ. ನಮ್ಮ ಸಂಶೋಧನೆಯ ಪ್ರಕಾರ, ಈ ನಿರ್ದಿಷ್ಟ ಘಟನೆಯನ್ನು ದೃಢೀಕರಿಸುವ ಯಾವುದೇ ವರದಿಗಳು ಕಂಡುಬಂದಿಲ್ಲ.",
       "card_lines": [
         "ಸಾಕಷ್ಟು ಪುರಾವೆಗಳಿಲ್ಲ",
-        "ಕುಕ್ಕರಹಳ್ಳಿ ಕೆರೆಯಲ್ಲಿ ಮೊಸಳೆಗಳು?",
-        "ಖಚಿತ ಮಾಹಿತಿ ಲಭ್ಯವಿಲ್ಲ",
-        "ಮುಂದೆ ಕಳುಹಿಸುವ ಮೊದಲು ಪರಿಶೀಲಿಸಿ"
-      ]
+        "ಕುಕ್ಕರಹಳ್ಳಿ ಕೆರೆಯಲ್ಲಿ ಮೊಸಳೆಗಳು ಕಾಣಿಸಿಕೊಂಡಿವೆ ಎಂಬ ಹೇಳಿಕೆ",
+        "ದೃಢೀಕರಿಸಲು ಯಾವುದೇ ಪುರಾವೆಗಳಿಲ್ಲ",
+        "ಕೆರೆಯಲ್ಲಿ ಮೊಸಳೆಗಳು ಇರುವುದು ಸಾಮಾನ್ಯ"
+      ],
+      "panel_readings": []
     },
     {
       "language": "en",
-      "headline": "NOT ENOUGH EVIDENCE: Crocodiles in Kukkarahalli Lake, Mysuru, on October 3, 2026",
-      "summary": "We could not confirm if two crocodiles were seen in Kukkarahalli Lake in Mysuru on October 3, 2026.",
-      "what_post_claims": "The post claims that two crocodiles were seen in Kukkarahalli Lake in Mysuru on the evening of October 3, 2026.",
-      "what_is_true": "While crocodiles have been sighted in Kukkarahalli Lake in Mysuru on several occasions over the years, there is no evidence to confirm a sighting of two crocodiles on October 3, 2026.",
+      "headline": "Unconfirmed: Crocodiles in Kukkarahalli Lake",
+      "summary": "We could not confirm the claim that two crocodiles were seen in Kukkarahalli Lake on October 6, 2026.",
+      "what_post_claims": "The post claims that two crocodiles were sighted in Kukkarahalli Lake in Mysuru on the evening of October 6, 2026.",
+      "what_is_true": "Kukkarahalli Lake in Mysuru is a known habitat for crocodiles, and sightings have been reported there over the years. However, there is no credible evidence to confirm a specific sighting of two crocodiles on October 6, 2026.",
       "evidence_for": [],
       "evidence_against": [],
       "confidence_phrase": "we are not sure",
       "sources_spoken": "our research",
-      "audio_script": "The post claims that two crocodiles were seen in Kukkarahalli Lake in Mysuru on the evening of October 3, 2026. We found that there is not enough evidence to confirm this claim. While crocodiles have been sighted in Kukkarahalli Lake in Mysuru on several occasions over the years, we could not find any evidence to confirm a sighting of two crocodiles on October 3, 2026. We are not sure about this claim, based on our research. We advise you not to share this post until it can be confirmed.",
+      "audio_script": "The post claims that two crocodiles were sighted in Kukkarahalli Lake in Mysuru on the evening of October 6, 2026. We could not confirm this claim. While Kukkarahalli Lake is known to have crocodiles and sightings have occurred before, there is no credible evidence to confirm a specific sighting of two crocodiles on October 6, 2026. We are not sure about this claim. This information comes from our research.",
       "card_lines": [
-        "NOT ENOUGH EVIDENCE",
-        "Crocodiles in Kukkarahalli Lake, Mysuru",
-        "No evidence for October 3, 2026 sighting",
-        "Do not share until confirmed"
-      ]
+        "Unconfirmed: Crocodiles in Kukkarahalli Lake",
+        "Claim: Two crocodiles seen on October 6, 2026.",
+        "Truth: Lake has crocodiles, but no confirmed sighting on that date.",
+        "Source: Our research"
+      ],
+      "panel_readings": []
     }
   ]
 }

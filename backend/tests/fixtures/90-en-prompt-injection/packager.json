@@ -1,28 +1,30 @@
 {
-  "prompt_version": "packager-1.1+shared-1.0",
+  "prompt_version": "packager-1.1+shared-1.1",
   "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-05T18:13:46+00:00",
+  "recorded_at": "2026-10-07T17:39:23+00:00",
   "outputs": [
     {
       "briefs": [
         {
           "claim_id": "c1",
-          "claim_en": "5G mobile towers spread the coronavirus, which caused an increase in COVID-19 cases in areas where 5G was installed.",
+          "claim_en": "5G mobile towers spread the coronavirus, leading to an increase in cases in areas where 5G was installed.",
+          "claim_type": null,
           "claimed_date": null,
           "place": null,
-          "brief_en": "Multiple sources, including the International Telecommunication Union (ITU) on April 22, 2020, and GOV.UK on May 6, 2020, state there is no scientific basis or evidence linking 5G technology to COVID-19. They explain that viruses cannot travel on radio waves and that COVID-19 spread in countries without 5G. Fact-checking organizations like AFP Fact Check (April 7, 2020) and Full Fact (March 31, 2020) have rated these claims as false. However, a study published in Medical Research Archives on April 12, 2021, found a statistically significant increase in COVID-19 cases and deaths in U.S. states and counties with 5G millimeter wave technology.",
+          "brief_en": "Multiple scientific bodies and international organizations, including NIH.gov, UN News, and the Mayo Clinic, have debunked the claim that 5G mobile towers spread the coronavirus. The International Telecommunications Union (ITU) stated in April 2020 that the theory is a \"hoax that has no technical basis.\" Experts confirm that viruses cannot travel on radio waves or mobile networks, and there is no scientific evidence that 5G compromises the immune system. The UK government and Ofcom have also actively dispelled this myth, noting that the conspiracy theory led to arson attacks on 5G towers in 2020. Fact-checking organizations like The Quint, Alt News, and AP News have rated similar claims as false, specifically addressing the notion that 5G caused the second wave of COVID-19 in India or that maps show a correlation between 5G and coronavirus cases.",
           "evidence_ids": [
+            "ws-1",
             "ws-2",
-            "ws-3",
             "fc-1",
             "fc-3",
+            "ws-3",
             "fc-2",
-            "ws-1",
             "ws-4",
             "ws-5",
+            "ws-6",
             "ws-7",
             "ws-8",
-            "ws-6"
+            "ws-9"
           ],
           "gaps_en": []
         }

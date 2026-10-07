@@ -1,7 +1,7 @@
 {
-  "prompt_version": "factcheck-1.1+shared-1.0",
+  "prompt_version": "factcheck-1.4+shared-1.1",
   "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-05T18:13:46+00:00",
+  "recorded_at": "2026-10-07T17:39:23+00:00",
   "outputs": [
     {
       "agent": "factcheck_sites",
@@ -10,13 +10,13 @@
           "evidence_id": "",
           "agent": "factcheck_sites",
           "claim_id": "c1",
-          "url": "https://factcheck.afp.com/experts-dismiss-claims-5g-wireless-technology-created-novel-coronavirus",
-          "domain": null,
-          "publisher": "AFP Fact Check",
-          "title": "Experts dismiss claims that 5G wireless technology created the ...",
-          "published_at": "2020-04-07",
+          "url": "https://www.thequint.com/news/webqoof/fact-check-5g-network-did-not-cause-the-second-wave-of-covid-19-in-india",
+          "domain": "thequint.com",
+          "publisher": "The Quint",
+          "title": "5G Testing Caused the Second COVID Wave? Viral Post Lacks ...",
+          "published_at": "2021-05-03",
           "language": "en",
-          "snippet_en": "AFP Fact Check rated the claim that coronavirus is a result of 5G as False, stating that experts dismiss claims that 5G wireless technology created the novel coronavirus.",
+          "snippet_en": "The Quint rated as \"False\" the claim that the second wave of COVID-19 was caused due to testing of 5G, stating that 5G network did not cause the second wave of COVID-19 in India.",
           "stance": "CONTRADICTS",
           "rating_text": "False",
           "tier": "TIER_1"
@@ -25,15 +25,15 @@
           "evidence_id": "",
           "agent": "factcheck_sites",
           "claim_id": "c1",
-          "url": "https://fullfact.org/health/5G-not-accelerating-coronavirus/",
-          "domain": null,
-          "publisher": "Full Fact",
-          "title": "5G is not accelerating the spread of the new coronavirus – Full Fact",
-          "published_at": "2020-03-31",
+          "url": "https://www.altnews.in/no-5g-radiation-has-not-caused-the-second-wave-of-covid-19-in-india/",
+          "domain": "altnews.in",
+          "publisher": "Alt News",
+          "title": "No, 5G 'radiation' has NOT caused the second wave of COVID-19 in ...",
+          "published_at": "2021-04-28",
           "language": "en",
-          "snippet_en": "Full Fact rated the claim that 5G WiFi networks could be responsible for the rapid spread of the new coronavirus as not true, stating there is no evidence linking 5G WiFi networks to the new coronavirus.",
+          "snippet_en": "Alt News rated as \"False\" the claim that 5G radiation is the cause behind the second wave of coronavirus pandemic in India, stating that 5G 'radiation' has NOT caused the second wave of COVID-19 in India.",
           "stance": "CONTRADICTS",
-          "rating_text": "This is not true. There is no evidence that 5G WiFi networks are linked to the new coronavirus.",
+          "rating_text": "False",
           "tier": "TIER_1"
         },
         {
@@ -41,12 +41,12 @@
           "agent": "factcheck_sites",
           "claim_id": "c1",
           "url": "https://apnews.com/article/archive-fact-checking-8758210339",
-          "domain": null,
+          "domain": "apnews.com",
           "publisher": "AP News",
           "title": "Maps do not show link between coronavirus and 5G wireless",
           "published_at": null,
           "language": "en",
-          "snippet_en": "AP News rated the claim that maps show a correlation between confirmed COVID-19 cases and where 5G wireless service has been installed as False, stating that maps do not show a link between coronavirus and 5G wireless.",
+          "snippet_en": "AP News rated as \"False\" the claim that maps show a correlation between confirmed COVID-19 cases and where 5G wireless service has been installed, stating that maps do not show a link between coronavirus and 5G wireless.",
           "stance": "CONTRADICTS",
           "rating_text": "False",
           "tier": "TIER_1"
@@ -55,7 +55,7 @@
       "source_assessment": null,
       "ai_generation_signals": null,
       "earliest_appearance": null,
-      "notes_en": "The claim is about 5G mobile towers spreading the coronavirus and causing an increase in cases. The provided fact checks directly address the link between 5G and the coronavirus, specifically refuting the idea that 5G causes or accelerates the spread of the virus, or that there is a correlation between 5G installation and COVID-19 cases. The fact checks about the second wave of COVID-19 in India are similar but refer to a specific time and place, making them context rather than direct contradictions of the general claim.",
+      "notes_en": "The fact checks from The Quint, Alt News, and AP News directly contradict the claim that 5G mobile towers spread the coronavirus or caused an increase in cases.",
       "timed_out": false
     }
   ]

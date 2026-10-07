@@ -33,3 +33,6 @@ eval/datasets/*
 
 # make try / make accept runs
 runs/
+
+# Real test media (third-party content; never commit, the repo is public)
+samples/

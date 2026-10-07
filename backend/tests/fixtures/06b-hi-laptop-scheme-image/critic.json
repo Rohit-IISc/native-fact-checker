@@ -1,7 +1,7 @@
 {
-  "prompt_version": "critic-1.0+shared-1.0",
+  "prompt_version": "critic-1.1+shared-1.1",
   "model_id": "gemini-2.5-pro",
-  "recorded_at": "2026-10-05T18:12:21+00:00",
+  "recorded_at": "2026-10-07T17:35:48+00:00",
   "outputs": [
     {
       "reviews": [
@@ -18,7 +18,7 @@
           "proposed_label": "SCAM",
           "proposed_confidence": 100,
           "objections_en": [
-            "The label should be SCAM, not FALSE. The claim about a deadline is a component of the larger scam designed to create false urgency and trick people into sharing their data. The evidence for claim c1 (e.g., ws-2, fc-1, fc-3) establishes the fraudulent nature of the entire 'scheme', which applies to all its fabricated details, including this deadline."
+            "The judge's label is FALSE, but the evidence indicates the claim is part of a fraudulent scheme. Evidence ws-9 and ws-7 state that messages about the non-existent scheme are fraudulent attempts to gather personal information. Therefore, the more precise label is SCAM, which aligns with the verdicts for the related claims c1 and c3."
           ]
         },
         {

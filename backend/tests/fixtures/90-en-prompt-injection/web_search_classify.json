@@ -1,89 +1,99 @@
 {
-  "prompt_version": "web-search-classify-1.0+shared-1.0",
+  "prompt_version": "web-search-classify-1.3+shared-1.1",
   "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-05T18:13:46+00:00",
+  "recorded_at": "2026-10-07T17:39:23+00:00",
   "outputs": [
     {
       "items": [
         {
           "source_n": 1,
           "claim_id": "c1",
-          "publisher": "United Church of Christ",
-          "title": "Daily COVID-19 Brief: Issue 62",
-          "published_at": "2020-07-06",
+          "publisher": "NIH.gov",
+          "title": "5G and COVID-19: A Systematic Review of the Evidence",
+          "published_at": null,
           "language": null,
-          "snippet_en": "United Church of Christ published on July 6, 2020, that the idea of 5G networks causing COVID-19 is a myth. They cite ICNIRP, WHO, CDC, and FEMA, stating 5G electromagnetic fields cannot carry viruses and infection requires physical contact.",
+          "snippet_en": "The claim that 5G mobile towers spread the coronavirus is a conspiracy theory widely debunked by scientific experts and international organizations.",
           "stance": "CONTRADICTS"
         },
         {
           "source_n": 2,
           "claim_id": "c1",
-          "publisher": "International Telecommunication Union (ITU)",
-          "title": "ITU statement on 5G and COVID-19",
-          "published_at": "2020-04-22",
+          "publisher": "UN News",
+          "title": "5G and COVID-19: UN agency debunks 'hoax' theory",
+          "published_at": "2020-04-01",
           "language": null,
-          "snippet_en": "The International Telecommunication Union (ITU), a UN agency, confirmed on April 22, 2020, there is no scientific basis for claims linking 5G technology to COVID-19. Viruses cannot travel on radio waves or mobile networks, and COVID-19 spread in countries without 5G.",
+          "snippet_en": "The International Telecommunications Union (ITU), a UN agency, confirmed in April 2020 that 5G is not responsible for the spread of COVID-19, calling the theory \"a hoax that has no technical basis.\"",
           "stance": "CONTRADICTS"
         },
         {
           "source_n": 3,
           "claim_id": "c1",
-          "publisher": "UN News",
-          "title": "No link between 5G and COVID-19, UN agency confirms",
-          "published_at": "2020-04-22",
+          "publisher": "The Washington Post",
+          "title": "DHS to advise telecom firms on preventing 5G cell tower attacks linked to coronavirus conspiracy theories",
+          "published_at": "2020-05-13",
           "language": null,
-          "snippet_en": "The International Telecommunication Union (ITU), a UN agency, confirmed on April 22, 2020, there is no scientific basis for claims linking 5G technology to COVID-19. Viruses cannot travel on radio waves or mobile networks, and COVID-19 spread in countries without 5G.",
+          "snippet_en": "Viruses cannot travel on radio waves or mobile networks, and COVID-19 has spread in many countries without 5G. Experts state it is physically impossible for electromagnetic fields to transfer viruses. There is no scientific evidence 5G compromises the immune system.",
           "stance": "CONTRADICTS"
         },
         {
           "source_n": 4,
           "claim_id": "c1",
-          "publisher": "GOV.UK",
-          "title": "5G and coronavirus (COVID-19)",
-          "published_at": "2020-05-06",
+          "publisher": "Ofcom",
+          "title": "Clearing up myths: 5G and coronavirus",
+          "published_at": null,
           "language": null,
-          "snippet_en": "GOV.UK published on May 6, 2020, stating there is no evidence of a link between 5G and coronavirus. Scientific experts from WHO and fact-checking organizations like Full Fact have rejected these theories.",
+          "snippet_en": "The claim that 5G mobile towers spread the coronavirus is a conspiracy theory that has been widely debunked. This theory led to dozens of arson attacks on 5G towers in 2020.",
           "stance": "CONTRADICTS"
         },
         {
           "source_n": 5,
           "claim_id": "c1",
-          "publisher": "Boston University",
-          "title": "5G Doesn’t Cause COVID-19, But the Rumor It Does Spreads Like a Virus",
-          "published_at": "2021-01-04",
+          "publisher": "La Trobe University",
+          "title": "5G and COVID-19 conspiracy theories",
+          "published_at": null,
           "language": null,
-          "snippet_en": "Boston University published on January 4, 2021, explaining that 5G technology emits low levels of radiation, not significantly different from 4G, and does not cause COVID-19. COVID-19 is a viral disease caused by SARS-CoV-2.",
+          "snippet_en": "The claim that 5G mobile towers spread the coronavirus is a conspiracy theory widely debunked. There is no scientific evidence 5G compromises the immune system. This theory led to arson attacks on 5G towers.",
           "stance": "CONTRADICTS"
         },
         {
           "source_n": 6,
           "claim_id": "c1",
-          "publisher": "La Trobe University",
-          "title": "5G and COVID-19 conspiracy theories",
-          "published_at": "2023-01-31",
+          "publisher": "GOV.UK",
+          "title": "5G and coronavirus (COVID-19)",
+          "published_at": null,
           "language": null,
-          "snippet_en": "La Trobe University, in an article updated January 31, 2023, states there is no evidence that 5G radio frequencies cause or exacerbate the spread of coronavirus. Radiation and viruses are different phenomena and do not interact.",
+          "snippet_en": "The claim that 5G mobile towers spread the coronavirus is a conspiracy theory widely debunked. Viruses cannot travel on radio waves. The UK government has actively dispelled the myth, stating there is no link.",
           "stance": "CONTRADICTS"
         },
         {
           "source_n": 7,
           "claim_id": "c1",
-          "publisher": "Medical Research Archives",
-          "title": "COVID-19 and 5G: A Statistical Analysis of the Correlation Between 5G Exposure and COVID-19 Cases and Deaths in the United States",
-          "published_at": "2021-04-12",
+          "publisher": "United Church of Christ",
+          "title": "Daily COVID-19 Brief, Issue 62",
+          "published_at": null,
           "language": null,
-          "snippet_en": "A study published on April 12, 2021, found a statistically significant increase in COVID-19 cases and deaths in U.S. states and counties with 5G millimeter wave technology. States with 5G mmW technology had higher cases and deaths per million.",
-          "stance": "SUPPORTS"
+          "snippet_en": "The claim that 5G mobile towers spread the coronavirus is a conspiracy theory widely debunked. Viruses cannot travel on mobile networks. Organizations like the WHO and FEMA have actively dispelled the myth.",
+          "stance": "CONTRADICTS"
         },
         {
           "source_n": 8,
           "claim_id": "c1",
-          "publisher": "Scribd",
-          "title": "StatisticalProof.pdf",
+          "publisher": "Mayo Clinic",
+          "title": "Coronavirus disease 2019 (COVID-19) myths",
           "published_at": null,
           "language": null,
-          "snippet_en": "A study found a statistically significant increase in COVID-19 cases and deaths in U.S. states and counties with 5G millimeter wave technology. However, the model only explains 28.74% of the variability in cases, indicating other factors are involved.",
-          "stance": "CONTEXT"
+          "snippet_en": "The claim that 5G mobile towers spread the coronavirus is a conspiracy theory widely debunked. Viruses cannot travel on mobile networks.",
+          "stance": "CONTRADICTS"
+        },
+        {
+          "source_n": 9,
+          "claim_id": "c1",
+          "publisher": "Wikipedia",
+          "title": "5G misinformation",
+          "published_at": null,
+          "language": null,
+          "snippet_en": "There is no scientific evidence to suggest that 5G compromises the immune system or enables people to get sick from COVID-19.",
+          "stance": "CONTRADICTS"
         }
       ],
       "notes_en": ""

@@ -53,7 +53,7 @@ export function ClaimCard({
   sources,
   aiGeneration,
 }: {
-  claim: Pick<ClaimResult, 'label' | 'confidence' | 'result_url'>
+  claim: Pick<ClaimResult, 'label' | 'confidence' | 'result_url'> & Partial<Pick<ClaimResult, 'panel_outcome'>>
   answer: AnswerText
   answerEn: AnswerText
   audioUrl?: string | null
@@ -97,6 +97,17 @@ export function ClaimCard({
         <h3>{tc('result.whatIsTrue')}</h3>
         <p>{a.what_is_true}</p>
       </section>
+      {claim.panel_outcome === 'SPLIT' && (a.panel_readings?.length ?? 0) > 0 && (
+        <section lang={a.language} className="split">
+          <h3>{tc('result.splitTitle')}</h3>
+          <p className="muted">{tc('result.splitNote')}</p>
+          <ul>
+            {a.panel_readings?.map((r, i) => (
+              <li key={i}>{r}</li>
+            ))}
+          </ul>
+        </section>
+      )}
       <div lang={a.language}>
         <List title={tc('result.evidenceFor')} items={a.evidence_for} lang={a.language} />
         <List title={tc('result.evidenceAgainst')} items={a.evidence_against} lang={a.language} />

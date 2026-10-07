@@ -43,3 +43,14 @@ def test_revision_block_loads_without_shared_rules():
     b = load_block("08b_judge_revision_block.md")
     assert b.version.startswith("judge-revision")
     assert "Shared rules" not in b.body
+
+
+def test_every_prompt_knows_todays_date():
+    """Without it, models called real 2026 fact checks 'impossible future dates' (Oct 7)."""
+    from datetime import date
+
+    from app.prompts import load_prompt
+
+    p = load_prompt("08_judge.md")
+    text = p.render(revision_block="", evidence_pack_json="{}")
+    assert f"Today's date is {date.today().isoformat()}" in text

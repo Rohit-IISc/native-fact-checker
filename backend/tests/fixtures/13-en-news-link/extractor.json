@@ -1,86 +1,67 @@
 {
-  "prompt_version": "extractor-1.2+shared-1.0",
+  "prompt_version": "extractor-1.6+shared-1.1",
   "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-05T18:13:34+00:00",
+  "recorded_at": "2026-10-07T17:38:30+00:00",
   "outputs": [
     {
       "content_language": "en-IN",
       "content_script": "Latn",
-      "summary_en": "The image shows a woman shouting in a crowd, with other people in the background. The BBC News logo is visible in the bottom left corner. The accompanying text from a news article describes India's Chandrayaan-3 mission successfully landing near the Moon's south pole, making India the first country to achieve this feat.",
+      "summary_en": "The image shows a crowd of people, likely in India, with one woman in the foreground appearing to shout or cheer, possibly in celebration. The BBC News logo is visible at the bottom left. The accompanying news article reports on India's Chandrayaan-3 mission successfully landing near the Moon's south pole, making it the first country to achieve this feat.",
       "checkable": true,
       "non_checkable_type": null,
       "claims": [
         {
           "claim_id": "claim1",
           "claim_original": "India has made history as its Moon mission becomes the first to land in the lunar south pole region.",
-          "claim_en": "India's Chandrayaan-3 mission became the first to land in the lunar south pole region on August 23, 2023.",
+          "claim_en": "India's Chandrayaan-3 mission successfully landed near the Moon's south pole, making it the first country to achieve a landing in that region.",
           "claim_type": "EVENT",
           "entities": [
             "India",
-            "Moon",
-            "Chandrayaan-3"
+            "Chandrayaan-3",
+            "Moon's south pole"
           ],
           "place": "Moon's south pole",
-          "claimed_date": "2023-08-23",
+          "claimed_date": null,
           "time_sensitivity": "EVERGREEN",
           "search_queries_original": [
-            "India Moon mission first south pole landing"
+            "India Moon mission south pole landing",
+            "Chandrayaan-3 historic landing"
           ],
           "search_queries_en": [
-            "India first country to land on Moon's south pole",
-            "Chandrayaan-3 south pole landing"
+            "India Moon mission south pole landing",
+            "Chandrayaan-3 historic landing",
+            "First country to land on lunar south pole"
           ]
         },
         {
           "claim_id": "claim2",
           "claim_original": "The Vikram lander from Chandrayaan-3 successfully touched down as planned at 18:04 local time (12:34 GMT).",
-          "claim_en": "The Vikram lander from Chandrayaan-3 successfully touched down at 18:04 local time (12:34 GMT) on August 23, 2023.",
+          "claim_en": "The Vikram lander of the Chandrayaan-3 mission successfully touched down at 18:04 local time (12:34 GMT).",
           "claim_type": "EVENT",
           "entities": [
             "Vikram lander",
             "Chandrayaan-3"
           ],
-          "place": "Moon",
-          "claimed_date": "2023-08-23",
+          "place": null,
+          "claimed_date": null,
           "time_sensitivity": "EVERGREEN",
           "search_queries_original": [
             "Vikram lander touchdown time",
             "Chandrayaan-3 landing time"
           ],
           "search_queries_en": [
-            "Vikram lander touchdown time GMT",
-            "Chandrayaan-3 landing time"
-          ]
-        },
-        {
-          "claim_id": "claim3",
-          "claim_original": "India joins an elite club of countries to achieve a soft landing on the Moon, after the US, the former Soviet Union and China.",
-          "claim_en": "India joined the US, the former Soviet Union, and China in achieving a soft landing on the Moon on August 23, 2023.",
-          "claim_type": "STATISTIC",
-          "entities": [
-            "India",
-            "US",
-            "Soviet Union",
-            "China",
-            "Moon"
-          ],
-          "place": "Moon",
-          "claimed_date": "2023-08-23",
-          "time_sensitivity": "EVERGREEN",
-          "search_queries_original": [
-            "Countries soft landing Moon",
-            "India Moon soft landing club"
-          ],
-          "search_queries_en": [
-            "Countries with soft moon landing",
-            "India moon landing club"
+            "Vikram lander touchdown time",
+            "Chandrayaan-3 landing time GMT"
           ]
         }
       ],
-      "extra_claims_not_checked": [],
-      "ocr_text": "BBCNEWS",
+      "extra_claims_not_checked": [
+        "India joins an elite club of countries to achieve a soft landing on the Moon, after the US, the former Soviet Union and China.",
+        "The lander and the rover are carrying five scientific instruments which will help discover the physical characteristics of the surface of the Moon, the atmosphere close to the surface and the tectonic activity to study what goes on below the surface."
+      ],
+      "ocr_text": "BBC NEWS",
       "transcript": null,
-      "visual_description_en": "A close-up image shows a woman in a yellow outfit with a green scarf, shouting with her hand near her mouth. She has a bindi on her forehead and is wearing earrings and a ring. In the background, other people are visible, some with their hands raised. A man with glasses and a beard is partially visible on the left. The BBC News logo is in the bottom left corner.",
+      "visual_description_en": "A medium shot shows a crowd of people, with a woman in the foreground in profile, wearing a yellow-green scarf and a bindi on her forehead. Her mouth is open wide as if shouting or cheering, and her right hand is raised to her mouth. She wears gold heart-shaped earrings and a ring with a red stone on her right ring finger. To her left, a man with glasses and a beard is partially visible. In the background, other people are seen, some with their arms raised. The BBC News logo is visible in white text on a black bar at the bottom left of the image.",
       "ai_generation_signals": null,
       "origin_hints": [
         "BBC News"

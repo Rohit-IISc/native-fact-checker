@@ -1,6 +1,11 @@
-# Assigned by code. Verify fact-checker list against the IFCN signatories page before Oct 11.
-# Matching: exact domain or any subdomain of it. Entries with a path (site.com/fact-check)
-# match that URL prefix. Suffix rules match the end of the host.
+# Assigned by code, never by a model. See docs/09-source-credibility.md.
+# Matching: exact domain or any subdomain of it. Entries with a path (site.com/fact-check) match that
+# URL prefix. Suffix rules match the end of the host.
+#
+# Fact-checkers in tier_1 are checked against the IFCN signatories page
+# (https://ifcncodeofprinciples.poynter.org/signatories, "Active" tab) on 2026-10-07. Domains and section
+# paths come from the publishers' own ClaimReview URLs in the Fact Check Tools API, not from memory.
+# Re-check before submission; signatory status lapses unless renewed.
 tier_1:
   suffixes: [.gov.in, .nic.in, .gov, .go.id, .gov.uk, .int]
   domains:
@@ -20,29 +25,56 @@ tier_1:
     # International bodies
     - who.int
     - un.org
-    # Wire agencies
+    # Wire agencies (all their pages and regional editions/subdomains)
     - reuters.com
     - apnews.com
-    - afp.com
-    - factcheck.afp.com
-    - ptinews.com
-    # Fact-checkers (verify IFCN status)
-    - boomlive.in
-    - altnews.in
-    - factly.in
+    - ap.org
+    - afp.com              # includes factcheck.afp.com, periksafakta.afp.com, factcheckhindi.afp.com
+    - ptinews.com          # PTI, IFCN active; includes bhasha.ptinews.com
+    # IFCN active signatories, India
+    - boomlive.in          # BOOM; includes hindi. and bangla. subdomains
+    - digiteye.in          # includes kannada. and telugu. subdomains
+    - factly.in            # FACTLY Media & Research; includes its language subdomains
+    - factcrescendo.com    # includes language and country subdomains
+    - firstcheck.in
+    - indiatoday.in/fact-check          # also matches malayalam.indiatoday.in/fact-check
+    - manoramaonline.com/fact-check
+    - newsmobile.in/nm-fact-checker
     - newschecker.in
-    - vishvasnews.com
-    - indiatoday.in/fact-check
-    - factcrescendo.com
     - newsmeter.in
+    - thip.media           # THIP Healthtech
+    - thelallantop.com/factcheck        # TV Today Network - The Lallantop
+    - telugupost.com/factcheck
+    - telugupost.com/kannada-factcheck
+    - telugupost.com/english-factcheck
     - thequint.com/news/webqoof
+    - thequint.com/hindi/news/webqoof
+    - vishvasnews.com
     - youturn.in
-    - digiteye.in
-    - turnbackhoax.id
-    - cekfakta.tempo.co
-    - cekfakta.com
+    # IFCN active signatories, Indonesia
+    - turnbackhoax.id      # MAFINDO
+    - liputan6.com/cek-fakta
+    - kompas.com/cekfakta  # PT Kompas Cyber Media
+    - tirto.id
+    # IFCN active signatories, international (often first to debunk viral media)
+    - leadstories.com
+    - politifact.com
+    - factcheck.org
+    - snopes.com
+    - fullfact.org
+    - aap.com.au/factcheck
+    - observers.france24.com
+    - rappler.com/newsbreak/fact-check
+    - verafiles.org
+    - africacheck.org
 tier_2:
   domains:
+    # Not on the IFCN "Active" tab on 2026-10-07 (Alt News last verified 2019, Tempo Cek Fakta 2022),
+    # so not tier 1. Kept as credible newsrooms pending a check of the "In Renewal" tab.
+    - altnews.in
+    - tempo.co             # includes tempo.co/cekfakta
+    - aajtak.in/fact-check # same group as India Today Fact Check; not listed separately
+    # Major outlets
     - thehindu.com
     - indianexpress.com
     - hindustantimes.com
@@ -51,14 +83,18 @@ tier_2:
     - deccanherald.com
     - prajavani.net
     - dinamani.com
+    - tribuneindia.com     # The Tribune
     - bbc.com
     - bbc.co.uk
     - nytimes.com
     - theguardian.com
     - washingtonpost.com
     - aljazeera.com
+    - voanews.com          # VOA
+    - voaindonesia.com
+    - pbs.org
+    - time.com
     - kompas.com
-    - tempo.co
     - thejakartapost.com
     - scroll.in
     - livemint.com

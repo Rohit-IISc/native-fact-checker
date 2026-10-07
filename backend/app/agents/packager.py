@@ -53,10 +53,12 @@ def code_pack(check_id: str, extraction: Extraction, findings: list[AgentFinding
                    and by_id[i].stance != Stance.UNRELATED]
             ids = list(dict.fromkeys(ids))
             ids += [e.evidence_id for e in ranked if e.evidence_id not in ids]  # never lose evidence silently
-            brief = b.model_copy(update={"evidence_ids": ids[:max_items], "claim_en": c.claim_en})
+            brief = b.model_copy(update={"evidence_ids": ids[:max_items], "claim_en": c.claim_en,
+                                         "claim_type": c.claim_type.value})
         else:
             brief = ClaimBrief(
-                claim_id=c.claim_id, claim_en=c.claim_en, claimed_date=c.claimed_date, place=c.place,
+                claim_id=c.claim_id, claim_en=c.claim_en, claim_type=c.claim_type.value,
+                claimed_date=c.claimed_date, place=c.place,
                 brief_en="No summary available; read the evidence items directly.",
                 evidence_ids=[e.evidence_id for e in ranked[:max_items]],
                 gaps_en=[] if ranked else ["No evidence was found for this claim."],

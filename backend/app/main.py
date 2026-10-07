@@ -26,7 +26,7 @@ from app.models import CheckRequest, CheckResult, MediaRef, Stage
 from app.observability.logging import check_id_var, log_event, setup_logging
 from app.pipeline.dispatch import dispatch
 from app.pipeline.progress import CHECKS, PROGRESS, now_iso
-from app.pipeline.results import VERDICTS, claim_result_from_doc, public_result
+from app.pipeline.results import VERDICTS, cached_result, public_result
 from app.settings import get_settings
 from app.store import get_store
 
@@ -131,7 +131,7 @@ async def create_check(
     else:
         hit = await tier1.lookup(store, keys)
     if hit:
-        result = _cached_result(check_id, hit)
+        result = cached_result(check_id, hit)
         await store.set(CHECKS, check_id, {
             **base, "status": "DONE", "stage": Stage.DONE.value, "stage_label_key": "stage.done",
             "progress": 100, "cache_tier_hit": "T1", "result": result.model_dump(mode="json"),
@@ -157,17 +157,6 @@ async def create_check(
     })
     await dispatch(check_id)
     return JSONResponse(status_code=202, content={"check_id": check_id, "status": "RUNNING"})
-
-
-def _cached_result(check_id: str, hit: dict) -> CheckResult:
-    if hit["non_checkable"]:
-        nc = hit["non_checkable"]
-        return CheckResult(check_id=check_id, status="DONE", content_language=nc.get("content_language"),
-                           non_checkable_type=nc["type"], non_checkable_message=nc.get("message"),
-                           cache_tier_hit="T1", latency_ms=0)
-    claims = [claim_result_from_doc(v) for v in hit["verdicts"]]
-    return CheckResult(check_id=check_id, status="DONE", content_language=hit["verdicts"][0].get("content_language"),
-                       claims=claims, cache_tier_hit="T1", latency_ms=0)
 
 
 async def _history(uid: str, check_id: str, result: CheckResult) -> None:

@@ -1,10 +1,10 @@
 {
-  "prompt_version": "web-search-2.1+shared-1.0",
+  "prompt_version": "web-search-2.1+shared-1.1",
   "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-05T18:12:25+00:00",
+  "recorded_at": "2026-10-07T17:36:11+00:00",
   "outputs": [
     {
-      "text": "c1:\nMayo Clinic News Network, in an article published on October 11, 2021, states that assertions about microchips in COVID-19 vaccines are false. Dr. Martin Herrmann, medical director of Mayo Clinic Health System, confirmed there is absolutely no microchip in the vaccine and no way for it to track people or gather personal information. [1] The article clarifies that the myth originated from comments made by Bill Gates about a digital certificate of vaccine records, which is not a microchip and is not tied to COVID-19 vaccine development or distribution. [1]\n\nThe CDC Archive, in an article updated on February 16, 2023, explicitly states that COVID-19 vaccines do not contain microchips. [2] It explains that vaccines are designed to fight disease by stimulating the immune system and are not administered for tracking purposes. [2] The CDC also notes that COVID-19 vaccines do not contain ingredients like preservatives, tissues, antibiotics, food proteins, latex, or metals. [2]\n\nMayo Clinic, in an article updated on August 30, 2026, reiterates that COVID-19 vaccines do not contain microchips. [3] It clarifies that the vaccines are made only with ingredients that help the body recognize and clear the virus. [3]\n\nPfizer's website states that there are no microchips or any other tracking devices within any Pfizer vaccine, including the COVID-19 vaccine. [4]\n\nBusiness Insider, in an article published on December 21, 2020, reports that claims of microchips in COVID-19 vaccines are false and based on misconstrued information. [5] It mentions that Bill Gates addressed the conspiracy theory, calling it bizarre. [5] The article suggests the microchip myth may have originated from an idea for smart syringe packaging, where an optional barcode-like label was discussed, not a microchip for tracking people. [5]\n\nFactCheck.org, in an article published on December 15, 2020, debunks a video falsely claiming that COVID-19 vaccine vials have microchips to track patients. [6] It explains that the claim misrepresents an interview with Jay Walker of ApiJect, who discussed an optional RFID tag that would be attached to the end of a plastic vial to store information about the vaccine dose, not to track individuals. [6] This chip would only contain a unique serial number for each dose to prevent counterfeiting and ensure the dose hasn't expired, without any personal or patient information. [6]",
+      "text": "c1:\nMayo Clinic News Network, \"Covid Queries: Altered DNA and microchips\", October 11, 2021, states that there is absolutely no microchip in the COVID-19 vaccine and no way for the vaccine to track people or gather personal information. This myth originated from comments made by Bill Gates about a digital certificate of vaccine records, which was not a microchip and not tied to vaccine development or distribution. [1]\nMosaic Life Care, \"Debunking COVID-19 myths\", states that COVID-19 vaccines do not contain microchips and are made only with ingredients that help the body recognize and clear out the virus. [2]\nThe CDC Archive, \"Myths and Facts about COVID-19 Vaccines\", February 16, 2023, confirms that COVID-19 vaccines do not contain microchips and are developed to fight disease, not to track movement. [3]\nMayo Clinic, \"Debunking COVID-19 myths\", August 30, 2026, reiterates that COVID-19 vaccines do not have microchips and are composed of ingredients that help the body fight the virus. [4]\nThe Wellness Coalition, \"Do COVID-19 vaccines contain microchips?\", March 26, 2023, states that COVID-19 vaccines do not contain microchips and are designed to stimulate the immune system. [5]\nKomdigi, \"Vaksin Covid-19 Punya Chip untuk Lacak Orang? Itu Disinformasi!\", states that the claim of COVID-19 vaccines containing chips to track people is false. The barcode on vaccine products is for tracking product distribution, not for tracking individuals. [6]",
       "sources": [
         {
           "n": 1,
@@ -13,28 +13,28 @@
         },
         {
           "n": 2,
+          "url": "https://www.mymlc.com/health-information/articles/d/debunking-covid-19-coronavirus-myths/?section=Do%20COVID-19%20vaccines%20have%20a%20microchip?",
+          "domain": "mymlc.com"
+        },
+        {
+          "n": 3,
           "url": "https://archive.cdc.gov/www_cdc_gov/coronavirus/2019-ncov/vaccines/facts.html",
           "domain": "cdc.gov"
         },
         {
-          "n": 3,
+          "n": 4,
           "url": "https://www.mayoclinic.org/diseases-conditions/coronavirus/in-depth/coronavirus-myths/art-20485720",
           "domain": "mayoclinic.org"
         },
         {
-          "n": 4,
-          "url": "https://www.pfizer.com/about/responsibility/misinformation",
-          "domain": "pfizer.com"
-        },
-        {
           "n": 5,
-          "url": "https://www.businessinsider.com/coronavirus-vaccine-pfizer-moderna-doesnt-contain-a-microchip-2020-12",
-          "domain": "businessinsider.com"
+          "url": "https://www.thewellnesscoalition.org/faq-items/do-covid-19-vaccines-contain-microchips/",
+          "domain": "thewellnesscoalition.org"
         },
         {
           "n": 6,
-          "url": "https://www.factcheck.org/2020/12/covid-19-vaccines-dont-have-patient-tracking-devices/",
-          "domain": "factcheck.org"
+          "url": "https://www.komdigi.go.id/berita/berita-komdigi/detail/vaksin-covid-19-punya-chip-untuk-lacak-orang-itu-disinformasi",
+          "domain": "komdigi.go.id"
         }
       ],
       "queries": 4

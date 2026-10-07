@@ -1,29 +1,30 @@
 {
-  "prompt_version": "packager-1.1+shared-1.0",
+  "prompt_version": "packager-1.1+shared-1.1",
   "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-05T18:12:25+00:00",
+  "recorded_at": "2026-10-07T17:36:11+00:00",
   "outputs": [
     {
       "briefs": [
         {
           "claim_id": "c1",
           "claim_en": "COVID-19 vaccines contain microchips to track every vaccinated person.",
+          "claim_type": null,
           "claimed_date": null,
           "place": null,
-          "brief_en": "Multiple health organizations and fact-checking sites state that COVID-19 vaccines do not contain microchips. The CDC, Mayo Clinic, and Pfizer explicitly confirm that vaccines are designed to stimulate the immune system, not for tracking. Fact-checking organizations like Periksa Fakta (June 7, 2021), AFP Fact Check (June 25, 2020), and Tempo.co (April 22, 2020, to May 22, 2021) have debunked various iterations of this claim, including those linking it to Bill Gates or magnetic properties. The myth may have originated from misinterpretations of discussions about digital vaccine records or RFID tags on vaccine vials for inventory, not for tracking individuals.",
+          "brief_en": "Multiple health organizations and fact-checking sites, including the CDC, Mayo Clinic, and FactCheck.org, state that COVID-19 vaccines do not contain microchips. These sources, published between 2020 and 2026, explain that vaccines are designed to fight disease and stimulate the immune system, not to track individuals. The myth may have originated from misinterpretations of comments about digital vaccine records or from spoof videos and misconstrued health sensors. Barcodes on vaccine products are for distribution tracking, not personal tracking.",
           "evidence_ids": [
-            "ws-2",
-            "fc-2",
-            "fc-14",
-            "fc-3",
-            "fc-6",
-            "fc-1",
-            "fc-7",
-            "fc-5",
-            "ws-1",
             "ws-3",
-            "ws-4",
-            "ws-5"
+            "ws-6",
+            "fc-2",
+            "fc-7",
+            "fc-8",
+            "fc-9",
+            "fc-10",
+            "fc-11",
+            "fc-12",
+            "fc-13",
+            "fc-1",
+            "fc-3"
           ],
           "gaps_en": []
         }

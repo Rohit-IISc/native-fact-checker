@@ -15,6 +15,16 @@ models:
     thinking_budget: 0      # 2.5 models: budget in tokens, 0 = off (fast). Gemini 3 models use `thinking: low`
     hedge_after_s: 9        # tail stalls happen on every model; llm._hedged duplicates a slow call
     search_hedge_after_s: 12  # grounded search: 8-9 s or 35-55 s for the same request on 3.8 Flash
+  flash_think:
+    # The extractor needs a little reasoning: with thinking off it took a sarcastic caption ("Gujarat model of
+    # development in Mumbai") as the claim instead of what the photo shows (4/4 runs on Oct 7); with a
+    # 512-token budget it made the media claim (5/5). Measured 10-13 s per image extraction vs 3-7 s.
+    id: gemini-2.5-flash
+    fallbacks: [gemini-3.8-flash]
+    price_in: 0.30
+    price_out: 2.50
+    thinking_budget: 512
+    hedge_after_s: 16
   pro:
     # Measured Oct 5 on the same judge prompt: gemini-3.1-pro-preview took 35-51 s (one call > 120 s);
     # gemini-2.5-pro took 9-10 s with the same verdict. gemini-3-pro-preview returns 404 on Vertex.
@@ -42,7 +52,7 @@ grounding:
 vision:
   web_detection_price_per_1000: 3.50
 stage_models:
-  extractor: flash
+  extractor: flash_think
   near_match: flash
   web_search: flash
   web_search_classify: flash

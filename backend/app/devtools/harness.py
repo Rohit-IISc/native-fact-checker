@@ -18,6 +18,7 @@ from pydantic import BaseModel
 
 from app.agents import extractor
 from app.agents.tools import Tools
+from app.cache import tier1
 from app.devtools.recording import CapturingLLM
 from app.ids import ulid
 from app.intake import links
@@ -30,6 +31,7 @@ from app.observability.calls import CheckLedger, ledger_var
 from app.observability.logging import check_id_var
 from app.pipeline import runner
 from app.pipeline.progress import CHECKS
+from app.pipeline.results import cached_result
 from app.settings import get_config
 from app.store import Store
 
@@ -158,10 +160,12 @@ async def build_request(
 
 
 async def run(req: CheckRequest, *, store: Store, llm: LLM, stage: str = "full",
-              cache_keys: list[str] | None = None, on_stage=None, tools: Tools | None = None
-              ) -> tuple[Run, CapturingLLM]:
+              cache_keys: list[str] | None = None, on_stage=None, tools: Tools | None = None,
+              tier1: bool = False) -> tuple[Run, CapturingLLM]:
     """Returns the run and the capturing LLM (its outputs are what `make record` saves).
-    `tools`: RecordingTools for make record, ReplayTools for make test, None for the real ones."""
+    `tools`: RecordingTools for make record, ReplayTools for make test, None for the real ones.
+    `tier1`: do the API's tier 1 lookup first (exact and near-duplicate media, text, URL), as
+    POST /v1/checks does, so a re-share can be tested end to end."""
     llm = CapturingLLM(llm)
     out = Run(input=req.model_dump(mode="json", include={"text", "url", "media"}), mode=stage,
               started_at=datetime.now(UTC).isoformat())
@@ -178,6 +182,10 @@ async def run(req: CheckRequest, *, store: Store, llm: LLM, stage: str = "full",
             out.extraction = await extractor.extract(llm, req, fetched)
         except StageFailed as e:
             out.error = str(e)
+        tracing._mark("done")
+    elif tier1 and (hit := await _tier1_lookup(store, req, cache_keys or [])):
+        tracing._mark("cache_lookup")
+        out.result = cached_result(req.check_id, hit)
         tracing._mark("done")
     else:
         await store.set(CHECKS, req.check_id, {
@@ -211,6 +219,13 @@ async def _drain_background_tasks(before: set[asyncio.Task]) -> None:
     pending = asyncio.all_tasks() - before - {asyncio.current_task()}
     if pending:
         await asyncio.wait(pending, timeout=10)
+
+
+async def _tier1_lookup(store: Store, req: CheckRequest, keys: list[str]) -> dict | None:
+    """Same order as POST /v1/checks: media keys identify a share with media; otherwise text and URL."""
+    if req.media:
+        return await tier1.lookup_media(store, req.media)
+    return await tier1.lookup(store, keys)
 
 
 def total_budget_s(req: CheckRequest) -> float:

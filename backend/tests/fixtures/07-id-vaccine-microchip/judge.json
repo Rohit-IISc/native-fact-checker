@@ -1,7 +1,7 @@
 {
-  "prompt_version": "judge-1.0+shared-1.0",
+  "prompt_version": "judge-1.1+shared-1.1",
   "model_id": "gemini-2.5-pro",
-  "recorded_at": "2026-10-05T18:12:25+00:00",
+  "recorded_at": "2026-10-07T17:36:11+00:00",
   "outputs": [
     {
       "verdicts": [
@@ -9,31 +9,31 @@
           "claim_id": "c1",
           "label": "FALSE",
           "confidence": 100,
-          "what_is_true_en": "COVID-19 vaccines do not contain microchips or tracking devices. Health authorities like the CDC and vaccine manufacturers confirm that vaccines are designed to stimulate an immune response, not to track individuals.",
+          "what_is_true_en": "COVID-19 vaccines do not contain microchips or any tracking devices. Health authorities and fact-checkers have confirmed that vaccines are developed to stimulate an immune response against disease, not to track people.",
           "event_date": null,
           "evidence_for_ids": [],
           "evidence_against_ids": [
-            "ws-2",
-            "fc-2",
-            "fc-14",
-            "ws-1",
             "ws-3",
-            "ws-4",
-            "fc-3",
-            "fc-6",
-            "fc-1",
+            "ws-6",
+            "fc-2",
             "fc-7",
-            "fc-5",
-            "ws-5"
+            "fc-8",
+            "fc-9",
+            "fc-10",
+            "fc-11",
+            "fc-12",
+            "fc-13",
+            "fc-1",
+            "fc-3"
           ],
           "cited_ids": [
-            "ws-2",
+            "ws-3",
+            "ws-6",
             "fc-2",
-            "fc-14",
-            "ws-1",
-            "ws-4"
+            "fc-7",
+            "fc-11"
           ],
-          "reasoning_en": "An overwhelming consensus of evidence from TIER_1 health authorities (CDC), fact-checkers (AFP), and vaccine manufacturers (Pfizer) explicitly and repeatedly states that COVID-19 vaccines do not contain microchips or any form of tracking technology. The claim is a widely debunked conspiracy theory that may have originated from misinterpretations of discussions about digital vaccine records or inventory tracking labels on vials. There is no evidence to support the claim.",
+          "reasoning_en": "An overwhelming amount of evidence from multiple high-tier sources, including government health agencies like the CDC and numerous independent fact-checking organizations, confirms that COVID-19 vaccines do not contain microchips. The evidence consistently refutes this claim and related variations, such as those involving magnets, pet chip scanners, or misconstrued statements by public figures. There is no credible evidence to support the claim.",
           "ai_generation": null
         }
       ]

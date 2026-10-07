@@ -79,6 +79,8 @@
     "extraClaims": "Other claims in this post we did not check",
     "audioSoon": "Audio is being prepared…",
     "none": "None found",
+    "splitTitle": "Our two reviewers read the evidence differently",
+    "splitNote": "So we cannot confirm this either way. Here is each reading:",
     "mediaMissing": "We could not open the photo or video in this link. Share a screenshot or screen recording for a full check.",
     "aiTitle": "Is this image AI-made?",
     "aiLikelihood": "{{n}} out of 100 likely AI-made",

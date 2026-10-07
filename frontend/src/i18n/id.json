@@ -79,6 +79,8 @@
     "extraClaims": "Klaim lain dalam unggahan ini yang tidak kami periksa",
     "audioSoon": "Audio sedang disiapkan…",
     "none": "Tidak ditemukan",
+    "splitTitle": "Dua peninjau kami membaca bukti secara berbeda",
+    "splitNote": "Jadi kami belum bisa memastikan benar atau salahnya. Berikut kesimpulan masing-masing:",
     "mediaMissing": "Kami tidak bisa membuka foto atau video di tautan ini. Bagikan tangkapan layar atau rekaman layar untuk pemeriksaan lengkap.",
     "aiTitle": "Apakah gambar ini buatan AI?",
     "aiLikelihood": "Kemungkinan buatan AI: {{n}} dari 100",

@@ -167,3 +167,18 @@ async def test_model_api_error_fails_the_stage_not_the_check(client, store, llm)
     doc = await store.get("checks", r.json()["check_id"])
     assert doc["status"] == "FAILED" and doc["error_code"] == "EXTRACTION_FAILED"
     assert "error_detail" not in (await client.get(f"/v1/checks/{doc['check_id']}", headers=AUTH)).json()
+
+
+async def test_extraction_timeout_is_retried_once_when_time_allows(client, store, llm):
+    calls = {"n": 0}
+    base = llm.fixtures["extractor"]
+
+    def flaky(prompt):
+        calls["n"] += 1
+        return StageFailed("extractor", "timeout after 25.0s") if calls["n"] == 1 else base(prompt)
+
+    llm.fixtures["extractor"] = flaky
+    r = await post(client, text="सरकार सभी को मुफ्त लैपटॉप दे रही है")
+    await drain()
+    doc = await store.get("checks", r.json()["check_id"])
+    assert doc["status"] == "DONE" and calls["n"] == 2

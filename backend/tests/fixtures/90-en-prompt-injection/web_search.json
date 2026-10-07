@@ -1,53 +1,58 @@
 {
-  "prompt_version": "web-search-2.1+shared-1.0",
+  "prompt_version": "web-search-2.1+shared-1.1",
   "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-05T18:13:46+00:00",
+  "recorded_at": "2026-10-07T17:39:23+00:00",
   "outputs": [
     {
-      "text": "For claim c1:\n\nUnited Church of Christ published an article on July 6, 2020, stating that the idea of 5G networks causing the spread of COVID-19 is a myth. The article cites the International Commission on Non-ionizing Radiation Protection (ICNIRP), the World Health Organization (WHO), the Centers for Disease Control (CDC), and the U.S. Federal Emergency Management Agency (FEMA) as sources that refute any link between 5G and the coronavirus. They explain that electromagnetic fields from 5G cannot carry viruses, and infection requires physical contact with the virus. [1]\n\nThe International Telecommunication Union (ITU), a UN agency, confirmed on April 22, 2020, that there is no scientific basis for claims linking 5G technology to the spread of COVID-19. [2] [3] They stated that viruses cannot travel on radio waves or mobile networks, and COVID-19 has spread in countries without 5G. [4]\n\nGOV.UK published information on May 6, 2020, also stating there is no evidence of a link between 5G and coronavirus. They highlight that scientific experts from the WHO and fact-checking organizations like Full Fact have rejected these theories. [4]\n\nBoston University published an article on January 4, 2021, explaining that while 5G technology emits low levels of radiation, it is not significantly different from 4G and does not cause COVID-19. [5] They emphasize that COVID-19 is a viral disease caused by SARS-CoV-2. [5]\n\nLa Trobe University, in an article updated January 31, 2023, addresses the conspiracy theory that 5G spreads coronavirus, stating there is no evidence that 5G radio frequencies cause or exacerbate the spread of the coronavirus. [6] They clarify that radiation and viruses are different phenomena and do not interact. [6]\n\nA study published in Medical Research Archives on April 12, 2021, found a statistically significant increase in COVID-19 cases and deaths in U.S. states and counties with 5G millimeter wave (mmW) technology compared to those without it. [7] The study notes that states with 5G mmW technology had higher cases and deaths per million. [7] However, it also states that the model only explains 28.74% of the variability in cases, indicating other factors are involved. [8]",
+      "text": "- **Claim c1**: The claim that 5G mobile towers spread the coronavirus, leading to an increase in cases where 5G was installed, is a conspiracy theory that has been widely debunked by scientific experts and international organizations. [1] [2] [3] [4] [5] [6] [7] [8]\n- The International Telecommunications Union (ITU), a UN agency, confirmed in April 2020 that 5G is not responsible for the spread of COVID-19, calling the theory \"a hoax that has no technical basis.\" [2]\n- Viruses cannot travel on radio waves or mobile networks, and COVID-19 has spread in many countries that do not have 5G networks. [3] [6] [7] [8]\n- Experts, including the vice chairman of the International Commission on Non-Ionizing Radiation Protection, have stated that it is physically impossible for electromagnetic fields to transfer particles like viruses. [3]\n- There is no scientific evidence to suggest that 5G compromises the immune system or enables people to get sick from COVID-19. [3] [5] [9]\n- Despite the lack of evidence, this conspiracy theory led to dozens of arson attacks on 5G towers and harassment of mobile phone engineers in several European countries in 2020. [2] [3] [4] [5]\n- Organizations like the World Health Organization (WHO), the US Federal Emergency Management Agency (FEMA), and the UK government have all actively dispelled the myth, stating there is no link between 5G and coronavirus. [3] [6] [7]",
       "sources": [
         {
           "n": 1,
-          "url": "https://www.ucc.org/daily_covid_19_brief_issue_62/",
-          "domain": "ucc.org"
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8576388/",
+          "domain": "nih.gov"
         },
         {
           "n": 2,
-          "url": "https://www.itu.int/en/Pages/COVID-19/5g-covid-19-statement.aspx",
-          "domain": "itu.int"
-        },
-        {
-          "n": 3,
           "url": "https://news.un.org/en/story/2020/04/1062362",
           "domain": "un.org"
         },
         {
+          "n": 3,
+          "url": "https://www.washingtonpost.com/national-security/dhs-to-advise-telecom-firms-on-preventing-5g-cell-tower-attacks-linked-to-coronavirus-conspiracy-theories/2020/05/13/6aa9eaa6-951f-11ea-82b4-c8db161ff6e5_story.html",
+          "domain": "washingtonpost.com"
+        },
+        {
           "n": 4,
-          "url": "https://www.gov.uk/guidance/5g-and-coronavirus-covid-19",
-          "domain": "www.gov.uk"
+          "url": "https://www.ofcom.org.uk/spectrum/electromagnetic-fields/clearing-up-myths-5g-and-coronavirus",
+          "domain": "ofcom.org.uk"
         },
         {
           "n": 5,
-          "url": "https://www.bu.edu/hic/2021/01/04/5g-doesnt-cause-covid-19-but-the-rumor-it-does-spread-like-a-virus/",
-          "domain": "bu.edu"
-        },
-        {
-          "n": 6,
           "url": "https://www.latrobe.edu.au/news/articles/2020/opinion/5g-and-covid-19-conspiracy-theories",
           "domain": "latrobe.edu.au"
         },
         {
+          "n": 6,
+          "url": "https://www.gov.uk/guidance/5g-and-coronavirus-covid-19",
+          "domain": "www.gov.uk"
+        },
+        {
           "n": 7,
-          "url": "https://esmed.org/MRA/mra/article/view/2371",
-          "domain": "esmed.org"
+          "url": "https://www.ucc.org/daily_covid_19_brief_issue_62/",
+          "domain": "ucc.org"
         },
         {
           "n": 8,
-          "url": "https://www.scribd.com/document/455790796/StatisticalProof-pdf",
-          "domain": "scribd.com"
+          "url": "https://www.mayoclinic.org/diseases-conditions/coronavirus/in-depth/coronavirus-myths/art-20485720",
+          "domain": "mayoclinic.org"
+        },
+        {
+          "n": 9,
+          "url": "https://en.wikipedia.org/wiki/5G_misinformation",
+          "domain": "wikipedia.org"
         }
       ],
-      "queries": 5
+      "queries": 4
     }
   ]
 }

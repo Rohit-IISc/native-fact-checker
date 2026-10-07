@@ -200,6 +200,7 @@ class AgentFindings(BaseModel):
 class ClaimBrief(BaseModel):
     claim_id: str
     claim_en: str
+    claim_type: str | None = None   # set by code from the extraction (MEDIA_AUTHENTICITY asks for ai_generation)
     claimed_date: date | None = None
     place: str | None = None
     brief_en: str = Field(description="Neutral summary of what the evidence says. No verdict.")
@@ -272,6 +273,9 @@ class AnswerText(BaseModel):
     sources_spoken: str
     audio_script: str = Field(description="75 to 110 words, fixed order, no URLs")
     card_lines: list[str] = Field(description="3 to 4 short lines for the correction card", max_length=4)
+    panel_readings: list[str] = Field(
+        default_factory=list,
+        description="Only when the reviewers disagreed: one short plain-words item per reading, else empty")
 
 
 class ComposerOutput(BaseModel):

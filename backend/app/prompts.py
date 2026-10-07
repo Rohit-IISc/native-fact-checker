@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import re
 from dataclasses import dataclass
+from datetime import date
 from functools import lru_cache
 
 from app.settings import get_settings
@@ -26,6 +27,9 @@ class Prompt:
     meta: dict[str, str]
 
     def render(self, **values: object) -> str:
+        # Models' training ends before the dates they now read; without today's date they called real
+        # 2026 fact checks "impossible future dates" (Oct 7). Every prompt gets it via the shared rules.
+        values.setdefault("today", date.today().isoformat())
         missing = set(_PLACEHOLDER.findall(self.body)) - set(values)
         if missing:
             raise KeyError(f"Prompt {self.name} missing values: {sorted(missing)}")

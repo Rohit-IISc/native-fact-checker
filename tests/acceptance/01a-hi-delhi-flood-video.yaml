@@ -1,0 +1,13 @@
+# Gold sources and caption are PROPOSED (found via the Fact Check Tools API / web search on 2026-10-07)
+# because the notes with the intended URLs did not arrive. Replace with the notes' URLs when confirmed.
+# Media lives in samples/ (gitignored, local only): the case is skipped where samples/ is absent.
+id: 01a-hi-delhi-flood-video
+case: 1
+# The same Bengaluru flood video itself (360p, 30 s) with the "DELHI संकट मे" overlay.
+input:
+  file: samples/1a.mp4
+  text: "दिल्ली संकट में 🙏 आज की बारिश का हाल"
+language: hi
+expected: [MISLEADING, FALSE]
+gold:
+  - https://www.thequint.com/news/webqoof/old-bengaluru-video-showing-floods-shared-as-one-from-delhi-fact-check
