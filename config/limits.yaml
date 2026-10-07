@@ -24,7 +24,7 @@ timeouts_s:
   critic: 20
   judge_revision: 20
   composer: 20                  # measured 7-18 s (hedged at 9 s)
-  tts: 12
+  tts: 40                       # Gemini TTS measured 18-24 s per 60-80 word answer (Oct 7); runs after DONE
   card: 12
   total_base: 90
   background_retry_total: 120

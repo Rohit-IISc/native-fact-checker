@@ -50,6 +50,7 @@ export function ClaimCard({
   answer,
   answerEn,
   audioUrl,
+  audioPending,
   sources,
   aiGeneration,
 }: {
@@ -57,6 +58,7 @@ export function ClaimCard({
   answer: AnswerText
   answerEn: AnswerText
   audioUrl?: string | null
+  audioPending?: boolean
   sources: Pick<Evidence, 'evidence_id' | 'url' | 'domain' | 'publisher' | 'title' | 'tier'>[]
   aiGeneration?: ClaimResult['ai_generation']
 }) {
@@ -80,7 +82,15 @@ export function ClaimCard({
 
   return (
     <article className="card claim">
-      {audioUrl && <audio className="audio" controls src={audioUrl} preload="none" />}
+      {audioUrl ? (
+        <audio className="audio" controls src={audioUrl} preload="none" />
+      ) : (
+        audioPending && (
+          <p className="muted small" role="status" lang={answer.language}>
+            {tc('result.audioSoon')}
+          </p>
+        )
+      )}
       <div className="claim-head">
         <VerdictBadge label={claim.label} large lang={a.language} />
         <span className="muted" lang={a.language}>
@@ -164,6 +174,7 @@ export function ResultView({ result, onFeedback }: { result: CheckResult; onFeed
           answer={c.answer}
           answerEn={c.answer_en}
           audioUrl={c.audio_url}
+          audioPending={result.audio_pending}
           sources={c.evidence}
           aiGeneration={c.ai_generation}
         />

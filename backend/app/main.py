@@ -287,6 +287,20 @@ async def get_result(verdict_id: str, request: Request, lang: str | None = None)
     return public_result(doc, lang)
 
 
+@app.get("/v1/results/{verdict_id}/audio")
+async def get_result_audio(verdict_id: str, request: Request, lang: str = "en"):
+    """The spoken answer (MP3). Served through the API so the outputs bucket stays private."""
+    from app.output import tts
+
+    ip = (request.headers.get("x-forwarded-for") or (request.client.host if request.client else "")).split(",")[0]
+    if _rate_limited(ip.strip()):
+        return error(429, "RATE_LIMITED")
+    data = await tts.read_audio(verdict_id, lang)
+    if data is None:
+        return error(404, "NOT_FOUND")
+    return Response(content=data, media_type="audio/mpeg", headers={"Cache-Control": "public, max-age=86400"})
+
+
 # ---------- Pipeline (Pub/Sub push) ----------
 
 @app.post("/internal/pipeline", status_code=204, dependencies=[Depends(verify_pubsub_push)])

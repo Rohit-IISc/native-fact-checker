@@ -72,6 +72,8 @@ export interface CheckResult {
   cache_tier_hit: 'NONE' | 'T1' | 'T2'
   degraded: boolean
   media_missing_prompt: boolean
+  /** Text is final; the spoken answers are still being generated. */
+  audio_pending?: boolean
   latency_ms?: number | null
 }
 

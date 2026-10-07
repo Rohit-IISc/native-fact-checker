@@ -206,6 +206,10 @@ async def run(req: CheckRequest, *, store: Store, llm: LLM, stage: str = "full",
         if doc.get("missing_lanes"):
             out.notes.append(f"agents that failed or timed out: {', '.join(doc['missing_lanes'])}")
     out.latency_ms = int((time.monotonic() - t0) * 1000)
+    # What the user waits for is the answer (DONE); audio arrives after it and is reported separately.
+    done = next((st.started_s for st in tracing.stages if st.stage == "done"), None)
+    if done is not None:
+        out.latency_ms = int((done - (t0 - tracing.t0)) * 1000)
     out.stages = tracing.stages
     await _drain_background_tasks(tasks_before)
     return out, llm

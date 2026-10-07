@@ -8,6 +8,7 @@ from __future__ import annotations
 import asyncio
 import functools
 import logging
+import os
 import time
 from datetime import datetime
 
@@ -22,10 +23,11 @@ from app.models import AnswerText, CheckRequest, CheckResult, ClaimResult, Extra
 from app.observability.calls import CheckLedger, ledger_var
 from app.observability.logging import check_id_var, hash_uid, log_event, uid_hash_var
 from app.observability.runs import write_check_run
+from app.output import tts
 from app.pipeline import investigate, stub
 from app.pipeline.progress import CHECKS, now_iso, set_stage
 from app.pipeline.results import VERDICTS, claim_result_from_doc, lang_key, persist_verdict
-from app.settings import get_config
+from app.settings import get_config, get_settings
 from app.store import Store, get_store
 
 log = logging.getLogger(__name__)
@@ -125,9 +127,49 @@ async def run_check(
     }, merge=True)
     await set_stage(store, req.check_id, Stage.DONE)
     await _write_history(store, req, result)
+    # Audio after DONE: the text answer shows at once; Gemini TTS takes 18-24 s per answer (Oct 7).
+    # The Pub/Sub handler awaits this, so Cloud Run keeps CPU until the audio is stored.
+    result = await timed("speaking", _speak(store, req, result))
     ledger.stage_latency_ms = timings
     asyncio.get_running_loop().create_task(write_check_run(req, result, ledger))
     return result
+
+
+async def _speak(store: Store, req: CheckRequest, result: CheckResult) -> CheckResult:
+    """Spoken answer in the content language for each claim that has none yet (cache hits reuse it)."""
+    todo = [i for i, c in enumerate(result.claims) if not c.audio_url and c.answer.audio_script.strip()]
+    if not todo or not tts_enabled():
+        return result
+    await store.set(CHECKS, req.check_id, {"result": {**result.model_dump(mode="json"), "audio_pending": True}},
+                    merge=True)
+
+    async def one(i: int) -> tuple[int, str | None]:
+        c = result.claims[i]
+        try:
+            mp3 = await tts.synthesize(c.answer.audio_script, c.answer.language)
+            await tts.store_audio(c.verdict_id, c.answer.language, mp3)
+        except StageFailed as e:
+            log_event(log, "tts failed", logging.WARNING, reason=str(e)[:300])
+            return i, None
+        url = tts.audio_url(c.verdict_id, c.answer.language)
+        doc = await store.get(VERDICTS, c.verdict_id) or {}
+        answers = dict(doc.get("answers") or {})
+        base = c.answer.language.split("-")[0]
+        key = next((k for k in answers if k.split("-")[0] == base), lang_key(c.answer.language))
+        answers[key] = {**answers.get(key, c.answer.model_dump(mode="json")), "audio_url": url}
+        await store.set(VERDICTS, c.verdict_id, {"answers": answers}, merge=True)
+        return i, url
+
+    urls = dict(await asyncio.gather(*(one(i) for i in todo)))
+    claims = [c.model_copy(update={"audio_url": urls.get(i) or c.audio_url}) for i, c in enumerate(result.claims)]
+    result = result.model_copy(update={"claims": claims, "audio_pending": False})
+    await store.set(CHECKS, req.check_id, {"result": result.model_dump(mode="json")}, merge=True)
+    return result
+
+
+def tts_enabled() -> bool:
+    """Off in LLM_MODE=fake (tests, offline UI) and when TTS_ENABLED=0."""
+    return get_settings().llm_mode != "fake" and os.environ.get("TTS_ENABLED", "1") != "0"
 
 
 async def _investigate(store, llm, tools, req, extraction, fetched, budget, cache_keys, prompt_versions, timed):

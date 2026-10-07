@@ -63,6 +63,7 @@ class Outcome:
     reasons: list[str] | None = None
     gold: str = "-"        # page | site | no | - (no gold given)
     cache: str = "-"
+    audio: str = "-"       # yes | no | - (nothing to speak)
 
 
 def load_cases(match: str | None = None) -> list[Case]:
@@ -165,20 +166,21 @@ async def run_case(case: Case, runs_dir: Path, record: bool, store=None) -> Outc
     if case.expect_ai_generation and not (claims and claims[0].ai_generation):
         reasons.append("no AI-generation assessment")
     gold = gold_match(case.gold, [e.url for c in claims for e in c.evidence if e.url])
+    audio = ("yes" if claims[0].audio_url else "no") if claims else "-"
     return Outcome(case, "FAIL" if reasons else "PASS", run.label, run.language, run.latency_ms,
-                   run.ledger.total_cost_usd, reasons, gold, tier)
+                   run.ledger.total_cost_usd, reasons, gold, tier, audio)
 
 
 def print_table(outcomes: list[Outcome]) -> None:
     color = {"PASS": GREEN, "FAIL": RED, "ERROR": RED, "SKIP": YELLOW}
     w = max(len(o.case.id) for o in outcomes)
-    print(f"\n{BOLD}{'case':<{w}}  {'result':<6}  {'label':<20}  {'lang':<6}  {'cache':<5}  {'gold':<5}  "
+    print(f"\n{BOLD}{'case':<{w}}  {'result':<6}  {'label':<20}  {'lang':<6}  {'cache':<5}  {'gold':<5}  {'audio':<5}  "
           f"{'latency':>8}  {'cost':>9}  why{RESET}")
     for o in outcomes:
         lang_ok = same_language(o.language, o.case.language)
         lang = f"{o.language or '-'}" + ("" if lang_ok or o.status == "SKIP" else "!")
         print(f"{o.case.id:<{w}}  {color[o.status]}{o.status:<6}{RESET}  {o.label:<20}  {lang:<6}  {o.cache:<5}  "
-              f"{o.gold:<5}  {o.latency_ms / 1000:>7.1f}s  ${o.cost_usd:>8.5f}  "
+              f"{o.gold:<5}  {o.audio:<5}  {o.latency_ms / 1000:>7.1f}s  ${o.cost_usd:>8.5f}  "
               f"{DIM}{'; '.join(o.reasons or [])}{RESET}")
     n = {s: sum(o.status == s for o in outcomes) for s in ("PASS", "FAIL", "ERROR", "SKIP")}
     ran = [o for o in outcomes if o.status in ("PASS", "FAIL")]
@@ -245,7 +247,7 @@ async def amain(a: argparse.Namespace) -> int:
     (runs_dir / "summary.json").write_text(json.dumps([{
         "id": o.case.id, "status": o.status, "label": o.label, "expected": o.case.expected,
         "language": o.language, "expected_language": o.case.language, "latency_ms": o.latency_ms,
-        "cost_usd": o.cost_usd, "reasons": o.reasons or [], "gold": o.gold, "cache": o.cache,
+        "cost_usd": o.cost_usd, "reasons": o.reasons or [], "gold": o.gold, "cache": o.cache, "audio": o.audio,
     } for o in outcomes], ensure_ascii=False, indent=2), encoding="utf-8")
     if a.record:
         print(f"{DIM}fixtures written to backend/tests/fixtures/{RESET}")

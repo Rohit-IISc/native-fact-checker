@@ -313,6 +313,7 @@ class CheckResult(BaseModel):
     cache_tier_hit: Literal["NONE", "T1", "T2"] = "NONE"
     degraded: bool = False
     media_missing_prompt: bool = False
+    audio_pending: bool = False          # text is final; spoken answers are still being generated
     latency_ms: int | None = None
 
 
