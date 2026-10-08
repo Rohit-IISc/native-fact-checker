@@ -2,7 +2,7 @@
 
 Updated after every task (see CLAUDE.md, "How to work"). Newest state only; history is in git.
 
-**Last updated:** Wed Oct 7, 2026, late evening
+**Last updated:** Thu Oct 8, 2026, morning
 **Build-plan day:** Day 3 of the calendar; Days 0 to 4 done, Day 5 started (audio done).
 **Deployed:** https://ai-builder-2026.web.app -> Cloud Run `factcheck-api` (asia-south1), commit 2d0803c+.
 **Audio samples for native speakers:** https://claude.ai/artifact/3uKEHUsp5hdXoVFo87SJeo (private; share it).
@@ -34,22 +34,25 @@ Updated after every task (see CLAUDE.md, "How to work"). Newest state only; hist
 
 ## Broken or risky
 
-- Acceptance (Oct 7 evening, 19 cases, Rohit's notes): 11/19 pass, language 19/19. Open items:
-  - 01 Kannada flood video ends NOT_ENOUGH_EVIDENCE (real Bengaluru rain news on 6 Oct 2026 and no
-    source for the 2022 origin found); 02 and 03 inherit it from the cache (both cache paths work:
-    02 is a T1 keyframe-pHash hit, 03 answers in Hindi in 4.4 s).
-  - 12 NBT Holi satire: FALSE, Rohit expects MISLEADING. The claim is extracted as the event, for which
-    FALSE is literal; the extractor should frame a newspaper photo as media ("this page reports...").
-  - 10b: judge gave AI signals but none for a real photo; the case wants signals both ways.
-  - 13 BBC link and 08 Chandrayaan: search variance (TIER_3-only coverage some runs).
-  - Latency: 06b and 90 at 97-100 s with 3 checks running at once (Vertex tail latency).
-- Instagram: links work (caption, @handle, date, photo via Open Graph). Reels: Instagram gives no video to
-  link previews, so only caption + thumbnail are checked and the user is asked for a screen recording.
-- X link case: open until Rohit sends a live post URL (case 14 is a screenshot).
+Pass rates (Oct 8, real models; `make accept REPEAT=2`, plus later single runs):
+- Stable (passed every run): 05, 06, 06b, 07, 08, 10a, 10b, 11, 14, 15, 16 (X quote tweet), 90; 01b 2/2 after fixes.
+- Flaky: 04 (1/2 then pass), 09 (1/2 then pass).
+- 01 Kannada flood video (and 02/03, which reuse its verdict from cache; both cache paths work):
+  2/2 MISLEADING, then 0/2 NOT_ENOUGH_EVIDENCE. Search finds The Quint's fact check of this video
+  but it is sometimes classified CONTEXT, and real Bengaluru rain news this week makes "flooding today"
+  look half-true. Cautious, not wrong; high variance.
+- 12 NBT Holi satire: FALSE or NOT_ENOUGH_EVIDENCE, Rohit expects MISLEADING. Needs Rohit's decision on
+  letting neutral media observations (satire tag, masthead date) into the evidence pack.
+- 13 BBC link: NOT_ENOUGH_EVIDENCE when search returns only TIER_3 coverage of a true event.
+- Vertex 429 RESOURCE_EXHAUSTED under load (3 checks in parallel). Now retried with backoff (seen
+  recovering); Gemini 2.5 on Vertex uses dynamic shared quota, so heavy judging-week load may still hit
+  it. Option: Provisioned Throughput (costs money; Rohit to decide).
+- Instagram reels: only caption + thumbnail (Instagram gives no video to link previews).
 - Not built yet: correction card, FCM push, BigQuery dashboards, eval runner, Cloud Build trigger.
 
 ## Next step
 
-1. Extractor: frame newspaper or screenshot pages as media claims; judge: always fill both AI-signal sides.
-2. Find the 2022 origin of the flood video (case 01): keyframe search via Vision on full-resolution frames.
+1. Rohit: decide on media observations in the evidence pack (case 12); decide on Provisioned Throughput.
+2. Stance classification for "this exact video is old" fact checks (case 01).
 3. Day 5 rest: correction card, FCM push.
+
