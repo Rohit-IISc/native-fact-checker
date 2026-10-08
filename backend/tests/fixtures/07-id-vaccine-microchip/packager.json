@@ -1,30 +1,30 @@
 {
   "prompt_version": "packager-1.1+shared-1.1",
   "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-07T18:42:14+00:00",
+  "recorded_at": "2026-10-08T06:20:03+00:00",
   "outputs": [
     {
       "briefs": [
         {
           "claim_id": "c1",
-          "claim_en": "COVID-19 vaccines contain microchips designed to track every vaccinated person.",
+          "claim_en": "COVID-19 vaccines contain microchips to track every vaccinated person.",
           "claim_type": null,
           "claimed_date": null,
           "place": null,
-          "brief_en": "Multiple health organizations, government bodies, and fact-checkers contradict the claim that COVID-19 vaccines contain microchips for tracking individuals. The Centers for Disease Control and Prevention (CDC) and the Mayo Clinic explicitly state that vaccines do not contain microchips and cannot track people. Pfizer also confirms its vaccines are free of tracking devices. Indonesian authorities, including Kominfo and the National Police, have declared these claims as hoaxes, clarifying that barcodes on vaccine products are for distribution tracking, not individual tracking. Experts note that microchips are too large to be injected via standard vaccine needles and would require an antenna for data transmission, making them impractical. Fact-checking organizations like FactCheck.org and AFP Fact Check have repeatedly debunked various iterations of this conspiracy theory, including those linking it to Bill Gates or magnetic properties.",
+          "brief_en": "Multiple sources, including the CDC, Mayo Clinic, and various fact-checking organizations, state that COVID-19 vaccines do not contain microchips. Experts explain that it is impossible to fit a microchip, power source, and transmission capabilities into the small gauge needle used for vaccinations. The microchip conspiracy theory gained traction from misinterpretations of comments made by Bill Gates about digital vaccine records and misrepresentations of RFID chips used on vaccine vials. Some claims also falsely linked magnetic effects on vaccinated arms to microchips.",
           "evidence_ids": [
             "ws-1",
-            "ws-5",
             "ws-7",
-            "ws-8",
-            "ws-9",
-            "ws-11",
+            "ws-10",
+            "ws-12",
+            "ws-13",
             "fc-1",
             "fc-2",
             "fc-3",
             "fc-5",
             "fc-6",
-            "fc-7"
+            "fc-7",
+            "fc-10"
           ],
           "gaps_en": []
         }

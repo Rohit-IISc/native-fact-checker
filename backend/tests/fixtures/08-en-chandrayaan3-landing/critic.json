@@ -1,7 +1,7 @@
 {
   "prompt_version": "critic-1.2+shared-1.1",
   "model_id": "gemini-2.5-pro",
-  "recorded_at": "2026-10-07T18:42:54+00:00",
+  "recorded_at": "2026-10-08T06:19:30+00:00",
   "outputs": [
     {
       "reviews": [
@@ -9,8 +9,10 @@
           "claim_id": "c1",
           "decision": "AGREE",
           "proposed_label": "TRUE",
-          "proposed_confidence": 100,
-          "objections_en": []
+          "proposed_confidence": 95,
+          "objections_en": [
+            "Confidence of 100 is an overreach. While the evidence overwhelmingly supports the claim, one TIER_2 source (The Guardian, ws-3) states the landing date was August 22, 2023, which contradicts the claim's date of August 23. Although other sources confirm the 23rd, the presence of a conflicting report from a credible source means confidence cannot be absolute."
+          ]
         }
       ]
     }

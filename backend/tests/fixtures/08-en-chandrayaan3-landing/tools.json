@@ -1,4 +1,18 @@
 {
+ "factcheck_search:[\"India first country Moon south pole landing\", \"en\"]": [
+  {
+   "claim_text": "China was the first country to land on the moon's South Pole a few years ago",
+   "claimant": "X, WhatsApp users",
+   "claim_date": "2023-08-29T11:52:58Z",
+   "url": "https://www.boomlive.in/fact-check/claims-of-china-being-the-first-country-to-land-on-the-south-pole-of-the-moon-is-false-22899",
+   "publisher": "BOOM Fact Check",
+   "publisher_site": "boomlive.in",
+   "rating": "False",
+   "review_date": "2023-08-29T11:52:58Z",
+   "title": "Claims Of China Being The First Country To Land On The South ...",
+   "language": "en"
+  }
+ ],
  "factcheck_search:[\"Chandrayaan-3 Vikram lander Moon south pole 23 August\", \"en\"]": [
   {
    "claim_text": "Video shows a glimpse of Chandrayaan 3 captured by NASA.",
@@ -62,18 +76,6 @@
   },
   {
    "claim_text": "BBC slammed Indian's Chandrayaan 3 mission in view of poverty",
-   "claimant": null,
-   "claim_date": null,
-   "url": "https://www.altnews.in/no-bbc-did-not-criticize-chandrayaan-3-old-clip-viral-false-report-by-times-now-india-tv-zee-news-other-outlets/",
-   "publisher": "Alt News",
-   "publisher_site": "altnews.in",
-   "rating": "False",
-   "review_date": "2023-08-25T11:30:07Z",
-   "title": "No, BBC did not criticize Chandrayaan 3. Old clip viral; false report ...",
-   "language": "en"
-  },
-  {
-   "claim_text": "BBC slammed Indian's Chandrayaan 3 mission in view of poverty",
    "claimant": "Anand Mahindra, MeghUpdates, Mint, Times Now",
    "claim_date": "2016-06-20T00:00:00Z",
    "url": "https://www.altnews.in/no-bbc-did-not-criticize-chandrayaan-3-old-clip-viral-false-report-by-times-now-india-tv-zee-news-other-outlets/",
@@ -85,15 +87,27 @@
    "language": "en"
   },
   {
-   "claim_text": "China was the first country to land on the moon's South Pole a few years ago",
-   "claimant": "X, WhatsApp users",
-   "claim_date": "2023-08-29T11:52:58Z",
-   "url": "https://www.boomlive.in/fact-check/claims-of-china-being-the-first-country-to-land-on-the-south-pole-of-the-moon-is-false-22899",
+   "claim_text": "BBC slammed Indian's Chandrayaan 3 mission in view of poverty",
+   "claimant": null,
+   "claim_date": null,
+   "url": "https://www.altnews.in/no-bbc-did-not-criticize-chandrayaan-3-old-clip-viral-false-report-by-times-now-india-tv-zee-news-other-outlets/",
+   "publisher": "Alt News",
+   "publisher_site": "altnews.in",
+   "rating": "False",
+   "review_date": "2023-08-25T11:30:07Z",
+   "title": "No, BBC did not criticize Chandrayaan 3. Old clip viral; false report ...",
+   "language": "en"
+  },
+  {
+   "claim_text": "Photo shows an imprint of ISRO's logo and national emblem on the moon's surface.",
+   "claimant": "X, Facebook users",
+   "claim_date": "2023-08-24T09:15:52Z",
+   "url": "https://www.boomlive.in/fact-check/isro-chandrayaan-3-space-mission-national-emblem-moon-fact-check-22844",
    "publisher": "BOOM Fact Check",
    "publisher_site": "boomlive.in",
    "rating": "False",
-   "review_date": "2023-08-29T11:52:58Z",
-   "title": "Claims Of China Being The First Country To Land On The South ...",
+   "review_date": "2023-08-24T09:15:52Z",
+   "title": "Picture Of National Emblem, ISRO Logo Imprint On Moon's Surface ...",
    "language": "en"
   }
  ],
@@ -135,15 +149,15 @@
    "language": "en"
   },
   {
-   "claim_text": "BBC slammed Indian's Chandrayaan 3 mission in view of poverty",
-   "claimant": null,
-   "claim_date": null,
-   "url": "https://www.altnews.in/no-bbc-did-not-criticize-chandrayaan-3-old-clip-viral-false-report-by-times-now-india-tv-zee-news-other-outlets/",
-   "publisher": "Alt News",
-   "publisher_site": "altnews.in",
+   "claim_text": "Washington Post praises India for Chandrayaan-3's success despite having \"second string\" talent",
+   "claimant": "Facebook, X users",
+   "claim_date": "2023-09-01T08:07:33Z",
+   "url": "https://www.boomlive.in/fact-check/washington-post-chandrayaan-3-isro-fact-check-22931",
+   "publisher": "BOOM Fact Check",
+   "publisher_site": "boomlive.in",
    "rating": "False",
-   "review_date": "2023-08-25T11:30:07Z",
-   "title": "No, BBC did not criticize Chandrayaan 3. Old clip viral; false report ...",
+   "review_date": "2023-09-01T08:07:33Z",
+   "title": "Reader Comment Peddled As Washington Post's Article On ...",
    "language": "en"
   },
   {
@@ -159,15 +173,15 @@
    "language": "en"
   },
   {
-   "claim_text": "NASA released footage of CHandrayaan landing on moon; Ashoka Stambh will be imprinted on lunar surface",
-   "claimant": "social media users",
-   "claim_date": "2016-06-20T00:00:00Z",
-   "url": "https://www.altnews.in/nasa-footage-ashoka-stambh-on-lunar-surface-fake-visuals-related-to-chandrayaan-3-flood-social-media/",
+   "claim_text": "BBC slammed Indian's Chandrayaan 3 mission in view of poverty",
+   "claimant": null,
+   "claim_date": null,
+   "url": "https://www.altnews.in/no-bbc-did-not-criticize-chandrayaan-3-old-clip-viral-false-report-by-times-now-india-tv-zee-news-other-outlets/",
    "publisher": "Alt News",
    "publisher_site": "altnews.in",
    "rating": "False",
-   "review_date": "2023-08-28T00:00:00Z",
-   "title": "'NASA footage', 'Ashoka Stambh on lunar surface': Fake visuals ...",
+   "review_date": "2023-08-25T11:30:07Z",
+   "title": "No, BBC did not criticize Chandrayaan 3. Old clip viral; false report ...",
    "language": "en"
   },
   {
@@ -183,29 +197,15 @@
    "language": "en"
   },
   {
-   "claim_text": "Photo shows an imprint of ISRO's logo and national emblem on the moon's surface.",
-   "claimant": "X, Facebook users",
-   "claim_date": "2023-08-24T09:15:52Z",
-   "url": "https://www.boomlive.in/fact-check/isro-chandrayaan-3-space-mission-national-emblem-moon-fact-check-22844",
-   "publisher": "BOOM Fact Check",
-   "publisher_site": "boomlive.in",
+   "claim_text": "NASA released footage of CHandrayaan landing on moon; Ashoka Stambh will be imprinted on lunar surface",
+   "claimant": "social media users",
+   "claim_date": "2016-06-20T00:00:00Z",
+   "url": "https://www.altnews.in/nasa-footage-ashoka-stambh-on-lunar-surface-fake-visuals-related-to-chandrayaan-3-flood-social-media/",
+   "publisher": "Alt News",
+   "publisher_site": "altnews.in",
    "rating": "False",
-   "review_date": "2023-08-24T09:15:52Z",
-   "title": "Picture Of National Emblem, ISRO Logo Imprint On Moon's Surface ...",
-   "language": "en"
-  }
- ],
- "factcheck_search:[\"India first country Moon south pole landing\", \"en\"]": [
-  {
-   "claim_text": "China was the first country to land on the moon's South Pole a few years ago",
-   "claimant": "X, WhatsApp users",
-   "claim_date": "2023-08-29T11:52:58Z",
-   "url": "https://www.boomlive.in/fact-check/claims-of-china-being-the-first-country-to-land-on-the-south-pole-of-the-moon-is-false-22899",
-   "publisher": "BOOM Fact Check",
-   "publisher_site": "boomlive.in",
-   "rating": "False",
-   "review_date": "2023-08-29T11:52:58Z",
-   "title": "Claims Of China Being The First Country To Land On The South ...",
+   "review_date": "2023-08-28T00:00:00Z",
+   "title": "'NASA footage', 'Ashoka Stambh on lunar surface': Fake visuals ...",
    "language": "en"
   }
  ]

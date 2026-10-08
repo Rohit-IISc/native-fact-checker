@@ -1,27 +1,60 @@
 {
   "prompt_version": "packager-1.1+shared-1.1",
   "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-07T18:45:52+00:00",
+  "recorded_at": "2026-10-08T06:22:40+00:00",
   "outputs": [
     {
       "briefs": [
         {
           "claim_id": "c1",
-          "claim_en": "The image in this post shows people in India celebrating the successful landing of the Chandrayaan-3 mission near the Moon's south pole.",
+          "claim_en": "The photo in this post shows people celebrating India's Chandrayaan-3 mission successfully landing on the Moon.",
           "claim_type": null,
           "claimed_date": "2023-08-23",
           "place": "India",
-          "brief_en": "India successfully landed its Chandrayaan-3 mission near the Moon's south pole on August 23, 2023, leading to widespread celebrations across the country. People were seen cheering, dancing, sharing sweets, and waving national flags. Prime Minister Narendra Modi declared August 23 as National Space Day. However, some images circulating online, purportedly showing these celebrations, have been identified as being from the 2014 Mars Orbiter Mission (Mangalyaan) success.",
+          "brief_en": "There is no evidence provided to support or contradict the claim that the photo in the post shows people celebrating India's Chandrayaan-3 mission successfully landing on the Moon. The image search results did not yield any direct matches for the provided image that depict people celebrating India's Chandrayaan-3 mission, and primarily showed generic crowd videos or unrelated articles.",
+          "evidence_ids": [],
+          "gaps_en": [
+            "No evidence found to confirm or deny the content of the photo.",
+            "No direct matches for the image were found in search results."
+          ]
+        },
+        {
+          "claim_id": "c2",
+          "claim_en": "India's Chandrayaan-3 mission made a historic landing near the Moon's south pole.",
+          "claim_type": null,
+          "claimed_date": "2023-08-23",
+          "place": "Moon's south pole",
+          "brief_en": "Multiple fact-checking organizations, including BOOM Fact Check, The Quint, FACTLY, Alt News, and AFP Fact Check, have rated as false various viral videos and images claiming to show footage of Chandrayaan-3's landing or visuals from the moon. These fact checks, published between August 22 and September 6, 2023, indicate that the circulating content consists of animations, old stock videos, unrelated visuals, or AI-generated images, rather than actual footage from the Chandrayaan-3 mission or NASA. One fact check from India Today also states that a captivating photo of Earth from the Moon was AI-generated and not taken by Chandrayaan-3.",
           "evidence_ids": [
-            "ws-6",
-            "ws-3",
-            "ws-4",
-            "ws-2",
-            "ws-1",
-            "ws-5"
+            "fc-1",
+            "fc-2",
+            "fc-3",
+            "fc-4",
+            "fc-5",
+            "fc-7",
+            "fc-8",
+            "fc-9",
+            "fc-11",
+            "fc-12",
+            "fc-13",
+            "fc-6"
           ],
           "gaps_en": [
-            "No direct matches were found for the specific image in the post, and search results are generic, not showing the image in the context of Chandrayaan-3 celebrations."
+            "No direct evidence confirming the historic landing of India's Chandrayaan-3 mission near the Moon's south pole was found in the provided fact checks, which primarily focused on debunking false visuals related to the mission."
+          ]
+        },
+        {
+          "claim_id": "c3",
+          "claim_en": "India is the first country to land in the lunar south pole region.",
+          "claim_type": null,
+          "claimed_date": "2023-08-23",
+          "place": "Moon's south pole",
+          "brief_en": "BOOM Fact Check, in an article published on August 29, 2023, rated as false the claim that China was the first country to land on the moon's South Pole a few years ago. This suggests that India was indeed the first country to achieve this feat.",
+          "evidence_ids": [
+            "fc-10"
+          ],
+          "gaps_en": [
+            "No additional evidence was found to further corroborate or provide details about India being the first country to land in the lunar south pole region, beyond the debunking of a counter-claim."
           ]
         }
       ]

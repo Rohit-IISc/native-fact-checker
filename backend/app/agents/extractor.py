@@ -5,6 +5,7 @@ import json
 import mimetypes
 from pathlib import Path
 
+from app.intake.hashing import extract_urls
 from app.intake.links import platform_of
 from app.llm import LLM, MediaPart
 from app.models import CheckRequest, Extraction, FetchedPost
@@ -70,8 +71,25 @@ def _media_source(uri: str) -> dict:
     return {"data": Path(uri).read_bytes()}
 
 
-def finalize(extraction: Extraction) -> Extraction:
-    """Assign stable claim ids, enforce the claim cap, keep NOT_CHECKABLE consistent."""
+def _drop_invented_dates(extraction: Extraction, req: CheckRequest) -> Extraction:
+    """When the person shared only a link (no words of their own), nothing they sent says "today", so a
+    claimed_date equal to the share date was invented. Seen Oct 7-8 despite the prompt rule: a 2023 BBC
+    article became "landed on <share date>" and drew a wrong verdict."""
+    own_words = (req.text or "")
+    for u in extract_urls(own_words):
+        own_words = own_words.replace(u, "")
+    if any(ch.isalpha() for ch in own_words):
+        return extraction
+    claims = [c.model_copy(update={"claimed_date": None}) if c.claimed_date == req.share_date else c
+              for c in extraction.claims]
+    return extraction.model_copy(update={"claims": claims})
+
+
+def finalize(extraction: Extraction, req: CheckRequest | None = None) -> Extraction:
+    """Assign stable claim ids, enforce the claim cap, keep NOT_CHECKABLE consistent, and drop a claimed
+    date the share cannot have stated (see _drop_invented_dates)."""
+    if req is not None:
+        extraction = _drop_invented_dates(extraction, req)
     max_claims = int(get_config().limits["input"]["max_claims_per_check"])
     claims = extraction.claims[:max_claims]
     extra = list(extraction.extra_claims_not_checked) + [c.claim_en for c in extraction.claims[max_claims:]]
@@ -99,4 +117,4 @@ async def extract(llm: LLM, req: CheckRequest, fetched: FetchedPost | None = Non
         stage="extractor", prompt=text, prompt_version=version, schema=Extraction,
         media=media_parts(req, fetched), timeout_s=timeout,
     )
-    return finalize(result)
+    return finalize(result, req)

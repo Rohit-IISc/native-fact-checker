@@ -1,0 +1,14 @@
+# X link case (Rohit, 2026-10-08): a live post URL, so this exercises X link fetching end to end.
+id: 16-en-x-quote-tweet
+case: 14
+note: >
+  @sama quote-tweets @claudeai ("There's hope in hard questions." with a photo): "i thought this was
+  satire, kept looking for the handle to be spelled c1audeai or something". An opinion about a brand post:
+  nothing factual to check. The link ladder must fetch the post via oEmbed and bring in the quoted post
+  (t.co -> x.com/claudeai/status/...). The quoted photo cannot be fetched, so the screenshot prompt shows.
+input:
+  url: https://x.com/sama/status/2076824686307271125
+language: en
+# NOT_CHECKABLE (an opinion about a brand post) is the best answer. NOT_ENOUGH_EVIDENCE is acceptable: some
+# runs extract "@claudeai posted this", which only X itself shows, and X is never a source. Never TRUE/FALSE.
+expected: [NOT_CHECKABLE, NOT_ENOUGH_EVIDENCE]

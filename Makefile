@@ -43,9 +43,11 @@ try: backend/.venv
 	  $(if $(TEXT),--text "$$TEXT") $(if $(FILE),--file "$(abspath $(FILE))") $(if $(URL),--url "$$URL") \
 	  $(if $(STAGE),--stage $(STAGE)) $(if $(TRY_STORE),--store $(TRY_STORE)) $(if $(FAKE),--fake) $(ARGS)
 
-# Every case in tests/acceptance/ (real models, ~$0.003 per case today). CASE=substring, FAKE=1.
+# Every case in tests/acceptance/ (real models, ~$0.10-0.15 per case). CASE=substring, FAKE=1,
+# REPEAT=N runs each case N times and reports pass rates (single runs are noisy).
 accept: backend/.venv
-	@cd backend && uv run python -m app.devtools.accept $(if $(CASE),--case "$(CASE)") $(if $(FAKE),--fake) $(ARGS)
+	@cd backend && uv run python -m app.devtools.accept $(if $(CASE),--case "$(CASE)") $(if $(FAKE),--fake) \
+	  $(if $(REPEAT),--repeat $(REPEAT)) $(ARGS)
 
 # Refresh backend/tests/fixtures/ from real model calls (acceptance inputs), for make test.
 record: backend/.venv

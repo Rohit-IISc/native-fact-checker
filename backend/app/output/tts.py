@@ -12,7 +12,7 @@ import logging
 import time
 from pathlib import Path
 
-from app.llm import StageFailed, _hedged, _record, _retry_once
+from app.llm import StageFailed, _hedged, _record, _retry_transient
 from app.observability.calls import ModelCall
 from app.observability.logging import check_id_var
 from app.prompts import load_block
@@ -68,7 +68,7 @@ async def synthesize(script: str, language: str, *, timeout_s: float | None = No
     started = time.monotonic()
     try:
         contents = tts_input(script, language)
-        resp = await _retry_once(lambda: _hedged(
+        resp = await _retry_transient(lambda: _hedged(
             lambda: _client.aio.models.generate_content(model=m["id"], contents=contents, config=cfg),
             timeout_s, m.get("hedge_after_s"), "tts"))
         pcm = b"".join(p.inline_data.data for p in resp.candidates[0].content.parts if p.inline_data)

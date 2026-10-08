@@ -73,7 +73,7 @@
    "language": "hi"
   }
  ],
- "factcheck_search:[\"Modi 3 months free recharge scheme\", \"en\"]": [
+ "factcheck_search:[\"Modi 3 months free recharge\", \"en\"]": [
   {
    "claim_text": "BJP is providing three months of free recharge to all Indian mobile service customers",
    "claimant": null,
@@ -120,104 +120,6 @@
    "rating": "Fraud",
    "review_date": "2025-11-16T00:00:00Z",
    "title": "Fact Check: PM Modi Didn't Announce Free 3-Month Mobile ...",
-   "language": "en"
-  }
- ],
- "factcheck_search:[\"PM Modi free mobile recharge\", \"en\"]": [
-  {
-   "claim_text": "BJP and PM Modi are offering free recharge on the occasion of forming the government for a third term.",
-   "claimant": "Social Media User",
-   "claim_date": "2024-06-05T00:00:00Z",
-   "url": "https://factly.in/neither-bjp-nor-pm-modi-is-offering-any-free-recharge-on-the-occasion-of-forming-the-government-for-the-third-term/",
-   "publisher": "FACTLY",
-   "publisher_site": "factly.in",
-   "rating": "FALSE",
-   "review_date": "2024-06-07T00:00:00Z",
-   "title": "Neither BJP nor PM Modi is offering any free recharge on the ...",
-   "language": "en"
-  },
-  {
-   "claim_text": "government is giving all citizens 3 months free recharge worth ₹749 on the occasion of Maha Kumbh",
-   "claimant": "Social media posts",
-   "claim_date": "2025-01-14T00:00:00Z",
-   "url": "https://www.newsmobile.in/uncategorized/fact-check-govt-is-not-giving-free-mobile-recharge-on-the-occasion-of-maha-kumbh/",
-   "publisher": "NewsMobile",
-   "publisher_site": "newsmobile.in",
-   "rating": "False",
-   "review_date": "2025-01-15T00:00:00Z",
-   "title": "Fact Check: Post Claiming 'Free Mobile Recharge For 2025 Maha ...",
-   "language": "en"
-  },
-  {
-   "claim_text": "BJP is offering free mobile recharge after winning third term",
-   "claimant": "social media user",
-   "claim_date": "2024-06-06T00:00:00Z",
-   "url": "https://theprint.in/hoaxposed/fact-check-modi-bjp-havent-announced-any-free-recharge-scheme-on-return-to-power/2121149/",
-   "publisher": "ThePrint",
-   "publisher_site": "theprint.in",
-   "rating": "False",
-   "review_date": "2024-06-07T00:00:00Z",
-   "title": "Fact Check: Modi, BJP haven't announced any free recharge ...",
-   "language": "en"
-  },
-  {
-   "claim_text": "Prime Minister Modi is giving free recharge to all Indians so that people vote for BJP in the 2024 general elections",
-   "claimant": "Social media users",
-   "claim_date": "2023-08-22T00:00:00Z",
-   "url": "https://www.newsmobile.in/uncategorized/fact-check-no-pm-modi-is-not-providing-free-mobile-recharge-to-get-votes-in-2024-general-elections/",
-   "publisher": "NewsMobile",
-   "publisher_site": "newsmobile.in",
-   "rating": "False",
-   "review_date": "2023-08-23T00:00:00Z",
-   "title": "Fact Check: No, PM Modi Is NOT Providing Free Mobile Recharge ...",
-   "language": "en"
-  },
-  {
-   "claim_text": "BJP is providing three months of free recharge to all Indian mobile service customers",
-   "claimant": null,
-   "claim_date": "2023-10-30T00:00:00Z",
-   "url": "https://www.telugupost.com/english-factcheck/viral-message-claiming-bjp-is-providing-three-months-of-free-recharge-to-all-indian-mobile-service-customers-is-hoax-1501939",
-   "publisher": "Telugu Post",
-   "publisher_site": "telugupost.com",
-   "rating": "False",
-   "review_date": null,
-   "title": "Fact Check: Viral message claiming BJP is providing three months ...",
-   "language": "en"
-  },
-  {
-   "claim_text": "PM Modi is offering a mobile recharge of ₹239 for every Indian as part of his election campaign for the 2024 General elections",
-   "claimant": "SOCIAL MEDIA POST",
-   "claim_date": "2023-05-07T00:00:00Z",
-   "url": "https://factly.in/malicious-links-circulate-in-pm-modis-name-offering-free-mobile-recharge-for-indians/",
-   "publisher": "FACTLY",
-   "publisher_site": "factly.in",
-   "rating": "FALSE",
-   "review_date": "2023-06-20T00:00:00Z",
-   "title": "Malicious Links are Circulated in the Guise of Offering Free Mobile ...",
-   "language": "en"
-  },
-  {
-   "claim_text": "PM Modi Announced Free 3-Month Mobile Recharge After Bihar Polls Win",
-   "claimant": "Social Media",
-   "claim_date": "2025-11-14T00:00:00Z",
-   "url": "https://www.newsmobile.in/nm-fact-checker/fact-check-pm-modi-didnt-announce-free-3-month-mobile-recharge-after-bihar-polls-win/",
-   "publisher": "NewsMobile",
-   "publisher_site": "newsmobile.in",
-   "rating": "Fraud",
-   "review_date": "2025-11-16T00:00:00Z",
-   "title": "Fact Check: PM Modi Didn't Announce Free 3-Month Mobile ...",
-   "language": "en"
-  },
-  {
-   "claim_text": "PM Narendra Modi is giving 3 Months Free recharge to all Indian users so that more and more people can vote for BJP in the 2024 elections",
-   "claimant": "Viral social media post",
-   "claim_date": "2023-10-25T00:00:00Z",
-   "url": "https://digiteye.in/bjp-offering-3-month-free-mobile-recharge-ahead-of-2024-elections-fact-check/",
-   "publisher": "DigitEye India",
-   "publisher_site": "digiteye.in",
-   "rating": "False. No such offer was made by PM or the BJP as per the claim on the website in link.",
-   "review_date": "2023-10-26T00:00:00Z",
-   "title": "BJP offering 3-month free mobile recharge ahead of 2024 elections ...",
    "language": "en"
   }
  ],
@@ -317,6 +219,80 @@
    "review_date": "2024-01-03T10:09:49Z",
    "title": "Fact Check: बीजेपी ने नहीं जारी की है कोई फ्री रिचार्ज योजना, वायरल लिंक ...",
    "language": "hi"
+  }
+ ],
+ "factcheck_search:[\"PM Modi free mobile recharge scheme\", \"en\"]": [
+  {
+   "claim_text": "BJP and PM Modi are offering free recharge on the occasion of forming the government for a third term.",
+   "claimant": "Social Media User",
+   "claim_date": "2024-06-05T00:00:00Z",
+   "url": "https://factly.in/neither-bjp-nor-pm-modi-is-offering-any-free-recharge-on-the-occasion-of-forming-the-government-for-the-third-term/",
+   "publisher": "FACTLY",
+   "publisher_site": "factly.in",
+   "rating": "FALSE",
+   "review_date": "2024-06-07T00:00:00Z",
+   "title": "Neither BJP nor PM Modi is offering any free recharge on the ...",
+   "language": "en"
+  },
+  {
+   "claim_text": "BJP is offering free mobile recharge after winning third term",
+   "claimant": "social media user",
+   "claim_date": "2024-06-06T00:00:00Z",
+   "url": "https://theprint.in/hoaxposed/fact-check-modi-bjp-havent-announced-any-free-recharge-scheme-on-return-to-power/2121149/",
+   "publisher": "ThePrint",
+   "publisher_site": "theprint.in",
+   "rating": "False",
+   "review_date": "2024-06-07T00:00:00Z",
+   "title": "Fact Check: Modi, BJP haven't announced any free recharge ...",
+   "language": "en"
+  },
+  {
+   "claim_text": "Prime Minister Modi is giving free recharge to all Indians so that people vote for BJP in the 2024 general elections",
+   "claimant": "Social media users",
+   "claim_date": "2023-08-22T00:00:00Z",
+   "url": "https://www.newsmobile.in/uncategorized/fact-check-no-pm-modi-is-not-providing-free-mobile-recharge-to-get-votes-in-2024-general-elections/",
+   "publisher": "NewsMobile",
+   "publisher_site": "newsmobile.in",
+   "rating": "False",
+   "review_date": "2023-08-23T00:00:00Z",
+   "title": "Fact Check: No, PM Modi Is NOT Providing Free Mobile Recharge ...",
+   "language": "en"
+  },
+  {
+   "claim_text": "BJP is providing three months of free recharge to all Indian mobile service customers",
+   "claimant": null,
+   "claim_date": "2023-10-30T00:00:00Z",
+   "url": "https://www.telugupost.com/english-factcheck/viral-message-claiming-bjp-is-providing-three-months-of-free-recharge-to-all-indian-mobile-service-customers-is-hoax-1501939",
+   "publisher": "Telugu Post",
+   "publisher_site": "telugupost.com",
+   "rating": "False",
+   "review_date": null,
+   "title": "Fact Check: Viral message claiming BJP is providing three months ...",
+   "language": "en"
+  },
+  {
+   "claim_text": "PM Modi is offering a mobile recharge of ₹239 for every Indian as part of his election campaign for the 2024 General elections",
+   "claimant": "SOCIAL MEDIA POST",
+   "claim_date": "2023-05-07T00:00:00Z",
+   "url": "https://factly.in/malicious-links-circulate-in-pm-modis-name-offering-free-mobile-recharge-for-indians/",
+   "publisher": "FACTLY",
+   "publisher_site": "factly.in",
+   "rating": "FALSE",
+   "review_date": "2023-06-20T00:00:00Z",
+   "title": "Malicious Links are Circulated in the Guise of Offering Free Mobile ...",
+   "language": "en"
+  },
+  {
+   "claim_text": "PM Modi Announced Free 3-Month Mobile Recharge After Bihar Polls Win",
+   "claimant": "Social Media",
+   "claim_date": "2025-11-14T00:00:00Z",
+   "url": "https://www.newsmobile.in/nm-fact-checker/fact-check-pm-modi-didnt-announce-free-3-month-mobile-recharge-after-bihar-polls-win/",
+   "publisher": "NewsMobile",
+   "publisher_site": "newsmobile.in",
+   "rating": "Fraud",
+   "review_date": "2025-11-16T00:00:00Z",
+   "title": "Fact Check: PM Modi Didn't Announce Free 3-Month Mobile ...",
+   "language": "en"
   }
  ]
 }

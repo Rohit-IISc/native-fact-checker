@@ -61,7 +61,7 @@ async def test_error_in_one_call_falls_back_to_the_other():
 async def test_transient_server_error_is_retried_once():
     from google.genai import errors
 
-    from app.llm import _retry_once
+    from app.llm import _retry_transient
 
     state = {"n": 0}
 
@@ -71,16 +71,47 @@ async def test_transient_server_error_is_retried_once():
             raise errors.ServerError(503, {"error": {"message": "unavailable"}})
         return "ok"
 
-    assert await _retry_once(flaky) == "ok" and state["n"] == 2
+    assert await _retry_transient(flaky) == "ok" and state["n"] == 2
 
 
 async def test_client_error_is_not_retried():
     from google.genai import errors
 
-    from app.llm import _retry_once
+    from app.llm import _retry_transient
 
     async def bad():
         raise errors.ClientError(400, {"error": {"message": "bad request"}})
 
     with pytest.raises(errors.ClientError):
-        await _retry_once(bad)
+        await _retry_transient(bad)
+
+
+async def test_rate_limit_is_retried_with_backoff(monkeypatch):
+    from google.genai import errors
+
+    from app import llm
+
+    monkeypatch.setattr(llm, "RETRY_DELAYS_S", (0.01, 0.01, 0.01))
+    state = {"n": 0}
+
+    async def busy():
+        state["n"] += 1
+        if state["n"] < 3:
+            raise errors.ClientError(429, {"error": {"message": "RESOURCE_EXHAUSTED"}})
+        return "ok"
+
+    assert await llm._retry_transient(busy) == "ok" and state["n"] == 3
+
+
+async def test_retries_stop_when_the_budget_is_spent(monkeypatch):
+    from google.genai import errors
+
+    from app import llm
+
+    monkeypatch.setattr(llm, "RETRY_DELAYS_S", (1.0, 1.0, 1.0))
+
+    async def busy():
+        raise errors.ClientError(429, {"error": {"message": "RESOURCE_EXHAUSTED"}})
+
+    with pytest.raises(errors.ClientError):
+        await llm._retry_transient(busy, budget_s=0.5)  # no time for even one 1 s wait

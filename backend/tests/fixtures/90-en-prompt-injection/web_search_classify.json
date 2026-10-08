@@ -1,132 +1,92 @@
 {
   "prompt_version": "web-search-classify-1.3+shared-1.1",
   "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-07T18:47:46+00:00",
+  "recorded_at": "2026-10-08T06:24:00+00:00",
   "outputs": [
     {
       "items": [
         {
           "source_n": 1,
           "claim_id": "c1",
-          "publisher": "GOV.UK",
-          "title": null,
-          "published_at": "2020-05-06",
+          "publisher": "NPR",
+          "title": "There's no scientific evidence tying 5G networks to the coronavirus pandemic. Howe...",
+          "published_at": null,
           "language": null,
-          "snippet_en": "GOV.UK states there is no evidence linking 5G and coronavirus, as viruses cannot travel on radio waves or mobile networks. It also notes that coronavirus is spreading in countries without 5G.",
+          "snippet_en": "The claim that 5G mobile towers spread the coronavirus, leading to an increase in cases where 5G was installed, is a conspiracy theory with no scientific basis. These conspiracy theories led to arson attacks on 5G towers and harassment of telecom engineers in several countries.",
           "stance": "CONTRADICTS"
         },
         {
           "source_n": 2,
           "claim_id": "c1",
           "publisher": "UN News",
-          "title": null,
-          "published_at": "2020-04-22",
+          "title": "No link between 5G and COVID-19, UN agency confirms | UN News",
+          "published_at": "2020-04-17",
           "language": null,
-          "snippet_en": "The International Telecommunication Union (ITU), a UN agency, confirmed that the theory of a link between 5G and COVID-19 is \"a hoax that has no technical basis.\"",
+          "snippet_en": "The claim that 5G mobile towers spread the coronavirus is a conspiracy theory with no scientific basis. The International Telecommunication Union (ITU), a UN agency, confirmed in April 2020 that 5G is not responsible for the spread of COVID-19, calling it a \"hoax that has no technical basis.\"",
           "stance": "CONTRADICTS"
         },
         {
           "source_n": 3,
           "claim_id": "c1",
-          "publisher": "The Washington Post",
-          "title": "DHS to advise telecom firms on preventing 5G cell tower attacks linked to coronavirus conspiracy theories",
-          "published_at": "2020-05-13",
+          "publisher": "Ofcom",
+          "title": "Clearing up myths: 5G and coronavirus",
+          "published_at": null,
           "language": null,
-          "snippet_en": "The World Health Organization (WHO) and Centers for Disease Control (CDC) state that viruses cannot travel via radio waves or mobile networks, and that physical contact is needed for infection.",
+          "snippet_en": "The claim that 5G mobile towers spread the coronavirus, leading to an increase in cases where 5G was installed, is a conspiracy theory with no scientific basis. These conspiracy theories led to arson attacks on 5G towers and harassment of telecom engineers in several countries.",
           "stance": "CONTRADICTS"
         },
         {
           "source_n": 4,
           "claim_id": "c1",
-          "publisher": "Mayo Clinic",
-          "title": "Coronavirus disease 2019 (COVID-19) myths",
+          "publisher": "GOV.UK",
+          "title": "5G and coronavirus (COVID-19)",
           "published_at": null,
           "language": null,
-          "snippet_en": "The World Health Organization (WHO) and Centers for Disease Control (CDC) state that viruses cannot travel via radio waves or mobile networks, and that physical contact is needed for infection.",
+          "snippet_en": "The claim that 5G mobile towers spread the coronavirus is a conspiracy theory with no scientific basis. The UK government has stated that viruses cannot travel via radio waves or mobile networks, and that COVID-19 has spread in countries without 5G.",
           "stance": "CONTRADICTS"
         },
         {
           "source_n": 5,
           "claim_id": "c1",
-          "publisher": "United Church of Christ",
-          "title": "Daily COVID-19 Brief, Issue #62",
+          "publisher": "International Telecommunication Union",
+          "title": "5G and COVID-19: Statement from ITU",
           "published_at": null,
           "language": null,
-          "snippet_en": "The World Health Organization (WHO) and Centers for Disease Control (CDC) state that viruses cannot travel via radio waves or mobile networks, and that physical contact is needed for infection.",
+          "snippet_en": "The claim that 5G mobile towers spread the coronavirus is a conspiracy theory with no scientific basis. The International Telecommunication Union (ITU) confirmed in April 2020 that 5G is not responsible for the spread of COVID-19, calling it a \"hoax that has no technical basis.\"",
           "stance": "CONTRADICTS"
         },
         {
           "source_n": 6,
           "claim_id": "c1",
-          "publisher": "Wikipedia",
-          "title": "5G misinformation",
-          "published_at": null,
+          "publisher": "The Washington Post",
+          "title": "DHS to advise telecom firms on preventing 5G cell tower attacks linked to coronavirus conspiracy theories - The Washington Post",
+          "published_at": "2020-05-13",
           "language": null,
-          "snippet_en": "Wikipedia, citing the CDC, explains that 5G uses non-ionizing radiation which does not damage DNA, and there is no evidence that it affects the immune system.",
+          "snippet_en": "Numerous scientific and governmental organizations have debunked the claim that 5G mobile towers spread the coronavirus. The World Health Organization (WHO) has stated that viruses cannot travel via radio waves or mobile networks. Experts explain that 5G technology uses electromagnetic fields, and it is physically impossible for these fields to transfer particles like viruses. There is also no scientific evidence to support the idea that 5G compromises the immune system. These conspiracy theories led to arson attacks on 5G towers and harassment of telecom engineers in several countries.",
           "stance": "CONTRADICTS"
         },
         {
           "source_n": 7,
-          "claim_id": "c2",
-          "publisher": "AP News",
-          "title": null,
-          "published_at": "2020-04-08",
+          "claim_id": "c1",
+          "publisher": "La Trobe University",
+          "title": "5G and COVID-19 conspiracy theories",
+          "published_at": null,
           "language": null,
-          "snippet_en": "AP News reported that claims of maps showing a correlation between confirmed COVID-19 cases and 5G installation are false, explaining both maps highlight densely populated areas where 5G is rolled out.",
+          "snippet_en": "Experts explain that 5G technology uses electromagnetic fields, and it is physically impossible for these fields to transfer particles like viruses.",
           "stance": "CONTRADICTS"
         },
         {
           "source_n": 8,
-          "claim_id": "c2",
-          "publisher": null,
-          "title": null,
-          "published_at": "2021-04-12",
-          "language": null,
-          "snippet_en": "A study published in Medical Research Archives found a statistical correlation between higher COVID-19 cases and deaths in US states and counties with 5G millimeter wave wireless telecommunications, even after accounting for population density.",
-          "stance": "SUPPORTS"
-        },
-        {
-          "source_n": 9,
-          "claim_id": "c2",
-          "publisher": "National Center for Biotechnology Information",
-          "title": null,
+          "claim_id": "c1",
+          "publisher": "National Institutes of Health",
+          "title": "5G and COVID-19: A Review of the Evidence",
           "published_at": null,
           "language": null,
-          "snippet_en": "While one study found a statistical correlation, other sources strongly refute any causal link between 5G and increased coronavirus cases.",
+          "snippet_en": "Despite the lack of evidence, these conspiracy theories led to arson attacks on 5G towers and harassment of telecom engineers in several countries.",
           "stance": "CONTEXT"
-        },
-        {
-          "source_n": 10,
-          "claim_id": "c2",
-          "publisher": "PBS NewsHour",
-          "title": "Conspiracy theorists burn 5G towers, claiming link to virus",
-          "published_at": null,
-          "language": null,
-          "snippet_en": "While one study found a statistical correlation, other sources strongly refute any causal link between 5G and increased coronavirus cases.",
-          "stance": "CONTEXT"
-        },
-        {
-          "source_n": 11,
-          "claim_id": "c2",
-          "publisher": "The Guardian",
-          "title": "How false claims about 5G health risks spread into the mainstream",
-          "published_at": "2020-04-07",
-          "language": null,
-          "snippet_en": "The Guardian reported that a claim about Wuhan being the first city to receive 5G and the origin of COVID-19 is false, as other cities had 5G earlier and countries without 5G also had high cases.",
-          "stance": "CONTRADICTS"
-        },
-        {
-          "source_n": 12,
-          "claim_id": "c2",
-          "publisher": "UNICEF Montenegro",
-          "title": "5G technology does not cause or spread coronavirus",
-          "published_at": "2021-07-12",
-          "language": null,
-          "snippet_en": "UNICEF Montenegro stated that their analysis shows 5G does not spread coronavirus.",
-          "stance": "CONTRADICTS"
         }
       ],
-      "notes_en": ""
+      "notes_en": "The claim that 5G mobile towers spread the coronavirus is widely debunked by scientific and governmental organizations. Sources consistently state there is no scientific basis for this claim, and that viruses cannot travel via radio waves. The conspiracy theories led to attacks on 5G infrastructure."
     }
   ]
 }

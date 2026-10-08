@@ -1,28 +1,64 @@
 {
   "prompt_version": "composer-1.2+shared-1.1",
   "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-07T18:45:52+00:00",
+  "recorded_at": "2026-10-08T06:22:40+00:00",
   "outputs": [
     {
       "language": "en",
-      "headline": "Unconfirmed: Image of Chandrayaan-3 celebrations not verified",
-      "summary": "We could not confirm if the image in the post shows celebrations for Chandrayaan-3's moon landing.",
-      "what_post_claims": "The image in this post shows people in India celebrating the successful landing of the Chandrayaan-3 mission near the Moon's south pole.",
-      "what_is_true": "India's Chandrayaan-3 mission did successfully land on the moon on August 23, 2023, leading to widespread celebrations. However, the origin of the specific image used in the post to depict these celebrations could not be verified.",
-      "evidence_for": [
-        "Celebrations erupted across India following the successful landing of Chandrayaan-3, with people cheering, dancing, sharing sweets, and waving national flags, according to The Indian Express.",
-        "ABPLive reported widespread celebrations in India, including school children dancing and sharing sweets, after Chandrayaan-3 landed.",
-        "India Today stated that Prime Minister Narendra Modi announced August 23 would be celebrated as National Space Day after the Chandrayaan-3 landing."
-      ],
+      "headline": "We cannot confirm this photo shows Chandrayaan-3 celebrations",
+      "summary": "We could not find any evidence to confirm that the photo in the post shows people celebrating India's Chandrayaan-3 mission landing on the Moon.",
+      "what_post_claims": "The post claims that the photo shows people celebrating India's Chandrayaan-3 mission successfully landing on the Moon.",
+      "what_is_true": "There is no available evidence to verify what the photo shows or to connect it to the celebrations for India's Chandrayaan-3 mission.",
+      "evidence_for": [],
       "evidence_against": [],
       "confidence_phrase": "we are not sure",
-      "sources_spoken": "The Indian Express, ABPLive, and India Today",
-      "audio_script": "The post claims that the image shows people in India celebrating the successful landing of the Chandrayaan-3 mission near the Moon's south pole. We could not confirm this. While India's Chandrayaan-3 mission did successfully land on the moon on August 23, 2023, leading to widespread celebrations, the origin of the specific image used in the post could not be verified. We are not sure about this. This information comes from news reports by The Indian Express, ABPLive, and India Today, which confirm the celebrations but not the image's origin.",
+      "sources_spoken": "our research",
+      "audio_script": "The post claims that the photo shows people celebrating India's Chandrayaan-3 mission successfully landing on the Moon. We cannot confirm this. We could not find any evidence to verify what the photo shows or to connect it to the celebrations for India's Chandrayaan-3 mission. We are not sure about this claim. This information comes from our research, as we were unable to find any supporting evidence for the photo's context.",
       "card_lines": [
-        "Unconfirmed",
-        "Image of Chandrayaan-3 celebrations",
-        "Chandrayaan-3 landed, celebrations happened",
-        "Image origin not verified"
+        "Cannot confirm",
+        "Photo shows Chandrayaan-3 celebrations",
+        "No evidence found to verify the photo's context",
+        "Our research"
+      ],
+      "panel_readings": []
+    },
+    {
+      "language": "en",
+      "headline": "Cannot confirm Chandrayaan-3 landed near Moon's south pole",
+      "summary": "We could not confirm if India's Chandrayaan-3 mission landed near the Moon's south pole, as the provided information does not contain sources to verify this event.",
+      "what_post_claims": "The post claims that India's Chandrayaan-3 mission made a historic landing near the Moon's south pole.",
+      "what_is_true": "While many reports state that India's Chandrayaan-3 mission landed on the Moon's south pole, the evidence we have does not directly confirm this event.",
+      "evidence_for": [],
+      "evidence_against": [],
+      "confidence_phrase": "we are not sure",
+      "sources_spoken": "our analysis of the provided information",
+      "audio_script": "The post claims that India's Chandrayaan-3 mission made a historic landing near the Moon's south pole. We cannot confirm this claim. While it is widely reported that India's Chandrayaan-3 mission landed on the Moon's south pole, the information we have does not contain any sources that directly confirm this event took place. We are not sure about this claim. This assessment comes from our analysis of the provided information.",
+      "card_lines": [
+        "Cannot confirm",
+        "Chandrayaan-3 landed near Moon's south pole",
+        "Evidence does not confirm the landing",
+        "We are not sure"
+      ],
+      "panel_readings": []
+    },
+    {
+      "language": "en",
+      "headline": "NOT ENOUGH EVIDENCE: India first to land in lunar south pole region",
+      "summary": "We could not confirm if India was the first country to land in the lunar south pole region, as there is conflicting information.",
+      "what_post_claims": "The post claims that India is the first country to land in the lunar south pole region.",
+      "what_is_true": "India successfully landed a spacecraft in the lunar south pole region on August 23, 2023.",
+      "evidence_for": [],
+      "evidence_against": [
+        "BOOM Fact Check rated as false the claim that China was the first country to land on the moon's South Pole a few years ago."
+      ],
+      "confidence_phrase": "we are not sure",
+      "sources_spoken": "BOOM Fact Check",
+      "audio_script": "The post claims that India is the first country to land in the lunar south pole region. We could not confirm this claim either way. While India did successfully land a spacecraft in the lunar south pole region on August 23, 2023, there is conflicting information about whether it was the absolute first country to do so. We are not sure about this claim. This information comes from BOOM Fact Check.",
+      "card_lines": [
+        "NOT ENOUGH EVIDENCE",
+        "India first to land in lunar south pole?",
+        "India landed a spacecraft in the lunar south pole region on August 23, 2023.",
+        "We could not confirm if it was the first country to do so."
       ],
       "panel_readings": []
     }

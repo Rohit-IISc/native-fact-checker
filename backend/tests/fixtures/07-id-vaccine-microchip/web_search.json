@@ -1,10 +1,10 @@
 {
-  "prompt_version": "web-search-2.1+shared-1.1",
+  "prompt_version": "web-search-2.2+shared-1.1",
   "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-07T18:42:14+00:00",
+  "recorded_at": "2026-10-08T06:20:03+00:00",
   "outputs": [
     {
-      "text": "c1:\nThe claim that COVID-19 vaccines contain microchips for tracking vaccinated individuals is false. [1] [2] [3] [4] [5] [6] This conspiracy theory has been widely debunked by health organizations, government bodies, and fact-checkers. [1] [2] [3] [4] [5] [6] [7] [8]\n\nThe Centers for Disease Control and Prevention (CDC) states that COVID-19 vaccines do not contain microchips and are not administered to track movement. [1] Their purpose is to stimulate the immune system to produce antibodies against the disease. [1] Similarly, the Mayo Clinic explicitly states that there are no microchips in the vaccine and no way for it to track people or gather personal information. [2] [3] Pfizer also confirms that its vaccines do not contain microchips or any other tracking devices. [6]\n\nThe Indonesian Ministry of Communication and Information (Kominfo) has declared information about microchips in COVID-19 vaccines as a hoax. [7] [8] They clarify that barcodes on vaccine products are for tracking distribution, not individuals. [7] The Indonesian National Police also confirmed that claims of Pfizer receiving a patent to track vaccinated individuals are false, and Pfizer itself has denied such patents. [9]\n\nExperts explain that the physical size of microchips makes it impossible for them to be injected through a standard vaccine needle. [10] [11] [12] Furthermore, even if a microchip could be injected, it would require an antenna to transmit data, making it even larger and impractical for injection through muscle and skin. [12]\n\nThe origin of this myth has been linked to misinterpretations of comments made by Bill Gates about digital vaccine records, which are not microchips and are not tied to the development or distribution of COVID-19 vaccines. [2] Some theories also connect the microchip claims to broader distrust of government and pharmaceutical companies. [13] [14]",
+      "text": "The claim that COVID-19 vaccines contain microchips to track vaccinated individuals is false. Multiple health organizations and fact-checkers have debunked this conspiracy theory.\n\nHere's what the evidence shows:\n*   **No Microchips in Vaccines** The CDC, Mayo Clinic, and other health authorities explicitly state that COVID-19 vaccines do not contain microchips. [1] [2] [3] [4] Vaccines are designed to stimulate an immune response, not to track individuals. [1] [3]\n*   **Origin of the Myth** The microchip conspiracy theory gained traction from various sources, including misinterpretations of comments made by Bill Gates about digital vaccine records (which are not microchips) and misrepresentations of RFID chips used on vaccine vials for tracking doses, not people. [5] [6] [7] [8]\n*   **Impossibility of Implantation** Experts explain that it would be impossible to fit a microchip, along with a power source and transmission capabilities, into the small gauge needle used for vaccinations. [6] [9]\n*   **Vaccine Ingredients** The ingredients of COVID-19 vaccines are publicly available and do not include microchips or any tracking devices. [10] [11] They typically contain proteins, salts, lipids, and solvents. [11]\n*   **Misinformation Spread** This claim has been widely circulated on social media, with some videos falsely purporting to show microchips in vaccines or demonstrating magnetic effects on vaccinated arms, which have also been debunked. [9] [11] [12] [13]",
       "sources": [
         {
           "n": 1,
@@ -13,13 +13,13 @@
         },
         {
           "n": 2,
-          "url": "https://newsnetwork.mayoclinic.org/discussion/covid-queries-altered-dna-and-microchips/",
+          "url": "https://www.mayoclinic.org/diseases-conditions/coronavirus/in-depth/coronavirus-myths/art-20485720",
           "domain": "mayoclinic.org"
         },
         {
           "n": 3,
-          "url": "https://www.mayoclinic.org/diseases-conditions/coronavirus/in-depth/coronavirus-myths/art-20485720",
-          "domain": "mayoclinic.org"
+          "url": "https://www.thewellnesscoalition.org/faq-items/do-covid-19-vaccines-contain-microchips/",
+          "domain": "thewellnesscoalition.org"
         },
         {
           "n": 4,
@@ -28,53 +28,48 @@
         },
         {
           "n": 5,
+          "url": "https://newsnetwork.mayoclinic.org/discussion/covid-queries-altered-dna-and-microchips/",
+          "domain": "mayoclinic.org"
+        },
+        {
+          "n": 6,
+          "url": "https://covid-101.org/science/are-there-tracers-in-the-vaccine/",
+          "domain": "covid-101.org"
+        },
+        {
+          "n": 7,
           "url": "https://www.factcheck.org/2020/12/covid-19-vaccines-dont-have-patient-tracking-devices/",
           "domain": "factcheck.org"
         },
         {
-          "n": 6,
-          "url": "https://www.pfizer.com/about/responsibility/misinformation",
-          "domain": "pfizer.com"
-        },
-        {
-          "n": 7,
-          "url": "https://jalahoaks.jakarta.go.id/detail/HOAKS-Vaksin-Covid-19-Memiliki-Chip-yang-Dapat-Melacak-Keberadaan-Orang",
-          "domain": "jakarta.go.id"
-        },
-        {
           "n": 8,
-          "url": "https://www.komdigi.go.id/berita/berita-komdigi/detail/vaksin-covid-19-punya-chip-untuk-lacak-orang-itu-disinformasi",
-          "domain": "komdigi.go.id"
+          "url": "https://www.ksat.com/news/local/2021/01/12/trust-index-does-the-covid-19-vaccine-contain-a-tracking-device/",
+          "domain": "ksat.com"
         },
         {
           "n": 9,
-          "url": "https://tribratanews.polri.go.id/blog/none-22/hoaks-pfizer-melacak-individu-yang-sudah-divaksin-58780",
-          "domain": "polri.go.id"
-        },
-        {
-          "n": 10,
-          "url": "https://medium.com/elektronhme/mitos-atau-fakta-microchip-dalam-vaksin-5fa00e854fe2",
-          "domain": "medium.com"
-        },
-        {
-          "n": 11,
-          "url": "https://saberhoaks.jabarprov.go.id/v2/klarifikasi/detail/PTN003235/UJI-COBA-VAKSIN-TBC-BILL-GATES-ADALAH-UPAYA-PEMASANGAN-MICROCHIP-%28CHIP-666%29",
-          "domain": "jabarprov.go.id"
-        },
-        {
-          "n": 12,
           "url": "https://www.youtube.com/watch?v=2S2v45_NSYs",
           "domain": "youtube.com"
         },
         {
-          "n": 13,
-          "url": "https://www.cidrap.umn.edu/covid-19/study-ties-covid-vaccine-conspiracy-theories-distrust-government-mainstream-media",
-          "domain": "umn.edu"
+          "n": 10,
+          "url": "https://www.factcheck.org/2022/05/scicheck-pfizer-ceo-not-referencing-covid-19-vaccines-contrary-to-false-impression-in-posts-about-microchips/",
+          "domain": "factcheck.org"
         },
         {
-          "n": 14,
-          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10189621/",
-          "domain": "nih.gov"
+          "n": 11,
+          "url": "https://www.halodoc.com/artikel/jangan-percaya-4-hoaks-vaksin-covid-19-ini",
+          "domain": "halodoc.com"
+        },
+        {
+          "n": 12,
+          "url": "https://www.kemkes.go.id/id/hoax-vaksin-covid-19-mengandung-mikrocip-magnetis",
+          "domain": "kemkes.go.id"
+        },
+        {
+          "n": 13,
+          "url": "https://factcheck.afp.com/doc.afp.com.9EG2NX",
+          "domain": "afp.com"
         }
       ],
       "queries": 6

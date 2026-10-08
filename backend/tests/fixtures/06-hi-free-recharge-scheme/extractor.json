@@ -1,25 +1,25 @@
 {
-  "prompt_version": "extractor-1.8+shared-1.1",
+  "prompt_version": "extractor-1.10+shared-1.1",
   "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-07T18:41:18+00:00",
+  "recorded_at": "2026-10-08T06:18:17+00:00",
   "outputs": [
     {
       "content_language": "hi-IN",
       "content_script": "Deva",
-      "summary_en": "A message claims that Prime Minister Modi is offering all Indians 3 months of free mobile recharge. It instructs users to click a provided link to claim the offer, stating that it is valid only for today.",
+      "summary_en": "A message claims that Prime Minister Modi is offering all Indians 3 months of free mobile recharge. It instructs users to click a link to avail the offer, stating it is valid only for today.",
       "checkable": true,
       "non_checkable_type": null,
       "claims": [
         {
-          "claim_id": "claim_1",
+          "claim_id": "claim1",
           "claim_original": "प्रधानमंत्री मोदी सभी भारतीयों को 3 महीने का मुफ्त मोबाइल रिचार्ज दे रहे हैं।",
-          "claim_en": "Prime Minister Modi is offering all Indians 3 months of free mobile recharge.",
-          "claim_type": "FINANCIAL_OFFER",
+          "claim_en": "Prime Minister Modi is providing all Indians with 3 months of free mobile recharge.",
+          "claim_type": "GOVERNMENT_SCHEME",
           "entities": [
-            "प्रधानमंत्री मोदी",
-            "भारतीयों"
+            "Narendra Modi",
+            "Indians"
           ],
-          "place": "India",
+          "place": null,
           "claimed_date": null,
           "time_sensitivity": "EVERGREEN",
           "search_queries_original": [
@@ -28,9 +28,9 @@
             "सरकारी मुफ्त रिचार्ज योजना"
           ],
           "search_queries_en": [
-            "PM Modi free mobile recharge",
-            "Modi 3 months free recharge scheme",
-            "Government free mobile data offer"
+            "PM Modi free mobile recharge scheme",
+            "Modi 3 months free recharge",
+            "government free mobile recharge fact check"
           ]
         }
       ],

@@ -1,20 +1,25 @@
 {
-  "prompt_version": "judge-1.2+shared-1.1",
+  "prompt_version": "judge-1.3+shared-1.1",
   "model_id": "gemini-2.5-pro",
-  "recorded_at": "2026-10-07T18:47:29+00:00",
+  "recorded_at": "2026-10-08T06:23:41+00:00",
   "outputs": [
     {
       "verdicts": [
         {
           "claim_id": "c1",
           "label": "NOT_ENOUGH_EVIDENCE",
-          "confidence": 95,
-          "what_is_true_en": "There is no evidence available to confirm or deny the sighting of crocodiles in Kukkarahalli Lake in Mysuru.",
+          "confidence": 40,
+          "what_is_true_en": "Crocodiles have been sighted in Kukkarahalli Lake on several occasions over the years. However, there is no evidence to confirm a sighting of two crocodiles on October 7, 2026.",
           "event_date": null,
           "evidence_for_ids": [],
           "evidence_against_ids": [],
-          "cited_ids": [],
-          "reasoning_en": "The evidence pack contains no information regarding the claim. No web search results or any other form of evidence were provided to either support or refute the alleged sighting of crocodiles in Kukkarahalli Lake.",
+          "cited_ids": [
+            "ws-1",
+            "ws-2",
+            "ws-3",
+            "ws-4"
+          ],
+          "reasoning_en": "The provided evidence confirms that crocodiles have been spotted in Kukkarahalli Lake multiple times in the past, including in January 2026, December 2024, September 2023, and March 2010. However, none of the evidence supports the specific claim that two crocodiles were seen on the evening of October 7, 2026. All past reports mention a single crocodile. Without any specific report or official confirmation for the claimed date and number of crocodiles, there is not enough evidence to verify the claim.",
           "ai_generation": null
         }
       ]

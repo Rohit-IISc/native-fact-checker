@@ -1,0 +1,33 @@
+{
+  "prompt_version": "web-search-2.2+shared-1.1",
+  "model_id": "gemini-2.5-flash",
+  "recorded_at": "2026-10-08T06:23:41+00:00",
+  "outputs": [
+    {
+      "text": "c1:\nCrocodiles have been sighted in Kukkarahalli Lake in Mysore multiple times over the years. A crocodile was spotted at the bank of Kukkarahalli Lake recently, triggering panic among morning walkers, according to an article from January 28, 2026. [1] Another article from December 1, 2024, reported a huge crocodile sighted near the fishermen's shed close to Hunsur Main Road. [2] The article also mentions that this is not the first time a crocodile has been sighted in Kukkarahalli Lake and that many walkers have previously reported sightings. [2] In September 2023, morning walkers were worried after spotting a crocodile in the lake, and the Forest Department had previously rescued crocodiles from the lake. [3] A giant crocodile was also spotted on the Kukkarahalli Lake bund in March 2010, reaffirming the presence of crocodiles in the lake. [4]",
+      "sources": [
+        {
+          "n": 1,
+          "url": "https://starofmysore.com/crocodile-spotted-at-kukkarahalli-lake/",
+          "domain": "starofmysore.com"
+        },
+        {
+          "n": 2,
+          "url": "https://starofmysore.com/crocodile-sighted-in-kukkarahalli-lake/",
+          "domain": "starofmysore.com"
+        },
+        {
+          "n": 3,
+          "url": "https://starofmysore.com/crocodile-spotted-in-kukkarahalli-lake/",
+          "domain": "starofmysore.com"
+        },
+        {
+          "n": 4,
+          "url": "https://www.thehindu.com/news/national/karnataka/Giant-crocodile-appears-near-Mysore-lake/article16615491.ece",
+          "domain": "thehindu.com"
+        }
+      ],
+      "queries": 4
+    }
+  ]
+}

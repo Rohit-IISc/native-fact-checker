@@ -1,14 +1,29 @@
 {
   "prompt_version": "media-provenance-1.2+shared-1.1",
   "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-07T18:45:52+00:00",
+  "recorded_at": "2026-10-08T06:22:40+00:00",
   "outputs": [
     {
       "agent": "media_provenance",
       "evidence": [
         {
           "evidence_id": "",
-          "agent": "media_provenance",
+          "agent": "web_search",
+          "claim_id": "c1",
+          "url": "https://www.bbc.co.uk/news/world-asia-india-67142307",
+          "domain": "bbc.co.uk",
+          "publisher": "BBC News",
+          "title": "India aims to send astronaut to the Moon by 2040 - BBC News",
+          "published_at": null,
+          "language": null,
+          "snippet_en": "This article discusses India's future space ambitions, including sending an astronaut to the Moon by 2040. It does not show people celebrating the Chandrayaan-3 landing.",
+          "stance": "UNRELATED",
+          "rating_text": null,
+          "tier": "TIER_1"
+        },
+        {
+          "evidence_id": "",
+          "agent": "web_search",
           "claim_id": "c1",
           "url": "https://www.bbc.co.uk/news/uk-wales-66687056",
           "domain": "bbc.co.uk",
@@ -16,14 +31,14 @@
           "title": "Moon base: Bangor scientists design fuel to live in space - BBC News",
           "published_at": null,
           "language": null,
-          "snippet_en": "This article is about scientists designing fuel for a moon base, not related to Chandrayaan-3 celebrations.",
+          "snippet_en": "This article focuses on Welsh scientists designing fuel for a moon base. It does not show people celebrating the Chandrayaan-3 landing.",
           "stance": "UNRELATED",
           "rating_text": null,
-          "tier": "TIER_2"
+          "tier": "TIER_1"
         },
         {
           "evidence_id": "",
-          "agent": "media_provenance",
+          "agent": "web_search",
           "claim_id": "c1",
           "url": "https://www.bbc.com/news/live/world-asia-india-47640058?page=47",
           "domain": "bbc.com",
@@ -31,34 +46,16 @@
           "title": "India news stream - BBC",
           "published_at": null,
           "language": null,
-          "snippet_en": "This is a live news stream about India, but the specific page does not contain information about Chandrayaan-3 celebrations.",
+          "snippet_en": "This is a live news stream about India. Without specific page content, it's impossible to determine if it relates to the Chandrayaan-3 celebration.",
           "stance": "UNRELATED",
           "rating_text": null,
-          "tier": "TIER_2"
-        },
-        {
-          "evidence_id": "",
-          "agent": "media_provenance",
-          "claim_id": "c1",
-          "url": "https://za.linkedin.com/in/chernayj",
-          "domain": "linkedin.com",
-          "publisher": "LinkedIn",
-          "title": "Chernay Johnson | Est. 1989 | #planetaryIMPACT #WomenInTech",
-          "published_at": null,
-          "language": null,
-          "snippet_en": "This is a LinkedIn profile and is not related to the Chandrayaan-3 landing or celebrations.",
-          "stance": "UNRELATED",
-          "rating_text": null,
-          "tier": "NOT_A_SOURCE"
+          "tier": "TIER_1"
         }
       ],
       "source_assessment": null,
-      "ai_generation_signals": {
-        "signals_ai": [],
-        "signals_real": []
-      },
+      "ai_generation_signals": null,
       "earliest_appearance": null,
-      "notes_en": "No direct matches were found for the image. The search results are generic and do not show the image in the context of Chandrayaan-3 celebrations.",
+      "notes_en": "The image search results did not yield any direct matches for the provided image that depict people celebrating India's Chandrayaan-3 mission. The results primarily show generic crowd videos or articles unrelated to the Chandrayaan-3 landing.",
       "timed_out": false
     }
   ]

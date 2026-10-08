@@ -1,5 +1,35 @@
 {
- "factcheck_search:[\"प्रधानमंत्री मुफ्त लैपटॉप योजना\", \"hi\"]": [
+ "factcheck_search:[\"PM Free Laptop Scheme 2026\", \"en\"]": [],
+ "factcheck_search:[\"प्रधानमंत्री मुफ्त लैपटॉप योजना 2026\", \"hi\"]": [],
+ "factcheck_search:[\"pm-free-laptop-yojana.in official website\", \"en\"]": [],
+ "factcheck_search:[\"free laptop scheme application deadline October 15\", \"en\"]": [],
+ "factcheck_search:[\"government free laptop scheme India\", \"en\"]": [
+  {
+   "claim_text": "A viral message claims that the government is giving out free laptops to students from financially disadvantaged backgrounds.",
+   "claimant": "Viral Social Media Message",
+   "claim_date": "2024-01-06T00:00:00Z",
+   "url": "https://digiteye.in/is-the-govt-giving-out-free-laptops-to-students-old-claim-resurfaces-fact-check/",
+   "publisher": "DigitEye India",
+   "publisher_site": "digiteye.in",
+   "rating": "The claim is totally false. The Central government has not launched any such scheme under any of their projects as of now.",
+   "review_date": "2024-01-11T00:00:00Z",
+   "title": "Is the Govt giving out free laptops to students? Old claim resurfaces ...",
+   "language": "en"
+  },
+  {
+   "claim_text": "Student Laptop Scheme 2022 To Offer 800,000 Free Laptops Worldwide!!",
+   "claimant": "Social Media Users",
+   "claim_date": "2022-01-06T00:00:00Z",
+   "url": "https://srilanka.factcrescendo.com/english/student-laptop-scheme-2022-to-offer-800000-free-laptops-worldwide-is-a-scam/",
+   "publisher": "Fact Crescendo Sri Lanka",
+   "publisher_site": "srilanka.factcrescendo.com",
+   "rating": "False, Scam",
+   "review_date": "2022-07-12T00:00:00Z",
+   "title": "Student Laptop Scheme 2022 to offer 800,000 free laptops ...",
+   "language": "en"
+  }
+ ],
+ "factcheck_search:[\"प्रधानमंत्री मुफ्त लैपटॉप योजना वेबसाइट\", \"hi\"]": [
   {
    "claim_text": "प्रधानमंत्री 2 करोड़ युवाओं को मुफ्त में लैपटॉप बांटा जायेगा",
    "claimant": null,
@@ -21,6 +51,60 @@
    "publisher_site": "altnews.in",
    "rating": "False",
    "review_date": "2019-06-04T00:00:00Z",
+   "title": "प्रधानमंत्री मोदी ने किया 'फ्री लैपटॉप' बांटने का वादा? नहीं, फर्ज़ी वेबसाइट ...",
+   "language": "hi"
+  },
+  {
+   "claim_text": "केंद्र सरकार ने स्टूडेंट्स के लिए फ्री लैपटॉप स्कीम चलाई है।",
+   "claimant": "FB User- Abu Siddik Ahmed",
+   "claim_date": "2023-02-28T11:45:54Z",
+   "url": "https://www.vishvasnews.com/viral/fact-check-prime-minister-free-laptop-scheme-2023-24-is-fake/",
+   "publisher": "विश्वास न्यूज",
+   "publisher_site": "vishvasnews.com",
+   "rating": "False",
+   "review_date": "2023-02-28T11:45:54Z",
+   "title": "Fact Check: छात्रों को फ्री लैपटॉप स्कीम के रजिस्ट्रेशन के लिए बनी ...",
+   "language": "hi"
+  }
+ ],
+ "factcheck_search:[\"PM free laptop yojana last date\", \"en\"]": [],
+ "factcheck_search:[\"मुफ्त लैपटॉप योजना आवेदन अंतिम तिथि\", \"hi\"]": [],
+ "factcheck_search:[\"pm-free-laptop-yojana.in वेबसाइट\", \"hi\"]": [
+  {
+   "claim_text": "केंद्र सरकार ने स्टूडेंट्स के लिए फ्री लैपटॉप स्कीम चलाई है।",
+   "claimant": "FB User- Abu Siddik Ahmed",
+   "claim_date": "2023-02-28T11:45:54Z",
+   "url": "https://www.vishvasnews.com/viral/fact-check-prime-minister-free-laptop-scheme-2023-24-is-fake/",
+   "publisher": "विश्वास न्यूज",
+   "publisher_site": "vishvasnews.com",
+   "rating": "False",
+   "review_date": "2023-02-28T11:45:54Z",
+   "title": "Fact Check: छात्रों को फ्री लैपटॉप स्कीम के रजिस्ट्रेशन के लिए बनी ...",
+   "language": "hi"
+  }
+ ],
+ "factcheck_search:[\"प्रधानमंत्री मुफ्त लैपटॉप योजना\", \"hi\"]": [
+  {
+   "claim_text": "प्रधानमंत्री 2 करोड़ युवाओं को मुफ्त में लैपटॉप बांटा जायेगा",
+   "claimant": "सोशल मीडिया यूज़र्स",
+   "claim_date": "2016-06-20T00:00:00Z",
+   "url": "https://www.altnews.in/hindi/scam-websites-con-readers-in-the-name-of-pm-modi-by-offering-free-laptops/",
+   "publisher": "Alt News",
+   "publisher_site": "altnews.in",
+   "rating": "False",
+   "review_date": "2019-06-04T00:00:00Z",
+   "title": "प्रधानमंत्री मोदी ने किया 'फ्री लैपटॉप' बांटने का वादा? नहीं, फर्ज़ी वेबसाइट ...",
+   "language": "hi"
+  },
+  {
+   "claim_text": "प्रधानमंत्री 2 करोड़ युवाओं को मुफ्त में लैपटॉप बांटा जायेगा",
+   "claimant": null,
+   "claim_date": null,
+   "url": "https://www.altnews.in/hindi/scam-websites-con-readers-in-the-name-of-pm-modi-by-offering-free-laptops/",
+   "publisher": "Alt News",
+   "publisher_site": "altnews.in",
+   "rating": "False",
+   "review_date": "2019-06-04T14:19:44Z",
    "title": "प्रधानमंत्री मोदी ने किया 'फ्री लैपटॉप' बांटने का वादा? नहीं, फर्ज़ी वेबसाइट ...",
    "language": "hi"
   },
@@ -49,46 +133,19 @@
    "language": "hi"
   }
  ],
- "factcheck_search:[\"Pradhan Mantri Free Laptop Yojana 2026\", \"en\"]": [],
- "factcheck_search:[\"प्रधानमंत्री मुफ्त लैपटॉप योजना 2026\", \"hi\"]": [],
- "factcheck_search:[\"प्रधानमंत्री मुफ्त लैपटॉप योजना आवेदन अंतिम तिथि\", \"hi\"]": [],
- "factcheck_search:[\"पीएम फ्री लैपटॉप योजना 15 अक्टूबर\", \"hi\"]": [],
- "factcheck_search:[\"Pradhan Mantri Free Laptop Yojana official website\", \"en\"]": [],
- "factcheck_search:[\"pm-free-laptop-yojana.in website fact check\", \"en\"]": [],
- "factcheck_search:[\"Pradhan Mantri Free Laptop Yojana 2026 last date\", \"en\"]": [],
- "factcheck_search:[\"PM free laptop scheme application deadline October 15\", \"en\"]": [],
- "factcheck_search:[\"Pradhan Mantri Free Laptop Yojana last date\", \"en\"]": [],
- "factcheck_search:[\"pm-free-laptop-yojana.in वेबसाइट\", \"hi\"]": [
-  {
-   "claim_text": "केंद्र सरकार ने स्टूडेंट्स के लिए फ्री लैपटॉप स्कीम चलाई है।",
-   "claimant": "FB User- Abu Siddik Ahmed",
-   "claim_date": "2023-02-28T11:45:54Z",
-   "url": "https://www.vishvasnews.com/viral/fact-check-prime-minister-free-laptop-scheme-2023-24-is-fake/",
-   "publisher": "विश्वास न्यूज",
-   "publisher_site": "vishvasnews.com",
-   "rating": "False",
-   "review_date": "2023-02-28T11:45:54Z",
-   "title": "Fact Check: छात्रों को फ्री लैपटॉप स्कीम के रजिस्ट्रेशन के लिए बनी ...",
-   "language": "hi"
-  }
- ],
- "factcheck_search:[\"PM free laptop scheme government\", \"en\"]": [],
- "factcheck_search:[\"Pradhan Mantri Free Laptop Yojana\", \"en\"]": [],
- "factcheck_search:[\"प्रधानमंत्री मुफ्त लैपटॉप योजना ऑनलाइन आवेदन\", \"hi\"]": [
-  {
-   "claim_text": "केंद्र सरकार ने स्टूडेंट्स के लिए फ्री लैपटॉप स्कीम चलाई है।",
-   "claimant": "FB User- Abu Siddik Ahmed",
-   "claim_date": "2023-02-28T11:45:54Z",
-   "url": "https://www.vishvasnews.com/viral/fact-check-prime-minister-free-laptop-scheme-2023-24-is-fake/",
-   "publisher": "विश्वास न्यूज",
-   "publisher_site": "vishvasnews.com",
-   "rating": "False",
-   "review_date": "2023-02-28T11:45:54Z",
-   "title": "Fact Check: छात्रों को फ्री लैपटॉप स्कीम के रजिस्ट्रेशन के लिए बनी ...",
-   "language": "hi"
-  }
- ],
- "factcheck_search:[\"सरकारी मुफ्त लैपटॉप योजना\", \"hi\"]": [
+ "vision_web_detection:[\"path:0.jpeg\", null]": {
+  "best_guess": [
+   "document"
+  ],
+  "entities": [
+   "Document",
+   "Meter",
+   "Text messaging"
+  ],
+  "pages": []
+ },
+ "factcheck_search:[\"PM free laptop scheme website\", \"en\"]": [],
+ "factcheck_search:[\"मुफ्त लैपटॉप योजना सरकार\", \"hi\"]": [
   {
    "claim_text": "केंद्र सरकार ने स्टूडेंट्स के लिए फ्री लैपटॉप स्कीम चलाई है।",
    "claimant": "FB User- Abu Siddik Ahmed",
@@ -123,6 +180,18 @@
    "rating": "False",
    "review_date": "2019-06-04T14:19:44Z",
    "title": "प्रधानमंत्री मोदी ने किया 'फ्री लैपटॉप' बांटने का वादा? नहीं, फर्ज़ी वेबसाइट ...",
+   "language": "hi"
+  },
+  {
+   "claim_text": "सरकार फ्री लैपटॉप योजना के तहत छात्रों को फ्री लैपटॉप दे रही है।।",
+   "claimant": "FB User ‘पीएम सरकारी योजना’",
+   "claim_date": "2024-05-08T12:34:03Z",
+   "url": "https://www.vishvasnews.com/education/fact-check-aicte-free-laptop-scheme-for-students-viral-with-fake-claim/",
+   "publisher": "विश्वास न्यूज",
+   "publisher_site": "vishvasnews.com",
+   "rating": "False",
+   "review_date": "2024-05-08T12:34:03Z",
+   "title": "Fact Check : AICTE छात्रों के लिए नहीं चला रहा फ्री लैपटॉप योजना, वायरल ...",
    "language": "hi"
   },
   {
@@ -150,18 +219,6 @@
    "language": "hi"
   },
   {
-   "claim_text": "सरकार फ्री लैपटॉप योजना के तहत छात्रों को फ्री लैपटॉप दे रही है।।",
-   "claimant": "FB User ‘पीएम सरकारी योजना’",
-   "claim_date": "2024-05-08T12:34:03Z",
-   "url": "https://www.vishvasnews.com/education/fact-check-aicte-free-laptop-scheme-for-students-viral-with-fake-claim/",
-   "publisher": "विश्वास न्यूज",
-   "publisher_site": "vishvasnews.com",
-   "rating": "False",
-   "review_date": "2024-05-08T12:34:03Z",
-   "title": "Fact Check : AICTE छात्रों के लिए नहीं चला रहा फ्री लैपटॉप योजना, वायरल ...",
-   "language": "hi"
-  },
-  {
    "claim_text": "8वीं, 10वीं और 12वीं के छात्रों के साथ-साथ ग्रेजुएशन, पोस्ट ग्रेजुएशन और डिप्लोमा छात्रों को योजना 2024-25 के तहत फ्री में लैपटॉप दिया जायेगा।",
    "claimant": "Tipline user",
    "claim_date": "2024-12-23T11:53:11Z",
@@ -172,17 +229,20 @@
    "review_date": "2024-12-23T11:53:11Z",
    "title": "Fact Check : यूपी सरकार की युवा साथी योजना के नाम पर फ्री लैपटॉप का ...",
    "language": "hi"
+  },
+  {
+   "claim_text": "बच्चों को मोदी सरकार मुफ्त में लैपटॉप दे रही है।",
+   "claimant": "Social Media User",
+   "claim_date": "2020-09-29T00:00:00Z",
+   "url": "https://www.vishvasnews.com/viral/fact-check-modi-government-is-not-providing-free-laptops-to-students-old-rumor-is-getting-viral-again/",
+   "publisher": "विश्वास न्यूज",
+   "publisher_site": "vishvasnews.com",
+   "rating": "FALSE",
+   "review_date": "2020-09-29T00:00:00Z",
+   "title": "Fact Check: मोदी सरकार ऑनलाइन पढ़ाई करने वाले सभी बच्चों को नहीं दे ...",
+   "language": "en"
   }
  ],
- "vision_web_detection:[\"path:0.jpeg\", null]": {
-  "best_guess": [
-   "document"
-  ],
-  "entities": [
-   "Document",
-   "Meter",
-   "Text messaging"
-  ],
-  "pages": []
- }
+ "factcheck_search:[\"15 अक्टूबर लैपटॉप योजना\", \"hi\"]": [],
+ "factcheck_search:[\"PM Free Laptop Scheme\", \"en\"]": []
 }

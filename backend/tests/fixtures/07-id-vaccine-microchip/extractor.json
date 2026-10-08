@@ -1,36 +1,36 @@
 {
-  "prompt_version": "extractor-1.8+shared-1.1",
+  "prompt_version": "extractor-1.10+shared-1.1",
   "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-07T18:42:14+00:00",
+  "recorded_at": "2026-10-08T06:20:03+00:00",
   "outputs": [
     {
       "content_language": "id-ID",
       "content_script": "Latn",
-      "summary_en": "The post claims that COVID-19 vaccines contain microchips designed to track vaccinated individuals. It urges users to share this information widely before it is removed.",
+      "summary_en": "A message claims that COVID-19 vaccines contain microchips designed to track vaccinated individuals. It urges recipients to share this information widely before it is removed.",
       "checkable": true,
       "non_checkable_type": null,
       "claims": [
         {
           "claim_id": "claim1",
           "claim_original": "Vaksin COVID-19 mengandung microchip untuk melacak setiap orang yang sudah divaksin.",
-          "claim_en": "COVID-19 vaccines contain microchips designed to track every vaccinated person.",
+          "claim_en": "COVID-19 vaccines contain microchips to track every vaccinated person.",
           "claim_type": "HEALTH",
           "entities": [
             "COVID-19 vaccines",
-            "microchip"
+            "microchips"
           ],
           "place": null,
           "claimed_date": null,
           "time_sensitivity": "EVERGREEN",
           "search_queries_original": [
-            "vaksin COVID-19 microchip",
-            "vaksin melacak orang",
-            "microchip dalam vaksin"
+            "Vaksin COVID-19 microchip",
+            "Vaksin mengandung microchip",
+            "Microchip pelacak vaksin COVID-19"
           ],
           "search_queries_en": [
-            "COVID-19 vaccine microchip tracking",
-            "vaccine microchip conspiracy",
-            "microchips in vaccines"
+            "COVID-19 vaccine microchip",
+            "Vaccine tracking microchip",
+            "Do COVID vaccines have microchips"
           ]
         }
       ],

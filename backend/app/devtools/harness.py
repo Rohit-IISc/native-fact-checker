@@ -200,7 +200,7 @@ async def run(req: CheckRequest, *, store: Store, llm: LLM, stage: str = "full",
         if out.result.status == "FAILED":
             out.error = f"{doc.get('error_code')}: {doc.get('error_detail', '')[:300]}"
         raw = (llm.outputs.get("extractor") or [None])[-1]
-        out.extraction = extractor.finalize(raw) if isinstance(raw, Extraction) else None
+        out.extraction = extractor.finalize(raw, req) if isinstance(raw, Extraction) else None
         out.agents = doc.get("agents") or {}
         for stage, why in (doc.get("stage_errors") or {}).items():
             out.notes.append(f"{stage} failed: {why}")

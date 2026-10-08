@@ -215,3 +215,40 @@ async def test_instagram_reel_still_asks_for_screen_recording():
     post = await links.fetch("https://www.instagram.com/reel/abc/", store_image=store_image,
                              transport=httpx.MockTransport(ig), resolver=public_resolver)
     assert post.text == "CCTV image is fake" and post.media_missing is True
+
+
+async def test_quote_tweet_brings_in_the_quoted_post():
+    """sama's quote tweet links the quoted post only as t.co; the extractor must see both texts."""
+    outer = {"author_url": "https://twitter.com/sama", "html": (
+        '<blockquote><p lang="en">i thought this was satire <a href="https://t.co/4AVBA93Z27">https://t.co/4AVBA93Z27</a>'
+        '</p>&mdash; Sam (@sama) <a href="https://twitter.com/sama/status/1">July 14, 2026</a></blockquote>')}
+    quoted = {"author_url": "https://twitter.com/claudeai", "html": (
+        '<blockquote><p lang="en">There’s hope in hard questions. <a href="https://t.co/x">pic.twitter.com/rDY</a>'
+        '</p>&mdash; Claude (@claudeai) <a href="https://twitter.com/claudeai/status/2">July 9, 2026</a></blockquote>')}
+
+    def x(request: httpx.Request) -> httpx.Response:
+        u = str(request.url)
+        if u == "https://t.co/4AVBA93Z27":
+            return httpx.Response(301, headers={"location": "https://twitter.com/claudeai/status/2"})
+        if "publish.twitter.com" in u:
+            return httpx.Response(200, json=quoted if "claudeai" in u else outer)
+        return httpx.Response(404)
+
+    post = await links.fetch("https://x.com/sama/status/1", transport=httpx.MockTransport(x), resolver=public_resolver)
+    assert post.text.startswith("i thought this was satire")
+    assert "[Quoted post by @claudeai (2026-07-09)]: There’s hope in hard questions." in post.text
+    assert post.author_handle == "@sama" and post.media_missing is True  # the quoted post's photo
+
+
+async def test_t_co_to_a_non_x_page_is_not_followed_as_a_quote():
+    outer = {"author_url": "https://twitter.com/a", "html": (
+        '<blockquote><p>read this <a href="https://t.co/abc">https://t.co/abc</a></p>&mdash; A (@a) '
+        '<a href="https://twitter.com/a/status/1">July 1, 2026</a></blockquote>')}
+
+    def x(request: httpx.Request) -> httpx.Response:
+        if str(request.url) == "https://t.co/abc":
+            return httpx.Response(301, headers={"location": "https://news.example.com/story"})
+        return httpx.Response(200, json=outer)
+
+    post = await links.fetch("https://x.com/a/status/1", transport=httpx.MockTransport(x), resolver=public_resolver)
+    assert "[Quoted post" not in post.text

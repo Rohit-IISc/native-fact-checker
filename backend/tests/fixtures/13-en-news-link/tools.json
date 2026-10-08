@@ -1,41 +1,204 @@
 {
  "lookup_source:[\"bbc.com\"]": null,
- "factcheck_search:[\"BBC News Chandrayaan-3 celebration image\", \"en\"]": [],
- "factcheck_search:[\"Chandrayaan-3 landing celebration India\", \"en\"]": [
+ "factcheck_search:[\"Chandrayaan-3 landing celebrations photo\", \"en\"]": [],
+ "factcheck_search:[\"First country lunar south pole landing\", \"en\"]": [
   {
-   "claim_text": "ISRO chairman S Somanath seen dancing in celebration of Chandrayaan 3's success",
-   "claimant": "Times Now, Indiatimes, Kalinga TV, TV9 Bangla",
+   "claim_text": "China was the first country to land on the moon's South Pole a few years ago",
+   "claimant": "X, WhatsApp users",
+   "claim_date": "2023-08-29T11:52:58Z",
+   "url": "https://www.boomlive.in/fact-check/claims-of-china-being-the-first-country-to-land-on-the-south-pole-of-the-moon-is-false-22899",
+   "publisher": "BOOM Fact Check",
+   "publisher_site": "boomlive.in",
+   "rating": "False",
+   "review_date": "2023-08-29T11:52:58Z",
+   "title": "Claims Of China Being The First Country To Land On The South ...",
+   "language": "en"
+  }
+ ],
+ "factcheck_search:[\"India Moon south pole landing\", \"en\"]": [
+  {
+   "claim_text": "NASA released footage of CHandrayaan landing on moon; Ashoka Stambh will be imprinted on lunar surface",
+   "claimant": "social media users",
    "claim_date": "2016-06-20T00:00:00Z",
-   "url": "https://www.altnews.in/old-video-of-isro-chief-dancing-viral-as-celebrations-of-chandrayaan-3-landing/",
+   "url": "https://www.altnews.in/nasa-footage-ashoka-stambh-on-lunar-surface-fake-visuals-related-to-chandrayaan-3-flood-social-media/",
    "publisher": "Alt News",
    "publisher_site": "altnews.in",
    "rating": "False",
-   "review_date": "2023-08-26T00:00:00Z",
-   "title": "Old video of ISRO chief dancing viral as celebrations of ...",
+   "review_date": "2023-08-28T00:00:00Z",
+   "title": "'NASA footage', 'Ashoka Stambh on lunar surface': Fake visuals ...",
    "language": "en"
   },
   {
-   "claim_text": "ISRO chairman S Somanath seen dancing in celebration of Chandrayaan 3's success",
+   "claim_text": "NASA released footage of CHandrayaan landing on moon; Ashoka Stambh will be imprinted on lunar surface",
    "claimant": null,
    "claim_date": null,
-   "url": "https://www.altnews.in/old-video-of-isro-chief-dancing-viral-as-celebrations-of-chandrayaan-3-landing/",
+   "url": "https://www.altnews.in/nasa-footage-ashoka-stambh-on-lunar-surface-fake-visuals-related-to-chandrayaan-3-flood-social-media/",
    "publisher": "Alt News",
    "publisher_site": "altnews.in",
    "rating": "False",
-   "review_date": "2023-08-26T16:23:44Z",
-   "title": "Old video of ISRO chief dancing viral as celebrations of ...",
+   "review_date": "2023-08-28T14:29:43Z",
+   "title": "'NASA footage', 'Ashoka Stambh on lunar surface': Fake visuals ...",
+   "language": "en"
+  },
+  {
+   "claim_text": "Animation of India's lunar rocket proves its Moon landing was faked.",
+   "claimant": "Multiple sources",
+   "claim_date": "2023-09-06T00:00:00Z",
+   "url": "https://factcheck.afp.com/doc.afp.com.33U48GT",
+   "publisher": "AFP Fact Check",
+   "publisher_site": "factcheck.afp.com",
+   "rating": "False",
+   "review_date": "2023-09-06T07:13:00Z",
+   "title": "Simulation of India's lunar mission falsely shared as proof of 'Moon ...",
+   "language": "en"
+  },
+  {
+   "claim_text": "India's lunar spacecraft Chandrayaan 3 sent footage of Earth",
+   "claimant": "Several persons",
+   "claim_date": "2023-08-21T00:00:00Z",
+   "url": "https://factcheck.afp.com/doc.afp.com.33TA7C4",
+   "publisher": "AFP Fact Check",
+   "publisher_site": "factcheck.afp.com",
+   "rating": "False",
+   "review_date": "2023-08-28T09:00:00Z",
+   "title": "Fake video of Earth was not captured by India's spacecraft",
+   "language": "en"
+  },
+  {
+   "claim_text": "Photo of the Earth shot from the Moon’s surface by Chandrayaan-3.",
+   "claimant": "Social media users",
+   "claim_date": "2023-08-28T00:00:00Z",
+   "url": "https://www.indiatoday.in/fact-check/story/captivating-photo-of-earth-from-moon-was-not-taken-chandrayaan-3-ai-generated-2427906-2023-08-28",
+   "publisher": "India Today",
+   "publisher_site": "indiatoday.in",
+   "rating": "False",
+   "review_date": null,
+   "title": "Fact Check: This captivating photo of Earth from the Moon was not ...",
+   "language": "en"
+  },
+  {
+   "claim_text": "China was the first country to land on the moon's South Pole a few years ago",
+   "claimant": "X, WhatsApp users",
+   "claim_date": "2023-08-29T11:52:58Z",
+   "url": "https://www.boomlive.in/fact-check/claims-of-china-being-the-first-country-to-land-on-the-south-pole-of-the-moon-is-false-22899",
+   "publisher": "BOOM Fact Check",
+   "publisher_site": "boomlive.in",
+   "rating": "False",
+   "review_date": "2023-08-29T11:52:58Z",
+   "title": "Claims Of China Being The First Country To Land On The South ...",
+   "language": "en"
+  }
+ ],
+ "factcheck_search:[\"India moon mission celebrations crowd\", \"en\"]": [],
+ "factcheck_search:[\"India first south pole Moon\", \"en\"]": [
+  {
+   "claim_text": "The video is recent and shows live visuals of the moon captured by ISRO's Chandrayaan-3.",
+   "claimant": "Facebook,Twitter,X",
+   "claim_date": "2023-08-28T11:33:28Z",
+   "url": "https://www.thequint.com/news/webqoof/live-visuals-of-moon-isro-chandrayaan-3-viral-video-fact-check",
+   "publisher": "The Quint",
+   "publisher_site": "thequint.com",
+   "rating": "False",
+   "review_date": "2023-08-28T11:33:28Z",
+   "title": "Unrelated Visuals Passed Off as Live Visuals of Moon Captured by ...",
+   "language": "en"
+  },
+  {
+   "claim_text": "NASA released footage of CHandrayaan landing on moon; Ashoka Stambh will be imprinted on lunar surface",
+   "claimant": null,
+   "claim_date": null,
+   "url": "https://www.altnews.in/nasa-footage-ashoka-stambh-on-lunar-surface-fake-visuals-related-to-chandrayaan-3-flood-social-media/",
+   "publisher": "Alt News",
+   "publisher_site": "altnews.in",
+   "rating": "False",
+   "review_date": "2023-08-28T14:29:43Z",
+   "title": "'NASA footage', 'Ashoka Stambh on lunar surface': Fake visuals ...",
+   "language": "en"
+  },
+  {
+   "claim_text": "NASA released footage of CHandrayaan landing on moon; Ashoka Stambh will be imprinted on lunar surface",
+   "claimant": "social media users",
+   "claim_date": "2016-06-20T00:00:00Z",
+   "url": "https://www.altnews.in/nasa-footage-ashoka-stambh-on-lunar-surface-fake-visuals-related-to-chandrayaan-3-flood-social-media/",
+   "publisher": "Alt News",
+   "publisher_site": "altnews.in",
+   "rating": "False",
+   "review_date": "2023-08-28T00:00:00Z",
+   "title": "'NASA footage', 'Ashoka Stambh on lunar surface': Fake visuals ...",
+   "language": "en"
+  },
+  {
+   "claim_text": "Video shows a glimpse of Chandrayaan 3 captured by NASA.",
+   "claimant": "Social Media Users",
+   "claim_date": "2023-08-24T13:21:30Z",
+   "url": "https://www.boomlive.in/fact-check/viral-video-chandrayaan-3-isro-nasa-old-video-social-media-22850",
+   "publisher": "BOOM Fact Check",
+   "publisher_site": "boomlive.in",
+   "rating": "False",
+   "review_date": "2023-08-24T13:21:30Z",
+   "title": "Animation Video Peddled As NASA Releasing Footage Of ...",
+   "language": "en"
+  },
+  {
+   "claim_text": "This is a visual of the moon's surface from Chandrayaan-3",
+   "claimant": "Social Media Users",
+   "claim_date": "2023-08-23T13:38:06Z",
+   "url": "https://www.boomlive.in/fact-check/stock-footage-shared-as-moon-surface-video-captured-from-chandrayaan-3-22838",
+   "publisher": "BOOM Fact Check",
+   "publisher_site": "boomlive.in",
+   "rating": "False",
+   "review_date": "2023-08-23T13:38:06Z",
+   "title": "Stock Video Misleadingly Shared As First Lunar Visuals From ...",
+   "language": "en"
+  },
+  {
+   "claim_text": "Photo shows an imprint of ISRO's logo and national emblem on the moon's surface.",
+   "claimant": "X, Facebook users",
+   "claim_date": "2023-08-24T09:15:52Z",
+   "url": "https://www.boomlive.in/fact-check/isro-chandrayaan-3-space-mission-national-emblem-moon-fact-check-22844",
+   "publisher": "BOOM Fact Check",
+   "publisher_site": "boomlive.in",
+   "rating": "False",
+   "review_date": "2023-08-24T09:15:52Z",
+   "title": "Picture Of National Emblem, ISRO Logo Imprint On Moon's Surface ...",
+   "language": "en"
+  },
+  {
+   "claim_text": "Photo of the Earth shot from the Moon’s surface by Chandrayaan-3.",
+   "claimant": "Social media users",
+   "claim_date": "2023-08-28T00:00:00Z",
+   "url": "https://www.indiatoday.in/fact-check/story/captivating-photo-of-earth-from-moon-was-not-taken-chandrayaan-3-ai-generated-2427906-2023-08-28",
+   "publisher": "India Today",
+   "publisher_site": "indiatoday.in",
+   "rating": "False",
+   "review_date": null,
+   "title": "Fact Check: This captivating photo of Earth from the Moon was not ...",
    "language": "en"
   },
   {
    "claim_text": "BBC slammed Indian's Chandrayaan 3 mission in view of poverty",
-   "claimant": null,
-   "claim_date": null,
+   "claimant": "Anand Mahindra, MeghUpdates, Mint, Times Now",
+   "claim_date": "2016-06-20T00:00:00Z",
    "url": "https://www.altnews.in/no-bbc-did-not-criticize-chandrayaan-3-old-clip-viral-false-report-by-times-now-india-tv-zee-news-other-outlets/",
    "publisher": "Alt News",
    "publisher_site": "altnews.in",
    "rating": "False",
-   "review_date": "2023-08-25T11:30:07Z",
+   "review_date": "2023-08-25T00:00:00Z",
    "title": "No, BBC did not criticize Chandrayaan 3. Old clip viral; false report ...",
+   "language": "en"
+  }
+ ],
+ "factcheck_search:[\"Chandrayaan-3 historic landing\", \"en\"]": [
+  {
+   "claim_text": "Video shows a glimpse of Chandrayaan 3 captured by NASA.",
+   "claimant": "Social Media Users",
+   "claim_date": "2023-08-24T13:21:30Z",
+   "url": "https://www.boomlive.in/fact-check/viral-video-chandrayaan-3-isro-nasa-old-video-social-media-22850",
+   "publisher": "BOOM Fact Check",
+   "publisher_site": "boomlive.in",
+   "rating": "False",
+   "review_date": "2023-08-24T13:21:30Z",
+   "title": "Animation Video Peddled As NASA Releasing Footage Of ...",
    "language": "en"
   },
   {
@@ -51,15 +214,75 @@
    "language": "en"
   },
   {
-   "claim_text": "Visuals of ISRO scientists dancing after the successful landing of Chandrayaan-3 on the moon",
+   "claim_text": "BBC slammed Indian's Chandrayaan 3 mission in view of poverty",
+   "claimant": null,
+   "claim_date": null,
+   "url": "https://www.altnews.in/no-bbc-did-not-criticize-chandrayaan-3-old-clip-viral-false-report-by-times-now-india-tv-zee-news-other-outlets/",
+   "publisher": "Alt News",
+   "publisher_site": "altnews.in",
+   "rating": "False",
+   "review_date": "2023-08-25T11:30:07Z",
+   "title": "No, BBC did not criticize Chandrayaan 3. Old clip viral; false report ...",
+   "language": "en"
+  },
+  {
+   "claim_text": "The video is recent and shows visuals of the moon that were captured by Chandrayaan-3.",
+   "claimant": "Facebook,Twitter,X",
+   "claim_date": "2023-08-22T08:09:17Z",
+   "url": "https://www.thequint.com/news/webqoof/chandrayaan-3-stunning-moon-visuals-animation-viral-video-fact-check",
+   "publisher": "The Quint",
+   "publisher_site": "thequint.com",
+   "rating": "False",
+   "review_date": "2023-08-22T08:09:17Z",
+   "title": "Fact-Check: Old Stock Video Shared as Visuals of Moon Captured ...",
+   "language": "en"
+  },
+  {
+   "claim_text": "Actual video of Chandrayaan-3 landing by NASA.",
+   "claimant": "Facebook,WhatsApp,Twitter",
+   "claim_date": "2023-08-24T14:30:00Z",
+   "url": "https://www.thequint.com/news/webqoof/old-video-shared-as-nasa-footage-of-chandrayaan-3-fact-check",
+   "publisher": "The Quint",
+   "publisher_site": "thequint.com",
+   "rating": "False",
+   "review_date": "2023-08-24T14:30:00Z",
+   "title": "Fact-Check | No, This Is Not NASA's Footage of Chandrayaan-3 ...",
+   "language": "en"
+  },
+  {
+   "claim_text": "Video shows Chandrayaan-3's Vikram lander landing on the Moon's south pole.",
+   "claimant": "YouTube, Facebook users",
+   "claim_date": "2023-08-27T11:26:30Z",
+   "url": "https://www.boomlive.in/fact-check/chandrayaan-3-vikram-lander-lunar-south-pole-moon-mission-animated-22877",
+   "publisher": "BOOM Fact Check",
+   "publisher_site": "boomlive.in",
+   "rating": "False",
+   "review_date": "2023-08-27T11:26:30Z",
+   "title": "Animated Clip Of Blue Moon Lander Viral As Chandrayaan-3 ...",
+   "language": "en"
+  },
+  {
+   "claim_text": "Visuals of the Vikram lander making soft landing on moon captured by NASA",
    "claimant": "SOCIAL MEDIA POST",
    "claim_date": "2023-08-24T00:00:00Z",
-   "url": "https://factly.in/unrelated-video-shared-as-isro-scientists-dancing-after-the-success-of-chandrayaan-3/",
+   "url": "https://factly.in/viral-video-shows-animated-apollo-11-landing-visuals-not-nasas-chandrayaan-3-footage/",
    "publisher": "FACTLY",
    "publisher_site": "factly.in",
    "rating": "FALSE",
    "review_date": "2023-08-25T00:00:00Z",
-   "title": "Unrelated video shared as ISRO scientists dancing after the success ...",
+   "title": "Unrelated visuals shared as Chandrayaan-3's landing footage",
+   "language": "en"
+  },
+  {
+   "claim_text": "NASA released footage of CHandrayaan landing on moon; Ashoka Stambh will be imprinted on lunar surface",
+   "claimant": "social media users",
+   "claim_date": "2016-06-20T00:00:00Z",
+   "url": "https://www.altnews.in/nasa-footage-ashoka-stambh-on-lunar-surface-fake-visuals-related-to-chandrayaan-3-flood-social-media/",
+   "publisher": "Alt News",
+   "publisher_site": "altnews.in",
+   "rating": "False",
+   "review_date": "2023-08-28T00:00:00Z",
+   "title": "'NASA footage', 'Ashoka Stambh on lunar surface': Fake visuals ...",
    "language": "en"
   }
  ],
@@ -68,14 +291,14 @@
    "crowd"
   ],
   "entities": [
+   "Benj Heard",
    "Crowd",
-   "Human",
-   "Organization",
    "create",
-   "Audience",
    "last",
-   "PlanetaryImpact",
-   "Crowd Move"
+   "My Kind of Crowd",
+   "Organization",
+   "past",
+   "PlanetaryImpact"
   ],
   "pages": [
    {
@@ -93,15 +316,15 @@
     "published_at": null
    },
    {
-    "url": "https://www.youtube.com/watch?v=4ckyH3oIzlU",
-    "title": "Dimension - Crowd Reaction - YouTube",
+    "url": "https://www.youtube.com/watch?v=5cIXmSEArIU",
+    "title": "My Kind of Crowd - YouTube",
     "full_matches": 0,
     "partial_matches": 0,
     "published_at": null
    },
    {
-    "url": "https://www.youtube.com/watch?v=ZQqCLgvUrvE",
-    "title": "Why is Crowd work everywhere now? - YouTube",
+    "url": "https://www.youtube.com/watch?v=4ckyH3oIzlU",
+    "title": "Dimension - Crowd Reaction - YouTube",
     "full_matches": 0,
     "partial_matches": 0,
     "published_at": null
@@ -128,16 +351,16 @@
     "published_at": null
    },
    {
-    "url": "https://www.nbcnews.com/now/video/how-to-stay-safe-in-a-crowd-crush-125725765684",
-    "title": "How to stay safe in a crowd crush - NBC News",
+    "url": "https://www.shutterstock.com/video/clip-3434120205-crowd-silhouette-people-club-concert-sports-event",
+    "title": "Crowd Silhouette People Club Concert Sports Stock Footage Video ...",
     "full_matches": 0,
     "partial_matches": 0,
     "published_at": null
    },
    {
-    "url": "https://www.shutterstock.com/video/clip-3434120205-crowd-silhouette-people-club-concert-sports-event",
-    "title": "Crowd Silhouette People Club Concert Sports Stock Footage Video ...",
-    "full_matches": 0,
+    "url": "https://www.bbc.co.uk/news/world-asia-india-67142307",
+    "title": "India aims to send astronaut to the Moon by 2040 - BBC News",
+    "full_matches": 1,
     "partial_matches": 0,
     "published_at": null
    },
@@ -165,9 +388,9 @@
   ]
  },
  "page_date:[\"https://www.bbc.com/news/live/world-asia-india-47640058?page=47\"]": null,
- "page_date:[\"https://www.amazon.com/Crowd/dp/B07NVSP139\"]": null,
+ "page_date:[\"https://www.bbc.co.uk/news/world-asia-india-67142307\"]": null,
  "page_date:[\"https://www.bbc.co.uk/news/uk-wales-66687056\"]": null,
- "page_date:[\"https://www.youtube.com/watch?v=lupX9szykio\"]": null,
- "page_date:[\"https://www.youtube.com/watch?v=4ckyH3oIzlU\"]": null,
+ "page_date:[\"https://www.youtube.com/watch?v=pVAmZGCvIRM\"]": null,
+ "page_date:[\"https://www.youtube.com/watch?v=5cIXmSEArIU\"]": null,
  "page_date:[\"https://za.linkedin.com/in/chernayj\"]": null
 }

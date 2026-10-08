@@ -133,10 +133,9 @@ class GeminiLLM:
             )
             contents = self._parts(text, media)
             try:
-                resp = await _hedged(
-                    lambda c=contents: self._client.aio.models.generate_content(model=model["id"], contents=c,
-                                                                                config=gen_cfg),
-                    timeout_s, model.get("hedge_after_s"), stage)
+                resp = await _retry_transient(lambda c=contents: _hedged(
+                    lambda: self._client.aio.models.generate_content(model=model["id"], contents=c, config=gen_cfg),
+                    timeout_s, model.get("hedge_after_s"), stage), budget_s=timeout_s)
             except TimeoutError as e:
                 call.success = False
                 call.latency_ms = int((time.monotonic() - started) * 1000)
@@ -146,9 +145,6 @@ class GeminiLLM:
                 call.success = False
                 call.latency_ms = int((time.monotonic() - started) * 1000)
                 _record(call)
-                if attempt == 0 and _retryable(e) and call.latency_ms / 1000 < timeout_s / 2:
-                    await asyncio.sleep(RETRY_BACKOFF_S)
-                    continue
                 raise StageFailed(stage, f"model API error: {type(e).__name__}: {str(e)[:200]}") from e
             call.latency_ms = int((time.monotonic() - started) * 1000)
             usage = resp.usage_metadata
@@ -179,7 +175,7 @@ class GeminiLLM:
         call = ModelCall(check_id=check_id_var.get(), stage="embedding", model_id=m["id"], prompt_version="-")
         started = time.monotonic()
         try:
-            resp = await _retry_once(lambda: _hedged(lambda: self._client.aio.models.embed_content(
+            resp = await _retry_transient(lambda: _hedged(lambda: self._client.aio.models.embed_content(
                 model=m["id"], contents=texts,
                 config=types.EmbedContentConfig(output_dimensionality=int(m["dims"]), task_type="SEMANTIC_SIMILARITY"),
             ), timeout_s, m.get("hedge_after_s"), "embedding"))
@@ -208,7 +204,7 @@ class GeminiLLM:
         call = ModelCall(check_id=check_id_var.get(), stage=stage, model_id=model["id"], prompt_version=prompt_version)
         started = time.monotonic()
         try:
-            resp = await _retry_once(lambda: _hedged(
+            resp = await _retry_transient(lambda: _hedged(
                 lambda: self._client.aio.models.generate_content(model=model["id"], contents=prompt, config=gen_cfg),
                 # Measured Oct 5: identical searches take 8-9 s or 35-55 s (server side), so hedge early.
                 # A hedge duplicates the grounding queries (billed per query); watch the cost.
@@ -237,9 +233,6 @@ class GeminiLLM:
         return out
 
 
-RETRY_BACKOFF_S = 1.0
-
-
 def _retryable(e: BaseException) -> bool:
     """Transient Vertex errors worth one quick retry: 5xx and 429 (seen Oct 5: a judge call failed in 1 s
     with an API error; the identical request then succeeded three times)."""
@@ -250,16 +243,31 @@ def _retryable(e: BaseException) -> bool:
     return isinstance(e, errors.ClientError) and getattr(e, "code", None) == 429
 
 
-async def _retry_once(make: Callable[[], Awaitable[Any]]) -> Any:
-    try:
-        return await make()
-    except TimeoutError:
-        raise
-    except Exception as e:  # noqa: BLE001
-        if not _retryable(e):
+RETRY_DELAYS_S = (1.0, 3.0, 6.0)
+
+
+async def _retry_transient(make: Callable[[], Awaitable[Any]], budget_s: float | None = None) -> Any:
+    """Retry transient Vertex errors (5xx, 429) with growing, jittered backoff while the budget allows.
+    One quick retry was not enough for 429 RESOURCE_EXHAUSTED under load (Oct 8: three checks in parallel
+    lost their web search and composer, so the check was degraded and not cached)."""
+    import random
+
+    started = time.monotonic()
+    for delay in (*RETRY_DELAYS_S, None):
+        try:
+            return await make()
+        except TimeoutError:
             raise
-        await asyncio.sleep(RETRY_BACKOFF_S)
-        return await make()
+        except Exception as e:  # noqa: BLE001
+            if delay is None or not _retryable(e):
+                raise
+            wait = delay * (0.75 + random.random() / 2)
+            if budget_s is not None and time.monotonic() - started + wait > budget_s * 0.7:
+                raise
+            log_event(log, "retrying transient model error", logging.WARNING, error=type(e).__name__,
+                      code=getattr(e, "code", None), wait_s=round(wait, 1))
+            await asyncio.sleep(wait)
+    raise RuntimeError("unreachable")
 
 
 async def _hedged(make_call: Callable[[], Awaitable[Any]], timeout_s: float, hedge_after_s: float | None,

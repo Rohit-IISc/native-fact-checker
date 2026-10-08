@@ -94,6 +94,15 @@ class Fetcher:
                 return url, resp, bytes(body)
         raise FetchFailed("too many redirects")
 
+    async def resolve(self, url: str) -> str | None:
+        """Where a short link points (one redirect hop, SSRF-guarded), without downloading the target."""
+        try:
+            await resolve_public(url, self._resolver)
+            resp = await self._client.get(url, headers={"Accept": "text/html"})
+        except (BlockedURL, httpx.HTTPError):
+            return None
+        return urljoin(url, resp.headers["location"]) if resp.is_redirect and "location" in resp.headers else None
+
     async def json(self, url: str) -> dict:
         _, _, body = await self.get(url, accept="application/json")
         import json
@@ -165,22 +174,57 @@ async def _youtube(f: Fetcher, url: str) -> FetchedPost:
                        youtube_url=url, fetch_method="youtube")
 
 
-async def _x(f: Fetcher, url: str) -> FetchedPost | None:
+_STATUS = re.compile(r"^https?://(?:www\.|mobile\.)?(?:x|twitter)\.com/[^/]+/status/\d+", re.I)
+
+
+async def _x_oembed(f: Fetcher, url: str) -> dict | None:
     canonical = re.sub(r"^https?://(www\.|mobile\.)?(x|twitter|fxtwitter|vxtwitter)\.com", "https://twitter.com", url)
     try:
-        data = await f.json(
+        return await f.json(
             f"https://publish.twitter.com/oembed?omit_script=1&dnt=true&url={quote(canonical, safe='')}")
     except Exception as e:  # noqa: BLE001
         log.info("x oembed failed: %s", e)
         return None
+
+
+def _x_parts(data: dict) -> tuple[str | None, str | None, datetime | None, str]:
+    """(text, @handle, date, embed html) from an X oEmbed response."""
     block = data.get("html") or ""
     m = re.search(r"<p[^>]*>(.*?)</p>", block, re.S)
     text = _strip_tags(m.group(1)) if m else None
     handle = (data.get("author_url") or "").rstrip("/").rsplit("/", 1)[-1] or None
     dm = re.search(r"&mdash;.*?<a[^>]*>([A-Za-z]+ \d{1,2}, \d{4})</a>", block, re.S)
     published = datetime.strptime(dm.group(1), "%B %d, %Y") if dm else None
-    return FetchedPost(source_url=url, platform="x", text=text, author_handle=handle and f"@{handle}",
-                       published_at=published, media_missing=bool(_MEDIA_HINT.search(block)),
+    return text, handle and f"@{handle}", published, block
+
+
+async def _quoted_post(f: Fetcher, block: str) -> tuple[str, str] | None:
+    """A quote tweet carries the quoted post only as a t.co link: resolve it (one SSRF-guarded hop) and,
+    if it is another X post, fetch that post too. Returns (text to append, its embed html)."""
+    for link in re.findall(r'href="(https://t\.co/[A-Za-z0-9]+)"', block)[:2]:
+        target = await f.resolve(link)
+        if target and _STATUS.match(target):
+            data = await _x_oembed(f, target)
+            if data:
+                text, handle, published, quoted_block = _x_parts(data)
+                if text:
+                    when = f" ({published.date().isoformat()})" if published else ""
+                    return f"\n\n[Quoted post by {handle}{when}]: {text}", quoted_block
+    return None
+
+
+async def _x(f: Fetcher, url: str) -> FetchedPost | None:
+    data = await _x_oembed(f, url)
+    if not data:
+        return None
+    text, handle, published, block = _x_parts(data)
+    media_block = block
+    quoted = await _quoted_post(f, block)
+    if quoted:
+        text = (text or "") + quoted[0]
+        media_block = quoted[1]  # the t.co link was the quoted post; its own photos are what is missing
+    return FetchedPost(source_url=url, platform="x", text=text, author_handle=handle,
+                       published_at=published, media_missing=bool(_MEDIA_HINT.search(media_block)),
                        fetch_method="x_oembed")
 
 

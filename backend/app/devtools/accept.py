@@ -205,6 +205,34 @@ def print_table(outcomes: list[Outcome]) -> None:
           f"total cost ${sum(o.cost_usd for o in outcomes):.4f}")
 
 
+def print_pass_rates(runs: list[list[Outcome]]) -> None:
+    """One row per case across repetitions: how often it passed, which labels it got, latency, cost."""
+    from collections import Counter
+
+    n = len(runs)
+    by_case: dict[str, list[Outcome]] = {}
+    for rep in runs:
+        for o in rep:
+            by_case.setdefault(o.case.id, []).append(o)
+    w = max(len(cid) for cid in by_case)
+    print(f"\n{BOLD}{'case':<{w}}  {'passed':<7}  {'labels (primary)':<44}  {'avg latency':>11}  "
+          f"{'cost':>8}  last why{RESET}")
+    total_pass = 0
+    for cid, outs in by_case.items():
+        passed = sum(o.status == "PASS" for o in outs)
+        total_pass += passed
+        labels = Counter((o.label or "-").split("/")[0] for o in outs)
+        ran = [o for o in outs if o.status in ("PASS", "FAIL")]
+        avg = sum(o.latency_ms for o in ran) / len(ran) / 1000 if ran else 0
+        color = GREEN if passed == n else (RED if passed == 0 else YELLOW)
+        why = next((o.reasons for o in reversed(outs) if o.reasons), None) or []
+        label_text = ", ".join(f"{k} x{v}" for k, v in labels.most_common())
+        print(f"{cid:<{w}}  {color}{passed}/{n}{RESET}      {label_text:<44}  "
+              f"{avg:>10.1f}s  ${sum(o.cost_usd for o in outs):>7.3f}  {DIM}{'; '.join(why)[:80]}{RESET}")
+    print(f"\n{BOLD}{total_pass}/{n * len(by_case)} case runs passed{RESET} over {n} repetitions; "
+          f"total cost ${sum(o.cost_usd for rep in runs for o in rep):.2f}")
+
+
 async def amain(a: argparse.Namespace) -> int:
     os.environ["STORE"] = "memory"
     os.environ.setdefault("PIPELINE_MODE", "inline")
@@ -254,9 +282,20 @@ async def amain(a: argparse.Namespace) -> int:
 
     roots = [c for c in cases if not c.after or c.after not in ids]
     order = {c.id: i for i, c in enumerate(cases)}
-    outcomes = sorted((o for group in await asyncio.gather(*(chain(r) for r in roots)) for o in group),
-                      key=lambda o: order[o.case.id])
-    print_table(outcomes)
+    base_dir, record, runs = runs_dir, a.record, []
+    for rep in range(a.repeat):
+        if a.repeat > 1:
+            runs_dir = base_dir / f"rep{rep + 1}"
+            print(f"{DIM}repetition {rep + 1}/{a.repeat}{RESET}")
+        a.record = record and rep == 0  # fixtures come from the first repetition only
+        runs.append(sorted((o for group in await asyncio.gather(*(chain(r) for r in roots)) for o in group),
+                           key=lambda o: order[o.case.id]))
+    runs_dir, a.record = base_dir, record
+    outcomes = runs[-1]
+    if a.repeat > 1:
+        print_pass_rates(runs)
+    else:
+        print_table(outcomes)
     runs_dir.mkdir(parents=True, exist_ok=True)
     (runs_dir / "summary.json").write_text(json.dumps([{
         "id": o.case.id, "status": o.status, "label": o.label, "expected": o.case.expected,
@@ -275,6 +314,7 @@ def main(argv: list[str] | None = None) -> None:
     p.add_argument("--jobs", type=int, default=3, help="cases run concurrently")
     p.add_argument("--fake", action="store_true", help="LLM_MODE=fake: canned outputs, no paid calls")
     p.add_argument("--record", action="store_true", help="save model outputs to backend/tests/fixtures/")
+    p.add_argument("--repeat", type=int, default=1, help="run every case N times and report pass rates")
     sys.exit(asyncio.run(amain(p.parse_args(argv))))
 
 

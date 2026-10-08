@@ -1,42 +1,91 @@
 {
-  "prompt_version": "extractor-1.8+shared-1.1",
+  "prompt_version": "extractor-1.10+shared-1.1",
   "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-07T18:45:52+00:00",
+  "recorded_at": "2026-10-08T06:22:40+00:00",
   "outputs": [
     {
       "content_language": "en-IN",
       "content_script": "Latn",
-      "summary_en": "The image shows a crowd of people, likely in India, reacting with excitement and celebration. A woman in the foreground is seen with her mouth open, hand near her face, and a bindi on her forehead, suggesting she is shouting or cheering. The background shows other people also appearing to be in a celebratory mood. The image is watermarked with the BBC News logo and is associated with an article about India's Chandrayaan-3 mission successfully landing on the Moon's south pole.",
+      "summary_en": "The image shows a crowd of people, with a woman in the foreground appearing to shout or cheer, covering her mouth with her hand. The BBC News logo is visible in the bottom left corner. The accompanying news article reports on India's Chandrayaan-3 mission successfully landing near the Moon's south pole, making India the first country to do so, and joining an elite club of nations to achieve a soft lunar landing.",
       "checkable": true,
       "non_checkable_type": null,
       "claims": [
         {
           "claim_id": "claim1",
-          "claim_original": "The image shows people in India celebrating the successful landing of Chandrayaan-3 near the Moon's south pole.",
-          "claim_en": "The image in this post shows people in India celebrating the successful landing of the Chandrayaan-3 mission near the Moon's south pole.",
+          "claim_original": "The photo in this post shows people celebrating India's Chandrayaan-3 mission successfully landing on the Moon.",
+          "claim_en": "The photo in this post shows people celebrating India's Chandrayaan-3 mission successfully landing on the Moon.",
+          "claim_type": "MEDIA_AUTHENTICITY",
+          "entities": [
+            "Chandrayaan-3",
+            "India",
+            "Moon"
+          ],
+          "place": "India",
+          "claimed_date": "2023-08-23",
+          "time_sensitivity": "EVERGREEN",
+          "search_queries_original": [
+            "Chandrayaan-3 landing celebrations photo",
+            "India moon mission celebrations crowd",
+            "BBC News Chandrayaan-3 photo"
+          ],
+          "search_queries_en": [
+            "Chandrayaan-3 landing celebrations photo",
+            "India moon mission celebrations crowd",
+            "BBC News Chandrayaan-3 photo"
+          ]
+        },
+        {
+          "claim_id": "claim2",
+          "claim_original": "India's Chandrayaan-3 mission made a historic landing near the Moon's south pole.",
+          "claim_en": "India's Chandrayaan-3 mission made a historic landing near the Moon's south pole.",
           "claim_type": "EVENT",
           "entities": [
             "India",
             "Chandrayaan-3",
             "Moon's south pole"
           ],
-          "place": "India",
+          "place": "Moon's south pole",
           "claimed_date": "2023-08-23",
           "time_sensitivity": "EVERGREEN",
           "search_queries_original": [
-            "Chandrayaan-3 landing celebration India",
-            "BBC News Chandrayaan-3 celebration image"
+            "Chandrayaan-3 historic landing",
+            "India Moon south pole landing",
+            "Chandrayaan-3 successful touchdown"
           ],
           "search_queries_en": [
-            "Chandrayaan-3 landing celebration India",
-            "BBC News Chandrayaan-3 celebration image"
+            "Chandrayaan-3 historic landing",
+            "India Moon south pole landing",
+            "Chandrayaan-3 successful touchdown"
+          ]
+        },
+        {
+          "claim_id": "claim3",
+          "claim_original": "India is the first country to land in the lunar south pole region.",
+          "claim_en": "India is the first country to land in the lunar south pole region.",
+          "claim_type": "STATISTIC",
+          "entities": [
+            "India",
+            "lunar south pole region"
+          ],
+          "place": "Moon's south pole",
+          "claimed_date": "2023-08-23",
+          "time_sensitivity": "EVERGREEN",
+          "search_queries_original": [
+            "First country lunar south pole landing",
+            "India first south pole Moon",
+            "Chandrayaan-3 lunar south pole record"
+          ],
+          "search_queries_en": [
+            "First country lunar south pole landing",
+            "India first south pole Moon",
+            "Chandrayaan-3 lunar south pole record"
           ]
         }
       ],
       "extra_claims_not_checked": [],
-      "ocr_text": "BBCNEWS",
+      "ocr_text": "BBC NEWS",
       "transcript": null,
-      "visual_description_en": "A close-up image shows a crowd of people, with a woman in the foreground. She has dark hair, a bindi on her forehead, and is wearing a yellow garment. Her mouth is open as if shouting or cheering, and her right hand is raised near her face. She is wearing a ring on her finger and heart-shaped earrings. In the background, other people are visible, some with their hands raised in celebration. A man with glasses and a beard is partially visible to the left. The bottom left corner features the 'BBC NEWS' logo. The overall scene suggests excitement and celebration.",
+      "visual_description_en": "A medium shot shows a crowd of people, predominantly South Asian, reacting to an event. In the foreground, a woman with dark hair, wearing a yellow garment and gold earrings, has her mouth open as if shouting or cheering, with her right hand covering part of her mouth. She has a red bindi on her forehead and a ring on her finger. To her left, a man with glasses and a beard is partially visible. In the background, other people are seen with their arms raised. The bottom left corner of the image features the white 'BBC NEWS' logo on a black background.",
       "ai_generation_signals": null,
       "origin_hints": [
         "BBC News"

@@ -1,7 +1,7 @@
 {
-  "prompt_version": "judge-1.2+shared-1.1",
+  "prompt_version": "judge-1.3+shared-1.1",
   "model_id": "gemini-2.5-pro",
-  "recorded_at": "2026-10-07T18:42:14+00:00",
+  "recorded_at": "2026-10-08T06:20:03+00:00",
   "outputs": [
     {
       "verdicts": [
@@ -9,25 +9,26 @@
           "claim_id": "c1",
           "label": "FALSE",
           "confidence": 100,
-          "what_is_true_en": "COVID-19 vaccines do not contain microchips or any other tracking devices. Health authorities confirm their purpose is to stimulate an immune response against the virus.",
+          "what_is_true_en": "COVID-19 vaccines do not contain microchips or any form of tracking device. Health authorities and fact-checkers have repeatedly confirmed that the publicly available vaccine ingredients do not include any electronic components.",
           "event_date": null,
           "evidence_for_ids": [],
           "evidence_against_ids": [
             "ws-1",
-            "ws-5",
             "ws-7",
-            "ws-9",
-            "ws-11",
-            "fc-2"
+            "ws-10",
+            "ws-12",
+            "ws-13",
+            "fc-10"
           ],
           "cited_ids": [
             "ws-1",
-            "ws-5",
             "ws-7",
-            "ws-9",
-            "ws-11"
+            "ws-10",
+            "ws-12",
+            "ws-13",
+            "fc-10"
           ],
-          "reasoning_en": "An overwhelming consensus of evidence from multiple TIER_1 sources, including the U.S. Centers for Disease Control and Prevention (CDC), Indonesian government agencies, and independent fact-checkers, confirms that COVID-19 vaccines do not contain microchips. Experts also note the physical impossibility of injecting a microchip through a standard vaccine needle. The claim is a widely debunked conspiracy theory.",
+          "reasoning_en": "An overwhelming consensus of evidence from multiple TIER_1 sources, including government health agencies like the CDC and the Indonesian Ministry of Health, as well as numerous fact-checking organizations, confirms that COVID-19 vaccines do not contain microchips. The ingredients are publicly known and do not include any electronic components. The claim is a widely debunked conspiracy theory, and related claims about magnetic effects have also been proven false.",
           "ai_generation": null
         }
       ]

@@ -38,8 +38,10 @@ async def test_recorded_case_replays(case_id, monkeypatch):
     assert run.error is None
     assert run.result is not None and run.result.status == "DONE"
     assert same_language(run.language, case.language)
-    if "NOT_CHECKABLE" in case.expected:
+    if case.expected == ["NOT_CHECKABLE"]:
         assert run.label == "NOT_CHECKABLE"
+    elif run.label == "NOT_CHECKABLE":
+        assert "NOT_CHECKABLE" in case.expected
     else:
         assert run.result.claims, "a checkable case must produce at least one claim"
         for c in run.result.claims:

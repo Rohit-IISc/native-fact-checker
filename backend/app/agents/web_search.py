@@ -20,6 +20,14 @@ AGENT = "web_search"
 CLASSIFY_RESERVE_S = 6.0
 
 
+def visible_text(extraction: Extraction) -> str:
+    """Text read from the media and what it shows. Its distinctive bits (an overlay, a masthead and date,
+    shop signs) find earlier debunks that queries about the claim miss (Oct 8: cases 01 and 12)."""
+    parts = [f"text: {extraction.ocr_text[:300]}" if extraction.ocr_text else "",
+             f"shows: {extraction.visual_description_en[:300]}" if extraction.visual_description_en else ""]
+    return "\n".join(p for p in parts if p) or "none"
+
+
 async def run(llm: LLM, extraction: Extraction, timeout_s: float) -> AgentFindings:
     """timeout_s covers both calls: the search gets all but CLASSIFY_RESERVE_S, classify the rest."""
     deadline = time.monotonic() + timeout_s
@@ -27,7 +35,8 @@ async def run(llm: LLM, extraction: Extraction, timeout_s: float) -> AgentFindin
     found = await llm.search(stage=AGENT, prompt_version=prompt.version,
                              timeout_s=max(5.0, timeout_s - CLASSIFY_RESERVE_S), prompt=prompt.render(
         max_queries=get_config().limits["web_search"]["max_grounded_queries"],
-        content_language=extraction.content_language, claims_json=claims_json(extraction)))
+        content_language=extraction.content_language, claims_json=claims_json(extraction),
+        visible_text=visible_text(extraction)))
     if not found.sources:
         return AgentFindings(agent=AGENT, notes_en="Web search returned no citable sources.")
     by_n = {s.n: s for s in found.sources}

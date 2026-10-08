@@ -1,15 +1,15 @@
 {
-  "prompt_version": "web-search-2.1+shared-1.1",
+  "prompt_version": "web-search-2.2+shared-1.1",
   "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-07T18:47:46+00:00",
+  "recorded_at": "2026-10-08T06:24:00+00:00",
   "outputs": [
     {
-      "text": "For claim c1:\nGOV.UK published on May 6, 2020, states there is no evidence linking 5G and coronavirus, and that viruses cannot travel on radio waves or mobile networks. It also notes that coronavirus is spreading in countries without 5G. [1] The International Telecommunication Union (ITU), a UN agency, confirmed on April 22, 2020, that the theory of a link between 5G and COVID-19 is \"a hoax that has no technical basis.\" [2] The World Health Organization (WHO) and Centers for Disease Control (CDC) state that viruses cannot travel via radio waves or mobile networks, and that physical contact is needed for infection. [3] [4] [5] Wikipedia, citing the CDC, explains that 5G uses non-ionizing radiation which does not damage DNA, and there is no evidence that it affects the immune system. [6]\n\nFor claim c2:\nAP News reported on April 8, 2020, that claims of maps showing a correlation between confirmed COVID-19 cases and 5G installation are false. The article explains that both maps simply highlight densely populated areas, and that 5G is typically rolled out in urban centers where population density is higher. [7] A study published in Medical Research Archives on April 12, 2021, found a statistical correlation between higher COVID-19 cases and deaths in US states and counties with 5G millimeter wave wireless telecommunications, even after accounting for population density. [8] However, this study does not claim causation, and other sources strongly refute any causal link. [7] [9] [10] The Guardian reported on April 7, 2020, that a popular claim about Wuhan being the first city to receive 5G and the origin of COVID-19 is false, as other cities had 5G earlier, and countries without 5G also experienced high numbers of cases. [11] UNICEF Montenegro stated on July 12, 2021, that their analysis shows 5G does not spread coronavirus. [12]",
+      "text": "c1:\nThe claim that 5G mobile towers spread the coronavirus, leading to an increase in cases where 5G was installed, is a conspiracy theory with no scientific basis. [1] [2] [3] [4] [5] Numerous scientific and governmental organizations have debunked this claim. [2] [6] [3] [4] [5]\n\nThe International Telecommunication Union (ITU), a UN agency, confirmed in April 2020 that 5G is not responsible for the spread of COVID-19, calling it a \"hoax that has no technical basis.\" [2] [5] The World Health Organization (WHO) and the UK government have also stated that viruses cannot travel via radio waves or mobile networks, and that COVID-19 has spread in countries without 5G. [6] [4]\n\nExperts explain that 5G technology uses electromagnetic fields, and it is physically impossible for these fields to transfer particles like viruses. [6] [7] There is also no scientific evidence to support the idea that 5G compromises the immune system. [6] Despite the lack of evidence, these conspiracy theories led to arson attacks on 5G towers and harassment of telecom engineers in several countries. [1] [6] [3] [8]",
       "sources": [
         {
           "n": 1,
-          "url": "https://www.gov.uk/guidance/5g-and-coronavirus-covid-19",
-          "domain": "www.gov.uk"
+          "url": "https://www.facebook.com/NPR/posts/theres-no-scientific-evidence-tying-5g-networks-to-the-coronavirus-pandemic-howe/10159177719426756/",
+          "domain": "facebook.com"
         },
         {
           "n": 2,
@@ -18,56 +18,36 @@
         },
         {
           "n": 3,
+          "url": "https://www.ofcom.org.uk/spectrum/electromagnetic-fields/clearing-up-myths-5g-and-coronavirus",
+          "domain": "ofcom.org.uk"
+        },
+        {
+          "n": 4,
+          "url": "https://www.gov.uk/guidance/5g-and-coronavirus-covid-19",
+          "domain": "www.gov.uk"
+        },
+        {
+          "n": 5,
+          "url": "https://www.itu.int/en/Pages/COVID-19/5g-covid-19-statement.aspx",
+          "domain": "itu.int"
+        },
+        {
+          "n": 6,
           "url": "https://www.washingtonpost.com/national-security/dhs-to-advise-telecom-firms-on-preventing-5g-cell-tower-attacks-linked-to-coronavirus-conspiracy-theories/2020/05/13/6aa9eaa6-951f-11ea-82b4-c8db161ff6e5_story.html",
           "domain": "washingtonpost.com"
         },
         {
-          "n": 4,
-          "url": "https://www.mayoclinic.org/diseases-conditions/coronavirus/in-depth/coronavirus-myths/art-20485720",
-          "domain": "mayoclinic.org"
-        },
-        {
-          "n": 5,
-          "url": "https://www.ucc.org/daily_covid_19_brief_issue_62/",
-          "domain": "ucc.org"
-        },
-        {
-          "n": 6,
-          "url": "https://en.wikipedia.org/wiki/5G_misinformation",
-          "domain": "wikipedia.org"
-        },
-        {
           "n": 7,
-          "url": "https://apnews.com/article/archive-fact-checking-8758210339",
-          "domain": "apnews.com"
+          "url": "https://www.latrobe.edu.au/news/articles/2020/opinion/5g-and-covid-19-conspiracy-theories",
+          "domain": "latrobe.edu.au"
         },
         {
           "n": 8,
-          "url": "https://esmed.org/MRA/mra/article/view/2371",
-          "domain": "esmed.org"
-        },
-        {
-          "n": 9,
-          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8576388/",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7205032/",
           "domain": "nih.gov"
-        },
-        {
-          "n": 10,
-          "url": "https://www.pbs.org/newshour/world/conspiracy-theorists-burn-5g-towers-claiming-link-to-virus",
-          "domain": "pbs.org"
-        },
-        {
-          "n": 11,
-          "url": "https://www.theguardian.com/technology/2020/apr/07/how-false-claims-about-5g-health-risks-spread-into-the-mainstream",
-          "domain": "theguardian.com"
-        },
-        {
-          "n": 12,
-          "url": "https://www.unicef.org/montenegro/en/stories/5g-technology-does-not-cause-or-spread-coronavirus",
-          "domain": "unicef.org"
         }
       ],
-      "queries": 8
+      "queries": 4
     }
   ]
 }
