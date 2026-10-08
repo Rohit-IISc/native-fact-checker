@@ -1,178 +1,63 @@
 {
   "prompt_version": "web-search-2.2+shared-1.1",
   "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-08T06:22:40+00:00",
+  "recorded_at": "2026-10-08T18:05:18+00:00",
   "outputs": [
     {
-      "text": "<user_content>\n[\n {\n  \"claim_id\": \"c1\",\n  \"claim_original\": \"The photo in this post shows people celebrating India's Chandrayaan-3 mission successfully landing on the Moon.\",\n  \"claim_en\": \"The photo in this post shows people celebrating India's Chandrayaan-3 mission successfully landing on the Moon.\",\n  \"claim_type\": \"MEDIA_AUTHENTICITY\",\n  \"place\": \"India\",\n  \"claimed_date\": \"2023-08-23\",\n  \"entities\": [\n   \"Chandrayaan-3\",\n   \"India\",\n   \"Moon\"\n  ],\n  \"search_queries_original\": [\n   \"Chandrayaan-3 landing celebrations photo\",\n   \"India moon mission celebrations crowd\",\n   \"BBC News Chandrayaan-3 photo\"\n  ],\n  \"search_queries_en\": [\n   \"Chandrayaan-3 landing celebrations photo\",\n   \"India moon mission celebrations crowd\",\n   \"BBC News Chandrayaan-3 photo\"\n  ]\n },\n {\n  \"claim_id\": \"c2\",\n  \"claim_original\": \"India's Chandrayaan-3 mission made a historic landing near the Moon's south pole.\",\n  \"claim_en\": \"India's Chandrayaan-3 mission made a historic landing near the Moon's south pole.\",\n  \"claim_type\": \"EVENT\",\n  \"place\": \"Moon's south pole\",\n  \"claimed_date\": \"2023-08-23\",\n  \"entities\": [\n   \"India\",\n   \"Chandrayaan-3\",\n   \"Moon's south pole\"\n  ],\n  \"search_queries_original\": [\n   \"Chandrayaan-3 historic landing\",\n   \"India Moon south pole landing\",\n   \"Chandrayaan-3 successful touchdown\"\n  ],\n  \"search_queries_en\": [\n   \"Chandrayaan-3 historic landing\",\n   \"India Moon south pole landing\",\n   \"Chandrayaan-3 successful touchdown\"\n  ]\n },\n {\n  \"claim_id\": \"c3\",\n  \"claim_original\": \"India is the first country to land in the lunar south pole region.\",\n  \"claim_en\": \"India is the first country to land in the lunar south pole region.\",\n  \"claim_type\": \"STATISTIC\",\n  \"place\": \"Moon's south pole\",\n  \"claimed_date\": \"2023-08-23\",\n  \"entities\": [\n   \"India\",\n   \"lunar south pole region\"\n  ],\n  \"search_queries_original\": [\n   \"First country lunar south pole landing\",\n   \"India first south pole Moon\",\n   \"Chandrayaan-3 lunar south pole record\"\n  ],\n  \"search_queries_en\": [\n   \"First country lunar south pole landing\",\n   \"India first south pole Moon\",\n   \"Chandrayaan-3 lunar south pole record\"\n  ]\n }\n]\n</user_content>\nFor claim c1:\nThe provided image, showing a crowd reacting to an event, is consistent with numerous reports and images of celebrations across India following the successful landing of Chandrayaan-3 on August 23, 2023. News outlets like The Guardian, BBC News, Mid-Day, Rediff.com, and Getty Images all published articles and photo collections depicting public celebrations, including people cheering, waving flags, and watching live screenings of the landing. [1] [2] [3] [4] [5] [6] [7] [8] [9] [10] [11]\n\nFor claim c2:\nIndia's Chandrayaan-3 mission successfully made a historic landing near the Moon's south pole on August 23, 2023. [1] [2] [12] [13] [14] [15] [16] [17] [18] [19] [20] [21] [22] [23] [24] [25] [26] [27] [28] [29] [30] [31] [32] [33] This achievement was widely reported by numerous news organizations and space agencies, including The Guardian, BBC News, NASA, and the European Space Agency (ESA). [1] [2] [16] [20] The landing occurred at approximately 6:04 PM India Standard Time (12:34 GMT). [2] [14] [17] [19] [24] [27] [28]\n\nFor claim c3:\nIndia became the first country to successfully land a spacecraft near the Moon's south pole on August 23, 2023, with its Chandrayaan-3 mission. [1] [2] [12] [13] [14] [15] [17] [19] [23] [24] [25] [27] [28] [29] [30] [31] [33] [10] While other countries like the United States, the former Soviet Union, and China have achieved soft landings on the Moon, India was the first to land in the previously unexplored south polar region. [1] [2] [13] [14] [17] [23] [24] [25] [28] [29] [33]",
+      "text": "c1: The Chandrayaan-3 mission successfully landed near the Moon's south pole on August 23, 2023, at 18:04 IST (12:33 UTC). [1] People across India celebrated this achievement with dancing, waving Indian flags, setting off firecrackers, and playing drums. [2] The image shows people celebrating the successful landing of Chandrayaan-3. [2] [3] Several news outlets, including BBC News, reported on the celebrations and the mission's success. [2] [4] [5] However, some social media posts incorrectly used an old BBC interview from 2019, which discussed Chandrayaan-2, to comment on Chandrayaan-3. [6] [7] [8] [9] The BBC News Press Team clarified that the viral video was an old clip from 2019 and not related to Chandrayaan-3. [6] [10] [8] [9]",
       "sources": [
         {
           "n": 1,
-          "url": "https://www.theguardian.com/science/2023/aug/23/india-chandrayaan-3-moon-landing-mission",
-          "domain": "theguardian.com"
-        },
-        {
-          "n": 2,
-          "url": "https://www.youtube.com/watch?v=QQKSASFdoDw",
-          "domain": "youtube.com"
-        },
-        {
-          "n": 3,
-          "url": "https://www.mid-day.com/news/india-news/photo/in-pics-citizens-across-india-celebrate-successful-soft-landing-of-chandrayaan3-on-moons-surface-96999",
-          "domain": "mid-day.com"
-        },
-        {
-          "n": 4,
-          "url": "https://indianexpress.com/article/india/we-won-crowd-bursts-celebration-delhis-nehru-planetarium-chandrayaan-3-lands-moon-8906146/",
-          "domain": "indianexpress.com"
-        },
-        {
-          "n": 5,
-          "url": "https://m.rediff.com/news/report/india-erupts-in-celebrations-as-chandrayaan-3-lands-on-moons-south-pole/20230823.htm",
-          "domain": "rediff.com"
-        },
-        {
-          "n": 6,
-          "url": "https://www.gettyimages.com/editorial-images/news/event/india-celebrates-successful-landing-of-chandrayaan-3-mission-on-moon/776022438",
-          "domain": "gettyimages.com"
-        },
-        {
-          "n": 7,
-          "url": "https://www.wionews.com/photos/in-pics-indians-rejoice-as-chandrayaan-3-makes-smooth-landing-on-the-moon-628494",
-          "domain": "wionews.com"
-        },
-        {
-          "n": 8,
-          "url": "https://www.theguardian.com/world/2023/aug/24/india-rover-takes-walk-on-moon-frenzied-celebrations",
-          "domain": "theguardian.com"
-        },
-        {
-          "n": 9,
-          "url": "https://www.youtube.com/watch?v=_ewPaLvNffA",
-          "domain": "youtube.com"
-        },
-        {
-          "n": 10,
-          "url": "https://www.independent.co.uk/tv/news/india-chandrayaan3-lands-moon-reaction-b2397995.html",
-          "domain": "independent.co.uk"
-        },
-        {
-          "n": 11,
-          "url": "https://www.alamy.com/stock-photo/chandrayaan-3-landing-celebration.html?pseudoid=BC34D460-1085-4607-B2F9-3FBBEC5FBB7C",
-          "domain": "alamy.com"
-        },
-        {
-          "n": 12,
-          "url": "https://www.youtube.com/watch?v=UjX5MnCa2f8",
-          "domain": "youtube.com"
-        },
-        {
-          "n": 13,
-          "url": "https://en.wikipedia.org/wiki/Chandrayaan_programme",
-          "domain": "wikipedia.org"
-        },
-        {
-          "n": 14,
-          "url": "https://globalnews.ca/news/9915542/india-moon-landing-south-pole/",
-          "domain": "globalnews.ca"
-        },
-        {
-          "n": 15,
-          "url": "https://newsonair.gov.in/india-becomes-first-nation-to-reach-south-pole-of-moon-as-chandrayaan-3-makes-a-perfect-touchdown/",
-          "domain": "newsonair.gov.in"
-        },
-        {
-          "n": 16,
-          "url": "https://www.esa.int/Enabling_Support/Operations/India_s_Chandrayaan-3_successfully_lands_on_the_Moon",
-          "domain": "esa.int"
-        },
-        {
-          "n": 17,
-          "url": "https://www.space.com/india-chandrayaan-3-moon-landing-success",
-          "domain": "space.com"
-        },
-        {
-          "n": 18,
-          "url": "https://jatan.space/chandrayaan-3-makes-historic-touchdown/",
-          "domain": "jatan.space"
-        },
-        {
-          "n": 19,
-          "url": "https://www.facebook.com/hcigaborone/posts/indias-space-exploration-program-achieved-a-historic-milestone-recently-with-the/703950288442085/",
-          "domain": "facebook.com"
-        },
-        {
-          "n": 20,
-          "url": "https://science.nasa.gov/mission/chandrayaan-3/",
-          "domain": "nasa.gov"
-        },
-        {
-          "n": 21,
-          "url": "https://spaceflightnow.com/2023/08/23/live-coverage-indias-chandrayaan-3-probe-heads-for-lunar-landing/",
-          "domain": "spaceflightnow.com"
-        },
-        {
-          "n": 22,
-          "url": "https://www.ndtv.com/india-news/isro-says-vikram-lander-has-exceeded-chandrayaan-3-mission-objectives-and-successfully-completed-a-hop-experiment-4357196",
-          "domain": "ndtv.com"
-        },
-        {
-          "n": 23,
-          "url": "https://www.voanews.com/a/india-lands-craft-on-moon-s-unexplored-south-pole/7237740.html",
-          "domain": "voanews.com"
-        },
-        {
-          "n": 24,
-          "url": "https://www.pbs.org/newshour/world/india-becomes-the-only-the-4th-country-to-successfully-land-a-spacecraft-on-the-moon",
-          "domain": "pbs.org"
-        },
-        {
-          "n": 25,
           "url": "https://en.wikipedia.org/wiki/Chandrayaan-3",
           "domain": "wikipedia.org"
         },
         {
-          "n": 26,
-          "url": "https://www.thehindu.com/sci-tech/science/chandrayaan-3-landed-on-possibly-oldest-craters-of-moon-say-researchers/article68697073.ece",
-          "domain": "thehindu.com"
-        },
-        {
-          "n": 27,
-          "url": "https://www.livescience.com/space/the-moon/india-lands-on-moon-chandrayaan-3-becomes-worlds-1st-spacecraft-to-land-near-lunar-south-pole",
-          "domain": "livescience.com"
-        },
-        {
-          "n": 28,
-          "url": "https://www.livemint.com/science/chandrayaan3-lands-on-moon-south-pole-isro-vikram-lander-creates-history-11692793220466.html",
-          "domain": "livemint.com"
-        },
-        {
-          "n": 29,
-          "url": "https://www.universetoday.com/articles/chandrayaan-3-lands-successfully-on-the-moons-south-pole",
-          "domain": "universetoday.com"
-        },
-        {
-          "n": 30,
-          "url": "https://time.com/6307329/india-moon-landing-south-pole/",
-          "domain": "time.com"
-        },
-        {
-          "n": 31,
-          "url": "https://www.youtube.com/watch?v=mepc_H_iM_0",
+          "n": 2,
+          "url": "https://www.youtube.com/watch?v=_ewPaLvNffA",
           "domain": "youtube.com"
         },
         {
-          "n": 32,
-          "url": "https://lunarregistry.com/chandrayaan-3-site-statio-shiv-shakti",
-          "domain": "lunarregistry.com"
+          "n": 3,
+          "url": "https://www.thequint.com/neon/social-buzz/the-internet-is-abuzz-with-reactions-to-chandrayaan-3s-successful-moon-landing-shah-rukh-khan-srk-anand-mahindra-yami-gautam",
+          "domain": "thequint.com"
         },
         {
-          "n": 33,
-          "url": "https://www.space.com/chandrayaan-3-moon-south-pole-why-nasa-wants-to-go-too",
-          "domain": "space.com"
+          "n": 4,
+          "url": "https://www.youtube.com/watch?v=u5gx-WUXTP8",
+          "domain": "youtube.com"
+        },
+        {
+          "n": 5,
+          "url": "https://www.youtube.com/shorts/3Go25P-qvrw",
+          "domain": "youtube.com"
+        },
+        {
+          "n": 6,
+          "url": "https://www.altnews.in/no-bbc-did-not-criticize-chandrayaan-3-old-clip-viral-false-report-by-times-now-india-tv-zee-news-other-outlets/",
+          "domain": "altnews.in"
+        },
+        {
+          "n": 7,
+          "url": "https://www.latestly.com/fact-check/did-bbc-insult-india-after-chandrayaan-3-moon-landing-old-video-of-bbc-news-anchor-questioning-indias-space-mission-goes-viral-heres-a-fact-check-5360939.html",
+          "domain": "latestly.com"
+        },
+        {
+          "n": 8,
+          "url": "https://www.thequint.com/news/webqoof/bbc-interview-isro-chandrayaan-3-poverty-india-old-video-fact-check",
+          "domain": "thequint.com"
+        },
+        {
+          "n": 9,
+          "url": "https://www.boomlive.in/fact-check/bbc-anchor-chandrayaan-3-old-video-fact-check-22862",
+          "domain": "boomlive.in"
+        },
+        {
+          "n": 10,
+          "url": "https://english.factcrescendo.com/2023/08/24/old-coverage-of-chandrayaan-by-bbc-shared-as-recent/",
+          "domain": "factcrescendo.com"
         }
       ],
-      "queries": 9
+      "queries": 3
     }
   ]
 }

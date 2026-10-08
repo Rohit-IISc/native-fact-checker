@@ -44,6 +44,8 @@ Decided with Rohit and Shubham on Oct 4, 2026. If anything elsewhere conflicts, 
 | 37 | Prompts | Drafted in `prompts/` |
 | 38 | Build | Single laptop, single Claude Code workspace |
 | 39 | Dates | Prototype Oct 11, test week Oct 12 to 17, submit Oct 18 |
+| 40 | Media observations (Oct 8, Rohit) | The judge may see neutral facts printed or visible on the shared item itself (satire or parody tags such as "बुरा न मानो होली है", newspaper masthead dates, outlet watermarks, channel logos with on-screen dates, visible signs of editing), never the post's claim, caption or persuasive wording. The extractor lists them as `media_markers`; code adds one `media_itself` item per claim (NOT_A_SOURCE, CONTEXT). They can decide what kind of item it is (satire shared as news is MISLEADING) but the source policy ignores them: a decisive label still needs external sources. Refines rule 3 of CLAUDE.md |
+| 41 | Model capacity (Oct 8, Rohit) | Stay on Vertex dynamic shared quota with 429 backoff. No Provisioned Throughput for now; revisit before the final presentation |
 
 ## Link fetching: oEmbed and public metadata, what it misses (answer to question 11)
 

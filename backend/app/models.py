@@ -118,6 +118,10 @@ class Extraction(BaseModel):
     origin_hints: list[str] = Field(
         default_factory=list, description="Handles, watermarks, logos, channel names seen in the media"
     )
+    media_markers: list[str] = Field(
+        default_factory=list, max_length=5,
+        description="Neutral facts about the shared item itself: satire tags, masthead dates, watermarks",
+    )
 
 
 class NearMatchResult(BaseModel):
@@ -162,7 +166,8 @@ class WebSearchOutput(BaseModel):
 class Evidence(BaseModel):
     evidence_id: str                    # e.g. "ws-3", "fc-1"; assigned by code
     agent: Literal[
-        "web_search", "factcheck_sites", "source_credibility", "media_provenance", "cache_archive", "satellite"
+        "web_search", "factcheck_sites", "source_credibility", "media_provenance", "cache_archive", "satellite",
+        "media_itself",
     ]
     claim_id: str
     url: str | None = None

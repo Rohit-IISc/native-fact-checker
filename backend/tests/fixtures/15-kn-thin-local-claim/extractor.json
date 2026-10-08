@@ -1,35 +1,35 @@
 {
-  "prompt_version": "extractor-1.10+shared-1.1",
+  "prompt_version": "extractor-1.11+shared-1.1",
   "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-08T06:23:41+00:00",
+  "recorded_at": "2026-10-08T18:06:42+00:00",
   "outputs": [
     {
       "content_language": "kn-IN",
       "content_script": "Knda",
-      "summary_en": "The message claims that two crocodiles were spotted in Kukkarahalli Lake in Mysore yesterday evening. It advises people not to go for walks there.",
+      "summary_en": "A message warns people not to go for walks near Kukkarahalli Lake in Mysuru because two crocodiles were reportedly seen there yesterday evening.",
       "checkable": true,
       "non_checkable_type": null,
       "claims": [
         {
           "claim_id": "claim1",
           "claim_original": "ಮೈಸೂರಿನ ಕುಕ್ಕರಹಳ್ಳಿ ಕೆರೆಯಲ್ಲಿ ನಿನ್ನೆ ಸಂಜೆ ಎರಡು ಮೊಸಳೆಗಳು ಕಾಣಿಸಿಕೊಂಡಿವೆ.",
-          "claim_en": "Two crocodiles were seen in Kukkarahalli Lake in Mysore yesterday evening.",
+          "claim_en": "Two crocodiles were seen in Kukkarahalli Lake in Mysuru yesterday evening.",
           "claim_type": "EVENT",
           "entities": [
             "Kukkarahalli Lake",
-            "Mysore",
+            "Mysuru",
             "crocodiles"
           ],
-          "place": "Mysore",
+          "place": "Mysuru",
           "claimed_date": "2026-10-07",
-          "time_sensitivity": "EVERGREEN",
+          "time_sensitivity": "LIVE_EVENT",
           "search_queries_original": [
             "ಮೈಸೂರು ಕುಕ್ಕರಹಳ್ಳಿ ಕೆರೆ ಮೊಸಳೆ",
-            "ಕುಕ್ಕರಹಳ್ಳಿ ಕೆರೆಯಲ್ಲಿ ಮೊಸಳೆಗಳು"
+            "ಕುಕ್ಕರಹಳ್ಳಿ ಕೆರೆ ಮೊಸಳೆ ಕಾಣಿಸಿಕೊಂಡಿವೆ"
           ],
           "search_queries_en": [
-            "Kukkarahalli Lake Mysore crocodiles",
-            "crocodiles spotted Kukkarahalli Lake"
+            "Mysuru Kukkarahalli Lake crocodiles",
+            "Kukkarahalli Lake crocodile sighting"
           ]
         }
       ],
@@ -38,7 +38,8 @@
       "transcript": null,
       "visual_description_en": null,
       "ai_generation_signals": null,
-      "origin_hints": []
+      "origin_hints": [],
+      "media_markers": []
     }
   ]
 }

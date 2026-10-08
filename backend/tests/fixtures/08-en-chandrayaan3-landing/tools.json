@@ -149,18 +149,6 @@
    "language": "en"
   },
   {
-   "claim_text": "Washington Post praises India for Chandrayaan-3's success despite having \"second string\" talent",
-   "claimant": "Facebook, X users",
-   "claim_date": "2023-09-01T08:07:33Z",
-   "url": "https://www.boomlive.in/fact-check/washington-post-chandrayaan-3-isro-fact-check-22931",
-   "publisher": "BOOM Fact Check",
-   "publisher_site": "boomlive.in",
-   "rating": "False",
-   "review_date": "2023-09-01T08:07:33Z",
-   "title": "Reader Comment Peddled As Washington Post's Article On ...",
-   "language": "en"
-  },
-  {
    "claim_text": "BBC slammed Indian's Chandrayaan 3 mission in view of poverty",
    "claimant": "Anand Mahindra, MeghUpdates, Mint, Times Now",
    "claim_date": "2016-06-20T00:00:00Z",
@@ -182,6 +170,18 @@
    "rating": "False",
    "review_date": "2023-08-25T11:30:07Z",
    "title": "No, BBC did not criticize Chandrayaan 3. Old clip viral; false report ...",
+   "language": "en"
+  },
+  {
+   "claim_text": "Photo shows an imprint of ISRO's logo and national emblem on the moon's surface.",
+   "claimant": "X, Facebook users",
+   "claim_date": "2023-08-24T09:15:52Z",
+   "url": "https://www.boomlive.in/fact-check/isro-chandrayaan-3-space-mission-national-emblem-moon-fact-check-22844",
+   "publisher": "BOOM Fact Check",
+   "publisher_site": "boomlive.in",
+   "rating": "False",
+   "review_date": "2023-08-24T09:15:52Z",
+   "title": "Picture Of National Emblem, ISRO Logo Imprint On Moon's Surface ...",
    "language": "en"
   },
   {

@@ -1,7 +1,7 @@
 {
   "prompt_version": "factcheck-1.4+shared-1.1",
   "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-08T06:18:50+00:00",
+  "recorded_at": "2026-10-08T18:00:41+00:00",
   "outputs": [
     {
       "agent": "factcheck_sites",
@@ -16,7 +16,7 @@
           "title": "प्रधानमंत्री मोदी ने किया 'फ्री लैपटॉप' बांटने का वादा? नहीं, फर्ज़ी वेबसाइट ...",
           "published_at": "2019-06-04",
           "language": "hi",
-          "snippet_en": "Alt News rated as False the claim that the Prime Minister promised to distribute free laptops to 2 crore youths, stating that scam websites are conning readers in the name of PM Modi.",
+          "snippet_en": "Alt News rated as False the claim that Prime Minister Modi promised to distribute free laptops, stating that scam websites are conning readers.",
           "stance": "CONTRADICTS",
           "rating_text": "False",
           "tier": "TIER_1"
@@ -31,7 +31,7 @@
           "title": "Fact Check: छात्रों को फ्री लैपटॉप स्कीम के रजिस्ट्रेशन के लिए बनी ...",
           "published_at": "2023-02-28",
           "language": "hi",
-          "snippet_en": "Vishvas News rated as False the claim that the central government has launched a free laptop scheme for students, stating that the Prime Minister Free Laptop Scheme 2023-24 is fake.",
+          "snippet_en": "Vishvas News rated as False the claim that the central government has launched a free laptop scheme for students, stating that the scheme is fake.",
           "stance": "CONTRADICTS",
           "rating_text": "False",
           "tier": "TIER_1"
@@ -46,7 +46,7 @@
           "title": "Fact Check : AICTE छात्रों के लिए नहीं चला रहा फ्री लैपटॉप योजना, वायरल ...",
           "published_at": "2024-05-08",
           "language": "hi",
-          "snippet_en": "Vishvas News rated as False the claim that the government is providing free laptops to students, stating that AICTE is not running a free laptop scheme for students.",
+          "snippet_en": "Vishvas News rated as False the claim that the government is providing free laptops to students under a free laptop scheme, clarifying that AICTE is not running such a scheme.",
           "stance": "CONTRADICTS",
           "rating_text": "False",
           "tier": "TIER_1"
@@ -61,7 +61,7 @@
           "title": "Fact Check: फ्री लैपटॉप योजना के नाम से फिर फिशिंग लिंक वायरल, केंद्र ...",
           "published_at": "2025-02-18",
           "language": "hi",
-          "snippet_en": "Vishvas News rated as False the claim that the government is giving free laptops, stating that a phishing link for a free laptop scheme is viral and there is no such government initiative.",
+          "snippet_en": "Vishvas News rated as False the claim that the government is giving free laptops, stating that a phishing link for a free laptop scheme is viral and no such government initiative exists.",
           "stance": "CONTRADICTS",
           "rating_text": "False",
           "tier": "TIER_1"
@@ -76,7 +76,7 @@
           "title": "Fact Check : फ्री लैपटॉप योजना के नाम पर वायरल हुई क्लिकबेट लिंक",
           "published_at": "2023-08-30",
           "language": "hi",
-          "snippet_en": "Vishvas News rated as False the claim that free laptops will be given under the free laptop scheme, stating that a clickbait link went viral in the name of the free laptop scheme.",
+          "snippet_en": "Vishvas News rated as False the claim that free laptops will be provided under a free laptop scheme, stating that a clickbait link went viral in the name of the scheme.",
           "stance": "CONTRADICTS",
           "rating_text": "False",
           "tier": "TIER_1"
@@ -91,24 +91,9 @@
           "title": "Fact Check : यूपी सरकार की युवा साथी योजना के नाम पर फ्री लैपटॉप का ...",
           "published_at": "2024-12-23",
           "language": "hi",
-          "snippet_en": "Vishvas News rated as False the claim that students will receive free laptops under the 2024-25 scheme, stating that a fake link for free laptops is viral after UP government's Yuva Sathi Yojana.",
+          "snippet_en": "Vishvas News rated as False the claim that students will receive free laptops under a scheme, stating that a fake link for free laptops is viral.",
           "stance": "CONTRADICTS",
           "rating_text": "False",
-          "tier": "TIER_1"
-        },
-        {
-          "evidence_id": "",
-          "agent": "factcheck_sites",
-          "claim_id": "c1",
-          "url": "https://www.vishvasnews.com/viral/fact-check-modi-government-is-not-providing-free-laptops-to-students-old-rumor-is-getting-viral-again/",
-          "domain": "vishvasnews.com",
-          "publisher": "विश्वास न्यूज",
-          "title": "Fact Check: मोदी सरकार ऑनलाइन पढ़ाई करने वाले सभी बच्चों को नहीं दे ...",
-          "published_at": "2020-09-29",
-          "language": "en",
-          "snippet_en": "Vishvas News rated as FALSE the claim that the Modi government is providing free laptops to children, stating that the Modi government is not providing free laptops to students.",
-          "stance": "CONTRADICTS",
-          "rating_text": "FALSE",
           "tier": "TIER_1"
         },
         {
@@ -121,31 +106,16 @@
           "title": "Is the Govt giving out free laptops to students? Old claim resurfaces ...",
           "published_at": "2024-01-11",
           "language": "en",
-          "snippet_en": "DigitEye India rated as totally false the claim that the government is giving out free laptops to students from financially disadvantaged backgrounds, stating that the Central government has not launched any such scheme.",
+          "snippet_en": "DigitEye India rated as totally false the claim that the government is giving out free laptops to students from financially disadvantaged backgrounds, stating no such scheme has been launched.",
           "stance": "CONTRADICTS",
           "rating_text": "The claim is totally false. The Central government has not launched any such scheme under any of their projects as of now.",
-          "tier": "TIER_1"
-        },
-        {
-          "evidence_id": "",
-          "agent": "factcheck_sites",
-          "claim_id": "c1",
-          "url": "https://srilanka.factcrescendo.com/english/student-laptop-scheme-2022-to-offer-800000-free-laptops-worldwide-is-a-scam/",
-          "domain": "srilanka.factcrescendo.com",
-          "publisher": "Fact Crescendo Sri Lanka",
-          "title": "Student Laptop Scheme 2022 to offer 800,000 free laptops ...",
-          "published_at": "2022-07-12",
-          "language": "en",
-          "snippet_en": "Fact Crescendo Sri Lanka rated as False, Scam the claim that the Student Laptop Scheme 2022 will offer 800,000 free laptops worldwide, stating that it is a scam.",
-          "stance": "CONTRADICTS",
-          "rating_text": "False, Scam",
           "tier": "TIER_1"
         }
       ],
       "source_assessment": null,
       "ai_generation_signals": null,
       "earliest_appearance": null,
-      "notes_en": "All fact checks consistently debunk the existence of a government-sponsored free laptop scheme, aligning with the claim that the 'PM Free Laptop Yojana 2026' is providing free laptops. The fact checks indicate that such schemes are either fake, scams, or phishing attempts.",
+      "notes_en": "",
       "timed_out": false
     }
   ]

@@ -1,94 +1,48 @@
 {
-  "prompt_version": "extractor-1.10+shared-1.1",
+  "prompt_version": "extractor-1.11+shared-1.1",
   "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-08T06:22:40+00:00",
+  "recorded_at": "2026-10-08T18:05:18+00:00",
   "outputs": [
     {
       "content_language": "en-IN",
       "content_script": "Latn",
-      "summary_en": "The image shows a crowd of people, with a woman in the foreground appearing to shout or cheer, covering her mouth with her hand. The BBC News logo is visible in the bottom left corner. The accompanying news article reports on India's Chandrayaan-3 mission successfully landing near the Moon's south pole, making India the first country to do so, and joining an elite club of nations to achieve a soft lunar landing.",
+      "summary_en": "The image shows a woman with her mouth open, seemingly shouting or cheering, with her hand near her mouth, amidst a crowd of people. The BBC News logo is visible in the bottom left corner. The image likely depicts public celebrations in India following the successful Chandrayaan-3 moon landing.",
       "checkable": true,
       "non_checkable_type": null,
       "claims": [
         {
           "claim_id": "claim1",
-          "claim_original": "The photo in this post shows people celebrating India's Chandrayaan-3 mission successfully landing on the Moon.",
-          "claim_en": "The photo in this post shows people celebrating India's Chandrayaan-3 mission successfully landing on the Moon.",
-          "claim_type": "MEDIA_AUTHENTICITY",
-          "entities": [
-            "Chandrayaan-3",
-            "India",
-            "Moon"
-          ],
-          "place": "India",
-          "claimed_date": "2023-08-23",
-          "time_sensitivity": "EVERGREEN",
-          "search_queries_original": [
-            "Chandrayaan-3 landing celebrations photo",
-            "India moon mission celebrations crowd",
-            "BBC News Chandrayaan-3 photo"
-          ],
-          "search_queries_en": [
-            "Chandrayaan-3 landing celebrations photo",
-            "India moon mission celebrations crowd",
-            "BBC News Chandrayaan-3 photo"
-          ]
-        },
-        {
-          "claim_id": "claim2",
-          "claim_original": "India's Chandrayaan-3 mission made a historic landing near the Moon's south pole.",
-          "claim_en": "India's Chandrayaan-3 mission made a historic landing near the Moon's south pole.",
+          "claim_original": "The image shows people in India celebrating the successful landing of Chandrayaan-3 near the Moon's south pole.",
+          "claim_en": "The image in this post shows people in India celebrating the successful landing of Chandrayaan-3 near the Moon's south pole.",
           "claim_type": "EVENT",
           "entities": [
             "India",
             "Chandrayaan-3",
             "Moon's south pole"
           ],
-          "place": "Moon's south pole",
-          "claimed_date": "2023-08-23",
+          "place": "India",
+          "claimed_date": null,
           "time_sensitivity": "EVERGREEN",
           "search_queries_original": [
-            "Chandrayaan-3 historic landing",
-            "India Moon south pole landing",
-            "Chandrayaan-3 successful touchdown"
+            "India Chandrayaan-3 celebrations",
+            "Chandrayaan-3 landing public reaction"
           ],
           "search_queries_en": [
-            "Chandrayaan-3 historic landing",
-            "India Moon south pole landing",
-            "Chandrayaan-3 successful touchdown"
-          ]
-        },
-        {
-          "claim_id": "claim3",
-          "claim_original": "India is the first country to land in the lunar south pole region.",
-          "claim_en": "India is the first country to land in the lunar south pole region.",
-          "claim_type": "STATISTIC",
-          "entities": [
-            "India",
-            "lunar south pole region"
-          ],
-          "place": "Moon's south pole",
-          "claimed_date": "2023-08-23",
-          "time_sensitivity": "EVERGREEN",
-          "search_queries_original": [
-            "First country lunar south pole landing",
-            "India first south pole Moon",
-            "Chandrayaan-3 lunar south pole record"
-          ],
-          "search_queries_en": [
-            "First country lunar south pole landing",
-            "India first south pole Moon",
-            "Chandrayaan-3 lunar south pole record"
+            "India Chandrayaan-3 celebrations",
+            "Chandrayaan-3 landing public reaction"
           ]
         }
       ],
       "extra_claims_not_checked": [],
-      "ocr_text": "BBC NEWS",
+      "ocr_text": "BBCNEWS",
       "transcript": null,
-      "visual_description_en": "A medium shot shows a crowd of people, predominantly South Asian, reacting to an event. In the foreground, a woman with dark hair, wearing a yellow garment and gold earrings, has her mouth open as if shouting or cheering, with her right hand covering part of her mouth. She has a red bindi on her forehead and a ring on her finger. To her left, a man with glasses and a beard is partially visible. In the background, other people are seen with their arms raised. The bottom left corner of the image features the white 'BBC NEWS' logo on a black background.",
+      "visual_description_en": "A close-up photo shows a woman in a yellow garment, with a red bindi on her forehead, shouting or cheering with her mouth open and her right hand near her mouth. She is wearing a ring on her right ring finger and heart-shaped earrings. In the background, other people are visible, also appearing to be part of a crowd, with some raising their hands. A man with glasses and a beard is partially visible on the left. The BBC News logo is in the bottom left corner of the image.",
       "ai_generation_signals": null,
       "origin_hints": [
         "BBC News"
+      ],
+      "media_markers": [
+        "BBC NEWS logo"
       ]
     }
   ]

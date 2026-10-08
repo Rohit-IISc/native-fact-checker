@@ -1,4 +1,4 @@
-from app.models import Label, SourceTier
+from app.models import Label, SourceTier, Stance
 from app.verify import source_policy
 from tests.helpers import ev, verdict
 
@@ -64,3 +64,22 @@ def test_apply_downgrades_and_records_reason():
     assert v.confidence <= 50
     assert "zz" not in v.cited_ids and "ws-1" in v.cited_ids
     assert "Source policy" in v.reasoning_en and not r.passed
+
+
+def media_item(eid: str = "mi-c1"):
+    return ev(eid, NAS, "The shared item itself", stance=Stance.CONTEXT).model_copy(update={"agent": "media_itself"})
+
+
+def test_media_observation_alongside_a_tier1_source_passes():
+    pack = [ev("fc-1", T1, "BOOM"), media_item()]
+    assert source_policy.check(verdict(Label.MISLEADING, ["fc-1", "mi-c1"]), pack).passed
+
+
+def test_media_observation_alone_never_carries_a_verdict():
+    r = source_policy.check(verdict(Label.MISLEADING, ["mi-c1"]), [media_item()])
+    assert not r.passed and r.reason == "no cited evidence"
+
+
+def test_media_observation_does_not_count_toward_two_tier2():
+    pack = [ev("ws-1", T2, "NDTV"), media_item()]
+    assert not source_policy.check(verdict(Label.MISLEADING, ["ws-1", "mi-c1"]), pack).passed

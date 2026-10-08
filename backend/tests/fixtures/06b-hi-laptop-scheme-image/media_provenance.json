@@ -1,15 +1,18 @@
 {
   "prompt_version": "media-provenance-1.2+shared-1.1",
   "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-08T06:18:50+00:00",
+  "recorded_at": "2026-10-08T18:00:41+00:00",
   "outputs": [
     {
       "agent": "media_provenance",
       "evidence": [],
       "source_assessment": null,
-      "ai_generation_signals": null,
+      "ai_generation_signals": {
+        "signals_ai": [],
+        "signals_real": []
+      },
       "earliest_appearance": null,
-      "notes_en": "No relevant web pages were found for the image.",
+      "notes_en": "No matches were found for the image.",
       "timed_out": false
     }
   ]

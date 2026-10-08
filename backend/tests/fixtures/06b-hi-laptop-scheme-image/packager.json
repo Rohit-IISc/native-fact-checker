@@ -1,66 +1,30 @@
 {
   "prompt_version": "packager-1.1+shared-1.1",
   "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-08T06:18:50+00:00",
+  "recorded_at": "2026-10-08T18:00:41+00:00",
   "outputs": [
     {
       "briefs": [
         {
           "claim_id": "c1",
-          "claim_en": "The 'PM Free Laptop Yojana 2026' is providing free laptops to all students from the government.",
+          "claim_en": "Under the Pradhan Mantri Free Laptop Yojana 2026, the government is providing free laptops to all students.",
           "claim_type": null,
           "claimed_date": null,
           "place": null,
-          "brief_en": "Multiple sources, including the AICTE website and PIB Fact Check, debunk the existence of a national \"PM Free Laptop Yojana 2026\" that provides free laptops to all students. Livemint reported on September 21, 2026, that PIB Fact Check clarified the Government of India has not announced any such scheme. Careerindia.com on September 13, 2026, and Yojanagpt.com on September 29, 2026, also warn that messages about such a scheme are scams and that any existing free laptop schemes are state-level, not national. Fact-checking organizations like Vishvas News and DigitEye India have consistently rated similar claims as false since 2019, stating that no central government initiative for free laptops exists.",
+          "brief_en": "The claim that the Indian government is providing free laptops to all students under the \"Pradhan Mantri Free Laptop Yojana 2026\" is false. The Press Information Bureau (PIB) Fact Check has repeatedly debunked these claims, stating that no such scheme is being run by the central government. Multiple fact-checking organizations, including Vishvas News and DigitEye India, have also rated this claim as false, noting that such messages are often scams designed to collect personal information. While there is no central government scheme, some state governments, such as Delhi and Madhya Pradesh, offer laptop schemes or financial assistance for students.",
           "evidence_ids": [
-            "ws-4",
-            "ws-2",
+            "ws-6",
+            "ws-7",
             "fc-2",
             "fc-3",
             "fc-4",
             "fc-5",
             "fc-6",
             "fc-7",
-            "fc-8",
-            "ws-3",
-            "ws-6",
-            "fc-1"
-          ],
-          "gaps_en": []
-        },
-        {
-          "claim_id": "c2",
-          "claim_en": "The last date to apply for the scheme is October 15.",
-          "claim_type": null,
-          "claimed_date": "2026-10-15",
-          "place": null,
-          "brief_en": "There is no evidence to support that October 15, 2026, is the last date to apply for a national \"PM Free Laptop Yojana.\" Sources like Careerindia.com (September 13, 2026) indicate that scam forwards often use urgent application deadlines to create panic. While some regional or scholarship schemes may have deadlines (e.g., a YouTube video mentions October 31 for a scholarship, and a Pakistani scheme had a June 1, 2025, deadline), these are not related to a national Indian scheme. An article on mbresult.in (October 7, 2026) discusses the Rajasthan Free Laptop/Tablet Scheme 2026 but does not mention a general October 15 deadline.",
-          "evidence_ids": [
-            "ws-8",
-            "ws-11",
-            "ws-12",
-            "ws-7",
-            "ws-9",
-            "ws-10"
-          ],
-          "gaps_en": [
-            "No official government announcement or website confirms October 15, 2026, as the application deadline for a national 'PM Free Laptop Yojana'."
-          ]
-        },
-        {
-          "claim_id": "c3",
-          "claim_en": "The official website for the 'PM Free Laptop Yojana' is www.pm-free-laptop-yojana.in.",
-          "claim_type": null,
-          "claimed_date": null,
-          "place": null,
-          "brief_en": "Evidence indicates that www.pm-free-laptop-yojana.in is not an official government website. The AICTE website and Livemint (September 21, 2026) warn against fake news and unofficial websites promoting such schemes. Careerindia.com (September 13, 2026) and Yojanagpt.com (September 29, 2026) advise that authentic government websites end in \".gov.in\" or \".nic.in\". A TV9 Bharatvarsh YouTube video (September 14, 2026) investigating a similar scheme found the website mentioned in the viral message was blocked, further suggesting the unofficial nature of such domains.",
-          "evidence_ids": [
-            "ws-16",
-            "ws-17",
-            "ws-14",
-            "ws-15",
             "ws-13",
-            "ws-18"
+            "ws-9",
+            "ws-10",
+            "fc-1"
           ],
           "gaps_en": []
         }

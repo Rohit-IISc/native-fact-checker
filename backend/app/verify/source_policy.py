@@ -5,6 +5,9 @@ TRUE, FALSE, MISLEADING or SCAM need, among the cited evidence ids:
   - no cited id with tier NOT_A_SOURCE used as support, and
   - every cited id present in the evidence pack.
 Otherwise the label becomes NOT_ENOUGH_EVIDENCE and the reason is recorded.
+
+Items from agent "media_itself" (neutral observations of the shared item, such as a satire tag) may be
+cited to explain what the item is, but are ignored when counting: they never satisfy or fail the policy.
 """
 from __future__ import annotations
 
@@ -36,9 +39,9 @@ def check(verdict: JudgeVerdict, evidence: list[Evidence]) -> PolicyResult:
     unknown = sorted(i for i in cited_all if i not in by_id)
     if unknown:
         return PolicyResult(False, f"cited ids not in evidence pack: {', '.join(unknown)}")
-    if not verdict.cited_ids:
+    cited = [by_id[i] for i in verdict.cited_ids if by_id[i].agent != "media_itself"]
+    if not cited:
         return PolicyResult(False, "no cited evidence")
-    cited = [by_id[i] for i in verdict.cited_ids]
     social = [e.evidence_id for e in cited if e.tier == SourceTier.NOT_A_SOURCE]
     if social:
         return PolicyResult(False, f"NOT_A_SOURCE evidence used as support: {', '.join(social)}")

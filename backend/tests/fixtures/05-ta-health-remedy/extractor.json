@@ -1,12 +1,12 @@
 {
-  "prompt_version": "extractor-1.10+shared-1.1",
+  "prompt_version": "extractor-1.11+shared-1.1",
   "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-08T06:18:17+00:00",
+  "recorded_at": "2026-10-08T17:59:53+00:00",
   "outputs": [
     {
       "content_language": "ta-IN",
       "content_script": "Taml",
-      "summary_en": "A social media post claims that drinking hot water mixed with lemon juice can destroy the coronavirus. It urges users to share this information with everyone.",
+      "summary_en": "The message claims that consuming hot water mixed with lemon juice can destroy the coronavirus and urges users to share this information.",
       "checkable": true,
       "non_checkable_type": null,
       "claims": [
@@ -16,22 +16,20 @@
           "claim_en": "Drinking hot water mixed with lemon juice will destroy the coronavirus.",
           "claim_type": "HEALTH",
           "entities": [
-            "hot water",
+            "coronavirus",
             "lemon juice",
-            "coronavirus"
+            "hot water"
           ],
           "place": null,
           "claimed_date": null,
           "time_sensitivity": "EVERGREEN",
           "search_queries_original": [
-            "சூடான தண்ணீர் எலுமிச்சை சாறு கொரோனா வைரஸ்",
-            "எலுமிச்சை கொரோனா வைரஸ் அழிக்குமா",
-            "சூடான தண்ணீர் எலுமிச்சை சாறு கொரோனா உண்மை"
+            "சூடான தண்ணீரில் எலுமிச்சை சாறு கொரோனா",
+            "எலுமிச்சை சாறு கொரோனா வைரஸ் அழிக்குமா"
           ],
           "search_queries_en": [
             "hot water lemon juice coronavirus cure",
-            "lemon juice destroy coronavirus fact check",
-            "hot water lemon coronavirus myth"
+            "lemon juice kills coronavirus fact check"
           ]
         }
       ],
@@ -40,7 +38,8 @@
       "transcript": null,
       "visual_description_en": null,
       "ai_generation_signals": null,
-      "origin_hints": []
+      "origin_hints": [],
+      "media_markers": []
     }
   ]
 }

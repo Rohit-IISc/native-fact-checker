@@ -1,72 +1,72 @@
 {
   "prompt_version": "web-search-classify-1.3+shared-1.1",
   "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-08T06:18:17+00:00",
+  "recorded_at": "2026-10-08T17:59:53+00:00",
   "outputs": [
     {
       "items": [
         {
           "source_n": 1,
           "claim_id": "c1",
-          "publisher": "vishvasnews.com",
-          "title": "Fact Check: Post claiming inhaling of steam with turmeric, pepper, lemon, ginger, basil will kill corona virus is not true",
-          "published_at": "2020-05-25",
+          "publisher": "AP News",
+          "title": null,
+          "published_at": "2020-04-02",
           "language": null,
-          "snippet_en": "Vishvas News found a viral social media post claiming that inhaling steam from boiled turmeric, pepper, lemon, peeled ginger, and basil seven times would kill the coronavirus to be false.",
-          "stance": "CONTEXT"
+          "snippet_en": "AP News reported on April 2, 2020, that the claim of hot water with lemon and bicarbonate of soda curing coronavirus is false. This drink is not a cure, and no herbal remedies are recommended for COVID-19.",
+          "stance": "CONTRADICTS"
         },
         {
           "source_n": 2,
           "claim_id": "c1",
-          "publisher": "factcheck.org",
-          "title": "Lemon Juice Tea Does Not Cure COVID-19 in Israel, or Anywhere Else - FactCheck.org",
-          "published_at": "2020-04-02",
+          "publisher": "National Academies",
+          "title": null,
+          "published_at": "2020-04-22",
           "language": null,
-          "snippet_en": "FactCheck.org debunks a false claim that a blend of sodium bicarbonate and lemon juice would eliminate the novel coronavirus. An infectious diseases physician stated there is no data showing that lemon juice or hot tea would kill a virus.",
+          "snippet_en": "National Academies stated on April 22, 2020, that consuming acidic drinks like lemon juice has no effect on coronavirus infections. Lemon juice will not destroy viruses or stop the virus-copying process, and drinking it hot will not prevent or cure COVID-19.",
           "stance": "CONTRADICTS"
         },
         {
           "source_n": 3,
           "claim_id": "c1",
-          "publisher": "politifact.com",
-          "title": "Facebook Messenger video falsely claims hot lemon juice can kill the coronavirus",
-          "published_at": "2020-03-24",
+          "publisher": "The Guardian",
+          "title": null,
+          "published_at": "2020-03-26",
           "language": null,
-          "snippet_en": "Politifact states there is no scientific evidence that lemon can treat or prevent the coronavirus, and health officials have debunked the claim. The WHO recommends fruits and vegetables for health, but not lemon for COVID-19.",
-          "stance": "CONTRADICTS"
+          "snippet_en": "The Guardian reported on March 26, 2020, about \"dangerous quack cures\" for coronavirus, including lemon juice and hot water, being shared online. The government advised reporting such content to social media companies.",
+          "stance": "CONTEXT"
         },
         {
           "source_n": 4,
           "claim_id": "c1",
-          "publisher": "cbsnews.com",
-          "title": "Will Drinking Lemon Juice Kill The Coronavirus? Dr. Mallika Marshall Answers Your Questions",
-          "published_at": "2020-05-05",
+          "publisher": "Times of Israel",
+          "title": null,
+          "published_at": "2020-04-05",
           "language": null,
-          "snippet_en": "Dr. Mallika Marshall states that consuming acidic liquids like lemon juice will not kill the coronavirus.",
+          "snippet_en": "Times of Israel debunked on April 5, 2020, the false claim that Israel avoided coronavirus deaths by prescribing hot water, lemon, and bicarbonate of soda. Experts confirm there is no proof this or any herbal remedy protects against COVID-19.",
           "stance": "CONTRADICTS"
         },
         {
           "source_n": 5,
           "claim_id": "c1",
-          "publisher": "facebook.com",
-          "title": "Can drinking or gargling with lemon juice or lemon water kill the coronavirus? Short answer: No",
-          "published_at": "2020-04-28",
+          "publisher": "CBS News",
+          "title": null,
+          "published_at": "2020-05-05",
           "language": null,
-          "snippet_en": "A Facebook post clarifies that drinking lemon juice or water will not kill COVID-19 or protect against it. The theory that COVID-19 cannot live in acidic environments is incorrect, as the virus can survive in acidic conditions.",
+          "snippet_en": "CBS News reported on May 5, 2020, that consuming acidic liquids like lemon juice will not kill the coronavirus. Dr. Mallika Marshall emphasized that social distancing, good handwashing, and self-care are the best protections.",
           "stance": "CONTRADICTS"
         },
         {
           "source_n": 6,
           "claim_id": "c1",
-          "publisher": "afp.com",
-          "title": "False claims that drinking water with lemon can prevent COVID-19 circulate online | Fact Check",
-          "published_at": "2020-03-12",
+          "publisher": "FactCheck.org",
+          "title": null,
+          "published_at": "2020-04-02",
           "language": null,
-          "snippet_en": "AFP reports that experts found no proof that drinking warm water with lemon is effective in preventing COVID-19. Henry Chenal stated that consuming high amounts of vitamin C has never proven effective against coronavirus.",
+          "snippet_en": "FactCheck.org debunked on April 2, 2020, a social media post falsely claiming a blend of sodium bicarbonate and lemon juice would \"eliminate\" the novel coronavirus and prevented COVID-19 deaths in Israel. The claim is baseless.",
           "stance": "CONTRADICTS"
         }
       ],
-      "notes_en": ""
+      "notes_en": "All sources contradict the claim that drinking hot water mixed with lemon juice will destroy the coronavirus. Multiple sources specifically address and debunk this claim, often in conjunction with bicarbonate of soda, stating it is false and not a cure or preventative measure for COVID-19."
     }
   ]
 }

@@ -1,7 +1,7 @@
 {
-  "prompt_version": "extractor-1.10+shared-1.1",
+  "prompt_version": "extractor-1.11+shared-1.1",
   "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-08T06:20:03+00:00",
+  "recorded_at": "2026-10-08T18:01:17+00:00",
   "outputs": [
     {
       "content_language": "id-ID",
@@ -13,7 +13,7 @@
         {
           "claim_id": "claim1",
           "claim_original": "Vaksin COVID-19 mengandung microchip untuk melacak setiap orang yang sudah divaksin.",
-          "claim_en": "COVID-19 vaccines contain microchips to track every vaccinated person.",
+          "claim_en": "COVID-19 vaccines contain microchips to track vaccinated individuals.",
           "claim_type": "HEALTH",
           "entities": [
             "COVID-19 vaccines",
@@ -24,13 +24,13 @@
           "time_sensitivity": "EVERGREEN",
           "search_queries_original": [
             "Vaksin COVID-19 microchip",
-            "Vaksin mengandung microchip",
-            "Microchip pelacak vaksin COVID-19"
+            "Vaksin COVID-19 pelacak",
+            "Microchip dalam vaksin COVID-19"
           ],
           "search_queries_en": [
             "COVID-19 vaccine microchip",
-            "Vaccine tracking microchip",
-            "Do COVID vaccines have microchips"
+            "vaccine tracking microchip",
+            "do COVID vaccines have microchips"
           ]
         }
       ],
@@ -39,7 +39,8 @@
       "transcript": null,
       "visual_description_en": null,
       "ai_generation_signals": null,
-      "origin_hints": []
+      "origin_hints": [],
+      "media_markers": []
     }
   ]
 }

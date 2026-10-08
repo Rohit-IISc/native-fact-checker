@@ -1,7 +1,7 @@
 {
   "prompt_version": "factcheck-1.4+shared-1.1",
   "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-08T06:20:03+00:00",
+  "recorded_at": "2026-10-08T18:01:17+00:00",
   "outputs": [
     {
       "agent": "factcheck_sites",
@@ -16,7 +16,7 @@
           "title": "Keliru, Vaksin Covid-19 Mengandung Microchip yang Bisa ...",
           "published_at": "2021-06-22",
           "language": "en",
-          "snippet_en": "Tempo.co rated the claim \"Vaksin Covid-19 mengandung microchip yang bisa menyalakan lampu\" as \"Keliru\" (Wrong), finding that COVID-19 vaccines do not contain microchips that can light up.",
+          "snippet_en": "Tempo.co rated the claim \"Vaksin Covid-19 mengandung microchip yang bisa menyalakan lampu\" as \"Keliru\" (False), stating that COVID-19 vaccines do not contain microchips that can light up lamps.",
           "stance": "CONTRADICTS",
           "rating_text": "Keliru",
           "tier": "TIER_1"
@@ -46,7 +46,7 @@
           "title": "[Fakta atau Hoaks] Benarkah Bill Gates Bikin Vaksin Corona yang ...",
           "published_at": "2020-04-22",
           "language": "en",
-          "snippet_en": "Tempo.co rated the claim \"Bill Gates membuat vaksin virus Corona Covid-19 yang dipasang microchip\" as \"Keliru\" (Wrong), indicating that it is false that Bill Gates created a COVID-19 vaccine with microchips.",
+          "snippet_en": "Tempo.co rated the claim \"Bill Gates membuat vaksin virus Corona Covid-19 yang dipasang microchip\" as \"Keliru\" (False), indicating that Bill Gates did not create a COVID-19 vaccine with an implanted microchip.",
           "stance": "CONTRADICTS",
           "rating_text": "Keliru",
           "tier": "TIER_1"
@@ -76,7 +76,7 @@
           "title": "Keliru, Konten tentang Pemasangan Microchip Melalui Vaksinasi di ...",
           "published_at": null,
           "language": "id",
-          "snippet_en": "Tempo.co rated the claim \"Keliru, Konten tentang Pemasangan Microchip Melalui Vaksinasi di Indonesia\" as \"keliru\" (wrong), stating that content about microchip implantation through vaccination in Indonesia is false.",
+          "snippet_en": "Tempo.co rated the claim \"Keliru, Konten tentang Pemasangan Microchip Melalui Vaksinasi di Indonesia\" as \"keliru\" (False), stating that content about microchip implantation through vaccination in Indonesia is incorrect.",
           "stance": "CONTRADICTS",
           "rating_text": "keliru",
           "tier": "TIER_1"
@@ -91,22 +91,7 @@
           "title": "[Fakta atau Hoaks] Benarkah Vaksin Covid-19 Tanamkan Microchip ...",
           "published_at": "2020-09-18",
           "language": "en",
-          "snippet_en": "Tempo.co rated the claim \"Vaksin Covid-19 akan menanamkan microchip yang diprogram untuk membantai 7,5 miliar nyawa dan melakukan perbudakan global\" as \"Keliru\" (Wrong), concluding that COVID-19 vaccines do not implant microchips for global control.",
-          "stance": "CONTRADICTS",
-          "rating_text": "Keliru",
-          "tier": "TIER_1"
-        },
-        {
-          "evidence_id": "",
-          "agent": "factcheck_sites",
-          "claim_id": "c1",
-          "url": "https://www.tempo.co/cekfakta/keliru-klaim-vaksin-pfizer-mengandung-chip-sehingga-magnet-menempel-di-lengan-yang-disuntik-357397",
-          "domain": "tempo.co",
-          "publisher": "Tempo.co",
-          "title": "Keliru, Klaim Vaksin Pfizer Mengandung Chip sehingga Magnet ...",
-          "published_at": "2021-05-22",
-          "language": "en",
-          "snippet_en": "Tempo.co rated the claim \"Vaksin Covid-19 buatan Pfizer mengandung chip sehingga magnet menempel di lengan yang disuntik\" as \"Keliru\" (Wrong), finding that Pfizer COVID-19 vaccines do not contain chips that cause magnets to stick to the arm.",
+          "snippet_en": "Tempo.co rated the claim \"Vaksin Covid-19 akan menanamkan microchip yang diprogram untuk membantai 7,5 miliar nyawa dan melakukan perbudakan global\" as \"Keliru\" (False), stating that COVID-19 vaccines do not implant microchips for global enslavement.",
           "stance": "CONTRADICTS",
           "rating_text": "Keliru",
           "tier": "TIER_1"
@@ -121,7 +106,7 @@
           "title": "COVID-19 Vaccines Don't Have Patient-Tracking Devices",
           "published_at": null,
           "language": "en",
-          "snippet_en": "FactCheck.org rated the claim \"COVID-19 vaccines have a microchip that \"tracks the location of the patient.\"\" as \"False\", concluding that COVID-19 vaccines do not contain patient-tracking microchips.",
+          "snippet_en": "FactCheck.org rated the claim \"COVID-19 vaccines have a microchip that \"tracks the location of the patient.\"\" as \"False\", concluding that COVID-19 vaccines do not contain patient-tracking devices.",
           "stance": "CONTRADICTS",
           "rating_text": "False",
           "tier": "TIER_1"
@@ -136,7 +121,7 @@
           "title": "FDA-Approved ‘Electronic Pill’ Isn't Evidence That COVID-19 ...",
           "published_at": null,
           "language": "en",
-          "snippet_en": "FactCheck.org rated the claim \"“Another Conspiracy Proven True!” referring to 2018 remarks by Pfizer CEO and claims about microchips in COVID-19 vaccines.\" as \"False\", clarifying that the Pfizer CEO's remarks were not about COVID-19 vaccine microchips.",
+          "snippet_en": "FactCheck.org rated the claim \"‘Another Conspiracy Proven True!’ referring to 2018 remarks by Pfizer CEO and claims about microchips in COVID-19 vaccines.\" as \"False\", stating that the Pfizer CEO's remarks were not about COVID-19 vaccine microchips.",
           "stance": "CONTRADICTS",
           "rating_text": "False",
           "tier": "TIER_1"
@@ -151,7 +136,7 @@
           "title": "Magnet Videos Refuel Bogus Claim of Vaccine Microchips",
           "published_at": null,
           "language": "en",
-          "snippet_en": "FactCheck.org rated the claim \"Videos of magnets sticking to arms prove that the COVID-19 vaccines contain microchips.\" as \"False\", concluding that magnet videos do not prove microchips in COVID-19 vaccines.",
+          "snippet_en": "FactCheck.org rated the claim \"Videos of magnets sticking to arms prove that the COVID-19 vaccines contain microchips.\" as \"False\", concluding that such videos do not prove microchips in vaccines.",
           "stance": "CONTRADICTS",
           "rating_text": "False",
           "tier": "TIER_1"
@@ -166,7 +151,7 @@
           "title": "Health Sensors Misconstrued as Government Tracking 'Microchips'",
           "published_at": null,
           "language": "en",
-          "snippet_en": "FactCheck.org rated the claim \"\"A new report from '60 Minutes' includes an interview with a scientist from the Pentagon who says that there is now a COVID microchip.\"\" as \"False\", clarifying that health sensors were misconstrued as government tracking microchips.",
+          "snippet_en": "FactCheck.org rated the claim \"\"A new report from '60 Minutes' includes an interview with a scientist from the Pentagon who says that there is now a COVID microchip.\"\" as \"False\", clarifying that health sensors were misconstrued as tracking microchips.",
           "stance": "CONTRADICTS",
           "rating_text": "False",
           "tier": "TIER_1"
@@ -181,7 +166,7 @@
           "title": "No, Government is not implanting microchips into human bodies ...",
           "published_at": "2021-06-21",
           "language": "en",
-          "snippet_en": "FACTLY rated the claim \"The government is implanting microchips into human bodies through COVID-19 vaccine in order to take them under control\" as \"FALSE\", concluding that the government is not implanting microchips via COVID-19 vaccines.",
+          "snippet_en": "FACTLY rated the claim \"The government is implanting microchips into human bodies through COVID-19 vaccine in order to take them under control\" as \"FALSE\", concluding that the government is not implanting microchips via vaccines.",
           "stance": "CONTRADICTS",
           "rating_text": "FALSE",
           "tier": "TIER_1"
@@ -196,7 +181,7 @@
           "title": "Hoax posts about microchips in Pfizer-BioNTech Covid-19 vaccine ...",
           "published_at": "2021-07-14",
           "language": "en",
-          "snippet_en": "AFP Fact Check rated the claim \"Video of microchip found in Pfizer vaccine\" as \"Missing context\", indicating that posts about microchips in Pfizer-BioNTech Covid-19 vaccine are misleading.",
+          "snippet_en": "AFP Fact Check rated the claim \"Video of microchip found in Pfizer vaccine\" as \"Missing context\", indicating that posts about microchips in Pfizer-BioNTech Covid-19 vaccine are hoaxes.",
           "stance": "CONTEXT",
           "rating_text": "Missing context",
           "tier": "TIER_1"
@@ -211,7 +196,22 @@
           "title": "Spoof Video Furthers Microchip Conspiracy Theory",
           "published_at": null,
           "language": "en",
-          "snippet_en": "FactCheck.org rated the claim \"A microchip reader for pets detected a chip in the arm of a woman vaccinated against COVID-19.\" as \"False\", concluding that a spoof video furthers the microchip conspiracy theory.",
+          "snippet_en": "FactCheck.org rated the claim \"A microchip reader for pets detected a chip in the arm of a woman vaccinated against COVID-19.\" as \"False\", concluding that the video was a spoof furthering a microchip conspiracy theory.",
+          "stance": "CONTRADICTS",
+          "rating_text": "False",
+          "tier": "TIER_1"
+        },
+        {
+          "evidence_id": "",
+          "agent": "factcheck_sites",
+          "claim_id": "c1",
+          "url": "https://www.usatoday.com/story/news/factcheck/2021/05/12/fact-check-covid-19-vaccines-dont-contain-tracking-devices/5037132001/",
+          "domain": "usatoday.com",
+          "publisher": "USA Today",
+          "title": "Fact check: COVID-19 vaccines don't contain tracking devices",
+          "published_at": "2021-05-13",
+          "language": "en",
+          "snippet_en": "USA Today rated the claim \"COVID-19 vaccines contain microchips or other tracking devices, cause magnetic reaction\" as \"False\", concluding that COVID-19 vaccines do not contain tracking devices.",
           "stance": "CONTRADICTS",
           "rating_text": "False",
           "tier": "TIER_1"

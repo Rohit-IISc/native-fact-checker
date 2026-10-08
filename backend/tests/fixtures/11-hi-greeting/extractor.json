@@ -1,12 +1,12 @@
 {
-  "prompt_version": "extractor-1.10+shared-1.1",
+  "prompt_version": "extractor-1.11+shared-1.1",
   "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-08T06:20:15+00:00",
+  "recorded_at": "2026-10-08T18:03:19+00:00",
   "outputs": [
     {
       "content_language": "hi-IN",
       "content_script": "Deva",
-      "summary_en": "The post is a devotional greeting in Hindi, wishing good morning and blessings from Lord Shiva to the recipient and their family.",
+      "summary_en": "The message is a morning greeting wishing the recipient and their family the grace of Lord Shiva and an auspicious day. It includes emojis of a flower and folded hands.",
       "checkable": false,
       "non_checkable_type": "DEVOTIONAL",
       "claims": [],
@@ -15,7 +15,8 @@
       "transcript": null,
       "visual_description_en": null,
       "ai_generation_signals": null,
-      "origin_hints": []
+      "origin_hints": [],
+      "media_markers": []
     }
   ]
 }

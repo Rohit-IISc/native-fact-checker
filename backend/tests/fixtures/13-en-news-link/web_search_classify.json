@@ -1,0 +1,42 @@
+{
+  "prompt_version": "web-search-classify-1.3+shared-1.1",
+  "model_id": "gemini-2.5-flash",
+  "recorded_at": "2026-10-08T18:05:18+00:00",
+  "outputs": [
+    {
+      "items": [
+        {
+          "source_n": 1,
+          "claim_id": "c1",
+          "publisher": "Wikipedia",
+          "title": "Chandrayaan-3",
+          "published_at": null,
+          "language": null,
+          "snippet_en": "The Chandrayaan-3 mission successfully landed near the Moon's south pole on August 23, 2023, at 18:04 IST (12:33 UTC).",
+          "stance": "CONTEXT"
+        },
+        {
+          "source_n": 2,
+          "claim_id": "c1",
+          "publisher": "youtube.com",
+          "title": null,
+          "published_at": null,
+          "language": null,
+          "snippet_en": "People across India celebrated the Chandrayaan-3 achievement with dancing, waving Indian flags, setting off firecrackers, and playing drums. The image shows people celebrating the successful landing of Chandrayaan-3.",
+          "stance": "SUPPORTS"
+        },
+        {
+          "source_n": 3,
+          "claim_id": "c1",
+          "publisher": "thequint.com",
+          "title": "The Internet Is Abuzz With Reactions To Chandrayaan-3’s Successful Moon Landing: Shah Rukh Khan (SRK), Anand Mahindra, Yami Gautam",
+          "published_at": null,
+          "language": null,
+          "snippet_en": "The image shows people celebrating the successful landing of Chandrayaan-3. The internet was abuzz with reactions to Chandrayaan-3's successful moon landing.",
+          "stance": "SUPPORTS"
+        }
+      ],
+      "notes_en": "The claim states that the image shows people in India celebrating the successful landing of Chandrayaan-3. Sources 2 and 3 confirm that the image shows people celebrating the successful landing of Chandrayaan-3. Source 1 provides context about the Chandrayaan-3 landing date."
+    }
+  ]
+}

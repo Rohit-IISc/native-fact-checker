@@ -1,30 +1,23 @@
 {
   "prompt_version": "packager-1.1+shared-1.1",
   "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-08T06:24:00+00:00",
+  "recorded_at": "2026-10-08T18:07:26+00:00",
   "outputs": [
     {
       "briefs": [
         {
           "claim_id": "c1",
-          "claim_en": "5G mobile towers are responsible for spreading the coronavirus, which caused an increase in COVID-19 cases in areas where 5G was installed.",
+          "claim_en": "5G mobile towers spread the coronavirus, leading to an increase in cases in areas where 5G was installed.",
           "claim_type": null,
           "claimed_date": null,
           "place": null,
-          "brief_en": "Multiple sources, including the UN agency International Telecommunication Union (ITU), the UK government, and the World Health Organization (WHO), state that there is no scientific evidence linking 5G mobile towers to the spread of the coronavirus. The ITU confirmed in April 2020 that 5G is not responsible for COVID-19, calling it a \"hoax that has no technical basis.\" Experts explain that viruses cannot travel via radio waves or mobile networks, and 5G technology uses electromagnetic fields that cannot transfer particles like viruses. The UK government also noted that COVID-19 spread in countries without 5G. Fact-checking organizations like Full Fact, The Quint, AP News, Alt News, and FACTLY have rated claims connecting 5G to COVID-19, including the second wave in India and the EG.5 variant, as false. These conspiracy theories have led to arson attacks on 5G towers and harassment of telecom engineers in several countries.",
+          "brief_en": "Multiple fact-checking organizations, including AP News, AFP Fact Check, and Full Fact, have debunked the claim that 5G mobile towers spread the coronavirus or are linked to an increase in COVID-19 cases. AP News stated that maps do not show a correlation between confirmed COVID-19 cases and 5G installation. AFP Fact Check reported on April 7, 2020, that experts dismissed claims that 5G wireless technology created the novel coronavirus, and on June 19, 2020, addressed false claims linking 5G to weakened immune systems. Full Fact, on March 31, 2020, found no evidence connecting 5G WiFi networks to the new coronavirus. Alt News also rated as false the claim that 5G radiation caused the second wave of COVID-19 in India on April 28, 2021.",
           "evidence_ids": [
-            "ws-2",
-            "ws-5",
             "fc-1",
-            "fc-2",
             "fc-3",
             "fc-4",
             "fc-5",
-            "fc-7",
-            "ws-6",
-            "fc-6",
-            "ws-3",
-            "ws-4"
+            "fc-2"
           ],
           "gaps_en": []
         }

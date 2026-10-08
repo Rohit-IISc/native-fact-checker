@@ -1,7 +1,7 @@
 {
-  "prompt_version": "judge-1.3+shared-1.1",
+  "prompt_version": "judge-1.4+shared-1.1",
   "model_id": "gemini-2.5-pro",
-  "recorded_at": "2026-10-08T06:24:00+00:00",
+  "recorded_at": "2026-10-08T18:07:26+00:00",
   "outputs": [
     {
       "verdicts": [
@@ -9,32 +9,24 @@
           "claim_id": "c1",
           "label": "FALSE",
           "confidence": 100,
-          "what_is_true_en": "COVID-19 is caused by the SARS-CoV-2 virus, which spreads through respiratory droplets. There is no scientific evidence linking 5G mobile technology to the spread of the coronavirus, as viruses cannot travel on radio waves.",
+          "what_is_true_en": "There is no scientific evidence linking 5G mobile technology to the coronavirus. COVID-19 is a disease caused by the SARS-CoV-2 virus, which is transmitted between people, not through radio waves.",
           "event_date": null,
           "evidence_for_ids": [],
           "evidence_against_ids": [
-            "ws-2",
-            "ws-5",
             "fc-1",
-            "fc-2",
             "fc-3",
             "fc-4",
             "fc-5",
-            "fc-7",
-            "ws-6",
-            "fc-6",
-            "ws-3",
-            "ws-4"
+            "fc-2"
           ],
           "cited_ids": [
-            "ws-2",
-            "ws-5",
             "fc-1",
+            "fc-3",
             "fc-4",
-            "ws-6",
-            "ws-4"
+            "fc-5",
+            "fc-2"
           ],
-          "reasoning_en": "An overwhelming consensus of scientific and international bodies, including the World Health Organization and the International Telecommunication Union, has confirmed that there is no link between 5G technology and the spread of COVID-19. The claim is scientifically impossible, as viruses cannot be transmitted via radio waves or mobile networks. Numerous fact-checking organizations and government bodies have debunked this conspiracy theory. Evidence also shows that COVID-19 has spread in countries that do not have 5G infrastructure.",
+          "reasoning_en": "Multiple independent fact-checking organizations, including AP News, AFP Fact Check, and Full Fact, have debunked this claim. Scientific consensus confirms that COVID-19 is caused by the SARS-CoV-2 virus and spreads through respiratory droplets, not through radio waves from 5G technology. Investigations have found no correlation between the rollout of 5G networks and the incidence of COVID-19 cases.",
           "ai_generation": null
         }
       ]

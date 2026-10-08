@@ -38,10 +38,36 @@ def _dedupe(evidence: list[Evidence]) -> list[Evidence]:
     return out
 
 
+MEDIA_ITSELF = "media_itself"
+
+
+def media_evidence(extraction: Extraction) -> list[Evidence]:
+    """The extractor's neutral observations of the shared item (satire tag, masthead date, watermark), one
+    item per claim. NOT_A_SOURCE and CONTEXT: they help the judge see what the item is, and the source
+    policy never counts them (decisions log, Oct 8). Never the post's claim or wording."""
+    markers = [m.strip()[:200] for m in extraction.media_markers if m.strip()][:5]
+    if not markers:
+        return []
+    snippet = "Observed on the shared item itself (not a source): " + " ".join(markers)
+    return [Evidence(evidence_id=f"mi-{c.claim_id}", agent=MEDIA_ITSELF, claim_id=c.claim_id,
+                     publisher="The shared item itself", snippet_en=snippet, stance=Stance.CONTEXT,
+                     tier=SourceTier.NOT_A_SOURCE) for c in extraction.claims]
+
+
+def _with_media(ids: list[str], by_id: dict[str, Evidence], claim_id: str) -> list[str]:
+    """The media observation rides on top of the item cap: it is one line and never crowds out a source."""
+    mi = f"mi-{claim_id}"
+    return ids if mi not in by_id or mi in ids else [*ids, mi]
+
+
+def _all_evidence(extraction: Extraction, findings: list[AgentFindings]) -> list[Evidence]:
+    return _dedupe([e for f in findings for e in f.evidence] + media_evidence(extraction))
+
+
 def code_pack(check_id: str, extraction: Extraction, findings: list[AgentFindings], missing: list[str],
               briefs: list[ClaimBrief] | None = None) -> EvidencePack:
     max_items = int(get_config().limits["evidence"]["max_items_per_claim"])
-    evidence = _dedupe([e for f in findings for e in f.evidence])
+    evidence = _all_evidence(extraction, findings)
     by_id = {e.evidence_id: e for e in evidence}
     model_briefs = {b.claim_id: b for b in briefs or []}
     out_briefs, kept_ids = [], []
@@ -53,15 +79,17 @@ def code_pack(check_id: str, extraction: Extraction, findings: list[AgentFinding
                    and by_id[i].stance != Stance.UNRELATED]
             ids = list(dict.fromkeys(ids))
             ids += [e.evidence_id for e in ranked if e.evidence_id not in ids]  # never lose evidence silently
-            brief = b.model_copy(update={"evidence_ids": ids[:max_items], "claim_en": c.claim_en,
+            brief = b.model_copy(update={"evidence_ids": _with_media(ids[:max_items], by_id, c.claim_id),
+                                         "claim_en": c.claim_en,
                                          "claim_type": c.claim_type.value})
         else:
             brief = ClaimBrief(
                 claim_id=c.claim_id, claim_en=c.claim_en, claim_type=c.claim_type.value,
                 claimed_date=c.claimed_date, place=c.place,
                 brief_en="No summary available; read the evidence items directly.",
-                evidence_ids=[e.evidence_id for e in ranked[:max_items]],
-                gaps_en=[] if ranked else ["No evidence was found for this claim."],
+                evidence_ids=_with_media([e.evidence_id for e in ranked[:max_items]], by_id, c.claim_id),
+                gaps_en=[] if any(e.agent != MEDIA_ITSELF for e in ranked)
+                else ["No evidence was found for this claim."],
             )
         out_briefs.append(brief)
         kept_ids += brief.evidence_ids
@@ -75,15 +103,14 @@ def code_pack(check_id: str, extraction: Extraction, findings: list[AgentFinding
 async def run(llm: LLM, check_id: str, extraction: Extraction, findings: list[AgentFindings], missing: list[str],
               timeout_s: float) -> EvidencePack:
     base = code_pack(check_id, extraction, findings, missing)
-    if not base.evidence:
+    if not any(e.agent != MEDIA_ITSELF for e in base.evidence):
         return base  # nothing to summarise; the judge will see the gaps
     prompt = load_prompt(PROMPT)
     payload = {
         "claims": [{"claim_id": c.claim_id, "claim_en": c.claim_en, "place": c.place,
                     "claimed_date": c.claimed_date.isoformat() if c.claimed_date else None}
                    for c in extraction.claims],
-        "evidence": [e.model_dump(mode="json", exclude={"agent"}) for e in _dedupe(
-            [e for f in findings for e in f.evidence])],
+        "evidence": [e.model_dump(mode="json", exclude={"agent"}) for e in _all_evidence(extraction, findings)],
         "source_assessment": base.source_assessment.model_dump(mode="json") if base.source_assessment else None,
         "agent_notes": {f.agent: f.notes_en for f in findings if f.notes_en},
         "earliest_appearance": next((f.earliest_appearance for f in findings if f.earliest_appearance), None),

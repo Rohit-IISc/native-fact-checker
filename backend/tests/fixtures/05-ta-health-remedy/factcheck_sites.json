@@ -1,26 +1,11 @@
 {
   "prompt_version": "factcheck-1.4+shared-1.1",
   "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-08T06:18:17+00:00",
+  "recorded_at": "2026-10-08T17:59:53+00:00",
   "outputs": [
     {
       "agent": "factcheck_sites",
       "evidence": [
-        {
-          "evidence_id": "",
-          "agent": "factcheck_sites",
-          "claim_id": "c1",
-          "url": "https://apnews.com/article/archive-fact-checking-8736262219",
-          "domain": "apnews.com",
-          "publisher": "AP News",
-          "title": "Drinking hot water, lemon and baking soda will not cure coronavirus",
-          "published_at": null,
-          "language": "en",
-          "snippet_en": "AP News rated as False the claim that drinking hot water with lemon and bicarbonate of soda at night has prevented coronavirus deaths in Israel.",
-          "stance": "CONTRADICTS",
-          "rating_text": "False",
-          "tier": "TIER_1"
-        },
         {
           "evidence_id": "",
           "agent": "factcheck_sites",
@@ -31,54 +16,9 @@
           "title": "No, Vitamin C and lemon-infused hot water do not protect against ...",
           "published_at": "2020-03-18",
           "language": "en",
-          "snippet_en": "Alt News rated as False the claim that Vitamin C and lemon in hot water protect against coronavirus.",
+          "snippet_en": "Alt News rated as \"False\" the claim that Vitamin C and lemon in hot water protect against coronavirus.",
           "stance": "CONTRADICTS",
           "rating_text": "False",
-          "tier": "TIER_1"
-        },
-        {
-          "evidence_id": "",
-          "agent": "factcheck_sites",
-          "claim_id": "c1",
-          "url": "https://www.snopes.com/fact-check/lemons-coronavirus/",
-          "domain": "snopes.com",
-          "publisher": "Snopes.com",
-          "title": "Will Lemons and Hot Water Cure or Prevent COVID-19?",
-          "published_at": "2020-03-26",
-          "language": "en",
-          "snippet_en": "Snopes.com rated as False the claim that drinking hot water with lemons will cure or prevent COVID-19.",
-          "stance": "CONTRADICTS",
-          "rating_text": "False",
-          "tier": "TIER_1"
-        },
-        {
-          "evidence_id": "",
-          "agent": "factcheck_sites",
-          "claim_id": "c1",
-          "url": "https://www.factcheck.org/2020/04/lemon-juice-tea-does-not-cure-covid-19-in-israel-or-anywhere-else/",
-          "domain": "factcheck.org",
-          "publisher": "FactCheck.org",
-          "title": "Lemon Juice Tea Does Not Cure COVID-19 in Israel, or Anywhere ...",
-          "published_at": null,
-          "language": "en",
-          "snippet_en": "FactCheck.org rated as False the claim that everyone in Israel drinks a cup of hot water with lemon and a little baking soda at night to kill coronavirus.",
-          "stance": "CONTRADICTS",
-          "rating_text": "False",
-          "tier": "TIER_1"
-        },
-        {
-          "evidence_id": "",
-          "agent": "factcheck_sites",
-          "claim_id": "c1",
-          "url": "https://factly.in/no-evidence-to-suggest-that-the-mixture-of-lemon-and-baking-soda-can-kill-sars-cov-2-virus/",
-          "domain": "factly.in",
-          "publisher": "FACTLY",
-          "title": "No evidence to suggest that the mixture of lemon and baking soda ...",
-          "published_at": "2020-04-17",
-          "language": "en",
-          "snippet_en": "FACTLY rated as FALSE the claim that there are no COVID-19 deaths in Israel because they found a cure for COVID-19, a mixture of lemon and baking soda.",
-          "stance": "CONTRADICTS",
-          "rating_text": "FALSE",
           "tier": "TIER_1"
         },
         {
@@ -91,7 +31,7 @@
           "title": "False claims that drinking water with lemon can prevent COVID-19 ...",
           "published_at": "2020-03-12",
           "language": "en",
-          "snippet_en": "AFP Fact Check rated as False the claim that drinking lemon and warm water can prevent novel coronavirus disease.",
+          "snippet_en": "AFP Fact Check rated as \"False\" the claim that drinking lemon and warm water can prevent novel coronavirus disease.",
           "stance": "CONTRADICTS",
           "rating_text": "False",
           "tier": "TIER_1"
@@ -100,7 +40,7 @@
       "source_assessment": null,
       "ai_generation_signals": null,
       "earliest_appearance": null,
-      "notes_en": "",
+      "notes_en": "The claim is about drinking hot water with lemon juice to destroy coronavirus. I found two fact checks directly addressing this claim, both rating it as false. Other fact checks were about similar but distinct claims, such as adding baking soda, other ingredients, or claims about specific countries, so they were not included.",
       "timed_out": false
     }
   ]

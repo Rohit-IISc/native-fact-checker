@@ -1,0 +1,34 @@
+{
+  "prompt_version": "judge-1.4+shared-1.1+judge-revision-1.0",
+  "model_id": "gemini-2.5-pro",
+  "recorded_at": "2026-10-08T18:05:18+00:00",
+  "outputs": [
+    {
+      "verdicts": [
+        {
+          "claim_id": "c1",
+          "label": "NOT_ENOUGH_EVIDENCE",
+          "confidence": 100,
+          "what_is_true_en": "The Chandrayaan-3 mission did successfully land near the Moon's south pole on August 23, 2023, and widespread celebrations occurred in India. However, the origin and authenticity of this specific image, purported to show one such celebration, could not be verified.",
+          "event_date": "2023-08-23",
+          "evidence_for_ids": [
+            "ws-3"
+          ],
+          "evidence_against_ids": [],
+          "cited_ids": [],
+          "reasoning_en": "The critic's objections are valid. While the Chandrayaan-3 landing and subsequent celebrations are confirmed historical events (ws-1), the evidence linking this specific image to those events is insufficient. The claim rests on a single TIER_2 source (ws-3) and a non-source (ws-2). Crucially, the evidence brief notes a significant gap: 'The earliest appearance of the specific image in the post could not be determined, nor whether it is AI-generated or edited.' Without verification of the image's origin and authenticity, it is impossible to confirm that it genuinely depicts the claimed event. Therefore, there is not enough evidence to support a definitive verdict.",
+          "ai_generation": {
+            "likelihood_ai": 50,
+            "signals_ai": [
+              "The origin of the image could not be determined, which leaves open the possibility of AI generation or digital manipulation."
+            ],
+            "signals_real": [
+              "One news outlet (ws-3) published the image, presenting it as a real photograph of the event.",
+              "The image itself does not contain obvious visual artifacts typically associated with AI generation."
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

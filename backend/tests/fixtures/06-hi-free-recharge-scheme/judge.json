@@ -1,7 +1,7 @@
 {
-  "prompt_version": "judge-1.3+shared-1.1",
+  "prompt_version": "judge-1.4+shared-1.1",
   "model_id": "gemini-2.5-pro",
-  "recorded_at": "2026-10-08T06:18:17+00:00",
+  "recorded_at": "2026-10-08T18:09:36+00:00",
   "outputs": [
     {
       "verdicts": [
@@ -9,30 +9,30 @@
           "claim_id": "c1",
           "label": "SCAM",
           "confidence": 100,
-          "what_is_true_en": "The Indian government has not announced any scheme to provide free mobile recharges. Messages and videos claiming this are false and often part of a scam to get you to click on fraudulent links.",
+          "what_is_true_en": "The Indian government is not offering a free three-month mobile recharge scheme. Messages and videos promoting this are part of a recurring scam designed to steal personal data.",
           "event_date": null,
           "evidence_for_ids": [],
           "evidence_against_ids": [
             "ws-6",
-            "ws-4",
             "fc-1",
             "fc-2",
             "fc-3",
             "fc-4",
             "fc-5",
             "fc-6",
-            "ws-5",
-            "ws-7"
+            "fc-7",
+            "fc-8",
+            "fc-9",
+            "fc-10",
+            "fc-11"
           ],
           "cited_ids": [
             "ws-6",
-            "ws-4",
             "fc-1",
             "fc-4",
-            "ws-5",
-            "ws-7"
+            "fc-11"
           ],
-          "reasoning_en": "Numerous fact-checking organizations and news outlets, including The Quint, NewsOnAir, NDTV, and BOOM, have consistently debunked claims about the Indian government or Prime Minister Modi offering free mobile recharges. The government's official fact-checking arm, PIB Fact Check, has repeatedly clarified that no such scheme exists. These false claims, which have circulated for years in various forms (e.g., tied to elections, festivals, or using edited videos), are often scams designed to trick users into clicking malicious links.",
+          "reasoning_en": "Numerous fact-checking organizations and the Indian government's Press Information Bureau (PIB) have repeatedly debunked this claim in its various forms since at least 2023. The evidence consistently shows that no such free recharge scheme exists. These messages, often accompanied by links or AI-generated videos, are identified as scams intended to collect users' personal information.",
           "ai_generation": null
         }
       ]

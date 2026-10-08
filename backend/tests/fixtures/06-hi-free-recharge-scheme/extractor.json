@@ -1,36 +1,34 @@
 {
-  "prompt_version": "extractor-1.10+shared-1.1",
+  "prompt_version": "extractor-1.11+shared-1.1",
   "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-08T06:18:17+00:00",
+  "recorded_at": "2026-10-08T18:09:36+00:00",
   "outputs": [
     {
       "content_language": "hi-IN",
       "content_script": "Deva",
-      "summary_en": "A message claims that Prime Minister Modi is offering all Indians 3 months of free mobile recharge. It instructs users to click a link to avail the offer, stating it is valid only for today.",
+      "summary_en": "The post claims that Prime Minister Modi is offering all Indians 3 months of free mobile recharge. It instructs users to click a link to avail the offer, stating it is valid only for today.",
       "checkable": true,
       "non_checkable_type": null,
       "claims": [
         {
-          "claim_id": "claim1",
+          "claim_id": "claim-20261008-001",
           "claim_original": "प्रधानमंत्री मोदी सभी भारतीयों को 3 महीने का मुफ्त मोबाइल रिचार्ज दे रहे हैं।",
-          "claim_en": "Prime Minister Modi is providing all Indians with 3 months of free mobile recharge.",
+          "claim_en": "Prime Minister Modi is giving all Indians 3 months of free mobile recharge.",
           "claim_type": "GOVERNMENT_SCHEME",
           "entities": [
-            "Narendra Modi",
+            "Prime Minister Modi",
             "Indians"
           ],
           "place": null,
           "claimed_date": null,
           "time_sensitivity": "EVERGREEN",
           "search_queries_original": [
-            "प्रधानमंत्री मोदी मुफ्त रिचार्ज",
-            "मोदी 3 महीने फ्री मोबाइल रिचार्ज",
-            "सरकारी मुफ्त रिचार्ज योजना"
+            "प्रधानमंत्री मोदी मुफ्त मोबाइल रिचार्ज",
+            "मोदी 3 महीने फ्री रिचार्ज"
           ],
           "search_queries_en": [
             "PM Modi free mobile recharge scheme",
-            "Modi 3 months free recharge",
-            "government free mobile recharge fact check"
+            "Modi 3 months free recharge"
           ]
         }
       ],
@@ -39,7 +37,8 @@
       "transcript": null,
       "visual_description_en": null,
       "ai_generation_signals": null,
-      "origin_hints": []
+      "origin_hints": [],
+      "media_markers": []
     }
   ]
 }

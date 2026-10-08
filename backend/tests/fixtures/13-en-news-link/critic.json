@@ -1,0 +1,22 @@
+{
+  "prompt_version": "critic-1.3+shared-1.1",
+  "model_id": "gemini-2.5-pro",
+  "recorded_at": "2026-10-08T18:05:18+00:00",
+  "outputs": [
+    {
+      "reviews": [
+        {
+          "claim_id": "c1",
+          "decision": "DISAGREE",
+          "proposed_label": "NOT_ENOUGH_EVIDENCE",
+          "proposed_confidence": 100,
+          "objections_en": [
+            "The judge's verdict of TRUE with 85 confidence is an overreach given the significant gap identified in the brief: 'The earliest appearance of the specific image in the post could not be determined, nor whether it is AI-generated or edited.'",
+            "The verdict relies heavily on a single TIER_2 source (ws-3) and a NOT_A_SOURCE (ws-2) to verify the specific image. This is insufficient evidence to definitively conclude the image is authentic and correctly contextualized.",
+            "The evidence confirms that celebrations for Chandrayaan-3 occurred (ws-1), but it does not sufficiently prove that this specific image depicts one of those celebrations. Without verification of the image's origin, a 'TRUE' label is unsubstantiated."
+          ]
+        }
+      ]
+    }
+  ]
+}

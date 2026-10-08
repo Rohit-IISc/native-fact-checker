@@ -1,49 +1,37 @@
 {
-  "prompt_version": "judge-1.3+shared-1.1",
+  "prompt_version": "judge-1.4+shared-1.1",
   "model_id": "gemini-2.5-pro",
-  "recorded_at": "2026-10-08T06:22:40+00:00",
+  "recorded_at": "2026-10-08T18:05:18+00:00",
   "outputs": [
     {
       "verdicts": [
         {
           "claim_id": "c1",
-          "label": "NOT_ENOUGH_EVIDENCE",
-          "confidence": 10,
-          "what_is_true_en": "There is no available evidence to verify what the photo shows or to connect it to the celebrations for India's Chandrayaan-3 mission.",
-          "event_date": null,
-          "evidence_for_ids": [],
-          "evidence_against_ids": [],
-          "cited_ids": [],
-          "reasoning_en": "The evidence pack contains no information regarding the specific photo mentioned in the claim. The brief states that image searches did not yield any relevant results. Without any evidence, it is impossible to determine if the photo shows people celebrating the Chandrayaan-3 landing.",
-          "ai_generation": null
-        },
-        {
-          "claim_id": "c2",
-          "label": "NOT_ENOUGH_EVIDENCE",
-          "confidence": 30,
-          "what_is_true_en": "While India's Chandrayaan-3 mission is widely reported to have landed on the Moon's south pole, the provided evidence does not contain any sources that directly confirm this event took place.",
-          "event_date": "2023-08-23",
-          "evidence_for_ids": [],
-          "evidence_against_ids": [],
-          "cited_ids": [],
-          "reasoning_en": "The provided evidence consists entirely of fact-checks debunking false or misleading images and videos that were incorrectly attributed to the Chandrayaan-3 mission. While these fact-checks imply the landing was a real event that attracted misinformation, none of them directly confirm that the landing occurred as claimed. The brief for this claim explicitly notes this gap in the evidence.",
-          "ai_generation": null
-        },
-        {
-          "claim_id": "c3",
           "label": "TRUE",
           "confidence": 85,
-          "what_is_true_en": "India became the first country to successfully land a spacecraft in the lunar south pole region on August 23, 2023.",
+          "what_is_true_en": "The Chandrayaan-3 mission successfully landed near the Moon's south pole on August 23, 2023, and people across India celebrated the achievement. The image shows one such celebration.",
           "event_date": "2023-08-23",
           "evidence_for_ids": [
-            "fc-10"
+            "ws-3",
+            "ws-1",
+            "ws-2"
           ],
           "evidence_against_ids": [],
           "cited_ids": [
-            "fc-10"
+            "ws-3",
+            "ws-1"
           ],
-          "reasoning_en": "The evidence includes a TIER_1 fact-check from BOOM Fact Check (fc-10) which explicitly debunks the claim that China was the first country to land on the Moon's south pole. By refuting this counter-claim, the evidence supports the assertion that India was the first. No evidence was provided to contradict this.",
-          "ai_generation": null
+          "reasoning_en": "The Chandrayaan-3 mission's successful landing on August 23, 2023, is a confirmed event (ws-1). A TIER_2 news source (ws-3) and another source (ws-2) explicitly state that the image shows people celebrating this event. There is no evidence to contradict this claim.",
+          "ai_generation": {
+            "likelihood_ai": 0,
+            "signals_ai": [
+              "No signals indicating AI generation were found."
+            ],
+            "signals_real": [
+              "The image is presented by multiple news sources as a real photograph of the event.",
+              "The scene depicted is consistent with widespread, documented celebrations that occurred in India."
+            ]
+          }
         }
       ]
     }

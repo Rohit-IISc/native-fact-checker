@@ -1,66 +1,4 @@
 {
- "factcheck_search:[\"Vaksin mengandung microchip\", \"id\"]": [
-  {
-   "claim_text": "Vaksin Covid-19 mengandung microchip yang bisa menyalakan lampu",
-   "claimant": "Akun Facebook",
-   "claim_date": "2021-05-31T00:00:00Z",
-   "url": "https://www.tempo.co/cekfakta/keliru-vaksin-covid-19-mengandung-microchip-yang-bisa-nyalakan-lampu-356853",
-   "publisher": "Tempo.co",
-   "publisher_site": "tempo.co",
-   "rating": "Keliru",
-   "review_date": "2021-06-22T00:00:00Z",
-   "title": "Keliru, Vaksin Covid-19 Mengandung Microchip yang Bisa ...",
-   "language": "en"
-  },
-  {
-   "claim_text": "Vaksin Covid-19 buatan Pfizer mengandung chip sehingga magnet menempel di lengan yang disuntik",
-   "claimant": "Akun Instagram",
-   "claim_date": "2021-05-10T00:00:00Z",
-   "url": "https://www.tempo.co/cekfakta/keliru-klaim-vaksin-pfizer-mengandung-chip-sehingga-magnet-menempel-di-lengan-yang-disuntik-357397",
-   "publisher": "Tempo.co",
-   "publisher_site": "tempo.co",
-   "rating": "Keliru",
-   "review_date": "2021-05-22T00:00:00Z",
-   "title": "Keliru, Klaim Vaksin Pfizer Mengandung Chip sehingga Magnet ...",
-   "language": "en"
-  },
-  {
-   "claim_text": "Vaksin Covid-19 mengandung microchip magnetik",
-   "claimant": "Berbagai sumber",
-   "claim_date": "2021-05-26T00:00:00Z",
-   "url": "https://periksafakta.afp.com/vaksin-covid-19-tidak-mengandung-mikrochip-magnetik",
-   "publisher": "Periksa Fakta",
-   "publisher_site": "periksafakta.afp.com",
-   "rating": "Salah",
-   "review_date": "2021-06-07T12:35:00Z",
-   "title": "Vaksin Covid-19 tidak mengandung microchip magnetik",
-   "language": "id"
-  },
-  {
-   "claim_text": "Vaksin Covid-19 Mengandung Magnet dan Microchip, Mitos atau Fakta?",
-   "claimant": "Suara.com",
-   "claim_date": "2022-05-19T12:46:54Z",
-   "url": "https://www.suara.com/health/2022/05/19/194654/vaksin-covid-19-mengandung-magnet-dan-microchip-mitos-atau-fakta",
-   "publisher": "Suara.com",
-   "publisher_site": "suara.com",
-   "rating": "Salah",
-   "review_date": null,
-   "title": "Vaksin Covid-19 Mengandung Magnet dan Microchip, Mitos atau ...",
-   "language": "id"
-  },
-  {
-   "claim_text": "Keliru, Konten tentang Pemasangan Microchip Melalui Vaksinasi di Indonesia",
-   "claimant": "Tempo.co",
-   "claim_date": null,
-   "url": "https://www.tempo.co/cekfakta/keliru-konten-tentang-pemasangan-microchip-melalui-vaksinasi-di-indonesia-348450",
-   "publisher": "Tempo.co",
-   "publisher_site": "tempo.co",
-   "rating": "keliru",
-   "review_date": null,
-   "title": "Keliru, Konten tentang Pemasangan Microchip Melalui Vaksinasi di ...",
-   "language": "id"
-  }
- ],
  "factcheck_search:[\"Vaksin COVID-19 microchip\", \"id\"]": [
   {
    "claim_text": "Vaksin Covid-19 mengandung microchip yang bisa menyalakan lampu",
@@ -245,7 +183,8 @@
    "language": "en"
   }
  ],
- "factcheck_search:[\"Vaccine tracking microchip\", \"en\"]": [
+ "factcheck_search:[\"Vaksin COVID-19 pelacak\", \"id\"]": [],
+ "factcheck_search:[\"vaccine tracking microchip\", \"en\"]": [
   {
    "claim_text": "COVID-19 vaccines have a microchip that \"tracks the location of the patient.\"",
    "claimant": "Viral video",
@@ -283,18 +222,6 @@
    "language": "en"
   },
   {
-   "claim_text": "Bill Gates’ “ultimate goal” is to microchip COVID-19 vaccine in order to create virtual IDs",
-   "claimant": "Multiple sources",
-   "claim_date": "2020-05-30T00:00:00Z",
-   "url": "https://factcheck.afp.com/hoax-about-bill-gates-plan-microchip-vaccine-circulates-online",
-   "publisher": "AFP Fact Check",
-   "publisher_site": "factcheck.afp.com",
-   "rating": "1",
-   "review_date": "2020-06-25T10:25:00Z",
-   "title": "Hoax about Bill Gates' plan to 'microchip the vaccine' circulates online",
-   "language": "en"
-  },
-  {
    "claim_text": "Videos of magnets sticking to arms prove that the COVID-19 vaccines contain microchips.",
    "claimant": "Social media posts",
    "claim_date": "2021-05-12T00:00:00Z",
@@ -307,30 +234,6 @@
    "language": "en"
   },
   {
-   "claim_text": "Will there be a chip inside the vaccine?",
-   "claimant": "700 Club Interactive",
-   "claim_date": "2020-05-30T00:00:00Z",
-   "url": "https://www.poynter.org/tfcn/2021/no-there-is-not-a-chip-placed-inside-the-coronavirus-vaccine/",
-   "publisher": "Poynter",
-   "publisher_site": "poynter.org",
-   "rating": "Needs Context",
-   "review_date": "2021-03-15T00:00:00Z",
-   "title": "No, there is not a chip placed inside the coronavirus vaccine",
-   "language": "en"
-  },
-  {
-   "claim_text": "Video of microchip found in Pfizer vaccine",
-   "claimant": "Multiple resources",
-   "claim_date": "2021-05-21T00:00:00Z",
-   "url": "https://factcheck.afp.com/doc.afp.com.9EG2NX",
-   "publisher": "AFP Fact Check",
-   "publisher_site": "factcheck.afp.com",
-   "rating": "Missing context",
-   "review_date": "2021-07-14T12:07:00Z",
-   "title": "Hoax posts about microchips in Pfizer-BioNTech Covid-19 vaccine ...",
-   "language": "en"
-  },
-  {
    "claim_text": "\"Bill Gates will use microchip implants to fight coronavirus.\"",
    "claimant": "Conspiracy theory",
    "claim_date": "2020-03-19T00:00:00Z",
@@ -340,6 +243,42 @@
    "rating": "False",
    "review_date": null,
    "title": "Conspiracy Theory Misinterprets Goals of Gates Foundation",
+   "language": "en"
+  },
+  {
+   "claim_text": "Bill Gates’ “ultimate goal” is to microchip COVID-19 vaccine in order to create virtual IDs",
+   "claimant": "Multiple sources",
+   "claim_date": "2020-05-30T00:00:00Z",
+   "url": "https://factcheck.afp.com/hoax-about-bill-gates-plan-microchip-vaccine-circulates-online",
+   "publisher": "AFP Fact Check",
+   "publisher_site": "factcheck.afp.com",
+   "rating": "1",
+   "review_date": "2020-06-25T10:25:00Z",
+   "title": "Hoax about Bill Gates' plan to 'microchip the vaccine' circulates online",
+   "language": "en"
+  },
+  {
+   "claim_text": "A microchip reader for pets detected a chip in the arm of a woman vaccinated against COVID-19.",
+   "claimant": "Viral video",
+   "claim_date": "2021-06-15T00:00:00Z",
+   "url": "https://www.factcheck.org/2021/07/scicheck-spoof-video-furthers-microchip-conspiracy-theory/",
+   "publisher": "FactCheck.org",
+   "publisher_site": "factcheck.org",
+   "rating": "False",
+   "review_date": null,
+   "title": "Spoof Video Furthers Microchip Conspiracy Theory",
+   "language": "en"
+  },
+  {
+   "claim_text": "Will there be a chip inside the vaccine?",
+   "claimant": "700 Club Interactive",
+   "claim_date": "2020-05-30T00:00:00Z",
+   "url": "https://www.poynter.org/tfcn/2021/no-there-is-not-a-chip-placed-inside-the-coronavirus-vaccine/",
+   "publisher": "Poynter",
+   "publisher_site": "poynter.org",
+   "rating": "Needs Context",
+   "review_date": "2021-03-15T00:00:00Z",
+   "title": "No, there is not a chip placed inside the coronavirus vaccine",
    "language": "en"
   }
  ]

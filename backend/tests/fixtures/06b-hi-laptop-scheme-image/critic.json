@@ -1,28 +1,14 @@
 {
-  "prompt_version": "critic-1.2+shared-1.1",
+  "prompt_version": "critic-1.3+shared-1.1",
   "model_id": "gemini-2.5-pro",
-  "recorded_at": "2026-10-08T06:18:50+00:00",
+  "recorded_at": "2026-10-08T18:00:41+00:00",
   "outputs": [
     {
       "reviews": [
         {
           "claim_id": "c1",
           "decision": "AGREE",
-          "proposed_label": "FALSE",
-          "proposed_confidence": 100,
-          "objections_en": []
-        },
-        {
-          "claim_id": "c2",
-          "decision": "AGREE",
-          "proposed_label": "FALSE",
-          "proposed_confidence": 100,
-          "objections_en": []
-        },
-        {
-          "claim_id": "c3",
-          "decision": "AGREE",
-          "proposed_label": "FALSE",
+          "proposed_label": "SCAM",
           "proposed_confidence": 100,
           "objections_en": []
         }

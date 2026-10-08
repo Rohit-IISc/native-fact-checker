@@ -1,7 +1,7 @@
 {
-  "prompt_version": "extractor-1.10+shared-1.1",
+  "prompt_version": "extractor-1.11+shared-1.1",
   "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-08T06:19:30+00:00",
+  "recorded_at": "2026-10-08T18:02:12+00:00",
   "outputs": [
     {
       "content_language": "en-IN",
@@ -14,12 +14,12 @@
           "claim_id": "claim1",
           "claim_original": "Chandrayaan-3's Vikram lander touched down near the Moon's south pole on 23 August 2023, making India the first country to land in that region.",
           "claim_en": "Chandrayaan-3's Vikram lander touched down near the Moon's south pole on 23 August 2023, making India the first country to land in that region.",
-          "claim_type": "SCIENCE",
+          "claim_type": "EVENT",
           "entities": [
             "Chandrayaan-3",
             "Vikram lander",
             "India",
-            "Moon"
+            "Moon's south pole"
           ],
           "place": "Moon's south pole",
           "claimed_date": "2023-08-23",
@@ -39,7 +39,8 @@
       "transcript": null,
       "visual_description_en": null,
       "ai_generation_signals": null,
-      "origin_hints": []
+      "origin_hints": [],
+      "media_markers": []
     }
   ]
 }
