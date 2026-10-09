@@ -62,8 +62,12 @@ Updated after every task (see CLAUDE.md, "How to work"). Newest state only; hist
 
 ## Broken or risky
 
-Latest `make record` (Oct 9, after the cross-language search fix, jobs=2): 18/20, avg 44.8 s, $2.23.
-Failing: 10a (MISLEADING, want FALSE) and 13 (known). 01 and 01b passed.
+Latest `make accept` (Oct 9 afternoon, after the case 01 and wording fixes): 14/20, avg 60.7 s, $2.04, on a
+slow Vertex day (extractor p95 27 s vs 18-21 s before; web search 6% failures). Targeted REPEAT=2: 01 2/2
+MISLEADING (the answer is now about the sharer's own claim), 12 1/2 (the miss ran over budget), 01b 0/2
+(web search timed out; the Fact Check Tools API has no match for it, so it depends on web search).
+Wording: 0 of 6 MISLEADING answers call the post false (composer 1.3 gets the verdict word).
+Earlier Oct 9 (cross-language search fix, record jobs=2): 18/20, avg 44.8 s; failing 10a and 13.
 
 Previous `make record` (Oct 8 evening, jobs=3): 15/20, avg 55.4 s, $2.07. Failing: 01b, 13 (known), and 09,
 10a, 10b, which hit agent timeouts and a 429 under 3 parallel cases; re-run one at a time, all three passed
@@ -100,8 +104,8 @@ check. Cross-language recall gap and 3 inverted gold items: eval/TESTS-TO-DO.md 
 ## Next step
 
 1. Rohit: phone tests in eval/TESTS-TO-DO.md section 1 (share sheet, push, card in WhatsApp).
-2. Stance classification for "this exact video is old" fact checks (case 01); composer wording must
-   match the label (case 12 run said "false" under MISLEADING).
+2. Latency on slow Vertex days: video extraction alone took 57 s in one run (first call timed out). Look
+   at a lower extraction hedge for video, or Provisioned Throughput (decision 41).
 4. Gold set v3 after a hand-check (3 items have the conclusion as the claim), re-baseline.
 5. Signed-URL upload for shares over 32 MB.
 6. Rohit: make `main` the default branch on GitHub (deploys come from main since Oct 9).

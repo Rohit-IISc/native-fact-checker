@@ -1,40 +1,55 @@
 {
   "prompt_version": "web-search-2.2+shared-1.1",
   "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-09T08:58:32+00:00",
+  "recorded_at": "2026-10-09T09:53:32+00:00",
   "outputs": [
     {
-      "text": "c1: Two crocodiles were seen in Kukkarahalli Lake in Mysore yesterday evening.\n\nSources indicate that crocodiles are known to inhabit Kukkarahalli Lake in Mysore, and sightings are not uncommon.\n\n*   **Star of Mysore** (December 1, 2024) published an article titled \"Crocodile sighted in Kukkarahalli Lake\" reporting that morning walkers spotted a huge crocodile near the fishermen's shed. The article mentions that this is not the first time a crocodile has been sighted in the lake and confirms its presence. [1]\n*   **Star of Mysore** (January 28, 2026) reported a crocodile sighting at Kukkarahalli Lake, noting that while the lake is a known crocodile habitat, they are rarely spotted. The article also mentions that a specific crocodile had been spotted four times. [2]\n*   **Andolana** (March 3, 2024) published an article stating that a crocodile was seen in Kukkarahalli Lake on Sunday evening by people walking there. [3]\n*   **Star of Mysore** (September 8, 2023) reported that morning walkers were concerned after spotting a crocodile in Kukkarahalli Lake the previous morning. The article notes that crocodiles had been spotted before and rescued by the Forest Department. [4]\n*   **The Hindu** (March 26, 2010) reported a giant crocodile spotted on the Kukkarahalli Lake bund, reaffirming the presence of crocodiles in the lake after several years. [5]\n*   **Facebook** (Undated) A post mentions reports of a crocodile being spotted at Kukkarahalli Lake during an evening walk, and that crocodiles in community lakes can be aggressive. [6]",
+      "text": "Here's what the search results indicate regarding the claim of two crocodiles being seen in Kukkarahalli Lake yesterday evening:\n\n**Claim c1: Two crocodiles were seen in Kukkarahalli Lake in Mysuru yesterday evening.**\n\n*   There have been multiple sightings of crocodiles in Kukkarahalli Lake in Mysuru over the years. [1] [2] [3] [4] [5] [6]\n*   On December 1, 2024, a large crocodile was spotted near the fishermen's shed close to Hunsur Main Road between 8:30 AM and 9:30 AM. This sighting was captured by an amateur photographer. [1] [4]\n*   Another crocodile was spotted in the lake in the morning on September 7, 2023, causing worry among morning walkers. [2] [7]\n*   On January 28, 2026, a crocodile was spotted at the bank of Kukkarahalli Lake, triggering panic among morning walkers. [3]\n*   A giant marsh crocodile was also spotted on the lake bund on March 26, 2010. [6]\n*   While the lake is known to be a crocodile habitat, sightings are not always common. [3]\n*   There are reports of a crocodile being spotted during an evening walk, though it's not a commonly documented feature of the lake. [5]\n*   One source from March 3, 2024, mentions people seeing something in the northern part of the lake during an evening walk. [8]\n*   The claim specifies \"yesterday evening,\" which would be October 8, 2026. The provided search results do not contain any specific reports of two crocodiles being seen on October 8, 2026.\n*   Kukkarahalli Lake is known for its bird species and as a place for morning walks, with locals currently more focused on sanitation issues. [5] [9] Signboards warning about crocodiles are present, and people are advised not to swim in the lake. [3]",
       "sources": [
         {
           "n": 1,
-          "url": "https://starofmysore.com/crocodile-sighted-in-kukkarahalli-lake/",
+          "url": "https://starofmysore.com/crocodile-sighted-in-kukkarahalli-lake/amp/",
           "domain": "starofmysore.com"
         },
         {
           "n": 2,
-          "url": "https://starofmysore.com/crocodile-spotted-at-kukkarahalli-lake/",
-          "domain": "starofmysore.com"
-        },
-        {
-          "n": 3,
-          "url": "https://andolana.in/districts/mysore/crocodile-sighting-in-kukralli-lake-mysore/",
-          "domain": "andolana.in"
-        },
-        {
-          "n": 4,
           "url": "https://starofmysore.com/crocodile-spotted-in-kukkarahalli-lake/",
           "domain": "starofmysore.com"
         },
         {
+          "n": 3,
+          "url": "https://starofmysore.com/crocodile-spotted-at-kukkarahalli-lake/",
+          "domain": "starofmysore.com"
+        },
+        {
+          "n": 4,
+          "url": "https://starofmysore.com/crocodile-sighted-in-kukkarahalli-lake/",
+          "domain": "starofmysore.com"
+        },
+        {
           "n": 5,
+          "url": "https://www.facebook.com/fb-answers/kukkarahalli-lake-crocodile/",
+          "domain": "facebook.com"
+        },
+        {
+          "n": 6,
           "url": "https://www.thehindu.com/news/national/karnataka/Giant-crocodile-appears-near-Mysore-lake/article16615491.ece",
           "domain": "thehindu.com"
         },
         {
-          "n": 6,
-          "url": "https://www.facebook.com/fb-answers/kukkarahalli-lake-crocodile/",
-          "domain": "facebook.com"
+          "n": 7,
+          "url": "https://www.youtube.com/watch?v=BQoYYIZWqKQ",
+          "domain": "youtube.com"
+        },
+        {
+          "n": 8,
+          "url": "https://andolana.in/districts/mysore/crocodile-sighting-in-kukralli-lake-mysore/",
+          "domain": "andolana.in"
+        },
+        {
+          "n": 9,
+          "url": "https://en.wikipedia.org/wiki/Kukkarahalli_Lake",
+          "domain": "wikipedia.org"
         }
       ],
       "queries": 4

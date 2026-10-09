@@ -1,36 +1,30 @@
 {
   "prompt_version": "packager-1.1+shared-1.1",
   "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-09T08:53:44+00:00",
+  "recorded_at": "2026-10-09T09:42:56+00:00",
   "outputs": [
     {
       "briefs": [
         {
           "claim_id": "c1",
-          "claim_en": "COVID-19 vaccines contain microchips to track vaccinated individuals.",
+          "claim_en": "COVID-19 vaccines contain microchips designed to track every vaccinated person.",
           "claim_type": null,
           "claimed_date": null,
           "place": null,
-          "brief_en": "Multiple fact-checking organizations and health authorities, including Tempo.co, FactCheck.org, AFP Fact Check, the CDC, and the Indonesian Ministry of Health, consistently state that COVID-19 vaccines do not contain microchips. Experts explain that microchips are too large to be injected with vaccine needles and require power and an antenna to function, which is not present in vaccines. Some sources suggest the conspiracy theory may stem from misinterpretations of digital vaccine records or the existence of subdermal microchips developed by a Swedish company in December 2021 for storing vaccination data, which are separate from the vaccines themselves and cannot track location. Claims linking Bill Gates to microchip implants in vaccines have also been debunked.",
+          "brief_en": "Multiple fact-checking organizations and medical institutions, including Mayo Clinic, FactCheck.org, and Indonesian government sources, state that claims of microchips in COVID-19 vaccines for tracking individuals are false. FactCheck.org, in December 2020, clarified that discussions about chips were for tracking vaccine doses, not people, and would be attached to vials. Tempo.co and Periksa Fakta also debunked similar claims in 2020 and 2021, including those linking Bill Gates to microchip implantation or magnetic properties in vaccines. Experts consistently affirm the impossibility of implanting tracking microchips due to size and technological limitations.",
           "evidence_ids": [
-            "ws-2",
+            "ws-3",
             "ws-4",
             "ws-6",
-            "ws-14",
-            "ws-18",
-            "ws-19",
-            "ws-20",
             "fc-1",
             "fc-2",
             "fc-3",
+            "fc-5",
             "fc-6",
             "fc-7",
             "fc-9",
             "fc-10",
-            "fc-11",
-            "fc-12",
-            "fc-13",
-            "fc-14"
+            "fc-11"
           ],
           "gaps_en": []
         }

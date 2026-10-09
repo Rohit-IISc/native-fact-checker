@@ -123,3 +123,18 @@ def test_claims_are_ordered_most_harmful_first():
 
     got = [c.label.value for c in order_by_severity([C("TRUE"), C("FALSE"), C("NOT_ENOUGH_EVIDENCE"), C("SCAM")])]
     assert got == ["SCAM", "FALSE", "NOT_ENOUGH_EVIDENCE", "TRUE"]
+
+
+def test_factcheck_search_also_uses_text_printed_on_the_media():
+    from app.agents.factcheck_sites import search_plan
+    from app.models import Extraction
+
+    ext = Extraction.model_validate({
+        "content_language": "kn-IN", "content_script": "Knda", "summary_en": "flood video", "checkable": True,
+        "ocr_text": "DELHI संकट मे",
+        "claims": [{"claim_id": "c1", "claim_original": "ಇಂದು ಬೆಂಗಳೂರಿನಲ್ಲಿ ಭಾರೀ ಪ್ರವಾಹ", "claim_en": "Bengaluru flood today",
+                    "claim_type": "EVENT", "time_sensitivity": "LIVE_EVENT",
+                    "search_queries_regional": [{"language": "ta", "query": "பெங்களூரு வெள்ளம்"}]}]})
+    plan = search_plan(ext)
+    assert ("DELHI संकट मे", "") in plan and ("DELHI संकट मे fact check", "en") in plan
+    assert ("பெங்களூரு வெள்ளம்", "ta") in plan and ("Bengaluru flood today", "") in plan

@@ -55,14 +55,22 @@ def script_matches(answer: AnswerText, script: str) -> bool:
     return sum(1 for ch in letters if lo <= ch <= hi) / len(letters) >= 0.5
 
 
+def verdict_word(label: str, language: str) -> str:
+    """The verdict in the answer language, the same word the card and the app show (config/languages.yaml)."""
+    langs = get_config().languages.get("demo_languages") or {}
+    words = ((langs.get(language) or langs.get("en") or {}).get("card") or {}).get("labels") or {}
+    return words.get(label) or label.replace("_", " ").lower()
+
+
 async def _write(llm: LLM, data: str, language: str, script: str) -> AnswerText:
     prompt = load_prompt(PROMPT)
     base = language.split("-")[0].lower()
     name = LANGUAGE_NAMES.get(base, language)
     # "en-IN" invited Hindi answers ("IN" -> India); English is just English.
     shown = "en" if base == "en" else language
+    label = json.loads(data).get("label") or ""
     text = prompt.render(answer_language_name=name, answer_language=shown, answer_script=script,
-                         claim_result_json=data)
+                         claim_result_json=data, label=label, verdict_word=verdict_word(label, base))
     timeout = get_config().timeout("composer")
     out = await llm.generate(stage="composer", prompt=text, prompt_version=prompt.version, schema=AnswerText,
                              timeout_s=timeout)

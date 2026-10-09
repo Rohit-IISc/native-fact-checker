@@ -1,7 +1,7 @@
 {
   "prompt_version": "packager-1.1+shared-1.1",
   "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-09T08:52:41+00:00",
+  "recorded_at": "2026-10-09T09:39:44+00:00",
   "outputs": [
     {
       "briefs": [
@@ -11,20 +11,20 @@
           "claim_type": null,
           "claimed_date": null,
           "place": "India",
-          "brief_en": "Multiple fact-checking organizations and the Press Information Bureau (PIB) Fact Check Unit have debunked claims that Prime Minister Modi is offering all Indians 3 months of free mobile recharge. They state that no such government scheme exists and that these viral messages are often scams designed to trick users into clicking fraudulent links, potentially leading to data theft or security breaches. Some claims are linked to digitally altered videos or AI-generated content featuring PM Modi. The government advises citizens to verify information about government schemes only through the official website myscheme.gov.in. Vishvas News, BOOM, DigitEye India, and NewsMobile have all rated this claim as false or fraud, with some reports dating back to October 2023 and continuing through 2025.",
+          "brief_en": "Multiple fact-checking organizations and official sources, including PIB Fact Check, have consistently debunked claims that Prime Minister Modi is offering 3 months of free mobile recharge to all Indians. These claims, often circulated on social media platforms like WhatsApp and Facebook, are frequently associated with phishing scams designed to collect personal information. NewsMobile reported on November 16, 2025, that a video circulating after the Bihar Assembly elections claiming a free recharge offer was a misleading phishing scam using an AI-generated video of PM Modi. Hindustan Times reported on June 7, 2024, that similar claims following the 2024 elections were fake, with PIB clarifying no such scheme exists. The government has explicitly stated that neither the Prime Minister nor the Indian government has announced or is running any such scheme.",
           "evidence_ids": [
-            "ws-1",
-            "ws-5",
-            "ws-7",
+            "ws-8",
+            "ws-10",
             "fc-1",
             "fc-2",
             "fc-3",
             "fc-4",
             "fc-5",
             "fc-6",
-            "fc-8",
-            "fc-9",
-            "ws-6"
+            "fc-7",
+            "ws-6",
+            "ws-5",
+            "ws-12"
           ],
           "gaps_en": []
         }

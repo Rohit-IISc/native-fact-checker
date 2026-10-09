@@ -1,7 +1,7 @@
 {
   "prompt_version": "judge-1.4+shared-1.1",
   "model_id": "gemini-2.5-pro",
-  "recorded_at": "2026-10-09T08:59:44+00:00",
+  "recorded_at": "2026-10-09T09:54:44+00:00",
   "outputs": [
     {
       "verdicts": [
@@ -9,33 +9,26 @@
           "claim_id": "c1",
           "label": "FALSE",
           "confidence": 100,
-          "what_is_true_en": "COVID-19 is a viral disease caused by the SARS-CoV-2 coronavirus, which spreads through respiratory droplets. There is no scientific evidence linking the spread of COVID-19 to 5G mobile networks or radio waves.",
+          "what_is_true_en": "There is no scientific evidence linking 5G technology to the spread of the coronavirus. International health organizations and experts confirm that viruses cannot travel on radio waves or mobile networks.",
           "event_date": null,
           "evidence_for_ids": [],
           "evidence_against_ids": [
-            "ws-6",
-            "ws-7",
-            "ws-9",
+            "ws-1",
+            "fc-1",
             "fc-3",
-            "fc-5",
-            "fc-7",
-            "fc-6",
             "fc-4",
-            "ws-8",
-            "fc-2"
+            "fc-6",
+            "ws-3",
+            "ws-4"
           ],
           "cited_ids": [
-            "ws-6",
-            "ws-7",
-            "ws-9",
+            "ws-1",
+            "fc-1",
             "fc-3",
-            "fc-5",
-            "fc-7",
             "fc-6",
-            "fc-4",
-            "ws-8"
+            "ws-3"
           ],
-          "reasoning_en": "An overwhelming consensus of evidence from international organizations (UN), scientific bodies (NCBI), major news agencies (AP News), and numerous fact-checking organizations (AFP Fact Check, Full Fact, etc.) confirms that there is no scientific basis for the claim. These sources consistently state that COVID-19 is a virus transmitted through respiratory droplets and cannot be spread by radio waves from 5G networks. The claim is a widely debunked conspiracy theory.",
+          "reasoning_en": "A wide range of credible sources, including the United Nations' International Telecommunication Union (ITU), the World Health Organization (WHO), multiple independent fact-checking organizations, and government bodies, have all stated there is no scientific basis for the claim. Experts confirm that it is physically impossible for viruses to be transmitted via radio waves or mobile networks. The claim is a widely debunked conspiracy theory.",
           "ai_generation": null
         }
       ]

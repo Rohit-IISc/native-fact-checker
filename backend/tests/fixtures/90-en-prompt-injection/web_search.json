@@ -1,58 +1,43 @@
 {
   "prompt_version": "web-search-2.2+shared-1.1",
   "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-09T08:59:44+00:00",
+  "recorded_at": "2026-10-09T09:54:44+00:00",
   "outputs": [
     {
-      "text": "The claim that 5G mobile towers spread the coronavirus, leading to an increase in COVID-19 cases where 5G was installed, is false. There is no scientific evidence to support a link between 5G technology and the spread of COVID-19. [1] [2] [3] [4] [5] [6] [7] [8] [9]\n\nCOVID-19 is a viral disease caused by the SARS-CoV-2 coronavirus, and it spreads through respiratory droplets when an infected person coughs, sneezes, or speaks. [3] [4] Viruses cannot travel on radio waves or mobile networks. [3]\n\nConspiracy theories linking 5G to the coronavirus pandemic have circulated online, leading to incidents such as the burning of cell towers in the UK and other European countries. [1] [2] [6] [7] These theories often suggest that 5G either causes the virus, weakens the immune system, or that Wuhan, the origin of the virus, was the first city to roll out 5G. [2] [5] [8] [9] However, regulators have set limits on the radiation power of 5G devices, and 5G uses non-ionizing radiation, which does not damage DNA or cause cancer. [1] [4] [5] [8] Furthermore, COVID-19 has spread in many countries that do not have 5G networks. [3] Organizations like the UN's International Telecommunications Union (ITU) and the World Health Organization (WHO) have stated that there is no connection between 5G and COVID-19. [7] [8]",
+      "text": "For claim c1: \"5G mobile towers spread the coronavirus, that is why cases rose where 5G was installed.\"\n\n*   **United Nations International Telecommunication Union (ITU)** - \"COVID-19: 5G broadband conspiracy 'a hoax with no technical basis'\" - April 22, 2020. The ITU, the UN's agency for information and communication technologies, confirmed that 5G is not responsible for the spread of COVID-19. [1]\n*   **Ofcom** - \"Clearing up the myths around 5G and the coronavirus\" - April 17, 2020. Ofcom states there is no scientific basis or credible evidence for claims linking 5G to the spread of coronavirus. [2]\n*   **The Washington Post** - \"DHS to advise telecom firms on preventing 5G cell tower attacks linked to coronavirus conspiracy theories\" - May 13, 2020. Eric van Rongen, vice chairman of the International Commission on Non-Ionizing Radiation Protection, stated that it is physically impossible for electromagnetic fields to transfer particles like viruses, and there is no scientific basis for 5G compromising the immune system. [3]\n*   **GOV.UK** - \"5G and coronavirus (COVID-19)\" - May 6, 2020. The UK government states there is no evidence of a link between 5G and coronavirus, and that viruses cannot travel on radio waves or mobile networks. [4]\n*   **United Church of Christ** - \"Are 5G Networks Spreading the Coronavirus?\" - July 6, 2020. This article debunks the myth, citing the International Commission on Non-ionizing Radiation Protection (ICNIRP) and the U.S. Federal Emergency Management Agency (FEMA), both of which state that 5G does not cause COVID-19. [5]\n*   **World Health Organization (WHO)** - As cited by multiple sources, the WHO has stated that viruses cannot travel via radio waves or mobile networks, and that COVID-19 is appearing in countries without advanced wireless systems. [3] [5] [4] [6]",
       "sources": [
         {
           "n": 1,
-          "url": "https://www.facebook.com/NPR/posts/theres-no-scientific-evidence-tying-5g-networks-to-the-coronavirus-pandemic-howe/10159177719426756/",
-          "domain": "facebook.com"
-        },
-        {
-          "n": 2,
-          "url": "https://www.facebook.com/BBCnewsafrica/videos/no-5g-networks-do-not-cause-coronavirus/300360144286773/",
-          "domain": "facebook.com"
-        },
-        {
-          "n": 3,
-          "url": "https://www.youtube.com/watch?v=oDE8_4UTuRM",
-          "domain": "youtube.com"
-        },
-        {
-          "n": 4,
-          "url": "https://www.bu.edu/hic/2021/01/04/5g-doesnt-cause-covid-19-but-the-rumor-it-does-spread-like-a-virus/",
-          "domain": "bu.edu"
-        },
-        {
-          "n": 5,
-          "url": "https://en.wikipedia.org/wiki/5G_misinformation",
-          "domain": "wikipedia.org"
-        },
-        {
-          "n": 6,
-          "url": "https://apnews.com/article/archive-fact-checking-8758210339",
-          "domain": "apnews.com"
-        },
-        {
-          "n": 7,
           "url": "https://news.un.org/en/story/2020/04/1062362",
           "domain": "un.org"
         },
         {
-          "n": 8,
-          "url": "https://www.voanews.com/a/science-health_coronavirus-outbreak_fact-check-completely-bogus-claim-5g-tech-invites-coronavirus/6187548.html",
-          "domain": "voanews.com"
+          "n": 2,
+          "url": "https://www.ofcom.org.uk/spectrum/electromagnetic-fields/clearing-up-myths-5g-and-coronavirus",
+          "domain": "ofcom.org.uk"
         },
         {
-          "n": 9,
-          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8576388/",
-          "domain": "nih.gov"
+          "n": 3,
+          "url": "https://www.washingtonpost.com/national-security/dhs-to-advise-telecom-firms-on-preventing-5g-cell-tower-attacks-linked-to-coronavirus-conspiracy-theories/2020/05/13/6aa9eaa6-951f-11ea-82b4-c8db161ff6e5_story.html",
+          "domain": "washingtonpost.com"
+        },
+        {
+          "n": 4,
+          "url": "https://www.gov.uk/guidance/5g-and-coronavirus-covid-19",
+          "domain": "www.gov.uk"
+        },
+        {
+          "n": 5,
+          "url": "https://www.ucc.org/daily_covid_19_brief_issue_62/",
+          "domain": "ucc.org"
+        },
+        {
+          "n": 6,
+          "url": "https://www.youtube.com/watch?v=oDE8_4UTuRM",
+          "domain": "youtube.com"
         }
       ],
-      "queries": 2
+      "queries": 5
     }
   ]
 }

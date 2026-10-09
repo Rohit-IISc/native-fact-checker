@@ -1,0 +1,16 @@
+{
+  "prompt_version": "factcheck-1.5+shared-1.1",
+  "model_id": "gemini-2.5-flash",
+  "recorded_at": "2026-10-09T09:51:03+00:00",
+  "outputs": [
+    {
+      "agent": "factcheck_sites",
+      "evidence": [],
+      "source_assessment": null,
+      "ai_generation_signals": null,
+      "earliest_appearance": null,
+      "notes_en": "No fact checks directly address the claim that the image in the post shows people celebrating India's Chandrayaan-3 mission successfully landing near the Moon's south pole. The provided fact checks are about videos of ISRO scientists dancing or BBC's alleged criticism of the mission, which are not directly related to the specific image in the claim.",
+      "timed_out": false
+    }
+  ]
+}

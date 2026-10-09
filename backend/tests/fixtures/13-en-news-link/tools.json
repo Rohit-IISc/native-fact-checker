@@ -1,22 +1,142 @@
 {
  "lookup_source:[\"bbc.com\"]": null,
- "factcheck_search:[\"India Moon landing celebration photo\", \"en\"]": [],
- "factcheck_search:[\"Chandrayaan-3 landing celebration photo\", \"\"]": [],
- "factcheck_search:[\"Chandrayaan-3 celebrations image\", \"en\"]": [],
- "factcheck_search:[\"Chandrayaan-3 landing celebration photo\", \"en\"]": [],
- "factcheck_search:[\"Chandrayaan-3 celebrations image\", \"\"]": [],
+ "factcheck_search:[\"Chandrayaan-3 landing celebration India\", \"\"]": [
+  {
+   "claim_text": "ISRO chairman S Somanath seen dancing in celebration of Chandrayaan 3's success",
+   "claimant": "Times Now, Indiatimes, Kalinga TV, TV9 Bangla",
+   "claim_date": "2016-06-20T00:00:00Z",
+   "url": "https://www.altnews.in/old-video-of-isro-chief-dancing-viral-as-celebrations-of-chandrayaan-3-landing/",
+   "publisher": "Alt News",
+   "publisher_site": "altnews.in",
+   "rating": "False",
+   "review_date": "2023-08-26T00:00:00Z",
+   "title": "Old video of ISRO chief dancing viral as celebrations of ...",
+   "language": "en"
+  },
+  {
+   "claim_text": "ISRO chairman S Somanath seen dancing in celebration of Chandrayaan 3's success",
+   "claimant": null,
+   "claim_date": null,
+   "url": "https://www.altnews.in/old-video-of-isro-chief-dancing-viral-as-celebrations-of-chandrayaan-3-landing/",
+   "publisher": "Alt News",
+   "publisher_site": "altnews.in",
+   "rating": "False",
+   "review_date": "2023-08-26T16:23:44Z",
+   "title": "Old video of ISRO chief dancing viral as celebrations of ...",
+   "language": "en"
+  },
+  {
+   "claim_text": "Visuals of ISRO scientists dancing after the successful landing of Chandrayaan-3 on the moon",
+   "claimant": "SOCIAL MEDIA POST",
+   "claim_date": "2023-08-24T00:00:00Z",
+   "url": "https://factly.in/unrelated-video-shared-as-isro-scientists-dancing-after-the-success-of-chandrayaan-3/",
+   "publisher": "FACTLY",
+   "publisher_site": "factly.in",
+   "rating": "FALSE",
+   "review_date": "2023-08-25T00:00:00Z",
+   "title": "Unrelated video shared as ISRO scientists dancing after the success ...",
+   "language": "en"
+  },
+  {
+   "claim_text": "BBC slammed Indian's Chandrayaan 3 mission in view of poverty",
+   "claimant": null,
+   "claim_date": null,
+   "url": "https://www.altnews.in/no-bbc-did-not-criticize-chandrayaan-3-old-clip-viral-false-report-by-times-now-india-tv-zee-news-other-outlets/",
+   "publisher": "Alt News",
+   "publisher_site": "altnews.in",
+   "rating": "False",
+   "review_date": "2023-08-25T11:30:07Z",
+   "title": "No, BBC did not criticize Chandrayaan 3. Old clip viral; false report ...",
+   "language": "en"
+  },
+  {
+   "claim_text": "BBC slammed Indian's Chandrayaan 3 mission in view of poverty",
+   "claimant": "Anand Mahindra, MeghUpdates, Mint, Times Now",
+   "claim_date": "2016-06-20T00:00:00Z",
+   "url": "https://www.altnews.in/no-bbc-did-not-criticize-chandrayaan-3-old-clip-viral-false-report-by-times-now-india-tv-zee-news-other-outlets/",
+   "publisher": "Alt News",
+   "publisher_site": "altnews.in",
+   "rating": "False",
+   "review_date": "2023-08-25T00:00:00Z",
+   "title": "No, BBC did not criticize Chandrayaan 3. Old clip viral; false report ...",
+   "language": "en"
+  }
+ ],
+ "factcheck_search:[\"India Moon mission celebration crowd\", \"en\"]": [],
+ "factcheck_search:[\"Chandrayaan-3 landing celebration India\", \"en\"]": [
+  {
+   "claim_text": "ISRO chairman S Somanath seen dancing in celebration of Chandrayaan 3's success",
+   "claimant": null,
+   "claim_date": null,
+   "url": "https://www.altnews.in/old-video-of-isro-chief-dancing-viral-as-celebrations-of-chandrayaan-3-landing/",
+   "publisher": "Alt News",
+   "publisher_site": "altnews.in",
+   "rating": "False",
+   "review_date": "2023-08-26T16:23:44Z",
+   "title": "Old video of ISRO chief dancing viral as celebrations of ...",
+   "language": "en"
+  },
+  {
+   "claim_text": "ISRO chairman S Somanath seen dancing in celebration of Chandrayaan 3's success",
+   "claimant": "Times Now, Indiatimes, Kalinga TV, TV9 Bangla",
+   "claim_date": "2016-06-20T00:00:00Z",
+   "url": "https://www.altnews.in/old-video-of-isro-chief-dancing-viral-as-celebrations-of-chandrayaan-3-landing/",
+   "publisher": "Alt News",
+   "publisher_site": "altnews.in",
+   "rating": "False",
+   "review_date": "2023-08-26T00:00:00Z",
+   "title": "Old video of ISRO chief dancing viral as celebrations of ...",
+   "language": "en"
+  },
+  {
+   "claim_text": "Visuals of ISRO scientists dancing after the successful landing of Chandrayaan-3 on the moon",
+   "claimant": "SOCIAL MEDIA POST",
+   "claim_date": "2023-08-24T00:00:00Z",
+   "url": "https://factly.in/unrelated-video-shared-as-isro-scientists-dancing-after-the-success-of-chandrayaan-3/",
+   "publisher": "FACTLY",
+   "publisher_site": "factly.in",
+   "rating": "FALSE",
+   "review_date": "2023-08-25T00:00:00Z",
+   "title": "Unrelated video shared as ISRO scientists dancing after the success ...",
+   "language": "en"
+  },
+  {
+   "claim_text": "BBC slammed Indian's Chandrayaan 3 mission in view of poverty",
+   "claimant": null,
+   "claim_date": null,
+   "url": "https://www.altnews.in/no-bbc-did-not-criticize-chandrayaan-3-old-clip-viral-false-report-by-times-now-india-tv-zee-news-other-outlets/",
+   "publisher": "Alt News",
+   "publisher_site": "altnews.in",
+   "rating": "False",
+   "review_date": "2023-08-25T11:30:07Z",
+   "title": "No, BBC did not criticize Chandrayaan 3. Old clip viral; false report ...",
+   "language": "en"
+  },
+  {
+   "claim_text": "BBC slammed Indian's Chandrayaan 3 mission in view of poverty",
+   "claimant": "Anand Mahindra, MeghUpdates, Mint, Times Now",
+   "claim_date": "2016-06-20T00:00:00Z",
+   "url": "https://www.altnews.in/no-bbc-did-not-criticize-chandrayaan-3-old-clip-viral-false-report-by-times-now-india-tv-zee-news-other-outlets/",
+   "publisher": "Alt News",
+   "publisher_site": "altnews.in",
+   "rating": "False",
+   "review_date": "2023-08-25T00:00:00Z",
+   "title": "No, BBC did not criticize Chandrayaan 3. Old clip viral; false report ...",
+   "language": "en"
+  }
+ ],
  "vision_web_detection:[\"path:link-cbf41df55bb1.jpeg\", null]": {
   "best_guess": [
    "crowd"
   ],
   "entities": [
    "Chandrayaan-3",
-   "Crowd",
    "ISRO",
+   "Crowd",
    "Human",
-   "Organization",
    "create",
-   "Teamwork"
+   "Organization",
+   "last"
   ],
   "pages": [
    {
@@ -105,11 +225,10 @@
    }
   ]
  },
- "factcheck_search:[\"India Moon mission celebration image\", \"en\"]": [],
  "page_date:[\"https://www.bbc.com/news/live/world-asia-india-47640058?page=47\"]": null,
- "page_date:[\"https://www.linkedin.com/posts/sowmya-subramanian-pro_chandrayaan-3-india-makes-historic-landing-activity-7100100522522615808-fU2H\"]": null,
  "page_date:[\"https://www.bbc.co.uk/news/uk-wales-66687056\"]": null,
- "page_date:[\"https://www.youtube.com/watch?v=4ckyH3oIzlU\"]": null,
- "page_date:[\"https://www.youtube.com/watch?v=lupX9szykio\"]": null,
- "page_date:[\"https://za.linkedin.com/in/chernayj\"]": null
+ "page_date:[\"https://www.shutterstock.com/video/clip-3434120205-crowd-silhouette-people-club-concert-sports-event\"]": null,
+ "page_date:[\"https://www.linkedin.com/posts/sowmya-subramanian-pro_chandrayaan-3-india-makes-historic-landing-activity-7100100522522615808-fU2H\"]": null,
+ "page_date:[\"https://za.linkedin.com/in/chernayj\"]": null,
+ "page_date:[\"https://www.amazon.com/Crowd/dp/B07NVSP139\"]": null
 }

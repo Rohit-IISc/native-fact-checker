@@ -1,24 +1,25 @@
 {
   "prompt_version": "packager-1.1+shared-1.1",
   "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-09T08:53:43+00:00",
+  "recorded_at": "2026-10-09T09:44:15+00:00",
   "outputs": [
     {
       "briefs": [
         {
           "claim_id": "c1",
-          "claim_en": "India's Chandrayaan-3 mission successfully landed its Vikram lander near the Moon's south pole on August 23, 2023, making India the first country to achieve this.",
+          "claim_en": "Chandrayaan-3's Vikram lander successfully landed near the Moon's south pole on August 23, 2023, making India the first country to achieve this.",
           "claim_type": null,
           "claimed_date": "2023-08-23",
           "place": "Moon's south pole",
-          "brief_en": "India's Chandrayaan-3 mission, including the Vikram lander and Pragyan rover, successfully landed near the Moon's south pole on August 23, 2023. NASA and ISRO confirm this event, with ISRO noting the lander touched down within a buried impact crater in the high latitude highland region. Universe Today reports the soft landing occurred at approximately 8:34 a.m. ET on August 23, making India the fourth country to land on the Moon and the first to land at one of the lunar poles. The Hindustan Times mentions the lander's position near the Manzinus crater. A fact-check by BOOM Fact Check rated as false the claim that China was the first country to land on the Moon's South Pole.",
+          "brief_en": "On August 23, 2023, India's Chandrayaan-3 mission successfully landed its Vikram lander near the Moon's south pole. This achievement made India the first country to successfully land a spacecraft in the lunar south pole region and the fourth country overall to land on the Moon, following the Soviet Union, the United States, and China. The landing occurred at approximately 18:04 IST (12:33 UTC) at 69°S. Multiple news outlets, including PBS, The Guardian, and VOA, reported on this historic event, confirming India's pioneering role in landing on the unexplored south pole.",
           "evidence_ids": [
-            "ws-1",
-            "ws-6",
             "fc-1",
-            "ws-2",
+            "ws-3",
             "ws-4",
-            "ws-5"
+            "ws-5",
+            "ws-1",
+            "ws-2",
+            "ws-6"
           ],
           "gaps_en": []
         }

@@ -1,7 +1,7 @@
 {
   "prompt_version": "judge-1.4+shared-1.1",
   "model_id": "gemini-2.5-pro",
-  "recorded_at": "2026-10-09T08:52:41+00:00",
+  "recorded_at": "2026-10-09T09:41:32+00:00",
   "outputs": [
     {
       "verdicts": [
@@ -9,24 +9,44 @@
           "claim_id": "c1",
           "label": "SCAM",
           "confidence": 100,
-          "what_is_true_en": "The Indian government has not announced any 'PM Free Laptop Scheme 2026'. Official sources have confirmed that messages promoting such a scheme are fake and part of a scam to collect personal information.",
+          "what_is_true_en": "The Indian government has not announced any 'PM Free Laptop Scheme'. Messages promoting such a scheme are scams designed to steal personal information.",
           "event_date": null,
           "evidence_for_ids": [],
           "evidence_against_ids": [
-            "ws-1",
-            "ws-6",
-            "ws-2",
-            "ws-3",
-            "ws-4"
+            "fc-2",
+            "fc-4",
+            "fc-5",
+            "ws-4",
+            "ws-7",
+            "ws-9"
           ],
           "cited_ids": [
-            "ws-1",
-            "ws-6",
-            "ws-2",
-            "ws-3",
+            "fc-2",
+            "fc-4",
+            "fc-5",
             "ws-4"
           ],
-          "reasoning_en": "Multiple official and media sources have debunked the claim of a 'PM Free Laptop Scheme 2026'. The Press Information Bureau (PIB) Fact Check and the All India Council for Technical Education (AICTE) have both issued statements clarifying that no such scheme exists and that these viral messages are fraudulent attempts to collect personal data. This is a recurring scam, with similar false claims being debunked in previous years as well.",
+          "reasoning_en": "Multiple TIER_1 fact-checking organizations and TIER_2 news outlets have debunked the claim of a 'PM Free Laptop Scheme'. Evidence from sources like Vishvas News, The Quint, DigitEye India, and Livemint consistently states that the Government of India has not launched any such central scheme. These reports, often citing the official Press Information Bureau (PIB) Fact Check, identify the viral messages as scams intended to collect users' personal data.",
+          "ai_generation": null
+        },
+        {
+          "claim_id": "c2",
+          "label": "SCAM",
+          "confidence": 100,
+          "what_is_true_en": "The website link provided for the 'PM Free Laptop Scheme' is fake and part of a phishing scam. Official Indian government websites typically use the \".gov.in\" domain.",
+          "event_date": null,
+          "evidence_for_ids": [],
+          "evidence_against_ids": [
+            "ws-12",
+            "ws-11",
+            "ws-14"
+          ],
+          "cited_ids": [
+            "ws-12",
+            "ws-11",
+            "ws-14"
+          ],
+          "reasoning_en": "Evidence from India Today and Geo.tv explicitly identifies the link associated with the scheme as fake and part of a scam. These sources note that official Indian government websites typically end with the \".gov.in\" domain, unlike the one in the claim. The purpose of such fraudulent websites is to lure individuals into sharing personal information for malicious purposes like phishing.",
           "ai_generation": null
         }
       ]

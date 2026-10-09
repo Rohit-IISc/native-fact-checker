@@ -1,7 +1,7 @@
 {
   "prompt_version": "judge-1.4+shared-1.1",
   "model_id": "gemini-2.5-pro",
-  "recorded_at": "2026-10-09T08:53:44+00:00",
+  "recorded_at": "2026-10-09T09:42:56+00:00",
   "outputs": [
     {
       "verdicts": [
@@ -9,23 +9,31 @@
           "claim_id": "c1",
           "label": "FALSE",
           "confidence": 100,
-          "what_is_true_en": "COVID-19 vaccines do not contain microchips. Health authorities and fact-checkers have confirmed that the vaccine ingredients are public and do not include any tracking devices.",
+          "what_is_true_en": "COVID-19 vaccines do not contain microchips for tracking people. Discussions about chips or barcodes were related to tracking vaccine vials for distribution purposes, not for injection into individuals.",
           "event_date": null,
           "evidence_for_ids": [],
           "evidence_against_ids": [
+            "ws-3",
             "ws-4",
             "ws-6",
-            "ws-18",
-            "ws-20",
-            "fc-2"
+            "fc-1",
+            "fc-2",
+            "fc-3",
+            "fc-5",
+            "fc-6",
+            "fc-7",
+            "fc-9",
+            "fc-10",
+            "fc-11"
           ],
           "cited_ids": [
+            "ws-3",
             "ws-4",
-            "ws-6",
-            "ws-18",
-            "ws-20"
+            "fc-1",
+            "fc-2",
+            "fc-10"
           ],
-          "reasoning_en": "Multiple TIER_1 sources, including government health agencies like the CDC and the Indonesian Ministry of Health, as well as numerous independent fact-checking organizations, have definitively stated that COVID-19 vaccines do not contain microchips. The ingredients are publicly available and do not include any form of electronic or tracking device. The evidence provided is unanimous in debunking this claim.",
+          "reasoning_en": "An overwhelming body of evidence from multiple independent fact-checking organizations and government sources confirms that COVID-19 vaccines do not contain microchips. Sources like FactCheck.org and Indonesian government portals clarify that any tracking technology discussed was for managing vaccine inventory by placing chips or barcodes on vials, not for injection into people. Various related claims, such as vaccines having magnetic properties or being linked to Bill Gates for tracking purposes, have also been consistently debunked.",
           "ai_generation": null
         }
       ]

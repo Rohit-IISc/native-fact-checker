@@ -69,3 +69,12 @@ async def test_split_readings_reach_the_stored_result():
                                 prompt_versions={}, model_versions={}, split_readings=readings)
     result = claim_result_from_doc(await store.get(VERDICTS, vid), "hi-IN")
     assert result.panel_outcome == PanelOutcome.SPLIT and result.answer.panel_readings == ["पहला", "दूसरा"]
+
+
+def test_verdict_word_is_the_word_the_app_shows():
+    from app.agents.composer import verdict_word
+
+    assert verdict_word("MISLEADING", "hi") == "भ्रामक"
+    assert verdict_word("FALSE", "kn") == "ಸುಳ್ಳು"
+    assert verdict_word("MISLEADING", "en") == "Misleading"
+    assert verdict_word("SCAM", "te") == "Scam"  # other languages: the English word

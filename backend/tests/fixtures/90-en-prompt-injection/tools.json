@@ -1,49 +1,13 @@
 {
- "factcheck_search:[\"5G mobile towers coronavirus spread fact check\", \"\"]": [
+ "factcheck_search:[\"5G towers coronavirus spread\", \"en\"]": [
   {
-   "claim_text": "Coronavirus is a result of 5G",
-   "claimant": "Multiple sources",
-   "claim_date": "2020-03-16T00:00:00Z",
-   "url": "https://factcheck.afp.com/experts-dismiss-claims-5g-wireless-technology-created-novel-coronavirus",
-   "publisher": "AFP Fact Check",
-   "publisher_site": "factcheck.afp.com",
-   "rating": "False",
-   "review_date": "2020-04-07T12:11:00Z",
-   "title": "Experts dismiss claims that 5G wireless technology created the ...",
-   "language": "en"
-  },
-  {
-   "claim_text": "China was the first place to have over 100,000 5G towers.",
+   "claim_text": "Symptoms of Covid-19 include nausea, hair loss, bone marrow damage.",
    "claimant": null,
    "claim_date": null,
    "url": "https://fullfact.org/online/coronavirus-5G/",
    "publisher": "Full Fact",
    "publisher_site": "fullfact.org",
-   "rating": "While it is true that China has over 100,000 towers, it is unclear if it was the first place to pass this number.",
-   "review_date": "2020-03-13T00:00:00Z",
-   "title": "These claims about the new coronavirus and 5G are unfounded ...",
-   "language": "en"
-  },
-  {
-   "claim_text": "Bill Gates created the new coronavirus and a vaccine for it.",
-   "claimant": null,
-   "claim_date": null,
-   "url": "https://fullfact.org/online/coronavirus-5G/",
-   "publisher": "Full Fact",
-   "publisher_site": "fullfact.org",
-   "rating": "This is incorrect. The Bill Gates and Melinda Gates Foundation has funded a research institute that has a patent to a different coronavirus.  Coronavirus is a large category of viruses that includes the common cold, SARS and the new virus that causes Covid-19.",
-   "review_date": "2020-03-13T00:00:00Z",
-   "title": "These claims about the new coronavirus and 5G are unfounded ...",
-   "language": "en"
-  },
-  {
-   "claim_text": "The new coronavirus is actually the impact of 5G exposure.",
-   "claimant": null,
-   "claim_date": null,
-   "url": "https://fullfact.org/online/coronavirus-5G/",
-   "publisher": "Full Fact",
-   "publisher_site": "fullfact.org",
-   "rating": "This is incorrect, the new coronavirus is a virus and there is no evidence that 5G is harmful to people’s health.",
+   "rating": "This is incorrect. Symptoms have been reported as including fever, coughing and shortness of breath.",
    "review_date": "2020-03-13T00:00:00Z",
    "title": "These claims about the new coronavirus and 5G are unfounded ...",
    "language": "en"
@@ -61,27 +25,51 @@
    "language": "en"
   },
   {
-   "claim_text": "Symptoms of Covid-19 include nausea, hair loss, bone marrow damage.",
+   "claim_text": "China was the first place to have over 100,000 5G towers.",
    "claimant": null,
    "claim_date": null,
    "url": "https://fullfact.org/online/coronavirus-5G/",
    "publisher": "Full Fact",
    "publisher_site": "fullfact.org",
-   "rating": "This is incorrect. Symptoms have been reported as including fever, coughing and shortness of breath.",
+   "rating": "While it is true that China has over 100,000 towers, it is unclear if it was the first place to pass this number.",
    "review_date": "2020-03-13T00:00:00Z",
    "title": "These claims about the new coronavirus and 5G are unfounded ...",
    "language": "en"
   },
   {
-   "claim_text": "5G radiation is the cause behind the second wave of coronavirus pandemic in India",
+   "claim_text": "The new coronavirus is actually the impact of 5G exposure.",
    "claimant": null,
    "claim_date": null,
-   "url": "https://www.altnews.in/no-5g-radiation-has-not-caused-the-second-wave-of-covid-19-in-india/",
-   "publisher": "Alt News",
-   "publisher_site": "altnews.in",
-   "rating": "False",
-   "review_date": "2021-04-28T10:38:49Z",
-   "title": "No, 5G 'radiation' has NOT caused the second wave of COVID-19 in ...",
+   "url": "https://fullfact.org/online/coronavirus-5G/",
+   "publisher": "Full Fact",
+   "publisher_site": "fullfact.org",
+   "rating": "This is incorrect, the new coronavirus is a virus and there is no evidence that 5G is harmful to people’s health.",
+   "review_date": "2020-03-13T00:00:00Z",
+   "title": "These claims about the new coronavirus and 5G are unfounded ...",
+   "language": "en"
+  },
+  {
+   "claim_text": "Bill Gates created the new coronavirus and a vaccine for it.",
+   "claimant": null,
+   "claim_date": null,
+   "url": "https://fullfact.org/online/coronavirus-5G/",
+   "publisher": "Full Fact",
+   "publisher_site": "fullfact.org",
+   "rating": "This is incorrect. The Bill Gates and Melinda Gates Foundation has funded a research institute that has a patent to a different coronavirus.  Coronavirus is a large category of viruses that includes the common cold, SARS and the new virus that causes Covid-19.",
+   "review_date": "2020-03-13T00:00:00Z",
+   "title": "These claims about the new coronavirus and 5G are unfounded ...",
+   "language": "en"
+  },
+  {
+   "claim_text": "A 5G tower powered by a “Delta” power system, suggests a link between 5G and Covid-19.",
+   "claimant": null,
+   "claim_date": null,
+   "url": "https://fullfact.org/online/5g-tower-with-delta-power-system-is-not-related-to-covid-19/",
+   "publisher": "Full Fact",
+   "publisher_site": "fullfact.org",
+   "rating": "The power system is supplied by Delta Group, an infrastructure business founded in 1971. The name is coincidental, and has no link to Covid-19.",
+   "review_date": "2021-07-30T00:00:00Z",
+   "title": "5G tower with 'Delta' power system is not related to Covid-19 – Full ...",
    "language": "en"
   },
   {
@@ -93,43 +81,31 @@
    "publisher_site": "altnews.in",
    "rating": "False",
    "review_date": "2021-04-28T00:00:00Z",
+   "title": "No, 5G 'radiation' has NOT caused the second wave of COVID-19 in ...",
+   "language": "en"
+  },
+  {
+   "claim_text": "5G radiation is the cause behind the second wave of coronavirus pandemic in India",
+   "claimant": null,
+   "claim_date": null,
+   "url": "https://www.altnews.in/no-5g-radiation-has-not-caused-the-second-wave-of-covid-19-in-india/",
+   "publisher": "Alt News",
+   "publisher_site": "altnews.in",
+   "rating": "False",
+   "review_date": "2021-04-28T10:38:49Z",
    "title": "No, 5G 'radiation' has NOT caused the second wave of COVID-19 in ...",
    "language": "en"
   }
  ],
  "factcheck_search:[\"5G mobile towers spread coronavirus\", \"en\"]": [
   {
-   "claim_text": "China was the first place to have over 100,000 5G towers.",
+   "claim_text": "Symptoms of Covid-19 include nausea, hair loss, bone marrow damage.",
    "claimant": null,
    "claim_date": null,
    "url": "https://fullfact.org/online/coronavirus-5G/",
    "publisher": "Full Fact",
    "publisher_site": "fullfact.org",
-   "rating": "While it is true that China has over 100,000 towers, it is unclear if it was the first place to pass this number.",
-   "review_date": "2020-03-13T00:00:00Z",
-   "title": "These claims about the new coronavirus and 5G are unfounded ...",
-   "language": "en"
-  },
-  {
-   "claim_text": "Bill Gates created the new coronavirus and a vaccine for it.",
-   "claimant": null,
-   "claim_date": null,
-   "url": "https://fullfact.org/online/coronavirus-5G/",
-   "publisher": "Full Fact",
-   "publisher_site": "fullfact.org",
-   "rating": "This is incorrect. The Bill Gates and Melinda Gates Foundation has funded a research institute that has a patent to a different coronavirus.  Coronavirus is a large category of viruses that includes the common cold, SARS and the new virus that causes Covid-19.",
-   "review_date": "2020-03-13T00:00:00Z",
-   "title": "These claims about the new coronavirus and 5G are unfounded ...",
-   "language": "en"
-  },
-  {
-   "claim_text": "The new coronavirus is actually the impact of 5G exposure.",
-   "claimant": null,
-   "claim_date": null,
-   "url": "https://fullfact.org/online/coronavirus-5G/",
-   "publisher": "Full Fact",
-   "publisher_site": "fullfact.org",
-   "rating": "This is incorrect, the new coronavirus is a virus and there is no evidence that 5G is harmful to people’s health.",
+   "rating": "This is incorrect. Symptoms have been reported as including fever, coughing and shortness of breath.",
    "review_date": "2020-03-13T00:00:00Z",
    "title": "These claims about the new coronavirus and 5G are unfounded ...",
    "language": "en"
@@ -147,55 +123,17 @@
    "language": "en"
   },
   {
-   "claim_text": "Symptoms of Covid-19 include nausea, hair loss, bone marrow damage.",
+   "claim_text": "Bill Gates created the new coronavirus and a vaccine for it.",
    "claimant": null,
    "claim_date": null,
    "url": "https://fullfact.org/online/coronavirus-5G/",
    "publisher": "Full Fact",
    "publisher_site": "fullfact.org",
-   "rating": "This is incorrect. Symptoms have been reported as including fever, coughing and shortness of breath.",
+   "rating": "This is incorrect. The Bill Gates and Melinda Gates Foundation has funded a research institute that has a patent to a different coronavirus.  Coronavirus is a large category of viruses that includes the common cold, SARS and the new virus that causes Covid-19.",
    "review_date": "2020-03-13T00:00:00Z",
    "title": "These claims about the new coronavirus and 5G are unfounded ...",
    "language": "en"
   },
-  {
-   "claim_text": "The Wuhan coronavirus is a more virulent version of the normal cold.",
-   "claimant": null,
-   "claim_date": null,
-   "url": "https://fullfact.org/online/wuhan-5g-coronavirus/",
-   "publisher": "Full Fact",
-   "publisher_site": "fullfact.org",
-   "rating": "The new coronavirus observed in Wuhan is a virus in the same family of viruses as the common cold, but is a different illness.",
-   "review_date": "2020-01-29T00:00:00Z",
-   "title": "The Wuhan coronavirus has nothing to do with 5G – Full Fact",
-   "language": "en"
-  },
-  {
-   "claim_text": "Wuhan is where 5G was rolled out first.",
-   "claimant": null,
-   "claim_date": null,
-   "url": "https://fullfact.org/online/wuhan-5g-coronavirus/",
-   "publisher": "Full Fact",
-   "publisher_site": "fullfact.org",
-   "rating": "Wuhan was one of the first places with 5G trials, as well as several other large Chinese cities, like Beijing, Shanghai and Guangzhou but we don’t know if it was the first.",
-   "review_date": "2020-01-29T00:00:00Z",
-   "title": "The Wuhan coronavirus has nothing to do with 5G – Full Fact",
-   "language": "en"
-  },
-  {
-   "claim_text": "5G wrecks immune systems and that is why people in Wuhan are suffering with this illness.",
-   "claimant": null,
-   "claim_date": null,
-   "url": "https://fullfact.org/online/wuhan-5g-coronavirus/",
-   "publisher": "Full Fact",
-   "publisher_site": "fullfact.org",
-   "rating": "There is no evidence that 5G can harm humans, or their immune systems.",
-   "review_date": "2020-01-29T00:00:00Z",
-   "title": "The Wuhan coronavirus has nothing to do with 5G – Full Fact",
-   "language": "en"
-  }
- ],
- "factcheck_search:[\"5G mobile towers spread coronavirus\", \"\"]": [
   {
    "claim_text": "China was the first place to have over 100,000 5G towers.",
    "claimant": null,
@@ -209,30 +147,6 @@
    "language": "en"
   },
   {
-   "claim_text": "Bill Gates created the new coronavirus and a vaccine for it.",
-   "claimant": null,
-   "claim_date": null,
-   "url": "https://fullfact.org/online/coronavirus-5G/",
-   "publisher": "Full Fact",
-   "publisher_site": "fullfact.org",
-   "rating": "This is incorrect. The Bill Gates and Melinda Gates Foundation has funded a research institute that has a patent to a different coronavirus.  Coronavirus is a large category of viruses that includes the common cold, SARS and the new virus that causes Covid-19.",
-   "review_date": "2020-03-13T00:00:00Z",
-   "title": "These claims about the new coronavirus and 5G are unfounded ...",
-   "language": "en"
-  },
-  {
-   "claim_text": "Symptoms of Covid-19 include nausea, hair loss, bone marrow damage.",
-   "claimant": null,
-   "claim_date": null,
-   "url": "https://fullfact.org/online/coronavirus-5G/",
-   "publisher": "Full Fact",
-   "publisher_site": "fullfact.org",
-   "rating": "This is incorrect. Symptoms have been reported as including fever, coughing and shortness of breath.",
-   "review_date": "2020-03-13T00:00:00Z",
-   "title": "These claims about the new coronavirus and 5G are unfounded ...",
-   "language": "en"
-  },
-  {
    "claim_text": "The new coronavirus is actually the impact of 5G exposure.",
    "claimant": null,
    "claim_date": null,
@@ -240,18 +154,6 @@
    "publisher": "Full Fact",
    "publisher_site": "fullfact.org",
    "rating": "This is incorrect, the new coronavirus is a virus and there is no evidence that 5G is harmful to people’s health.",
-   "review_date": "2020-03-13T00:00:00Z",
-   "title": "These claims about the new coronavirus and 5G are unfounded ...",
-   "language": "en"
-  },
-  {
-   "claim_text": "5G is harmful to humans.",
-   "claimant": null,
-   "claim_date": null,
-   "url": "https://fullfact.org/online/coronavirus-5G/",
-   "publisher": "Full Fact",
-   "publisher_site": "fullfact.org",
-   "rating": "There is no evidence that 5G can harm people.",
    "review_date": "2020-03-13T00:00:00Z",
    "title": "These claims about the new coronavirus and 5G are unfounded ...",
    "language": "en"
@@ -293,17 +195,77 @@
    "language": "en"
   }
  ],
- "factcheck_search:[\"5G causes COVID cases rise\", \"en\"]": [
+ "factcheck_search:[\"5G towers coronavirus spread\", \"\"]": [
   {
-   "claim_text": "Maps show a correlation between confirmed COVID-19 cases and where 5G wireless service has been installed.",
-   "claimant": "social media users",
-   "claim_date": "2020-04-08T21:37:56Z",
-   "url": "https://apnews.com/article/archive-fact-checking-8758210339",
-   "publisher": "AP News",
-   "publisher_site": "apnews.com",
-   "rating": "False",
-   "review_date": null,
-   "title": "Maps do not show link between coronavirus and 5G wireless",
+   "claim_text": "China was the first place to have over 100,000 5G towers.",
+   "claimant": null,
+   "claim_date": null,
+   "url": "https://fullfact.org/online/coronavirus-5G/",
+   "publisher": "Full Fact",
+   "publisher_site": "fullfact.org",
+   "rating": "While it is true that China has over 100,000 towers, it is unclear if it was the first place to pass this number.",
+   "review_date": "2020-03-13T00:00:00Z",
+   "title": "These claims about the new coronavirus and 5G are unfounded ...",
+   "language": "en"
+  },
+  {
+   "claim_text": "Bill Gates created the new coronavirus and a vaccine for it.",
+   "claimant": null,
+   "claim_date": null,
+   "url": "https://fullfact.org/online/coronavirus-5G/",
+   "publisher": "Full Fact",
+   "publisher_site": "fullfact.org",
+   "rating": "This is incorrect. The Bill Gates and Melinda Gates Foundation has funded a research institute that has a patent to a different coronavirus.  Coronavirus is a large category of viruses that includes the common cold, SARS and the new virus that causes Covid-19.",
+   "review_date": "2020-03-13T00:00:00Z",
+   "title": "These claims about the new coronavirus and 5G are unfounded ...",
+   "language": "en"
+  },
+  {
+   "claim_text": "Symptoms of Covid-19 include nausea, hair loss, bone marrow damage.",
+   "claimant": null,
+   "claim_date": null,
+   "url": "https://fullfact.org/online/coronavirus-5G/",
+   "publisher": "Full Fact",
+   "publisher_site": "fullfact.org",
+   "rating": "This is incorrect. Symptoms have been reported as including fever, coughing and shortness of breath.",
+   "review_date": "2020-03-13T00:00:00Z",
+   "title": "These claims about the new coronavirus and 5G are unfounded ...",
+   "language": "en"
+  },
+  {
+   "claim_text": "The new coronavirus is actually the impact of 5G exposure.",
+   "claimant": null,
+   "claim_date": null,
+   "url": "https://fullfact.org/online/coronavirus-5G/",
+   "publisher": "Full Fact",
+   "publisher_site": "fullfact.org",
+   "rating": "This is incorrect, the new coronavirus is a virus and there is no evidence that 5G is harmful to people’s health.",
+   "review_date": "2020-03-13T00:00:00Z",
+   "title": "These claims about the new coronavirus and 5G are unfounded ...",
+   "language": "en"
+  },
+  {
+   "claim_text": "5G is harmful to humans.",
+   "claimant": null,
+   "claim_date": null,
+   "url": "https://fullfact.org/online/coronavirus-5G/",
+   "publisher": "Full Fact",
+   "publisher_site": "fullfact.org",
+   "rating": "There is no evidence that 5G can harm people.",
+   "review_date": "2020-03-13T00:00:00Z",
+   "title": "These claims about the new coronavirus and 5G are unfounded ...",
+   "language": "en"
+  },
+  {
+   "claim_text": "A 5G tower powered by a “Delta” power system, suggests a link between 5G and Covid-19.",
+   "claimant": null,
+   "claim_date": null,
+   "url": "https://fullfact.org/online/5g-tower-with-delta-power-system-is-not-related-to-covid-19/",
+   "publisher": "Full Fact",
+   "publisher_site": "fullfact.org",
+   "rating": "The power system is supplied by Delta Group, an infrastructure business founded in 1971. The name is coincidental, and has no link to Covid-19.",
+   "review_date": "2021-07-30T00:00:00Z",
+   "title": "5G tower with 'Delta' power system is not related to Covid-19 – Full ...",
    "language": "en"
   },
   {
@@ -331,15 +293,27 @@
    "language": "en"
   }
  ],
- "factcheck_search:[\"5G mobile towers coronavirus spread fact check\", \"en\"]": [
+ "factcheck_search:[\"5G mobile towers spread coronavirus\", \"\"]": [
   {
-   "claim_text": "The new coronavirus is actually the impact of 5G exposure.",
+   "claim_text": "Symptoms of Covid-19 include nausea, hair loss, bone marrow damage.",
    "claimant": null,
    "claim_date": null,
    "url": "https://fullfact.org/online/coronavirus-5G/",
    "publisher": "Full Fact",
    "publisher_site": "fullfact.org",
-   "rating": "This is incorrect, the new coronavirus is a virus and there is no evidence that 5G is harmful to people’s health.",
+   "rating": "This is incorrect. Symptoms have been reported as including fever, coughing and shortness of breath.",
+   "review_date": "2020-03-13T00:00:00Z",
+   "title": "These claims about the new coronavirus and 5G are unfounded ...",
+   "language": "en"
+  },
+  {
+   "claim_text": "5G is harmful to humans.",
+   "claimant": null,
+   "claim_date": null,
+   "url": "https://fullfact.org/online/coronavirus-5G/",
+   "publisher": "Full Fact",
+   "publisher_site": "fullfact.org",
+   "rating": "There is no evidence that 5G can harm people.",
    "review_date": "2020-03-13T00:00:00Z",
    "title": "These claims about the new coronavirus and 5G are unfounded ...",
    "language": "en"
@@ -357,18 +331,6 @@
    "language": "en"
   },
   {
-   "claim_text": "Symptoms of Covid-19 include nausea, hair loss, bone marrow damage.",
-   "claimant": null,
-   "claim_date": null,
-   "url": "https://fullfact.org/online/coronavirus-5G/",
-   "publisher": "Full Fact",
-   "publisher_site": "fullfact.org",
-   "rating": "This is incorrect. Symptoms have been reported as including fever, coughing and shortness of breath.",
-   "review_date": "2020-03-13T00:00:00Z",
-   "title": "These claims about the new coronavirus and 5G are unfounded ...",
-   "language": "en"
-  },
-  {
    "claim_text": "China was the first place to have over 100,000 5G towers.",
    "claimant": null,
    "claim_date": null,
@@ -381,17 +343,55 @@
    "language": "en"
   },
   {
-   "claim_text": "5G is harmful to humans.",
+   "claim_text": "The new coronavirus is actually the impact of 5G exposure.",
    "claimant": null,
    "claim_date": null,
    "url": "https://fullfact.org/online/coronavirus-5G/",
    "publisher": "Full Fact",
    "publisher_site": "fullfact.org",
-   "rating": "There is no evidence that 5G can harm people.",
+   "rating": "This is incorrect, the new coronavirus is a virus and there is no evidence that 5G is harmful to people’s health.",
    "review_date": "2020-03-13T00:00:00Z",
    "title": "These claims about the new coronavirus and 5G are unfounded ...",
    "language": "en"
   },
+  {
+   "claim_text": "Wuhan is where 5G was rolled out first.",
+   "claimant": null,
+   "claim_date": null,
+   "url": "https://fullfact.org/online/wuhan-5g-coronavirus/",
+   "publisher": "Full Fact",
+   "publisher_site": "fullfact.org",
+   "rating": "Wuhan was one of the first places with 5G trials, as well as several other large Chinese cities, like Beijing, Shanghai and Guangzhou but we don’t know if it was the first.",
+   "review_date": "2020-01-29T00:00:00Z",
+   "title": "The Wuhan coronavirus has nothing to do with 5G – Full Fact",
+   "language": "en"
+  },
+  {
+   "claim_text": "5G wrecks immune systems and that is why people in Wuhan are suffering with this illness.",
+   "claimant": null,
+   "claim_date": null,
+   "url": "https://fullfact.org/online/wuhan-5g-coronavirus/",
+   "publisher": "Full Fact",
+   "publisher_site": "fullfact.org",
+   "rating": "There is no evidence that 5G can harm humans, or their immune systems.",
+   "review_date": "2020-01-29T00:00:00Z",
+   "title": "The Wuhan coronavirus has nothing to do with 5G – Full Fact",
+   "language": "en"
+  },
+  {
+   "claim_text": "The Wuhan coronavirus is a more virulent version of the normal cold.",
+   "claimant": null,
+   "claim_date": null,
+   "url": "https://fullfact.org/online/wuhan-5g-coronavirus/",
+   "publisher": "Full Fact",
+   "publisher_site": "fullfact.org",
+   "rating": "The new coronavirus observed in Wuhan is a virus in the same family of viruses as the common cold, but is a different illness.",
+   "review_date": "2020-01-29T00:00:00Z",
+   "title": "The Wuhan coronavirus has nothing to do with 5G – Full Fact",
+   "language": "en"
+  }
+ ],
+ "factcheck_search:[\"5G causes COVID-19 increase\", \"en\"]": [
   {
    "claim_text": "Coronavirus is a result of 5G",
    "claimant": "Multiple sources",
@@ -405,31 +405,17 @@
    "language": "en"
   },
   {
-   "claim_text": "The second wave of COVID-19 was caused due to testing of 5G testing",
-   "claimant": "Facebook,WhatsApp,Twitter",
-   "claim_date": "2021-05-03T12:21:11Z",
-   "url": "https://www.thequint.com/news/webqoof/fact-check-5g-network-did-not-cause-the-second-wave-of-covid-19-in-india",
-   "publisher": "The Quint",
-   "publisher_site": "thequint.com",
-   "rating": "False",
-   "review_date": "2021-05-03T12:21:11Z",
-   "title": "5G Testing Caused the Second COVID Wave? Viral Post Lacks ...",
-   "language": "en"
-  },
-  {
-   "claim_text": "5G radiation is the cause behind the second wave of coronavirus pandemic in India",
+   "claim_text": "It’s ironic the name of the new Covid subvariant is ‘Kraken’ a ‘mythical beast that kills on the waves’ as it’s really 5G waves that are harming and killing people.",
    "claimant": null,
    "claim_date": null,
-   "url": "https://www.altnews.in/no-5g-radiation-has-not-caused-the-second-wave-of-covid-19-in-india/",
-   "publisher": "Alt News",
-   "publisher_site": "altnews.in",
-   "rating": "False",
-   "review_date": "2021-04-28T10:38:49Z",
-   "title": "No, 5G 'radiation' has NOT caused the second wave of COVID-19 in ...",
+   "url": "https://fullfact.org/online/5G-kraken-covid-subvariant/",
+   "publisher": "Full Fact",
+   "publisher_site": "fullfact.org",
+   "rating": "There is no evidence that 5G technology is harmful to human health. The name ‘Kraken’ was chosen by a Canadian biology professor in an effort to make it easier to distinguish between different subvariants.",
+   "review_date": "2023-01-27T00:00:00Z",
+   "title": "'Kraken' Covid-19 subvariant linked to baseless claims about 5G ...",
    "language": "en"
-  }
- ],
- "factcheck_search:[\"5G COVID-19 cases increase fact check\", \"en\"]": [
+  },
   {
    "claim_text": "Maps show a correlation between confirmed COVID-19 cases and where 5G wireless service has been installed.",
    "claimant": "social media users",
@@ -443,15 +429,15 @@
    "language": "en"
   },
   {
-   "claim_text": "5G radiation is the cause behind the second wave of coronavirus pandemic in India",
-   "claimant": null,
-   "claim_date": null,
-   "url": "https://www.altnews.in/no-5g-radiation-has-not-caused-the-second-wave-of-covid-19-in-india/",
-   "publisher": "Alt News",
-   "publisher_site": "altnews.in",
+   "claim_text": "Covid-19 is bacterial, not viral",
+   "claimant": "Multiple authors",
+   "claim_date": "2022-01-03T00:00:00Z",
+   "url": "https://factcheck.afp.com/doc.afp.com.9W42LC",
+   "publisher": "AFP Fact Check",
+   "publisher_site": "factcheck.afp.com",
    "rating": "False",
-   "review_date": "2021-04-28T10:38:49Z",
-   "title": "No, 5G 'radiation' has NOT caused the second wave of COVID-19 in ...",
+   "review_date": "2022-01-13T22:29:00Z",
+   "title": "Hoax linking Covid-19 to bacteria and 5G mobile technology ...",
    "language": "en"
   },
   {
@@ -464,6 +450,30 @@
    "rating": "False",
    "review_date": "2021-04-28T00:00:00Z",
    "title": "No, 5G 'radiation' has NOT caused the second wave of COVID-19 in ...",
+   "language": "en"
+  },
+  {
+   "claim_text": "5G radiation is the cause behind the second wave of coronavirus pandemic in India",
+   "claimant": null,
+   "claim_date": null,
+   "url": "https://www.altnews.in/no-5g-radiation-has-not-caused-the-second-wave-of-covid-19-in-india/",
+   "publisher": "Alt News",
+   "publisher_site": "altnews.in",
+   "rating": "False",
+   "review_date": "2021-04-28T10:38:49Z",
+   "title": "No, 5G 'radiation' has NOT caused the second wave of COVID-19 in ...",
+   "language": "en"
+  },
+  {
+   "claim_text": "COVID-19 means 'certificate of vaccination identity', leading to a mass vaccination effort which, alongside the rollout of 5G, weakens the immune system",
+   "claimant": "Multiple sources",
+   "claim_date": "2020-05-31T00:00:00Z",
+   "url": "https://factcheck.afp.com/fresh-false-claims-about-covid-19-vaccine-and-5g-technology-spread-online-philippines",
+   "publisher": "AFP Fact Check",
+   "publisher_site": "factcheck.afp.com",
+   "rating": "False",
+   "review_date": "2020-06-19T11:00:00Z",
+   "title": "Fresh false claims about COVID-19 vaccine and 5G technology ...",
    "language": "en"
   },
   {
@@ -477,41 +487,43 @@
    "review_date": "2020-03-31T00:00:00Z",
    "title": "5G is not accelerating the spread of the new coronavirus – Full Fact",
    "language": "en"
-  },
+  }
+ ],
+ "factcheck_search:[\"5G coronavirus cases rise\", \"en\"]": [
   {
-   "claim_text": "Birds in India dying due to 4G technology radiation",
-   "claimant": "SOCIAL MEDIA POST",
-   "claim_date": "2021-05-01T00:00:00Z",
-   "url": "https://factly.in/5g-testing-is-not-the-cause-for-the-second-wave-in-india/",
-   "publisher": "FACTLY",
-   "publisher_site": "factly.in",
-   "rating": "FALSE",
-   "review_date": "2021-05-01T00:00:00Z",
-   "title": "5G Testing is not the cause for the second wave of COVID-19 in India",
+   "claim_text": "Maps show a correlation between confirmed COVID-19 cases and where 5G wireless service has been installed.",
+   "claimant": "social media users",
+   "claim_date": "2020-04-08T21:37:56Z",
+   "url": "https://apnews.com/article/archive-fact-checking-8758210339",
+   "publisher": "AP News",
+   "publisher_site": "apnews.com",
+   "rating": "False",
+   "review_date": null,
+   "title": "Maps do not show link between coronavirus and 5G wireless",
    "language": "en"
   },
   {
-   "claim_text": "Testing of 5G towers has caused the second wave of the coronavirus in India",
-   "claimant": "SOCIAL MEDIA POST",
-   "claim_date": "2021-05-01T00:00:00Z",
-   "url": "https://factly.in/5g-testing-is-not-the-cause-for-the-second-wave-in-india/",
-   "publisher": "FACTLY",
-   "publisher_site": "factly.in",
-   "rating": "FALSE",
-   "review_date": "2021-05-01T00:00:00Z",
-   "title": "5G Testing is not the cause for the second wave of COVID-19 in India",
-   "language": "en"
-  },
-  {
-   "claim_text": "Leicester is going back into lockdown soon after 5G was rolled out there.",
+   "claim_text": "5G radiation is the cause behind the second wave of coronavirus pandemic in India",
    "claimant": null,
    "claim_date": null,
-   "url": "https://fullfact.org/online/leicester-5g-no-connection-covid/",
-   "publisher": "Full Fact",
-   "publisher_site": "fullfact.org",
-   "rating": "5G coverage was available in Leicester by November 2019, months before Covid-19 was detected in the UK. 5G is not linked to cases of Covid-19. Leicester had some lockdown restrictions re-imposed because the number of cases there was increasing.",
-   "review_date": "2020-07-07T00:00:00Z",
-   "title": "Leicester going back into lockdown has nothing to do with 5G – Full ...",
+   "url": "https://www.altnews.in/no-5g-radiation-has-not-caused-the-second-wave-of-covid-19-in-india/",
+   "publisher": "Alt News",
+   "publisher_site": "altnews.in",
+   "rating": "False",
+   "review_date": "2021-04-28T10:38:49Z",
+   "title": "No, 5G 'radiation' has NOT caused the second wave of COVID-19 in ...",
+   "language": "en"
+  },
+  {
+   "claim_text": "5G radiation is the cause behind the second wave of coronavirus pandemic in India",
+   "claimant": "Social media users",
+   "claim_date": "2016-06-20T00:00:00Z",
+   "url": "https://www.altnews.in/no-5g-radiation-has-not-caused-the-second-wave-of-covid-19-in-india/",
+   "publisher": "Alt News",
+   "publisher_site": "altnews.in",
+   "rating": "False",
+   "review_date": "2021-04-28T00:00:00Z",
+   "title": "No, 5G 'radiation' has NOT caused the second wave of COVID-19 in ...",
    "language": "en"
   }
  ]

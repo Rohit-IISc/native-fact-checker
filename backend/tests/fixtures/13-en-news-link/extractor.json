@@ -1,50 +1,50 @@
 {
-  "prompt_version": "extractor-1.12+shared-1.1",
+  "prompt_version": "extractor-1.13+shared-1.1",
   "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-09T08:57:26+00:00",
+  "recorded_at": "2026-10-09T09:51:03+00:00",
   "outputs": [
     {
       "content_language": "en-IN",
       "content_script": "Latn",
-      "summary_en": "The image shows a crowd of people, with a woman in the foreground appearing to yawn or shout, wearing a yellow outfit. Other people are visible in the background, some with their arms raised in what appears to be celebration. The image is accompanied by a BBC News article about India's Chandrayaan-3 mission successfully landing near the Moon's south pole, mentioning widespread celebrations.",
+      "summary_en": "The image shows a crowd of people, likely in India, celebrating. A woman in the foreground is shouting with her hand to her mouth, and others are visible in the background. The image is watermarked with the BBC News logo and is associated with an article about India's Chandrayaan-3 mission successfully landing near the Moon's south pole.",
       "checkable": true,
       "non_checkable_type": null,
       "claims": [
         {
           "claim_id": "claim1",
-          "claim_original": "The image shows people celebrating India's Chandrayaan-3 Moon landing.",
-          "claim_en": "The image in this post shows people celebrating India's Chandrayaan-3 Moon landing.",
-          "claim_type": "MEDIA_AUTHENTICITY",
+          "claim_original": "The image shows people celebrating India's Chandrayaan-3 mission successfully landing near the Moon's south pole.",
+          "claim_en": "The image in this post shows people celebrating India's Chandrayaan-3 mission successfully landing near the Moon's south pole.",
+          "claim_type": "EVENT",
           "entities": [
             "India",
             "Chandrayaan-3",
-            "Moon landing"
+            "Moon's south pole"
           ],
           "place": "India",
           "claimed_date": "2023-08-23",
           "time_sensitivity": "EVERGREEN",
           "search_queries_original": [
-            "Chandrayaan-3 celebrations image",
-            "India Moon landing celebration photo"
+            "Chandrayaan-3 landing celebration India",
+            "India Moon mission celebration crowd"
           ],
           "search_queries_en": [
-            "Chandrayaan-3 landing celebration photo",
-            "India Moon mission celebration image",
-            "BBC News Chandrayaan-3 celebration photo fact check"
+            "Chandrayaan-3 landing celebration India",
+            "India Moon mission celebration crowd",
+            "BBC News Chandrayaan-3 celebration photo"
           ],
           "search_queries_regional": []
         }
       ],
       "extra_claims_not_checked": [],
-      "ocr_text": "BBC NEWS",
+      "ocr_text": "BBCNEWS",
       "transcript": null,
-      "visual_description_en": "A close-up image of a crowd of people, predominantly Indian, in what appears to be an indoor setting. In the foreground, a woman with dark hair, wearing a yellow top and a light green dupatta, is captured mid-expression with her mouth open, possibly yawning or shouting, and her right hand raised to her mouth. She has a red bindi on her forehead and a ring on her finger. To her left, a man with glasses and a beard is partially visible. In the background, other individuals are seen, some with arms raised, suggesting a celebratory or excited atmosphere. The BBC News logo is visible in the bottom left corner.",
+      "visual_description_en": "A medium shot of a crowd of people, with a woman in the foreground shouting or cheering, her mouth open and her right hand raised to her mouth. She is wearing a yellow top and a light green dupatta. In the background, other people are visible, some with their hands raised in celebration. A man with glasses and a beard is partially visible to the left. The image has a BBC News logo in the bottom left corner.",
       "ai_generation_signals": null,
       "origin_hints": [
-        "BBC News logo"
+        "BBC News"
       ],
       "media_markers": [
-        "Logo reads 'BBC NEWS'"
+        "Logo: BBC News"
       ]
     }
   ]

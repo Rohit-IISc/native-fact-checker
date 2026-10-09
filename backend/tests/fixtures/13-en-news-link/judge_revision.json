@@ -1,38 +1,31 @@
 {
   "prompt_version": "judge-1.4+shared-1.1+judge-revision-1.0",
   "model_id": "gemini-2.5-pro",
-  "recorded_at": "2026-10-09T08:57:26+00:00",
+  "recorded_at": "2026-10-09T09:51:03+00:00",
   "outputs": [
     {
       "verdicts": [
         {
           "claim_id": "c1",
-          "label": "NOT_ENOUGH_EVIDENCE",
-          "confidence": 100,
-          "what_is_true_en": "Widespread celebrations did occur across India on August 23, 2023, to mark the successful landing of the Chandrayaan-3 mission on the Moon. However, the authenticity of the specific image in the post has not been verified by the available evidence.",
+          "label": "MISLEADING",
+          "confidence": 85,
+          "what_is_true_en": "India's Chandrayaan-3 mission did successfully land on the Moon on August 23, 2023, and this was met with widespread celebrations across the country. However, the specific image used in the post is a generic or stock photo, as it has been used by the BBC to illustrate at least one other unrelated space-themed news story.",
           "event_date": "2023-08-23",
           "evidence_for_ids": [
-            "ws-1",
-            "ws-3",
             "ws-4",
-            "ws-5",
             "ws-6",
-            "ws-8",
             "ws-9"
           ],
-          "evidence_against_ids": [],
-          "cited_ids": [],
-          "reasoning_en": "The critic's objection is valid. The claim is about the authenticity of a specific image. The provided evidence confirms that the general event depicted—celebrations for the Chandrayaan-3 landing on August 23, 2023—did happen and was widely photographed by news agencies. However, none of the evidence sources analyze or confirm the authenticity of the specific image in the user's post. While the context is real, without a direct verification of the image itself (e.g., through a reverse image search finding it in a credible archive), its authenticity cannot be confirmed. Therefore, there is not enough evidence to label the claim TRUE.",
-          "ai_generation": {
-            "likelihood_ai": 0,
-            "signals_ai": [
-              "No specific signals of AI generation were found in the evidence."
-            ],
-            "signals_real": [
-              "The event depicted was a real, widely photographed event, making it plausible the image is real.",
-              "No evidence was found suggesting the image is fabricated."
-            ]
-          }
+          "evidence_against_ids": [
+            "mp-3"
+          ],
+          "cited_ids": [
+            "ws-4",
+            "ws-9",
+            "mp-3"
+          ],
+          "reasoning_en": "Multiple reliable news sources confirm that widespread celebrations took place across India on August 23, 2023, to mark the successful landing of the Chandrayaan-3 spacecraft on the Moon (ws-4, ws-9). However, the evidence does not confirm that the specific image in the post depicts these celebrations. A media provenance check (mp-3) found the exact same image used by the BBC in an article about a completely different topic: 'Moon base: Bangor scientists design fuel to live in space'. The use of the same image for multiple, unrelated stories indicates it is a generic or stock photo used for illustrative purposes. Therefore, presenting this image as a direct photograph of the Chandrayaan-3 celebrations is misleading.",
+          "ai_generation": null
         }
       ]
     }

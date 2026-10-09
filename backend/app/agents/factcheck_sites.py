@@ -48,6 +48,13 @@ def search_plan(extraction: Extraction) -> list[tuple[str, str]]:
         # reached us in Kannada) is invisible to the filtered searches above (eval recall at 5, Oct 9).
         plan += [(q, "") for q in (c.search_queries_en or [c.claim_en[:150]])[:1]]
         plan += [(q, "") for q in (c.search_queries_original or [c.claim_original[:150]])[:1]]
+    # Text printed on the photo or video ("DELHI संकट मे"): earlier fact checks of the same media were written
+    # about the story it was first shared with, not the new caption (case 01, Oct 9). Prompts alone did not
+    # always put it in the queries, so code does.
+    if extraction.ocr_text and extraction.claims:
+        printed = " ".join(extraction.ocr_text.split())[:80]
+        if len(printed) >= 6:
+            plan += [(printed, ""), (f"{printed} fact check", "en")]
     seen: set[tuple[str, str]] = set()
     return [p for p in plan if not (p in seen or seen.add(p))]
 

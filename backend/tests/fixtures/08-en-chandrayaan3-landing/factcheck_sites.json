@@ -1,7 +1,7 @@
 {
-  "prompt_version": "factcheck-1.4+shared-1.1",
+  "prompt_version": "factcheck-1.5+shared-1.1",
   "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-09T08:53:43+00:00",
+  "recorded_at": "2026-10-09T09:44:15+00:00",
   "outputs": [
     {
       "agent": "factcheck_sites",
@@ -25,7 +25,7 @@
       "source_assessment": null,
       "ai_generation_signals": null,
       "earliest_appearance": null,
-      "notes_en": "The claim is about India being the first to land on the Moon's south pole. The only relevant fact check directly addresses a competing claim about China being the first, and rates it false, thus supporting the original claim by contradiction.",
+      "notes_en": "The claim states that India was the first country to land near the Moon's south pole. The fact check directly contradicts a claim that China was the first, thereby supporting the implicit uniqueness of India's achievement as per the original claim.",
       "timed_out": false
     }
   ]

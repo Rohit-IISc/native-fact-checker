@@ -1,7 +1,7 @@
 {
   "prompt_version": "judge-1.4+shared-1.1",
   "model_id": "gemini-2.5-pro",
-  "recorded_at": "2026-10-09T08:52:41+00:00",
+  "recorded_at": "2026-10-09T09:39:44+00:00",
   "outputs": [
     {
       "verdicts": [
@@ -9,31 +9,30 @@
           "claim_id": "c1",
           "label": "SCAM",
           "confidence": 100,
-          "what_is_true_en": "The Indian government is not offering a free 3-month mobile recharge. Messages promoting this are a scam intended to steal personal information or commit financial fraud.",
+          "what_is_true_en": "The Indian government and Prime Minister Modi are not offering any free mobile recharge scheme. Messages and videos promoting this offer are part of a recurring scam designed to steal personal information.",
           "event_date": null,
           "evidence_for_ids": [],
           "evidence_against_ids": [
-            "ws-1",
-            "ws-5",
-            "ws-7",
+            "ws-8",
+            "ws-10",
             "fc-1",
             "fc-2",
             "fc-3",
-            "fc-4",
-            "fc-5",
-            "fc-6",
-            "fc-8",
-            "fc-9",
+            "fc-7",
+            "ws-5",
             "ws-6"
           ],
           "cited_ids": [
-            "ws-1",
+            "ws-8",
+            "ws-10",
+            "fc-1",
+            "fc-2",
+            "fc-3",
+            "fc-7",
             "ws-5",
-            "ws-7",
-            "fc-4",
-            "fc-9"
+            "ws-6"
           ],
-          "reasoning_en": "Numerous fact-checking organizations and the Indian government's Press Information Bureau (PIB) have repeatedly debunked this claim. The evidence consistently shows that no such government scheme exists. These viral messages are identified as scams that use fraudulent links to trick users, potentially leading to data theft. The claim has appeared in various forms over several years, often using edited or AI-generated videos of the Prime Minister, but is consistently proven to be fraudulent.",
+          "reasoning_en": "Multiple official sources, including the Indian government itself, have explicitly and repeatedly stated that no such free recharge scheme exists. Numerous fact-checking organizations have debunked this claim over several years, consistently identifying it as a phishing scam intended to collect users' personal data. The claim reappears periodically, often tied to major events like elections or festivals, sometimes using edited or AI-generated videos of the Prime Minister.",
           "ai_generation": null
         }
       ]

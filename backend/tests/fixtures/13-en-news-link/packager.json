@@ -1,28 +1,26 @@
 {
   "prompt_version": "packager-1.1+shared-1.1",
   "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-09T08:57:26+00:00",
+  "recorded_at": "2026-10-09T09:51:03+00:00",
   "outputs": [
     {
       "briefs": [
         {
           "claim_id": "c1",
-          "claim_en": "The image in this post shows people celebrating India's Chandrayaan-3 Moon landing.",
+          "claim_en": "The image in this post shows people celebrating India's Chandrayaan-3 mission successfully landing near the Moon's south pole.",
           "claim_type": null,
           "claimed_date": "2023-08-23",
           "place": "India",
-          "brief_en": "Multiple news outlets and image archives confirm widespread celebrations across India following the successful Chandrayaan-3 Moon landing on August 23, 2023. Mid-day.com, Getty Images, Alamy, The National News, and Al Jazeera published photos and reports of citizens, party leaders, and the general public celebrating with Indian flags, dancing, and watching live streams of the event. While some unrelated visuals and AI-generated images were circulated online regarding the Chandrayaan-3 mission, these pertained to different content, such as alleged live visuals from the moon's surface or a misattributed BBC report, not the general celebration images.",
+          "brief_en": "India's Chandrayaan-3 spacecraft successfully landed on the Moon's south pole on August 23, 2023, making India the first country to achieve this feat. This historic event was met with widespread celebrations across India, as reported by The Guardian, Rediff.com, and Indian Express. Celebrations included cheering, hugging, waving the national flag, distributing sweets, dancing, and setting off firecrackers. People gathered in various locations, including educational institutions, offices, city squares, and religious places, to watch the live telecast of the landing. A LinkedIn post also directly links an image to the Chandrayaan-3 landing celebrations.",
           "evidence_ids": [
-            "ws-6",
-            "ws-13",
-            "ws-1",
-            "ws-3",
             "ws-4",
-            "ws-5",
-            "ws-8",
             "ws-9",
-            "ws-10",
-            "ws-11"
+            "mp-1",
+            "mp-3",
+            "ws-6",
+            "ws-5",
+            "ws-3",
+            "mp-4"
           ],
           "gaps_en": []
         }

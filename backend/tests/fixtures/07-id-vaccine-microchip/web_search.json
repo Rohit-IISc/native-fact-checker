@@ -1,118 +1,48 @@
 {
   "prompt_version": "web-search-2.2+shared-1.1",
   "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-09T08:53:44+00:00",
+  "recorded_at": "2026-10-09T09:42:56+00:00",
   "outputs": [
     {
-      "text": "c1:\nThe claim that COVID-19 vaccines contain microchips to track vaccinated individuals is false. Multiple sources, including health organizations and fact-checking bodies, have debunked this conspiracy theory. [1] [2] [3] [4] [5] [6] [7] [8] [9] [10] [11] [12] [13] [14] [15] [16] [17] [18]\n\nExperts state that it is impossible for microchips to be injected through the needles used for COVID-19 vaccines due to their size and the need for a power source and antenna for tracking functionality. [1] [3] [11] The ingredients of COVID-19 vaccines are publicly available and do not include microchips. [4] [5] [6] [7] [16]\n\nThe theory gained traction partly due to misinterpretations of statements about digital vaccine records or barcode-like chips attached to vaccine vials for inventory purposes, not for tracking individuals. [19] [20] [8] While a Swedish company did develop a subdermal microchip in December 2021 that could store COVID-19 vaccination data, it is not part of the vaccine itself and cannot track location. [21]",
+      "text": "For claim c1:\n\nMayo Clinic states that assertions about COVID-19 vaccines containing microchips for tracking or gathering personal information are false. [1] [2] This myth originated from comments made by Bill Gates about a digital certificate of vaccine records, but the technology he referenced is not a microchip and is not tied to COVID-19 vaccine development or distribution. [1] FactCheck.org also debunks a similar claim, explaining that a chip discussed by a medical device company executive was for tracking vaccine doses, not people, and would be attached to the vial, not injected. [3] Indonesian government sources, such as the Ministry of Communication and Information and the COVID-19 Handling Task Force, have also stated that the claim of microchips in vaccines for tracking people is false. [4] [5] [6] They clarify that barcodes on vaccine products are for tracking distribution and do not get implanted into individuals. [4] [5] Experts and medical professionals consistently affirm that it is impossible to put tracking microchips in COVID-19 vaccines due to size and technological limitations. [7]",
       "sources": [
         {
           "n": 1,
-          "url": "https://www.cnbcindonesia.com/tech/20211006125253-37-281826/ini-alasan-vaksin-covid-19-tidak-mungkin-disusupi-microchip",
-          "domain": "cnbcindonesia.com"
-        },
-        {
-          "n": 2,
-          "url": "https://www.tempo.co/cekfakta/keliru-konten-tentang-pemasangan-microchip-melalui-vaksinasi-di-indonesia-348450",
-          "domain": "tempo.co"
-        },
-        {
-          "n": 3,
-          "url": "https://amsterdamnews.com/news/2022/03/17/factcheck-covid-vaccines-do-not-contain-microchips/",
-          "domain": "amsterdamnews.com"
-        },
-        {
-          "n": 4,
-          "url": "https://www.factcheck.org/misconceptions/ingredients/",
-          "domain": "factcheck.org"
-        },
-        {
-          "n": 5,
-          "url": "https://www.businessinsider.com/8-coronavirus-vaccine-myths-debunked-from-microchipping-to-mandates-2020-12",
-          "domain": "businessinsider.com"
-        },
-        {
-          "n": 6,
-          "url": "https://archive.cdc.gov/www_cdc_gov/coronavirus/2019-ncov/vaccines/facts.html",
-          "domain": "cdc.gov"
-        },
-        {
-          "n": 7,
-          "url": "https://www.mymlc.com/health-information/articles/d/debunking-covid-19-coronavirus-myths/?section=Do%20COVID-19%20vaccines%20have%20a%20microchip?",
-          "domain": "mymlc.com"
-        },
-        {
-          "n": 8,
           "url": "https://newsnetwork.mayoclinic.org/discussion/covid-queries-altered-dna-and-microchips/",
           "domain": "mayoclinic.org"
         },
         {
-          "n": 9,
+          "n": 2,
           "url": "https://www.mayoclinic.org/diseases-conditions/coronavirus/in-depth/coronavirus-myths/art-20485720",
           "domain": "mayoclinic.org"
         },
         {
-          "n": 10,
-          "url": "https://www.ksat.com/news/local/2021/01/12/trust-index-does-the-covid-19-vaccine-contain-a-tracking-device/",
-          "domain": "ksat.com"
-        },
-        {
-          "n": 11,
-          "url": "https://www.youtube.com/watch?v=2S2v45_NSYs",
-          "domain": "youtube.com"
-        },
-        {
-          "n": 12,
-          "url": "https://revealnews.org/article/where-did-the-microchip-vaccine-conspiracy-theory-come-from-anyway/",
-          "domain": "revealnews.org"
-        },
-        {
-          "n": 13,
-          "url": "https://www.businessinsider.com/20-of-americans-believe-microchips-in-covid-19-vaccines-yougov-2021-7",
-          "domain": "businessinsider.com"
-        },
-        {
-          "n": 14,
-          "url": "https://factcheck.afp.com/doc.afp.com.9EG2NX",
-          "domain": "afp.com"
-        },
-        {
-          "n": 15,
-          "url": "https://www.youtube.com/watch?v=RUr25jr-970",
-          "domain": "youtube.com"
-        },
-        {
-          "n": 16,
-          "url": "https://www.halodoc.com/artikel/jangan-percaya-4-hoaks-vaksin-covid-19-ini",
-          "domain": "halodoc.com"
-        },
-        {
-          "n": 17,
-          "url": "https://www.klikdokter.com/info-sehat/kesehatan-umum/medfact-vaksin-sinovac-mengandung-chip-pemantau-ini-faktanya",
-          "domain": "klikdokter.com"
-        },
-        {
-          "n": 18,
-          "url": "https://www.kemkes.go.id/id/hoax-vaksin-covid-19-mengandung-mikrocip-magnetis",
-          "domain": "kemkes.go.id"
-        },
-        {
-          "n": 19,
-          "url": "https://saberhoaks.jabarprov.go.id/v2/klarifikasi/detail/PTN001084/VAKSIN-BERISI-ROBOT-NANO-DAN-CHIP-RFID",
-          "domain": "jabarprov.go.id"
-        },
-        {
-          "n": 20,
+          "n": 3,
           "url": "https://www.factcheck.org/2020/12/covid-19-vaccines-dont-have-patient-tracking-devices/",
           "domain": "factcheck.org"
         },
         {
-          "n": 21,
-          "url": "https://inet.detik.com/fotoinet/d-5869388/microchip-bukti-vaksin-covid-19-ditanam-ke-tangan-manusia",
-          "domain": "detik.com"
+          "n": 4,
+          "url": "https://jalahoaks.jakarta.go.id/detail/HOAKS-Vaksin-Covid-19-Memiliki-Chip-yang-Dapat-Melacak-Keberadaan-Orang",
+          "domain": "jakarta.go.id"
+        },
+        {
+          "n": 5,
+          "url": "https://www.youtube.com/watch?v=9LDCFXembck",
+          "domain": "youtube.com"
+        },
+        {
+          "n": 6,
+          "url": "https://csirt.bulelengkab.go.id/konten/detail/vaksin-covid-19-memiliki-chip-yang-dapat-melacak-keberadaan-orang-yang-telah-disuntikan-vaksin",
+          "domain": "bulelengkab.go.id"
+        },
+        {
+          "n": 7,
+          "url": "https://www.youtube.com/watch?v=2S2v45_NSYs",
+          "domain": "youtube.com"
         }
       ],
-      "queries": 6
+      "queries": 4
     }
   ]
 }

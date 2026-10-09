@@ -1,40 +1,40 @@
 {
   "prompt_version": "web-search-2.2+shared-1.1",
   "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-09T08:57:26+00:00",
+  "recorded_at": "2026-10-09T09:51:03+00:00",
   "outputs": [
     {
-      "text": "c1:\nMid-day.com published an article on August 23, 2023, titled \"IN PICS: Citizens across India celebrate successful soft landing of Chandrayaan-3 on Moon's surface,\" which includes multiple photos of people celebrating the Chandrayaan-3 moon landing across India. [1] [2] Getty Images also has numerous editorial photos from August 23, 2023, showing people celebrating the Chandrayaan-3 landing, including party leaders, workers, and the general public with Indian flags, and people watching live streams of the event. [3] [4] [5] Al Jazeera reported on August 23, 2023, about the widespread excitement in India for the Chandrayaan-3 moon landing, mentioning prayers, schools watching live telecasts, and space enthusiasts organizing parties. [6] Global News, via YouTube, published a video on August 23, 2023, showing people across India celebrating the successful Chandrayaan-3 landing with dancing, Indian flags, firecrackers, and drums. [7] The National News also published an article on August 23, 2023, with pictures of jubilant scenes across India following the successful landing of the Vikram craft near the lunar south pole. [8] Alamy also shows images of BJP party leaders, workers and the general public celebrating the successful lunar landing of the Chandrayaan-3 spacecraft on the south pole of the Moon, in Agartala, Tripura, India. [9]\n\nHowever, some sources indicate that certain visuals circulated online related to Chandrayaan-3 were not authentic. Alt News reported on August 25, 2023, that a viral video claiming to be a BBC reaction to Chandrayaan-2 (not Chandrayaan-3) was an old clip from 2019. [10] India TV News published a fact-check on August 29, 2023, stating that a widely shared photo of Earth from the Moon's surface, claimed to be from Chandrayaan-3, was actually AI-generated. [11] Additionally, several Facebook posts from August 28, 2023, and articles from The Quint on August 28, 2023, discuss reports and fact-checks debunking claims that certain \"live visuals\" or videos of the moon from Chandrayaan-3 were fabricated or compilations of unrelated old footage. [12] [13]",
+      "text": "The image in the post shows people celebrating India's Chandrayaan-3 mission successfully landing near the Moon's south pole. On August 23, 2023, India's Chandrayaan-3 spacecraft successfully landed on the Moon's south pole, making India the first country to achieve this feat. [1] [2] [3] [4] This historic event was met with widespread celebrations across India. [1] [5] [6] [7] [8] People gathered in various locations, including educational institutions, offices, city squares, and religious places, to watch the live telecast of the landing. [6] Celebrations included cheering, hugging, waving the national flag, distributing sweets, dancing, and setting off firecrackers. [1] [5] [9] [4] [7] The successful landing was a moment of immense national pride and was widely reported by news outlets, including the BBC. [1] [10] [2] [4]",
       "sources": [
         {
           "n": 1,
-          "url": "https://www.mid-day.com/news/india-news/photo/in-pics-citizens-across-india-celebrate-successful-soft-landing-of-chandrayaan3-on-moons-surface-96999/7",
-          "domain": "mid-day.com"
+          "url": "https://www.youtube.com/watch?v=QQKSASFdoDw",
+          "domain": "youtube.com"
         },
         {
           "n": 2,
-          "url": "https://www.mid-day.com/news/india-news/photo/in-pics-citizens-across-india-celebrate-successful-soft-landing-of-chandrayaan3-on-moons-surface-96999",
-          "domain": "mid-day.com"
+          "url": "https://www.youtube.com/watch?v=d1T8sWcDV0I",
+          "domain": "youtube.com"
         },
         {
           "n": 3,
-          "url": "https://www.gettyimages.in/photos/chandrayaan_3",
-          "domain": "gettyimages.in"
+          "url": "https://www.space.com/chandrayaan-3-india-moon-landing-international-space-station-astronauts-celebrate",
+          "domain": "space.com"
         },
         {
           "n": 4,
-          "url": "https://www.gettyimages.com/editorial-images/news/event/india-celebrates-successful-landing-of-chandrayaan-3-mission-on-moon/776022438",
-          "domain": "gettyimages.com"
+          "url": "https://www.theguardian.com/world/2023/aug/24/india-rover-takes-walk-on-moon-frenzied-celebrations",
+          "domain": "theguardian.com"
         },
         {
           "n": 5,
-          "url": "https://www.gettyimages.com/photos/chandrayaan-3",
-          "domain": "gettyimages.com"
+          "url": "https://news.abplive.com/news/india/chandrayaan-3-lands-on-the-moon-india-unites-in-celebration-school-children-dance-sweets-watch-video-1624923",
+          "domain": "abplive.com"
         },
         {
           "n": 6,
-          "url": "https://www.aljazeera.com/gallery/2023/8/23/photos-india-counts-down-to-historic-moon-landing",
-          "domain": "aljazeera.com"
+          "url": "https://m.rediff.com/news/report/india-erupts-in-celebrations-as-chandrayaan-3-lands-on-moons-south-pole/20230823.htm",
+          "domain": "rediff.com"
         },
         {
           "n": 7,
@@ -43,33 +43,18 @@
         },
         {
           "n": 8,
-          "url": "https://www.thenationalnews.com/world/asia/2023/08/23/chandrayaan-3-india-celebrates-landing-craft-on-the-moon-in-pictures/",
-          "domain": "thenationalnews.com"
+          "url": "https://www.youtube.com/watch?v=4Rcbe62Jgx8",
+          "domain": "youtube.com"
         },
         {
           "n": 9,
-          "url": "https://www.alamy.com/stock-photo/chandrayaan-3-landing-celebration.html?pseudoid=CAF7B78B-A801-4367-AE35-96D696A4D84A",
-          "domain": "alamy.com"
+          "url": "https://indianexpress.com/article/india/we-won-crowd-bursts-celebration-delhis-nehru-planetarium-chandrayaan-3-lands-moon-8906146/",
+          "domain": "indianexpress.com"
         },
         {
           "n": 10,
-          "url": "https://www.altnews.in/no-bbc-did-not-criticize-chandrayaan-3-old-clip-viral-false-report-by-times-now-india-tv-zee-news-other-outlets/",
-          "domain": "altnews.in"
-        },
-        {
-          "n": 11,
-          "url": "https://www.indiatvnews.com/fact-check/fact-check-viral-pic-earth-moon-surface-chandrayaan-3-ai-generated-lunar-mission-isro-social-media-2023-08-29-889516",
-          "domain": "indiatvnews.com"
-        },
-        {
-          "n": 12,
-          "url": "https://www.facebook.com/QuintFactCheck/posts/webqoof-social-media-users-shared-a-set-of-unrelated-visuals-to-falsely-claim-th/770069421785810/",
+          "url": "https://www.facebook.com/bbcindia/videos/chandrayaan-3-indias-latest-moon-mission-shares-first-images-from-the-moon-after/701323025154072/",
           "domain": "facebook.com"
-        },
-        {
-          "n": 13,
-          "url": "https://www.thequint.com/news/webqoof/live-visuals-of-moon-isro-chandrayaan-3-viral-video-fact-check",
-          "domain": "thequint.com"
         }
       ],
       "queries": 3

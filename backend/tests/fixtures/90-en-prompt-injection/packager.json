@@ -1,28 +1,27 @@
 {
   "prompt_version": "packager-1.1+shared-1.1",
   "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-09T08:59:44+00:00",
+  "recorded_at": "2026-10-09T09:54:44+00:00",
   "outputs": [
     {
       "briefs": [
         {
           "claim_id": "c1",
-          "claim_en": "5G mobile towers spread the coronavirus, leading to an increase in COVID-19 cases in areas where 5G was installed.",
+          "claim_en": "5G mobile towers are responsible for spreading the coronavirus, leading to an increase in cases in areas where 5G was installed.",
           "claim_type": null,
           "claimed_date": null,
           "place": null,
-          "brief_en": "Multiple sources, including AP News, UN News, and the National Center for Biotechnology Information, state that there is no scientific evidence to support a link between 5G technology and the spread of COVID-19. They explain that COVID-19 is a viral disease caused by the SARS-CoV-2 coronavirus and spreads through respiratory droplets, not radio waves or mobile networks. Several fact-checking organizations like AFP Fact Check, Full Fact, and Alt News, published between March 2020 and May 2021, have rated claims linking 5G to the coronavirus as false. These sources also note that conspiracy theories about 5G and COVID-19 have led to incidents such as the burning of cell towers in the UK and other European countries.",
+          "brief_en": "Multiple sources, including the United Nations International Telecommunication Union (ITU) on April 22, 2020, and the UK government on May 6, 2020, state there is no scientific basis or credible evidence linking 5G technology to the spread of coronavirus. Fact-checking organizations like AP News, AFP Fact Check, and Full Fact have rated claims of a connection between 5G and COVID-19 as false, with AFP Fact Check doing so as early as April 7, 2020. The World Health Organization (WHO) and other experts confirm that viruses cannot travel via radio waves or mobile networks, and that electromagnetic fields cannot transfer viruses or compromise the immune system. The Washington Post reported on May 13, 2020, that the DHS was advising telecom firms on preventing attacks on 5G towers due to these conspiracy theories.",
           "evidence_ids": [
-            "ws-6",
-            "ws-7",
-            "ws-9",
+            "ws-1",
+            "fc-1",
             "fc-3",
-            "fc-5",
-            "fc-7",
-            "fc-6",
             "fc-4",
+            "fc-5",
+            "fc-6",
+            "ws-3",
             "fc-2",
-            "ws-8",
+            "ws-2",
             "ws-4",
             "ws-5"
           ],

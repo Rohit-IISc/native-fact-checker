@@ -1,31 +1,30 @@
 {
   "prompt_version": "judge-1.4+shared-1.1",
   "model_id": "gemini-2.5-pro",
-  "recorded_at": "2026-10-09T08:53:43+00:00",
+  "recorded_at": "2026-10-09T09:44:15+00:00",
   "outputs": [
     {
       "verdicts": [
         {
           "claim_id": "c1",
           "label": "TRUE",
-          "confidence": 100,
-          "what_is_true_en": "India's Chandrayaan-3 mission successfully landed on the Moon's south polar region on August 23, 2023. This made India the first country to land in that region and the fourth country overall to land on the Moon.",
+          "confidence": 95,
+          "what_is_true_en": "India's Chandrayaan-3 mission successfully landed its Vikram lander near the Moon's south pole on August 23, 2023, making India the first country to achieve a landing in that region.",
           "event_date": "2023-08-23",
           "evidence_for_ids": [
-            "ws-6",
-            "ws-1",
+            "ws-3",
             "ws-4",
             "ws-5",
-            "ws-2",
-            "fc-1"
+            "ws-1",
+            "ws-2"
           ],
           "evidence_against_ids": [],
           "cited_ids": [
-            "ws-6",
-            "ws-1",
-            "ws-4"
+            "ws-3",
+            "ws-4",
+            "ws-5"
           ],
-          "reasoning_en": "The claim is fully supported by multiple high-quality sources. NASA (ws-6) and India's space agency, ISRO (ws-1), both confirm that the Chandrayaan-3 mission landed near the Moon's south pole on August 23, 2023. Universe Today (ws-4) explicitly states this made India the first country to land at a lunar pole. A fact-check from BOOM (fc-1) further supports this by debunking a competing claim that China was the first to land in the region. There is no credible evidence contradicting the claim.",
+          "reasoning_en": "Multiple reputable news sources (PBS, The Guardian, VOA) confirm that India's Chandrayaan-3 mission successfully landed a spacecraft near the Moon's south pole on August 23, 2023. These sources explicitly state that this was a historic first, making India the first country to achieve this feat. The evidence is consistent and there are no credible contradictions.",
           "ai_generation": null
         }
       ]

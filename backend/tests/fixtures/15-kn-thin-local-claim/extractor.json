@@ -1,26 +1,26 @@
 {
-  "prompt_version": "extractor-1.12+shared-1.1",
+  "prompt_version": "extractor-1.13+shared-1.1",
   "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-09T08:58:32+00:00",
+  "recorded_at": "2026-10-09T09:53:32+00:00",
   "outputs": [
     {
       "content_language": "kn-IN",
       "content_script": "Knda",
-      "summary_en": "A social media post claims that two crocodiles were spotted in Kukkarahalli Lake in Mysore yesterday evening, warning people not to go for walks there.",
+      "summary_en": "A message claims that two crocodiles were spotted in Kukkarahalli Lake in Mysuru yesterday evening, warning people not to go for walks there.",
       "checkable": true,
       "non_checkable_type": null,
       "claims": [
         {
-          "claim_id": "kukkarahalli_lake_crocodiles",
+          "claim_id": "claim1",
           "claim_original": "ಮೈಸೂರಿನ ಕುಕ್ಕರಹಳ್ಳಿ ಕೆರೆಯಲ್ಲಿ ನಿನ್ನೆ ಸಂಜೆ ಎರಡು ಮೊಸಳೆಗಳು ಕಾಣಿಸಿಕೊಂಡಿವೆ.",
-          "claim_en": "Two crocodiles were seen in Kukkarahalli Lake in Mysore yesterday evening.",
+          "claim_en": "Two crocodiles were seen in Kukkarahalli Lake in Mysuru yesterday evening.",
           "claim_type": "EVENT",
           "entities": [
             "Kukkarahalli Lake",
-            "Mysore",
+            "Mysuru",
             "crocodiles"
           ],
-          "place": "Mysore, Kukkarahalli Lake",
+          "place": "Mysuru",
           "claimed_date": "2026-10-08",
           "time_sensitivity": "LIVE_EVENT",
           "search_queries_original": [
@@ -28,17 +28,17 @@
             "ಕುಕ್ಕರಹಳ್ಳಿ ಕೆರೆ ಮೊಸಳೆ ಕಾಣಿಸಿಕೊಂಡಿವೆ"
           ],
           "search_queries_en": [
-            "Mysore Kukkarahalli Lake crocodiles",
-            "crocodiles spotted Kukkarahalli Lake Mysore"
+            "Mysuru Kukkarahalli Lake crocodiles",
+            "Kukkarahalli Lake crocodile sighting fact check"
           ],
           "search_queries_regional": [
             {
               "language": "hi",
-              "query": "मैसूर कुक्करहल्ली झील मगरमच्छ"
+              "query": "मैसूरु कुक्करहल्ली झील मगरमच्छ"
             },
             {
               "language": "ta",
-              "query": "மைசூர் குக்கரகள்ளி ஏரி முதலைகள்"
+              "query": "மைசூரு குக்கரஹள்ளி ஏரி முதலைகள்"
             }
           ]
         }

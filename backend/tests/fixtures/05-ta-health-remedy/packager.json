@@ -1,30 +1,26 @@
 {
   "prompt_version": "packager-1.1+shared-1.1",
   "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-09T08:51:27+00:00",
+  "recorded_at": "2026-10-09T09:38:27+00:00",
   "outputs": [
     {
       "briefs": [
         {
           "claim_id": "c1",
-          "claim_en": "Drinking hot water mixed with lemon juice will destroy the coronavirus.",
+          "claim_en": "Drinking hot water mixed with lemon juice destroys the coronavirus.",
           "claim_type": null,
           "claimed_date": null,
           "place": null,
-          "brief_en": "Multiple sources, including fact-checking organizations and medical experts, contradict the claim that drinking hot water mixed with lemon juice will destroy the coronavirus. FactCheck.org and AFP Fact Check, both published in April 2020, state there is no scientific evidence that lemon juice, hot water, or their combination can kill the coronavirus or prevent COVID-19 infection. The Cleveland Clinic notes that a study indicated the coronavirus can survive in acidic environments, and consuming lemon water does not significantly change the body's pH level. NDTV Food, in April 2021, and The Guardian, in March 2020, describe this claim as part of widespread misinformation and \"quack cures\" during the pandemic. While some sources mention warm water with lemon as a general home remedy for hydration, they do not claim it cures or destroys the coronavirus.",
+          "brief_en": "Multiple fact-checking organizations and medical institutions have debunked the claim that drinking hot water mixed with lemon juice destroys or cures the coronavirus. FactCheck.org, Snopes.com, and AFP Fact Check, in reports published between March and April 2020, state that there is no scientific evidence to support this. St. Vincent's Medical Center and the National Academies of Sciences, Engineering, and Medicine also clarified in April and June 2020 that acidic drinks like lemon juice do not destroy viruses or prevent COVID-19, nor can they change the body's internal pH to achieve this effect. Hackensack Meridian Health also stated in March 2020 that home remedies, including lemon juice, are not proven to prevent or treat COVID-19.",
           "evidence_ids": [
-            "fc-2",
-            "fc-3",
             "ws-2",
-            "ws-7",
-            "ws-5",
-            "fc-1",
-            "ws-9",
-            "ws-11",
             "ws-3",
+            "fc-1",
+            "fc-3",
+            "fc-2",
+            "ws-5",
             "ws-4",
-            "ws-8",
-            "ws-10"
+            "ws-6"
           ],
           "gaps_en": []
         }
