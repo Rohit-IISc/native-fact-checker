@@ -70,8 +70,8 @@ and the PWA keys in Secret Manager. Re-run any of it with `make deploy-ops` (nee
 - [ ] Push a small commit: Cloud Build runs gitleaks, ruff, pytest, then deploys backend and frontend
       (Cloud Build history in the console); the site still works afterwards (`make smoke`)
 - [ ] A commit with a failing test does **not** deploy
-- [ ] Baseline eval stored: `SELECT * FROM factcheck.v_eval_trend` shows the baseline row; Firestore
-      `config/eval.baseline_run_id` names it (results in "Eval baseline" below)
+- [x] Baseline eval stored (Oct 9): `factcheck.v_eval_trend` shows it; Firestore `config/eval.baseline_run_id`
+      names it (results in "Eval baseline" below)
 - [ ] First scheduled run (Sat Oct 10, 03:00 IST) appears in `v_eval_trend` with `drift_flag` false and
       the baseline id filled in
 - [ ] Hand-check 15 gold items (`gs://ai-builder-2026-eval/datasets/v2/gold.jsonl`): is the label mapped from
@@ -87,6 +87,33 @@ and the PWA keys in Secret Manager. Re-run any of it with `make deploy-ops` (nee
       "ai-builder-cup" is in INR and this login cannot read its budgets; set it in Billing > Budgets
 - [ ] Silver set: stays empty until production has verdicts the panel AGREED on with HIGH confidence
       and a tier 1 source; check `n_silver` grows in later runs
+
+### Eval baseline (Oct 9, run `20261009-063001-baseline`, dataset v2, 33 min, 6.57 USD)
+
+| Metric | Baseline |
+| --- | --- |
+| Recall at 5, overall (200 claims) | 23.5% |
+| en→hi / id→en / hi→ta / kn→hi / ta→kn | 85% / 27.5% / 5% / 0% / 0% |
+| Verdict agreement, strict / direction (60 gold) | 41.7% / 55.0% |
+| Abstain (NOT_ENOUGH_EVIDENCE) | 36.7% |
+| Accuracy when answered | 65.8% |
+| Full check p50 / p95 | 51.8 s / 82.9 s |
+| Cost per check | 0.11 USD (audio off) |
+
+By language (strict / direction of 12): hi 6/8, ta 2/5, kn 3/4, id 6/8, en 8/8. Tamil abstains most (7 of 12).
+
+Findings to test and fix:
+- [ ] **Cross-language recall is near zero for Indian languages.** Likely cause: the fact-check agent always
+      filters the Fact Check Tools API by language (post language, English, Hindi), so a Tamil fact check is
+      never searched for a Kannada post. Test: add a query without a language filter
+      (`agents/factcheck_sites.py:search_plan`), re-run `make eval ARGS="--gold-n 0 --silver-n 0"`
+      (recall only, cents) and compare with 23.5%
+- [ ] **Gold labels with inverted claims.** 3 gold items came out TRUE where the rating says FALSE or
+      half true; in all 3 the ClaimReview "claim" is the fact-checker's conclusion ("Trump did not
+      say ..."), so our TRUE is right for that text. Hand-check all 60, drop such items, freeze v3,
+      re-baseline with `--set-baseline` (decision 42)
+- [ ] TRUE claims abstain 7 of 12: expected when only tier 3 coverage is found (as case 13); look at
+      whether more tier 2 news sites belong in config/source_tiers.yaml (Rohit decides tiers)
 
 ## 6. Not built yet, so not testable yet
 

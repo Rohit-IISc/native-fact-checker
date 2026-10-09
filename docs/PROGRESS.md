@@ -84,6 +84,10 @@ Earlier pass rates (Oct 8, real models; `make accept REPEAT=2`, plus later singl
 - Not built yet: signed-URL upload (Cloud Run caps uploads at 32 MB; we promise 50 MB). Looker Studio
   dashboard and the billing budget need Rohit (eval/TESTS-TO-DO.md section 5).
 
+Eval baseline (Oct 9, dataset v2): recall at 5 23.5% (en→hi 85%, kn→hi 0%, ta→kn 0%); verdict agreement
+41.7% strict, 55.0% direction; abstain 36.7%; accuracy when answered 65.8%; p95 82.9 s; 0.11 USD per
+check. Cross-language recall gap and 3 inverted gold items: eval/TESTS-TO-DO.md section 5.
+
 ## Before the final presentation (Oct 18)
 
 - [ ] Revisit Vertex capacity: Provisioned Throughput versus dynamic shared quota (decision 41). Load-test
@@ -95,6 +99,9 @@ Earlier pass rates (Oct 8, real models; `make accept REPEAT=2`, plus later singl
 1. Rohit: phone tests in eval/TESTS-TO-DO.md section 1 (share sheet, push, card in WhatsApp).
 2. Stance classification for "this exact video is old" fact checks (case 01); composer wording must
    match the label (case 12 run said "false" under MISLEADING).
-3. Signed-URL upload for shares over 32 MB.
-4. Rohit: authorize the GitHub connection (`scripts/setup_cloud_build.sh`), pick the deploy branch.
+3. Fact-check search across languages (recall at 5 is 0% for kn→hi and ta→kn): query without a language
+   filter in `agents/factcheck_sites.py:search_plan`, measure with recall-only eval, then make record/accept.
+4. Gold set v3 after a hand-check (3 items have the conclusion as the claim), re-baseline.
+5. Signed-URL upload for shares over 32 MB.
+6. Rohit: authorize the GitHub connection (`scripts/setup_cloud_build.sh`), pick the deploy branch.
 
