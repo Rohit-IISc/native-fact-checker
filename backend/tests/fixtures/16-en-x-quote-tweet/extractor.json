@@ -1,12 +1,12 @@
 {
   "prompt_version": "extractor-1.13+shared-1.1",
   "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-09T09:53:40+00:00",
+  "recorded_at": "2026-10-09T12:16:13+00:00",
   "outputs": [
     {
       "content_language": "en-IN",
       "content_script": "Latn",
-      "summary_en": "A user shares a post from @claudeai which states \"There's hope in hard questions.\" The user comments that they initially thought the post might be satire, given the nature of the content, but noted the handle was @claudeai.",
+      "summary_en": "A user on X (formerly Twitter) shares a post from the handle @claudeai, which states \"There's hope in hard questions.\" The user expresses that they initially thought the post was satire, implying the content or the handle itself might be perceived as artificial or humorous.",
       "checkable": false,
       "non_checkable_type": "OPINION",
       "claims": [],

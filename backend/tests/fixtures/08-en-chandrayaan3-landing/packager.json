@@ -1,25 +1,29 @@
 {
   "prompt_version": "packager-1.1+shared-1.1",
   "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-09T09:44:15+00:00",
+  "recorded_at": "2026-10-09T12:39:31+00:00",
   "outputs": [
     {
       "briefs": [
         {
           "claim_id": "c1",
-          "claim_en": "Chandrayaan-3's Vikram lander successfully landed near the Moon's south pole on August 23, 2023, making India the first country to achieve this.",
+          "claim_en": "Chandrayaan-3's Vikram lander successfully landed near the Moon's south pole on August 23, 2023, establishing India as the first country to achieve this feat.",
           "claim_type": null,
           "claimed_date": "2023-08-23",
           "place": "Moon's south pole",
-          "brief_en": "On August 23, 2023, India's Chandrayaan-3 mission successfully landed its Vikram lander near the Moon's south pole. This achievement made India the first country to successfully land a spacecraft in the lunar south pole region and the fourth country overall to land on the Moon, following the Soviet Union, the United States, and China. The landing occurred at approximately 18:04 IST (12:33 UTC) at 69°S. Multiple news outlets, including PBS, The Guardian, and VOA, reported on this historic event, confirming India's pioneering role in landing on the unexplored south pole.",
+          "brief_en": "Multiple sources confirm that the Indian Space Research Organisation (ISRO) successfully landed its Chandrayaan-3 mission's Vikram lander near the Moon's south pole on August 23, 2023, at 6:04 PM IST. This achievement made India the first country to perform a soft landing in the Moon's south polar region. India also became the fourth country overall to successfully perform a soft landing on the Moon. A fact-check from BOOM Fact Check rated as false the claim that China was the first country to land on the Moon's South Pole.",
           "evidence_ids": [
             "fc-1",
             "ws-3",
             "ws-4",
             "ws-5",
+            "ws-6",
+            "ws-9",
             "ws-1",
-            "ws-2",
-            "ws-6"
+            "ws-7",
+            "ws-10",
+            "ws-11",
+            "ws-12"
           ],
           "gaps_en": []
         }

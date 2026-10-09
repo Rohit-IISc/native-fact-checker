@@ -1,40 +1,80 @@
 {
   "prompt_version": "web-search-2.2+shared-1.1",
   "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-09T09:44:15+00:00",
+  "recorded_at": "2026-10-09T12:39:31+00:00",
   "outputs": [
     {
-      "text": "For claim c1:\n* **Wikipedia (en)**: \"Chandrayaan programme\", published on an unspecified date. The Chandrayaan-3 mission successfully landed on the Moon on August 23, 2023, making India the first nation to successfully land a spacecraft in the lunar south pole region, and the fourth country to land on the Moon after the Soviet Union, the United States, and China. [1]\n* **Wikipedia (en)**: \"Chandrayaan-3\", published on an unspecified date. Chandrayaan-3 touched down near the lunar south pole, at 69°S, on August 23, 2023, at 18:04 IST (12:33 UTC). [2] With this landing, ISRO became the fourth national space agency to successfully land on the Moon and the first in human history to achieve a soft landing near the lunar south pole. [2]\n* **PBS**: \"India becomes only the 4th country to successfully land a spacecraft on the moon\", published on August 23, 2023. India landed a spacecraft near the moon's south pole on August 23, 2023, becoming the first country to touch down near the little-explored south pole region. [3] This also made India the fourth country to achieve a moon landing, joining the United States, the Soviet Union, and China. [3]\n* **The Guardian**: \"India lands spacecraft near south pole of moon in historic first\", published on August 22, 2023. India became the first country to successfully land a spacecraft near the south pole of the moon on August 23, 2023. [4] The Vikram lander touched down shortly after 6 pm India time (12:30 BST) near the lunar south pole. [4]\n* **VOA**: \"India Becomes First Nation to Land Craft on Moon's South Pole\", published on August 23, 2023. India successfully placed a lander in the moon's southern polar region on August 23, 2023, making it the first country to touch down on an uncharted part of the lunar surface. [5] While the United States, Russia, and China have landed around the moon's equator, no country had previously made a soft landing on the more challenging rough terrain of the south pole. [5]\n* **Al Jazeera**: \"Chandrayaan-3: Historic India mission for moon's south pole set for landing\", published on August 23, 2023. Chandrayaan-3 was scheduled to touch down shortly after 6 pm India time (12:30 GMT) on August 23, 2023, near the lunar south pole. [6] India could become the first nation to land a spacecraft on the moon's south pole. [6]",
+      "text": "c1:\nThe Indian Space Research Organisation (ISRO) successfully landed its Chandrayaan-3 mission's Vikram lander near the Moon's south pole on August 23, 2023, at 6:04 PM IST (12:34 GMT). [1] [2] [3] [4] [5] [6] [7] This made India the first country to achieve a soft landing in the Moon's south polar region. [1] [2] [8] [9] [10] [6] [11] [12] [7] [13] [14] India also became the fourth country overall to successfully perform a soft landing on the Moon, after the United States, the Soviet Union (now Russia), and China. [1] [9] [10] [6] [7] [13] [14] The landing was a historic milestone for India and global space exploration, as the south pole is an area of significant scientific interest due to the potential for water ice deposits. [2] [8] [10] [6] [12] [7]",
       "sources": [
         {
           "n": 1,
-          "url": "https://en.wikipedia.org/wiki/Chandrayaan_programme",
+          "url": "https://en.wikipedia.org/wiki/Moon_landing",
           "domain": "wikipedia.org"
         },
         {
           "n": 2,
-          "url": "https://en.wikipedia.org/wiki/Chandrayaan-3",
-          "domain": "wikipedia.org"
+          "url": "https://www.facebook.com/groups/astronautslife/posts/2969289543246019/",
+          "domain": "facebook.com"
         },
         {
           "n": 3,
+          "url": "https://www.thehindu.com/sci-tech/science/chandrayaan-3-vikram-lander-generated-ejecta-halo-on-lunar-surface-while-landing-on-moon/article67465178.ece",
+          "domain": "thehindu.com"
+        },
+        {
+          "n": 4,
+          "url": "https://www.aljazeera.com/news/2023/8/23/chandrayaan-3-historic-india-mission-for-moons-south-pole-set-for-landing",
+          "domain": "aljazeera.com"
+        },
+        {
+          "n": 5,
+          "url": "https://www.google.com/search?q=time+in+India",
+          "domain": "Current time information in India."
+        },
+        {
+          "n": 6,
           "url": "https://www.pbs.org/newshour/world/india-becomes-the-only-the-4th-country-to-successfully-land-a-spacecraft-on-the-moon",
           "domain": "pbs.org"
         },
         {
-          "n": 4,
+          "n": 7,
           "url": "https://www.theguardian.com/science/2023/aug/23/india-chandrayaan-3-moon-landing-mission",
           "domain": "theguardian.com"
         },
         {
-          "n": 5,
+          "n": 8,
+          "url": "https://pacificspacecenter.com/2023/08/30/chandrayaan-3-2/",
+          "domain": "pacificspacecenter.com"
+        },
+        {
+          "n": 9,
+          "url": "https://www.youtube.com/watch?v=UjX5MnCa2f8",
+          "domain": "youtube.com"
+        },
+        {
+          "n": 10,
+          "url": "https://nationalspaceday.space/why_we_celebrate_national_space_day/",
+          "domain": "nationalspaceday.space"
+        },
+        {
+          "n": 11,
           "url": "https://www.voanews.com/a/india-lands-craft-on-moon-s-unexplored-south-pole/7237740.html",
           "domain": "voanews.com"
         },
         {
-          "n": 6,
-          "url": "https://www.aljazeera.com/news/2023/8/23/chandrayaan-3-historic-india-mission-for-moons-south-pole-set-for-landing",
-          "domain": "aljazeera.com"
+          "n": 12,
+          "url": "https://sscspace.com/news/ssc-and-indias-historic-lunar-landing/",
+          "domain": "sscspace.com"
+        },
+        {
+          "n": 13,
+          "url": "https://science.howstuffworks.com/india-moon-landing.htm",
+          "domain": "howstuffworks.com"
+        },
+        {
+          "n": 14,
+          "url": "https://en.wikipedia.org/wiki/Chandrayaan_programme",
+          "domain": "wikipedia.org"
         }
       ],
       "queries": 4

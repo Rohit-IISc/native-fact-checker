@@ -1,10 +1,10 @@
 {
   "prompt_version": "web-search-2.2+shared-1.1",
   "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-09T09:42:56+00:00",
+  "recorded_at": "2026-10-09T12:04:09+00:00",
   "outputs": [
     {
-      "text": "For claim c1:\n\nMayo Clinic states that assertions about COVID-19 vaccines containing microchips for tracking or gathering personal information are false. [1] [2] This myth originated from comments made by Bill Gates about a digital certificate of vaccine records, but the technology he referenced is not a microchip and is not tied to COVID-19 vaccine development or distribution. [1] FactCheck.org also debunks a similar claim, explaining that a chip discussed by a medical device company executive was for tracking vaccine doses, not people, and would be attached to the vial, not injected. [3] Indonesian government sources, such as the Ministry of Communication and Information and the COVID-19 Handling Task Force, have also stated that the claim of microchips in vaccines for tracking people is false. [4] [5] [6] They clarify that barcodes on vaccine products are for tracking distribution and do not get implanted into individuals. [4] [5] Experts and medical professionals consistently affirm that it is impossible to put tracking microchips in COVID-19 vaccines due to size and technological limitations. [7]",
+      "text": "c1:\nMayo Clinic News Network stated on October 11, 2021, that assertions about microchips in COVID-19 vaccines are false, and there is no way for the vaccine to track people or gather personal information. [1] This myth originated from comments made by Bill Gates about a digital certificate of vaccine records, which was not a microchip and was not implemented in COVID-19 vaccines. [1] Mayo Clinic further clarified on August 30, 2026, that COVID-19 vaccines are made only with ingredients that help the body recognize and clear out the virus, and it is a myth that they contain microchips to track location or movement. [2] FactCheck.org reported on December 15, 2020, that a video falsely claiming COVID-19 vaccine vials have a microchip to track patients misrepresented an interview about a chip attached to a plastic vial to store information about the vaccine dose, not to track people. [3] KSAT reported on January 12, 2021, that local medical experts in San Antonio warned about the prevalence of misinformation, including the unfounded social media theory that COVID-19 vaccines contain microchips and tracking devices, which they determined to be untrue. [4] AFP Fact Check stated on July 2, 2021, that social media posts claiming COVID-19 vaccines contain trackers are false, and health authorities confirm no chip is in any vaccine product. [5] Jala Hoaks Jakarta, on January 21, 2021, and CSIRT Bulelengkab, on March 7, 2026, both clarified that claims of COVID-19 vaccines containing chips to track people are false, explaining that barcodes on vaccine products are for tracking distribution, not individuals. [6] [7]",
       "sources": [
         {
           "n": 1,
@@ -23,23 +23,23 @@
         },
         {
           "n": 4,
+          "url": "https://www.ksat.com/news/local/2021/01/12/trust-index-does-the-covid-19-vaccine-contain-a-tracking-device/",
+          "domain": "ksat.com"
+        },
+        {
+          "n": 5,
+          "url": "https://factcheck.afp.com/covid-19-vaccines-do-not-contain-tracking-devices",
+          "domain": "afp.com"
+        },
+        {
+          "n": 6,
           "url": "https://jalahoaks.jakarta.go.id/detail/HOAKS-Vaksin-Covid-19-Memiliki-Chip-yang-Dapat-Melacak-Keberadaan-Orang",
           "domain": "jakarta.go.id"
         },
         {
-          "n": 5,
-          "url": "https://www.youtube.com/watch?v=9LDCFXembck",
-          "domain": "youtube.com"
-        },
-        {
-          "n": 6,
+          "n": 7,
           "url": "https://csirt.bulelengkab.go.id/konten/detail/vaksin-covid-19-memiliki-chip-yang-dapat-melacak-keberadaan-orang-yang-telah-disuntikan-vaksin",
           "domain": "bulelengkab.go.id"
-        },
-        {
-          "n": 7,
-          "url": "https://www.youtube.com/watch?v=2S2v45_NSYs",
-          "domain": "youtube.com"
         }
       ],
       "queries": 4

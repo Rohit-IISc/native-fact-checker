@@ -1,30 +1,30 @@
 {
   "prompt_version": "packager-1.1+shared-1.1",
   "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-09T09:42:56+00:00",
+  "recorded_at": "2026-10-09T12:04:09+00:00",
   "outputs": [
     {
       "briefs": [
         {
           "claim_id": "c1",
-          "claim_en": "COVID-19 vaccines contain microchips designed to track every vaccinated person.",
+          "claim_en": "COVID-19 vaccines contain microchips to track every vaccinated person.",
           "claim_type": null,
           "claimed_date": null,
           "place": null,
-          "brief_en": "Multiple fact-checking organizations and medical institutions, including Mayo Clinic, FactCheck.org, and Indonesian government sources, state that claims of microchips in COVID-19 vaccines for tracking individuals are false. FactCheck.org, in December 2020, clarified that discussions about chips were for tracking vaccine doses, not people, and would be attached to vials. Tempo.co and Periksa Fakta also debunked similar claims in 2020 and 2021, including those linking Bill Gates to microchip implantation or magnetic properties in vaccines. Experts consistently affirm the impossibility of implanting tracking microchips due to size and technological limitations.",
+          "brief_en": "Multiple fact-checking organizations and medical institutions have debunked the claim that COVID-19 vaccines contain microchips for tracking individuals. FactCheck.org, in December 2020, clarified that a video misrepresenting a chip attached to a vaccine vial was for dose information, not patient tracking. The Mayo Clinic, in October 2021 and August 2026, stated that vaccines only contain ingredients to fight the virus and cannot track people. AFP Fact Check, in July 2021, confirmed that health authorities deny any chips in vaccine products. Jala Hoaks Jakarta and CSIRT Bulelengkab, in January 2021 and March 2026 respectively, explained that barcodes on vaccine products are for distribution tracking, not individual tracking. Claims linking Bill Gates to microchipped vaccines were also debunked by Tempo.co in April 2020 and AFP Fact Check in June 2020. Videos purporting to show magnets sticking to vaccinated arms or microchip readers detecting chips have been identified as false or spoofed by FactCheck.org and Full Fact in 2021.",
           "evidence_ids": [
             "ws-3",
-            "ws-4",
+            "ws-5",
             "ws-6",
+            "ws-7",
             "fc-1",
             "fc-2",
             "fc-3",
             "fc-5",
             "fc-6",
-            "fc-7",
+            "fc-8",
             "fc-9",
-            "fc-10",
-            "fc-11"
+            "fc-10"
           ],
           "gaps_en": []
         }

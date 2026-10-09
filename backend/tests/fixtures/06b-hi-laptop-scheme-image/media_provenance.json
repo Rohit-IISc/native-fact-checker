@@ -1,7 +1,7 @@
 {
-  "prompt_version": "media-provenance-1.2+shared-1.1",
+  "prompt_version": "media-provenance-1.3+shared-1.1",
   "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-09T09:41:32+00:00",
+  "recorded_at": "2026-10-09T12:02:58+00:00",
   "outputs": [
     {
       "agent": "media_provenance",
@@ -9,7 +9,7 @@
       "source_assessment": null,
       "ai_generation_signals": null,
       "earliest_appearance": null,
-      "notes_en": "No relevant pages were found for the image.",
+      "notes_en": "No visual matches were found for the image. The claim refers to a government scheme and a website, which are not visual elements.",
       "timed_out": false
     }
   ]

@@ -3,7 +3,10 @@
 TRUE, FALSE, MISLEADING or SCAM need, among the cited evidence ids:
   - at least 1 TIER_1 source, or at least 2 TIER_2 sources from different publishers, and
   - no cited id with tier NOT_A_SOURCE used as support, and
-  - every cited id present in the evidence pack.
+  - every cited id present in the evidence pack, and
+  - at least one cited item that confirms or contradicts the claim (SUPPORTS or CONTRADICTS): background
+    alone (CONTEXT) cannot carry a verdict (decision 46: old crocodile sightings read as "real event,
+    wrong date" gave MISLEADING at 90% for a new sighting, case 15).
 Otherwise the label becomes NOT_ENOUGH_EVIDENCE and the reason is recorded.
 
 Items from agent "media_itself" (neutral observations of the shared item, such as a satire tag) may be
@@ -13,7 +16,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 
-from app.models import Evidence, JudgeVerdict, Label, SourceTier
+from app.models import Evidence, JudgeVerdict, Label, SourceTier, Stance
 from app.verify.source_tiers import host_of
 
 DECISIVE = {Label.TRUE, Label.FALSE, Label.MISLEADING, Label.SCAM}
@@ -45,6 +48,8 @@ def check(verdict: JudgeVerdict, evidence: list[Evidence]) -> PolicyResult:
     social = [e.evidence_id for e in cited if e.tier == SourceTier.NOT_A_SOURCE]
     if social:
         return PolicyResult(False, f"NOT_A_SOURCE evidence used as support: {', '.join(social)}")
+    if all(e.stance == Stance.CONTEXT for e in cited):
+        return PolicyResult(False, "only background (CONTEXT) evidence; nothing confirms or contradicts the claim")
     if any(e.tier == SourceTier.TIER_1 for e in cited):
         return PolicyResult(True)
     tier2_publishers = {_publisher_key(e) for e in cited if e.tier == SourceTier.TIER_2}

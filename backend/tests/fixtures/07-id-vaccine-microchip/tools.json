@@ -1,5 +1,5 @@
 {
- "factcheck_search:[\"vaksin COVID-19 microchip\", \"\"]": [
+ "factcheck_search:[\"Vaksin COVID-19 microchip\", \"\"]": [
   {
    "claim_text": "Vaksin Covid-19 mengandung microchip yang bisa menyalakan lampu",
    "claimant": "Akun Facebook",
@@ -37,7 +37,93 @@
    "language": "en"
   }
  ],
- "factcheck_search:[\"vaksin melacak orang\", \"id\"]": [],
+ "factcheck_search:[\"Vaksin microchip pelacak\", \"id\"]": [],
+ "factcheck_search:[\"Vaksin COVID-19 microchip\", \"id\"]": [
+  {
+   "claim_text": "Vaksin Covid-19 mengandung microchip yang bisa menyalakan lampu",
+   "claimant": "Akun Facebook",
+   "claim_date": "2021-05-31T00:00:00Z",
+   "url": "https://www.tempo.co/cekfakta/keliru-vaksin-covid-19-mengandung-microchip-yang-bisa-nyalakan-lampu-356853",
+   "publisher": "Tempo.co",
+   "publisher_site": "tempo.co",
+   "rating": "Keliru",
+   "review_date": "2021-06-22T00:00:00Z",
+   "title": "Keliru, Vaksin Covid-19 Mengandung Microchip yang Bisa ...",
+   "language": "en"
+  },
+  {
+   "claim_text": "Vaksin Covid-19 mengandung microchip magnetik",
+   "claimant": "Berbagai sumber",
+   "claim_date": "2021-05-26T00:00:00Z",
+   "url": "https://periksafakta.afp.com/vaksin-covid-19-tidak-mengandung-mikrochip-magnetik",
+   "publisher": "Periksa Fakta",
+   "publisher_site": "periksafakta.afp.com",
+   "rating": "Salah",
+   "review_date": "2021-06-07T12:35:00Z",
+   "title": "Vaksin Covid-19 tidak mengandung microchip magnetik",
+   "language": "id"
+  },
+  {
+   "claim_text": "Bill Gates membuat vaksin virus Corona Covid-19 yang dipasang microchip",
+   "claimant": "Grup-grup WhatsApp dan akun-akun Facebook",
+   "claim_date": "2020-04-20T00:00:00Z",
+   "url": "https://www.tempo.co/cekfakta/-fakta-atau-hoaks-benarkah-bill-gates-bikin-vaksin-corona-yang-dipasang-microchip--249398",
+   "publisher": "Tempo.co",
+   "publisher_site": "tempo.co",
+   "rating": "Keliru",
+   "review_date": "2020-04-22T00:00:00Z",
+   "title": "[Fakta atau Hoaks] Benarkah Bill Gates Bikin Vaksin Corona yang ...",
+   "language": "en"
+  },
+  {
+   "claim_text": "Vaksin Covid-19 Mengandung Magnet dan Microchip, Mitos atau Fakta?",
+   "claimant": "Suara.com",
+   "claim_date": "2022-05-19T12:46:54Z",
+   "url": "https://www.suara.com/health/2022/05/19/194654/vaksin-covid-19-mengandung-magnet-dan-microchip-mitos-atau-fakta",
+   "publisher": "Suara.com",
+   "publisher_site": "suara.com",
+   "rating": "Salah",
+   "review_date": null,
+   "title": "Vaksin Covid-19 Mengandung Magnet dan Microchip, Mitos atau ...",
+   "language": "id"
+  },
+  {
+   "claim_text": "Keliru, Konten tentang Pemasangan Microchip Melalui Vaksinasi di Indonesia",
+   "claimant": "Tempo.co",
+   "claim_date": null,
+   "url": "https://www.tempo.co/cekfakta/keliru-konten-tentang-pemasangan-microchip-melalui-vaksinasi-di-indonesia-348450",
+   "publisher": "Tempo.co",
+   "publisher_site": "tempo.co",
+   "rating": "keliru",
+   "review_date": null,
+   "title": "Keliru, Konten tentang Pemasangan Microchip Melalui Vaksinasi di ...",
+   "language": "id"
+  },
+  {
+   "claim_text": "Vaksin Covid-19 akan menanamkan microchip yang diprogram untuk membantai 7,5 miliar nyawa dan melakukan perbudakan global",
+   "claimant": "Akun-akun Facebook dan Twitter",
+   "claim_date": "2020-09-16T00:00:00Z",
+   "url": "https://www.tempo.co/cekfakta/-fakta-atau-hoaks-benarkah-vaksin-covid-19-tanamkan-microchip-yang-diprogram-untuk-bantai-7-5-miliar-nyawa--247707",
+   "publisher": "Tempo.co",
+   "publisher_site": "tempo.co",
+   "rating": "Keliru",
+   "review_date": "2020-09-18T00:00:00Z",
+   "title": "[Fakta atau Hoaks] Benarkah Vaksin Covid-19 Tanamkan Microchip ...",
+   "language": "en"
+  },
+  {
+   "claim_text": "Vaksin Covid-19 dapat menyebabkan efek jangka pendek berupa lumpuh dan meninggal, efek jangka panjang berupa wabah penyakit baru, dan terkait dengan chip serta jaringan 5G",
+   "claimant": "Akun Facebook",
+   "claim_date": "2021-01-24T00:00:00Z",
+   "url": "https://www.tempo.co/cekfakta/keliru-vaksin-covid-19-terkait-dengan-jaringan-5g-dan-sebabkan-wabah-penyakit-baru-358554",
+   "publisher": "Tempo.co",
+   "publisher_site": "tempo.co",
+   "rating": "Keliru",
+   "review_date": "2021-01-27T00:00:00Z",
+   "title": "Keliru, Vaksin Covid-19 Terkait dengan Jaringan 5G dan Sebabkan ...",
+   "language": "en"
+  }
+ ],
  "factcheck_search:[\"COVID-19 vaccine microchip tracking\", \"\"]": [
   {
    "claim_text": "COVID-19 vaccines have a microchip that \"tracks the location of the patient.\"",
@@ -162,18 +248,6 @@
    "language": "en"
   },
   {
-   "claim_text": "Videos of magnets sticking to arms prove that the COVID-19 vaccines contain microchips.",
-   "claimant": "Social media posts",
-   "claim_date": "2021-05-12T00:00:00Z",
-   "url": "https://www.factcheck.org/2021/05/scicheck-magnet-videos-refuel-bogus-claim-of-vaccine-microchips/",
-   "publisher": "FactCheck.org",
-   "publisher_site": "factcheck.org",
-   "rating": "False",
-   "review_date": null,
-   "title": "Magnet Videos Refuel Bogus Claim of Vaccine Microchips",
-   "language": "en"
-  },
-  {
    "claim_text": "“Another Conspiracy Proven True!” referring to 2018 remarks by Pfizer CEO and claims about microchips in COVID-19 vaccines.",
    "claimant": "Jimmy Dore Show",
    "claim_date": "2022-05-21T00:00:00Z",
@@ -186,27 +260,15 @@
    "language": "en"
   },
   {
-   "claim_text": "\"Bill Gates will use microchip implants to fight coronavirus.\"",
-   "claimant": "Conspiracy theory",
-   "claim_date": "2020-03-19T00:00:00Z",
-   "url": "https://www.factcheck.org/2020/04/conspiracy-theory-misinterprets-goals-of-gates-foundation/",
+   "claim_text": "Videos of magnets sticking to arms prove that the COVID-19 vaccines contain microchips.",
+   "claimant": "Social media posts",
+   "claim_date": "2021-05-12T00:00:00Z",
+   "url": "https://www.factcheck.org/2021/05/scicheck-magnet-videos-refuel-bogus-claim-of-vaccine-microchips/",
    "publisher": "FactCheck.org",
    "publisher_site": "factcheck.org",
    "rating": "False",
    "review_date": null,
-   "title": "Conspiracy Theory Misinterprets Goals of Gates Foundation",
-   "language": "en"
-  },
-  {
-   "claim_text": "A microchip reader for pets detected a chip in the arm of a woman vaccinated against COVID-19.",
-   "claimant": "Viral video",
-   "claim_date": "2021-06-15T00:00:00Z",
-   "url": "https://www.factcheck.org/2021/07/scicheck-spoof-video-furthers-microchip-conspiracy-theory/",
-   "publisher": "FactCheck.org",
-   "publisher_site": "factcheck.org",
-   "rating": "False",
-   "review_date": null,
-   "title": "Spoof Video Furthers Microchip Conspiracy Theory",
+   "title": "Magnet Videos Refuel Bogus Claim of Vaccine Microchips",
    "language": "en"
   },
   {
@@ -232,129 +294,17 @@
    "review_date": "2021-07-14T12:07:00Z",
    "title": "Hoax posts about microchips in Pfizer-BioNTech Covid-19 vaccine ...",
    "language": "en"
-  }
- ],
- "factcheck_search:[\"vaksin COVID-19 microchip\", \"id\"]": [
-  {
-   "claim_text": "Vaksin Covid-19 mengandung microchip yang bisa menyalakan lampu",
-   "claimant": "Akun Facebook",
-   "claim_date": "2021-05-31T00:00:00Z",
-   "url": "https://www.tempo.co/cekfakta/keliru-vaksin-covid-19-mengandung-microchip-yang-bisa-nyalakan-lampu-356853",
-   "publisher": "Tempo.co",
-   "publisher_site": "tempo.co",
-   "rating": "Keliru",
-   "review_date": "2021-06-22T00:00:00Z",
-   "title": "Keliru, Vaksin Covid-19 Mengandung Microchip yang Bisa ...",
-   "language": "en"
   },
   {
-   "claim_text": "Vaksin Covid-19 mengandung microchip magnetik",
-   "claimant": "Berbagai sumber",
-   "claim_date": "2021-05-26T00:00:00Z",
-   "url": "https://periksafakta.afp.com/vaksin-covid-19-tidak-mengandung-mikrochip-magnetik",
-   "publisher": "Periksa Fakta",
-   "publisher_site": "periksafakta.afp.com",
-   "rating": "Salah",
-   "review_date": "2021-06-07T12:35:00Z",
-   "title": "Vaksin Covid-19 tidak mengandung microchip magnetik",
-   "language": "id"
-  },
-  {
-   "claim_text": "Bill Gates membuat vaksin virus Corona Covid-19 yang dipasang microchip",
-   "claimant": "Grup-grup WhatsApp dan akun-akun Facebook",
-   "claim_date": "2020-04-20T00:00:00Z",
-   "url": "https://www.tempo.co/cekfakta/-fakta-atau-hoaks-benarkah-bill-gates-bikin-vaksin-corona-yang-dipasang-microchip--249398",
-   "publisher": "Tempo.co",
-   "publisher_site": "tempo.co",
-   "rating": "Keliru",
-   "review_date": "2020-04-22T00:00:00Z",
-   "title": "[Fakta atau Hoaks] Benarkah Bill Gates Bikin Vaksin Corona yang ...",
-   "language": "en"
-  },
-  {
-   "claim_text": "Vaksin Covid-19 Mengandung Magnet dan Microchip, Mitos atau Fakta?",
-   "claimant": "Suara.com",
-   "claim_date": "2022-05-19T12:46:54Z",
-   "url": "https://www.suara.com/health/2022/05/19/194654/vaksin-covid-19-mengandung-magnet-dan-microchip-mitos-atau-fakta",
-   "publisher": "Suara.com",
-   "publisher_site": "suara.com",
-   "rating": "Salah",
-   "review_date": null,
-   "title": "Vaksin Covid-19 Mengandung Magnet dan Microchip, Mitos atau ...",
-   "language": "id"
-  },
-  {
-   "claim_text": "Keliru, Konten tentang Pemasangan Microchip Melalui Vaksinasi di Indonesia",
-   "claimant": "Tempo.co",
+   "claim_text": "Magnets can stick to your arm after a Covid-19 jab because they contain a microchip or other metals.",
+   "claimant": null,
    "claim_date": null,
-   "url": "https://www.tempo.co/cekfakta/keliru-konten-tentang-pemasangan-microchip-melalui-vaksinasi-di-indonesia-348450",
-   "publisher": "Tempo.co",
-   "publisher_site": "tempo.co",
-   "rating": "keliru",
-   "review_date": null,
-   "title": "Keliru, Konten tentang Pemasangan Microchip Melalui Vaksinasi di ...",
-   "language": "id"
-  },
-  {
-   "claim_text": "Vaksin Covid-19 akan menanamkan microchip yang diprogram untuk membantai 7,5 miliar nyawa dan melakukan perbudakan global",
-   "claimant": "Akun-akun Facebook dan Twitter",
-   "claim_date": "2020-09-16T00:00:00Z",
-   "url": "https://www.tempo.co/cekfakta/-fakta-atau-hoaks-benarkah-vaksin-covid-19-tanamkan-microchip-yang-diprogram-untuk-bantai-7-5-miliar-nyawa--247707",
-   "publisher": "Tempo.co",
-   "publisher_site": "tempo.co",
-   "rating": "Keliru",
-   "review_date": "2020-09-18T00:00:00Z",
-   "title": "[Fakta atau Hoaks] Benarkah Vaksin Covid-19 Tanamkan Microchip ...",
-   "language": "en"
-  },
-  {
-   "claim_text": "Vaksin Covid-19 dapat menyebabkan efek jangka pendek berupa lumpuh dan meninggal, efek jangka panjang berupa wabah penyakit baru, dan terkait dengan chip serta jaringan 5G",
-   "claimant": "Akun Facebook",
-   "claim_date": "2021-01-24T00:00:00Z",
-   "url": "https://www.tempo.co/cekfakta/keliru-vaksin-covid-19-terkait-dengan-jaringan-5g-dan-sebabkan-wabah-penyakit-baru-358554",
-   "publisher": "Tempo.co",
-   "publisher_site": "tempo.co",
-   "rating": "Keliru",
-   "review_date": "2021-01-27T00:00:00Z",
-   "title": "Keliru, Vaksin Covid-19 Terkait dengan Jaringan 5G dan Sebabkan ...",
-   "language": "en"
-  }
- ],
- "factcheck_search:[\"vaccine microchip conspiracy\", \"en\"]": [
-  {
-   "claim_text": "\"Bill Gates will use microchip implants to fight coronavirus.\"",
-   "claimant": "Conspiracy theory",
-   "claim_date": "2020-03-19T00:00:00Z",
-   "url": "https://www.factcheck.org/2020/04/conspiracy-theory-misinterprets-goals-of-gates-foundation/",
-   "publisher": "FactCheck.org",
-   "publisher_site": "factcheck.org",
-   "rating": "False",
-   "review_date": null,
-   "title": "Conspiracy Theory Misinterprets Goals of Gates Foundation",
-   "language": "en"
-  },
-  {
-   "claim_text": "Videos of magnets sticking to arms prove that the COVID-19 vaccines contain microchips.",
-   "claimant": "Social media posts",
-   "claim_date": "2021-05-12T00:00:00Z",
-   "url": "https://www.factcheck.org/2021/05/scicheck-magnet-videos-refuel-bogus-claim-of-vaccine-microchips/",
-   "publisher": "FactCheck.org",
-   "publisher_site": "factcheck.org",
-   "rating": "False",
-   "review_date": null,
-   "title": "Magnet Videos Refuel Bogus Claim of Vaccine Microchips",
-   "language": "en"
-  },
-  {
-   "claim_text": "\"A new report from '60 Minutes' includes an interview with a scientist from the Pentagon who says that there is now a COVID microchip.\"",
-   "claimant": "Ben Swann",
-   "claim_date": "2021-04-13T00:00:00Z",
-   "url": "https://www.factcheck.org/2021/08/scicheck-health-sensors-misconstrued-as-government-tracking-microchips/",
-   "publisher": "FactCheck.org",
-   "publisher_site": "factcheck.org",
-   "rating": "False",
-   "review_date": null,
-   "title": "Health Sensors Misconstrued as Government Tracking 'Microchips'",
+   "url": "https://fullfact.org/online/covid-vaccine-magnet/",
+   "publisher": "Full Fact",
+   "publisher_site": "fullfact.org",
+   "rating": "This is false. The vaccines do not contain a microchip and there is nothing in a vaccine that could cause a magnet to stick to your skin after getting it.",
+   "review_date": "2021-05-14T00:00:00Z",
+   "title": "Covid-19 vaccines do not make you magnetic – Full Fact",
    "language": "en"
   },
   {
@@ -368,54 +318,7 @@
    "review_date": null,
    "title": "Spoof Video Furthers Microchip Conspiracy Theory",
    "language": "en"
-  },
-  {
-   "claim_text": "“Another Conspiracy Proven True!” referring to 2018 remarks by Pfizer CEO and claims about microchips in COVID-19 vaccines.",
-   "claimant": "Jimmy Dore Show",
-   "claim_date": "2022-05-21T00:00:00Z",
-   "url": "https://www.factcheck.org/2022/05/scicheck-pfizer-ceo-not-referencing-covid-19-vaccines-contrary-to-false-impression-in-posts-about-microchips/",
-   "publisher": "FactCheck.org",
-   "publisher_site": "factcheck.org",
-   "rating": "False",
-   "review_date": null,
-   "title": "FDA-Approved ‘Electronic Pill’ Isn't Evidence That COVID-19 ...",
-   "language": "en"
-  },
-  {
-   "claim_text": "New microchip technology could fit inside a vaccine needle",
-   "claimant": "Social media users",
-   "claim_date": "2021-05-17T00:00:00Z",
-   "url": "https://www.usatoday.com/story/news/factcheck/2021/05/26/fact-check-missing-context-posts-new-microchip-development/5232378001/",
-   "publisher": "USA Today",
-   "publisher_site": "usatoday.com",
-   "rating": "Missing Context",
-   "review_date": "2021-05-26T23:50:28Z",
-   "title": "Fact check: Missing context posts on a new microchip development",
-   "language": "en"
-  },
-  {
-   "claim_text": "Fifth-generation (5G) technology is linked to the COVID-19 pandemic",
-   "claimant": "FB page RUDY BALD WIN",
-   "claim_date": "2021-01-29T00:00:00Z",
-   "url": "https://verafiles.org/articles/vera-files-fact-check-conspiracy-theories-covid-19-vaccines",
-   "publisher": "VERA Files",
-   "publisher_site": "verafiles.org",
-   "rating": "False",
-   "review_date": "2021-02-17T00:00:00Z",
-   "title": "VERA FILES FACT CHECK: Conspiracy theories on COVID-19 ...",
-   "language": "en"
-  },
-  {
-   "claim_text": "Microchips for tracking people will be implanted via needles during COVID-19 vaccination.",
-   "claimant": "FB page RUDY BALD WIN",
-   "claim_date": "2021-01-29T00:00:00Z",
-   "url": "https://verafiles.org/articles/vera-files-fact-check-conspiracy-theories-covid-19-vaccines",
-   "publisher": "VERA Files",
-   "publisher_site": "verafiles.org",
-   "rating": "False",
-   "review_date": "2021-02-17T00:00:00Z",
-   "title": "VERA FILES FACT CHECK: Conspiracy theories on COVID-19 ...",
-   "language": "en"
   }
- ]
+ ],
+ "factcheck_search:[\"vaccine microchip conspiracy\", \"en\"]": []
 }

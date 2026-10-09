@@ -1,51 +1,51 @@
 {
   "prompt_version": "composer-1.3+shared-1.1",
   "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-09T09:39:44+00:00",
+  "recorded_at": "2026-10-09T12:01:31+00:00",
   "outputs": [
     {
       "language": "hi-IN",
       "headline": "धोखाधड़ी: पीएम मोदी मुफ्त मोबाइल रिचार्ज नहीं दे रहे हैं",
-      "summary": "प्रधानमंत्री मोदी द्वारा सभी भारतीयों को 3 महीने का मुफ्त मोबाइल रिचार्ज देने का दावा एक धोखाधड़ी है।",
+      "summary": "यह दावा कि प्रधानमंत्री मोदी सभी भारतीयों को 3 महीने का मुफ्त मोबाइल रिचार्ज दे रहे हैं, एक धोखाधड़ी है।",
       "what_post_claims": "पोस्ट का दावा है कि प्रधानमंत्री मोदी सभी भारतीयों को 3 महीने का मुफ्त मोबाइल रिचार्ज दे रहे हैं।",
-      "what_is_true": "भारत सरकार और प्रधानमंत्री मोदी कोई मुफ्त मोबाइल रिचार्ज योजना नहीं चला रहे हैं। इस तरह के संदेश और वीडियो व्यक्तिगत जानकारी चुराने के लिए बनाए गए एक धोखाधड़ी का हिस्सा हैं।",
+      "what_is_true": "भारत सरकार ने मुफ्त मोबाइल रिचार्ज देने की कोई योजना घोषित नहीं की है। ऐसे संदेश अक्सर फ़िशिंग घोटाले का हिस्सा होते हैं, जिनका उद्देश्य लोगों को धोखा देना होता है।",
       "evidence_for": [],
       "evidence_against": [
-        "न्यूज़ ऑन एयर (newsonair.gov.in) ने बताया कि सरकार ने ऐसी किसी योजना की घोषणा नहीं की है।",
-        "बूम (BOOM) ने पाया कि पीएम मोदी के मुफ्त रिचार्ज की घोषणा करने वाला वीडियो एडिट किया गया है और यह गलत है।",
-        "विश्वास न्यूज़ (Vishvas News) ने पुष्टि की कि प्रधानमंत्री मुफ्त रिचार्ज योजना एक धोखाधड़ी है।"
+        "बूम ने इस दावे को गलत बताया है कि एक वीडियो में पीएम मोदी 3 महीने के मुफ्त मोबाइल रिचार्ज की घोषणा कर रहे हैं, उनका कहना है कि वीडियो एडिट किया गया है।",
+        "विश्वास न्यूज ने इस दावे को गलत बताया है कि सरकार रक्षाबंधन पर तीन महीने का मुफ्त रिचार्ज दे रही है, उनका कहना है कि यह दावा फर्जी है और पीएम मोदी के वीडियो का गलत इस्तेमाल किया गया है।",
+        "पीटीआई फैक्ट चेक का कहना है कि प्रधानमंत्री फ्री रिचार्ज योजना के नाम पर सोशल मीडिया पर एक फर्जी संदेश वायरल हो रहा है।"
       ],
       "confidence_phrase": "हम बहुत निश्चित हैं",
-      "sources_spoken": "न्यूज़ ऑन एयर, बूम और विश्वास न्यूज़ के अनुसार",
-      "audio_script": "पोस्ट का दावा है कि प्रधानमंत्री मोदी सभी भारतीयों को 3 महीने का मुफ्त मोबाइल रिचार्ज दे रहे हैं। यह एक धोखाधड़ी है। असल में, भारत सरकार और प्रधानमंत्री मोदी कोई मुफ्त मोबाइल रिचार्ज योजना नहीं चला रहे हैं। इस तरह के संदेश और वीडियो व्यक्तिगत जानकारी चुराने के लिए बनाए गए एक धोखाधड़ी का हिस्सा हैं। हम बहुत निश्चित हैं कि यह दावा गलत है। यह जानकारी हमें न्यूज़ ऑन एयर, बूम और विश्वास न्यूज़ जैसे विश्वसनीय स्रोतों से मिली है।",
+      "sources_spoken": "बूम, विश्वास न्यूज और प्रेस ट्रस्ट ऑफ इंडिया के अनुसार",
+      "audio_script": "पोस्ट का दावा है कि प्रधानमंत्री मोदी सभी भारतीयों को 3 महीने का मुफ्त मोबाइल रिचार्ज दे रहे हैं। यह एक धोखाधड़ी है। असल में, भारत सरकार ने मुफ्त मोबाइल रिचार्ज देने की कोई योजना घोषित नहीं की है। ऐसे संदेश अक्सर फ़िशिंग घोटाले का हिस्सा होते हैं, जिनका उद्देश्य लोगों को धोखा देना होता है। हम बहुत निश्चित हैं कि यह दावा गलत है। यह जानकारी बूम, विश्वास न्यूज और प्रेस ट्रस्ट ऑफ इंडिया जैसे विश्वसनीय स्रोतों से मिली है।",
       "card_lines": [
         "धोखाधड़ी",
         "पीएम मोदी मुफ्त रिचार्ज दे रहे हैं?",
-        "यह एक धोखाधड़ी है।",
+        "यह एक फ़िशिंग घोटाला है।",
         "सरकार ने ऐसी कोई योजना घोषित नहीं की है।"
       ],
       "panel_readings": []
     },
     {
       "language": "en",
-      "headline": "SCAM: PM Modi is not giving 3 months of free mobile recharge",
-      "summary": "Posts claiming Prime Minister Modi is offering free mobile recharge for three months are a scam to steal personal information.",
-      "what_post_claims": "Posts claim that Prime Minister Modi is providing all Indians with three months of free mobile recharge.",
-      "what_is_true": "The Indian government and Prime Minister Modi are not offering any free mobile recharge scheme. These messages and videos are part of a recurring scam designed to steal personal information.",
+      "headline": "SCAM: PM Modi is not giving free mobile recharge",
+      "summary": "Messages claiming Prime Minister Modi is providing free mobile recharge are fake and part of phishing scams.",
+      "what_post_claims": "The post claims that Prime Minister Modi is providing 3 months of free mobile recharge to all Indians.",
+      "what_is_true": "The Government of India has not announced any scheme to provide free mobile recharges. Messages claiming this are fake and are often part of phishing scams designed to defraud people.",
       "evidence_for": [],
       "evidence_against": [
-        "The government has explicitly stated that no such scheme has been announced or is being run by the Prime Minister or the Indian government, according to newsonair.gov.in.",
-        "Fact-checking organisations like BOOM and Vishvas News have confirmed that these claims are false and often use edited videos of PM Modi.",
-        "FACTLY reported that neither the BJP nor PM Modi is offering any free recharge scheme."
+        "BOOM rated as False the claim that a video shows PM Modi announcing 3 months of free mobile recharge, stating the video is edited.",
+        "Vishvas News rated as False the claim that the government is giving three months of free recharge on Raksha Bandhan, stating the claim is fake and a PM Modi video is misused.",
+        "PTI Fact Check states that a fake message is going viral on social media in the name of Prime Minister Free Recharge Scheme."
       ],
       "confidence_phrase": "we are very sure",
-      "sources_spoken": "according to newsonair.gov.in and fact-checking organisations like BOOM and Vishvas News",
-      "audio_script": "A post claims that Prime Minister Modi is giving all Indians three months of free mobile recharge. This is a scam. The Indian government and Prime Minister Modi are not offering any such free mobile recharge scheme. These messages and videos are part of a recurring scam designed to steal personal information. We are very sure about this. This information comes from official government statements on newsonair.gov.in and multiple fact-checking organisations like BOOM and Vishvas News.",
+      "sources_spoken": "according to BOOM, Vishvas News, and PTI Fact Check",
+      "audio_script": "The post claims that Prime Minister Modi is providing three months of free mobile recharge to all Indians. This is a scam. The Government of India has not announced any such scheme. These messages are fake and are often part of phishing scams designed to defraud people. We are very sure about this, according to BOOM, Vishvas News, and PTI Fact Check.",
       "card_lines": [
         "SCAM: Free mobile recharge",
-        "PM Modi is not offering 3 months free recharge.",
-        "It's a scam to steal your data.",
-        "Government sources confirm no such scheme."
+        "PM Modi is not giving free recharge.",
+        "These are fake messages and scams.",
+        "Check official government sources."
       ],
       "panel_readings": []
     }

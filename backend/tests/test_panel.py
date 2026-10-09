@@ -87,12 +87,19 @@ def test_contradicting_item_cannot_carry_a_true_verdict():
     assert d.verdict.label == Label.NOT_ENOUGH_EVIDENCE and d.outcome == PanelOutcome.POLICY_DOWNGRADE
 
 
-def test_context_can_back_misleading():
-    """An old photo's real origin is CONTEXT evidence; it is exactly what makes the post MISLEADING."""
-    evidence = [ev("mp-1", SourceTier.TIER_1, "AFP", stance=Stance.CONTEXT)]
-    v = verdict(Label.MISLEADING, ["mp-1"], against=["mp-1"])
+def test_context_can_back_misleading_next_to_a_contradicting_source():
+    """An old photo's real origin (CONTRADICTS the post's framing) plus background (CONTEXT) is MISLEADING."""
+    evidence = [ev("mp-1", SourceTier.TIER_1, "AFP"), ev("ws-1", SourceTier.TIER_2, "The Hindu", stance=Stance.CONTEXT)]
+    v = verdict(Label.MISLEADING, ["mp-1", "ws-1"], against=["mp-1", "ws-1"])
     d = panel.merge(v, None, evidence)
     assert d.verdict.label == Label.MISLEADING
+
+
+def test_background_alone_ends_in_not_enough_evidence():
+    """Decision 46 (case 15): CONTEXT items alone cannot carry a decisive label."""
+    evidence = [ev("mp-1", SourceTier.TIER_1, "AFP", stance=Stance.CONTEXT)]
+    d = panel.merge(verdict(Label.MISLEADING, ["mp-1"], against=["mp-1"]), None, evidence)
+    assert d.verdict.label == Label.NOT_ENOUGH_EVIDENCE and d.outcome == PanelOutcome.POLICY_DOWNGRADE
 
 
 def test_consistent_verdict_is_untouched():

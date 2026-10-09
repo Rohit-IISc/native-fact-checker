@@ -1,7 +1,7 @@
 {
   "prompt_version": "judge-1.4+shared-1.1",
   "model_id": "gemini-2.5-pro",
-  "recorded_at": "2026-10-09T09:54:44+00:00",
+  "recorded_at": "2026-10-09T12:17:38+00:00",
   "outputs": [
     {
       "verdicts": [
@@ -9,26 +9,27 @@
           "claim_id": "c1",
           "label": "FALSE",
           "confidence": 100,
-          "what_is_true_en": "There is no scientific evidence linking 5G technology to the spread of the coronavirus. International health organizations and experts confirm that viruses cannot travel on radio waves or mobile networks.",
+          "what_is_true_en": "COVID-19 is a disease caused by a virus, not by 5G mobile technology. Numerous scientific and health organizations have confirmed there is no link between 5G and the spread of the coronavirus.",
           "event_date": null,
           "evidence_for_ids": [],
           "evidence_against_ids": [
-            "ws-1",
             "fc-1",
-            "fc-3",
-            "fc-4",
+            "fc-2",
+            "fc-5",
             "fc-6",
-            "ws-3",
-            "ws-4"
+            "fc-4",
+            "fc-7",
+            "fc-3"
           ],
           "cited_ids": [
-            "ws-1",
             "fc-1",
-            "fc-3",
+            "fc-2",
+            "fc-4",
+            "fc-5",
             "fc-6",
-            "ws-3"
+            "fc-7"
           ],
-          "reasoning_en": "A wide range of credible sources, including the United Nations' International Telecommunication Union (ITU), the World Health Organization (WHO), multiple independent fact-checking organizations, and government bodies, have all stated there is no scientific basis for the claim. Experts confirm that it is physically impossible for viruses to be transmitted via radio waves or mobile networks. The claim is a widely debunked conspiracy theory.",
+          "reasoning_en": "Multiple independent fact-checking organizations, including Full Fact, AP News, AFP Fact Check, and FACTLY, have debunked the claim that 5G technology spreads the coronavirus. The evidence confirms that COVID-19 is caused by a virus and there is no scientific basis or evidence to support a link between the disease and 5G mobile networks. One scientific paper that attempted to make this link was later retracted due to a lack of evidence.",
           "ai_generation": null
         }
       ]

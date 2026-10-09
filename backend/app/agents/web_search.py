@@ -45,7 +45,7 @@ async def run(llm: LLM, extraction: Extraction, timeout_s: float) -> AgentFindin
         stage="web_search_classify", prompt_version=classify.version, schema=WebSearchOutput,
         timeout_s=max(3.0, deadline - time.monotonic()),
         prompt=classify.render(
-            claims_json=claims_json(extraction, with_queries=False),
+            claims_json=claims_json(extraction, with_queries=False), visible_text=visible_text(extraction),
             sources_json=json.dumps([s.model_dump() for s in found.sources], ensure_ascii=False, indent=1),
             findings_text=found.text))
     evidence = [Evidence(evidence_id="", agent=AGENT, claim_id=i.claim_id, url=by_n[i.source_n].url,

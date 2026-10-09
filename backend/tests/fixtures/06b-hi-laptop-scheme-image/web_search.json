@@ -1,83 +1,63 @@
 {
   "prompt_version": "web-search-2.2+shared-1.1",
   "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-09T09:41:32+00:00",
+  "recorded_at": "2026-10-09T12:02:58+00:00",
   "outputs": [
     {
-      "text": "The claim that the Indian government is providing free laptops to all students under the 'PM Free Laptop Scheme 2026' is false. The Press Information Bureau (PIB) Fact Check has repeatedly debunked such claims, stating that the Government of India has not announced any such scheme. [1] [2] [3] [4] [5] [6] [7] These viral messages, often circulated on social media and WhatsApp, are scams designed to collect personal information. [1] [3] [4] [5] [6] [7] [8] [9] [10]\n\nWhile there is no central government scheme providing free laptops to all students, some Indian states do have their own laptop or tablet distribution programs for eligible students. [1] Examples include Tamil Nadu's \"Ulagam Ungal Kaiyil\" scheme and Uttar Pradesh's \"Swami Vivekananda Yuva Sashaktikaran Yojana (Mission DigiShakti)\". [1] These state-level schemes have specific eligibility criteria and are managed through state education departments. [1]\n\nRegarding the claim that one must click on the link www.pm-free-laptop-yojana.in to register for the 'PM Free Laptop Scheme 2026', this is also false and part of the scam. [1] [11] [3] [12] [4] [5] [6] [7] [8] Official government websites in India typically end with \".gov.in\". [11] [8] [13] Fraudulent websites often use attractive offers like free laptops to lure individuals into sharing personal details, which can then be used for phishing or other scams. [11] [4] [6] [14] [8] [9] The PIB Fact Check unit advises citizens to verify information through official government sources and not to click on suspicious links or share personal information on unverified platforms. [3] [4] [5] [6] [8]",
+      "text": "For claim c1:\nPIB Fact Check, published on September 21, 2026, states that a WhatsApp message claiming the government is providing free laptops under the 'National Student Laptop Scheme 2026' is fake and no such program has been announced by the Government of India. [1] Careerindia.com, on September 13, 2026, also reports that a WhatsApp forward about a \"Free Laptop Scheme 2026\" is a scam, and no central laptop scheme has been announced. [2] They advise that legitimate national benefits would appear on official government portals (ending in .gov.in) and through Press Information Bureau updates. [2] However, some state governments in India do have their own free laptop schemes. Buddy4study.com, on August 25, 2026, mentions that while there is no central government free laptop scheme, several Indian states like Tamil Nadu and Uttar Pradesh have their own programs for eligible students. [3] For example, the Tamil Nadu Government's \"Ulagam Ungal Kaiyil\" scheme and Uttar Pradesh's \"Swami Vivekananda Yuva Sashaktikaran Yojana\" (Mission DigiShakti) provide laptops or tablets to high-performing students from low-income families. [3] Similarly, the Government of Goa has a \"Laptop Scheme for Meritorious Students of SC/ST\" as of September 18, 2026. [4] Pakistan also has a \"PM's National Laptop Scheme\" run by the Higher Education Commission (HEC). [5] [6]\n\nFor claim c2:\nCareerindia.com, on September 13, 2026, warns that scam messages about free laptop schemes often include \"urgent application deadlines\" to create panic. [2] While the claim mentions October 15 as the last date, some legitimate scholarship and laptop schemes have varying deadlines. For instance, a YouTube video from October 4, 2026, mentions a scholarship with an application deadline of October 15. [7] Another YouTube video from July 29, 2026, mentions a scholarship program with a deadline of July 30. [8] The Asianet Laptop Scheme, for students in Kerala, has a submission deadline of March 31, 2027. [9] The Info Tech Corporation of Goa's Laptop Scheme for Meritorious Students of SC/ST announces its start and last dates for applications annually. [4]\n\nFor claim c3:\nCareerindia.com, on September 13, 2026, states that scam forwards for free laptop schemes often use non-government URLs and advise checking for .gov.in domains for authentic notices. [2] The website \"www.pm-free-laptop-yojana.in\" mentioned in the claim does not appear to be an official government domain. The Press Information Bureau (PIB) has repeatedly debunked claims about a \"PM Free Laptop Scheme,\" confirming them as scams designed to collect personal information. [3] [1] They advise citizens to verify news only from government sources. [10] Official government schemes, like those in Tamil Nadu and Uttar Pradesh, do not involve direct student applications through such links; instead, colleges identify eligible students and upload their data to official systems. [3]",
       "sources": [
         {
           "n": 1,
-          "url": "https://www.buddy4study.com/article/free-laptop-scheme-for-students",
-          "domain": "buddy4study.com"
-        },
-        {
-          "n": 2,
-          "url": "https://www.deccanchronicle.com/fact-check/fact-check-is-govt-offering-free-laptops-or-25000-to-students-1943775",
-          "domain": "deccanchronicle.com"
-        },
-        {
-          "n": 3,
-          "url": "https://news24online.com/tech/fact-check-modi-government-giving-free-laptops-to-students-pib-clarifies/710518/",
-          "domain": "news24online.com"
-        },
-        {
-          "n": 4,
           "url": "https://www.livemint.com/news/india/did-government-of-india-invite-applications-for-free-laptops-pib-fact-check-debunks-social-media-posts-11789989974290.html",
           "domain": "livemint.com"
         },
         {
-          "n": 5,
-          "url": "https://organiser.org/2026/09/22/381932/bharat/fact-check-govt-did-not-announce-free-laptops-for-students-under-national-student-laptop-scheme-2026-its-fake/",
-          "domain": "organiser.org"
-        },
-        {
-          "n": 6,
-          "url": "https://m.economictimes.com/news/new-updates/national-student-laptop-scheme-2026-viral-message-leaves-students-curious-pib-responds/articleshow/134389918.cms",
-          "domain": "economictimes.com"
-        },
-        {
-          "n": 7,
-          "url": "https://www.livemint.com/technology/tech-news/beware-of-fake-government-scheme-free-laptop-fffer-scam-circulating-online-pib-fact-check-reveals-details-11685769305601.html",
-          "domain": "livemint.com"
-        },
-        {
-          "n": 8,
+          "n": 2,
           "url": "https://www.careerindia.com/features/free-laptop-scheme-2026-scam-alert-how-to-verify-government-schemes-and-protect-your-data-from-fraud-011-65515.html",
           "domain": "careerindia.com"
         },
         {
+          "n": 3,
+          "url": "https://www.buddy4study.com/article/free-laptop-scheme-for-students",
+          "domain": "buddy4study.com"
+        },
+        {
+          "n": 4,
+          "url": "https://www.myscheme.gov.in/schemes/lsmsscst",
+          "domain": "myscheme.gov.in"
+        },
+        {
+          "n": 5,
+          "url": "https://www.hec.gov.pk/english/services/students/pmnls/Pages/default.aspx",
+          "domain": "hec.gov.pk"
+        },
+        {
+          "n": 6,
+          "url": "https://www.hec.gov.pk/english/services/students/pmnls/Pages/How-to-Apply.aspx",
+          "domain": "hec.gov.pk"
+        },
+        {
+          "n": 7,
+          "url": "https://www.youtube.com/watch?v=xIIVZUxo-TQ",
+          "domain": "youtube.com"
+        },
+        {
+          "n": 8,
+          "url": "https://www.youtube.com/watch?v=gvr0hD8XORM",
+          "domain": "youtube.com"
+        },
+        {
           "n": 9,
-          "url": "https://scroll.in/latest/925702/iit-graduate-arrested-for-running-fake-free-laptop-scheme-under-pm-modis-name-to-steal-data",
-          "domain": "scroll.in"
+          "url": "https://asianet.co.in/laptop-scheme/",
+          "domain": "asianet.co.in"
         },
         {
           "n": 10,
-          "url": "https://www.ndtv.com/india-news/iit-graduate-arrested-for-running-laptop-scam-under-pm-modis-name-2046909",
-          "domain": "ndtv.com"
-        },
-        {
-          "n": 11,
-          "url": "https://www.geo.tv/latest/588971-fact-check-fake-link-circulating-online-promises-free-laptops-under-prime-ministers-scheme",
-          "domain": "geo.tv"
-        },
-        {
-          "n": 12,
-          "url": "https://www.indiatoday.in/technology/news/story/indian-government-offering-free-laptops-to-students-dont-fall-for-this-latest-scam-2388152-2023-06-02",
-          "domain": "indiatoday.in"
-        },
-        {
-          "n": 13,
-          "url": "https://www.quora.com/Is-a-PM-laptop-Vitron-Yojana-real-or-fake",
-          "domain": "quora.com"
-        },
-        {
-          "n": 14,
-          "url": "https://www.altnews.in/scam-websites-con-readers-in-the-name-of-pm-modi-by-offering-free-laptops/",
-          "domain": "altnews.in"
+          "url": "https://newsonair.gov.in/hi/government-refutes-message-of-free-laptop-distribution-under-student-laptop-scheme-2026/",
+          "domain": "newsonair.gov.in"
         }
       ],
-      "queries": 8
+      "queries": 10
     }
   ]
 }

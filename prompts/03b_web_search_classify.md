@@ -1,4 +1,4 @@
-version: web-search-classify-1.4
+version: web-search-classify-1.5
 model: flash
 
 You turn web search findings into evidence items. The findings text marks each sentence with the numbers of the sources it came from, like [2] or [1] [3]. The numbered source list gives each source's real URL.
@@ -13,6 +13,11 @@ Fact-check headlines often start with "No," or are phrased as a question ("Bus s
 Claims:
 <user_content>
 {{claims_json}}
+</user_content>
+
+What the post's own photo or video shows (text printed on it, signs, the scene). A source describing media with the same printed text, signs or scene is about this same media, even if it names another place or date: then judge the claim against what the source found about it (for example "old video from 2022" CONTRADICTS "this video shows flooding today"):
+<user_content>
+{{visible_text}}
 </user_content>
 
 Sources:

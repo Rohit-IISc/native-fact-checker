@@ -1,7 +1,7 @@
 {
   "prompt_version": "packager-1.1+shared-1.1",
   "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-09T09:38:27+00:00",
+  "recorded_at": "2026-10-09T12:00:01+00:00",
   "outputs": [
     {
       "briefs": [
@@ -11,16 +11,20 @@
           "claim_type": null,
           "claimed_date": null,
           "place": null,
-          "brief_en": "Multiple fact-checking organizations and medical institutions have debunked the claim that drinking hot water mixed with lemon juice destroys or cures the coronavirus. FactCheck.org, Snopes.com, and AFP Fact Check, in reports published between March and April 2020, state that there is no scientific evidence to support this. St. Vincent's Medical Center and the National Academies of Sciences, Engineering, and Medicine also clarified in April and June 2020 that acidic drinks like lemon juice do not destroy viruses or prevent COVID-19, nor can they change the body's internal pH to achieve this effect. Hackensack Meridian Health also stated in March 2020 that home remedies, including lemon juice, are not proven to prevent or treat COVID-19.",
+          "brief_en": "Multiple fact-checking organizations and health institutions, including Snopes, FactCheck.org, AFP Fact Check, National Academies of Sciences, Engineering, and Medicine, Hackensack Meridian Health, NDTV Food, CBS News Boston, and Samayam Tamil, state that drinking hot water mixed with lemon juice does not destroy the coronavirus or prevent COVID-19. These sources, published between 2020 and 2021, consistently report a lack of scientific evidence to support such claims. While lemons contain vitamin C, it is not sufficient to boost the immune system to protect against or cure viral infections like COVID-19. The acidity of lemon juice is also not effective in killing the virus, as it can survive in acidic environments. The Guardian reported on March 27, 2020, that the UK government urged people to report \"dangerous quack cures\" for coronavirus, including those involving lemon juice and hot water.",
           "evidence_ids": [
-            "ws-2",
             "ws-3",
-            "fc-1",
-            "fc-3",
-            "fc-2",
             "ws-5",
+            "ws-9",
+            "fc-1",
+            "fc-2",
+            "ws-6",
+            "ws-13",
+            "ws-1",
             "ws-4",
-            "ws-6"
+            "ws-8",
+            "ws-10",
+            "ws-11"
           ],
           "gaps_en": []
         }

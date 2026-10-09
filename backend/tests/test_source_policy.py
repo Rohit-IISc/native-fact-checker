@@ -83,3 +83,15 @@ def test_media_observation_alone_never_carries_a_verdict():
 def test_media_observation_does_not_count_toward_two_tier2():
     pack = [ev("ws-1", T2, "NDTV"), media_item()]
     assert not source_policy.check(verdict(Label.MISLEADING, ["ws-1", "mi-c1"]), pack).passed
+
+
+def test_background_only_cannot_carry_a_verdict():
+    # Case 15 (Oct 9): old sightings of crocodiles in the lake, all CONTEXT, were read as "wrong date".
+    pack = [ev("ws-4", T2, "The Hindu", stance=Stance.CONTEXT), ev("ws-5", T2, "Times of India", stance=Stance.CONTEXT)]
+    r = source_policy.check(verdict(Label.MISLEADING, ["ws-4", "ws-5"]), pack)
+    assert not r.passed and "CONTEXT" in r.reason
+
+
+def test_background_alongside_a_contradicting_source_passes():
+    pack = [ev("fc-1", T1, "BOOM"), ev("ws-4", T2, "The Hindu", stance=Stance.CONTEXT)]
+    assert source_policy.check(verdict(Label.MISLEADING, ["fc-1", "ws-4"]), pack).passed

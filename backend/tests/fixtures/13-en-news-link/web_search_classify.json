@@ -1,112 +1,152 @@
 {
-  "prompt_version": "web-search-classify-1.4+shared-1.1",
+  "prompt_version": "web-search-classify-1.5+shared-1.1",
   "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-09T09:51:03+00:00",
+  "recorded_at": "2026-10-09T12:13:54+00:00",
   "outputs": [
     {
       "items": [
         {
           "source_n": 1,
           "claim_id": "c1",
-          "publisher": null,
+          "publisher": "Global News",
           "title": null,
-          "published_at": null,
+          "published_at": "2023-08-23",
           "language": null,
-          "snippet_en": "On August 23, 2023, India's Chandrayaan-3 spacecraft successfully landed on the Moon's south pole, making India the first country to achieve this feat. This historic event was met with widespread celebrations across India. Celebrations included cheering, hugging, waving the national flag, distributing sweets, dancing, and setting off firecrackers. The successful landing was a moment of immense national pride and was widely reported by news outlets, including the BBC.",
+          "snippet_en": "Global News reported that India became the first country to land a spacecraft near the Moon's south pole on August 23, 2023, marking a historic achievement.",
           "stance": "SUPPORTS"
         },
         {
           "source_n": 2,
           "claim_id": "c1",
-          "publisher": null,
+          "publisher": "The Guardian",
           "title": null,
-          "published_at": null,
+          "published_at": "2023-08-22",
           "language": null,
-          "snippet_en": "On August 23, 2023, India's Chandrayaan-3 spacecraft successfully landed on the Moon's south pole, making India the first country to achieve this feat. The successful landing was a moment of immense national pride and was widely reported by news outlets, including the BBC.",
+          "snippet_en": "The Guardian reported on August 22, 2023, that India was the first to successfully land a spacecraft near the lunar south pole.",
           "stance": "SUPPORTS"
         },
         {
           "source_n": 3,
           "claim_id": "c1",
-          "publisher": "space.com",
-          "title": "Chandrayaan-3: India moon landing celebrated by International Space Station astronauts",
-          "published_at": null,
+          "publisher": "PBS",
+          "title": null,
+          "published_at": "2023-08-23",
           "language": null,
-          "snippet_en": "On August 23, 2023, India's Chandrayaan-3 spacecraft successfully landed on the Moon's south pole, making India the first country to achieve this feat.",
+          "snippet_en": "PBS stated on August 23, 2023, that India made history by becoming the first country to touch down near the little-explored south pole region.",
           "stance": "SUPPORTS"
         },
         {
           "source_n": 4,
           "claim_id": "c1",
-          "publisher": "theguardian.com",
-          "title": "India rover takes walk on Moon after frenzied celebrations",
-          "published_at": "2023-08-24",
+          "publisher": "NASA Science",
+          "title": null,
+          "published_at": null,
           "language": null,
-          "snippet_en": "On August 23, 2023, India's Chandrayaan-3 spacecraft successfully landed on the Moon's south pole, making India the first country to achieve this feat. Celebrations included cheering, hugging, waving the national flag, distributing sweets, dancing, and setting off firecrackers. The successful landing was a moment of immense national pride and was widely reported by news outlets, including the BBC.",
+          "snippet_en": "NASA Science confirms that Chandrayaan-3, an Indian Space Research Organization mission, landed near the south pole of the Moon on August 23, 2023.",
           "stance": "SUPPORTS"
         },
         {
           "source_n": 5,
           "claim_id": "c1",
-          "publisher": "abplive.com",
-          "title": "Chandrayaan-3 Lands On The Moon: India Unites In Celebration, School Children Dance, Sweets — Watch Video",
+          "publisher": "Wikipedia",
+          "title": null,
           "published_at": null,
           "language": null,
-          "snippet_en": "This historic event was met with widespread celebrations across India. Celebrations included cheering, hugging, waving the national flag, distributing sweets, dancing, and setting off firecrackers.",
+          "snippet_en": "Wikipedia states that Chandrayaan-3 touched down near the lunar south pole on August 23, 2023, making ISRO the first in human history to achieve a soft landing in that region.",
           "stance": "SUPPORTS"
         },
         {
           "source_n": 6,
           "claim_id": "c1",
-          "publisher": "rediff.com",
-          "title": "India Erupts In Celebrations As Chandrayaan-3 Lands On Moon's South Pole",
-          "published_at": "2023-08-23",
+          "publisher": "Arabian Business",
+          "title": null,
+          "published_at": "2023-09-29",
           "language": null,
-          "snippet_en": "This historic event was met with widespread celebrations across India. People gathered in various locations, including educational institutions, offices, city squares, and religious places, to watch the live telecast of the landing.",
-          "stance": "SUPPORTS"
+          "snippet_en": "Arabian Business reported on September 29, 2023, that Chinese scientist Ouyang Ziyuan disputed India's claim, stating the landing site was not at the Moon's south pole or in the polar region, but at around 69 degrees south latitude.",
+          "stance": "CONTRADICTS"
         },
         {
           "source_n": 7,
           "claim_id": "c1",
-          "publisher": null,
+          "publisher": "TIME",
+          "title": null,
+          "published_at": "2023-09-28",
+          "language": null,
+          "snippet_en": "TIME reported on September 28, 2023, that Ouyang Ziyuan claimed the landing site was not close to the pole, which he defined as between 88.5 and 90 degrees south.",
+          "stance": "CONTRADICTS"
+        },
+        {
+          "source_n": 5,
+          "claim_id": "c2",
+          "publisher": "Wikipedia",
           "title": null,
           "published_at": null,
           "language": null,
-          "snippet_en": "This historic event was met with widespread celebrations across India. Celebrations included cheering, hugging, waving the national flag, distributing sweets, dancing, and setting off firecrackers.",
+          "snippet_en": "Wikipedia states that Chandrayaan-3 touched down on August 23, 2023, at 18:04 IST (12:33 UTC).",
+          "stance": "SUPPORTS"
+        },
+        {
+          "source_n": 1,
+          "claim_id": "c2",
+          "publisher": "Global News",
+          "title": null,
+          "published_at": "2023-08-23",
+          "language": null,
+          "snippet_en": "Global News reported on August 23, 2023, that the lander touched down at 6:04 p.m. local time.",
+          "stance": "SUPPORTS"
+        },
+        {
+          "source_n": 2,
+          "claim_id": "c2",
+          "publisher": "The Guardian",
+          "title": null,
+          "published_at": "2023-08-22",
+          "language": null,
+          "snippet_en": "The Guardian mentioned on August 22, 2023, that the Vikram lander touched down shortly after 6 p.m. (1230 BST).",
+          "stance": "SUPPORTS"
+        },
+        {
+          "source_n": 3,
+          "claim_id": "c2",
+          "publisher": "PBS",
+          "title": null,
+          "published_at": "2023-08-23",
+          "language": null,
+          "snippet_en": "PBS reported on August 23, 2023, that the lander touched down at 6:04 local time.",
           "stance": "SUPPORTS"
         },
         {
           "source_n": 8,
-          "claim_id": "c1",
-          "publisher": null,
+          "claim_id": "c2",
+          "publisher": "BBC News",
           "title": null,
-          "published_at": null,
+          "published_at": "2023-08-23",
           "language": null,
-          "snippet_en": "This historic event was met with widespread celebrations across India.",
+          "snippet_en": "BBC News confirmed on August 23, 2023, that the Vikram lander successfully touched down as planned at 18:04 local time (12:34 GMT).",
           "stance": "SUPPORTS"
         },
         {
           "source_n": 9,
-          "claim_id": "c1",
-          "publisher": "indianexpress.com",
-          "title": "'We won': Crowd bursts in celebration at Delhi's Nehru Planetarium as Chandrayaan-3 lands on Moon",
-          "published_at": "2023-08-23",
+          "claim_id": "c2",
+          "publisher": "Space.com",
+          "title": null,
+          "published_at": "2023-08-22",
           "language": null,
-          "snippet_en": "Celebrations included cheering, hugging, waving the national flag, distributing sweets, dancing, and setting off firecrackers.",
+          "snippet_en": "Space.com reported on August 22, 2023, that touchdown was expected at 8:34 a.m. EDT (1:34 p.m. GMT, or 6:04 p.m. in India).",
           "stance": "SUPPORTS"
         },
         {
           "source_n": 10,
-          "claim_id": "c1",
-          "publisher": "facebook.com",
-          "title": "Chandrayaan-3: India's latest Moon mission shares first images from the Moon after...",
-          "published_at": null,
+          "claim_id": "c2",
+          "publisher": "Space.com",
+          "title": null,
+          "published_at": "2023-08-23",
           "language": null,
-          "snippet_en": "The successful landing was a moment of immense national pride and was widely reported by news outlets, including the BBC.",
+          "snippet_en": "Another source from Space.com on August 23, 2023, stated the touchdown occurred at 8:33 a.m. EDT (1233 GMT and 18:03 India time).",
           "stance": "SUPPORTS"
         }
       ],
-      "notes_en": "The sources confirm that India's Chandrayaan-3 mission successfully landed on the Moon's south pole on August 23, 2023, and that this event was met with widespread celebrations across India. The findings indicate that the image in the post shows people celebrating this event."
+      "notes_en": ""
     }
   ]
 }

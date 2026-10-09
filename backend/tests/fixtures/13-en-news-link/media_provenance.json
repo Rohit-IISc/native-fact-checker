@@ -1,7 +1,7 @@
 {
-  "prompt_version": "media-provenance-1.2+shared-1.1",
+  "prompt_version": "media-provenance-1.3+shared-1.1",
   "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-09T09:51:03+00:00",
+  "recorded_at": "2026-10-09T12:13:54+00:00",
   "outputs": [
     {
       "agent": "media_provenance",
@@ -16,7 +16,22 @@
           "title": "India news stream - BBC",
           "published_at": null,
           "language": null,
-          "snippet_en": "This BBC news stream page contains a full match for the image. The content of the page is about India news.",
+          "snippet_en": "A BBC news stream that includes information about India. The image is a full match.",
+          "stance": "CONTEXT",
+          "rating_text": null,
+          "tier": "TIER_2"
+        },
+        {
+          "evidence_id": "",
+          "agent": "media_provenance",
+          "claim_id": "c2",
+          "url": "https://www.bbc.com/news/live/world-asia-india-47640058?page=47",
+          "domain": "bbc.com",
+          "publisher": "BBC",
+          "title": "India news stream - BBC",
+          "published_at": null,
+          "language": null,
+          "snippet_en": "A BBC news stream that includes information about India. The image is a full match.",
           "stance": "CONTEXT",
           "rating_text": null,
           "tier": "TIER_2"
@@ -26,15 +41,30 @@
           "agent": "media_provenance",
           "claim_id": "c1",
           "url": "https://za.linkedin.com/in/chernayj",
-          "domain": "za.linkedin.com",
+          "domain": "linkedin.com",
           "publisher": "LinkedIn",
           "title": "Chernay Johnson | Est. 1989 | #planetaryIMPACT #WomenInTech",
           "published_at": null,
           "language": null,
-          "snippet_en": "This LinkedIn profile page contains a full match for the image. The content is about Chernay Johnson's professional profile.",
-          "stance": "CONTEXT",
+          "snippet_en": "A LinkedIn profile for Chernay Johnson. The image is a full match.",
+          "stance": "UNRELATED",
           "rating_text": null,
-          "tier": "TIER_3"
+          "tier": "NOT_A_SOURCE"
+        },
+        {
+          "evidence_id": "",
+          "agent": "media_provenance",
+          "claim_id": "c2",
+          "url": "https://za.linkedin.com/in/chernayj",
+          "domain": "linkedin.com",
+          "publisher": "LinkedIn",
+          "title": "Chernay Johnson | Est. 1989 | #planetaryIMPACT #WomenInTech",
+          "published_at": null,
+          "language": null,
+          "snippet_en": "A LinkedIn profile for Chernay Johnson. The image is a full match.",
+          "stance": "UNRELATED",
+          "rating_text": null,
+          "tier": "NOT_A_SOURCE"
         },
         {
           "evidence_id": "",
@@ -46,7 +76,22 @@
           "title": "Moon base: Bangor scientists design fuel to live in space - BBC News",
           "published_at": null,
           "language": null,
-          "snippet_en": "This BBC News article contains a full match for the image. The article discusses Bangor scientists designing fuel for a moon base.",
+          "snippet_en": "BBC News article about Bangor scientists designing fuel for a moon base. The image is a full match.",
+          "stance": "CONTEXT",
+          "rating_text": null,
+          "tier": "TIER_2"
+        },
+        {
+          "evidence_id": "",
+          "agent": "media_provenance",
+          "claim_id": "c2",
+          "url": "https://www.bbc.co.uk/news/uk-wales-66687056",
+          "domain": "bbc.co.uk",
+          "publisher": "BBC News",
+          "title": "Moon base: Bangor scientists design fuel to live in space - BBC News",
+          "published_at": null,
+          "language": null,
+          "snippet_en": "BBC News article about Bangor scientists designing fuel for a moon base. The image is a full match.",
           "stance": "CONTEXT",
           "rating_text": null,
           "tier": "TIER_2"
@@ -61,16 +106,31 @@
           "title": "Chandrayaan-3: India makes historic landing near Moon's south pole",
           "published_at": null,
           "language": null,
-          "snippet_en": "This LinkedIn post contains a full match for the image and discusses India's Chandrayaan-3 historic landing near the Moon's south pole.",
+          "snippet_en": "A LinkedIn post announcing India's Chandrayaan-3 historic landing near the Moon's south pole. The image is a full match.",
           "stance": "SUPPORTS",
           "rating_text": null,
-          "tier": "TIER_3"
+          "tier": "NOT_A_SOURCE"
+        },
+        {
+          "evidence_id": "",
+          "agent": "media_provenance",
+          "claim_id": "c2",
+          "url": "https://www.linkedin.com/posts/sowmya-subramanian-pro_chandrayaan-3-india-makes-historic-landing-activity-7100100522522615808-fU2H",
+          "domain": "linkedin.com",
+          "publisher": "LinkedIn",
+          "title": "Chandrayaan-3: India makes historic landing near Moon's south pole",
+          "published_at": null,
+          "language": null,
+          "snippet_en": "A LinkedIn post announcing India's Chandrayaan-3 historic landing near the Moon's south pole. The image is a full match.",
+          "stance": "SUPPORTS",
+          "rating_text": null,
+          "tier": "NOT_A_SOURCE"
         }
       ],
       "source_assessment": null,
       "ai_generation_signals": null,
       "earliest_appearance": null,
-      "notes_en": "The image appears in multiple contexts, including a LinkedIn post directly referencing the Chandrayaan-3 landing, which supports the claim. Other appearances are in unrelated contexts or general news streams.",
+      "notes_en": "The web detection results provided several links related to 'crowd' and some full matches to news articles and LinkedIn posts. However, none of the provided links contain a specific date of publication, making it impossible to determine the earliest appearance or the context of the image within those sources without further investigation. The LinkedIn post explicitly mentions Chandrayaan-3 and the Moon's south pole landing, suggesting the image is related to this event.",
       "timed_out": false
     }
   ]

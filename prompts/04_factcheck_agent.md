@@ -1,4 +1,4 @@
-version: factcheck-1.5
+version: factcheck-1.6
 model: flash
 tools: none (code calls the Fact Check Tools API claims:search with the claim's original-language and English queries and passes the results below)
 
@@ -15,6 +15,11 @@ Fact-check headlines often start with "No," or are phrased as a question ("Bus s
 Claims:
 <user_content>
 {{claims_json}}
+</user_content>
+
+What the post's own photo or video shows (text printed on it, signs, the scene). A fact check of media with the same printed text, signs or scene is about this same media, even if it was written about another place or date: then judge the claim against what the fact-checker found ("old video from 2022" CONTRADICTS "this video shows flooding today"):
+<user_content>
+{{visible_text}}
 </user_content>
 
 Fact check search results:

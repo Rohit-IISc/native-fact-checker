@@ -1,7 +1,7 @@
 {
   "prompt_version": "judge-1.4+shared-1.1",
   "model_id": "gemini-2.5-pro",
-  "recorded_at": "2026-10-09T09:53:32+00:00",
+  "recorded_at": "2026-10-09T12:16:02+00:00",
   "outputs": [
     {
       "verdicts": [
@@ -9,12 +9,16 @@
           "claim_id": "c1",
           "label": "NOT_ENOUGH_EVIDENCE",
           "confidence": 90,
-          "what_is_true_en": "Crocodiles have been sighted in Kukkarahalli Lake in Mysuru on multiple occasions over the years, and the lake is a known crocodile habitat. However, there is no evidence to confirm a specific sighting of two crocodiles on October 8, 2026.",
+          "what_is_true_en": "While crocodiles have been repeatedly sighted in Kukkarahalli Lake, with reports in December 2024, January 2026, and September 2026, there is no specific evidence to confirm that two crocodiles were seen on October 8, 2026.",
           "event_date": null,
           "evidence_for_ids": [],
           "evidence_against_ids": [],
-          "cited_ids": [],
-          "reasoning_en": "Multiple news reports from reputable sources confirm that crocodiles have been spotted in Kukkarahalli Lake in 2010, 2023, 2024, and early 2026, establishing it as a known habitat for them. However, none of the provided evidence confirms the specific claim that two crocodiles were seen on the evening of October 8, 2026. The available information only provides general context about past sightings and does not support this particular event.",
+          "cited_ids": [
+            "ws-1",
+            "ws-2",
+            "ws-3"
+          ],
+          "reasoning_en": "Multiple local news reports confirm the presence of crocodiles in Kukkarahalli Lake over the past two years. However, none of the provided evidence specifically corroborates the claim that two crocodiles were spotted on the evening of October 8, 2026. The available sources only provide general context about crocodiles being in the lake, but do not confirm this particular sighting.",
           "ai_generation": null
         }
       ]

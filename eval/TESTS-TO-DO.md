@@ -30,7 +30,7 @@ Production: https://ai-builder-2026.web.app. Install the PWA first (Chrome menu,
 
 ## 2. Verdict quality (real models, costs money: `make accept`)
 
-Latest full run: 15/20 (Oct 9 evening, slow Vertex: web search and translation timeouts in 03, 04, 01b; 13 known; 15 see below). Best Oct 9: 18/20. Run with
+Latest full run: 14/20 (Oct 9 night, guard shipped): 13 passed (TRUE) for the first time, 15 passes; 01/02/03 abstained once (see below), 06b and 12 lost to timeouts, 01b gave FALSE. Best Oct 9: 18/20. Run with
 `REPEAT=2` or more; one pass proves little.
 
 - [ ] **01, 02, 03** Kannada flood video: MISLEADING every run. Oct 9 fixes: the claim comes from the
@@ -39,13 +39,14 @@ Latest full run: 15/20 (Oct 9 evening, slow Vertex: web search and translation t
       over budget on slow Vertex days
 - [ ] **01b** depends on web search alone (the Fact Check Tools API has no match): 0/2 when web search
       timed out on Oct 9 afternoon. Re-test on a normal day
-- [ ] **15** thin local claim gave MISLEADING at 90% on Oct 9 (panel read old crocodile sightings, all
-      CONTEXT, as "real event, wrong date"). Proposed code guard (needs Rohit, it changes verdict logic): a
-      decisive label backed only by CONTEXT items, with no CONTRADICTS or SUPPORTS item, becomes
-      NOT_ENOUGH_EVIDENCE
+- [x] **15** thin local claim (decision 46, shipped Oct 9): a decisive label backed only by CONTEXT items
+      becomes NOT_ENOUGH_EVIDENCE. 15 passed in every run since
+- [ ] **01 with the guard**: MISLEADING in 3 of 4 runs where search finished; the 4th abstained because the
+      fact-check agent called The Quint's "old 2022 video" check CONTEXT. Classifiers now see the post's
+      media description (classify 1.5, factcheck 1.6); tighten further if it keeps abstaining
 - [x] **Answer wording matches the label** (Oct 9, composer 1.3): 0 of 6 MISLEADING answers call the post false
 - [ ] **10a** Mumbai flyover bus (AI image): FALSE (Oct 9 gave MISLEADING; it passed before)
-- [ ] **13** BBC news link: TRUE (gives NOT_ENOUGH_EVIDENCE when search finds only tier 3 coverage)
+- [ ] **13** BBC news link: TRUE (passed once, Oct 9 night; earlier NOT_ENOUGH_EVIDENCE with only tier 3 coverage)
 - [ ] **04, 09** flaky: pass in 2 of 2 repeat runs
 - [ ] **12** NBT Holi satire: stays MISLEADING (1/2 on slow Oct 9 afternoon: the miss ran over budget)
 - [ ] Every case in all 5 languages: Hindi, Tamil, Kannada, Indonesian, English (CLAUDE.md definition of

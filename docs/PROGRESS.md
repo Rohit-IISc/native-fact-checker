@@ -68,7 +68,11 @@ Updated after every task (see CLAUDE.md, "How to work"). Newest state only; hist
 
 ## Broken or risky
 
-Latest `make accept` (Oct 9 evening, after the large-upload change, which does not touch the pipeline):
+Latest `make record` (Oct 9 night, CONTEXT-only guard shipped, decision 46; classify 1.5 and factcheck 1.6 see
+the post's media; media provenance 1.3): 14/20, avg 51.7 s, $2.26. 13 passed (TRUE) for the first time; 15
+passes. Fails: 01/02/03 (one abstention: The Quint's check classed CONTEXT; 01 is MISLEADING in 3 of 4
+runs where search finished), 01b (FALSE, want MISLEADING), 06b and 12 (judge or web search timeouts).
+Before that, `make accept` (Oct 9 evening, after the large-upload change, which does not touch the pipeline):
 15/20, avg 57.8 s, $1.90. Fails: 01b, 03, 04 (web search or translation timeouts), 13 (known), 15 (MISLEADING
 at 90% from CONTEXT-only evidence; guard proposed, needs Rohit).
 Before that, `make accept` (Oct 9 afternoon, after the case 01 and wording fixes): 14/20, avg 60.7 s, $2.04, on a
@@ -115,8 +119,8 @@ is kept for history. Details: eval/TESTS-TO-DO.md section 5.
 1. Rohit: phone tests in eval/TESTS-TO-DO.md section 1 (share sheet, push, card in WhatsApp).
 2. Latency on slow Vertex days: video extraction alone took 57 s in one run (first call timed out). Look
    at a lower extraction hedge for video, or Provisioned Throughput (decision 41).
-3. Rohit: approve or refuse the CONTEXT-only guard for case 15 (a decisive label backed only by CONTEXT
-   items becomes NOT_ENOUGH_EVIDENCE), then implement it.
+3. Case 01 stability with the guard: the fact-check agent sometimes still calls "this same video is old"
+   CONTEXT. Next idea: pass the media's earliest appearance from media provenance into the classifiers.
 4. Rohit: phone test of a 40-50 MB share (direct upload, eval/TESTS-TO-DO.md section 1).
 5. Rohit: make `main` the default branch on GitHub (deploys come from main since Oct 9).
 

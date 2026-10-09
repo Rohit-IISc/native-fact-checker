@@ -1,28 +1,28 @@
 {
   "prompt_version": "composer-1.3+shared-1.1",
   "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-09T09:54:44+00:00",
+  "recorded_at": "2026-10-09T12:17:38+00:00",
   "outputs": [
     {
       "language": "en",
       "headline": "False: 5G towers do not spread coronavirus",
-      "summary": "The claim that 5G mobile towers spread the coronavirus is false; there is no scientific evidence to support this.",
-      "what_post_claims": "The post claims that 5G mobile towers are responsible for spreading the coronavirus, leading to an increase in cases in areas where 5G was installed.",
-      "what_is_true": "There is no scientific evidence linking 5G technology to the spread of the coronavirus. International health organizations and experts confirm that viruses cannot travel on radio waves or mobile networks.",
+      "summary": "There is no scientific evidence to support the claim that 5G mobile towers spread the coronavirus or cause an increase in COVID-19 cases.",
+      "what_post_claims": "The post claims that 5G mobile towers spread the coronavirus, leading to a rise in COVID-19 cases in areas where 5G technology was installed.",
+      "what_is_true": "COVID-19 is a disease caused by a virus, not by 5G mobile technology. Numerous scientific and health organizations have confirmed there is no link between 5G and the spread of the coronavirus.",
       "evidence_for": [],
       "evidence_against": [
-        "The United Nations International Telecommunication Union (ITU) confirmed that 5G is not responsible for the spread of COVID-19, calling the conspiracy a 'hoax with no technical basis'.",
-        "AP News rated as false the claim that maps show a correlation between confirmed COVID-19 cases and where 5G wireless service has been installed.",
-        "AFP Fact Check rated as false the claim that coronavirus is a result of 5G."
+        "Full Fact states there is no evidence that 5G is harmful to people's health.",
+        "AP News rated as false the claim that maps show a correlation between COVID-19 cases and 5G service.",
+        "AFP Fact Check rated as false the claim that COVID-19 is bacterial and linked to 5G."
       ],
       "confidence_phrase": "we are very sure",
-      "sources_spoken": "the United Nations International Telecommunication Union, AP News, and AFP Fact Check",
-      "audio_script": "A post claims that 5G mobile towers are responsible for spreading the coronavirus, leading to an increase in cases where 5G was installed. This is false. There is no scientific evidence linking 5G technology to the spread of the coronavirus. International health organizations and experts confirm that viruses cannot travel on radio waves or mobile networks. We are very sure of this. This information comes from the United Nations International Telecommunication Union, AP News, and AFP Fact Check.",
+      "sources_spoken": "Full Fact, AP News, and AFP Fact Check",
+      "audio_script": "The post claims that 5G mobile towers spread the coronavirus, causing an increase in COVID-19 cases in areas where 5G technology was installed. This is false. COVID-19 is a disease caused by a virus, not by 5G mobile technology. Numerous scientific and health organizations have confirmed there is no link between 5G and the spread of the coronavirus. We are very sure about this. This information comes from fact-checking organizations like Full Fact, AP News, and AFP Fact Check, who have all debunked similar claims.",
       "card_lines": [
         "FALSE",
         "5G towers do not spread coronavirus",
-        "Viruses cannot travel on radio waves",
-        "UN and health experts confirm"
+        "COVID-19 is a virus, not caused by 5G",
+        "Source: Full Fact, AP News"
       ],
       "panel_readings": []
     }

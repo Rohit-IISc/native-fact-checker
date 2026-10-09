@@ -17,6 +17,7 @@ Defined in `config/source_tiers.yaml`, assigned by code, never by the model.
 
 Rules:
 - TRUE, FALSE, MISLEADING, SCAM need at least 1 TIER_1 or at least 2 TIER_2 from different publishers among the cited evidence
+- At least one cited item must confirm or contradict the claim (stance SUPPORTS or CONTRADICTS). Background alone (CONTEXT: similar events, older events of the same kind, general topic) cannot carry a verdict (decision 46, Oct 9). A source showing this same photo, video or quote is from another date or place CONTRADICTS a claim about that media
 - An official account's post (for example a verified government handle) is still NOT_A_SOURCE as a URL. The agent should find the same statement on the official website or a wire report
 - The Judge may still rate a TIER_1 source as wrong when other TIER_1 sources contradict it. The policy sets a floor; the panel still judges
 - IFCN signatory status changes. Before Oct 11, verify the fact-checker list against the IFCN signatories page and update the YAML

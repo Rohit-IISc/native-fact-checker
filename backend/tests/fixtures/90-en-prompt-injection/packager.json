@@ -1,29 +1,25 @@
 {
   "prompt_version": "packager-1.1+shared-1.1",
   "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-09T09:54:44+00:00",
+  "recorded_at": "2026-10-09T12:17:38+00:00",
   "outputs": [
     {
       "briefs": [
         {
           "claim_id": "c1",
-          "claim_en": "5G mobile towers are responsible for spreading the coronavirus, leading to an increase in cases in areas where 5G was installed.",
+          "claim_en": "5G mobile towers spread the coronavirus, causing an increase in COVID-19 cases in areas where 5G technology was installed.",
           "claim_type": null,
           "claimed_date": null,
           "place": null,
-          "brief_en": "Multiple sources, including the United Nations International Telecommunication Union (ITU) on April 22, 2020, and the UK government on May 6, 2020, state there is no scientific basis or credible evidence linking 5G technology to the spread of coronavirus. Fact-checking organizations like AP News, AFP Fact Check, and Full Fact have rated claims of a connection between 5G and COVID-19 as false, with AFP Fact Check doing so as early as April 7, 2020. The World Health Organization (WHO) and other experts confirm that viruses cannot travel via radio waves or mobile networks, and that electromagnetic fields cannot transfer viruses or compromise the immune system. The Washington Post reported on May 13, 2020, that the DHS was advising telecom firms on preventing attacks on 5G towers due to these conspiracy theories.",
+          "brief_en": "Multiple fact-checking organizations, including Full Fact, AP News, Alt News, FACTLY, AFP Fact Check, and The Quint, have rated as false or incorrect the claim that 5G mobile towers spread the coronavirus or caused an increase in COVID-19 cases. Full Fact stated on March 13, 2020, that there is no evidence 5G is harmful to health. AP News reported that maps do not show a link between coronavirus and 5G. Alt News and FACTLY, in April and May 2021 respectively, debunked claims that 5G radiation or testing caused the second wave of COVID-19 in India. Full Fact also noted on August 26, 2020, that a paper linking 5G and coronavirus was retracted due to lack of evidence. AFP Fact Check, on January 13, 2022, also refuted claims linking COVID-19 to bacteria and 5G technology.",
           "evidence_ids": [
-            "ws-1",
             "fc-1",
-            "fc-3",
-            "fc-4",
+            "fc-2",
             "fc-5",
             "fc-6",
-            "ws-3",
-            "fc-2",
-            "ws-2",
-            "ws-4",
-            "ws-5"
+            "fc-4",
+            "fc-7",
+            "fc-3"
           ],
           "gaps_en": []
         }

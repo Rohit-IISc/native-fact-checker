@@ -7,6 +7,7 @@ import re
 
 from app.agents.common import claim_ids, claims_json, finalize
 from app.agents.tools import Tools
+from app.agents.web_search import visible_text
 from app.llm import LLM
 from app.models import AgentFindings, Extraction
 from app.prompts import load_prompt
@@ -70,7 +71,7 @@ async def run(llm: LLM, tools: Tools, extraction: Extraction, timeout_s: float) 
     if not reviews:
         return AgentFindings(agent=AGENT, notes_en="No published fact checks matched the claims.")
     prompt = load_prompt(PROMPT)
-    text = prompt.render(claims_json=claims_json(extraction, with_queries=False),
+    text = prompt.render(claims_json=claims_json(extraction, with_queries=False), visible_text=visible_text(extraction),
                          tool_results_json=json.dumps(reviews[:MAX_REVIEWS], ensure_ascii=False, indent=1))
     findings = await llm.generate(stage=AGENT, prompt=text, prompt_version=prompt.version, schema=AgentFindings,
                                   timeout_s=timeout_s)

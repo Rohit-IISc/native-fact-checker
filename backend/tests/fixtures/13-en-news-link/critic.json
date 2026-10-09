@@ -1,21 +1,23 @@
 {
   "prompt_version": "critic-1.3+shared-1.1",
   "model_id": "gemini-2.5-pro",
-  "recorded_at": "2026-10-09T09:51:03+00:00",
+  "recorded_at": "2026-10-09T12:13:54+00:00",
   "outputs": [
     {
       "reviews": [
         {
           "claim_id": "c1",
-          "decision": "DISAGREE",
-          "proposed_label": "MISLEADING",
-          "proposed_confidence": 85,
-          "objections_en": [
-            "The judge's label of TRUE is an overreach. While the Chandrayaan-3 landing and subsequent celebrations are real events (ws-4, ws-9, ws-6), the evidence does not definitively prove that this specific image depicts those celebrations.",
-            "The judge misweighed evidence mp-3. This evidence shows the exact same image was used by the BBC in an article about a completely different topic ('Moon base: Bangor scientists design fuel to live in space'). This strongly suggests the image is a generic or stock photo used for illustrative purposes, not a documentary photo of the Chandrayaan-3 celebrations.",
-            "The evidence cited to support the link (mp-1) is weak. It only states the image appeared on a BBC 'India news stream', but does not provide a specific caption or context confirming it depicts the Chandrayaan-3 event. Given its use elsewhere (mp-3), we cannot assume this context.",
-            "The correct label is MISLEADING because a potentially out-of-context image is being used to illustrate a real event, which could mislead viewers about the specifics of that event."
-          ]
+          "decision": "AGREE",
+          "proposed_label": "TRUE",
+          "proposed_confidence": 90,
+          "objections_en": []
+        },
+        {
+          "claim_id": "c2",
+          "decision": "AGREE",
+          "proposed_label": "TRUE",
+          "proposed_confidence": 100,
+          "objections_en": []
         }
       ]
     }

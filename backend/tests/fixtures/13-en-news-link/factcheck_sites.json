@@ -1,15 +1,31 @@
 {
-  "prompt_version": "factcheck-1.5+shared-1.1",
+  "prompt_version": "factcheck-1.6+shared-1.1",
   "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-09T09:51:03+00:00",
+  "recorded_at": "2026-10-09T12:13:54+00:00",
   "outputs": [
     {
       "agent": "factcheck_sites",
-      "evidence": [],
+      "evidence": [
+        {
+          "evidence_id": "",
+          "agent": "factcheck_sites",
+          "claim_id": "c1",
+          "url": "https://www.boomlive.in/fact-check/claims-of-china-being-the-first-country-to-land-on-the-south-pole-of-the-moon-is-false-22899",
+          "domain": "boomlive.in",
+          "publisher": "BOOM Fact Check",
+          "title": "Claims Of China Being The First Country To Land On The South ...",
+          "published_at": "2023-08-29",
+          "language": "en",
+          "snippet_en": "BOOM Fact Check rated as False the claim that China was the first country to land on the moon's South Pole a few years ago, contradicting the claim that India was the first.",
+          "stance": "CONTRADICTS",
+          "rating_text": "False",
+          "tier": "TIER_1"
+        }
+      ],
       "source_assessment": null,
       "ai_generation_signals": null,
       "earliest_appearance": null,
-      "notes_en": "No fact checks directly address the claim that the image in the post shows people celebrating India's Chandrayaan-3 mission successfully landing near the Moon's south pole. The provided fact checks are about videos of ISRO scientists dancing or BBC's alleged criticism of the mission, which are not directly related to the specific image in the claim.",
+      "notes_en": "The provided fact checks primarily address misinformation related to Chandrayaan-3 visuals and claims about other countries landing on the moon's south pole. Only one fact check directly addresses the claim of India being the first to land on the lunar south pole by contradicting a claim that China was first.",
       "timed_out": false
     }
   ]
