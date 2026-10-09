@@ -112,6 +112,44 @@ async def harvest(per_query: int = 50) -> list[dict]:
     return list(items.values())
 
 
+async def claim_forms(items: list[dict]) -> dict[str, str]:
+    """id -> CLAIM, CONCLUSION or OTHER (prompts/13_eval_claim_form.md). Some publishers put their finding
+    ("Trump did not say ...") in the claim field, which inverts the rating (dataset v2, Oct 9)."""
+    from pydantic import BaseModel
+
+    from app.llm import get_llm
+    from app.prompts import load_prompt
+
+    class Form(BaseModel):
+        id: str
+        form: str
+
+    class Forms(BaseModel):
+        items: list[Form]
+
+    p, llm, out = load_prompt("13_eval_claim_form.md"), get_llm(), {}
+    batches = [items[i:i + 25] for i in range(0, len(items), 25)]
+
+    async def one(batch: list[dict]) -> None:
+        text = p.render(items_json=json.dumps([{"id": i["id"], "text": i["claim_text"]} for i in batch],
+                                              ensure_ascii=False))
+        try:
+            res = await llm.generate(stage="eval_claim_form", prompt=text, prompt_version=p.version, schema=Forms,
+                                     timeout_s=60)
+            out.update({f.id: f.form for f in res.items})
+        except Exception:  # noqa: BLE001  unclassified items are left out of gold
+            pass
+
+    sem = asyncio.Semaphore(4)
+
+    async def guarded(b: list[dict]) -> None:
+        async with sem:
+            await one(b)
+
+    await asyncio.gather(*(guarded(b) for b in batches))
+    return out
+
+
 def balanced(items: list[dict], per_language: int, rng: random.Random, by_label: bool = False) -> list[dict]:
     """Up to per_language items for each demo language; with by_label, spread across labels first."""
     out = []
@@ -185,7 +223,11 @@ def main() -> int:
     rng = random.Random(a.seed)
     bench = balanced(items, a.benchmark_per_language, rng)
     gold_ids = {i["id"] for i in bench}
-    gold = balanced([i for i in items if i["label"] and i["id"] not in gold_ids], a.gold_per_language, rng,
+    candidates = [i for i in items if i["label"] and i["id"] not in gold_ids]
+    forms = asyncio.run(claim_forms(candidates))
+    dropped = sum(forms.get(i["id"]) != "CLAIM" for i in candidates)
+    print(f"gold candidates {len(candidates)}; {dropped} dropped as conclusions, questions or unclassified")
+    gold = balanced([i for i in candidates if forms.get(i["id"]) == "CLAIM"], a.gold_per_language, rng,
                     by_label=True)
     print(f"harvested {len(items)} fact checks; benchmark {len(bench)}, gold {len(gold)}")
     for lang in LANGUAGES:

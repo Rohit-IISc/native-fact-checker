@@ -67,3 +67,4 @@ stage_models:
   translator: flash
   panel_timeout_fallback: flash
   eval_query: flash            # eval runner only: restate a benchmark claim in another language
+  eval_claim_form: flash       # eval dataset build only: drop fact-checker conclusions posing as claims

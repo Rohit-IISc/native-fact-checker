@@ -111,10 +111,11 @@ Findings to test and fix:
       23.5% -> 41.5% and 45.5% on two runs (kn->hi 0 -> 35-40%, hi->ta 5 -> 35-37.5%, ta->kn 0 -> 22.5%;
       id->en varies 37.5-70% between runs: Flash writes different queries each time). Recall at 15
       (what the agent shows its classifier): 50.5%. `make accept`: 18/20 (see section 2)
-- [ ] **Gold labels with inverted claims.** 3 gold items came out TRUE where the rating says FALSE or
-      half true; in all 3 the ClaimReview "claim" is the fact-checker's conclusion ("Trump did not
-      say ..."), so our TRUE is right for that text. Hand-check all 60, drop such items, freeze v3,
-      re-baseline with `--set-baseline` (decision 42)
+- [x] **Gold labels with inverted claims** (fixed Oct 9, dataset v3). Gold candidates are checked by Flash
+      for form (claim as circulated vs the fact-checker's finding or a question; 491 of 1996 dropped),
+      then Claude hand-checked all 60 and removed 3 more Kannada findings: 57 items. New baseline on v3
+      (see "Eval baseline v3" below). Rohit: spot-check 15 of
+      `gs://ai-builder-2026-eval/datasets/v3/gold.jsonl` if you have time
 - [ ] TRUE claims abstain 7 of 12: expected when only tier 3 coverage is found (as case 13); look at
       whether more tier 2 news sites belong in config/source_tiers.yaml (Rohit decides tiers)
 
