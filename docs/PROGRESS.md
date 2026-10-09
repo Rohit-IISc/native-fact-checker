@@ -50,6 +50,12 @@ Updated after every task (see CLAUDE.md, "How to work"). Newest state only; hist
     (build-sa, PWA keys in Secret Manager, GitHub connection, trigger). Trigger `deploy-on-push` deploys
     every push to `main` (working branch merged into main on Oct 9).
   - `make deploy-ops` re-runs eval deploy, views and alerts.
+- Large shares (decision 45): `POST /v1/uploads` signs a 15-minute PUT URL to `staged/{uid hash}/{id}` in the
+  media bucket (`intake/uploads.py`); `POST /v1/checks` takes `upload_ids`; the PWA uses it above 24 MB.
+  Live-tested: 37.7 MB PUT in 0.6 s, read back, refused for another user. Bucket CORS in deploy_backend.sh.
+- Case 01 fixes and answer wording (extractor 1.13, classify 1.4, factcheck 1.5, composer 1.3; OCR text is
+  searched by code). Cross-language fact-check search (extractor 1.12 regional queries, unfiltered search).
+  Eval gold v3 with a claim-form filter and hand-check; new baseline on v3.
 - `eval/TESTS-TO-DO.md`: every test still to do (phone, verdict quality, native speakers, load, unbuilt).
 - Day 5 audio (`backend/app/output/tts.py`): Gemini TTS, voice per language, MP3 via ffmpeg, stored in the
   outputs bucket, served by `GET /v1/results/{id}/audio`. Generated after DONE (TTS takes 18-24 s);
@@ -62,7 +68,10 @@ Updated after every task (see CLAUDE.md, "How to work"). Newest state only; hist
 
 ## Broken or risky
 
-Latest `make accept` (Oct 9 afternoon, after the case 01 and wording fixes): 14/20, avg 60.7 s, $2.04, on a
+Latest `make accept` (Oct 9 evening, after the large-upload change, which does not touch the pipeline):
+15/20, avg 57.8 s, $1.90. Fails: 01b, 03, 04 (web search or translation timeouts), 13 (known), 15 (MISLEADING
+at 90% from CONTEXT-only evidence; guard proposed, needs Rohit).
+Before that, `make accept` (Oct 9 afternoon, after the case 01 and wording fixes): 14/20, avg 60.7 s, $2.04, on a
 slow Vertex day (extractor p95 27 s vs 18-21 s before; web search 6% failures). Targeted REPEAT=2: 01 2/2
 MISLEADING (the answer is now about the sharer's own claim), 12 1/2 (the miss ran over budget), 01b 0/2
 (web search timed out; the Fact Check Tools API has no match for it, so it depends on web search).
@@ -88,12 +97,12 @@ Earlier pass rates (Oct 8, real models; `make accept REPEAT=2`, plus later singl
   recovering); Gemini 2.5 on Vertex uses dynamic shared quota, so heavy judging-week load may still hit
   it. Provisioned Throughput: not now (decision 41); see "Before the final presentation".
 - Instagram reels: only caption + thumbnail (Instagram gives no video to link previews).
-- Not built yet: signed-URL upload (Cloud Run caps uploads at 32 MB; we promise 50 MB). Looker Studio
-  dashboard and the billing budget need Rohit (eval/TESTS-TO-DO.md section 5).
+- Looker Studio dashboard and the billing budget need Rohit (eval/TESTS-TO-DO.md section 5).
 
-Eval baseline (Oct 9, dataset v2): recall at 5 23.5% (en→hi 85%, kn→hi 0%, ta→kn 0%); verdict agreement
-41.7% strict, 55.0% direction; abstain 36.7%; accuracy when answered 65.8%; p95 82.9 s; 0.11 USD per
-check. Cross-language recall gap and 3 inverted gold items: eval/TESTS-TO-DO.md section 5.
+Eval baseline (current: Oct 9, dataset v3, 57 gold, with the cross-language search): recall at 5 48.0%;
+verdict agreement 54.4% strict, 71.9% direction; abstain 22.8%; accuracy when answered 70.5%; p95 93.5 s
+(inflated: shared quota with make record); 0.097 USD per check. The v2 baseline (23.5% recall, 41.7% strict)
+is kept for history. Details: eval/TESTS-TO-DO.md section 5.
 
 ## Before the final presentation (Oct 18)
 
@@ -106,7 +115,8 @@ check. Cross-language recall gap and 3 inverted gold items: eval/TESTS-TO-DO.md 
 1. Rohit: phone tests in eval/TESTS-TO-DO.md section 1 (share sheet, push, card in WhatsApp).
 2. Latency on slow Vertex days: video extraction alone took 57 s in one run (first call timed out). Look
    at a lower extraction hedge for video, or Provisioned Throughput (decision 41).
-4. Gold set v3 after a hand-check (3 items have the conclusion as the claim), re-baseline.
-5. Signed-URL upload for shares over 32 MB.
-6. Rohit: make `main` the default branch on GitHub (deploys come from main since Oct 9).
+3. Rohit: approve or refuse the CONTEXT-only guard for case 15 (a decisive label backed only by CONTEXT
+   items becomes NOT_ENOUGH_EVIDENCE), then implement it.
+4. Rohit: phone test of a 40-50 MB share (direct upload, eval/TESTS-TO-DO.md section 1).
+5. Rohit: make `main` the default branch on GitHub (deploys come from main since Oct 9).
 
