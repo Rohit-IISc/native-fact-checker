@@ -1,12 +1,12 @@
 {
-  "prompt_version": "extractor-1.11+shared-1.1",
+  "prompt_version": "extractor-1.12+shared-1.1",
   "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-08T18:03:19+00:00",
+  "recorded_at": "2026-10-09T08:55:21+00:00",
   "outputs": [
     {
       "content_language": "hi-IN",
       "content_script": "Deva",
-      "summary_en": "The message is a morning greeting wishing the recipient and their family the grace of Lord Shiva and an auspicious day. It includes emojis of a flower and folded hands.",
+      "summary_en": "The post is a morning greeting wishing blessings from Lord Shiva upon the recipient and their family.",
       "checkable": false,
       "non_checkable_type": "DEVOTIONAL",
       "claims": [],

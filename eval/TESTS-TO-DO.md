@@ -28,11 +28,13 @@ Production: https://ai-builder-2026.web.app. Install the PWA first (Chrome menu,
 
 ## 2. Verdict quality (real models, costs money: `make accept`)
 
-Latest full run: 15/20 (Oct 8 evening). Run with `REPEAT=2` or more; one pass proves little.
+Latest full run: 18/20 (Oct 9, after the cross-language search fix; failing 10a and 13). Run with
+`REPEAT=2` or more; one pass proves little.
 
 - [ ] **01, 02, 03** Kannada flood video: MISLEADING every run (now flips with NOT_ENOUGH_EVIDENCE). Fix
       planned: "this exact video is old" fact checks classified as CONTEXT
-- [ ] **01b** flood video as an X screenshot: MISLEADING (gives NOT_ENOUGH_EVIDENCE)
+- [ ] **01b** flood video as an X screenshot: MISLEADING (passed Oct 9 after the search fix; confirm with REPEAT=2)
+- [ ] **10a** Mumbai flyover bus (AI image): FALSE (Oct 9 gave MISLEADING; it passed before)
 - [ ] **13** BBC news link: TRUE (gives NOT_ENOUGH_EVIDENCE when search finds only tier 3 coverage)
 - [ ] **04, 09** flaky: pass in 2 of 2 repeat runs
 - [ ] **12** NBT Holi satire: stays MISLEADING (3/3 since Oct 8); the answer text never calls it "false"
@@ -103,11 +105,12 @@ and the PWA keys in Secret Manager. Re-run any of it with `make deploy-ops` (nee
 By language (strict / direction of 12): hi 6/8, ta 2/5, kn 3/4, id 6/8, en 8/8. Tamil abstains most (7 of 12).
 
 Findings to test and fix:
-- [ ] **Cross-language recall is near zero for Indian languages.** Likely cause: the fact-check agent always
-      filters the Fact Check Tools API by language (post language, English, Hindi), so a Tamil fact check is
-      never searched for a Kannada post. Test: add a query without a language filter
-      (`agents/factcheck_sites.py:search_plan`), re-run `make eval ARGS="--gold-n 0 --silver-n 0"`
-      (recall only, cents) and compare with 23.5%
+- [x] **Cross-language recall was near zero for Indian languages** (fixed Oct 9). The fact-check agent now
+      also searches without a language filter, and the extractor (1.12) writes one query each in the other
+      Indian demo languages (hi, ta, kn), because the API matches words. Recall-only eval, dataset v2:
+      23.5% -> 41.5% and 45.5% on two runs (kn->hi 0 -> 35-40%, hi->ta 5 -> 35-37.5%, ta->kn 0 -> 22.5%;
+      id->en varies 37.5-70% between runs: Flash writes different queries each time). Recall at 15
+      (what the agent shows its classifier): 50.5%. `make accept`: 18/20 (see section 2)
 - [ ] **Gold labels with inverted claims.** 3 gold items came out TRUE where the rating says FALSE or
       half true; in all 3 the ClaimReview "claim" is the fact-checker's conclusion ("Trump did not
       say ..."), so our TRUE is right for that text. Hand-check all 60, drop such items, freeze v3,

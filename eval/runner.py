@@ -39,6 +39,7 @@ from typing import Any  # noqa: E402
 
 from pydantic import BaseModel  # noqa: E402
 
+from app.models import RegionalQuery  # noqa: E402
 from eval import datasets  # noqa: E402
 
 log = logging.getLogger("eval")
@@ -56,6 +57,7 @@ class EvalQuery(BaseModel):
     claim_en: str
     search_queries_original: list[str] = []
     search_queries_en: list[str] = []
+    search_queries_regional: list[RegionalQuery] = []
 
 
 # ---------- overlay store ----------
@@ -83,7 +85,8 @@ class OverlayStore:
 # ---------- 1. recall at 5 ----------
 
 async def top_urls(llm, tools, item: dict, target: str) -> list[str]:
-    """The first 5 fact-check URLs our retrieval returns for the claim restated in `target`."""
+    """The first 15 fact-check URLs our retrieval returns for the claim restated in `target` (the agent shows
+    its classifier up to 15, factcheck_sites.MAX_REVIEWS; recall at 5 uses the first 5)."""
     from app.agents import factcheck_sites
     from app.models import Claim, ClaimType, Extraction, TimeSensitivity
     from app.prompts import load_prompt
@@ -98,7 +101,8 @@ async def top_urls(llm, tools, item: dict, target: str) -> list[str]:
         claims=[Claim(claim_id="c1", claim_original=q.claim_original, claim_en=q.claim_en,
                       claim_type=ClaimType.EVENT, time_sensitivity=TimeSensitivity.EVERGREEN,
                       search_queries_original=q.search_queries_original[:3],
-                      search_queries_en=q.search_queries_en[:3])])
+                      search_queries_en=q.search_queries_en[:3],
+                      search_queries_regional=q.search_queries_regional[:3])])
     batches = await asyncio.gather(*(tools.factcheck_search(qq, lang)
                                      for qq, lang in factcheck_sites.search_plan(ext)))
     urls: list[str] = []
@@ -107,7 +111,7 @@ async def top_urls(llm, tools, item: dict, target: str) -> list[str]:
             u = datasets.norm_url(r.get("url"))
             if u and u not in urls:
                 urls.append(u)
-    return urls[:5]
+    return urls[:15]
 
 
 async def recall_at_5(llm, tools, items: list[dict], jobs: int) -> tuple[dict, list[dict]]:
@@ -119,14 +123,15 @@ async def recall_at_5(llm, tools, items: list[dict], jobs: int) -> tuple[dict, l
         async with sem:
             try:
                 urls = await top_urls(llm, tools, item, target)
-                hit, err = datasets.norm_url(item["url"]) in urls, None
+                rank, err = _rank(urls, item["url"]), None
             except Exception as e:  # noqa: BLE001  a failed item counts as a miss, and is reported
-                urls, hit, err = [], False, f"{type(e).__name__}: {str(e)[:120]}"
-        rows.append({"id": item["id"], "pair": f"{item['language']}->{target}", "hit": hit, "top5": urls,
-                     "error": err})
+                urls, rank, err = [], None, f"{type(e).__name__}: {str(e)[:120]}"
+        rows.append({"id": item["id"], "pair": f"{item['language']}->{target}", "hit": rank is not None and rank < 5,
+                     "hit15": rank is not None, "rank": rank, "top15": urls, "error": err})
 
     await asyncio.gather(*(one(i) for i in items))
-    out: dict[str, Any] = {"overall": _rate([r["hit"] for r in rows]), "n": len(rows)}
+    out: dict[str, Any] = {"overall": _rate([r["hit"] for r in rows]), "n": len(rows),
+                           "at_15": _rate([r["hit15"] for r in rows])}
     for pair in sorted({r["pair"] for r in rows}):
         out[pair] = _rate([r["hit"] for r in rows if r["pair"] == pair])
     return out, rows
@@ -231,6 +236,11 @@ def verdict_metrics(rows: list[VerdictRow]) -> dict[str, Any]:
         "cost_per_check": round(sum(r.cost_usd for r in done) / max(1, len(done)), 5),
         "errors": len(rows) - len(done),
     }
+
+
+def _rank(urls: list[str], target: str) -> int | None:
+    u = datasets.norm_url(target)
+    return urls.index(u) if u in urls else None
 
 
 def _rate(xs: list[bool]) -> float | None:

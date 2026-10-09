@@ -1,19 +1,19 @@
 {
-  "prompt_version": "extractor-1.11+shared-1.1",
+  "prompt_version": "extractor-1.12+shared-1.1",
   "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-08T18:07:26+00:00",
+  "recorded_at": "2026-10-09T08:59:44+00:00",
   "outputs": [
     {
       "content_language": "en-IN",
       "content_script": "Latn",
-      "summary_en": "The user content claims that 5G mobile towers are responsible for spreading the coronavirus, citing a correlation between 5G installation and increased case numbers.",
+      "summary_en": "The user's message claims that 5G mobile towers are responsible for spreading the coronavirus and that areas with 5G installation experienced a rise in COVID-19 cases.",
       "checkable": true,
       "non_checkable_type": null,
       "claims": [
         {
-          "claim_id": "claim1",
+          "claim_id": "5G_COVID_SPREAD_001",
           "claim_original": "5G mobile towers spread the coronavirus, that is why cases rose where 5G was installed.",
-          "claim_en": "5G mobile towers spread the coronavirus, leading to an increase in cases in areas where 5G was installed.",
+          "claim_en": "5G mobile towers spread the coronavirus, leading to an increase in COVID-19 cases in areas where 5G was installed.",
           "claim_type": "HEALTH",
           "entities": [
             "5G mobile towers",
@@ -24,13 +24,13 @@
           "time_sensitivity": "EVERGREEN",
           "search_queries_original": [
             "5G mobile towers spread coronavirus",
-            "5G coronavirus cases rise"
+            "5G causes COVID cases rise"
           ],
           "search_queries_en": [
-            "5G mobile towers coronavirus spread",
-            "5G causes COVID-19 increase",
-            "5G coronavirus link fact check"
-          ]
+            "5G mobile towers coronavirus spread fact check",
+            "5G COVID-19 cases increase fact check"
+          ],
+          "search_queries_regional": []
         }
       ],
       "extra_claims_not_checked": [],

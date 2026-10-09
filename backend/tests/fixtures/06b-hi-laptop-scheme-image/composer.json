@@ -1,51 +1,51 @@
 {
   "prompt_version": "composer-1.2+shared-1.1",
   "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-08T18:00:41+00:00",
+  "recorded_at": "2026-10-09T08:52:41+00:00",
   "outputs": [
     {
       "language": "hi-IN",
-      "headline": "यह दावा गलत है: प्रधानमंत्री मुफ्त लैपटॉप योजना 2026 एक घोटाला है",
-      "summary": "केंद्र सरकार द्वारा 'प्रधानमंत्री मुफ्त लैपटॉप योजना' नाम की कोई योजना नहीं चलाई जा रही है और ऐसे संदेश लोगों की निजी जानकारी चुराने के लिए बनाए गए घोटाले हैं।",
-      "what_post_claims": "पोस्ट का दावा है कि प्रधानमंत्री मुफ्त लैपटॉप योजना 2026 के तहत सरकार सभी छात्रों को मुफ्त लैपटॉप दे रही है।",
-      "what_is_true": "भारत सरकार 'प्रधानमंत्री मुफ्त लैपटॉप योजना' नाम की कोई योजना नहीं चला रही है। ऐसे संदेश घोटाले हैं जिनका उद्देश्य व्यक्तिगत जानकारी चुराना है। कुछ राज्य सरकारों की छात्रों को लैपटॉप या वित्तीय सहायता प्रदान करने की अलग-अलग योजनाएँ हैं।",
+      "headline": "यह दावा गलत है: सरकार की मुफ्त लैपटॉप योजना 2026 एक घोटाला है",
+      "summary": "भारत सरकार ने \"पीएम मुफ्त लैपटॉप योजना 2026\" नाम की कोई योजना घोषित नहीं की है और ऐसे संदेश फर्जी हैं।",
+      "what_post_claims": "पोस्ट का दावा है कि प्रधानमंत्री मुफ्त लैपटॉप योजना 2026 के तहत सभी छात्रों को सरकार की ओर से मुफ्त लैपटॉप दिए जा रहे हैं।",
+      "what_is_true": "भारत सरकार ने \"पीएम मुफ्त लैपटॉप योजना 2026\" नाम की कोई योजना घोषित नहीं की है। आधिकारिक सूत्रों ने पुष्टि की है कि ऐसी योजना को बढ़ावा देने वाले संदेश फर्जी हैं और व्यक्तिगत जानकारी इकट्ठा करने के लिए एक घोटाले का हिस्सा हैं।",
       "evidence_for": [],
       "evidence_against": [
-        "प्रेस सूचना ब्यूरो (पीआईबी) फैक्ट चेक ने पुष्टि की है कि केंद्र सरकार ऐसी कोई योजना नहीं चला रही है।",
-        "विश्वास न्यूज ने इस दावे को फर्जी बताया है कि केंद्र सरकार ने छात्रों के लिए मुफ्त लैपटॉप योजना शुरू की है।",
-        "ऑल्ट न्यूज़ ने बताया है कि मुफ्त लैपटॉप की पेशकश करने वाली वेबसाइटें घोटाले वाली हैं।"
+        "पीआईबी फैक्ट चेक ने मुफ्त लैपटॉप वितरण के संदेशों को फर्जी बताया है।",
+        "एआईसीटीई ने \"प्रधानमंत्री मुफ्त लैपटॉप योजना\" के बारे में फर्जी खबरों के खिलाफ जागरूकता नोटिस जारी किया है।",
+        "मिंट ने बताया कि पीआईबी फैक्ट चेक ने पुष्टि की है कि सरकार ने ऐसी कोई योजना घोषित नहीं की है।"
       ],
       "confidence_phrase": "हम बहुत निश्चित हैं",
-      "sources_spoken": "प्रेस सूचना ब्यूरो, विश्वास न्यूज और ऑल्ट न्यूज़ के अनुसार",
-      "audio_script": "सोशल मीडिया पोस्ट में दावा किया गया है कि प्रधानमंत्री मुफ्त लैपटॉप योजना 2026 के तहत सरकार सभी छात्रों को मुफ्त लैपटॉप दे रही है। यह दावा गलत है। भारत सरकार 'प्रधानमंत्री मुफ्त लैपटॉप योजना' नाम की कोई योजना नहीं चला रही है। ऐसे संदेश घोटाले हैं जिनका उद्देश्य व्यक्तिगत जानकारी चुराना है। हम बहुत निश्चित हैं कि यह जानकारी सही है। यह जानकारी हमें प्रेस सूचना ब्यूरो, विश्वास न्यूज और ऑल्ट न्यूज़ से मिली है।",
+      "sources_spoken": "पीआईबी फैक्ट चेक और एआईसीटीई के अनुसार",
+      "audio_script": "पोस्ट का दावा है कि प्रधानमंत्री मुफ्त लैपटॉप योजना 2026 के तहत सभी छात्रों को सरकार की ओर से मुफ्त लैपटॉप दिए जा रहे हैं। यह दावा गलत है। भारत सरकार ने \"पीएम मुफ्त लैपटॉप योजना 2026\" नाम की कोई योजना घोषित नहीं की है। आधिकारिक सूत्रों ने पुष्टि की है कि ऐसे संदेश फर्जी हैं और व्यक्तिगत जानकारी इकट्ठा करने के लिए एक घोटाले का हिस्सा हैं। हम बहुत निश्चित हैं कि यह दावा गलत है। यह जानकारी हमें पीआईबी फैक्ट चेक और एआईसीटीई से मिली है।",
       "card_lines": [
-        "दावा गलत है",
-        "प्रधानमंत्री मुफ्त लैपटॉप योजना 2026 एक घोटाला है",
-        "केंद्र सरकार ऐसी कोई योजना नहीं चला रही है",
-        "प्रेस सूचना ब्यूरो ने इसकी पुष्टि की है"
+        "यह दावा गलत है",
+        "सरकार की मुफ्त लैपटॉप योजना 2026",
+        "ऐसी कोई योजना नहीं है, यह एक घोटाला है",
+        "पीआईबी फैक्ट चेक और एआईसीटीई"
       ],
       "panel_readings": []
     },
     {
       "language": "en",
-      "headline": "Scam: No \"Pradhan Mantri Free Laptop Yojana\" from the government",
-      "summary": "The Indian central government is not running a \"Pradhan Mantri Free Laptop Yojana\" and messages promoting it are scams.",
-      "what_post_claims": "The post claims that under the Pradhan Mantri Free Laptop Yojana 2026, the government is providing free laptops to all students.",
-      "what_is_true": "The Indian central government is not running any \"Pradhan Mantri Free Laptop Yojana\". Messages promoting this are scams designed to steal personal information. Some state governments do have separate schemes to provide laptops or financial aid to certain students.",
+      "headline": "SCAM: No PM Free Laptop Scheme 2026 exists",
+      "summary": "The Indian government has not announced any \"PM Free Laptop Scheme 2026\" and messages about it are fake.",
+      "what_post_claims": "The post claims that the Indian government is giving free laptops to all students under the 'PM Free Laptop Scheme 2026'.",
+      "what_is_true": "The Indian government has not announced any 'PM Free Laptop Scheme 2026'. Official sources have confirmed that messages promoting such a scheme are fake and part of a scam to collect personal information.",
       "evidence_for": [],
       "evidence_against": [
-        "The Press Information Bureau (PIB) Fact Check has debunked claims about a \"Pradhan Mantri Free Laptop Yojana 2026\", stating the Indian government is not running any such scheme.",
-        "Vishvas News has rated claims about a central government free laptop scheme as false, identifying them as phishing links and scams.",
-        "Alt News and DigitEye India have also reported that these claims are false and often lead to scam websites designed to collect personal information."
+        "PIB Fact Check debunked messages about a 'Student Laptop Scheme 2026' as fake and a scam.",
+        "The All India Council for Technical Education (AICTE) issued an awareness notice about fake news regarding the 'Prime Minister Free Laptop Scheme'.",
+        "Mint reported that PIB Fact Check clarified no such scheme exists and warned against fraudsters."
       ],
       "confidence_phrase": "we are very sure",
-      "sources_spoken": "the Press Information Bureau, Vishvas News, and Alt News",
-      "audio_script": "The post claims that under the Pradhan Mantri Free Laptop Yojana 2026, the government is providing free laptops to all students. This is a scam. The Indian central government is not running any \"Pradhan Mantri Free Laptop Yojana\". Messages promoting this are scams designed to steal personal information. Some state governments do have separate schemes to provide laptops or financial aid to certain students. We are very sure about this. This information comes from the Press Information Bureau, Vishvas News, and Alt News.",
+      "sources_spoken": "PIB Fact Check and the All India Council for Technical Education",
+      "audio_script": "The post claims that the Indian government is giving free laptops to all students under the 'PM Free Laptop Scheme 2026'. This is a scam. The Indian government has not announced any 'PM Free Laptop Scheme 2026'. Official sources have confirmed that messages promoting such a scheme are fake and part of a scam to collect personal information. We are very sure about this. This information comes from PIB Fact Check and the All India Council for Technical Education.",
       "card_lines": [
-        "SCAM: No Free Laptop Scheme",
-        "Post claims government gives free laptops to all students.",
-        "The central government has no such scheme.",
-        "Messages are scams to steal your data."
+        "SCAM: No PM Free Laptop Scheme 2026",
+        "Post claims free laptops for all students.",
+        "This is a scam, no such scheme exists.",
+        "Source: PIB Fact Check, AICTE."
       ],
       "panel_readings": []
     }

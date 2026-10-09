@@ -1,30 +1,27 @@
 {
   "prompt_version": "packager-1.1+shared-1.1",
   "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-08T18:00:41+00:00",
+  "recorded_at": "2026-10-09T08:52:41+00:00",
   "outputs": [
     {
       "briefs": [
         {
           "claim_id": "c1",
-          "claim_en": "Under the Pradhan Mantri Free Laptop Yojana 2026, the government is providing free laptops to all students.",
+          "claim_en": "The Indian government is providing free laptops to all students under the 'PM Free Laptop Scheme 2026'.",
           "claim_type": null,
-          "claimed_date": null,
-          "place": null,
-          "brief_en": "The claim that the Indian government is providing free laptops to all students under the \"Pradhan Mantri Free Laptop Yojana 2026\" is false. The Press Information Bureau (PIB) Fact Check has repeatedly debunked these claims, stating that no such scheme is being run by the central government. Multiple fact-checking organizations, including Vishvas News and DigitEye India, have also rated this claim as false, noting that such messages are often scams designed to collect personal information. While there is no central government scheme, some state governments, such as Delhi and Madhya Pradesh, offer laptop schemes or financial assistance for students.",
+          "claimed_date": "2026-10-15",
+          "place": "India",
+          "brief_en": "Multiple sources, including PIB Fact Check and AICTE, refute the claim that the Indian government is providing free laptops under a 'PM Free Laptop Scheme 2026'. On September 21, 2026, PIB Fact Check debunked messages about a 'Student Laptop Scheme 2026', stating it is fake and a scam to collect personal information. Mint and The Economic Times also reported on this debunking on the same date. AICTE issued an awareness notice about fake news regarding the 'Prime Minister Free Laptop Scheme' on August 14, 2026. Buddy4Study, in an article updated on August 25, 2026, confirms there is no central government scheme for free laptops, noting that only state-level schemes exist. Previous fact checks from 2019, 2023, and 2025 also debunk similar claims about free laptop schemes.",
           "evidence_ids": [
+            "ws-1",
             "ws-6",
-            "ws-7",
             "fc-2",
             "fc-3",
-            "fc-4",
-            "fc-5",
-            "fc-6",
-            "fc-7",
-            "ws-13",
-            "ws-9",
-            "ws-10",
-            "fc-1"
+            "ws-2",
+            "fc-1",
+            "ws-3",
+            "ws-4",
+            "ws-5"
           ],
           "gaps_en": []
         }

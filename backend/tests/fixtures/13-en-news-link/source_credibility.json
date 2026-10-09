@@ -1,7 +1,7 @@
 {
   "prompt_version": "source-cred-1.1+shared-1.1",
   "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-08T18:05:18+00:00",
+  "recorded_at": "2026-10-09T08:57:26+00:00",
   "outputs": [
     {
       "agent": "source_credibility",
@@ -13,11 +13,11 @@
         "repeat_offender_examples": [],
         "domain_age_days": null,
         "red_flags": [],
-        "note_en": "The source is BBC News, a known news outlet. The domain bbc.com has no known offender record."
+        "note_en": "The content originates from bbc.com, which is a known news outlet. The user provided a direct link to the BBC News website. The content carries the logo of BBC News."
       },
       "ai_generation_signals": null,
       "earliest_appearance": null,
-      "notes_en": "The user provided a URL to bbc.com/news/world-asia-india-66594520. The origin hints also suggest BBC News.",
+      "notes_en": "",
       "timed_out": false
     }
   ]

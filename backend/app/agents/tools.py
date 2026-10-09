@@ -40,11 +40,14 @@ class Tools:
         self.store = store
 
     async def factcheck_search(self, query: str, language_code: str) -> list[dict[str, Any]]:
-        """Published fact checks (ClaimReview) matching the query. Empty list on any failure."""
+        """Published fact checks (ClaimReview) matching the query. Empty list on any failure.
+        language_code "" searches fact checks in every language."""
         key = get_settings().factcheck_api_key
         if not key or not query.strip():
             return []
-        params = {"query": query[:300], "languageCode": language_code, "pageSize": 8, "key": key}
+        params = {"query": query[:300], "pageSize": 8, "key": key}
+        if language_code:
+            params["languageCode"] = language_code
         try:
             async with httpx.AsyncClient(timeout=8.0) as c:
                 r = await c.get(FACTCHECK_URL, params=params)

@@ -1,4 +1,4 @@
-version: eval-query-1.0
+version: eval-query-1.1
 model: flash
 
 Evaluation helper (not shown to users). We test whether our fact-check search finds a published fact check when the same claim reaches us in a different language, the way a forward is retold in another language. Rewrite the claim below as a person forwarding it in {{target_language_name}} ({{target_language}}) would state it, then write the search queries our intake step would write.
@@ -12,4 +12,5 @@ Return JSON:
 - claim_en: one self-contained English sentence of the same claim
 - search_queries_original: 2 short search queries in {{target_language_name}}
 - search_queries_en: 2 short English search queries
+- search_queries_regional: only when {{target_language_name}} is Hindi, Tamil or Kannada: one short query in each of the other two of those languages, as a list of {"language": "hi"|"ta"|"kn", "query": "..."}, written as a local fact-checker in that language would title the claim. Otherwise an empty list
 Never add a verdict or say whether the claim is true.

@@ -1,7 +1,7 @@
 {
   "prompt_version": "judge-1.4+shared-1.1",
   "model_id": "gemini-2.5-pro",
-  "recorded_at": "2026-10-08T18:09:36+00:00",
+  "recorded_at": "2026-10-09T08:52:41+00:00",
   "outputs": [
     {
       "verdicts": [
@@ -9,30 +9,31 @@
           "claim_id": "c1",
           "label": "SCAM",
           "confidence": 100,
-          "what_is_true_en": "The Indian government is not offering a free three-month mobile recharge scheme. Messages and videos promoting this are part of a recurring scam designed to steal personal data.",
+          "what_is_true_en": "The Indian government is not offering a free 3-month mobile recharge. Messages promoting this are a scam intended to steal personal information or commit financial fraud.",
           "event_date": null,
           "evidence_for_ids": [],
           "evidence_against_ids": [
-            "ws-6",
+            "ws-1",
+            "ws-5",
+            "ws-7",
             "fc-1",
             "fc-2",
             "fc-3",
             "fc-4",
             "fc-5",
             "fc-6",
-            "fc-7",
             "fc-8",
             "fc-9",
-            "fc-10",
-            "fc-11"
+            "ws-6"
           ],
           "cited_ids": [
-            "ws-6",
-            "fc-1",
+            "ws-1",
+            "ws-5",
+            "ws-7",
             "fc-4",
-            "fc-11"
+            "fc-9"
           ],
-          "reasoning_en": "Numerous fact-checking organizations and the Indian government's Press Information Bureau (PIB) have repeatedly debunked this claim in its various forms since at least 2023. The evidence consistently shows that no such free recharge scheme exists. These messages, often accompanied by links or AI-generated videos, are identified as scams intended to collect users' personal information.",
+          "reasoning_en": "Numerous fact-checking organizations and the Indian government's Press Information Bureau (PIB) have repeatedly debunked this claim. The evidence consistently shows that no such government scheme exists. These viral messages are identified as scams that use fraudulent links to trick users, potentially leading to data theft. The claim has appeared in various forms over several years, often using edited or AI-generated videos of the Prime Minister, but is consistently proven to be fraudulent.",
           "ai_generation": null
         }
       ]

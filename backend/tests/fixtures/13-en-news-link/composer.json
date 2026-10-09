@@ -1,28 +1,28 @@
 {
   "prompt_version": "composer-1.2+shared-1.1",
   "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-08T18:05:18+00:00",
+  "recorded_at": "2026-10-09T08:57:26+00:00",
   "outputs": [
     {
       "language": "en",
-      "headline": "Not enough evidence: Image shows Chandrayaan-3 celebrations",
-      "summary": "We could not confirm if the image in the post shows people celebrating the Chandrayaan-3 landing.",
-      "what_post_claims": "The post claims that the image shows people in India celebrating the successful landing of Chandrayaan-3 near the Moon's south pole.",
-      "what_is_true": "The Chandrayaan-3 mission successfully landed near the Moon's south pole on August 23, 2023, and people across India celebrated this achievement. The image shows one such celebration.",
+      "headline": "Unconfirmed: Image of Chandrayaan-3 celebrations lacks specific evidence",
+      "summary": "We could not confirm if the image in the post shows people celebrating India's Chandrayaan-3 Moon landing.",
+      "what_post_claims": "The post claims the image shows people celebrating India's Chandrayaan-3 Moon landing.",
+      "what_is_true": "Widespread celebrations took place across India on August 23, 2023, to mark the successful landing of the Chandrayaan-3 mission on the Moon, and these events were widely photographed by news agencies.",
       "evidence_for": [
-        "The Quint reports that the internet was full of reactions to the successful Chandrayaan-3 moon landing.",
-        "Wikipedia confirms the Chandrayaan-3 mission landed on August 23, 2023.",
-        "YouTube videos show people across India celebrating the Chandrayaan-3 achievement with dancing, flags, firecrackers, and drums."
+        "Mid-day.com published an article with multiple photos of people celebrating the Chandrayaan-3 moon landing across India on August 23, 2023.",
+        "Getty Images has numerous editorial photos from August 23, 2023, showing people celebrating the Chandrayaan-3 landing.",
+        "Al Jazeera reported on August 23, 2023, about widespread excitement in India for the Chandrayaan-3 moon landing."
       ],
       "evidence_against": [],
       "confidence_phrase": "we are not sure",
-      "sources_spoken": "The Quint and Wikipedia",
-      "audio_script": "The post claims that the image shows people in India celebrating the successful landing of Chandrayaan-3 near the Moon's south pole. We could not confirm this either way. What is true is that the Chandrayaan-3 mission successfully landed near the Moon's south pole on August 23, 2023, and people across India celebrated this achievement. The image shows one such celebration. We are not sure if the image is from that event. This information comes from The Quint and Wikipedia.",
+      "sources_spoken": "Mid-day.com, Getty Images, and Al Jazeera",
+      "audio_script": "The post claims that the image shows people celebrating India's Chandrayaan-3 Moon landing. We could not confirm this either way. What is true is that widespread celebrations took place across India on August 23, 2023, to mark the successful landing of the Chandrayaan-3 mission on the Moon, and these events were widely photographed by news agencies. We are not sure if the specific image in the post is from these celebrations. This information comes from reports by Mid-day.com, Getty Images, and Al Jazeera, which all show many photos of people celebrating the event.",
       "card_lines": [
-        "Not enough evidence",
+        "Unconfirmed",
         "Image shows Chandrayaan-3 celebrations",
-        "We could not confirm if the image is from that event.",
-        "Chandrayaan-3 landed on August 23, 2023."
+        "Widespread celebrations did happen",
+        "We could not confirm the image"
       ],
       "panel_readings": []
     }

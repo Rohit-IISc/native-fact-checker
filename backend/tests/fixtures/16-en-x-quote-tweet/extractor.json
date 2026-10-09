@@ -1,12 +1,12 @@
 {
-  "prompt_version": "extractor-1.11+shared-1.1",
+  "prompt_version": "extractor-1.12+shared-1.1",
   "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-08T18:05:29+00:00",
+  "recorded_at": "2026-10-09T08:58:37+00:00",
   "outputs": [
     {
       "content_language": "en-IN",
       "content_script": "Latn",
-      "summary_en": "A user shares a post from the handle @claudeai with the text \"There's hope in hard questions.\" The user expresses initial confusion, thinking it might be satire due to the handle's similarity to 'Claude AI'.",
+      "summary_en": "A user on X (formerly Twitter) shared a post from @claudeai that reads \"There's hope in hard questions.\" The sharing user commented that they initially thought the post was satire.",
       "checkable": false,
       "non_checkable_type": "OTHER",
       "claims": [],
@@ -15,7 +15,10 @@
       "transcript": null,
       "visual_description_en": null,
       "ai_generation_signals": null,
-      "origin_hints": [],
+      "origin_hints": [
+        "@sama",
+        "@claudeai"
+      ],
       "media_markers": []
     }
   ]

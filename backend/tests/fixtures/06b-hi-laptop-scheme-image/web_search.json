@@ -1,25 +1,25 @@
 {
   "prompt_version": "web-search-2.2+shared-1.1",
   "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-08T18:00:41+00:00",
+  "recorded_at": "2026-10-09T08:52:41+00:00",
   "outputs": [
     {
-      "text": "The claim that the \"Pradhan Mantri Free Laptop Yojana 2026\" is providing free laptops to all students from the government is false. [1] [2] [3] [4] [5] [6] [7] [8] [9] The Press Information Bureau (PIB) Fact Check has repeatedly debunked such claims, clarifying that the Indian government is not running any such scheme. [1] [4] [5] [6] [7] [8] [9] These messages are often scams designed to collect personal information. [4] [10]\n\nWhile there is no central government scheme providing free laptops to all students, some state governments and other organizations do offer laptop schemes or assistance. For example:\n*   The Delhi government provides free laptops to 1200 meritorious students who passed the 10th standard under the 'Mukhyamantri Digital Shiksha Yojana'. [11] [12]\n*   The Tamil Nadu government has a \"Ulagam Ungal Kaiyil\" scheme with a budget of ₹2,000 crore for 2026-27, aiming to cover 10 lakh students. [4]\n*   Uttar Pradesh has the \"Swami Vivekananda Yuva Sashaktikaran Yojana (Mission DigiShakti)\". [4]\n*   Madhya Pradesh offers ₹25,000 for purchasing a laptop to students who score 80% or more in the 12th standard from government or MP Board affiliated schools. [13]\n*   Some non-profit organizations and educational institutions also provide free or discounted laptops to eligible students, often based on financial need or academic performance. [14] [15] [16] [17] [18]\n\nIt is important to verify information about such schemes from official government sources to avoid falling victim to scams. [1] [5] [6] [7] [8] [9]",
+      "text": "[\n {\n  \"claim_id\": \"c1\",\n  \"main_claim\": \"The Indian government is providing free laptops to all students under the 'PM Free Laptop Scheme 2026'.\",\n  \"fact_checking_sources\": [\n   {\n    \"publisher\": \"PIB Fact Check\",\n    \"page_title\": \"सरकार ने छात्र लैपटॉप योजना 2026 के अंतर्गत मुफ्त लैपटॉप वितरण के संदेश का खंडन किया\",\n    \"publish_date\": \"2026-09-21\",\n    \"url\": \"https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEeEqO8hbS8fkjbWdqPAX2HSk3dB3ap6wrux-C4vy_jKpEZCZYUrtKhabIX_aHdgHTImPncX7bwoDjqQfxXE0uojYOKo7JKzCzjQBNrTyenuo8Zm8P7zuJ4XrbRFMSoxyBa5jyMcMsmI8GCwObqYsV5JOpiWxdFLjZnfmMZpT-oAxJWJlc_c1WIHkOFrK-MpK6NE5hdkeJQ3BTSKjomYAgejKCyjRDeUA-cbRhfb2_b\",\n    \"what_it_says\": \"The Press Information Bureau (PIB) Fact Check has debunked messages circulating on social media claiming that the government is distributing free laptops under a 'Student Laptop Scheme 2026'. The PIB stated that this claim is fake and part of a scam designed to collect personal information, and that no such scheme has been announced by the government. [1]\"\n   },\n   {\n    \"publisher\": \"Mint\",\n    \"page_title\": \"Did 'government of India' invite applications for free laptops? PIB Fact Check debunks social media posts | Today News - Mint\",\n    \"publish_date\": \"2026-09-21\",\n    \"url\": \"https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGuUWUc8QwCWt8kUBlTuu8FgdTCm9R8u9JGWUrt3tQ1OgB8XTePXmRvArcWrQOb5ulw0Io-LAmI87TuDkTp_UxJhJNGXSqQqSapjaXL9fQodBAeyfk-gN4LDkciGi3IIToHfxjrw2XVd6yznIBX1cF8OZ2EZUd2CZtkrb4ivLdGxaTFmHhGJx2lIPMvd9xaYkXiyC_2eHnV1bbAdO6TJlJWDL31EIntYtM8pAOSvTTxbDNddEiZ54H8y5zXTRGiD6IGGJ__rM65FWAi2WepfM7rzOgkNGx0m1XcFA==\",\n    \"what_it_says\": \"Mint reported on September 21, 2026, that PIB Fact Check clarified that the Government of India has not announced any scheme named 'National Student Laptop Scheme 2026' nor invited applications for free laptops. The article warns that such offers are often used by fraudsters to obtain personal, financial, or banking information. [2]\"\n   },\n   {\n    \"publisher\": \"The Economic Times\",\n    \"page_title\": \"National Student Laptop Scheme 2026: Viral message leaves students curious, PIB responds - The Economic Times\",\n    \"publish_date\": \"2026-09-21\",\n    \"url\": \"https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEht_OWM6dFDJv5EUau07ikfM9C7c9NQVP-wwai4fAe42ZF-_yyT4Sf6CACA4cse1B8upRJjkySAqZ10zB4pKOaGjjhJ0PxTn--dF-_wW6k5Kby2YzCHROHBSNPxvv2QoYum5xC9dTTQ-66KJd9kJb_SmMT-yVJIoNNAIsjJhUBMgtQC_D2JjgEBlzsbzeu1kGe9y204W0i0d2XLFiGFO-zPazMZhmy49OvZa-rdVvR5-2K26Gzj_TM24vRKLWEBh9APS8-IWsb7dOvsN0qxMoA4ZZ22CEL-V08\",\n    \"what_it_says\": \"The Economic Times, on September 21, 2026, also reported on the PIB Fact Check debunking the viral WhatsApp message about the 'National Student Laptop Scheme 2026'. It reiterates that no such government scheme exists and advises caution against fraudulent offers. [3]\"\n   },\n   {\n    \"publisher\": \"Buddy4Study\",\n    \"page_title\": \"Free Laptop Scheme for Students in India 2026-27 - Buddy4Study\",\n    \"publish_date\": \"2026-08-25\",\n    \"url\": \"https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGhU3SMJaK1Saao-Z2fx3F6Agcg4VlodqCNGDW_R4UUEkYT30i_O3-1Tsli3sWgbxBgZaw32twKlHP9wuCepms7B5ln3U41fL4ACvMzRFHzZLLspH_R6KpedK7iSft78efnQtd25tGvDlewN_dLnB8Uz19mMB0pBr3x6bFsaIM=\",\n    \"what_it_says\": \"Buddy4Study, in an article updated on August 25, 2026, states that there is no central government scheme providing free laptops to all students in India. It mentions that PIB Fact Check has repeatedly debunked such claims, confirming them as scams. The article clarifies that only state-level schemes exist. [4]\"\n   },\n   {\n    \"publisher\": \"PIB Fact Check\",\n    \"page_title\": \"PIB Fact Check: 'Free Laptop Scheme 2025' Under Narendra Modi Govt is Fake News\",\n    \"publish_date\": \"2025-07-05\",\n    \"url\": \"https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHkVyVkUTyG_-C0EBRQ92_nFKBBWYdWiWAsCo8MVYueKxsti4-O7FmutJC5JZ7s2LfPGQzlQQAcdexRf8PSqslpWWGuZE4E9e6kPnaB2XtoNMX3zRbSOZq-ok0p0Bca8aiwZRMTvMCO9trrF81G6CFdzmFop2rgw4pWKwl47HRIp6bspWHhSXjINW56ucJhkAkmy8VLCeG1lNMyttkPk4XWQ0SPzcBA_z-57jObj9Isv5fZ3w==\",\n    \"what_it_says\": \"PIB Fact Check, on July 5, 2025, confirmed that a viral message claiming the Narendra Modi government is offering free laptops under a 'Free Laptop Scheme 2025' is fake and misleading. It advises against clicking on suspicious links and sharing such messages. [5]\"\n   },\n   {\n    \"publisher\": \"AICTE\",\n    \"page_title\": \"प्रधानमंत्री मुफ्त लैपटॉप योजना की फर्जी खबरों के बारे में जागरूकता - AICTE\",\n    \"publish_date\": \"2026-08-14\",\n    \"url\": \"https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG5tBkd_CbMkx3BiWK0QdHSkKYD33gKdtAPVvoxYPqivcXxQc3z-cOsKlB7rEp_3UjYmZydBPVn8EB7f1eZ6Jy9d9T49eI_tZNGdBKvRmHOwClDU3ynH4x7kJC9igs8HJQ=\",\n    \"what_it_says\": \"The All India Council for Technical Education (AICTE) has issued an awareness notice regarding fake news about the 'Prime Minister Free Laptop Scheme'. [6]\"\n   }\n  ]\n }\n]",
       "sources": [
         {
           "n": 1,
-          "url": "https://www.shiksha.com/news/prime-minister-national-laptop-scheme-is-fake-no-free-laptop-for-students-pib-blogId-104657",
-          "domain": "shiksha.com"
+          "url": "https://newsonair.gov.in/hi/government-refutes-message-of-free-laptop-distribution-under-student-laptop-scheme-2026/",
+          "domain": "newsonair.gov.in"
         },
         {
           "n": 2,
-          "url": "https://www.indiatvnews.com/fact-check/fact-check-is-pm-modi-giving-laptops-to-students-under-any-scheme-aicte-truth-2024-04-22-927479",
-          "domain": "indiatvnews.com"
+          "url": "https://www.livemint.com/news/india/did-government-of-india-invite-applications-for-free-laptops-pib-fact-check-debunks-social-media-posts-11789989974290.html",
+          "domain": "livemint.com"
         },
         {
           "n": 3,
-          "url": "https://www.deccanchronicle.com/fact-check/fact-check-is-govt-offering-free-laptops-or-25000-to-students-1943775",
-          "domain": "deccanchronicle.com"
+          "url": "https://m.economictimes.com/news/new-updates/national-student-laptop-scheme-2026-viral-message-leaves-students-curious-pib-responds/articleshow/134389918.cms",
+          "domain": "economictimes.com"
         },
         {
           "n": 4,
@@ -33,71 +33,11 @@
         },
         {
           "n": 6,
-          "url": "https://newsonair.gov.in/hi/government-refutes-message-of-free-laptop-distribution-under-student-laptop-scheme-2026/",
-          "domain": "newsonair.gov.in"
-        },
-        {
-          "n": 7,
-          "url": "https://newsonair.gov.in/hi/fact-check-central-government-refutes-claims-of-providing-free-laptops-to-students/",
-          "domain": "newsonair.gov.in"
-        },
-        {
-          "n": 8,
-          "url": "https://www.abplive.com/business/central-government-free-laptop-pib-fact-check-free-laptop-for-students-government-schemes-2055718",
-          "domain": "abplive.com"
-        },
-        {
-          "n": 9,
-          "url": "https://www.livemint.com/technology/tech-news/beware-of-fake-government-scheme-free-laptop-fffer-scam-circulating-online-pib-fact-check-reveals-details-11685769305601.html",
-          "domain": "livemint.com"
-        },
-        {
-          "n": 10,
-          "url": "https://www.altnews.in/scam-websites-con-readers-in-the-name-of-pm-modi-by-offering-free-laptops/",
-          "domain": "altnews.in"
-        },
-        {
-          "n": 11,
-          "url": "https://www.jagran.com/technology/tech-news-what-is-delhi-mukhyamantri-digital-education-scheme-how-to-apply-and-other-details-40130802.html",
-          "domain": "jagran.com"
-        },
-        {
-          "n": 12,
-          "url": "https://www.facebook.com/DainikSwadesh/posts/%E0%A4%9B%E0%A4%BE%E0%A4%A4%E0%A5%8D%E0%A4%B0%E0%A5%8B%E0%A4%82-%E0%A4%95%E0%A5%87-%E0%A4%B2%E0%A4%BF%E0%A4%8F-laptop-%E0%A4%95%E0%A5%80-%E0%A4%AE%E0%A4%A6%E0%A4%A6-%E0%A4%95%E0%A4%BF%E0%A4%A4%E0%A4%A8%E0%A5%80-%E0%A4%AC%E0%A4%A1%E0%A4%BC%E0%A5%80%E0%A4%B8%E0%A4%B0%E0%A4%95%E0%A4%BE%E0%A4%B0-%E0%A4%A8%E0%A5%87-%E0%A4%9B%E0%A4%BE%E0%A4%A4%E0%A5%8D%E0%A4%B0%E0%A5%8B%E0%A4%82-%E0%A4%95%E0%A5%8B-laptop-%E0%A4%95%E0%A5%87-%E0%A4%B2%E0%A4%BF%E0%A4%8F-%E0%A4%86%E0%A4%B0%E0%A5%8D%E0%A4%A5%E0%A4%BF%E0%A4%95-/1723253689810879/",
-          "domain": "facebook.com"
-        },
-        {
-          "n": 13,
-          "url": "https://www.myscheme.gov.in/schemes/tsis",
-          "domain": "myscheme.gov.in"
-        },
-        {
-          "n": 14,
-          "url": "https://govfreelaptop.com/free-laptop-for-students/",
-          "domain": "govfreelaptop.com"
-        },
-        {
-          "n": 15,
-          "url": "https://tagmobile.com/blog/free-laptop-for-college-students-from-government",
-          "domain": "tagmobile.com"
-        },
-        {
-          "n": 16,
-          "url": "https://airtalkwireless.com/blog/free-laptop-program-for-students",
-          "domain": "airtalkwireless.com"
-        },
-        {
-          "n": 17,
-          "url": "https://scholarships360.org/financial-aid/laptop-scholarships-for-college-students/",
-          "domain": "scholarships360.org"
-        },
-        {
-          "n": 18,
-          "url": "https://www.reddit.com/r/LaptopForStudent/comments/1q8gyx4/how_do_i_get_a_free_laptop_for_college_2026/",
-          "domain": "reddit.com"
+          "url": "https://www.aicte.gov.in/hi/node/3042",
+          "domain": "aicte.gov.in"
         }
       ],
-      "queries": 7
+      "queries": 6
     }
   ]
 }

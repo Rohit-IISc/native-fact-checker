@@ -1,7 +1,7 @@
 {
   "prompt_version": "judge-1.4+shared-1.1",
   "model_id": "gemini-2.5-pro",
-  "recorded_at": "2026-10-08T18:01:17+00:00",
+  "recorded_at": "2026-10-09T08:53:44+00:00",
   "outputs": [
     {
       "verdicts": [
@@ -9,32 +9,23 @@
           "claim_id": "c1",
           "label": "FALSE",
           "confidence": 100,
-          "what_is_true_en": "COVID-19 vaccines do not contain microchips or any other tracking devices. Health authorities confirm that vaccine ingredients are publicly available and do not include electronics; barcodes on packaging are for tracking distribution, not people.",
+          "what_is_true_en": "COVID-19 vaccines do not contain microchips. Health authorities and fact-checkers have confirmed that the vaccine ingredients are public and do not include any tracking devices.",
           "event_date": null,
           "evidence_for_ids": [],
           "evidence_against_ids": [
-            "ws-2",
-            "ws-8",
-            "ws-9",
-            "ws-1",
+            "ws-4",
             "ws-6",
-            "ws-7",
-            "fc-1",
-            "fc-2",
-            "fc-3",
-            "fc-5",
-            "fc-6",
-            "fc-7"
+            "ws-18",
+            "ws-20",
+            "fc-2"
           ],
           "cited_ids": [
-            "ws-2",
-            "ws-8",
-            "ws-9",
-            "ws-1",
+            "ws-4",
             "ws-6",
-            "ws-7"
+            "ws-18",
+            "ws-20"
           ],
-          "reasoning_en": "An overwhelming consensus of evidence from multiple international health authorities and fact-checking organizations confirms that COVID-19 vaccines do not contain microchips. Sources such as the CDC, the Indonesian Ministry of Health, and FactCheck.org have all explicitly debunked this claim, stating that the ingredients are public and do not include any electronic components for tracking. Some confusion has arisen from barcodes on vaccine vials, which are used for logistical tracking of the product, not the recipient, and from unrelated videos of microrobots which are not used in vaccines.",
+          "reasoning_en": "Multiple TIER_1 sources, including government health agencies like the CDC and the Indonesian Ministry of Health, as well as numerous independent fact-checking organizations, have definitively stated that COVID-19 vaccines do not contain microchips. The ingredients are publicly available and do not include any form of electronic or tracking device. The evidence provided is unanimous in debunking this claim.",
           "ai_generation": null
         }
       ]

@@ -1,35 +1,42 @@
 {
   "prompt_version": "judge-1.4+shared-1.1",
   "model_id": "gemini-2.5-pro",
-  "recorded_at": "2026-10-08T18:05:18+00:00",
+  "recorded_at": "2026-10-09T08:57:26+00:00",
   "outputs": [
     {
       "verdicts": [
         {
           "claim_id": "c1",
           "label": "TRUE",
-          "confidence": 85,
-          "what_is_true_en": "The Chandrayaan-3 mission successfully landed near the Moon's south pole on August 23, 2023, and people across India celebrated the achievement. The image shows one such celebration.",
+          "confidence": 90,
+          "what_is_true_en": "Widespread celebrations took place across India on August 23, 2023, to mark the successful landing of the Chandrayaan-3 mission on the Moon, and these events were widely photographed by news agencies.",
           "event_date": "2023-08-23",
           "evidence_for_ids": [
-            "ws-3",
             "ws-1",
-            "ws-2"
+            "ws-3",
+            "ws-4",
+            "ws-5",
+            "ws-6",
+            "ws-8",
+            "ws-9"
           ],
           "evidence_against_ids": [],
           "cited_ids": [
+            "ws-1",
             "ws-3",
-            "ws-1"
+            "ws-6",
+            "ws-8",
+            "ws-9"
           ],
-          "reasoning_en": "The Chandrayaan-3 mission's successful landing on August 23, 2023, is a confirmed event (ws-1). A TIER_2 news source (ws-3) and another source (ws-2) explicitly state that the image shows people celebrating this event. There is no evidence to contradict this claim.",
+          "reasoning_en": "Multiple news outlets and photo archives, including Al Jazeera, The National News, Mid-day.com, Getty Images, and Alamy, published numerous photographs documenting widespread public celebrations across India on August 23, 2023, following the successful landing of the Chandrayaan-3 spacecraft on the Moon. While other unrelated or fabricated visuals concerning the mission have been debunked, the event of people celebrating is well-documented and real.",
           "ai_generation": {
             "likelihood_ai": 0,
             "signals_ai": [
-              "No signals indicating AI generation were found."
+              "No specific signals of AI generation were found for this type of image."
             ],
             "signals_real": [
-              "The image is presented by multiple news sources as a real photograph of the event.",
-              "The scene depicted is consistent with widespread, documented celebrations that occurred in India."
+              "The event depicted was real and widely photographed by multiple news agencies on the claimed date.",
+              "Numerous similar photographs exist in reputable photo archives like Getty Images and Alamy."
             ]
           }
         }

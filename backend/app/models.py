@@ -85,6 +85,11 @@ class FetchedPost(BaseModel):
     fetch_method: Literal["youtube", "x_oembed", "meta_oembed", "open_graph", "html", "failed"]
 
 
+class RegionalQuery(BaseModel):
+    language: Literal["hi", "ta", "kn"]
+    query: str
+
+
 class Claim(BaseModel):
     claim_id: str
     claim_original: str = Field(description="Claim in the content's own language and script")
@@ -96,6 +101,9 @@ class Claim(BaseModel):
     time_sensitivity: TimeSensitivity
     search_queries_original: list[str] = Field(default_factory=list, max_length=3)
     search_queries_en: list[str] = Field(default_factory=list, max_length=3)
+    search_queries_regional: list[RegionalQuery] = Field(
+        default_factory=list, max_length=3,
+        description="Indian-language content only: one short query in each other language of hi, ta, kn")
 
 
 class AIGenerationSignals(BaseModel):

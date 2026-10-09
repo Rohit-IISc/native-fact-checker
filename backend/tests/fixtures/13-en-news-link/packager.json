@@ -1,26 +1,30 @@
 {
   "prompt_version": "packager-1.1+shared-1.1",
   "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-08T18:05:18+00:00",
+  "recorded_at": "2026-10-09T08:57:26+00:00",
   "outputs": [
     {
       "briefs": [
         {
           "claim_id": "c1",
-          "claim_en": "The image in this post shows people in India celebrating the successful landing of Chandrayaan-3 near the Moon's south pole.",
+          "claim_en": "The image in this post shows people celebrating India's Chandrayaan-3 Moon landing.",
           "claim_type": null,
-          "claimed_date": null,
+          "claimed_date": "2023-08-23",
           "place": "India",
-          "brief_en": "The Chandrayaan-3 mission successfully landed near the Moon's south pole on August 23, 2023. Multiple sources confirm that people across India celebrated this achievement with dancing, waving Indian flags, setting off firecrackers, and playing drums. The internet was also abuzz with reactions to the successful moon landing, and the image in question is stated to show people celebrating this event.",
+          "brief_en": "Multiple news outlets and image archives confirm widespread celebrations across India following the successful Chandrayaan-3 Moon landing on August 23, 2023. Mid-day.com, Getty Images, Alamy, The National News, and Al Jazeera published photos and reports of citizens, party leaders, and the general public celebrating with Indian flags, dancing, and watching live streams of the event. While some unrelated visuals and AI-generated images were circulated online regarding the Chandrayaan-3 mission, these pertained to different content, such as alleged live visuals from the moon's surface or a misattributed BBC report, not the general celebration images.",
           "evidence_ids": [
+            "ws-6",
+            "ws-13",
             "ws-1",
             "ws-3",
-            "ws-2",
-            "mi-c1"
+            "ws-4",
+            "ws-5",
+            "ws-8",
+            "ws-9",
+            "ws-10",
+            "ws-11"
           ],
-          "gaps_en": [
-            "The earliest appearance of the specific image in the post could not be determined, nor whether it is AI-generated or edited."
-          ]
+          "gaps_en": []
         }
       ]
     }

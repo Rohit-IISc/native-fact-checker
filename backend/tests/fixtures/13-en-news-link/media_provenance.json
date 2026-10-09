@@ -1,15 +1,61 @@
 {
   "prompt_version": "media-provenance-1.2+shared-1.1",
   "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-08T18:05:18+00:00",
+  "recorded_at": "2026-10-09T08:57:26+00:00",
   "outputs": [
     {
       "agent": "media_provenance",
-      "evidence": [],
+      "evidence": [
+        {
+          "evidence_id": "",
+          "agent": "web_search",
+          "claim_id": "c1",
+          "url": "https://www.linkedin.com/posts/sowmya-subramanian-pro_chandrayaan-3-india-makes-historic-landing-activity-7100100522522615808-fU2H",
+          "domain": "linkedin.com",
+          "publisher": "LinkedIn",
+          "title": "Chandrayaan-3: India makes historic landing near Moon's south pole",
+          "published_at": null,
+          "language": null,
+          "snippet_en": "This LinkedIn post shares an image related to India's Chandrayaan-3 Moon landing, suggesting it depicts celebrations of the event.",
+          "stance": "SUPPORTS",
+          "rating_text": null,
+          "tier": "TIER_3"
+        },
+        {
+          "evidence_id": "",
+          "agent": "web_search",
+          "claim_id": "c1",
+          "url": "https://www.bbc.com/news/live/world-asia-india-47640058?page=47",
+          "domain": "bbc.com",
+          "publisher": "BBC",
+          "title": "India news stream - BBC",
+          "published_at": null,
+          "language": null,
+          "snippet_en": "This BBC news stream may contain information or images related to India, potentially including the Chandrayaan-3 Moon landing.",
+          "stance": "CONTEXT",
+          "rating_text": null,
+          "tier": "TIER_2"
+        },
+        {
+          "evidence_id": "",
+          "agent": "web_search",
+          "claim_id": "c1",
+          "url": "https://www.bbc.co.uk/news/uk-wales-66687056",
+          "domain": "bbc.co.uk",
+          "publisher": "BBC News",
+          "title": "Moon base: Bangor scientists design fuel to live in space - BBC News",
+          "published_at": null,
+          "language": null,
+          "snippet_en": "This BBC News article discusses moon bases and space-related topics, providing context for lunar missions.",
+          "stance": "CONTEXT",
+          "rating_text": null,
+          "tier": "TIER_2"
+        }
+      ],
       "source_assessment": null,
       "ai_generation_signals": null,
       "earliest_appearance": null,
-      "notes_en": "The web detection results did not return any relevant matches for the image. The results mostly consist of generic YouTube videos about crowds, Amazon music links, Shutterstock stock footage, and BBC News articles about India's space ambitions or general news streams, none of which contain the specific image or provide context for it. Therefore, it is not possible to determine the earliest appearance or whether the image is AI-generated or edited based on the provided tool results.",
+      "notes_en": "The provided web detection results include a LinkedIn post that directly references the Chandrayaan-3 Moon landing and could contain the image in question. Other results are too generic to confirm the image's origin or content.",
       "timed_out": false
     }
   ]

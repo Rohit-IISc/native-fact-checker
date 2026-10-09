@@ -1,22 +1,22 @@
 {
   "prompt_version": "packager-1.1+shared-1.1",
   "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-08T18:02:12+00:00",
+  "recorded_at": "2026-10-09T08:53:43+00:00",
   "outputs": [
     {
       "briefs": [
         {
           "claim_id": "c1",
-          "claim_en": "Chandrayaan-3's Vikram lander touched down near the Moon's south pole on 23 August 2023, making India the first country to land in that region.",
+          "claim_en": "India's Chandrayaan-3 mission successfully landed its Vikram lander near the Moon's south pole on August 23, 2023, making India the first country to achieve this.",
           "claim_type": null,
           "claimed_date": "2023-08-23",
           "place": "Moon's south pole",
-          "brief_en": "Multiple sources confirm that India's Chandrayaan-3 mission successfully landed its Vikram lander near the Moon's south pole on August 23, 2023. Al Jazeera and The Guardian reported on this event on August 23 and August 22, 2023, respectively, stating that India became the first nation to achieve a soft landing in this unexplored region. Wikipedia and the Pacific Space Center also corroborate this, noting the historic milestone. A fact-check by BOOM Fact Check on August 29, 2023, indirectly supports this by refuting claims that China was the first to land on the Moon's south pole.",
+          "brief_en": "India's Chandrayaan-3 mission, including the Vikram lander and Pragyan rover, successfully landed near the Moon's south pole on August 23, 2023. NASA and ISRO confirm this event, with ISRO noting the lander touched down within a buried impact crater in the high latitude highland region. Universe Today reports the soft landing occurred at approximately 8:34 a.m. ET on August 23, making India the fourth country to land on the Moon and the first to land at one of the lunar poles. The Hindustan Times mentions the lander's position near the Manzinus crater. A fact-check by BOOM Fact Check rated as false the claim that China was the first country to land on the Moon's South Pole.",
           "evidence_ids": [
+            "ws-1",
+            "ws-6",
             "fc-1",
             "ws-2",
-            "ws-6",
-            "ws-1",
             "ws-4",
             "ws-5"
           ],

@@ -1,23 +1,30 @@
 {
   "prompt_version": "packager-1.1+shared-1.1",
   "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-08T18:07:26+00:00",
+  "recorded_at": "2026-10-09T08:59:44+00:00",
   "outputs": [
     {
       "briefs": [
         {
           "claim_id": "c1",
-          "claim_en": "5G mobile towers spread the coronavirus, leading to an increase in cases in areas where 5G was installed.",
+          "claim_en": "5G mobile towers spread the coronavirus, leading to an increase in COVID-19 cases in areas where 5G was installed.",
           "claim_type": null,
           "claimed_date": null,
           "place": null,
-          "brief_en": "Multiple fact-checking organizations, including AP News, AFP Fact Check, and Full Fact, have debunked the claim that 5G mobile towers spread the coronavirus or are linked to an increase in COVID-19 cases. AP News stated that maps do not show a correlation between confirmed COVID-19 cases and 5G installation. AFP Fact Check reported on April 7, 2020, that experts dismissed claims that 5G wireless technology created the novel coronavirus, and on June 19, 2020, addressed false claims linking 5G to weakened immune systems. Full Fact, on March 31, 2020, found no evidence connecting 5G WiFi networks to the new coronavirus. Alt News also rated as false the claim that 5G radiation caused the second wave of COVID-19 in India on April 28, 2021.",
+          "brief_en": "Multiple sources, including AP News, UN News, and the National Center for Biotechnology Information, state that there is no scientific evidence to support a link between 5G technology and the spread of COVID-19. They explain that COVID-19 is a viral disease caused by the SARS-CoV-2 coronavirus and spreads through respiratory droplets, not radio waves or mobile networks. Several fact-checking organizations like AFP Fact Check, Full Fact, and Alt News, published between March 2020 and May 2021, have rated claims linking 5G to the coronavirus as false. These sources also note that conspiracy theories about 5G and COVID-19 have led to incidents such as the burning of cell towers in the UK and other European countries.",
           "evidence_ids": [
-            "fc-1",
+            "ws-6",
+            "ws-7",
+            "ws-9",
             "fc-3",
-            "fc-4",
             "fc-5",
-            "fc-2"
+            "fc-7",
+            "fc-6",
+            "fc-4",
+            "fc-2",
+            "ws-8",
+            "ws-4",
+            "ws-5"
           ],
           "gaps_en": []
         }

@@ -1,51 +1,51 @@
 {
   "prompt_version": "composer-1.2+shared-1.1",
   "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-08T18:01:17+00:00",
+  "recorded_at": "2026-10-09T08:53:44+00:00",
   "outputs": [
     {
       "language": "id-ID",
-      "headline": "SALAH: Vaksin COVID-19 tidak mengandung microchip pelacak",
-      "summary": "Klaim bahwa vaksin COVID-19 mengandung microchip untuk melacak orang yang divaksin adalah salah.",
-      "what_post_claims": "Vaksin COVID-19 mengandung microchip untuk melacak setiap orang yang sudah divaksin.",
-      "what_is_true": "Vaksin COVID-19 tidak mengandung microchip atau perangkat pelacak lainnya. Bahan-bahan vaksin tersedia untuk umum dan tidak termasuk komponen elektronik; kode batang pada kemasan digunakan untuk melacak distribusi, bukan orang.",
+      "headline": "Tidak benar: Vaksin COVID-19 mengandung microchip pelacak",
+      "summary": "Klaim bahwa vaksin COVID-19 mengandung microchip untuk melacak orang yang divaksinasi adalah tidak benar.",
+      "what_post_claims": "Unggahan tersebut mengklaim bahwa vaksin COVID-19 mengandung microchip yang digunakan untuk melacak setiap orang yang sudah divaksin.",
+      "what_is_true": "Vaksin COVID-19 tidak mengandung microchip. Bahan-bahan vaksin telah diumumkan secara publik dan tidak termasuk perangkat pelacak apa pun.",
       "evidence_for": [],
       "evidence_against": [
-        "Kementerian Kesehatan Indonesia menyatakan narasi vaksin COVID-19 mengandung microchip magnetik tidak benar.",
-        "CDC menyatakan vaksin COVID-19 tidak mengandung microchip dan tidak digunakan untuk melacak pergerakan.",
-        "Kementerian Komunikasi dan Informatika menjelaskan kode batang pada produk vaksin untuk melacak distribusi, bukan individu yang divaksin."
+        "FactCheck.org menyatakan bahwa bahan-bahan vaksin COVID-19 tersedia untuk umum dan tidak mengandung microchip.",
+        "Pusat Pengendalian dan Pencegahan Penyakit (CDC) menegaskan bahwa bahan vaksin diketahui dan tidak termasuk microchip.",
+        "Kementerian Kesehatan Republik Indonesia (Kemkes.go.id) secara eksplisit melabeli klaim ini sebagai hoaks."
       ],
       "confidence_phrase": "kami sangat yakin",
-      "sources_spoken": "menurut Kementerian Kesehatan Indonesia, CDC, dan Kementerian Komunikasi dan Informatika",
-      "audio_script": "Sebuah unggahan mengklaim bahwa vaksin COVID-19 mengandung microchip untuk melacak setiap orang yang sudah divaksin. Ini salah. Vaksin COVID-19 tidak mengandung microchip atau perangkat pelacak lainnya. Bahan-bahan vaksin tersedia untuk umum dan tidak termasuk komponen elektronik. Kode batang pada kemasan digunakan untuk melacak distribusi, bukan orang. Kami sangat yakin dengan kesimpulan ini. Informasi ini berasal dari Kementerian Kesehatan Indonesia, CDC, dan Kementerian Komunikasi dan Informatika.",
+      "sources_spoken": "menurut FactCheck.org, CDC, dan Kementerian Kesehatan Republik Indonesia",
+      "audio_script": "Unggahan tersebut mengklaim bahwa vaksin COVID-19 mengandung microchip untuk melacak setiap orang yang sudah divaksin. Klaim ini tidak benar. Vaksin COVID-19 tidak mengandung microchip. Bahan-bahan vaksin telah diumumkan secara publik dan tidak termasuk perangkat pelacak apa pun. Kami sangat yakin dengan informasi ini. Hal ini berdasarkan laporan dari FactCheck.org, Pusat Pengendalian dan Pencegahan Penyakit atau CDC, serta Kementerian Kesehatan Republik Indonesia.",
       "card_lines": [
-        "SALAH",
+        "TIDAK BENAR",
         "Vaksin COVID-19 mengandung microchip pelacak",
-        "Vaksin tidak mengandung microchip atau perangkat pelacak",
-        "Kementerian Kesehatan Indonesia, CDC, Kominfo"
+        "Vaksin tidak mengandung microchip",
+        "Sumber: FactCheck.org, CDC, Kemkes"
       ],
       "panel_readings": []
     },
     {
       "language": "en",
-      "headline": "False: COVID-19 vaccines do not contain microchips",
-      "summary": "COVID-19 vaccines do not contain microchips or any other tracking devices, as confirmed by health authorities.",
-      "what_post_claims": "The post claims that COVID-19 vaccines contain microchips to track vaccinated individuals.",
-      "what_is_true": "COVID-19 vaccines do not contain microchips or any other tracking devices. Health authorities confirm that vaccine ingredients are publicly available and do not include electronics; barcodes on packaging are for tracking distribution, not people.",
+      "headline": "False: COVID-19 vaccines do not contain microchips for tracking.",
+      "summary": "Claims that COVID-19 vaccines contain microchips to track people are false; vaccine ingredients are publicly known and do not include tracking devices.",
+      "what_post_claims": "The post claims that COVID-19 vaccines contain microchips to track every vaccinated person.",
+      "what_is_true": "COVID-19 vaccines do not contain microchips. Health authorities and fact-checkers have confirmed that the vaccine ingredients are public and do not include any tracking devices.",
       "evidence_for": [],
       "evidence_against": [
-        "The CDC states that COVID-19 vaccines do not contain microchips and are not administered to track movement.",
-        "The Indonesian Ministry of Health (Kemenkes) issued a statement calling the narrative that COVID-19 vaccines contain magnetic microchips untrue.",
-        "FactCheck.org explained that ingredient lists for COVID-19 vaccines are publicly available and do not include microchips."
+        "FactCheck.org states that vaccine ingredients are public and do not include microchips.",
+        "The CDC confirms that COVID-19 vaccine ingredients are known and do not include microchips.",
+        "The Indonesian Ministry of Health explicitly labels this claim as a hoax."
       ],
       "confidence_phrase": "we are very sure",
-      "sources_spoken": "the CDC, the Indonesian Ministry of Health, and FactCheck.org",
-      "audio_script": "The post claims that COVID-19 vaccines contain microchips to track vaccinated individuals. This is false. COVID-19 vaccines do not contain microchips or any other tracking devices. Health authorities confirm that vaccine ingredients are publicly available and do not include electronics; barcodes on packaging are for tracking distribution, not people. We are very sure about this. This information comes from the CDC, the Indonesian Ministry of Health, and FactCheck.org.",
+      "sources_spoken": "according to FactCheck.org, the CDC, and the Indonesian Ministry of Health",
+      "audio_script": "The post claims that COVID-19 vaccines contain microchips to track every vaccinated person. This is false. COVID-19 vaccines do not contain microchips. Health authorities and fact-checkers have confirmed that the vaccine ingredients are public and do not include any tracking devices. We are very sure of this. This information comes from FactCheck.org, the CDC, and the Indonesian Ministry of Health, all of whom have debunked this claim.",
       "card_lines": [
-        "False: COVID-19 vaccines do not contain microchips",
-        "Claim: Vaccines contain microchips to track people.",
-        "Truth: Vaccines do not contain microchips.",
-        "Source: CDC, Indonesian Ministry of Health"
+        "FALSE",
+        "COVID-19 vaccines contain microchips",
+        "Vaccines do not contain microchips",
+        "Source: FactCheck.org"
       ],
       "panel_readings": []
     }

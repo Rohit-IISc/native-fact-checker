@@ -1,72 +1,152 @@
 {
   "prompt_version": "web-search-classify-1.3+shared-1.1",
   "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-08T17:59:53+00:00",
+  "recorded_at": "2026-10-09T08:51:27+00:00",
   "outputs": [
     {
       "items": [
         {
           "source_n": 1,
           "claim_id": "c1",
-          "publisher": "AP News",
-          "title": null,
-          "published_at": "2020-04-02",
+          "publisher": "Cleveland Clinic",
+          "title": "Can drinking or gargling with lemon juice or lemon water kill the coronavirus? Sh...",
+          "published_at": null,
           "language": null,
-          "snippet_en": "AP News reported on April 2, 2020, that the claim of hot water with lemon and bicarbonate of soda curing coronavirus is false. This drink is not a cure, and no herbal remedies are recommended for COVID-19.",
+          "snippet_en": "A study indicated that the coronavirus can survive in acidic environments, which contradicts the idea that lemon juice's acidity would be effective. The pH level inside the human body cannot be significantly changed by consuming lemon water.",
           "stance": "CONTRADICTS"
         },
         {
           "source_n": 2,
           "claim_id": "c1",
-          "publisher": "National Academies",
-          "title": null,
-          "published_at": "2020-04-22",
+          "publisher": "factcheck.org",
+          "title": "Lemon Juice Tea Does Not Cure COVID-19 in Israel or Anywhere Else - FactCheck.org",
+          "published_at": "2020-04-24",
           "language": null,
-          "snippet_en": "National Academies stated on April 22, 2020, that consuming acidic drinks like lemon juice has no effect on coronavirus infections. Lemon juice will not destroy viruses or stop the virus-copying process, and drinking it hot will not prevent or cure COVID-19.",
+          "snippet_en": "There is no data or scientific evidence to suggest that lemon juice, hot water, or a combination can kill the coronavirus or prevent COVID-19 infection. Organizations like the WHO and CDC state there is no specific medicine to prevent or treat the new coronavirus.",
           "stance": "CONTRADICTS"
         },
         {
           "source_n": 3,
           "claim_id": "c1",
-          "publisher": "The Guardian",
-          "title": null,
-          "published_at": "2020-03-26",
+          "publisher": "nationalacademies.org",
+          "title": "Lemon Juice Does Not Cure COVID-19",
+          "published_at": null,
           "language": null,
-          "snippet_en": "The Guardian reported on March 26, 2020, about \"dangerous quack cures\" for coronavirus, including lemon juice and hot water, being shared online. The government advised reporting such content to social media companies.",
-          "stance": "CONTEXT"
+          "snippet_en": "There is no scientific evidence that lemon juice, hot water, or their combination can kill the coronavirus or prevent COVID-19. Viral infections involve viruses entering cells and replicating; lemon juice does not destroy viruses or stop replication. While lemons contain vitamin C, there's no evidence it can \"boost\" the immune system to protect against coronavirus.",
+          "stance": "CONTRADICTS"
         },
         {
           "source_n": 4,
           "claim_id": "c1",
-          "publisher": "Times of Israel",
-          "title": null,
-          "published_at": "2020-04-05",
+          "publisher": "cbsnews.com",
+          "title": "Coronavirus Pandemic: Can Acid Kill COVID-19 On Takeout Food? Dr. Mallika Marshall On WBZ-TV",
+          "published_at": null,
           "language": null,
-          "snippet_en": "Times of Israel debunked on April 5, 2020, the false claim that Israel avoided coronavirus deaths by prescribing hot water, lemon, and bicarbonate of soda. Experts confirm there is no proof this or any herbal remedy protects against COVID-19.",
+          "snippet_en": "There is no data or scientific evidence to suggest that lemon juice, hot water, or a combination can kill the coronavirus or prevent COVID-19 infection.",
           "stance": "CONTRADICTS"
         },
         {
           "source_n": 5,
           "claim_id": "c1",
-          "publisher": "CBS News",
-          "title": null,
-          "published_at": "2020-05-05",
+          "publisher": "NDTV Food",
+          "title": "COVID-19: Popular Food Myths Busted - Lemon Water",
+          "published_at": "2021-04-29",
           "language": null,
-          "snippet_en": "CBS News reported on May 5, 2020, that consuming acidic liquids like lemon juice will not kill the coronavirus. Dr. Mallika Marshall emphasized that social distancing, good handwashing, and self-care are the best protections.",
+          "snippet_en": "There is no data or scientific evidence to suggest that lemon juice, hot water, or a combination can kill the coronavirus or prevent COVID-19 infection. This claim was part of widespread misinformation and \"quack cures\" during the pandemic. Official recommendations emphasize handwashing, mask-wearing, and social distancing.",
           "stance": "CONTRADICTS"
         },
         {
           "source_n": 6,
           "claim_id": "c1",
-          "publisher": "FactCheck.org",
+          "publisher": null,
           "title": null,
-          "published_at": "2020-04-02",
+          "published_at": null,
           "language": null,
-          "snippet_en": "FactCheck.org debunked on April 2, 2020, a social media post falsely claiming a blend of sodium bicarbonate and lemon juice would \"eliminate\" the novel coronavirus and prevented COVID-19 deaths in Israel. The claim is baseless.",
+          "snippet_en": "There is no data or scientific evidence to suggest that lemon juice, hot water, or a combination can kill the coronavirus or prevent COVID-19 infection.",
           "stance": "CONTRADICTS"
+        },
+        {
+          "source_n": 7,
+          "claim_id": "c1",
+          "publisher": "AFP Fact Check",
+          "title": "False claims drinking water with lemon can prevent Covid-19 circulate online",
+          "published_at": null,
+          "language": null,
+          "snippet_en": "There is no data or scientific evidence to suggest that lemon juice, hot water, or a combination can kill the coronavirus or prevent COVID-19 infection. This claim was part of widespread misinformation during the pandemic.",
+          "stance": "CONTRADICTS"
+        },
+        {
+          "source_n": 8,
+          "claim_id": "c1",
+          "publisher": "The Times of Israel",
+          "title": "No, an herbal cure has not spared Israelis from the coronavirus",
+          "published_at": null,
+          "language": null,
+          "snippet_en": "There is no data or scientific evidence to suggest that lemon juice, hot water, or a combination can kill the coronavirus or prevent COVID-19 infection. This claim was part of widespread misinformation during the pandemic.",
+          "stance": "CONTRADICTS"
+        },
+        {
+          "source_n": 9,
+          "claim_id": "c1",
+          "publisher": "VOA",
+          "title": "Infodemic: Lemon Juice Won't Cure COVID-19",
+          "published_at": null,
+          "language": null,
+          "snippet_en": "There is no data or scientific evidence to suggest that lemon juice, hot water, or a combination can kill the coronavirus or prevent COVID-19 infection.",
+          "stance": "CONTRADICTS"
+        },
+        {
+          "source_n": 10,
+          "claim_id": "c1",
+          "publisher": "St. Vincent's Medical Center",
+          "title": null,
+          "published_at": null,
+          "language": null,
+          "snippet_en": "The pH level inside the human body cannot be significantly changed by consuming lemon water.",
+          "stance": "CONTRADICTS"
+        },
+        {
+          "source_n": 11,
+          "claim_id": "c1",
+          "publisher": "The Guardian",
+          "title": "Report coronavirus 'quack cures' immediately, says UK government",
+          "published_at": "2020-03-27",
+          "language": null,
+          "snippet_en": "The claim that drinking hot water mixed with lemon juice will destroy the coronavirus was part of widespread misinformation and \"quack cures\" that circulated online during the pandemic.",
+          "stance": "CONTEXT"
+        },
+        {
+          "source_n": 12,
+          "claim_id": "c1",
+          "publisher": "The Well",
+          "title": "How to Treat Coronavirus at Home",
+          "published_at": null,
+          "language": null,
+          "snippet_en": "Some sources mention drinking warm water with lemon and ginger as a home remedy for general hydration and to support the immune system during illness, but they do not claim it cures or destroys the coronavirus.",
+          "stance": "CONTEXT"
+        },
+        {
+          "source_n": 13,
+          "claim_id": "c1",
+          "publisher": "Hartford HealthCare",
+          "title": null,
+          "published_at": null,
+          "language": null,
+          "snippet_en": "Some sources mention drinking warm water with lemon and ginger as a home remedy for general hydration and to support the immune system during illness, but they do not claim it cures or destroys the coronavirus.",
+          "stance": "CONTEXT"
+        },
+        {
+          "source_n": 14,
+          "claim_id": "c1",
+          "publisher": "nih.gov",
+          "title": null,
+          "published_at": null,
+          "language": null,
+          "snippet_en": "Some sources mention drinking warm water with lemon and ginger as a home remedy for general hydration and to support the immune system during illness, but they do not claim it cures or destroys the coronavirus.",
+          "stance": "CONTEXT"
         }
       ],
-      "notes_en": "All sources contradict the claim that drinking hot water mixed with lemon juice will destroy the coronavirus. Multiple sources specifically address and debunk this claim, often in conjunction with bicarbonate of soda, stating it is false and not a cure or preventative measure for COVID-19."
+      "notes_en": "The claim that drinking hot water mixed with lemon juice will destroy the coronavirus is false. Multiple sources, including fact-checking organizations and medical experts, have debunked this claim, stating there is no scientific evidence to support it. There is no data or scientific evidence to suggest that lemon juice, hot water, or a combination of both can kill the coronavirus or prevent COVID-19 infection. One study indicated that the virus can survive in acidic environments, contradicting the idea that lemon juice's acidity would be effective. The pH level inside the human body cannot be significantly changed by consuming lemon water. Viral infections involve viruses entering cells and replicating; lemon juice does not destroy viruses in the body or stop this replication process. While lemons contain vitamin C, there's no evidence that it can \"boost\" the immune system to protect against coronavirus infections. This claim was part of widespread misinformation and \"quack cures\" that circulated online during the pandemic. Organizations like the World Health Organization (WHO) and the Centers for Disease Control and Prevention (CDC) have stated that there is no specific medicine recommended to prevent or treat the new coronavirus and emphasize practices like handwashing, mask-wearing, and social distancing. While some sources mention drinking warm water with lemon and ginger as a home remedy for general hydration and to support the immune system during illness, they do not claim it cures or destroys the coronavirus."
     }
   ]
 }

@@ -1,68 +1,68 @@
 {
   "prompt_version": "web-search-classify-1.3+shared-1.1",
   "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-08T18:02:12+00:00",
+  "recorded_at": "2026-10-09T08:53:43+00:00",
   "outputs": [
     {
       "items": [
         {
           "source_n": 1,
           "claim_id": "c1",
-          "publisher": "Wikipedia",
+          "publisher": "ISRO",
           "title": null,
-          "published_at": null,
+          "published_at": "2024-09-30",
           "language": null,
-          "snippet_en": "Chandrayaan-3 successfully landed in the lunar south pole region on August 23, 2023, making India the first nation to achieve a soft landing in that area. India is the fourth country to land on the Moon.",
+          "snippet_en": "An article published on September 30, 2024, states that the Chandrayaan-3 mission with the Vikram-lander and the Pragyan rover landed in the high latitude highland region near the south pole of the Moon. It also mentions a study showing the lander touched down within a buried impact crater.",
+          "stance": "SUPPORTS"
+        },
+        {
+          "source_n": 2,
+          "claim_id": "c1",
+          "publisher": "Hindustan Times",
+          "title": null,
+          "published_at": "2024-01-19",
+          "language": null,
+          "snippet_en": "An article from January 19, 2024, discusses the Laser Retroreflector Array (LRA) on Chandrayaan-3, noting it is the only one near the moon's south pole and that the lander was positioned near the Manzinus crater in that region.",
           "stance": "SUPPORTS"
         },
         {
           "source_n": 3,
           "claim_id": "c1",
-          "publisher": "Al Jazeera",
+          "publisher": "Facebook",
           "title": null,
           "published_at": "2023-08-23",
           "language": null,
-          "snippet_en": "Al Jazeera reported on August 23, 2023, that India could become the first nation to land a spacecraft on the Moon's south pole, with Chandrayaan-3 scheduled to touch down near the little-explored lunar south pole.",
+          "snippet_en": "A post from August 23, 2023, celebrates India making history as Chandrayaan-3 successfully landed near the Moon's south pole, making it the first country to touch down in this uncharted lunar region and only the fourth nation to achieve a soft landing on the Moon.",
           "stance": "SUPPORTS"
         },
         {
           "source_n": 4,
           "claim_id": "c1",
-          "publisher": "Facebook (ISRO - Indian Space Research Organisation)",
+          "publisher": "Universe Today",
           "title": null,
-          "published_at": "2026-07-20",
+          "published_at": "2023-08-23",
           "language": null,
-          "snippet_en": "ISRO posted that India's Chandrayaan-3 mission made history on August 23, 2023, by achieving a successful soft landing near the Moon's south pole, a region never explored this closely before. India became the first to successfully touch down in the lunar south polar region.",
+          "snippet_en": "An article from August 23, 2023, confirms that India's space agency successfully landed their Chandrayaan-3 lander on the lunar surface, becoming the fourth country to touch down on the Moon and the first to land at one of the lunar poles. The soft landing occurred at approximately 8:34 a.m. ET on August 23.",
           "stance": "SUPPORTS"
         },
         {
           "source_n": 5,
           "claim_id": "c1",
-          "publisher": "Pacific Space Center",
+          "publisher": "The Planetary Society",
           "title": null,
-          "published_at": "2023-08-30",
+          "published_at": "2023-07-14",
           "language": null,
-          "snippet_en": "Pacific Space Center published that Chandrayaan-3 touched down at the lunar south pole on August 23, 2023, marking a historic milestone for India and human space exploration as a never-before visited region of the Moon.",
+          "snippet_en": "An article published on July 14, 2023, states that Chandrayaan-3 completed a soft landing in the Moon's south polar region on August 23, 2023.",
           "stance": "SUPPORTS"
         },
         {
           "source_n": 6,
           "claim_id": "c1",
-          "publisher": "home.blog",
+          "publisher": "NASA",
           "title": null,
-          "published_at": "2023-12-12",
+          "published_at": null,
           "language": null,
-          "snippet_en": "home.blog stated that India's Moon mission became the first to land in the lunar south pole region on August 23, 2023. India joined the US, the former Soviet Union, and China in achieving a soft landing on the Moon.",
-          "stance": "SUPPORTS"
-        },
-        {
-          "source_n": 7,
-          "claim_id": "c1",
-          "publisher": "The Guardian",
-          "title": null,
-          "published_at": "2023-08-22",
-          "language": null,
-          "snippet_en": "The Guardian reported that India became the first country to successfully land a spacecraft near the south pole of the Moon. Sreedhara Panicker Somanath, chair of ISRO, said \"India is on the moon\" after the Vikram lander touched down.",
+          "snippet_en": "NASA's website confirms that Chandrayaan-3 is an Indian Space Research Organization mission that landed near the south pole of the Moon on August 23, 2023.",
           "stance": "SUPPORTS"
         }
       ],

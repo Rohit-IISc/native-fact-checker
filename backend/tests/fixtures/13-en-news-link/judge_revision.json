@@ -1,7 +1,7 @@
 {
   "prompt_version": "judge-1.4+shared-1.1+judge-revision-1.0",
   "model_id": "gemini-2.5-pro",
-  "recorded_at": "2026-10-08T18:05:18+00:00",
+  "recorded_at": "2026-10-09T08:57:26+00:00",
   "outputs": [
     {
       "verdicts": [
@@ -9,22 +9,28 @@
           "claim_id": "c1",
           "label": "NOT_ENOUGH_EVIDENCE",
           "confidence": 100,
-          "what_is_true_en": "The Chandrayaan-3 mission did successfully land near the Moon's south pole on August 23, 2023, and widespread celebrations occurred in India. However, the origin and authenticity of this specific image, purported to show one such celebration, could not be verified.",
+          "what_is_true_en": "Widespread celebrations did occur across India on August 23, 2023, to mark the successful landing of the Chandrayaan-3 mission on the Moon. However, the authenticity of the specific image in the post has not been verified by the available evidence.",
           "event_date": "2023-08-23",
           "evidence_for_ids": [
-            "ws-3"
+            "ws-1",
+            "ws-3",
+            "ws-4",
+            "ws-5",
+            "ws-6",
+            "ws-8",
+            "ws-9"
           ],
           "evidence_against_ids": [],
           "cited_ids": [],
-          "reasoning_en": "The critic's objections are valid. While the Chandrayaan-3 landing and subsequent celebrations are confirmed historical events (ws-1), the evidence linking this specific image to those events is insufficient. The claim rests on a single TIER_2 source (ws-3) and a non-source (ws-2). Crucially, the evidence brief notes a significant gap: 'The earliest appearance of the specific image in the post could not be determined, nor whether it is AI-generated or edited.' Without verification of the image's origin and authenticity, it is impossible to confirm that it genuinely depicts the claimed event. Therefore, there is not enough evidence to support a definitive verdict.",
+          "reasoning_en": "The critic's objection is valid. The claim is about the authenticity of a specific image. The provided evidence confirms that the general event depicted—celebrations for the Chandrayaan-3 landing on August 23, 2023—did happen and was widely photographed by news agencies. However, none of the evidence sources analyze or confirm the authenticity of the specific image in the user's post. While the context is real, without a direct verification of the image itself (e.g., through a reverse image search finding it in a credible archive), its authenticity cannot be confirmed. Therefore, there is not enough evidence to label the claim TRUE.",
           "ai_generation": {
-            "likelihood_ai": 50,
+            "likelihood_ai": 0,
             "signals_ai": [
-              "The origin of the image could not be determined, which leaves open the possibility of AI generation or digital manipulation."
+              "No specific signals of AI generation were found in the evidence."
             ],
             "signals_real": [
-              "One news outlet (ws-3) published the image, presenting it as a real photograph of the event.",
-              "The image itself does not contain obvious visual artifacts typically associated with AI generation."
+              "The event depicted was a real, widely photographed event, making it plausible the image is real.",
+              "No evidence was found suggesting the image is fabricated."
             ]
           }
         }

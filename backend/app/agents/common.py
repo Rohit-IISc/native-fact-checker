@@ -21,7 +21,8 @@ def claims_json(extraction: Extraction, *, with_queries: bool = True) -> str:
              "claim_type": c.claim_type.value, "place": c.place,
              "claimed_date": c.claimed_date.isoformat() if c.claimed_date else None, "entities": c.entities}
         if with_queries:
-            d |= {"search_queries_original": c.search_queries_original, "search_queries_en": c.search_queries_en}
+            d |= {"search_queries_original": c.search_queries_original, "search_queries_en": c.search_queries_en,
+                  "search_queries_regional": [r.model_dump() for r in c.search_queries_regional]}
         return d
 
     return json.dumps([one(c) for c in extraction.claims], ensure_ascii=False, indent=1)

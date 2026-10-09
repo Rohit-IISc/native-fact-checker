@@ -20,7 +20,7 @@ gcloud iam service-accounts describe "$SA" --project="$PROJECT_ID" >/dev/null 2>
   gcloud iam service-accounts create build-sa --project="$PROJECT_ID" --display-name="Cloud Build deploys"
 for role in roles/run.admin roles/iam.serviceAccountUser roles/cloudbuild.builds.editor roles/storage.admin \
             roles/artifactregistry.writer roles/secretmanager.secretAccessor roles/secretmanager.viewer \
-            roles/firebasehosting.admin roles/firebaserules.admin roles/datastore.indexAdmin roles/pubsub.editor \
+            roles/firebasehosting.admin roles/firebaserules.admin roles/datastore.indexAdmin roles/pubsub.admin \
             roles/logging.logWriter roles/serviceusage.serviceUsageConsumer; do
   gcloud projects add-iam-policy-binding "$PROJECT_ID" --member="serviceAccount:$SA" --role="$role" \
     --condition=None >/dev/null

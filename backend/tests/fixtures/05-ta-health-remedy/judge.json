@@ -1,7 +1,7 @@
 {
   "prompt_version": "judge-1.4+shared-1.1",
   "model_id": "gemini-2.5-pro",
-  "recorded_at": "2026-10-08T17:59:53+00:00",
+  "recorded_at": "2026-10-09T08:51:27+00:00",
   "outputs": [
     {
       "verdicts": [
@@ -9,24 +9,26 @@
           "claim_id": "c1",
           "label": "FALSE",
           "confidence": 100,
-          "what_is_true_en": "Drinking hot water with lemon juice does not prevent or cure COVID-19. Health organizations and experts have confirmed this is a false remedy with no effect on the coronavirus.",
+          "what_is_true_en": "There is no scientific evidence that drinking hot water with lemon juice can destroy the coronavirus or cure COVID-19. Health organizations state that this is a widely circulated piece of misinformation.",
           "event_date": null,
           "evidence_for_ids": [],
           "evidence_against_ids": [
-            "ws-1",
-            "ws-6",
             "fc-2",
-            "fc-1",
-            "ws-2"
+            "fc-3",
+            "ws-2",
+            "ws-7",
+            "ws-5",
+            "fc-1"
           ],
           "cited_ids": [
-            "ws-1",
-            "ws-6",
             "fc-2",
-            "fc-1",
-            "ws-2"
+            "fc-3",
+            "ws-2",
+            "ws-7",
+            "ws-5",
+            "fc-1"
           ],
-          "reasoning_en": "Multiple TIER_1 fact-checking organizations, including AP News, FactCheck.org, and AFP Fact Check, have debunked the claim that drinking hot water with lemon can cure or prevent COVID-19. Expert bodies like the National Academies also confirm that acidic drinks have no effect on coronavirus infections. The evidence is unanimous in stating this is a false remedy.",
+          "reasoning_en": "A large body of evidence from TIER_1 fact-checking organizations, including Snopes, AP News, FactCheck.org, and AFP Fact Check, explicitly debunks the claim. These sources, published in 2020, state there is no scientific evidence to support the idea that lemon and hot water can cure or prevent COVID-19. Medical and news sources corroborate this, describing the claim as a myth and misinformation that circulated during the pandemic. No evidence was found to support the claim.",
           "ai_generation": null
         }
       ]

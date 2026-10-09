@@ -92,5 +92,5 @@ SELECT
   verdict_agreement, direction_agreement, abstain_rate, accuracy_when_answered,
   p50_latency_ms, p95_latency_ms, cost_per_check, total_cost_usd, n_gold, n_silver, drift_flag, baseline_run_id
 FROM `PROJECT.DATASET.eval_runs`
-WHERE label != 'smoke'
+WHERE label NOT IN ('smoke', 'experiment')
 ORDER BY run_at;

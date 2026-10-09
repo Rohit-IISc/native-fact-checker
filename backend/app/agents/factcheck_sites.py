@@ -41,6 +41,13 @@ def search_plan(extraction: Extraction) -> list[tuple[str, str]]:
         if lang in ("ta", "kn", "te", "ml", "mr", "bn", "gu", "pa", "or"):
             # Many Indian fact checks are published in Hindi or English first.
             plan.append((c.claim_en[:150], "hi"))
+        # The same claim in the other Indian demo languages: the API matches words, so a Tamil fact check
+        # is only found with Tamil words (eval recall at 5 for kn->hi and ta->kn was 0-5%, Oct 9).
+        plan += [(r.query, r.language) for r in c.search_queries_regional if r.language != lang and r.query.strip()]
+        # No language filter: a fact check published in another language (a Tamil check of a claim that
+        # reached us in Kannada) is invisible to the filtered searches above (eval recall at 5, Oct 9).
+        plan += [(q, "") for q in (c.search_queries_en or [c.claim_en[:150]])[:1]]
+        plan += [(q, "") for q in (c.search_queries_original or [c.claim_original[:150]])[:1]]
     seen: set[tuple[str, str]] = set()
     return [p for p in plan if not (p in seen or seen.add(p))]
 

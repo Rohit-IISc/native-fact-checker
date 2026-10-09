@@ -62,7 +62,10 @@ Updated after every task (see CLAUDE.md, "How to work"). Newest state only; hist
 
 ## Broken or risky
 
-Latest `make record` (Oct 8 evening, jobs=3): 15/20, avg 55.4 s, $2.07. Failing: 01b, 13 (known), and 09,
+Latest `make record` (Oct 9, after the cross-language search fix, jobs=2): 18/20, avg 44.8 s, $2.23.
+Failing: 10a (MISLEADING, want FALSE) and 13 (known). 01 and 01b passed.
+
+Previous `make record` (Oct 8 evening, jobs=3): 15/20, avg 55.4 s, $2.07. Failing: 01b, 13 (known), and 09,
 10a, 10b, which hit agent timeouts and a 429 under 3 parallel cases; re-run one at a time, all three passed
 (46-57 s), and so did 06 (whose composer had timed out). Load, not the change: see decision 41.
 
@@ -99,8 +102,6 @@ check. Cross-language recall gap and 3 inverted gold items: eval/TESTS-TO-DO.md 
 1. Rohit: phone tests in eval/TESTS-TO-DO.md section 1 (share sheet, push, card in WhatsApp).
 2. Stance classification for "this exact video is old" fact checks (case 01); composer wording must
    match the label (case 12 run said "false" under MISLEADING).
-3. Fact-check search across languages (recall at 5 is 0% for kn→hi and ta→kn): query without a language
-   filter in `agents/factcheck_sites.py:search_plan`, measure with recall-only eval, then make record/accept.
 4. Gold set v3 after a hand-check (3 items have the conclusion as the claim), re-baseline.
 5. Signed-URL upload for shares over 32 MB.
 6. Rohit: make `main` the default branch on GitHub (deploys come from main since Oct 9).

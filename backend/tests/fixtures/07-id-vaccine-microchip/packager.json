@@ -1,7 +1,7 @@
 {
   "prompt_version": "packager-1.1+shared-1.1",
   "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-08T18:01:17+00:00",
+  "recorded_at": "2026-10-09T08:53:44+00:00",
   "outputs": [
     {
       "briefs": [
@@ -11,20 +11,26 @@
           "claim_type": null,
           "claimed_date": null,
           "place": null,
-          "brief_en": "Multiple health authorities and fact-checking organizations have debunked the claim that COVID-19 vaccines contain microchips. The CDC and Mayo Clinic state that vaccines do not contain microchips and are designed to stimulate the immune system. Pfizer's official website also confirms the absence of microchips. The Indonesian Ministry of Health on May 28, 2021, and the Indonesian Ministry of Communication and Information have also refuted these claims, clarifying that barcodes on vaccine products are for distribution tracking, not individual tracking. Fact-checkers like AFP (July 14, 2021) and FactCheck.org (May 26, 2022) have addressed various iterations of this conspiracy theory, including misinterpretations of microrobots and health sensors, and spoof videos.",
+          "brief_en": "Multiple fact-checking organizations and health authorities, including Tempo.co, FactCheck.org, AFP Fact Check, the CDC, and the Indonesian Ministry of Health, consistently state that COVID-19 vaccines do not contain microchips. Experts explain that microchips are too large to be injected with vaccine needles and require power and an antenna to function, which is not present in vaccines. Some sources suggest the conspiracy theory may stem from misinterpretations of digital vaccine records or the existence of subdermal microchips developed by a Swedish company in December 2021 for storing vaccination data, which are separate from the vaccines themselves and cannot track location. Claims linking Bill Gates to microchip implants in vaccines have also been debunked.",
           "evidence_ids": [
-            "ws-1",
             "ws-2",
+            "ws-4",
             "ws-6",
-            "ws-7",
-            "ws-8",
-            "ws-9",
+            "ws-14",
+            "ws-18",
+            "ws-19",
+            "ws-20",
             "fc-1",
             "fc-2",
             "fc-3",
-            "fc-5",
             "fc-6",
-            "fc-7"
+            "fc-7",
+            "fc-9",
+            "fc-10",
+            "fc-11",
+            "fc-12",
+            "fc-13",
+            "fc-14"
           ],
           "gaps_en": []
         }
