@@ -62,13 +62,13 @@ Deployed: eval job `eval-runner` with schedule `eval-every-3-days` (03:00 IST on
 month), 7 BigQuery views (`factcheck.v_*`), 4 log-based metrics, 5 alert policies emailing Rohit, `build-sa`
 and the PWA keys in Secret Manager. Re-run any of it with `make deploy-ops` (needs ALERT_EMAIL).
 
-- [ ] **Rohit: connect GitHub to Cloud Build.** Run `PROJECT_ID=ai-builder-2026 scripts/setup_cloud_build.sh`,
-      open the link it prints, authorize and install the Cloud Build app on Rohit-IISc/native-fact-checker,
-      then run the script again to create the trigger
-- [ ] **Rohit: choose the deploy branch.** The trigger defaults to `claude/upbeat-bardeen-7hz94l`;
-      `main` is 18 commits behind. Merge into main and re-run with `BRANCH=main` if you want main
-- [ ] Push a small commit: Cloud Build runs gitleaks, ruff, pytest, then deploys backend and frontend
-      (Cloud Build history in the console); the site still works afterwards (`make smoke`)
+- [x] **Rohit: connect GitHub to Cloud Build** (Oct 9). Trigger `deploy-on-push` created
+- [x] **Deploy branch is `main`** (Oct 9, Rohit): working branch merged into main; the trigger watches `^main$`
+- [ ] **Rohit: make `main` the default branch on GitHub** (Settings > Branches); it is still
+      `claude/upbeat-bardeen-7hz94l`, so new clones and PRs start from the old branch
+- [ ] Push to main: Cloud Build runs gitleaks, ruff, pytest, then deploys backend and frontend
+      (Cloud Build history in the console); the site still works afterwards (`make smoke`).
+      First run: the Oct 9 merge push (result below)
 - [ ] A commit with a failing test does **not** deploy
 - [x] Baseline eval stored (Oct 9): `factcheck.v_eval_trend` shows it; Firestore `config/eval.baseline_run_id`
       names it (results in "Eval baseline" below)

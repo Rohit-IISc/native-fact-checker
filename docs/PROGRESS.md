@@ -3,7 +3,7 @@
 Updated after every task (see CLAUDE.md, "How to work"). Newest state only; history is in git.
 
 **Last updated:** Fri Oct 9, 2026
-**Build-plan day:** Day 6 work on Fri Oct 9: Days 0 to 5 done; Day 6 (measure) deployed, trigger waits on GitHub auth.
+**Build-plan day:** Day 6 work on Fri Oct 9: Days 0 to 5 done; Day 6 (measure) deployed; pushes to main deploy via Cloud Build.
 **Deployed:** https://ai-builder-2026.web.app -> Cloud Run `factcheck-api` (asia-south1), commit 2d0803c+.
 **Audio samples for native speakers:** https://claude.ai/artifact/3uKEHUsp5hdXoVFo87SJeo (private; share it).
 
@@ -47,8 +47,8 @@ Updated after every task (see CLAUDE.md, "How to work"). Newest state only; hist
   - Alerts (`scripts/create_alerts.sh`): error rate, full-check p95, daily model spend (30 USD), eval drift,
     eval job failure; email to Rohit.
   - Cloud Build: `cloudbuild.yaml` (gitleaks, ruff, pytest, deploy), `scripts/setup_cloud_build.sh`
-    (build-sa, PWA keys in Secret Manager, GitHub connection, trigger). Connection waits for Rohit's
-    GitHub authorization.
+    (build-sa, PWA keys in Secret Manager, GitHub connection, trigger). Trigger `deploy-on-push` deploys
+    every push to `main` (working branch merged into main on Oct 9).
   - `make deploy-ops` re-runs eval deploy, views and alerts.
 - `eval/TESTS-TO-DO.md`: every test still to do (phone, verdict quality, native speakers, load, unbuilt).
 - Day 5 audio (`backend/app/output/tts.py`): Gemini TTS, voice per language, MP3 via ffmpeg, stored in the
@@ -103,5 +103,5 @@ check. Cross-language recall gap and 3 inverted gold items: eval/TESTS-TO-DO.md 
    filter in `agents/factcheck_sites.py:search_plan`, measure with recall-only eval, then make record/accept.
 4. Gold set v3 after a hand-check (3 items have the conclusion as the claim), re-baseline.
 5. Signed-URL upload for shares over 32 MB.
-6. Rohit: authorize the GitHub connection (`scripts/setup_cloud_build.sh`), pick the deploy branch.
+6. Rohit: make `main` the default branch on GitHub (deploys come from main since Oct 9).
 

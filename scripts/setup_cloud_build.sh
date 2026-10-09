@@ -5,15 +5,14 @@
 # The GitHub connection needs a person: the first run prints a link; open it, authorize Cloud Build and
 # install the Cloud Build GitHub app on Rohit-IISc/native-fact-checker, then run this script again.
 #
-#   PROJECT_ID=ai-builder-2026 BRANCH=main scripts/setup_cloud_build.sh
-# BRANCH defaults to the repo's default branch (the one GitHub shows first).
+#   PROJECT_ID=ai-builder-2026 scripts/setup_cloud_build.sh
+# Deploys come from main (decision 44); BRANCH overrides it.
 set -euo pipefail
 : "${PROJECT_ID:?Set PROJECT_ID}"
 REGION="asia-south1"
 REPO_OWNER="${REPO_OWNER:-Rohit-IISc}"
 REPO_NAME="${REPO_NAME:-native-fact-checker}"
-BRANCH="${BRANCH:-$(git remote show origin 2>/dev/null | sed -n 's/.*HEAD branch: //p')}"
-: "${BRANCH:?Set BRANCH}"
+BRANCH="${BRANCH:-main}"
 SA="build-sa@${PROJECT_ID}.iam.gserviceaccount.com"
 
 # 1. Build service account with only what the deploy scripts use.
