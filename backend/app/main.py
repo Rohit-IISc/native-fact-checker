@@ -93,6 +93,7 @@ async def create_check(
     client_lang: str = Form(default="en"),
     files: list[UploadFile] | None = File(default=None),
 ):
+    started = time.monotonic()
     store = get_store()
     uploads = [UploadedFile(f.filename or "file", await f.read(), f.content_type) for f in files or []]
     try:
@@ -124,9 +125,9 @@ async def create_check(
     }
 
     # Tier 1 cache (shared by all users). Cache hits count against quota (docs/08).
+    probe = [MediaRef(kind=i.kind, mime_type=i.mime_type, uri="", size_bytes=len(i.file.data), sha256=i.sha256,
+                      phash=i.phash, frame_phashes=i.frame_phashes) for i in ingested]
     if ingested:
-        probe = [MediaRef(kind=i.kind, mime_type=i.mime_type, uri="", size_bytes=len(i.file.data), sha256=i.sha256,
-                          phash=i.phash, frame_phashes=i.frame_phashes) for i in ingested]
         hit = await tier1.lookup_media(store, probe)
     else:
         hit = await tier1.lookup(store, keys)
@@ -134,9 +135,14 @@ async def create_check(
         # The caption decides the answer language: the same video with a caption in another language
         # gets the cached verdict translated (once, then stored) and its own audio (acceptance case 3).
         from app.llm import get_llm
+        from app.observability.calls import CheckLedger, ledger_var
+        from app.observability.runs import write_check_run
         from app.pipeline import reuse
 
+        ledger = CheckLedger()  # a translation into a new language is the only model cost of a hit
+        ledger_var.set(ledger)
         result = await reuse.tier1_answer(store, get_llm(), check_id, hit, text)
+        result.latency_ms = int((time.monotonic() - started) * 1000)
         await store.set(CHECKS, check_id, {
             **base, "status": "DONE", "stage": Stage.DONE.value, "stage_label_key": "stage.done",
             "progress": 100, "cache_tier_hit": "T1", "result": result.model_dump(mode="json"),
@@ -145,6 +151,10 @@ async def create_check(
         })
         await _history(user.uid, check_id, result)
         log_event(log, "tier1 hit", key=hit["key"], language=result.content_language)
+        # The T1 lane in check_runs (dashboard latency by lane); the request is not used beyond the row.
+        asyncio.get_running_loop().create_task(write_check_run(CheckRequest(
+            check_id=check_id, uid=user.uid, text=text, url=url, media=probe, client_lang=client_lang,
+            share_date=quota.local_date(now)), result, ledger))
         if reuse.needs_audio(result):
             await dispatch(check_id, task="speak")
         return {"check_id": check_id, "status": "DONE", "cache_tier_hit": "T1",

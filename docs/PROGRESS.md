@@ -3,7 +3,7 @@
 Updated after every task (see CLAUDE.md, "How to work"). Newest state only; history is in git.
 
 **Last updated:** Fri Oct 9, 2026
-**Build-plan day:** Day 5 (Fri Oct 9): Days 0 to 4 done; Day 5 answer outputs done (audio, card, push).
+**Build-plan day:** Day 6 work on Fri Oct 9: Days 0 to 5 done; Day 6 (measure) deployed, trigger waits on GitHub auth.
 **Deployed:** https://ai-builder-2026.web.app -> Cloud Run `factcheck-api` (asia-south1), commit 2d0803c+.
 **Audio samples for native speakers:** https://claude.ai/artifact/3uKEHUsp5hdXoVFo87SJeo (private; share it).
 
@@ -35,6 +35,21 @@ Updated after every task (see CLAUDE.md, "How to work"). Newest state only; hist
   language, headline as body; dead tokens removed; never fails a check. The PWA asks for permission once a
   check starts (`frontend/src/lib/push.ts`); the service worker skips it when the result is on screen.
   Needs a phone test (eval/TESTS-TO-DO.md).
+- Day 6 measure (Oct 9):
+  - Eval (`eval/runner.py`, `eval/datasets.py`): recall at 5 (claim restated in another language, fact-check
+    retrieval only) and verdict regression (gold from ClaimReview ratings, silver from our AGREED/HIGH
+    verdicts) on an overlay store (production cache untouched). Row in BigQuery `eval_runs`, details in
+    `gs://ai-builder-2026-eval/runs/`, drift vs baseline sets Firestore `config/flags.model_review_needed`.
+    Dataset v2 frozen in the eval bucket. Cloud Run Job `eval-runner`, Scheduler every 3 days 03:00 IST.
+  - BigQuery views `factcheck.v_*` (`scripts/bq_views.sql`): lanes, daily, verdict mix, stage latency,
+    model calls, eval trend. New `env` column (prod/dev/smoke) keeps test traffic out; tier 1 hits now
+    write check_runs too (they were missing).
+  - Alerts (`scripts/create_alerts.sh`): error rate, full-check p95, daily model spend (30 USD), eval drift,
+    eval job failure; email to Rohit.
+  - Cloud Build: `cloudbuild.yaml` (gitleaks, ruff, pytest, deploy), `scripts/setup_cloud_build.sh`
+    (build-sa, PWA keys in Secret Manager, GitHub connection, trigger). Connection waits for Rohit's
+    GitHub authorization.
+  - `make deploy-ops` re-runs eval deploy, views and alerts.
 - `eval/TESTS-TO-DO.md`: every test still to do (phone, verdict quality, native speakers, load, unbuilt).
 - Day 5 audio (`backend/app/output/tts.py`): Gemini TTS, voice per language, MP3 via ffmpeg, stored in the
   outputs bucket, served by `GET /v1/results/{id}/audio`. Generated after DONE (TTS takes 18-24 s);
@@ -66,8 +81,8 @@ Earlier pass rates (Oct 8, real models; `make accept REPEAT=2`, plus later singl
   recovering); Gemini 2.5 on Vertex uses dynamic shared quota, so heavy judging-week load may still hit
   it. Provisioned Throughput: not now (decision 41); see "Before the final presentation".
 - Instagram reels: only caption + thumbnail (Instagram gives no video to link previews).
-- Not built yet: BigQuery dashboards, eval runner, Cloud Scheduler, alerts, Cloud Build trigger,
-  signed-URL upload (Cloud Run caps uploads at 32 MB; we promise 50 MB).
+- Not built yet: signed-URL upload (Cloud Run caps uploads at 32 MB; we promise 50 MB). Looker Studio
+  dashboard and the billing budget need Rohit (eval/TESTS-TO-DO.md section 5).
 
 ## Before the final presentation (Oct 18)
 
@@ -81,5 +96,5 @@ Earlier pass rates (Oct 8, real models; `make accept REPEAT=2`, plus later singl
 2. Stance classification for "this exact video is old" fact checks (case 01); composer wording must
    match the label (case 12 run said "false" under MISLEADING).
 3. Signed-URL upload for shares over 32 MB.
-4. Day 6 when Rohit says go: BigQuery view, eval runner + baseline, Scheduler, alerts, Cloud Build trigger.
+4. Rohit: authorize the GitHub connection (`scripts/setup_cloud_build.sh`), pick the deploy branch.
 

@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import asyncio
 import logging
+import os
 from datetime import UTC, datetime
 
 from app.models import CheckRequest, CheckResult
@@ -53,7 +54,15 @@ def check_run_row(req: CheckRequest, result: CheckResult, ledger: CheckLedger, e
         "vision_calls": ledger.vision_calls,
         "tts_chars": ledger.tts_chars,
         "error_code": error_code,
+        "env": run_env(req.uid),
     }
+
+
+def run_env(uid: str) -> str:
+    """Keeps test traffic out of the dashboard: dev runs (make try/accept/record) and deploy smoke checks."""
+    if uid == "deploy-smoke":
+        return "smoke"
+    return "prod" if os.environ.get("K_SERVICE") else "dev"
 
 
 async def write_check_run(

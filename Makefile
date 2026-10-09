@@ -2,7 +2,7 @@
 # Backend config precedence: environment variables (Codespaces secrets) > backend/.env (optional,
 # gitignored) > backend/.env.defaults. Frontend: VITE_* env vars > frontend/.env.development.
 SHELL := /bin/bash
-.PHONY: dev dev-offline backend frontend test test-live lint deploy eval check-models install try accept record smoke
+.PHONY: deploy-ops dev dev-offline backend frontend test test-live lint deploy eval check-models install try accept record smoke
 # Free text goes to the CLI through the environment so quotes and commas survive.
 export TEXT URL
 
@@ -71,8 +71,16 @@ deploy:
 	./scripts/deploy_backend.sh
 	./scripts/deploy_frontend.sh
 
+# Eval job + its every-3-days schedule, dashboard views, alerts (Day 6). Re-runnable.
+deploy-ops: export PROJECT_ID ?= $(shell sed -n 's/^GCP_PROJECT=\([^ ]*\).*/\1/p' backend/.env.defaults)
+deploy-ops:
+	@test -n "$$PROJECT_ID" || (echo "Set PROJECT_ID" && exit 1)
+	./scripts/deploy_eval.sh
+	./scripts/create_bq_views.sh
+	./scripts/create_alerts.sh
+
 eval:
-	PYTHONPATH=backend:. uv run --project backend python -m eval.runner
+	PYTHONPATH=backend:. uv run --project backend python -m eval.runner $(ARGS)
 
 check-models:
 	cd backend && uv run python ../scripts/check_models.py

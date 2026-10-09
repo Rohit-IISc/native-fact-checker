@@ -66,3 +66,4 @@ stage_models:
   composer: flash
   translator: flash
   panel_timeout_fallback: flash
+  eval_query: flash            # eval runner only: restate a benchmark claim in another language

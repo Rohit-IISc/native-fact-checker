@@ -56,16 +56,43 @@ Latest full run: 15/20 (Oct 8 evening). Run with `REPEAT=2` or more; one pass pr
 - [ ] Decide Provisioned Throughput versus shared quota with Rohit (decision 41; costs money)
 - [ ] Cold start with min instances 0 versus 1 (set 1 for judging week)
 
-## 5. Not built yet, so not testable yet
+## 5. Day 6 operations (deployed Oct 9)
 
-- [ ] Eval runner (`eval/runner.py` is a stub): recall at 5 and verdict regression, first baseline stored
-- [ ] Cloud Scheduler: eval every 3 days
-- [ ] Alerts (latency, error rate, cost)
-- [ ] BigQuery view of latency and cost per check (rows are already written to `factcheck.check_runs`)
-- [ ] Cloud Build trigger: deploy on push to main (`cloudbuild.yaml` exists, no trigger)
+Deployed: eval job `eval-runner` with schedule `eval-every-3-days` (03:00 IST on days 1, 4, 7, ... of the
+month), 7 BigQuery views (`factcheck.v_*`), 4 log-based metrics, 5 alert policies emailing Rohit, `build-sa`
+and the PWA keys in Secret Manager. Re-run any of it with `make deploy-ops` (needs ALERT_EMAIL).
+
+- [ ] **Rohit: connect GitHub to Cloud Build.** Run `PROJECT_ID=ai-builder-2026 scripts/setup_cloud_build.sh`,
+      open the link it prints, authorize and install the Cloud Build app on Rohit-IISc/native-fact-checker,
+      then run the script again to create the trigger
+- [ ] **Rohit: choose the deploy branch.** The trigger defaults to `claude/upbeat-bardeen-7hz94l`;
+      `main` is 18 commits behind. Merge into main and re-run with `BRANCH=main` if you want main
+- [ ] Push a small commit: Cloud Build runs gitleaks, ruff, pytest, then deploys backend and frontend
+      (Cloud Build history in the console); the site still works afterwards (`make smoke`)
+- [ ] A commit with a failing test does **not** deploy
+- [ ] Baseline eval stored: `SELECT * FROM factcheck.v_eval_trend` shows the baseline row; Firestore
+      `config/eval.baseline_run_id` names it (results in "Eval baseline" below)
+- [ ] First scheduled run (Sat Oct 10, 03:00 IST) appears in `v_eval_trend` with `drift_flag` false and
+      the baseline id filled in
+- [ ] Hand-check 15 gold items (`gs://ai-builder-2026-eval/datasets/v2/gold.jsonl`): is the label mapped from
+      the publisher's rating right? (rules in `eval/datasets.py`, decision 42)
+- [ ] Alert email arrives: Cloud Monitoring > Alerting > a policy > "Send test notification", check the
+      inbox (and spam) of the alert address
+- [ ] Dashboard queries return sensible numbers with `env = 'prod'`: `v_daily`, `v_lanes_daily`
+      (T1 rows appear after the next real repeat share; tier 1 hits are logged since Oct 9),
+      `v_stage_latency_7d`, `v_verdict_mix`, `v_model_calls_daily`
+- [ ] **Rohit: Looker Studio dashboard** on those views for the deck (latency by lane, cost per check,
+      verdict mix, languages, cache hit rate); Looker Studio needs your Google login
+- [ ] **Rohit: billing budget** (docs/13: 750 with alerts at 50%, 90%, 100%). The billing account
+      "ai-builder-cup" is in INR and this login cannot read its budgets; set it in Billing > Budgets
+- [ ] Silver set: stays empty until production has verdicts the panel AGREED on with HIGH confidence
+      and a tier 1 source; check `n_silver` grows in later runs
+
+## 6. Not built yet, so not testable yet
+
 - [ ] Signed-URL upload for shares over 32 MB
 
-## 6. Before submission
+## 7. Before submission
 
 - [ ] `make check-models`: every model ID in config/models.yaml still exists in Vertex AI
 - [ ] Demo cache seeded with the demo shares
@@ -77,6 +104,7 @@ Latest full run: 15/20 (Oct 8 evening). Run with `REPEAT=2` or more; one pass pr
 
 | Command | What it covers | Cost |
 | --- | --- | --- |
-| `make test` | 264 backend tests offline (source policy, cache keys, quota, link ladder, SSRF guard, panel merge, card, push, recorded pipeline replays) plus the frontend type check | Free |
+| `make test` | 271 backend tests offline (source policy, cache keys, quota, link ladder, SSRF guard, panel merge, card, push, eval logic, recorded pipeline replays) plus the frontend type check | Free |
 | `make accept` | The acceptance cases in `tests/acceptance/` against real models | About $2 per full run |
 | `make smoke` | Production through Pub/Sub, including audio, then cleans up | A few cents |
+| `make eval` | The eval locally (`ARGS="--gold-n 10 --silver-n 0"` for a small one); the scheduled job runs the full size | 7 to 10 USD full |

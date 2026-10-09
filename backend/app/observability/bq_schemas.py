@@ -27,6 +27,7 @@ CHECK_RUNS = [
     ("vision_calls", "INT64", "NULLABLE"),
     ("tts_chars", "INT64", "NULLABLE"),
     ("error_code", "STRING", "NULLABLE"),
+    ("env", "STRING", "NULLABLE"),  # Oct 9: prod (Cloud Run), smoke (deploy checks) or dev (make try/accept)
 ]
 
 MODEL_CALLS = [
@@ -57,6 +58,15 @@ EVAL_RUNS = [
     ("cost_per_check", "FLOAT64", "NULLABLE"),
     ("baseline_run_id", "STRING", "NULLABLE"),
     ("drift_flag", "BOOL", "NULLABLE"),
+    # Added Oct 9 (eval runner): ensure_eval_table() adds them to an existing table.
+    ("direction_agreement", "FLOAT64", "NULLABLE"),
+    ("total_cost_usd", "FLOAT64", "NULLABLE"),
+    ("n_recall", "INT64", "NULLABLE"),
+    ("n_gold", "INT64", "NULLABLE"),
+    ("n_silver", "INT64", "NULLABLE"),
+    ("dataset_version", "STRING", "NULLABLE"),
+    ("label", "STRING", "NULLABLE"),
+    ("details_uri", "STRING", "NULLABLE"),
 ]
 
 TABLES = {"check_runs": CHECK_RUNS, "model_calls": MODEL_CALLS, "eval_runs": EVAL_RUNS}
@@ -78,6 +88,27 @@ def ensure_tables() -> None:
             table.time_partitioning = bigquery.TimePartitioning(field="created_at" if name == "check_runs"
                                                                 else None)
         try:
-            client.create_table(table, exists_ok=True)
+            _add_missing_columns(client, client.create_table(table, exists_ok=True), table.schema)
         except Exception as e:  # noqa: BLE001
             log.warning("could not ensure table %s: %s", name, e)
+
+
+def _add_missing_columns(client, table, schema) -> None:
+    """BigQuery allows appending NULLABLE columns; new fields in the lists above reach existing tables."""
+    have = {f.name for f in table.schema}
+    missing = [f for f in schema if f.name not in have]
+    if missing:
+        table.schema = [*table.schema, *missing]
+        client.update_table(table, ["schema"])
+
+
+def ensure_eval_table() -> None:
+    """eval_runs with every column in EVAL_RUNS: creates it, or appends columns added since (the eval runner
+    writes even when BIGQUERY_ENABLED is off for its pipeline runs)."""
+    from google.cloud import bigquery
+
+    s = get_settings()
+    client = bigquery.Client(project=s.gcp_project)
+    ref = f"{s.gcp_project}.{s.bigquery_dataset}.eval_runs"
+    schema = [bigquery.SchemaField(n, t, mode=m) for n, t, m in EVAL_RUNS]
+    _add_missing_columns(client, client.create_table(bigquery.Table(ref, schema=schema), exists_ok=True), schema)
