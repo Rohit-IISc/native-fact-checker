@@ -102,18 +102,23 @@ def cleanup(check_ids: list[str]) -> None:
         db.collection("users").document(UID).collection("history").document(cid).delete()
 
 
-started: list[str] = []
-try:
-    ids1 = {n: start(s) for n, s in WAVE1.items()}
-    started += ids1.values()
-    done1 = wait(ids1)
-    ids2 = {n: start(s) for n, s in WAVE2.items()}
-    started += ids2.values()
-    done2 = wait(ids2)
-    for n in ids1:
-        report(n, done1.get(n, {}))
-    for n in ids2:
-        report(n, done2.get(n, {}))
-finally:
-    cleanup(started)
-    print(f"cleaned up {len(started)} checks")
+def main() -> None:
+    started: list[str] = []
+    try:
+        ids1 = {n: start(s) for n, s in WAVE1.items()}
+        started += ids1.values()
+        done1 = wait(ids1)
+        ids2 = {n: start(s) for n, s in WAVE2.items()}
+        started += ids2.values()
+        done2 = wait(ids2)
+        for n in ids1:
+            report(n, done1.get(n, {}))
+        for n in ids2:
+            report(n, done2.get(n, {}))
+    finally:
+        cleanup(started)
+        print(f"cleaned up {len(started)} checks")
+
+
+if __name__ == "__main__":
+    main()

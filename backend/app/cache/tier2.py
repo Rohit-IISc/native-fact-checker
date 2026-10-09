@@ -86,7 +86,7 @@ async def lookup(store: Store, llm: LLM, extraction: Extraction, share_date: dat
     if not extraction.claims:
         return out
     try:
-        vectors = await llm.embed([c.claim_en for c in extraction.claims], timeout_s=get_config().timeout("tier2"))
+        vectors = await llm.embed([c.claim_en for c in extraction.claims], timeout_s=get_config().timeout("embedding"))
         out.embeddings = {c.claim_id: v for c, v in zip(extraction.claims, vectors, strict=True)}
         counter = [0]
         await asyncio.gather(*(_one(store, llm, c, out.embeddings[c.claim_id], share_date, out, counter)
