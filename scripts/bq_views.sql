@@ -94,3 +94,20 @@ SELECT
 FROM `PROJECT.DATASET.eval_runs`
 WHERE label NOT IN ('smoke', 'experiment')
 ORDER BY run_at;
+
+-- Vertex pushback by hour (IST): 429s and 5xx per model and stage, including ones a retry recovered from.
+-- Rows before Oct 9 have no created_at and are left out.
+CREATE OR REPLACE VIEW `PROJECT.DATASET.v_rate_limits` AS
+SELECT
+  DATE(m.created_at, 'Asia/Kolkata') AS day_ist,
+  EXTRACT(HOUR FROM m.created_at AT TIME ZONE 'Asia/Kolkata') AS hour_ist,
+  COALESCE(c.env, 'unknown') AS env, m.model_id, m.stage,
+  COUNT(*) AS calls,
+  SUM(m.rate_limited) AS seen_429,
+  COUNTIF(m.error_code = '429') AS failed_429,
+  SUM(m.server_errors) AS seen_5xx,
+  COUNTIF(m.error_code = 'TIMEOUT') AS timeouts
+FROM `PROJECT.DATASET.model_calls` AS m
+LEFT JOIN `PROJECT.DATASET.v_checks` AS c USING (check_id)
+WHERE m.created_at IS NOT NULL
+GROUP BY day_ist, hour_ist, env, model_id, stage;

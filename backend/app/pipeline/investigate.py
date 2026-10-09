@@ -24,6 +24,7 @@ from app.agents import (
     media_provenance,
     packager,
     panel_agents,
+    same_media,
     source_credibility,
     web_search,
 )
@@ -211,6 +212,10 @@ async def investigate(store: Store, llm: LLM, tools: Tools, req: CheckRequest, e
             inv.prompt_versions[f.agent] = load_prompt(prompt).version
 
     await set_stage(store, req.check_id, Stage.PACKAGING)
+    changed = await timed("same_media", same_media.run(llm, extraction, inv.findings, budget.stage("same_media")))
+    if changed:
+        inv.prompt_versions["same_media"] = load_prompt(same_media.PROMPT).version
+        log_event(log, "same media re-marked", ids=changed)
     inv.pack = await timed("packaging", packager.run(llm, req.check_id, extraction, inv.findings,
                                                      inv.missing_lanes, budget.stage("packager")))
     inv.prompt_versions["packager"] = load_prompt(packager.PROMPT).version

@@ -21,6 +21,7 @@ timeouts_s:
   embedding: 4                  # tier 2 embedding, hedged at 2 s: successes p99 3.9 s, failures all hit the old 8 s (Oct 9)
   sub_agent: 36                 # web search: grounded search 8-9 s or 30+ s (hedged at 12 s) + classify 6 s
   packager: 15                  # measured Oct 5: 6 s
+  same_media: 8                 # one Flash call, only when a media claim has background fact checks
   judge: 30                     # gemini-2.5-pro: 9-25 s by pack size (hedged at 14 s)
   critic: 20
   judge_revision: 20

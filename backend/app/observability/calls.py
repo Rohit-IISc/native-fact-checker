@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import contextvars
 from dataclasses import asdict, dataclass, field
+from datetime import UTC, datetime
 
 from app.settings import get_config
 
@@ -21,6 +22,13 @@ class ModelCall:
     success: bool = True
     retry: bool = False
     grounding_queries: int = 0
+    # Oct 9: when each call happened and how Vertex pushed back, to see whether 429s cluster by hour.
+    created_at: str = field(default_factory=lambda: datetime.now(UTC).isoformat())
+    error_code: str | None = None   # final failure: "429", "503", "TIMEOUT", "VALIDATION", ...
+    rate_limited: int = 0           # 429s seen during this call, including ones a retry recovered from
+    server_errors: int = 0          # 5xx seen during this call
+    fallback: bool = False          # answered (or failed) on the alias's fallback model
+    priority: bool = False          # served as Vertex Priority PayGo (response traffic type ON_DEMAND_PRIORITY)
 
     def row(self) -> dict:
         d = asdict(self)
@@ -62,9 +70,10 @@ def current_ledger() -> CheckLedger:
     return ledger
 
 
-def model_cost(model_key: str, input_tokens: int, output_tokens: int, thinking_tokens: int = 0) -> float:
-    """USD cost of one call. Thinking tokens are billed as output."""
+def model_cost(model_key: str, input_tokens: int, output_tokens: int, thinking_tokens: int = 0,
+               priority: bool = False) -> float:
+    """USD cost of one call. Thinking tokens are billed as output. priority: served at Priority PayGo rates."""
     m = get_config().models["models"][model_key]
-    price_in = float(m.get("price_in", 0))
-    price_out = float(m.get("price_out", 0))
+    price_in = float(m.get("price_in_priority" if priority else "price_in", m.get("price_in", 0)))
+    price_out = float(m.get("price_out_priority" if priority else "price_out", m.get("price_out", 0)))
     return round((input_tokens * price_in + (output_tokens + thinking_tokens) * price_out) / 1_000_000, 8)

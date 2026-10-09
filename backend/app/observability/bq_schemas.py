@@ -42,6 +42,13 @@ MODEL_CALLS = [
     ("cost_usd", "FLOAT64", "NULLABLE"),
     ("success", "BOOL", "NULLABLE"),
     ("retry", "BOOL", "NULLABLE"),
+    # Added Oct 9: per-call time and Vertex pushback (429 clustering by hour; scripts/bq_views.sql v_rate_limits)
+    ("created_at", "TIMESTAMP", "NULLABLE"),
+    ("error_code", "STRING", "NULLABLE"),
+    ("rate_limited", "INT64", "NULLABLE"),
+    ("server_errors", "INT64", "NULLABLE"),
+    ("fallback", "BOOL", "NULLABLE"),
+    ("priority", "BOOL", "NULLABLE"),
 ]
 
 EVAL_RUNS = [

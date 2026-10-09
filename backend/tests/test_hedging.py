@@ -115,3 +115,86 @@ async def test_retries_stop_when_the_budget_is_spent(monkeypatch):
 
     with pytest.raises(errors.ClientError):
         await llm._retry_transient(busy, budget_s=0.5)  # no time for even one 1 s wait
+
+
+async def test_429s_are_counted_on_the_call_even_when_a_retry_recovers(monkeypatch):
+    from google.genai import errors
+
+    from app import llm
+    from app.observability.calls import ModelCall
+
+    monkeypatch.setattr(llm, "RETRY_DELAYS_S", (0.01, 0.01, 0.01))
+    call = ModelCall(check_id="c", stage="judge", model_id="m", prompt_version="v")
+    state = {"n": 0}
+
+    async def busy():
+        state["n"] += 1
+        if state["n"] == 1:
+            raise errors.ClientError(429, {"error": {"message": "RESOURCE_EXHAUSTED"}})
+        if state["n"] == 2:
+            raise errors.ServerError(503, {"error": {"message": "unavailable"}})
+        return "ok"
+
+    assert await llm._retry_transient(busy, call=call) == "ok"
+    assert (call.rate_limited, call.server_errors, call.error_code) == (1, 1, None)
+    assert call.created_at  # every row has a time, for the 429-by-hour view
+
+
+def test_error_codes():
+    from google.genai import errors
+    from pydantic import BaseModel, ValidationError
+
+    from app.llm import error_code
+
+    class M(BaseModel):
+        x: int
+
+    try:
+        M.model_validate({"x": "no"})
+    except ValidationError as e:
+        assert error_code(e) == "VALIDATION"
+    assert error_code(TimeoutError()) == "TIMEOUT"
+    assert error_code(errors.ClientError(429, {"error": {"message": "busy"}})) == "429"
+
+
+def _call():
+    from app.observability.calls import ModelCall
+
+    return ModelCall(check_id="c", stage="judge", model_id="gemini-2.5-pro", prompt_version="v")
+
+
+PRO = {"id": "gemini-2.5-pro", "thinking_budget": 1024, "hedge_after_s": 14,
+       "fallback": {"id": "gemini-3.1-pro-preview", "thinking": "low"}}
+
+
+async def test_final_429_moves_to_the_fallback_with_its_own_thinking_settings():
+    from google.genai import errors
+
+    from app.llm import _with_fallback
+
+    seen = []
+
+    async def run(m, t):
+        seen.append((m["id"], m.get("thinking"), m.get("thinking_budget"), m.get("hedge_after_s")))
+        if m["id"] == "gemini-2.5-pro":
+            raise errors.ClientError(429, {"error": {"message": "RESOURCE_EXHAUSTED"}})
+        return "ok"
+
+    call = _call()
+    assert await _with_fallback(run, PRO, 30, call) == "ok"
+    assert seen[1] == ("gemini-3.1-pro-preview", "low", None, 14)
+    assert call.fallback and call.model_id == "gemini-3.1-pro-preview"
+
+
+async def test_no_fallback_on_timeout_bad_request_or_too_little_time():
+    from google.genai import errors
+
+    from app.llm import _with_fallback
+
+    for exc, budget in [(TimeoutError(), 30), (errors.ClientError(400, {"error": {"message": "bad"}}), 30),
+                        (errors.ServerError(503, {"error": {"message": "x"}}), 3)]:
+        async def run(m, t, exc=exc):
+            raise exc
+
+        with pytest.raises(type(exc)):
+            await _with_fallback(run, PRO, budget, _call())

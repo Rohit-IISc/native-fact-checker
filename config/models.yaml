@@ -9,7 +9,9 @@ models:
     # gemini-3.7-flash 4.8-8.4 s with one 60 s timeout, gemini-2.5-flash 2.3-2.8 s. Preview models are
     # slow and erratic on Vertex today; 2.5 Flash is GA. Re-check with scripts/check_models.py.
     id: gemini-2.5-flash
-    fallbacks: [gemini-3.8-flash, gemini-3.7-flash]
+    # After retries, a final 429 or 5xx tries this once (llm._with_fallback). Separate Vertex capacity from
+    # 2.5; 3.7 Flash answered in 1.7-2.5 s on Oct 9 (3.8 Flash swung 1.5-14 s). Priced as the alias.
+    fallback: {id: gemini-3.7-flash, thinking: low}
     price_in: 0.30
     price_out: 2.50
     thinking_budget: 0      # 2.5 models: budget in tokens, 0 = off (fast). Gemini 3 models use `thinking: low`
@@ -20,7 +22,7 @@ models:
     # development in Mumbai") as the claim instead of what the photo shows (4/4 runs on Oct 7); with a
     # 512-token budget it made the media claim (5/5). Measured 10-13 s per image extraction vs 3-7 s.
     id: gemini-2.5-flash
-    fallbacks: [gemini-3.8-flash]
+    fallback: {id: gemini-3.7-flash, thinking: low}
     price_in: 0.30
     price_out: 2.50
     thinking_budget: 512
@@ -29,7 +31,11 @@ models:
     # Measured Oct 5 on the same judge prompt: gemini-3.1-pro-preview took 35-51 s (one call > 120 s);
     # gemini-2.5-pro took 9-10 s with the same verdict. gemini-3-pro-preview returns 404 on Vertex.
     id: gemini-2.5-pro
-    fallbacks: [gemini-3.1-pro-preview]
+    fallback: {id: gemini-3.1-pro-preview, thinking: low}   # 4-5 s on Oct 9 vs 9-12 s for 2.5 Pro
+    # Priority PayGo rates. UNVERIFIED: third-party listing (modelavailability.com, Jul 2026); Google's page
+    # only says "higher than Standard". Confirm on the Vertex pricing page before turning priority on.
+    price_in_priority: 2.25
+    price_out_priority: 18.00
     price_in: 1.25            # <= 200k input tokens
     price_out: 10.00
     # Judge on a 12-item pack, Oct 5: dynamic thinking 15.7-15.9 s (1100-1400 thinking tokens, tails > 30 s);
@@ -46,6 +52,14 @@ models:
     fallbacks: [gemini-2.5-pro-tts]
     location: global
     est_cost_per_answer: 0.01
+# Vertex Priority PayGo for the panel: steadier service on shared capacity, billed at the priority rates
+# above, no commitment. Off by default; Rohit decides whether to turn it on from Oct 17 to the end of
+# judging (estimate: about 0.026 USD more per check, 39 USD per 1,500 checks). Requests above spare
+# priority capacity are served as standard; model_calls.priority records what was actually served.
+priority:
+  enabled: false
+  stages: [judge, critic, judge_revision]
+
 grounding:
   free_queries_per_month: 5000
   price_per_1000: 14.00
@@ -64,6 +78,7 @@ stage_models:
   critic: pro
   judge_revision: pro
   composer: flash
+  same_media: flash              # second look at background items for claims about the post's own media
   translator: flash
   panel_timeout_fallback: flash
   eval_query: flash            # eval runner only: restate a benchmark claim in another language

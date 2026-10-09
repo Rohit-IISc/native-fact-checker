@@ -115,14 +115,18 @@ class GeminiLLM:
         model = cfg.models["models"][model_key] if model_key else cfg.model_for_stage(stage)
         key = model_key or model["key"]
         low_res = any(m.low_resolution for m in media or [])
-        gen_cfg = types.GenerateContentConfig(
-            response_mime_type="application/json",
-            response_schema=schema,
-            temperature=0.2,
-            thinking_config=_thinking_config(model),
-            media_resolution=types.MediaResolution.MEDIA_RESOLUTION_LOW if low_res else None,
-            automatic_function_calling=types.AutomaticFunctionCallingConfig(disable=True),
-        )
+        priority = priority_requested(stage)
+
+        def gen_cfg(m: dict[str, Any]):
+            return types.GenerateContentConfig(
+                http_options=types.HttpOptions(headers=PRIORITY_HEADERS) if priority else None,
+                response_mime_type="application/json",
+                response_schema=schema,
+                temperature=0.2,
+                thinking_config=_thinking_config(m),
+                media_resolution=types.MediaResolution.MEDIA_RESOLUTION_LOW if low_res else None,
+                automatic_function_calling=types.AutomaticFunctionCallingConfig(disable=True),
+            )
         text = prompt
         last_error = ""
         for attempt in range(2):
@@ -133,16 +137,20 @@ class GeminiLLM:
             )
             contents = self._parts(text, media)
             try:
-                resp = await _retry_transient(lambda c=contents: _hedged(
-                    lambda: self._client.aio.models.generate_content(model=model["id"], contents=c, config=gen_cfg),
-                    timeout_s, model.get("hedge_after_s"), stage), budget_s=timeout_s)
+                resp = await _with_fallback(
+                    lambda m, t, c=contents, call=call: _retry_transient(lambda: _hedged(
+                        lambda: self._client.aio.models.generate_content(model=m["id"], contents=c, config=gen_cfg(m)),
+                        t, m.get("hedge_after_s"), stage), budget_s=t, call=call),
+                    model, timeout_s, call)
             except TimeoutError as e:
                 call.success = False
+                call.error_code = error_code(e)
                 call.latency_ms = int((time.monotonic() - started) * 1000)
                 _record(call)
                 raise StageFailed(stage, f"timeout after {timeout_s}s") from e
             except Exception as e:  # noqa: BLE001  API errors (5xx, 429, 400) fail the stage, not the check
                 call.success = False
+                call.error_code = error_code(e)
                 call.latency_ms = int((time.monotonic() - started) * 1000)
                 _record(call)
                 raise StageFailed(stage, f"model API error: {type(e).__name__}: {str(e)[:200]}") from e
@@ -152,13 +160,16 @@ class GeminiLLM:
                 call.input_tokens = usage.prompt_token_count or 0
                 call.output_tokens = usage.candidates_token_count or 0
                 call.thinking_tokens = usage.thoughts_token_count or 0
-            call.cost_usd = model_cost(key, call.input_tokens, call.output_tokens, call.thinking_tokens)
+                call.priority = "PRIORITY" in str(getattr(usage, "traffic_type", "") or "")
+            call.cost_usd = model_cost(key, call.input_tokens, call.output_tokens, call.thinking_tokens,
+                                       priority=call.priority)
             try:
                 result = schema.model_validate_json(resp.text or "")
                 _record(call)
                 return result
             except ValidationError as e:
                 call.success = False
+                call.error_code = "VALIDATION"
                 _record(call)
                 last_error = str(e)[:2000]
                 text = (
@@ -178,9 +189,10 @@ class GeminiLLM:
             resp = await _retry_transient(lambda: _hedged(lambda: self._client.aio.models.embed_content(
                 model=m["id"], contents=texts,
                 config=types.EmbedContentConfig(output_dimensionality=int(m["dims"]), task_type="SEMANTIC_SIMILARITY"),
-            ), timeout_s, m.get("hedge_after_s"), "embedding"))
+            ), timeout_s, m.get("hedge_after_s"), "embedding"), call=call)
         except Exception as e:  # noqa: BLE001  tier 2 is an optimisation; never fail the check for it
             call.success = False
+            call.error_code = error_code(e)
             call.latency_ms = int((time.monotonic() - started) * 1000)
             _record(call)
             raise StageFailed("embedding", f"{type(e).__name__}: {str(e)[:200]}") from e
@@ -196,26 +208,29 @@ class GeminiLLM:
         from google.genai import types
 
         model = get_config().model_for_stage(stage)
-        gen_cfg = types.GenerateContentConfig(
-            temperature=0.2, thinking_config=_thinking_config(model),
-            tools=[types.Tool(google_search=types.GoogleSearch())],
-            automatic_function_calling=types.AutomaticFunctionCallingConfig(disable=True),
-        )
+        def gen_cfg(m: dict[str, Any]):
+            return types.GenerateContentConfig(
+                temperature=0.2, thinking_config=_thinking_config(m),
+                tools=[types.Tool(google_search=types.GoogleSearch())],
+                automatic_function_calling=types.AutomaticFunctionCallingConfig(disable=True),
+            )
         call = ModelCall(check_id=check_id_var.get(), stage=stage, model_id=model["id"], prompt_version=prompt_version)
         started = time.monotonic()
         try:
-            resp = await _retry_transient(lambda: _hedged(
-                lambda: self._client.aio.models.generate_content(model=model["id"], contents=prompt, config=gen_cfg),
-                # Measured Oct 5: identical searches take 8-9 s or 35-55 s (server side), so hedge early.
-                # A hedge duplicates the grounding queries (billed per query); watch the cost.
-                timeout_s, model.get("search_hedge_after_s"), stage))
+            # Measured Oct 5: identical searches take 8-9 s or 35-55 s (server side), so hedge early.
+            # A hedge duplicates the grounding queries (billed per query); watch the cost.
+            resp = await _with_fallback(lambda m, t: _retry_transient(lambda: _hedged(
+                lambda: self._client.aio.models.generate_content(model=m["id"], contents=prompt, config=gen_cfg(m)),
+                t, m.get("search_hedge_after_s"), stage), budget_s=t, call=call), model, timeout_s, call)
         except TimeoutError as e:
             call.success = False
+            call.error_code = error_code(e)
             call.latency_ms = int((time.monotonic() - started) * 1000)
             _record(call)
             raise StageFailed(stage, f"timeout after {timeout_s}s") from e
         except Exception as e:  # noqa: BLE001
             call.success = False
+            call.error_code = error_code(e)
             call.latency_ms = int((time.monotonic() - started) * 1000)
             _record(call)
             raise StageFailed(stage, f"model API error: {type(e).__name__}: {str(e)[:200]}") from e
@@ -246,7 +261,58 @@ def _retryable(e: BaseException) -> bool:
 RETRY_DELAYS_S = (1.0, 3.0, 6.0)
 
 
-async def _retry_transient(make: Callable[[], Awaitable[Any]], budget_s: float | None = None) -> Any:
+FALLBACK_MIN_S = 5.0
+# Vertex Priority PayGo (config/models.yaml `priority`): a per-request header, no other setup.
+PRIORITY_HEADERS = {"X-Vertex-AI-LLM-Shared-Request-Type": "priority"}
+
+
+def priority_requested(stage: str) -> bool:
+    p = get_config().models.get("priority") or {}
+    return bool(p.get("enabled")) and stage in (p.get("stages") or [])
+
+
+def fallback_model(model: dict[str, Any]) -> dict[str, Any] | None:
+    """The alias's fallback as a model entry: its own id and thinking settings, the alias's hedges and prices."""
+    fb = model.get("fallback")
+    if not fb:
+        return None
+    base = {k: v for k, v in model.items() if k not in ("fallback", "id", "thinking_budget", "thinking")}
+    return {**base, **fb}
+
+
+async def _with_fallback(run: Callable[[dict[str, Any], float], Awaitable[Any]], model: dict[str, Any],
+                         timeout_s: float, call: ModelCall) -> Any:
+    """run(model, timeout) on the configured model; after its retries, a final 429 or 5xx tries the alias's
+    fallback once with what is left of the budget (Vertex dynamic shared quota is per model, Oct 9).
+    Timeouts do not fall back: the budget is gone."""
+    started = time.monotonic()
+    try:
+        return await run(model, timeout_s)
+    except TimeoutError:
+        raise
+    except Exception as e:  # noqa: BLE001
+        fb = fallback_model(model)
+        left = timeout_s - (time.monotonic() - started)
+        if fb is None or not _retryable(e) or left < FALLBACK_MIN_S:
+            raise
+        log_event(log, "using fallback model", logging.WARNING, stage=call.stage, primary=model["id"],
+                  fallback=fb["id"], code=getattr(e, "code", None), left_s=round(left, 1))
+        call.model_id, call.fallback = fb["id"], True
+        return await run(fb, left)
+
+
+def error_code(e: BaseException) -> str:
+    """Short code for model_calls.error_code: the HTTP status for API errors, else the kind of failure."""
+    if isinstance(e, TimeoutError):
+        return "TIMEOUT"
+    if isinstance(e, ValidationError):
+        return "VALIDATION"
+    code = getattr(e, "code", None)
+    return str(code) if code else type(e).__name__
+
+
+async def _retry_transient(make: Callable[[], Awaitable[Any]], budget_s: float | None = None,
+                           call: ModelCall | None = None) -> Any:
     """Retry transient Vertex errors (5xx, 429) with growing, jittered backoff while the budget allows.
     One quick retry was not enough for 429 RESOURCE_EXHAUSTED under load (Oct 8: three checks in parallel
     lost their web search and composer, so the check was degraded and not cached)."""
@@ -259,6 +325,11 @@ async def _retry_transient(make: Callable[[], Awaitable[Any]], budget_s: float |
         except TimeoutError:
             raise
         except Exception as e:  # noqa: BLE001
+            if call is not None and _retryable(e):
+                if getattr(e, "code", None) == 429:
+                    call.rate_limited += 1
+                else:
+                    call.server_errors += 1
             if delay is None or not _retryable(e):
                 raise
             wait = delay * (0.75 + random.random() / 2)

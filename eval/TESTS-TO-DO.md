@@ -64,8 +64,18 @@ Latest full run: 14/20 (Oct 9 night, guard shipped): 13 passed (TRUE) for the fi
 
 ## 4. Load and capacity (before the final presentation)
 
-- [ ] 3, 5 and 10 checks at once in production: latency, 429 RESOURCE_EXHAUSTED rate, failed agents
-      (Oct 8: 3 at once already caused timeouts in 09, 10a, 10b)
+- [x] 3, 5 and 10 checks at once in production (`make load-test`, Oct 9 afternoon, before the fallback model):
+
+      | At once | Done | p50 | Max | Over 90 s | Degraded (a stage or agent lost) | 429s in logs |
+      | --- | --- | --- | --- | --- | --- | --- |
+      | 3 | 3/3 | 63.7 s | 67.1 s | 0 | 1 | 3 |
+      | 5 | 5/5 | 64.8 s | 66.7 s | 0 | 4 | 11 |
+      | 10 | 10/10 | 68.7 s | 80.7 s | 0 | 3 | 10 |
+
+- [ ] Re-run `make load-test` after the fallback model (Oct 9) and compare the degraded count
+- [ ] Priority PayGo (config/models.yaml `priority`, off): on Oct 9 the header was accepted but Vertex
+      served ON_DEMAND (standard) for 2.5 Pro, 3.1 Pro preview and 2.5 Flash, even on a raw REST call.
+      Rohit: ask Google whether this project or billing account needs enabling before relying on it
 - [ ] Decide Provisioned Throughput versus shared quota with Rohit (decision 41; costs money)
 - [ ] Cold start with min instances 0 versus 1 (set 1 for judging week)
 
@@ -79,16 +89,15 @@ and the PWA keys in Secret Manager. Re-run any of it with `make deploy-ops` (nee
 - [x] **Deploy branch is `main`** (Oct 9, Rohit): working branch merged into main; the trigger watches `^main$`
 - [ ] **Rohit: make `main` the default branch on GitHub** (Settings > Branches); it is still
       `claude/upbeat-bardeen-7hz94l`, so new clones and PRs start from the old branch
-- [ ] Push to main: Cloud Build runs gitleaks, ruff, pytest, then deploys backend and frontend
-      (Cloud Build history in the console); the site still works afterwards (`make smoke`).
-      First run: the Oct 9 merge push (result below)
+- [x] Push to main: Cloud Build runs gitleaks, ruff, pytest, then deploys backend and frontend
+      (Oct 9: 7 builds from main succeeded after build-sa got pubsub.admin; smoke passed after each)
 - [ ] A commit with a failing test does **not** deploy
 - [x] Baseline eval stored (Oct 9): `factcheck.v_eval_trend` shows it; Firestore `config/eval.baseline_run_id`
       names it (results in "Eval baseline" below)
 - [ ] First scheduled run (Sat Oct 10, 03:00 IST) appears in `v_eval_trend` with `drift_flag` false and
       the baseline id filled in
-- [ ] Hand-check 15 gold items (`gs://ai-builder-2026-eval/datasets/v2/gold.jsonl`): is the label mapped from
-      the publisher's rating right? (rules in `eval/datasets.py`, decision 42)
+- [ ] Rohit (optional): spot-check 15 gold items of v3 (`gs://ai-builder-2026-eval/datasets/v3/gold.jsonl`):
+      is the label mapped from the publisher's rating right? Claude checked all 57 on Oct 9 (decision 42)
 - [ ] Alert email arrives: Cloud Monitoring > Alerting > a policy > "Send test notification", check the
       inbox (and spam) of the alert address
 - [ ] Dashboard queries return sensible numbers with `env = 'prod'`: `v_daily`, `v_lanes_daily`

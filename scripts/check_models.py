@@ -20,21 +20,21 @@ project = get_settings().gcp_project
 client = genai.Client(vertexai=True, project=project, location=cfg["vertex"]["location"])
 
 ok = True
-for key in ("flash", "pro"):
+for key in ("flash", "flash_think", "pro"):
     m = cfg["models"][key]
-    found = None
-    for model_id in [m["id"], *m.get("fallbacks", [])]:
+    # The primary must answer; the fallback (used after a final 429 or 5xx) should, or it is useless.
+    for role, model_id in [("primary", m["id"]), ("fallback", (m.get("fallback") or {}).get("id"))]:
+        if not model_id:
+            continue
         try:
             client.models.generate_content(
                 model=model_id, contents="Reply with OK",
                 config=types.GenerateContentConfig(max_output_tokens=16),
             )
-            found = model_id
-            break
+            print(f"{key} {role}: {model_id}")
         except Exception as e:  # noqa: BLE001
-            print(f"  {key}: {model_id} not available ({type(e).__name__}: {str(e)[:120]})")
-    print(f"{key}: {found or 'NONE WORKING'}")
-    ok &= found is not None
+            print(f"{key} {role}: {model_id} NOT AVAILABLE ({type(e).__name__}: {str(e)[:120]})")
+            ok &= role != "primary"
 
 try:
     client.models.embed_content(
