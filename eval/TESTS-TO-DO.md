@@ -23,21 +23,31 @@ Production: https://ai-builder-2026.web.app. Install the PWA first (Chrome menu,
 - [ ] Daily limit: the 11th check of the day shows the limit screen with the reset time
 - [ ] History lists today's checks and opens each one
 - [ ] Public result link opens signed out, in the answer's language, with audio and card
-- [ ] A share of 40-50 MB (long video). **Known to fail now:** Cloud Run caps uploads at 32 MB; needs the
-      signed-URL upload
+- [ ] A share of 40-50 MB (long video) from the phone: the PWA uploads it straight to Cloud Storage
+      (built Oct 9) and the verdict arrives as for small videos. Live-tested from the dev box: a 37.7 MB
+      video PUT in 0.6 s via a signed URL, read back intact, refused for another user
+- [ ] A share just under 24 MB still goes the old way (one request) and works
 
 ## 2. Verdict quality (real models, costs money: `make accept`)
 
-Latest full run: 18/20 (Oct 9, after the cross-language search fix; failing 10a and 13). Run with
+Latest full run: 15/20 (Oct 9 evening, slow Vertex: web search and translation timeouts in 03, 04, 01b; 13 known; 15 see below). Best Oct 9: 18/20. Run with
 `REPEAT=2` or more; one pass proves little.
 
-- [ ] **01, 02, 03** Kannada flood video: MISLEADING every run (now flips with NOT_ENOUGH_EVIDENCE). Fix
-      planned: "this exact video is old" fact checks classified as CONTEXT
-- [ ] **01b** flood video as an X screenshot: MISLEADING (passed Oct 9 after the search fix; confirm with REPEAT=2)
+- [ ] **01, 02, 03** Kannada flood video: MISLEADING every run. Oct 9 fixes: the claim comes from the
+      sharer's caption, the printed "DELHI संकट मे" is searched as text, "this exact video is from
+      elsewhere" is CONTRADICTS. 2/2 MISLEADING on a REPEAT=2 run; fails only when extraction runs
+      over budget on slow Vertex days
+- [ ] **01b** depends on web search alone (the Fact Check Tools API has no match): 0/2 when web search
+      timed out on Oct 9 afternoon. Re-test on a normal day
+- [ ] **15** thin local claim gave MISLEADING at 90% on Oct 9 (panel read old crocodile sightings, all
+      CONTEXT, as "real event, wrong date"). Proposed code guard (needs Rohit, it changes verdict logic): a
+      decisive label backed only by CONTEXT items, with no CONTRADICTS or SUPPORTS item, becomes
+      NOT_ENOUGH_EVIDENCE
+- [x] **Answer wording matches the label** (Oct 9, composer 1.3): 0 of 6 MISLEADING answers call the post false
 - [ ] **10a** Mumbai flyover bus (AI image): FALSE (Oct 9 gave MISLEADING; it passed before)
 - [ ] **13** BBC news link: TRUE (gives NOT_ENOUGH_EVIDENCE when search finds only tier 3 coverage)
 - [ ] **04, 09** flaky: pass in 2 of 2 repeat runs
-- [ ] **12** NBT Holi satire: stays MISLEADING (3/3 since Oct 8); the answer text never calls it "false"
+- [ ] **12** NBT Holi satire: stays MISLEADING (1/2 on slow Oct 9 afternoon: the miss ran over budget)
 - [ ] Every case in all 5 languages: Hindi, Tamil, Kannada, Indonesian, English (CLAUDE.md definition of
       done)
 - [ ] 100 real forwards from family groups and fact-check sites (test week, Oct 12-13): note each
@@ -104,6 +114,22 @@ and the PWA keys in Secret Manager. Re-run any of it with `make deploy-ops` (nee
 
 By language (strict / direction of 12): hi 6/8, ta 2/5, kn 3/4, id 6/8, en 8/8. Tamil abstains most (7 of 12).
 
+### Eval baseline v3 (Oct 9, run `20261009-090459-baseline`, the current baseline)
+
+Dataset v3 (57 gold), with the cross-language search. Drift is measured against this run.
+
+| Metric | v2 baseline | v3 baseline |
+| --- | --- | --- |
+| Recall at 5 (200 claims) | 23.5% | 48.0% |
+| Verdict agreement, strict / direction | 41.7% / 55.0% | 54.4% / 71.9% |
+| Abstain | 36.7% | 22.8% |
+| Accuracy when answered | 65.8% | 70.5% |
+| Full check p50 / p95 | 51.8 s / 82.9 s | 66.7 s / 93.5 s (shared Vertex quota with make record during the run) |
+| Cost per check | 0.110 USD | 0.097 USD |
+
+- [ ] First scheduled run on v3 (Sat Oct 10, 03:00 IST, nothing else running): latency close to 50 s p50? If
+      it is much lower than the v3 baseline, re-baseline so the 30% latency drift rule bites
+
 Findings to test and fix:
 - [x] **Cross-language recall was near zero for Indian languages** (fixed Oct 9). The fact-check agent now
       also searches without a language filter, and the extractor (1.12) writes one query each in the other
@@ -119,11 +145,7 @@ Findings to test and fix:
 - [ ] TRUE claims abstain 7 of 12: expected when only tier 3 coverage is found (as case 13); look at
       whether more tier 2 news sites belong in config/source_tiers.yaml (Rohit decides tiers)
 
-## 6. Not built yet, so not testable yet
-
-- [ ] Signed-URL upload for shares over 32 MB
-
-## 7. Before submission
+## 6. Before submission
 
 - [ ] `make check-models`: every model ID in config/models.yaml still exists in Vertex AI
 - [ ] Demo cache seeded with the demo shares

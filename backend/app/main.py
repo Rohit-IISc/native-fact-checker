@@ -27,7 +27,7 @@ from app.observability.logging import check_id_var, log_event, setup_logging
 from app.pipeline.dispatch import dispatch
 from app.pipeline.progress import CHECKS, PROGRESS, now_iso
 from app.pipeline.results import VERDICTS, claim_result_from_doc, public_result
-from app.settings import get_settings
+from app.settings import get_config, get_settings
 from app.store import get_store
 
 log = logging.getLogger(__name__)
@@ -85,6 +85,24 @@ def _input_types(text: str | None, url: str | None, kinds: list[str]) -> list[st
     return types + sorted(set(kinds))
 
 
+class UploadRequest(BaseModel):
+    content_type: str
+    size: int
+
+
+@app.post("/v1/uploads")
+async def create_upload(body: UploadRequest, user: User = Depends(current_user)):
+    """Signed URL for one large file (shares over Cloud Run's 32 MB request limit); see intake/uploads.py."""
+    from app.intake import uploads as staged
+
+    try:
+        return await staged.create(user.uid, body.content_type, body.size)
+    except InvalidInput as e:
+        return error(400, e.error_code, e.message)
+    except staged.SigningUnavailable:
+        return error(501, "DIRECT_UPLOAD_UNAVAILABLE", "Send the file with the check instead")
+
+
 @app.post("/v1/checks")
 async def create_check(
     user: User = Depends(current_user),
@@ -92,11 +110,19 @@ async def create_check(
     url: str | None = Form(default=None),
     client_lang: str = Form(default="en"),
     files: list[UploadFile] | None = File(default=None),
+    upload_ids: list[str] | None = Form(default=None),
 ):
     started = time.monotonic()
     store = get_store()
     uploads = [UploadedFile(f.filename or "file", await f.read(), f.content_type) for f in files or []]
     try:
+        if upload_ids:
+            from app.intake import uploads as staged
+
+            if len(upload_ids) > int(get_config().limits["input"]["max_images"]):
+                raise InvalidInput("TOO_MANY_FILES", "Up to 10 images, or one video or audio clip")
+            uploads += await asyncio.gather(*(staged.read(user.uid, u) for u in upload_ids))
+            asyncio.get_running_loop().create_task(staged.discard(user.uid, upload_ids))
         typed = validate(text, url, uploads)
     except InvalidInput as e:
         return error(400, e.error_code, e.message)

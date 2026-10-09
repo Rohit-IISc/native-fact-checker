@@ -30,6 +30,9 @@ gcloud run deploy "$SERVICE" \
   --project="$PROJECT_ID" \
   --set-secrets="$SECRETS"
 
+# Large shares (over Cloud Run's 32 MB request limit) are PUT straight into the media bucket from the PWA.
+gcloud storage buckets update "gs://${PROJECT_ID}-media" --cors-file="$(dirname "$0")/media_cors.json" >/dev/null
+
 URL=$(gcloud run services describe "$SERVICE" --region="$REGION" --format='value(status.url)')
 echo "Service URL: $URL"
 
