@@ -56,6 +56,9 @@ Updated after every task (see CLAUDE.md, "How to work"). Newest state only; hist
 - Case 01 fixes and answer wording (extractor 1.13, classify 1.4, factcheck 1.5, composer 1.3; OCR text is
   searched by code). Cross-language fact-check search (extractor 1.12 regional queries, unfiltered search).
   Eval gold v3 with a claim-form filter and hand-check; new baseline on v3.
+- Models (decision 47): Gemini 3.8 Flash and 3.1 Pro preview primary, 2.5 as fallback after a final 429/5xx.
+  429 logging (model_calls error_code, rate_limited, created_at; view v_rate_limits). Priority PayGo flag
+  (off; not served to this project on Oct 9). Load test: 10 checks at once all done under 81 s.
 - `eval/TESTS-TO-DO.md`: every test still to do (phone, verdict quality, native speakers, load, unbuilt).
 - Day 5 audio (`backend/app/output/tts.py`): Gemini TTS, voice per language, MP3 via ffmpeg, stored in the
   outputs bucket, served by `GET /v1/results/{id}/audio`. Generated after DONE (TTS takes 18-24 s);

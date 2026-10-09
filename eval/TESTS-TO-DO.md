@@ -79,6 +79,16 @@ Latest full run: 14/20 (Oct 9 night, guard shipped): 13 passed (TRUE) for the fi
 - [ ] Decide Provisioned Throughput versus shared quota with Rohit (decision 41; costs money)
 - [ ] Cold start with min instances 0 versus 1 (set 1 for judging week)
 
+## 4b. Model switch to Gemini 3 (decision 47, Oct 9)
+
+- [x] Candidate vs control `make accept` (Oct 9, back to back, one case at a time): Gemini 3 19/20 at
+      44.3 s average, Gemini 2.5 13/20 at 59.4 s. 429s: 0 vs 1; timeouts: 2 vs 12
+- [ ] 57-claim eval on the candidates (run Oct 9, label `candidate`): compare with the v3 baseline; if it
+      holds, it becomes the baseline for the scheduled runs
+- [ ] Watch `factcheck.v_rate_limits` for a week: 429s, timeouts and fallback use per model and hour
+- [ ] 3.1 Pro is a preview model: before Oct 17, check it is still listed and that `make check-models`
+      passes; if Google retires it, the 2.5 Pro fallback answers but configure a new primary
+
 ## 5. Day 6 operations (deployed Oct 9)
 
 Deployed: eval job `eval-runner` with schedule `eval-every-3-days` (03:00 IST on days 1, 4, 7, ... of the
