@@ -30,6 +30,7 @@ export function PublicResult() {
           answer={result.answer}
           answerEn={result.answer_en}
           audioUrl={result.audio_url}
+          cardUrl={result.card_url}
           sources={result.sources}
         />
       )}

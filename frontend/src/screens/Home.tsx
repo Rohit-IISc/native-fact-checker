@@ -7,6 +7,7 @@ import { useAuth } from '../lib/auth'
 import { config } from '../lib/config'
 import type { HistoryItem, Quota } from '../lib/types'
 import { Limit } from './Limit'
+import { enablePush } from '../lib/push'
 
 interface InstallPrompt extends Event {
   prompt: () => Promise<void>
@@ -51,6 +52,7 @@ export function Home() {
     setBusy(true)
     try {
       const res = await createCheck(user, { text: text.trim(), files, clientLang: i18n.language })
+      if (res.status !== 'DONE') void enablePush(user) // tell them when it is ready if they leave
       const initial =
         res.status === 'DONE'
           ? { check_id: res.check_id, status: 'DONE', stage: 'done', progress: 100, result: res.result }

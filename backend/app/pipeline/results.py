@@ -17,6 +17,7 @@ from app.models import (
     TimeSensitivity,
     band_for,
 )
+from app.output.card import card_url
 from app.settings import get_config, get_settings
 from app.store import Store
 
@@ -141,7 +142,7 @@ def claim_result_from_doc(doc: dict[str, Any], language: str | None = None) -> C
         answer=answer,
         answer_en=answer_en,
         audio_url=(answer or {}).get("audio_url"),
-        card_url=(answer or {}).get("card_url"),
+        card_url=card_url(doc["verdict_id"], answer["language"]) if answer else None,
         result_url=result_url(doc["verdict_id"]),
     )
 

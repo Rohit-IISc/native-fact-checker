@@ -9,6 +9,7 @@ import { takePendingShare } from '../lib/shareStore'
 import type { CheckDoc } from '../lib/types'
 import { useCheck } from '../lib/useCheck'
 import { Limit } from './Limit'
+import { enablePush } from '../lib/push'
 
 /** /check?shared=1 picks up a Web Share Target payload and submits it, then becomes /check/:id. */
 export function SharedCheck() {
@@ -30,6 +31,7 @@ export function SharedCheck() {
       const text = [share.title, share.text].filter(Boolean).join('\n')
       try {
         const res = await createCheck(user, { text, url: share.url, files: share.files, clientLang: i18n.language })
+        if (res.status !== 'DONE') void enablePush(user) // tell them when it is ready if they leave
         const initial =
           res.status === 'DONE'
             ? { check_id: res.check_id, status: 'DONE', stage: 'done', progress: 100, result: res.result }

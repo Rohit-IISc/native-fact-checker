@@ -76,3 +76,9 @@ export const sendFeedback = (user: AppUser, checkId: string, helpful: boolean) =
   })
 export const getPublicResult = (id: string, lang?: string) =>
   request<PublicResult>(null, `/v1/results/${encodeURIComponent(id)}${lang ? `?lang=${encodeURIComponent(lang)}` : ''}`)
+export const registerFcmToken = (user: AppUser, token: string) =>
+  request<void>(user, '/v1/me/fcm-token', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ token }),
+  })

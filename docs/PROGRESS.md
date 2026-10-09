@@ -2,8 +2,8 @@
 
 Updated after every task (see CLAUDE.md, "How to work"). Newest state only; history is in git.
 
-**Last updated:** Thu Oct 8, 2026, evening
-**Build-plan day:** Day 3 of the calendar; Days 0 to 4 done, Day 5 started (audio done).
+**Last updated:** Fri Oct 9, 2026
+**Build-plan day:** Day 5 (Fri Oct 9): Days 0 to 4 done; Day 5 answer outputs done (audio, card, push).
 **Deployed:** https://ai-builder-2026.web.app -> Cloud Run `factcheck-api` (asia-south1), commit 2d0803c+.
 **Audio samples for native speakers:** https://claude.ai/artifact/3uKEHUsp5hdXoVFo87SJeo (private; share it).
 
@@ -26,6 +26,16 @@ Updated after every task (see CLAUDE.md, "How to work"). Newest state only; hist
 - Media observations (decision 40): extractor 1.11 lists `media_markers` (satire tags, masthead dates,
   watermarks); `agents/packager.py:media_evidence` adds one `media_itself` item per claim (NOT_A_SOURCE,
   CONTEXT); `verify/source_policy.py` ignores them when counting sources. Judge 1.4, critic 1.3.
+- Day 5 correction card (`backend/app/output/card.py`): 1080 x 1350 PNG drawn with Pillow + libraqm and
+  Noto fonts; verdict colour band, label in the answer language, claim, what is true, top 2 sources, link.
+  Drawn on first request by `GET /v1/results/{id}/card?lang=` and kept in the outputs bucket, so cache
+  hits and new languages get one too. "Share card to WhatsApp" button (Web Share API with the PNG).
+  Card strings per language in `config/languages.yaml`. Checked visually in all 5 languages.
+- Day 5 push (`backend/app/output/notify.py`): FCM data message on DONE, "Result ready: {label}" in the UI
+  language, headline as body; dead tokens removed; never fails a check. The PWA asks for permission once a
+  check starts (`frontend/src/lib/push.ts`); the service worker skips it when the result is on screen.
+  Needs a phone test (eval/TESTS-TO-DO.md).
+- `eval/TESTS-TO-DO.md`: every test still to do (phone, verdict quality, native speakers, load, unbuilt).
 - Day 5 audio (`backend/app/output/tts.py`): Gemini TTS, voice per language, MP3 via ffmpeg, stored in the
   outputs bucket, served by `GET /v1/results/{id}/audio`. Generated after DONE (TTS takes 18-24 s);
   the UI shows "audio is being prepared" until the player appears. Verified by round-trip transcription
@@ -56,7 +66,8 @@ Earlier pass rates (Oct 8, real models; `make accept REPEAT=2`, plus later singl
   recovering); Gemini 2.5 on Vertex uses dynamic shared quota, so heavy judging-week load may still hit
   it. Provisioned Throughput: not now (decision 41); see "Before the final presentation".
 - Instagram reels: only caption + thumbnail (Instagram gives no video to link previews).
-- Not built yet: correction card, FCM push, BigQuery dashboards, eval runner, Cloud Build trigger.
+- Not built yet: BigQuery dashboards, eval runner, Cloud Scheduler, alerts, Cloud Build trigger,
+  signed-URL upload (Cloud Run caps uploads at 32 MB; we promise 50 MB).
 
 ## Before the final presentation (Oct 18)
 
@@ -66,6 +77,9 @@ Earlier pass rates (Oct 8, real models; `make accept REPEAT=2`, plus later singl
 
 ## Next step
 
-1. Stance classification for "this exact video is old" fact checks (case 01).
-2. Day 5 rest: correction card, FCM push.
+1. Rohit: phone tests in eval/TESTS-TO-DO.md section 1 (share sheet, push, card in WhatsApp).
+2. Stance classification for "this exact video is old" fact checks (case 01); composer wording must
+   match the label (case 12 run said "false" under MISLEADING).
+3. Signed-URL upload for shares over 32 MB.
+4. Day 6 when Rohit says go: BigQuery view, eval runner + baseline, Scheduler, alerts, Cloud Build trigger.
 

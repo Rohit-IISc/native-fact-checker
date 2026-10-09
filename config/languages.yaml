@@ -7,30 +7,85 @@ demo_languages:
     tts_engine: gemini
     tts_voice: Kore
     font: NotoSansDevanagari
+    card:                       # correction card text (same words as frontend/src/i18n/hi.json)
+      app_name: "सच चेक"
+      what_is_true: "सच क्या है"
+      sources: "स्रोत"
+      labels:
+        "TRUE": "सच"
+        "FALSE": "झूठ"
+        MISLEADING: "भ्रामक"
+        SCAM: "धोखाधड़ी"
+        NOT_ENOUGH_EVIDENCE: "पुष्टि नहीं हुई"
+    push_title: "नतीजा तैयार है"          # push notification title (docs/07: "Result ready: {label}")
   ta:
     bcp47: ta-IN
     name_native: தமிழ்
     tts_engine: gemini
     tts_voice: Kore
     font: NotoSansTamil
+    card:                       # correction card text (same words as frontend/src/i18n/ta.json)
+      app_name: "சச் செக்"
+      what_is_true: "உண்மை என்ன"
+      sources: "ஆதாரங்கள்"
+      labels:
+        "TRUE": "உண்மை"
+        "FALSE": "பொய்"
+        MISLEADING: "தவறாக வழிநடத்துவது"
+        SCAM: "மோசடி"
+        NOT_ENOUGH_EVIDENCE: "உறுதிப்படுத்தப்படவில்லை"
+    push_title: "முடிவு தயார்"          # push notification title (docs/07: "Result ready: {label}")
   kn:
     bcp47: kn-IN
     name_native: ಕನ್ನಡ
     tts_engine: gemini          # Gemini TTS lists kn-IN as Preview; switch to chirp3_hd if quality is poor
     tts_voice: Kore
     font: NotoSansKannada
+    card:                       # correction card text (same words as frontend/src/i18n/kn.json)
+      app_name: "ಸಚ್ ಚೆಕ್"
+      what_is_true: "ನಿಜ ಏನು"
+      sources: "ಮೂಲಗಳು"
+      labels:
+        "TRUE": "ನಿಜ"
+        "FALSE": "ಸುಳ್ಳು"
+        MISLEADING: "ದಾರಿತಪ್ಪಿಸುವ"
+        SCAM: "ವಂಚನೆ"
+        NOT_ENOUGH_EVIDENCE: "ಖಚಿತವಾಗಿಲ್ಲ"
+    push_title: "ಫಲಿತಾಂಶ ಸಿದ್ಧವಾಗಿದೆ"          # push notification title (docs/07: "Result ready: {label}")
   id:
     bcp47: id-ID
     name_native: Bahasa Indonesia
     tts_engine: gemini
     tts_voice: Kore
     font: NotoSans
+    card:                       # correction card text (same words as frontend/src/i18n/id.json)
+      app_name: "Sach Check"
+      what_is_true: "Yang sebenarnya"
+      sources: "Sumber"
+      labels:
+        "TRUE": "Benar"
+        "FALSE": "Salah"
+        MISLEADING: "Menyesatkan"
+        SCAM: "Penipuan"
+        NOT_ENOUGH_EVIDENCE: "Belum terkonfirmasi"
+    push_title: "Hasil sudah siap"          # push notification title (docs/07: "Result ready: {label}")
   en:
     bcp47: en-IN
     name_native: English
     tts_engine: gemini
     tts_voice: Kore
     font: NotoSans
+    card:                       # correction card text (same words as frontend/src/i18n/en.json)
+      app_name: "Sach Check"
+      what_is_true: "What is true"
+      sources: "Sources"
+      labels:
+        "TRUE": "True"
+        "FALSE": "False"
+        MISLEADING: "Misleading"
+        SCAM: "Scam"
+        NOT_ENOUGH_EVIDENCE: "Not confirmed"
+    push_title: "Result ready"          # push notification title (docs/07: "Result ready: {label}")
 other_languages:
   text_answer: true             # any language Gemini can write
   audio_if_tts_supports: true

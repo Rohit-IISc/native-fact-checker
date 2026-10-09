@@ -51,6 +51,7 @@ export function ClaimCard({
   answerEn,
   audioUrl,
   audioPending,
+  cardUrl,
   sources,
   aiGeneration,
 }: {
@@ -59,6 +60,7 @@ export function ClaimCard({
   answerEn: AnswerText
   audioUrl?: string | null
   audioPending?: boolean
+  cardUrl?: string | null
   sources: Pick<Evidence, 'evidence_id' | 'url' | 'domain' | 'publisher' | 'title' | 'tier'>[]
   aiGeneration?: ClaimResult['ai_generation']
 }) {
@@ -78,6 +80,24 @@ export function ClaimCard({
     } catch {
       window.prompt(t('result.copyLink'), claim.result_url)
     }
+  }
+
+  // The card in the language on screen (the API draws any language the verdict has an answer in).
+  const shareCard = async () => {
+    if (!cardUrl) return
+    const url = new URL(cardUrl)
+    url.searchParams.set('lang', a.language)
+    try {
+      const blob = await (await fetch(url)).blob()
+      const file = new File([blob], 'sach-check.png', { type: 'image/png' })
+      if (navigator.canShare?.({ files: [file] })) {
+        await navigator.share({ files: [file], text: claim.result_url })
+        return
+      }
+    } catch (e) {
+      if (e instanceof DOMException && e.name === 'AbortError') return // the user closed the share sheet
+    }
+    window.open(url, '_blank', 'noopener')
   }
 
   return (
@@ -137,6 +157,11 @@ export function ClaimCard({
             {english ? t('result.showNative') : t('result.showEnglish')}
           </button>
         )}
+        {cardUrl && (
+          <button className="primary" onClick={shareCard}>
+            {t('result.shareCard')}
+          </button>
+        )}
         <button className="secondary" onClick={copy}>
           {copied ? t('result.copied') : t('result.copyLink')}
         </button>
@@ -175,6 +200,7 @@ export function ResultView({ result, onFeedback }: { result: CheckResult; onFeed
           answerEn={c.answer_en}
           audioUrl={c.audio_url}
           audioPending={result.audio_pending}
+          cardUrl={c.card_url}
           sources={c.evidence}
           aiGeneration={c.ai_generation}
         />

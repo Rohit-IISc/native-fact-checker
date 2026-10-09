@@ -22,6 +22,7 @@ from app.models import CheckRequest, CheckResult, ClaimResult, Extraction, Fetch
 from app.observability.calls import CheckLedger, ledger_var
 from app.observability.logging import check_id_var, hash_uid, log_event, uid_hash_var
 from app.observability.runs import write_check_run
+from app.output import notify
 from app.pipeline import investigate, reuse, stub
 from app.pipeline.progress import CHECKS, now_iso, set_stage
 from app.pipeline.results import VERDICTS, claim_result_from_doc, persist_verdict
@@ -125,6 +126,7 @@ async def run_check(
     }, merge=True)
     await set_stage(store, req.check_id, Stage.DONE)
     await _write_history(store, req, result)
+    await notify.result_ready(store, req.uid, req.check_id, result, req.client_lang)
     # Audio after DONE: the text answer shows at once; Gemini TTS takes 18-24 s per answer (Oct 7).
     # The Pub/Sub handler awaits this, so Cloud Run keeps CPU until the audio is stored.
     result = await timed("speaking", reuse.speak(store, req.check_id, result))

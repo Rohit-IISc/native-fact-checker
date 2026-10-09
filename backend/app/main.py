@@ -26,7 +26,7 @@ from app.models import CheckRequest, CheckResult, MediaRef, Stage
 from app.observability.logging import check_id_var, log_event, setup_logging
 from app.pipeline.dispatch import dispatch
 from app.pipeline.progress import CHECKS, PROGRESS, now_iso
-from app.pipeline.results import VERDICTS, public_result
+from app.pipeline.results import VERDICTS, claim_result_from_doc, public_result
 from app.settings import get_settings
 from app.store import get_store
 
@@ -306,6 +306,25 @@ async def get_result_audio(verdict_id: str, request: Request, lang: str = "en"):
     if data is None:
         return error(404, "NOT_FOUND")
     return Response(content=data, media_type="audio/mpeg", headers={"Cache-Control": "public, max-age=86400"})
+
+
+@app.get("/v1/results/{verdict_id}/card")
+async def get_result_card(verdict_id: str, request: Request, lang: str = "en"):
+    """The correction card (PNG), drawn on first request from the stored verdict and kept in the outputs
+    bucket. Through the API so the bucket stays private."""
+    from app.output import card
+
+    ip = (request.headers.get("x-forwarded-for") or (request.client.host if request.client else "")).split(",")[0]
+    if _rate_limited(ip.strip()):
+        return error(429, "RATE_LIMITED")
+    data = await card.read_card(verdict_id, lang)
+    if data is None:
+        doc = await get_store().get(VERDICTS, verdict_id)
+        if not doc or not doc.get("answers"):
+            return error(404, "NOT_FOUND")
+        data = await asyncio.to_thread(card.render, claim_result_from_doc(doc, lang))
+        await card.store_card(verdict_id, lang, data)
+    return Response(content=data, media_type="image/png", headers={"Cache-Control": "public, max-age=86400"})
 
 
 # ---------- Pipeline (Pub/Sub push) ----------
