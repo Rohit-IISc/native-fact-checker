@@ -1,0 +1,7 @@
+# Candidate models for a comparison run (MODEL_OVERRIDES=config/candidates/gemini-3.yaml make accept).
+# Newest Flash and Pro that answered on Oct 9. Gemini 3 takes a thinking level instead of a token budget.
+# Prices are not set here: cost in such a run is computed at the 2.5 rates and is not comparable.
+models:
+  flash: {id: gemini-3.8-flash, thinking: low}
+  flash_think: {id: gemini-3.8-flash, thinking: medium}
+  pro: {id: gemini-3.1-pro-preview, thinking: medium}

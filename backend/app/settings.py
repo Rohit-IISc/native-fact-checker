@@ -176,12 +176,26 @@ class AppConfig:
         return base + (self.extraction_timeout(media_seconds) - float(self.limits["timeouts_s"]["extraction_base"]))
 
 
+def _with_overrides(models: dict[str, Any]) -> dict[str, Any]:
+    """MODEL_OVERRIDES=<yaml>: replace model entries (id and thinking settings) for a comparison run, e.g.
+    config/candidates/gemini-3.yaml. Never set in production; prices and hedges stay the alias's."""
+    path = os.environ.get("MODEL_OVERRIDES")
+    if not path:
+        return models
+    with open(path, encoding="utf-8") as f:
+        over = (yaml.safe_load(f) or {}).get("models") or {}
+    for alias, entry in over.items():
+        base = {k: v for k, v in models["models"][alias].items() if k not in ("id", "thinking_budget", "thinking")}
+        models["models"][alias] = {**base, **entry}
+    return models
+
+
 @lru_cache
 def get_config() -> AppConfig:
     # Runtime overrides from Firestore config/{models,limits,flags} are applied by the eval runner
     # and an admin endpoint later; YAML is the baseline.
     return AppConfig(
-        models=_load_yaml("models.yaml"),
+        models=_with_overrides(_load_yaml("models.yaml")),
         limits=_load_yaml("limits.yaml"),
         languages=_load_yaml("languages.yaml"),
         agents=_load_yaml("agents.yaml"),
