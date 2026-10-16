@@ -29,8 +29,10 @@ self.addEventListener('fetch', (event: FetchEvent) => {
   }
 })
 
-// SPA navigations (except the API) fall back to the precached shell.
-registerRoute(new NavigationRoute(createHandlerBoundToURL('/index.html'), { denylist: [/^\/api\//] }))
+// SPA navigations fall back to the precached shell, except the API and Firebase's reserved /__/ paths:
+// sign-in opens /__/auth/handler on this domain (authDomain chckr.web.app), and serving the app shell there
+// opened the app inside the sign-in popup, again and again (Oct 16).
+registerRoute(new NavigationRoute(createHandlerBoundToURL('/index.html'), { denylist: [/^\/api\//, /^\/__\//] }))
 
 // Push (FCM data or notification messages). The page suppresses nothing; if a window is
 // visible on the same check we skip the notification.
