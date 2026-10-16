@@ -245,8 +245,8 @@ button, .button {
 .banner { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 12px 14px; border-radius: var(--radius); background: linear-gradient(100deg, var(--primary), #8458e0); color: #fff; font-weight: 800; }
 .go-pill { background: var(--hot-text); color: #fff; border-radius: 999px; padding: 4px 12px; white-space: nowrap; font-weight: 900; }
 .sech { font-size: 1.05rem; margin: 4px 0 0; }
-.grid4 { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px; }
-.grid4 .tile { display: flex; min-width: 0; overflow-wrap: anywhere; text-align: center; line-height: 1.2; }
+.grid3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+.grid3 .tile { display: flex; min-width: 0; overflow-wrap: anywhere; text-align: center; line-height: 1.2; }
 .guide { display: flex; gap: 10px; align-items: center; margin: 0; padding: 10px 12px; background: #fff; border: 1px dashed var(--border-strong); border-radius: var(--radius); font-weight: 700; }
 .guide svg { width: 28px; height: 28px; flex: none; padding: 5px; border-radius: 50%; background: #128c4a; color: #fff; }
 .install { align-self: flex-start; }

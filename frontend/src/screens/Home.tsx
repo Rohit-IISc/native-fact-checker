@@ -12,15 +12,14 @@ import { Icon, type IconName } from '../components/Icon'
 import { rememberCheck } from '../lib/lastCheck'
 
 const ALL_MEDIA = 'image/*,video/*,audio/*,.opus,.ogg'
-// Only inputs the pipeline supports. Screenshot is a photo; WhatsApp points to the share guide below.
-const TILES: { key: string; icon: IconName; accept?: string; guide?: boolean }[] = [
+// Only inputs the pipeline supports, two rows of three. Screenshot opens the photo picker.
+const TILES: { key: string; icon: IconName; accept?: string }[] = [
   { key: 'text', icon: 'text' },
   { key: 'photo', icon: 'image', accept: 'image/*' },
   { key: 'video', icon: 'video', accept: 'video/*' },
-  { key: 'audio', icon: 'mic', accept: 'audio/*,.opus,.ogg' },
   { key: 'link', icon: 'link' },
   { key: 'screenshot', icon: 'camera', accept: 'image/*' },
-  { key: 'whatsapp', icon: 'chat', guide: true },
+  { key: 'audio', icon: 'mic', accept: 'audio/*,.opus,.ogg' },
 ]
 
 interface InstallPrompt extends Event {
@@ -41,7 +40,6 @@ export function Home() {
   const [install, setInstall] = useState<InstallPrompt | null>(null)
   const fileInput = useRef<HTMLInputElement>(null)
   const pasteBox = useRef<HTMLTextAreaElement>(null)
-  const guide = useRef<HTMLParagraphElement>(null)
 
   useEffect(() => {
     if (!user) return
@@ -85,11 +83,7 @@ export function Home() {
   }
 
   // A tile opens the file picker for that kind of media, or puts the cursor in the paste box.
-  const pick = (accept?: string, toGuide?: boolean) => {
-    if (toGuide) {
-      guide.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })
-      return guide.current?.focus()
-    }
+  const pick = (accept?: string) => {
     if (!accept) return pasteBox.current?.focus()
     if (fileInput.current) {
       fileInput.current.accept = accept
@@ -155,15 +149,15 @@ export function Home() {
         </div>
       )}
       <h2 className="sech">{t('home.whatCheck')}</h2>
-      <div className="grid4" role="group" aria-label={t('home.whatCheck')}>
+      <div className="grid3" role="group" aria-label={t('home.whatCheck')}>
         {TILES.map((x) => (
-          <button key={x.key} type="button" className="tile" onClick={() => pick(x.accept, x.guide)}>
+          <button key={x.key} type="button" className="tile" onClick={() => pick(x.accept)}>
             <Icon name={x.icon} />
             {t(`home.tiles.${x.key}`)}
           </button>
         ))}
       </div>
-      <p className="guide" ref={guide} tabIndex={-1}>
+      <p className="guide">
         <Icon name="chat" />
         <span>{t('home.shareLine')}</span>
       </p>
