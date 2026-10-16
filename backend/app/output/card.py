@@ -46,15 +46,51 @@ def _font(family: str, size: int, bold: bool = False) -> ImageFont.FreeTypeFont:
     return ImageFont.truetype(str(path), size, layout_engine=engine)
 
 
-def _wrap(draw: ImageDraw.ImageDraw, text: str, font: ImageFont.FreeTypeFont, width: int,
-          max_lines: int) -> list[str]:
+class Fonts:
+    """The script font plus NotoSans for Latin runs. Noto's Devanagari, Tamil and Kannada fonts have no Latin
+    letters, so "CHCKR" or "DELHI" inside a Hindi card drew as empty boxes (Oct 16)."""
+
+    def __init__(self, family: str, size: int, bold: bool = False) -> None:
+        self.script = _font(family, size, bold)
+        self.latin = _font("NotoSans", size, bold) if family != "NotoSans" else self.script
+
+    def runs(self, text: str) -> list[tuple[str, ImageFont.FreeTypeFont]]:
+        """Split into runs: ASCII letters and digits use the Latin font, other letters the script font;
+        spaces and punctuation stay with the run they are in."""
+        out: list[tuple[str, ImageFont.FreeTypeFont]] = []
+        for ch in text:
+            if ch.isascii() and ch.isalnum():
+                f = self.latin
+            elif ch.isalpha():
+                f = self.script
+            else:
+                f = out[-1][1] if out else self.latin
+            if out and out[-1][1] is f:
+                out[-1] = (out[-1][0] + ch, f)
+            else:
+                out.append((ch, f))
+        return out
+
+    def length(self, draw: ImageDraw.ImageDraw, text: str) -> float:
+        return sum(draw.textlength(t, font=f) for t, f in self.runs(text))
+
+    def draw(self, draw: ImageDraw.ImageDraw, xy: tuple[float, float], text: str, fill: str) -> None:
+        """Draw at (x, y) as the top of the script font's line, every run on one shared baseline."""
+        x, y = xy
+        baseline = y + self.script.getmetrics()[0]
+        for t, f in self.runs(text):
+            draw.text((x, baseline), t, font=f, fill=fill, anchor="ls")
+            x += draw.textlength(t, font=f)
+
+
+def _wrap(draw: ImageDraw.ImageDraw, text: str, font: Fonts, width: int, max_lines: int) -> list[str]:
     """Greedy word wrap (all five demo languages separate words with spaces); ellipsis on overflow."""
     lines: list[str] = []
     line = ""
     words = " ".join(text.split()).split(" ")
     for i, word in enumerate(words):
         trial = f"{line} {word}".strip()
-        if draw.textlength(trial, font=font) <= width or not line:
+        if font.length(draw, trial) <= width or not line:
             line = trial
             continue
         lines.append(line)
@@ -63,7 +99,7 @@ def _wrap(draw: ImageDraw.ImageDraw, text: str, font: ImageFont.FreeTypeFont, wi
             line = ""
             rest = " ".join(words[i:])
             last = lines[-1]
-            while last and draw.textlength(f"{last} …", font=font) > width:
+            while last and font.length(draw, f"{last} …") > width:
                 last = last.rsplit(" ", 1)[0] if " " in last else last[:-1]
             lines[-1] = f"{last} …" if rest else last
             break
@@ -75,7 +111,7 @@ def _wrap(draw: ImageDraw.ImageDraw, text: str, font: ImageFont.FreeTypeFont, wi
 def _text_block(draw, xy, lines, font, fill, line_h) -> int:
     x, y = xy
     for ln in lines:
-        draw.text((x, y), ln, font=font, fill=fill)
+        font.draw(draw, (x, y), ln, fill)
         y += line_h
     return y
 
@@ -110,18 +146,18 @@ def render(claim: ClaimResult) -> bytes:
 
     # Band: app name, then the label as big as fits.
     d.rectangle([0, 0, W, BAND_H], fill=color)
-    d.text((MARGIN, 52), text.get("app_name", "CHCKR"), font=_font(family, 36, bold=True), fill="#ffffff")
+    Fonts(family, 36, bold=True).draw(d, (MARGIN, 52), text.get("app_name", "CHCKR"), "#ffffff")
     size = 120
-    while size > 56 and d.textlength(label, font=_font(family, size, bold=True)) > inner:
+    while size > 56 and Fonts(family, size, bold=True).length(d, label) > inner:
         size -= 8
     top, bottom = 110, BAND_H - 30  # centre the label below the app name, whatever size it ended up
     box = d.textbbox((0, 0), label, font=_font(family, size, bold=True))
-    d.text((MARGIN, top + (bottom - top - (box[3] - box[1])) // 2 - box[1]), label,
-           font=_font(family, size, bold=True), fill="#ffffff")
+    Fonts(family, size, bold=True).draw(d, (MARGIN, top + (bottom - top - (box[3] - box[1])) // 2 - box[1]),
+                                        label, "#ffffff")
 
     y = BAND_H + 56
     # The post's claim, quoted and muted: what this card answers.
-    claim_font = _font(family, 38)
+    claim_font = Fonts(family, 38)
     y = _text_block(d, (MARGIN, y), _wrap(d, f"“{claim.claim_original}”", claim_font, inner, 3),
                     claim_font, MUTED, 56)
     y += 28
@@ -129,13 +165,13 @@ def render(claim: ClaimResult) -> bytes:
     y += 40
 
     # What is true: the line people forward.
-    d.text((MARGIN, y), text.get("what_is_true", "What is true"), font=_font(family, 40, bold=True), fill=color)
+    Fonts(family, 40, bold=True).draw(d, (MARGIN, y), text.get("what_is_true", "What is true"), color)
     y += 72
     # Fill the space down to the footer: smaller type before cutting the text short.
     foot_y = H - 250
     body = a.what_is_true or " ".join(a.card_lines)
     for size in (44, 40, 36, 32):
-        body_font, line_h = _font(family, size), int(size * 1.5)
+        body_font, line_h = Fonts(family, size), int(size * 1.5)
         max_lines = max(1, (foot_y - 40 - y) // line_h)
         lines = _wrap(d, body, body_font, inner, max_lines)
         if not lines[-1].endswith(" …"):
@@ -145,13 +181,13 @@ def render(claim: ClaimResult) -> bytes:
     # Footer: sources and the link to the full result.
     names = top_sources(claim)
     if names:
-        d.text((MARGIN, foot_y), text.get("sources", "Sources"), font=_font(family, 34, bold=True), fill=MUTED)
-        src_font = _font("NotoSans", 36)
+        Fonts(family, 34, bold=True).draw(d, (MARGIN, foot_y), text.get("sources", "Sources"), MUTED)
+        src_font = Fonts(family, 36)  # publisher names can be in any script ("विश्वास न्यूज")
         line = _wrap(d, " · ".join(names), src_font, inner, 1)[0]
-        d.text((MARGIN, foot_y + 54), line, font=src_font, fill=INK)
+        src_font.draw(d, (MARGIN, foot_y + 54), line, INK)
     d.rectangle([0, H - 110, W, H], fill="#f1f3f4")
     link = claim.result_url.removeprefix("https://").removeprefix("http://")
-    d.text((MARGIN, H - 78), link, font=_font("NotoSans", 32), fill=MUTED)
+    Fonts("NotoSans", 32).draw(d, (MARGIN, H - 78), link, MUTED)
 
     buf = io.BytesIO()
     img.save(buf, format="PNG", optimize=True)

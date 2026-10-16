@@ -30,10 +30,19 @@ def test_long_text_is_cut_with_an_ellipsis_within_the_width():
     from PIL import ImageDraw
 
     d = ImageDraw.Draw(Image.new("RGB", (10, 10)))
-    font = card._font("NotoSansDevanagari", 44)
+    font = card.Fonts("NotoSansDevanagari", 44)
     lines = card._wrap(d, "सच " * 400, font, 900, 3)
     assert len(lines) == 3 and lines[-1].endswith(" …")
-    assert all(d.textlength(ln, font=font) <= 900 for ln in lines)
+    assert all(font.length(d, ln) <= 900 for ln in lines)
+
+
+def test_latin_words_in_an_indic_card_use_the_latin_font():
+    """Oct 16: "CHCKR" and "DELHI" drew as empty boxes with the Devanagari font."""
+    f = card.Fonts("NotoSansDevanagari", 40)
+    runs = f.runs("“DELHI संकट मे” CHCKR 2022")
+    assert [(t, fo is f.latin) for t, fo in runs] == [
+        ("“DELHI ", True), ("संकट मे” ", False), ("CHCKR 2022", True)]
+    assert card.Fonts("NotoSans", 40).runs("Delhi floods") == [("Delhi floods", card.Fonts("NotoSans", 40).latin)]
 
 
 async def test_card_is_drawn_on_request_and_linked_from_the_result(store, llm):
