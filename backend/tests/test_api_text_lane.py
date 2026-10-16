@@ -134,7 +134,13 @@ async def test_consent_and_me(client):
     assert (await client.put("/v1/me/language", json={"ui_language": "kn"}, headers=AUTH)).status_code == 204
     assert (await client.get("/v1/me", headers=AUTH)).json()["ui_language"] == "kn"
     assert (await client.put("/v1/me/language", json={"ui_language": "xx"}, headers=AUTH)).status_code == 422
+    from app.store import get_store
+
+    await get_store().set("checks", "c-alice", {"uid": "alice", "request": {"text": "my post"}})
+    await get_store().set("checks", "c-bob", {"uid": "bob"})
     assert (await client.delete("/v1/me", headers=AUTH)).status_code == 204
+    assert await get_store().get("checks", "c-alice") is None
+    assert await get_store().get("checks", "c-bob") is not None
     assert (await client.get("/v1/me", headers=AUTH)).json()["consent_at"] is None
 
 

@@ -26,6 +26,9 @@ class Store(Protocol):
     ) -> list[tuple[str, dict[str, Any]]]:
         """Newest first by `order_by`. `fields` limits what is read (Firestore select)."""
         ...
+    async def ids_where(self, collection: str, field: str, value: Any, limit: int) -> list[str]:
+        """Ids of documents whose `field` equals `value` (no order)."""
+        ...
     async def set_vector(self, collection: str, doc_id: str, field: str, vector: list[float]) -> None: ...
     async def find_nearest(
         self, collection: str, field: str, vector: list[float], limit: int, where_eq: dict[str, Any]
@@ -92,6 +95,9 @@ class MemoryStore:
             return [(k, {f: copy.deepcopy(v[f]) for f in fields if f in v}) for k, v in items[:limit]]
         return [(k, copy.deepcopy(v)) for k, v in items[:limit]]
 
+    async def ids_where(self, collection: str, field: str, value: Any, limit: int) -> list[str]:
+        return [k for k, v in self.data.get(collection, {}).items() if v.get(field) == value][:limit]
+
     async def set_vector(self, collection: str, doc_id: str, field: str, vector: list[float]) -> None:
         await self.set(collection, doc_id, {field: list(vector)}, merge=True)
 
@@ -157,6 +163,10 @@ class FirestoreStore:
         if fields:
             q = q.select(fields)
         return [(d.id, d.to_dict()) async for d in q.limit(limit).stream()]
+
+    async def ids_where(self, collection: str, field: str, value: Any, limit: int) -> list[str]:
+        q = self._db.collection(collection).where(filter=self._fs.FieldFilter(field, "==", value)).select([])
+        return [d.id async for d in q.limit(limit).stream()]
 
     async def set_vector(self, collection: str, doc_id: str, field: str, vector: list[float]) -> None:
         from google.cloud.firestore_v1.vector import Vector

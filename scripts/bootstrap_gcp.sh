@@ -62,7 +62,7 @@ EVAL_SA="eval-sa@${PROJECT_ID}.iam.gserviceaccount.com"
 for ROLE in roles/datastore.user roles/storage.objectAdmin roles/aiplatform.user roles/pubsub.publisher \
             roles/bigquery.dataEditor roles/bigquery.jobUser roles/secretmanager.secretAccessor \
             roles/logging.logWriter roles/cloudtrace.agent roles/monitoring.metricWriter \
-            roles/firebasecloudmessaging.admin \
+            roles/firebasecloudmessaging.admin roles/firebaseauth.admin \
             roles/iam.serviceAccountTokenCreator; do
   gcloud projects add-iam-policy-binding "$PROJECT_ID" --member="serviceAccount:${API_SA}" --role="$ROLE" --condition=None >/dev/null
   gcloud projects add-iam-policy-binding "$PROJECT_ID" --member="serviceAccount:${EVAL_SA}" --role="$ROLE" --condition=None >/dev/null
