@@ -2,12 +2,28 @@
 
 Updated after every task (see CLAUDE.md, "How to work"). Newest state only; history is in git.
 
-**Last updated:** Fri Oct 9, 2026
-**Build-plan day:** Day 6 work on Fri Oct 9: Days 0 to 5 done; Day 6 (measure) deployed; pushes to main deploy via Cloud Build.
+**Last updated:** Fri Oct 16, 2026, evening (submission freeze)
+**Build-plan day:** Test week; **submission freeze** (tag `submission-freeze`): no model or pipeline changes before Oct 18.
 **Deployed:** https://ai-builder-2026.web.app -> Cloud Run `factcheck-api` (asia-south1), commit 2d0803c+.
 **Audio samples for native speakers:** https://claude.ai/artifact/3uKEHUsp5hdXoVFo87SJeo (private; share it).
 
 ## Done
+
+- **Final config (decision 48, frozen Oct 16):** extractor gemini-2.5-flash (512 thinking tokens); web search,
+  other agents, packager and composer gemini-3.8-flash; Judge, Critic and revision gemini-3.1-pro-preview;
+  fallbacks the other generation (docs/02 "Models per stage"). Judge limit 45 s. Critic on every check.
+  Final `make accept`: 16/20, avg 46.2 s. Fails: 01, 02, 03 and 13. **Known ~2-in-3 case:** 01 (and 02/03,
+  which reuse its verdict) depends on web search finding the PTI or Quint "old 2022 Bengaluru video" fact
+  checks; when it does not, the panel abstains (NOT_ENOUGH_EVIDENCE). Search retrieval variance, not config.
+  13 (BBC link) is similar for TRUE news.
+- **Demo cache seeded in production (Oct 16)** with `scripts/seed_demo_cache.py`, each verdict from a real
+  pipeline run (uid demo-seed; 01 from a production check of the same video at 12:55): all 20 acceptance
+  shares answer from cache with an expected label. 01, 01b, 02, 03, 04, 12 MISLEADING; 05, 07, 09, 10a,
+  10b, 14, 90 FALSE; 06, 06b SCAM; 08, 13 TRUE; 15 NOT_ENOUGH_EVIDENCE; 11, 16 NOT_CHECKABLE.
+  NOT_ENOUGH_EVIDENCE verdicts expire after 3 days: rerun the script (report mode, then `--seed`) before
+  judging.
+- Cost review (Oct 16): per-lane costs and deck notes in docs/14; grounding is about half of a full check
+  at list price but inside the free 5,000 queries a month at current volume.
 
 - Days 0-3 (see git history): deploy, text/media/link lanes, tier 1 + tier 2 caches, four evidence agents,
   offender list, dev loop (`make dev/try/accept/record/test/smoke`).
@@ -118,6 +134,9 @@ is kept for history. Details: eval/TESTS-TO-DO.md section 5.
       for gemini-2.5-pro and flash in the project, then decide with Rohit (it costs money).
 
 ## Next step
+
+- Frozen: no model or pipeline changes. Remaining: UI changes and the app URL (Rohit), merge of
+  `ui/bazaar-bright` when approved, deck and video, phone tests, re-seed the demo cache before judging.
 
 - (Oct 16 fixes on main) A 3.1 Pro judge call and its same-model hedge both stalled past 30 s (2 of 24 judge
   calls since the switch), so the check fell back to NOT_ENOUGH_EVIDENCE and showed "nothing found" next to
