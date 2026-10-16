@@ -137,3 +137,20 @@ export interface PublicResult {
   card_url?: string | null
   created_at?: string
 }
+
+export interface HistoryStats {
+  checked: number
+  by_label: Partial<Record<Label | 'NOT_CHECKABLE', number>>
+}
+
+/** A shared verdict on Home (Recent checks) and Trending: verdict text only, nothing about who checked it. */
+export interface FeedItem {
+  verdict_id: string
+  label: Label
+  headline: string
+  claim: string
+  language: string | null
+  created_at: string
+  checks?: number
+  last_checked_at?: string
+}

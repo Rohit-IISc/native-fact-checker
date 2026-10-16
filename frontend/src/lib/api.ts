@@ -1,7 +1,7 @@
 import type { AppUser } from './auth'
 import { config } from './config'
 import { appCheckToken } from './firebase'
-import type { CheckDoc, CheckResult, HistoryItem, PublicResult, Quota } from './types'
+import type { CheckDoc, CheckResult, FeedItem, HistoryItem, HistoryStats, PublicResult, Quota } from './types'
 
 export class ApiError extends Error {
   status: number
@@ -115,3 +115,12 @@ export const registerFcmToken = (user: AppUser, token: string) =>
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ token }),
   })
+export const saveLanguage = (user: AppUser, uiLanguage: string) =>
+  request<void>(user, '/v1/me/language', {
+    method: 'PUT',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ ui_language: uiLanguage }),
+  })
+export const getHistoryStats = (user: AppUser) => request<HistoryStats>(user, '/v1/me/history/stats')
+export const getRecent = (user: AppUser) => request<{ items: FeedItem[] }>(user, '/v1/feed/recent')
+export const getTrending = (user: AppUser) => request<{ window: string; items: FeedItem[] }>(user, '/v1/feed/trending')

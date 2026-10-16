@@ -8,7 +8,11 @@
     "history": "Riwayat",
     "signOut": "Keluar",
     "language": "Bahasa",
-    "main": "Navigasi utama"
+    "main": "Navigasi utama",
+    "checks": "Cek",
+    "trending": "Trending",
+    "chooseLanguage": "Pilih bahasa Anda",
+    "close": "Tutup"
   },
   "welcome": {
     "title": "Periksa setiap pesan terusan sebelum membagikannya",
@@ -17,7 +21,14 @@
     "point3": "Jawaban dalam bahasa Anda, untuk dibaca atau didengarkan",
     "privacy": "Foto dan video Anda dihapus dalam 24 jam. Kami hanya menyimpan klaim dan hasil pemeriksaan, tanpa data pribadi, agar orang lain yang menerima pesan yang sama mendapat jawaban lebih cepat.",
     "agree": "Saya setuju. Lanjutkan",
-    "signin": "Masuk dengan Google"
+    "signin": "Masuk dengan Google",
+    "ticker": "Gratis · 5 bahasa · Teks, foto, video, audio, dan tautan · {{limit}} cek per hari",
+    "feature": {
+      "share": "Bagikan ke aplikasi",
+      "sources": "Sumber tepercaya",
+      "listen": "Dengarkan dalam bahasa Anda",
+      "deleted": "Dihapus dalam 24 jam"
+    }
   },
   "home": {
     "pasteLabel": "Tempel pesan terusan atau tautan",
@@ -134,5 +145,18 @@
     "BUSY": "Kami sedang sangat sibuk. Silakan coba lagi nanti.",
     "UNAUTHENTICATED": "Silakan masuk lagi.",
     "generic": "Terjadi kesalahan. Silakan coba lagi."
+  },
+  "trending": {
+    "title": "Trending",
+    "window24h": "Klaim yang paling sering dicek dalam 24 jam terakhir",
+    "window7d": "Klaim yang paling sering dicek dalam 7 hari terakhir",
+    "empty": "Belum ada yang dicek dalam 7 hari terakhir.",
+    "checks_one": "{{count}} cek",
+    "checks_other": "{{count}} cek"
+  },
+  "checks": {
+    "title": "Cek terakhir Anda",
+    "empty": "Anda belum mengecek apa pun.",
+    "start": "Cek pesan terusan"
   }
 }

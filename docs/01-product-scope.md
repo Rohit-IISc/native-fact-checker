@@ -78,4 +78,8 @@ Cost (added Oct 16, after the cost review in docs/13):
 - **On-device Gemma for extraction:** run claim extraction on the phone (Gemma on Android), sending the server
   only the claims and media fingerprints. Cuts the extractor cost and keeps more of the forward on the device.
 
+Sign-in (added Oct 16, UI brief):
+- **Sign in with phone number (OTP):** Firebase phone auth as a second option next to Google, for users without
+  a Google account on the phone. Not built: SMS costs money per sign-in and needs abuse limits.
+
 LLM router that picks which sub-agents to call (cost), WhatsApp bot, Android and iOS apps, B2B API for platforms, newsrooms and telcos, bank SMS and phishing checks, satellite verification, voice line for basic phones, more languages.

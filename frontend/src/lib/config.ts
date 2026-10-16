@@ -20,5 +20,6 @@ export const config = {
     maxShareBytes: 50 * 1024 * 1024,
     maxImages: 10,
     maxTextChars: 10000,
+    dailyChecks: 10, // config/limits.yaml quota.checks_per_user_per_day; the signed-in screens read it from /v1/me/quota
   },
 }

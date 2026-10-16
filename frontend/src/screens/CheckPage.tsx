@@ -10,6 +10,7 @@ import type { CheckDoc } from '../lib/types'
 import { useCheck } from '../lib/useCheck'
 import { Limit } from './Limit'
 import { enablePush } from '../lib/push'
+import { rememberCheck } from '../lib/lastCheck'
 
 /** /check?shared=1 picks up a Web Share Target payload and submits it, then becomes /check/:id. */
 export function SharedCheck() {
@@ -36,6 +37,7 @@ export function SharedCheck() {
           res.status === 'DONE'
             ? { check_id: res.check_id, status: 'DONE', stage: 'done', progress: 100, result: res.result }
             : undefined
+        rememberCheck(res.check_id)
         navigate(`/check/${res.check_id}`, { replace: true, state: { initial } })
       } catch (err) {
         if (err instanceof ApiError && err.code === 'DAILY_LIMIT') setLimitAt(String(err.body.resets_at ?? ''))

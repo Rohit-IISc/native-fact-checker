@@ -9,6 +9,7 @@ import type { HistoryItem, Quota } from '../lib/types'
 import { Limit } from './Limit'
 import { enablePush } from '../lib/push'
 import { Icon, type IconName } from '../components/Icon'
+import { rememberCheck } from '../lib/lastCheck'
 
 const ALL_MEDIA = 'image/*,video/*,audio/*,.opus,.ogg'
 const TILES: { key: string; icon: IconName; accept?: string }[] = [
@@ -68,6 +69,7 @@ export function Home() {
         res.status === 'DONE'
           ? { check_id: res.check_id, status: 'DONE', stage: 'done', progress: 100, result: res.result }
           : undefined
+      rememberCheck(res.check_id)
       navigate(`/check/${res.check_id}`, { state: { initial } })
     } catch (err) {
       if (err instanceof ApiError && err.code === 'DAILY_LIMIT') setLimitAt(String(err.body.resets_at ?? ''))

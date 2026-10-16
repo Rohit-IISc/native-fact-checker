@@ -8,7 +8,11 @@
     "history": "History",
     "signOut": "Sign out",
     "language": "Language",
-    "main": "Main navigation"
+    "main": "Main navigation",
+    "checks": "Checks",
+    "trending": "Trending",
+    "chooseLanguage": "Choose your language",
+    "close": "Close"
   },
   "welcome": {
     "title": "Check any forward before you share it",
@@ -17,7 +21,14 @@
     "point3": "You get the answer in your language, to read or to listen",
     "privacy": "Your photos and videos are deleted within 24 hours. We keep only the claims and verdicts, without any personal details, so others with the same forward get an answer faster.",
     "agree": "I agree. Continue",
-    "signin": "Sign in with Google"
+    "signin": "Sign in with Google",
+    "ticker": "Free · 5 languages · Text, photos, video, audio and links · {{limit}} checks a day",
+    "feature": {
+      "share": "Share to app",
+      "sources": "Trusted sources",
+      "listen": "Listen in your language",
+      "deleted": "Deleted in 24h"
+    }
   },
   "home": {
     "pasteLabel": "Paste the forward or a link",
@@ -134,5 +145,18 @@
     "BUSY": "We are very busy right now. Please try again later.",
     "UNAUTHENTICATED": "Please sign in again.",
     "generic": "Something went wrong. Please try again."
+  },
+  "trending": {
+    "title": "Trending",
+    "window24h": "Most-checked claims in the last 24 hours",
+    "window7d": "Most-checked claims in the last 7 days",
+    "empty": "Nothing has been checked in the last 7 days.",
+    "checks_one": "{{count}} check",
+    "checks_other": "{{count}} checks"
+  },
+  "checks": {
+    "title": "Your latest check",
+    "empty": "You have not checked anything yet.",
+    "start": "Check a forward"
   }
 }
