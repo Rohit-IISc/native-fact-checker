@@ -21,8 +21,11 @@ class Store(Protocol):
         ...
     async def decrement(self, collection: str, doc_id: str) -> None: ...
     async def list_recent(
-        self, collection: str, order_by: str, limit: int, start_after: str | None = None
-    ) -> list[tuple[str, dict[str, Any]]]: ...
+        self, collection: str, order_by: str, limit: int, start_after: str | None = None,
+        fields: list[str] | None = None,
+    ) -> list[tuple[str, dict[str, Any]]]:
+        """Newest first by `order_by`. `fields` limits what is read (Firestore select)."""
+        ...
     async def set_vector(self, collection: str, doc_id: str, field: str, vector: list[float]) -> None: ...
     async def find_nearest(
         self, collection: str, field: str, vector: list[float], limit: int, where_eq: dict[str, Any]
@@ -75,7 +78,8 @@ class MemoryStore:
                 doc["count"] -= 1
 
     async def list_recent(
-        self, collection: str, order_by: str, limit: int, start_after: str | None = None
+        self, collection: str, order_by: str, limit: int, start_after: str | None = None,
+        fields: list[str] | None = None,
     ) -> list[tuple[str, dict[str, Any]]]:
         items = sorted(
             self.data.get(collection, {}).items(), key=lambda kv: kv[1].get(order_by) or "", reverse=True
@@ -84,6 +88,8 @@ class MemoryStore:
             ids = [k for k, _ in items]
             if start_after in ids:
                 items = items[ids.index(start_after) + 1 :]
+        if fields:
+            return [(k, {f: copy.deepcopy(v[f]) for f in fields if f in v}) for k, v in items[:limit]]
         return [(k, copy.deepcopy(v)) for k, v in items[:limit]]
 
     async def set_vector(self, collection: str, doc_id: str, field: str, vector: list[float]) -> None:
@@ -140,13 +146,16 @@ class FirestoreStore:
         await self._ref(collection, doc_id).set({"count": self._fs.Increment(-1)}, merge=True)
 
     async def list_recent(
-        self, collection: str, order_by: str, limit: int, start_after: str | None = None
+        self, collection: str, order_by: str, limit: int, start_after: str | None = None,
+        fields: list[str] | None = None,
     ) -> list[tuple[str, dict[str, Any]]]:
         q = self._db.collection(collection).order_by(order_by, direction=self._fs.Query.DESCENDING)
         if start_after:
             cursor = await self._db.collection(collection).document(start_after).get()
             if cursor.exists:
                 q = q.start_after(cursor)
+        if fields:
+            q = q.select(fields)
         return [(d.id, d.to_dict()) async for d in q.limit(limit).stream()]
 
     async def set_vector(self, collection: str, doc_id: str, field: str, vector: list[float]) -> None:

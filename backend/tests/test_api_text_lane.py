@@ -131,6 +131,9 @@ async def test_consent_and_me(client):
     assert (await client.post("/v1/me/consent", json={"ui_language": "ta"}, headers=AUTH)).status_code == 204
     me = (await client.get("/v1/me", headers=AUTH)).json()
     assert me["consent_at"] and me["ui_language"] == "ta"
+    assert (await client.put("/v1/me/language", json={"ui_language": "kn"}, headers=AUTH)).status_code == 204
+    assert (await client.get("/v1/me", headers=AUTH)).json()["ui_language"] == "kn"
+    assert (await client.put("/v1/me/language", json={"ui_language": "xx"}, headers=AUTH)).status_code == 422
     assert (await client.delete("/v1/me", headers=AUTH)).status_code == 204
     assert (await client.get("/v1/me", headers=AUTH)).json()["consent_at"] is None
 

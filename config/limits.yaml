@@ -41,6 +41,15 @@ cache:
   tier2_weak_distance: 0.18
   live_event_active_days: 90
   not_enough_evidence_ttl_days: 3
+feed:  # Home "Recent checks" and Trending: shared verdicts only, never a user's post or media
+  recent_items: 10
+  trending_items: 10
+  trending_hours: 24
+  trending_wide_days: 7      # used when the last trending_hours give fewer than trending_min_items
+  trending_min_items: 3
+  scan_checks: 1000          # newest checks read to count re-checks
+  cache_seconds: 60
+  internal_uids: [demo-seed, deploy-smoke]   # seeding and smoke tests are not people checking
 evidence:
   max_items_per_claim: 12
 media_retention_hours: 24

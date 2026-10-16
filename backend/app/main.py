@@ -6,7 +6,7 @@ import base64
 import json
 import logging
 import time
-from collections import defaultdict
+from collections import Counter, defaultdict
 from contextlib import asynccontextmanager
 from datetime import UTC, datetime
 
@@ -15,7 +15,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 from pydantic import BaseModel
 
-from app import quota
+from app import feed, quota
 from app.auth import User, current_user, verify_pubsub_push
 from app.cache import tier1
 from app.ids import ulid
@@ -262,6 +262,24 @@ async def my_history(cursor: str | None = None, user: User = Depends(current_use
     return {"items": [v for _, v in items], "next_cursor": items[-1][0] if len(items) == 20 else None}
 
 
+@app.get("/v1/me/history/stats")
+async def my_history_stats(user: User = Depends(current_user)) -> dict:
+    """Counts for the History screen, from the user's whole history (a user makes at most 10 checks a day)."""
+    rows = await get_store().list_recent(f"users/{user.uid}/history", "created_at", 2000, fields=["label"])
+    labels = Counter(v.get("label") for _, v in rows)
+    return {"checked": len(rows), "by_label": dict(labels)}
+
+
+@app.get("/v1/feed/recent")
+async def feed_recent(user: User = Depends(current_user)) -> dict:
+    return {"items": await feed.recent(get_store())}
+
+
+@app.get("/v1/feed/trending")
+async def feed_trending(user: User = Depends(current_user)) -> dict:
+    return await feed.trending(get_store())
+
+
 class FcmToken(BaseModel):
     token: str
 
@@ -289,6 +307,22 @@ async def consent(body: Consent | None = None, user: User = Depends(current_user
     if not existing:
         data |= {"created_at": now_iso(), "role": "JUDGE" if user.is_judge else "USER", "fcm_tokens": []}
     await store.set("users", user.uid, data, merge=True)
+    return Response(status_code=204)
+
+
+UI_LANGUAGES = ("en", "hi", "ta", "kn", "id")
+
+
+class Language(BaseModel):
+    ui_language: str
+
+
+@app.put("/v1/me/language", status_code=204)
+async def set_language(body: Language, user: User = Depends(current_user)) -> Response:
+    """The language picker saves the choice to the profile; notifications use it."""
+    if body.ui_language not in UI_LANGUAGES:
+        raise HTTPException(422, detail={"error_code": "BAD_LANGUAGE"})
+    await get_store().set("users", user.uid, {"ui_language": body.ui_language}, merge=True)
     return Response(status_code=204)
 
 
