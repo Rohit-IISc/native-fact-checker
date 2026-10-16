@@ -1,7 +1,7 @@
 {
   "prompt_version": "factcheck-1.6+shared-1.1",
-  "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-09T12:39:31+00:00",
+  "model_id": "gemini-3.8-flash",
+  "recorded_at": "2026-10-16T20:05:03+00:00",
   "outputs": [
     {
       "agent": "factcheck_sites",
@@ -11,21 +11,36 @@
           "agent": "factcheck_sites",
           "claim_id": "c1",
           "url": "https://www.boomlive.in/fact-check/claims-of-china-being-the-first-country-to-land-on-the-south-pole-of-the-moon-is-false-22899",
-          "domain": null,
+          "domain": "boomlive.in",
           "publisher": "BOOM Fact Check",
           "title": "Claims Of China Being The First Country To Land On The South ...",
           "published_at": "2023-08-29",
           "language": "en",
-          "snippet_en": "BOOM Fact Check rated as False the claim that China was the first country to land on the Moon's South Pole a few years ago.",
-          "stance": "CONTRADICTS",
+          "snippet_en": "BOOM Fact Check debunked claims that China landed on the Moon's south pole before India, confirming India was the first to land near that region.",
+          "stance": "CONTEXT",
           "rating_text": "False",
+          "tier": "TIER_1"
+        },
+        {
+          "evidence_id": "",
+          "agent": "factcheck_sites",
+          "claim_id": "c1",
+          "url": "https://leadstories.com/hoax-alert/2023/09/fact-check-india-did-not-fake-chandrayaan3-landing-on-the-moon-a-simulation-image-was-broadcast-live.html",
+          "domain": "leadstories.com",
+          "publisher": "Lead Stories",
+          "title": "Fact Check: India Did NOT Fake Chandrayaan-3 Landing On The ...",
+          "published_at": "2023-09-05",
+          "language": "en",
+          "snippet_en": "Lead Stories verified that India did not fake the Chandrayaan-3 landing on the Moon, explaining that a simulation was broadcast during the live event.",
+          "stance": "CONTEXT",
+          "rating_text": "Live Portrayal",
           "tier": "TIER_1"
         }
       ],
       "source_assessment": null,
       "ai_generation_signals": null,
       "earliest_appearance": null,
-      "notes_en": "",
+      "notes_en": "Fact checks related to specific viral media/claims around the Chandrayaan-3 landing were evaluated; general hoaxes regarding China landing first or the event being staged provide context verifying aspects of the landing.",
       "timed_out": false
     }
   ]

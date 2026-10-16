@@ -1,45 +1,43 @@
 {
   "prompt_version": "extractor-1.13+shared-1.1",
   "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-09T12:01:31+00:00",
+  "recorded_at": "2026-10-16T20:03:56+00:00",
   "outputs": [
     {
       "content_language": "hi-IN",
       "content_script": "Deva",
-      "summary_en": "The post claims that Prime Minister Modi is offering 3 months of free mobile recharge to all Indians. It instructs users to click a provided link to avail the offer, stating that it is valid only for today.",
+      "summary_en": "A message claims that Prime Minister Modi is offering all Indians 3 months of free mobile recharge. It urges users to click a provided link to claim the offer, stating it is valid only for today.",
       "checkable": true,
       "non_checkable_type": null,
       "claims": [
         {
           "claim_id": "claim1",
           "claim_original": "प्रधानमंत्री मोदी सभी भारतीयों को 3 महीने का मुफ्त मोबाइल रिचार्ज दे रहे हैं।",
-          "claim_en": "Prime Minister Modi is providing 3 months of free mobile recharge to all Indians.",
+          "claim_en": "Prime Minister Modi is offering all Indians 3 months of free mobile recharge.",
           "claim_type": "GOVERNMENT_SCHEME",
           "entities": [
-            "Prime Minister Modi",
-            "Indians"
+            "प्रधानमंत्री मोदी",
+            "भारतीयों"
           ],
-          "place": null,
+          "place": "India",
           "claimed_date": null,
           "time_sensitivity": "EVERGREEN",
           "search_queries_original": [
             "प्रधानमंत्री मोदी मुफ्त रिचार्ज",
-            "मोदी 3 महीने फ्री मोबाइल रिचार्ज",
-            "सरकारी मुफ्त रिचार्ज योजना"
+            "मोदी 3 महीने फ्री मोबाइल रिचार्ज"
           ],
           "search_queries_en": [
-            "PM Modi free mobile recharge scheme",
-            "Modi 3 months free recharge fact check",
-            "government free mobile data offer"
+            "PM Modi free mobile recharge fact check",
+            "Modi 3 months free recharge scheme"
           ],
           "search_queries_regional": [
             {
               "language": "ta",
-              "query": "மோடி இலவச மொபைல் ரீசார்ஜ் திட்டம்"
+              "query": "பிரதமர் மோடி இலவச மொபைல் ரீசார்ஜ்"
             },
             {
               "language": "kn",
-              "query": "ಮೋದಿ ಉಚಿತ ಮೊಬೈಲ್ ರೀಚಾರ್ಜ್ ಯೋಜನೆ"
+              "query": "ಪ್ರಧಾನಿ ಮೋದಿ ಉಚಿತ ಮೊಬೈಲ್ ರೀಚಾರ್ಜ್"
             }
           ]
         }

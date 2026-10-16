@@ -1,0 +1,132 @@
+{
+  "prompt_version": "web-search-classify-1.5+shared-1.1",
+  "model_id": "gemini-3.8-flash",
+  "recorded_at": "2026-10-16T20:08:28+00:00",
+  "outputs": [
+    {
+      "items": [
+        {
+          "source_n": 1,
+          "claim_id": "c1",
+          "publisher": "UNICEF Montenegro",
+          "title": null,
+          "published_at": "2021-07-12",
+          "language": "en",
+          "snippet_en": "UNICEF Montenegro reported that 5G technology does not cause or spread the coronavirus.",
+          "stance": "CONTRADICTS"
+        },
+        {
+          "source_n": 2,
+          "claim_id": "c1",
+          "publisher": "World Health Organization (WHO)",
+          "title": null,
+          "published_at": "2020-02-27",
+          "language": "en",
+          "snippet_en": "The World Health Organization confirmed that no adverse health effects have been causally linked to exposure to wireless technologies, including 5G.",
+          "stance": "CONTRADICTS"
+        },
+        {
+          "source_n": 3,
+          "claim_id": "c1",
+          "publisher": "UN News",
+          "title": null,
+          "published_at": "2020-04-22",
+          "language": "en",
+          "snippet_en": "The International Telecommunications Union stated that 5G is not responsible for spreading COVID-19, designating the claim a hoax with no technical basis.",
+          "stance": "CONTRADICTS"
+        },
+        {
+          "source_n": 4,
+          "claim_id": "c1",
+          "publisher": "Healthline",
+          "title": null,
+          "published_at": "2021-05-10",
+          "language": "en",
+          "snippet_en": "Healthline explained that viruses spread via respiratory droplets rather than wireless networks, and there is no evidence that 5G influences viral infection risks.",
+          "stance": "CONTRADICTS"
+        },
+        {
+          "source_n": 5,
+          "claim_id": "c1",
+          "publisher": "Full Fact",
+          "title": null,
+          "published_at": null,
+          "language": "en",
+          "snippet_en": "Full Fact found no evidence linking 5G to COVID-19, pointing out that the virus was actively spreading in regions without 5G networks.",
+          "stance": "CONTRADICTS"
+        },
+        {
+          "source_n": 6,
+          "claim_id": "c1",
+          "publisher": null,
+          "title": null,
+          "published_at": null,
+          "language": "en",
+          "snippet_en": "Scientific evidence and health organizations have widely debunked claims that 5G causes or spreads coronavirus.",
+          "stance": "CONTRADICTS"
+        },
+        {
+          "source_n": 7,
+          "claim_id": "c1",
+          "publisher": null,
+          "title": null,
+          "published_at": null,
+          "language": "en",
+          "snippet_en": "Scientific literature and health organizations have debunked the claim that 5G technology transmits or causes COVID-19.",
+          "stance": "CONTRADICTS"
+        },
+        {
+          "source_n": 8,
+          "claim_id": "c1",
+          "publisher": "PBS NewsHour",
+          "title": null,
+          "published_at": null,
+          "language": "en",
+          "snippet_en": "Claims linking 5G towers to the coronavirus have been thoroughly debunked by health authorities and scientific evidence.",
+          "stance": "CONTRADICTS"
+        },
+        {
+          "source_n": 9,
+          "claim_id": "c1",
+          "publisher": "Wikipedia",
+          "title": null,
+          "published_at": null,
+          "language": "en",
+          "snippet_en": "Claims that 5G spreads or causes COVID-19 are scientifically debunked conspiracy theories.",
+          "stance": "CONTRADICTS"
+        },
+        {
+          "source_n": 10,
+          "claim_id": "c1",
+          "publisher": "Boston University",
+          "title": null,
+          "published_at": "2021-01-04",
+          "language": "en",
+          "snippet_en": "Scientific analysis debunks the claim that 5G causes or spreads COVID-19.",
+          "stance": "CONTRADICTS"
+        },
+        {
+          "source_n": 11,
+          "claim_id": "c1",
+          "publisher": "Health Canada",
+          "title": null,
+          "published_at": null,
+          "language": "en",
+          "snippet_en": "Health organizations and scientific evidence debunk assertions that 5G causes or transmits the coronavirus.",
+          "stance": "CONTRADICTS"
+        },
+        {
+          "source_n": 12,
+          "claim_id": "c1",
+          "publisher": "West Texas A&M University",
+          "title": null,
+          "published_at": "2022-08-18",
+          "language": "en",
+          "snippet_en": "Scientific consensus debunks claims connecting 5G signals to the spread or causation of COVID-19.",
+          "stance": "CONTRADICTS"
+        }
+      ],
+      "notes_en": "All sources directly contradict the claim that 5G technology or towers spread the coronavirus, confirming that biological viruses cannot be transmitted via radio waves and that COVID-19 spread in locations without 5G."
+    }
+  ]
+}

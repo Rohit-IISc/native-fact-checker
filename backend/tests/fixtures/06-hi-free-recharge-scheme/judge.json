@@ -1,7 +1,7 @@
 {
   "prompt_version": "judge-1.4+shared-1.1",
-  "model_id": "gemini-2.5-pro",
-  "recorded_at": "2026-10-09T12:01:31+00:00",
+  "model_id": "gemini-3.1-pro-preview",
+  "recorded_at": "2026-10-16T20:03:56+00:00",
   "outputs": [
     {
       "verdicts": [
@@ -9,32 +9,27 @@
           "claim_id": "c1",
           "label": "SCAM",
           "confidence": 100,
-          "what_is_true_en": "The Government of India has not announced any scheme to provide free mobile recharges. Messages claiming this are fake and are often part of phishing scams designed to defraud people.",
+          "what_is_true_en": "The Government of India is not offering 3 months of free mobile recharge. The viral messages contain phishing links designed to steal personal data.",
           "event_date": null,
           "evidence_for_ids": [],
           "evidence_against_ids": [
+            "fc-1",
             "fc-2",
             "fc-3",
             "fc-4",
             "fc-5",
             "fc-6",
-            "fc-7",
-            "fc-8",
-            "fc-9",
-            "fc-10",
-            "fc-11",
-            "ws-1",
-            "ws-6"
+            "ws-2",
+            "ws-3",
+            "ws-4"
           ],
           "cited_ids": [
-            "ws-1",
-            "ws-6",
-            "fc-2",
+            "fc-1",
             "fc-4",
-            "fc-10",
-            "fc-11"
+            "fc-5",
+            "ws-4"
           ],
-          "reasoning_en": "Numerous TIER_1 fact-checking organizations and the Indian government's Press Information Bureau (PIB) have repeatedly debunked this claim. Evidence shows that messages promoting a free 3-month recharge from the Prime Minister are part of recurring phishing scams. These scams use fake links to defraud users. No such official scheme exists.",
+          "reasoning_en": "Multiple fact-checking organisations and news outlets have repeatedly debunked the claim that Prime Minister Modi is offering 3 months of free mobile recharge. The government has not announced any such scheme, and the links circulating with these messages are fraudulent phishing scams designed to steal users' personal data.",
           "ai_generation": null
         }
       ]

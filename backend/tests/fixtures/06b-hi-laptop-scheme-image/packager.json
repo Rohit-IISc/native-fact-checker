@@ -1,63 +1,63 @@
 {
   "prompt_version": "packager-1.1+shared-1.1",
-  "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-09T12:02:58+00:00",
+  "model_id": "gemini-3.8-flash",
+  "recorded_at": "2026-10-16T20:04:29+00:00",
   "outputs": [
     {
       "briefs": [
         {
           "claim_id": "c1",
-          "claim_en": "The 'Prime Minister Free Laptop Scheme 2026' is providing free laptops to all students from the government.",
+          "claim_en": "Under the Prime Minister Free Laptop Scheme 2026, the government is providing free laptops to all students.",
           "claim_type": null,
           "claimed_date": null,
           "place": "India",
-          "brief_en": "Multiple sources, including PIB Fact Check (Livemint, 2026-09-21) and Careerindia.com (2026-09-13), state that the 'Prime Minister Free Laptop Scheme 2026' is a scam and no such program has been announced by the Government of India. Fact-checking organizations like Vishvas News (2025-02-18, 2023-02-28, 2024-05-08, 2023-08-30, 2024-12-23, 2020-09-29) and Alt News (2019-06-04) have repeatedly debunked similar claims about free laptop schemes from the central government, identifying them as fake or phishing attempts. While some Indian states like Goa (myscheme.gov.in, 2026-09-18), Tamil Nadu, and Uttar Pradesh (Buddy4study.com, 2026-08-25) have their own laptop schemes, a nationwide central government scheme as described does not exist.",
+          "brief_en": "Official government bodies and news reports state that the Government of India does not operate any scheme providing free laptops to students. The All India Council for Technical Education (AICTE) issued an advisory on 2024-04-29 stating that claims of a 'Pradhanmantri Free Laptop Scheme' are fake. Fact-check organisations, including Vishvas News (2023-02-28, 2025-02-18) and DigitEye India (2024-01-11), documented similar recurring claims as false phishing schemes. Livemint reported on 2026-09-21 that the Press Information Bureau (PIB) Fact Check confirmed no such initiative has been announced, corroborating earlier reports by Hindustan Times on 2026-06-04 and ABP Live on 2026-08-11. Alt News previously noted related scam sites in 2019.",
           "evidence_ids": [
-            "ws-1",
-            "fc-5",
+            "ws-4",
             "fc-2",
-            "fc-3",
-            "fc-7",
-            "fc-8",
-            "fc-9",
-            "ws-2",
-            "fc-1",
             "fc-4",
-            "fc-6",
-            "ws-4"
+            "fc-1",
+            "ws-1",
+            "ws-9",
+            "fc-5",
+            "ws-6"
           ],
-          "gaps_en": []
+          "gaps_en": [
+            "No official government record or notification establishing a 2026 national free laptop scheme found."
+          ]
         },
         {
           "claim_id": "c2",
-          "claim_en": "The last date to apply for the scheme is October 15.",
+          "claim_en": "The last date to apply for the Prime Minister Free Laptop Scheme 2026 is October 15.",
           "claim_type": null,
-          "claimed_date": null,
+          "claimed_date": "2026-10-15",
           "place": null,
-          "brief_en": "Careerindia.com (2026-09-13) reports that scam messages about free laptop schemes often include urgent application deadlines to create panic. While the Government of Goa's \"Laptop Scheme for Meritorious Students of SC/ST\" (myscheme.gov.in) announces its application dates annually, and the Asianet Laptop Scheme in Kerala (asianet.co.in) has a submission deadline of March 31, 2027, there is no evidence to support an October 15 deadline for a central government 'Prime Minister Free Laptop Scheme 2026'.",
+          "brief_en": "Available reporting indicates that deadlines associated with the purported laptop scheme are fabricated. Livemint reported on 2026-09-21 that PIB clarified that the central government has not invited applications under any free laptop scheme, debunking circulated application details. Additionally, ABP Live reported on 2026-08-11 that PIB Fact Check cautioned the public regarding fraudulent application deadlines circulating in viral social media messages. There is no verified announcement or official schedule indicating an October 15 deadline for any such central government scheme.",
           "evidence_ids": [
-            "ws-11",
-            "ws-7",
-            "ws-10"
+            "ws-2",
+            "ws-7"
           ],
           "gaps_en": [
-            "No official statement or announcement confirms an October 15 application deadline for a 'Prime Minister Free Laptop Scheme 2026'."
+            "No official notification or public schedule regarding application dates found."
           ]
         },
         {
           "claim_id": "c3",
-          "claim_en": "Users must click on the link www.pm-free-laptop-yojana.in to register their name for the scheme.",
+          "claim_en": "Users should click on the link www.pm-free-laptop-yojana.in to register for the scheme.",
           "claim_type": null,
           "claimed_date": null,
           "place": null,
-          "brief_en": "The Press Information Bureau (PIB) has debunked claims about a \"PM Free Laptop Scheme,\" confirming them as scams designed to collect personal information (Livemint, 2026-09-21). Careerindia.com (2026-09-13) states that scam forwards for free laptop schemes often use non-government URLs and advises checking for .gov.in domains for authentic notices. Buddy4study.com (2026-08-25) adds that official government schemes do not involve direct student applications through such links; instead, colleges identify eligible students and upload their data to official systems. The website www.pm-free-laptop-yojana.in is not an official government domain.",
+          "brief_en": "Government authorities and fact-checking organisations indicate that online registration links for a central free laptop initiative are fraudulent. AICTE warned on 2024-04-29 against deceptive registration portals circulating online. Vishvas News reported on 2023-08-30 that viral links claiming to register applicants are fraudulent clickbait. Livemint (2026-09-21) and Hindustan Times (2026-06-04) reported that PIB Fact Check identified circulating links as phishing scams designed to harvest personal and banking data. ABP Live on 2026-08-11 also reported official warnings that using these links poses risks of financial loss.",
           "evidence_ids": [
-            "ws-14",
-            "ws-12",
-            "ws-13",
-            "ws-15"
+            "ws-5",
+            "fc-3",
+            "ws-3",
+            "ws-10",
+            "ws-8"
           ],
-          "gaps_en": []
+          "gaps_en": [
+            "No official government domain registration or authentic portal found for this initiative."
+          ]
         }
       ]
     }

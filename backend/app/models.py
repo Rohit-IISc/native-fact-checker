@@ -289,6 +289,12 @@ class AnswerText(BaseModel):
     panel_readings: list[str] = Field(
         default_factory=list,
         description="Only when the reviewers disagreed: one short plain-words item per reading, else empty")
+    ai_signals_ai: list[str] = Field(
+        default_factory=list,
+        description="Only when ai_generation exists: each of its signals_ai, written in the answer language")
+    ai_signals_real: list[str] = Field(
+        default_factory=list,
+        description="Only when ai_generation exists: each of its signals_real, written in the answer language")
 
 
 class ComposerOutput(BaseModel):

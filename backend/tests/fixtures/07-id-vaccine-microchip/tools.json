@@ -37,7 +37,6 @@
    "language": "en"
   }
  ],
- "factcheck_search:[\"Vaksin microchip pelacak\", \"id\"]": [],
  "factcheck_search:[\"Vaksin COVID-19 microchip\", \"id\"]": [
   {
    "claim_text": "Vaksin Covid-19 mengandung microchip yang bisa menyalakan lampu",
@@ -49,6 +48,18 @@
    "rating": "Keliru",
    "review_date": "2021-06-22T00:00:00Z",
    "title": "Keliru, Vaksin Covid-19 Mengandung Microchip yang Bisa ...",
+   "language": "en"
+  },
+  {
+   "claim_text": "Vaksin Covid-19 buatan Pfizer mengandung chip sehingga magnet menempel di lengan yang disuntik",
+   "claimant": "Akun Instagram",
+   "claim_date": "2021-05-10T00:00:00Z",
+   "url": "https://www.tempo.co/cekfakta/keliru-klaim-vaksin-pfizer-mengandung-chip-sehingga-magnet-menempel-di-lengan-yang-disuntik-357397",
+   "publisher": "Tempo.co",
+   "publisher_site": "tempo.co",
+   "rating": "Keliru",
+   "review_date": "2021-05-22T00:00:00Z",
+   "title": "Keliru, Klaim Vaksin Pfizer Mengandung Chip sehingga Magnet ...",
    "language": "en"
   },
   {
@@ -124,7 +135,7 @@
    "language": "en"
   }
  ],
- "factcheck_search:[\"COVID-19 vaccine microchip tracking\", \"\"]": [
+ "factcheck_search:[\"COVID-19 vaccine microchip tracking\", \"en\"]": [
   {
    "claim_text": "COVID-19 vaccines have a microchip that \"tracks the location of the patient.\"",
    "claimant": "Viral video",
@@ -162,6 +173,18 @@
    "language": "en"
   },
   {
+   "claim_text": "Bill Gates’ “ultimate goal” is to microchip COVID-19 vaccine in order to create virtual IDs",
+   "claimant": "Multiple sources",
+   "claim_date": "2020-05-30T00:00:00Z",
+   "url": "https://factcheck.afp.com/hoax-about-bill-gates-plan-microchip-vaccine-circulates-online",
+   "publisher": "AFP Fact Check",
+   "publisher_site": "factcheck.afp.com",
+   "rating": "1",
+   "review_date": "2020-06-25T10:25:00Z",
+   "title": "Hoax about Bill Gates' plan to 'microchip the vaccine' circulates online",
+   "language": "en"
+  },
+  {
    "claim_text": "“Another Conspiracy Proven True!” referring to 2018 remarks by Pfizer CEO and claims about microchips in COVID-19 vaccines.",
    "claimant": "Jimmy Dore Show",
    "claim_date": "2022-05-21T00:00:00Z",
@@ -171,6 +194,191 @@
    "rating": "False",
    "review_date": null,
    "title": "FDA-Approved ‘Electronic Pill’ Isn't Evidence That COVID-19 ...",
+   "language": "en"
+  },
+  {
+   "claim_text": "A patent held by Moderna proves its COVID mRNA vaccine contains “programmable” nanotechnology that can interact with 5G communications technology.",
+   "claimant": "social media users",
+   "claim_date": "2023-07-27T20:26:40Z",
+   "url": "https://apnews.com/article/fact-check-COVID-mRNA-vaccine-nanotech-390958734912",
+   "publisher": "AP News",
+   "publisher_site": "apnews.com",
+   "rating": "False",
+   "review_date": null,
+   "title": "No, COVID vaccines don't contain nanotechnology that can be ...",
+   "language": "en"
+  },
+  {
+   "claim_text": "Video of microchip found in Pfizer vaccine",
+   "claimant": "Multiple resources",
+   "claim_date": "2021-05-21T00:00:00Z",
+   "url": "https://factcheck.afp.com/doc.afp.com.9EG2NX",
+   "publisher": "AFP Fact Check",
+   "publisher_site": "factcheck.afp.com",
+   "rating": "Missing context",
+   "review_date": "2021-07-14T12:07:00Z",
+   "title": "Hoax posts about microchips in Pfizer-BioNTech Covid-19 vaccine ...",
+   "language": "en"
+  },
+  {
+   "claim_text": "\"Bill Gates will use microchip implants to fight coronavirus.\"",
+   "claimant": "Conspiracy theory",
+   "claim_date": "2020-03-19T00:00:00Z",
+   "url": "https://www.factcheck.org/2020/04/conspiracy-theory-misinterprets-goals-of-gates-foundation/",
+   "publisher": "FactCheck.org",
+   "publisher_site": "factcheck.org",
+   "rating": "False",
+   "review_date": null,
+   "title": "Conspiracy Theory Misinterprets Goals of Gates Foundation",
+   "language": "en"
+  }
+ ],
+ "factcheck_search:[\"COVID-19 vaccine microchip tracking\", \"\"]": [
+  {
+   "claim_text": "COVID-19 vaccines have a microchip that \"tracks the location of the patient.\"",
+   "claimant": "Viral video",
+   "claim_date": "2020-12-09T00:00:00Z",
+   "url": "https://www.factcheck.org/2020/12/covid-19-vaccines-dont-have-patient-tracking-devices/",
+   "publisher": "FactCheck.org",
+   "publisher_site": "factcheck.org",
+   "rating": "False",
+   "review_date": null,
+   "title": "COVID-19 Vaccines Don't Have Patient-Tracking Devices",
+   "language": "en"
+  },
+  {
+   "claim_text": "\"A new report from '60 Minutes' includes an interview with a scientist from the Pentagon who says that there is now a COVID microchip.\"",
+   "claimant": "Ben Swann",
+   "claim_date": "2021-04-13T00:00:00Z",
+   "url": "https://www.factcheck.org/2021/08/scicheck-health-sensors-misconstrued-as-government-tracking-microchips/",
+   "publisher": "FactCheck.org",
+   "publisher_site": "factcheck.org",
+   "rating": "False",
+   "review_date": null,
+   "title": "Health Sensors Misconstrued as Government Tracking 'Microchips'",
+   "language": "en"
+  },
+  {
+   "claim_text": "“Another Conspiracy Proven True!” referring to 2018 remarks by Pfizer CEO and claims about microchips in COVID-19 vaccines.",
+   "claimant": "Jimmy Dore Show",
+   "claim_date": "2022-05-21T00:00:00Z",
+   "url": "https://www.factcheck.org/2022/05/scicheck-pfizer-ceo-not-referencing-covid-19-vaccines-contrary-to-false-impression-in-posts-about-microchips/",
+   "publisher": "FactCheck.org",
+   "publisher_site": "factcheck.org",
+   "rating": "False",
+   "review_date": null,
+   "title": "FDA-Approved ‘Electronic Pill’ Isn't Evidence That COVID-19 ...",
+   "language": "en"
+  },
+  {
+   "claim_text": "A patent held by Moderna proves its COVID mRNA vaccine contains “programmable” nanotechnology that can interact with 5G communications technology.",
+   "claimant": "social media users",
+   "claim_date": "2023-07-27T20:26:40Z",
+   "url": "https://apnews.com/article/fact-check-COVID-mRNA-vaccine-nanotech-390958734912",
+   "publisher": "AP News",
+   "publisher_site": "apnews.com",
+   "rating": "False",
+   "review_date": null,
+   "title": "No, COVID vaccines don't contain nanotechnology that can be ...",
+   "language": "en"
+  },
+  {
+   "claim_text": "Videos of magnets sticking to arms prove that the COVID-19 vaccines contain microchips.",
+   "claimant": "Social media posts",
+   "claim_date": "2021-05-12T00:00:00Z",
+   "url": "https://www.factcheck.org/2021/05/scicheck-magnet-videos-refuel-bogus-claim-of-vaccine-microchips/",
+   "publisher": "FactCheck.org",
+   "publisher_site": "factcheck.org",
+   "rating": "False",
+   "review_date": null,
+   "title": "Magnet Videos Refuel Bogus Claim of Vaccine Microchips",
+   "language": "en"
+  },
+  {
+   "claim_text": "Bill Gates’ “ultimate goal” is to microchip COVID-19 vaccine in order to create virtual IDs",
+   "claimant": "Multiple sources",
+   "claim_date": "2020-05-30T00:00:00Z",
+   "url": "https://factcheck.afp.com/hoax-about-bill-gates-plan-microchip-vaccine-circulates-online",
+   "publisher": "AFP Fact Check",
+   "publisher_site": "factcheck.afp.com",
+   "rating": "1",
+   "review_date": "2020-06-25T10:25:00Z",
+   "title": "Hoax about Bill Gates' plan to 'microchip the vaccine' circulates online",
+   "language": "en"
+  },
+  {
+   "claim_text": "Video of microchip found in Pfizer vaccine",
+   "claimant": "Multiple resources",
+   "claim_date": "2021-05-21T00:00:00Z",
+   "url": "https://factcheck.afp.com/doc.afp.com.9EG2NX",
+   "publisher": "AFP Fact Check",
+   "publisher_site": "factcheck.afp.com",
+   "rating": "Missing context",
+   "review_date": "2021-07-14T12:07:00Z",
+   "title": "Hoax posts about microchips in Pfizer-BioNTech Covid-19 vaccine ...",
+   "language": "en"
+  },
+  {
+   "claim_text": "\"Bill Gates will use microchip implants to fight coronavirus.\"",
+   "claimant": "Conspiracy theory",
+   "claim_date": "2020-03-19T00:00:00Z",
+   "url": "https://www.factcheck.org/2020/04/conspiracy-theory-misinterprets-goals-of-gates-foundation/",
+   "publisher": "FactCheck.org",
+   "publisher_site": "factcheck.org",
+   "rating": "False",
+   "review_date": null,
+   "title": "Conspiracy Theory Misinterprets Goals of Gates Foundation",
+   "language": "en"
+  }
+ ],
+ "factcheck_search:[\"Vaksin COVID-19 lacak orang\", \"id\"]": [],
+ "factcheck_search:[\"vaccine microchip conspiracy theory\", \"en\"]": [
+  {
+   "claim_text": "\"A new report from '60 Minutes' includes an interview with a scientist from the Pentagon who says that there is now a COVID microchip.\"",
+   "claimant": "Ben Swann",
+   "claim_date": "2021-04-13T00:00:00Z",
+   "url": "https://www.factcheck.org/2021/08/scicheck-health-sensors-misconstrued-as-government-tracking-microchips/",
+   "publisher": "FactCheck.org",
+   "publisher_site": "factcheck.org",
+   "rating": "False",
+   "review_date": null,
+   "title": "Health Sensors Misconstrued as Government Tracking 'Microchips'",
+   "language": "en"
+  },
+  {
+   "claim_text": "“Another Conspiracy Proven True!” referring to 2018 remarks by Pfizer CEO and claims about microchips in COVID-19 vaccines.",
+   "claimant": "Jimmy Dore Show",
+   "claim_date": "2022-05-21T00:00:00Z",
+   "url": "https://www.factcheck.org/2022/05/scicheck-pfizer-ceo-not-referencing-covid-19-vaccines-contrary-to-false-impression-in-posts-about-microchips/",
+   "publisher": "FactCheck.org",
+   "publisher_site": "factcheck.org",
+   "rating": "False",
+   "review_date": null,
+   "title": "FDA-Approved ‘Electronic Pill’ Isn't Evidence That COVID-19 ...",
+   "language": "en"
+  },
+  {
+   "claim_text": "Videos of magnets sticking to arms prove that the COVID-19 vaccines contain microchips.",
+   "claimant": "Social media posts",
+   "claim_date": "2021-05-12T00:00:00Z",
+   "url": "https://www.factcheck.org/2021/05/scicheck-magnet-videos-refuel-bogus-claim-of-vaccine-microchips/",
+   "publisher": "FactCheck.org",
+   "publisher_site": "factcheck.org",
+   "rating": "False",
+   "review_date": null,
+   "title": "Magnet Videos Refuel Bogus Claim of Vaccine Microchips",
+   "language": "en"
+  },
+  {
+   "claim_text": "COVID-19 vaccines have a microchip that \"tracks the location of the patient.\"",
+   "claimant": "Viral video",
+   "claim_date": "2020-12-09T00:00:00Z",
+   "url": "https://www.factcheck.org/2020/12/covid-19-vaccines-dont-have-patient-tracking-devices/",
+   "publisher": "FactCheck.org",
+   "publisher_site": "factcheck.org",
+   "rating": "False",
+   "review_date": null,
+   "title": "COVID-19 Vaccines Don't Have Patient-Tracking Devices",
    "language": "en"
   },
   {
@@ -198,127 +406,28 @@
    "language": "en"
   },
   {
-   "claim_text": "Bill Gates’ “ultimate goal” is to microchip COVID-19 vaccine in order to create virtual IDs",
+   "claim_text": "5G mobile phones will involve implanting microchips under the skin during COVID-19 vaccination",
    "claimant": "Multiple sources",
-   "claim_date": "2020-05-30T00:00:00Z",
-   "url": "https://factcheck.afp.com/hoax-about-bill-gates-plan-microchip-vaccine-circulates-online",
+   "claim_date": "2020-05-19T00:00:00Z",
+   "url": "https://factcheck.afp.com/experts-reject-conspiracy-theories-about-5g-microchip-implants",
    "publisher": "AFP Fact Check",
    "publisher_site": "factcheck.afp.com",
    "rating": "1",
-   "review_date": "2020-06-25T10:25:00Z",
-   "title": "Hoax about Bill Gates' plan to 'microchip the vaccine' circulates online",
+   "review_date": "2020-06-01T12:16:00Z",
+   "title": "Experts reject conspiracy theories about '5G microchip implants'",
    "language": "en"
   },
   {
-   "claim_text": "Video of microchip found in Pfizer vaccine",
-   "claimant": "Multiple resources",
-   "claim_date": "2021-05-21T00:00:00Z",
-   "url": "https://factcheck.afp.com/doc.afp.com.9EG2NX",
-   "publisher": "AFP Fact Check",
-   "publisher_site": "factcheck.afp.com",
-   "rating": "Missing context",
-   "review_date": "2021-07-14T12:07:00Z",
-   "title": "Hoax posts about microchips in Pfizer-BioNTech Covid-19 vaccine ...",
+   "claim_text": "New microchip technology could fit inside a vaccine needle",
+   "claimant": "Social media users",
+   "claim_date": "2021-05-17T00:00:00Z",
+   "url": "https://www.usatoday.com/story/news/factcheck/2021/05/26/fact-check-missing-context-posts-new-microchip-development/5232378001/",
+   "publisher": "USA Today",
+   "publisher_site": "usatoday.com",
+   "rating": "Missing Context",
+   "review_date": "2021-05-26T23:50:28Z",
+   "title": "Fact check: Missing context posts on a new microchip development",
    "language": "en"
   }
- ],
- "factcheck_search:[\"COVID-19 vaccine microchip tracking\", \"en\"]": [
-  {
-   "claim_text": "COVID-19 vaccines have a microchip that \"tracks the location of the patient.\"",
-   "claimant": "Viral video",
-   "claim_date": "2020-12-09T00:00:00Z",
-   "url": "https://www.factcheck.org/2020/12/covid-19-vaccines-dont-have-patient-tracking-devices/",
-   "publisher": "FactCheck.org",
-   "publisher_site": "factcheck.org",
-   "rating": "False",
-   "review_date": null,
-   "title": "COVID-19 Vaccines Don't Have Patient-Tracking Devices",
-   "language": "en"
-  },
-  {
-   "claim_text": "\"A new report from '60 Minutes' includes an interview with a scientist from the Pentagon who says that there is now a COVID microchip.\"",
-   "claimant": "Ben Swann",
-   "claim_date": "2021-04-13T00:00:00Z",
-   "url": "https://www.factcheck.org/2021/08/scicheck-health-sensors-misconstrued-as-government-tracking-microchips/",
-   "publisher": "FactCheck.org",
-   "publisher_site": "factcheck.org",
-   "rating": "False",
-   "review_date": null,
-   "title": "Health Sensors Misconstrued as Government Tracking 'Microchips'",
-   "language": "en"
-  },
-  {
-   "claim_text": "“Another Conspiracy Proven True!” referring to 2018 remarks by Pfizer CEO and claims about microchips in COVID-19 vaccines.",
-   "claimant": "Jimmy Dore Show",
-   "claim_date": "2022-05-21T00:00:00Z",
-   "url": "https://www.factcheck.org/2022/05/scicheck-pfizer-ceo-not-referencing-covid-19-vaccines-contrary-to-false-impression-in-posts-about-microchips/",
-   "publisher": "FactCheck.org",
-   "publisher_site": "factcheck.org",
-   "rating": "False",
-   "review_date": null,
-   "title": "FDA-Approved ‘Electronic Pill’ Isn't Evidence That COVID-19 ...",
-   "language": "en"
-  },
-  {
-   "claim_text": "Videos of magnets sticking to arms prove that the COVID-19 vaccines contain microchips.",
-   "claimant": "Social media posts",
-   "claim_date": "2021-05-12T00:00:00Z",
-   "url": "https://www.factcheck.org/2021/05/scicheck-magnet-videos-refuel-bogus-claim-of-vaccine-microchips/",
-   "publisher": "FactCheck.org",
-   "publisher_site": "factcheck.org",
-   "rating": "False",
-   "review_date": null,
-   "title": "Magnet Videos Refuel Bogus Claim of Vaccine Microchips",
-   "language": "en"
-  },
-  {
-   "claim_text": "Bill Gates’ “ultimate goal” is to microchip COVID-19 vaccine in order to create virtual IDs",
-   "claimant": "Multiple sources",
-   "claim_date": "2020-05-30T00:00:00Z",
-   "url": "https://factcheck.afp.com/hoax-about-bill-gates-plan-microchip-vaccine-circulates-online",
-   "publisher": "AFP Fact Check",
-   "publisher_site": "factcheck.afp.com",
-   "rating": "1",
-   "review_date": "2020-06-25T10:25:00Z",
-   "title": "Hoax about Bill Gates' plan to 'microchip the vaccine' circulates online",
-   "language": "en"
-  },
-  {
-   "claim_text": "Video of microchip found in Pfizer vaccine",
-   "claimant": "Multiple resources",
-   "claim_date": "2021-05-21T00:00:00Z",
-   "url": "https://factcheck.afp.com/doc.afp.com.9EG2NX",
-   "publisher": "AFP Fact Check",
-   "publisher_site": "factcheck.afp.com",
-   "rating": "Missing context",
-   "review_date": "2021-07-14T12:07:00Z",
-   "title": "Hoax posts about microchips in Pfizer-BioNTech Covid-19 vaccine ...",
-   "language": "en"
-  },
-  {
-   "claim_text": "Magnets can stick to your arm after a Covid-19 jab because they contain a microchip or other metals.",
-   "claimant": null,
-   "claim_date": null,
-   "url": "https://fullfact.org/online/covid-vaccine-magnet/",
-   "publisher": "Full Fact",
-   "publisher_site": "fullfact.org",
-   "rating": "This is false. The vaccines do not contain a microchip and there is nothing in a vaccine that could cause a magnet to stick to your skin after getting it.",
-   "review_date": "2021-05-14T00:00:00Z",
-   "title": "Covid-19 vaccines do not make you magnetic – Full Fact",
-   "language": "en"
-  },
-  {
-   "claim_text": "A microchip reader for pets detected a chip in the arm of a woman vaccinated against COVID-19.",
-   "claimant": "Viral video",
-   "claim_date": "2021-06-15T00:00:00Z",
-   "url": "https://www.factcheck.org/2021/07/scicheck-spoof-video-furthers-microchip-conspiracy-theory/",
-   "publisher": "FactCheck.org",
-   "publisher_site": "factcheck.org",
-   "rating": "False",
-   "review_date": null,
-   "title": "Spoof Video Furthers Microchip Conspiracy Theory",
-   "language": "en"
-  }
- ],
- "factcheck_search:[\"vaccine microchip conspiracy\", \"en\"]": []
+ ]
 }

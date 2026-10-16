@@ -1,121 +1,155 @@
 {
-  "prompt_version": "composer-1.3+shared-1.1",
-  "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-09T12:02:58+00:00",
+  "prompt_version": "composer-1.4+shared-1.1",
+  "model_id": "gemini-3.8-flash",
+  "recorded_at": "2026-10-16T20:04:29+00:00",
   "outputs": [
     {
       "language": "hi-IN",
-      "headline": "पुष्टि नहीं हुई: प्रधानमंत्री मुफ्त लैपटॉप योजना 2026 की जानकारी अधूरी है",
-      "summary": "हमें इस बात की पुष्टि करने के लिए पर्याप्त जानकारी नहीं मिली कि सरकार 'प्रधानमंत्री मुफ्त लैपटॉप योजना 2026' के तहत सभी छात्रों को मुफ्त लैपटॉप दे रही है।",
-      "what_post_claims": "पोस्ट में दावा किया गया है कि 'प्रधानमंत्री मुफ्त लैपटॉप योजना 2026' के तहत सरकार सभी छात्रों को मुफ्त लैपटॉप दे रही है।",
-      "what_is_true": "हम सबूतों की समीक्षा पूरी नहीं कर पाए।",
+      "headline": "प्रधानमंत्री मुफ्त लैपटॉप योजना 2026 एक धोखाधड़ी है",
+      "summary": "यह दावा कि सरकार 'प्रधानमंत्री मुफ्त लैपटॉप योजना 2026' के तहत सभी छात्रों को मुफ्त लैपटॉप दे रही है, एक धोखाधड़ी है।",
+      "what_post_claims": "पोस्ट का दावा है कि 'प्रधानमंत्री मुफ्त लैपटॉप योजना 2026' के तहत सरकार सभी छात्रों को मुफ्त लैपटॉप दे रही है।",
+      "what_is_true": "भारत सरकार ने ऐसी कोई 'प्रधानमंत्री मुफ्त लैपटॉप योजना' शुरू नहीं की है। आधिकारिक निकायों और तथ्य-जांचकर्ताओं ने बार-बार पुष्टि की है कि यह एक फ़िशिंग घोटाला है।",
       "evidence_for": [],
-      "evidence_against": [],
-      "confidence_phrase": "हम निश्चित नहीं हैं",
-      "sources_spoken": "हमें कोई विश्वसनीय स्रोत नहीं मिला",
-      "audio_script": "पोस्ट में दावा किया गया है कि 'प्रधानमंत्री मुफ्त लैपटॉप योजना 2026' के तहत सरकार सभी छात्रों को मुफ्त लैपटॉप दे रही है। इस दावे की पुष्टि नहीं हुई है। हमें इस बात की पुष्टि करने के लिए पर्याप्त जानकारी नहीं मिली कि सरकार ऐसी कोई योजना चला रही है। हम निश्चित नहीं हैं कि यह दावा सही है या नहीं। हमें कोई विश्वसनीय स्रोत नहीं मिला जो इस योजना की पुष्टि करता हो।",
-      "card_lines": [
-        "पुष्टि नहीं हुई",
-        "मुफ्त लैपटॉप योजना 2026 का दावा",
-        "हमें इसकी पुष्टि नहीं मिली",
-        "आगे भेजने से पहले जांच लें"
+      "evidence_against": [
+        "ऑल इंडिया काउंसिल फॉर टेक्निकल एजुकेशन (AICTE) ने चेतावनी दी है कि 'प्रधानमंत्री मुफ्त लैपटॉप योजना' के दावे फर्जी हैं।",
+        "विश्वास न्यूज ने पुष्टि की है कि मुफ्त लैपटॉप योजना के लिंक फ़िशिंग घोटाले हैं और ऐसी कोई योजना मौजूद नहीं है।",
+        "PIB फैक्ट चेक ने बताया है कि भारत सरकार ने छात्रों के लिए ऐसी कोई मुफ्त लैपटॉप योजना घोषित नहीं की है।"
       ],
-      "panel_readings": []
+      "confidence_phrase": "हम बहुत सुनिश्चित हैं",
+      "sources_spoken": "ऑल इंडिया काउंसिल फॉर टेक्निकल एजुकेशन (AICTE) और विश्वास न्यूज के अनुसार",
+      "audio_script": "एक पोस्ट में दावा किया जा रहा है कि सरकार 'प्रधानमंत्री मुफ्त लैपटॉप योजना 2026' के तहत सभी छात्रों को मुफ्त लैपटॉप दे रही है। यह दावा एक धोखाधड़ी है। असल में, भारत सरकार ने ऐसी कोई 'प्रधानमंत्री मुफ्त लैपटॉप योजना' शुरू नहीं की है। आधिकारिक निकायों और तथ्य-जांचकर्ताओं ने बार-बार पुष्टि की है कि यह एक फ़िशिंग घोटाला है। हम बहुत सुनिश्चित हैं कि यह दावा गलत है। यह जानकारी ऑल इंडिया काउंसिल फॉर टेक्निकल एजुकेशन और विश्वास न्यूज जैसे विश्वसनीय स्रोतों से मिली है।",
+      "card_lines": [
+        "धोखाधड़ी: मुफ्त लैपटॉप योजना",
+        "सरकार मुफ्त लैपटॉप दे रही है",
+        "यह एक फ़िशिंग घोटाला है",
+        "AICTE और विश्वास न्यूज"
+      ],
+      "panel_readings": [],
+      "ai_signals_ai": [],
+      "ai_signals_real": []
     },
     {
       "language": "en",
-      "headline": "Not confirmed: Prime Minister Free Laptop Scheme 2026",
-      "summary": "We could not confirm if the 'Prime Minister Free Laptop Scheme 2026' is providing free laptops to all students from the government.",
-      "what_post_claims": "The post claims that the 'Prime Minister Free Laptop Scheme 2026' is providing free laptops to all students from the government.",
-      "what_is_true": "We could not complete the review of the evidence to confirm or deny this claim.",
+      "headline": "Scam: The government is not giving free laptops to students",
+      "summary": "Messages promising free laptops under a Prime Minister Free Laptop Scheme are an online scam aimed at stealing personal information.",
+      "what_post_claims": "The post claims that the Indian government is distributing free laptops to all students under the Prime Minister Free Laptop Scheme 2026.",
+      "what_is_true": "The government has not launched any such scheme, and official agencies confirm these links are fraudulent phishing scams.",
       "evidence_for": [],
-      "evidence_against": [],
-      "confidence_phrase": "we are not sure",
-      "sources_spoken": "our research",
-      "audio_script": "The post claims that the 'Prime Minister Free Laptop Scheme 2026' is providing free laptops to all students from the government. However, this claim is not confirmed. We could not complete the review of the evidence to confirm or deny this claim. We are not sure about this information. Our research could not find sufficient evidence to support or refute the claim. Therefore, we advise caution before sharing this post.",
-      "card_lines": [
-        "Not confirmed",
-        "PM Free Laptop Scheme 2026",
-        "We could not confirm this scheme.",
-        "Do not share until confirmed."
+      "evidence_against": [
+        "The All India Council for Technical Education issued a public warning stating that no central free laptop scheme exists.",
+        "PIB Fact Check confirmed that the central government runs no such scheme and warned against fake links.",
+        "Fact-checkers at Vishvas News found the viral registration links are phishing websites designed to trap users."
       ],
-      "panel_readings": []
+      "confidence_phrase": "we are very sure",
+      "sources_spoken": "according to the All India Council for Technical Education and the Press Information Bureau",
+      "audio_script": "A viral message claims that the Indian government is giving free laptops to all students under a Prime Minister Free Laptop Scheme. This is a scam. The central government does not run any such scheme, and official bodies have repeatedly warned that these viral messages and registration websites are phishing scams designed to steal personal data. We are very sure about this, according to official notices from the All India Council for Technical Education and the Press Information Bureau. Please do not click these links or share your details.",
+      "card_lines": [
+        "Scam: Free laptop scheme",
+        "Claim: Government giving free laptops to students",
+        "Reality: No such scheme exists; links are phishing fraud",
+        "Source: AICTE and PIB Fact Check"
+      ],
+      "panel_readings": [],
+      "ai_signals_ai": [],
+      "ai_signals_real": []
     },
     {
       "language": "hi-IN",
-      "headline": "पुष्टि नहीं हुई: आवेदन की अंतिम तिथि 15 अक्टूबर है",
-      "summary": "हम इस दावे की पुष्टि नहीं कर पाए कि आवेदन की अंतिम तिथि 15 अक्टूबर है।",
-      "what_post_claims": "पोस्ट का दावा है कि किसी योजना के लिए आवेदन करने की अंतिम तिथि 15 अक्टूबर है।",
-      "what_is_true": "हम इस दावे की समीक्षा पूरी नहीं कर पाए।",
+      "headline": "पुष्टि नहीं हुई: मुफ्त लैपटॉप योजना के आवेदन की तारीख",
+      "summary": "वायरल संदेश में पंद्रह अक्टूबर तक मुफ्त लैपटॉप के लिए आवेदन करने का दावा किया गया है, लेकिन इसकी पुष्टि नहीं हो सकी है।",
+      "what_post_claims": "सोशल मीडिया पर दावा किया जा रहा है कि प्रधानमंत्री मुफ्त लैपटॉप योजना के तहत आवेदन करने की अंतिम तिथि पंद्रह अक्टूबर है।",
+      "what_is_true": "सरकार की तरफ से ऐसी किसी आधिकारिक योजना या आवेदन की अंतिम तारीख की कोई पुष्टि नहीं हुई है, इसलिए इस संदेश को आगे न भेजें।",
       "evidence_for": [],
-      "evidence_against": [],
-      "confidence_phrase": "हम निश्चित नहीं हैं",
-      "sources_spoken": "हमारे पास कोई जानकारी नहीं है",
-      "audio_script": "पोस्ट में दावा किया गया है कि किसी योजना के लिए आवेदन करने की अंतिम तिथि 15 अक्टूबर है। इस दावे की पुष्टि नहीं हुई है। हम इस दावे की समीक्षा पूरी नहीं कर पाए। हम निश्चित नहीं हैं कि यह जानकारी सही है या नहीं। हमारे पास इस दावे की पुष्टि करने के लिए कोई स्रोत नहीं है।",
+      "evidence_against": [
+        "प्रेस इनफार्मेशन ब्यूरो और लाइवमिंट के अनुसार सरकार ने ऐसी किसी भी लैपटॉप योजना के लिए कोई आवेदन नहीं मांगे हैं।",
+        "एबीपी लाइव की रिपोर्ट के मुताबिक वायरल संदेशों में दी जा रही तारीखें और आवेदन के लिंक पूरी तरह संदिग्ध हैं।"
+      ],
+      "confidence_phrase": "हमें पूरा भरोसा नहीं है",
+      "sources_spoken": "प्रेस इनफार्मेशन ब्यूरो, लाइवमिंट और एबीपी लाइव के अनुसार",
+      "audio_script": "सोशल मीडिया पर दावा किया जा रहा है कि प्रधानमंत्री मुफ्त लैपटॉप योजना के लिए पंद्रह अक्टूबर तक आवेदन किया जा सकता है। इस दावे की पुष्टि नहीं हुई है। पड़ताल में सामने आया है कि सरकार ने ऐसी किसी योजना या उसकी आखिरी तारीख की कोई घोषणा नहीं की है। ऐसे में जब तक आधिकारिक पुष्टि न हो, इस संदेश को आगे साझा न करें। हमें इस जानकारी को लेकर पूरा भरोसा नहीं है। यह पड़ताल प्रेस इनफार्मेशन ब्यूरो, लाइवमिंट और एबीपी लाइव की खबरों पर आधारित है।",
       "card_lines": [
         "पुष्टि नहीं हुई",
-        "आवेदन की अंतिम तिथि 15 अक्टूबर",
-        "हम इसकी पुष्टि नहीं कर पाए",
-        "आगे भेजने से पहले पुष्टि करें"
+        "दावा: मुफ्त लैपटॉप के लिए 15 अक्टूबर तक आवेदन करें",
+        "सच्चाई: सरकार की ऐसी किसी योजना की पुष्टि नहीं हुई",
+        "स्रोत: प्रेस इनफार्मेशन ब्यूरो और मीडिया रिपोर्ट्स"
       ],
-      "panel_readings": []
+      "panel_readings": [],
+      "ai_signals_ai": [],
+      "ai_signals_real": []
     },
     {
       "language": "en",
-      "headline": "Not confirmed: Last date to apply is October 15",
-      "summary": "We could not confirm if October 15 is the last date to apply for the scheme mentioned in the post.",
-      "what_post_claims": "The post claims that October 15 is the last date to apply for a scheme.",
-      "what_is_true": "We could not confirm this claim. We found no evidence to support or deny it.",
+      "headline": "Not confirmed: October 15 deadline for Prime Minister laptop scheme",
+      "summary": "This claim is not confirmed, as government fact-checkers report no official free laptop scheme or deadline exists.",
+      "what_post_claims": "The post claims that the last date to apply for the Prime Minister Free Laptop Scheme is October 15.",
+      "what_is_true": "There is no official application deadline because the government has not announced any such free laptop scheme.",
       "evidence_for": [],
-      "evidence_against": [],
-      "confidence_phrase": "we are not sure",
-      "sources_spoken": "our review of the evidence",
-      "audio_script": "The post claims that October 15 is the last date to apply for a scheme. This claim is not confirmed. We could not find any evidence to support or deny this information. We are not sure about this claim. Based on our review of the evidence, we recommend not forwarding this post until it can be confirmed.",
-      "card_lines": [
-        "Not confirmed",
-        "Last date to apply is October 15",
-        "We could not confirm this",
-        "No evidence found"
+      "evidence_against": [
+        "Livemint reported that the Press Information Bureau clarified the government has not invited applications under any free laptop scheme.",
+        "ABP Live reported a warning from PIB Fact Check stating that viral deadlines for free laptops are fraudulent."
       ],
-      "panel_readings": []
+      "confidence_phrase": "we are not sure",
+      "sources_spoken": "according to Livemint and the Press Information Bureau",
+      "audio_script": "A viral post claims that October 15 is the last date to apply for the Prime Minister Free Laptop Scheme. This is not confirmed. Official reports indicate that the government does not run any such laptop scheme, meaning there is no genuine application deadline. We suggest not forwarding this message until official sources confirm it. We are not sure about the origin of this post, but reports from Livemint and the Press Information Bureau warn that such viral messages are not genuine government notices.",
+      "card_lines": [
+        "Verdict: Not confirmed",
+        "Claim: October 15 deadline for PM laptop scheme",
+        "Reality: No official laptop scheme exists",
+        "Source: Press Information Bureau and Livemint"
+      ],
+      "panel_readings": [],
+      "ai_signals_ai": [],
+      "ai_signals_real": []
     },
     {
       "language": "hi-IN",
-      "headline": "पुष्टि नहीं हुई: पीएम फ्री लैपटॉप योजना के लिए लिंक पर क्लिक करने का दावा",
-      "summary": "हम इस दावे की पुष्टि नहीं कर पाए कि पीएम फ्री लैपटॉप योजना के लिए एक लिंक पर क्लिक करके पंजीकरण करना होगा।",
-      "what_post_claims": "पोस्ट में दावा किया गया है कि उपयोगकर्ताओं को पीएम फ्री लैपटॉप योजना के लिए अपना नाम दर्ज करने के लिए दिए गए लिंक www.pm-free-laptop-yojana.in पर क्लिक करना होगा।",
-      "what_is_true": "हम इस दावे की समीक्षा पूरी नहीं कर पाए।",
+      "headline": "धोखाधड़ी: प्रधानमंत्री मुफ्त लैपटॉप योजना का यह लिंक पूरी तरह फर्जी है",
+      "summary": "यह लिंक एक धोखाधड़ी है और आपकी निजी जानकारी चुराने के मकसद से बनाया गया है।",
+      "what_post_claims": "सोशल मीडिया पर दावा किया जा रहा है कि दिए गए लिंक पर क्लिक करके छात्र मुफ्त लैपटॉप पाने के लिए अपना नाम दर्ज करवा सकते हैं।",
+      "what_is_true": "यह लिंक पूरी तरह फर्जी और धोखाधड़ी है, जिसे लोगों की निजी और बैंक से जुड़ी जानकारी चुराने के लिए बनाया गया है। सरकार ने ऐसी किसी योजना या वेबसाइट की पुष्टि नहीं की है और लोगों को इस पर क्लिक न करने की सलाह दी है।",
       "evidence_for": [],
-      "evidence_against": [],
-      "confidence_phrase": "हम निश्चित नहीं हैं",
-      "sources_spoken": "हमें कोई विश्वसनीय स्रोत नहीं मिला",
-      "audio_script": "पोस्ट में दावा किया गया है कि पीएम फ्री लैपटॉप योजना के लिए अपना नाम दर्ज करने के लिए एक लिंक पर क्लिक करना होगा। इस दावे की पुष्टि नहीं हुई है। हम इस दावे की समीक्षा पूरी नहीं कर पाए। हम निश्चित नहीं हैं कि यह दावा सही है या नहीं। हमें इस संबंध में कोई विश्वसनीय जानकारी नहीं मिली है।",
-      "card_lines": [
-        "पुष्टि नहीं हुई",
-        "पीएम फ्री लैपटॉप योजना के लिए लिंक पर क्लिक करने का दावा",
-        "हम इस दावे की पुष्टि नहीं कर पाए",
-        "आगे भेजने से पहले पुष्टि करें"
+      "evidence_against": [
+        "अखिल भारतीय तकनीकी शिक्षा परिषद (AICTE) ने सूचना जारी कर छात्रों को मुफ्त लैपटॉप के नाम पर चल रहे फर्जी पंजीकरण पोर्टल से दूर रहने की चेतावनी दी।",
+        "विश्वास न्यूज की पड़ताल में सामने आया कि मुफ्त लैपटॉप योजना के नाम पर वायरल हो रहा यह लिंक केवल लोगों को फंसाने वाला धोखाधड़ी का जरिया है।",
+        "प्रेस इंफॉर्मेशन ब्यूरो (PIB) और सरकारी बयानों के अनुसार, सोशल मीडिया पर लैपटॉप देने के नाम पर बांटे जा रहे लिंक ठगी करने के लिए बनाए गए हैं।"
       ],
-      "panel_readings": []
+      "confidence_phrase": "हमें इस पर पूरा भरोसा है",
+      "sources_spoken": "प्रेस इंफॉर्मेशन ब्यूरो और अखिल भारतीय तकनीकी शिक्षा परिषद की चेतावनियों के अनुसार",
+      "audio_script": "सोशल मीडिया पर एक संदेश फैल रहा है जिसमें दावा किया गया है कि दिए गए लिंक पर नाम दर्ज करवाकर मुफ्त लैपटॉप पा सकते हैं। यह दावा पूरी तरह धोखाधड़ी है। सरकार ऐसी कोई योजना इस लिंक के जरिए नहीं चला रही है। यह लिंक केवल आपकी निजी और बैंक से जुड़ी जानकारी चुराने के लिए बनाया गया फर्जी जाल है। हमें इस बात पर पूरा भरोसा है। यह जानकारी प्रेस इंफॉर्मेशन ब्यूरो और अखिल भारतीय तकनीकी शिक्षा परिषद की आधिकारिक चेतावनियों पर आधारित है। कृपया ऐसे किसी भी लिंक पर कभी क्लिक न करें।",
+      "card_lines": [
+        "फैसला: धोखाधड़ी",
+        "दावा: दिए गए लिंक पर मुफ्त लैपटॉप के लिए नाम दर्ज करें",
+        "सच्चाई: यह निजी जानकारी चुराने वाला फर्जी लिंक है",
+        "स्रोत: PIB और AICTE की चेतावनी"
+      ],
+      "panel_readings": [],
+      "ai_signals_ai": [],
+      "ai_signals_real": []
     },
     {
       "language": "en",
-      "headline": "Not confirmed: PM Free Laptop Yojana link",
-      "summary": "We could not confirm if clicking the provided link registers you for a PM Free Laptop Yojana.",
-      "what_post_claims": "The post claims that by clicking on the link www.pm-free-laptop-yojana.in, users can register their name for a PM Free Laptop Yojana.",
-      "what_is_true": "We could not complete the review of the evidence to confirm or deny the claim.",
+      "headline": "Scam: The link promising a free government laptop is fraudulent",
+      "summary": "This message is a scam trying to steal your personal and financial details through a fake website.",
+      "what_post_claims": "The post asks people to click on a link to register for a government scheme offering free laptops.",
+      "what_is_true": "The government is not running this website. The link is a fake phishing page designed to steal your private details and money.",
       "evidence_for": [],
-      "evidence_against": [],
-      "confidence_phrase": "we are not sure",
-      "sources_spoken": "our review of the evidence",
-      "audio_script": "The post claims that clicking a specific link will register you for a PM Free Laptop Yojana. This claim is not confirmed. We could not complete our review of the evidence to verify if this is true or false. We are not sure about this claim. Our assessment is based on our review of the available evidence.",
-      "card_lines": [
-        "Not confirmed",
-        "PM Free Laptop Yojana link",
-        "We could not confirm the claim",
-        "Do not forward until confirmed"
+      "evidence_against": [
+        "AICTE issued an alert warning students and institutions against fake online registration portals for free laptops.",
+        "Vishvas News confirmed that viral links offering laptop registration are clickbait scams rather than official government sites.",
+        "Livemint reported official warnings that links promising free laptops are phishing scams set up to harvest personal data."
       ],
-      "panel_readings": []
+      "confidence_phrase": "we are very sure",
+      "sources_spoken": "according to AICTE, the Press Information Bureau, and Vishvas News",
+      "audio_script": "A viral message invites you to click a link to sign up for a government scheme offering free laptops. This message is a scam. The Indian government has never launched this scheme, and official portals do not use this web address. The link is a phishing trick designed to steal your personal information and bank details. Please do not open it or share it with anyone else. We are very sure about this, according to public warnings from AICTE, the Press Information Bureau, and Vishvas News.",
+      "card_lines": [
+        "Verdict: Scam",
+        "Claim: Click this link to register for a free government laptop",
+        "Fact: The link is fake and designed to steal your data",
+        "Source: AICTE and PIB Fact Check"
+      ],
+      "panel_readings": [],
+      "ai_signals_ai": [],
+      "ai_signals_real": []
     }
   ]
 }

@@ -1,8 +1,6 @@
 {
  "lookup_source:[\"bbc.com\"]": null,
- "factcheck_search:[\"Vikram lander touchdown time\", \"\"]": [],
- "factcheck_search:[\"Vikram lander touchdown time\", \"en\"]": [],
- "factcheck_search:[\"Chandrayaan-3 successful landing\", \"en\"]": [
+ "factcheck_search:[\"Chandrayaan-3 historic landing Moon south pole\", \"en\"]": [
   {
    "claim_text": "Video shows a glimpse of Chandrayaan 3 captured by NASA.",
    "claimant": "Social Media Users",
@@ -16,15 +14,15 @@
    "language": "en"
   },
   {
-   "claim_text": "Actual video of Chandrayaan-3 landing by NASA.",
-   "claimant": "Facebook,WhatsApp,Twitter",
-   "claim_date": "2023-08-24T14:30:00Z",
-   "url": "https://www.thequint.com/news/webqoof/old-video-shared-as-nasa-footage-of-chandrayaan-3-fact-check",
-   "publisher": "The Quint",
-   "publisher_site": "thequint.com",
+   "claim_text": "China was the first country to land on the moon's South Pole a few years ago",
+   "claimant": "X, WhatsApp users",
+   "claim_date": "2023-08-29T11:52:58Z",
+   "url": "https://www.boomlive.in/fact-check/claims-of-china-being-the-first-country-to-land-on-the-south-pole-of-the-moon-is-false-22899",
+   "publisher": "BOOM Fact Check",
+   "publisher_site": "boomlive.in",
    "rating": "False",
-   "review_date": "2023-08-24T14:30:00Z",
-   "title": "Fact-Check | No, This Is Not NASA's Footage of Chandrayaan-3 ...",
+   "review_date": "2023-08-29T11:52:58Z",
+   "title": "Claims Of China Being The First Country To Land On The South ...",
    "language": "en"
   },
   {
@@ -40,51 +38,39 @@
    "language": "en"
   },
   {
-   "claim_text": "This is a visual of the moon's surface from Chandrayaan-3",
-   "claimant": "Social Media Users",
-   "claim_date": "2023-08-23T13:38:06Z",
-   "url": "https://www.boomlive.in/fact-check/stock-footage-shared-as-moon-surface-video-captured-from-chandrayaan-3-22838",
-   "publisher": "BOOM Fact Check",
-   "publisher_site": "boomlive.in",
-   "rating": "False",
-   "review_date": "2023-08-23T13:38:06Z",
-   "title": "Stock Video Misleadingly Shared As First Lunar Visuals From ...",
-   "language": "en"
-  },
-  {
-   "claim_text": "This video shows visuals from Chandrayaan-3 of the Earth from moon.",
-   "claimant": "Facebook,Twitter,Social Media",
-   "claim_date": "2023-08-24T07:51:03Z",
-   "url": "https://www.thequint.com/news/webqoof/digitally-edited-video-passed-off-as-chandrayaan-3-visuals-fact-check",
+   "claim_text": "The video is recent and shows live visuals of the moon captured by ISRO's Chandrayaan-3.",
+   "claimant": "Facebook,Twitter,X",
+   "claim_date": "2023-08-28T11:33:28Z",
+   "url": "https://www.thequint.com/news/webqoof/live-visuals-of-moon-isro-chandrayaan-3-viral-video-fact-check",
    "publisher": "The Quint",
    "publisher_site": "thequint.com",
    "rating": "False",
-   "review_date": "2023-08-24T07:51:03Z",
-   "title": "Fact-Check | Digitally created video shared as visuals from the ...",
+   "review_date": "2023-08-28T11:33:28Z",
+   "title": "Unrelated Visuals Passed Off as Live Visuals of Moon Captured by ...",
    "language": "en"
   },
   {
-   "claim_text": "Live image of the Moon's South Pole.",
-   "claimant": "FB User-Bhuwanesh Sharma",
-   "claim_date": "2023-09-05T08:39:26Z",
-   "url": "https://www.vishvasnews.com/english/viral/fact-check-video-depicting-south-pole-of-moon-created-with-ai-tool-by-mixing-visuals-of-mars-shared-by-nasa/",
-   "publisher": null,
-   "publisher_site": "vishvasnews.com",
-   "rating": "Half true",
-   "review_date": "2023-09-05T08:39:26Z",
-   "title": "Fact Check: Video Depicting South Pole Of Moon Created With AI ...",
-   "language": "en"
-  },
-  {
-   "claim_text": "BBC slammed Indian's Chandrayaan 3 mission in view of poverty",
-   "claimant": null,
-   "claim_date": null,
-   "url": "https://www.altnews.in/no-bbc-did-not-criticize-chandrayaan-3-old-clip-viral-false-report-by-times-now-india-tv-zee-news-other-outlets/",
+   "claim_text": "NASA released footage of CHandrayaan landing on moon; Ashoka Stambh will be imprinted on lunar surface",
+   "claimant": "social media users",
+   "claim_date": "2016-06-20T00:00:00Z",
+   "url": "https://www.altnews.in/nasa-footage-ashoka-stambh-on-lunar-surface-fake-visuals-related-to-chandrayaan-3-flood-social-media/",
    "publisher": "Alt News",
    "publisher_site": "altnews.in",
    "rating": "False",
-   "review_date": "2023-08-25T11:30:07Z",
-   "title": "No, BBC did not criticize Chandrayaan 3. Old clip viral; false report ...",
+   "review_date": "2023-08-28T00:00:00Z",
+   "title": "'NASA footage', 'Ashoka Stambh on lunar surface': Fake visuals ...",
+   "language": "en"
+  },
+  {
+   "claim_text": "NASA released footage of CHandrayaan landing on moon; Ashoka Stambh will be imprinted on lunar surface",
+   "claimant": null,
+   "claim_date": null,
+   "url": "https://www.altnews.in/nasa-footage-ashoka-stambh-on-lunar-surface-fake-visuals-related-to-chandrayaan-3-flood-social-media/",
+   "publisher": "Alt News",
+   "publisher_site": "altnews.in",
+   "rating": "False",
+   "review_date": "2023-08-28T14:29:43Z",
+   "title": "'NASA footage', 'Ashoka Stambh on lunar surface': Fake visuals ...",
    "language": "en"
   },
   {
@@ -96,6 +82,18 @@
    "publisher_site": "altnews.in",
    "rating": "False",
    "review_date": "2023-08-25T00:00:00Z",
+   "title": "No, BBC did not criticize Chandrayaan 3. Old clip viral; false report ...",
+   "language": "en"
+  },
+  {
+   "claim_text": "BBC slammed Indian's Chandrayaan 3 mission in view of poverty",
+   "claimant": null,
+   "claim_date": null,
+   "url": "https://www.altnews.in/no-bbc-did-not-criticize-chandrayaan-3-old-clip-viral-false-report-by-times-now-india-tv-zee-news-other-outlets/",
+   "publisher": "Alt News",
+   "publisher_site": "altnews.in",
+   "rating": "False",
+   "review_date": "2023-08-25T11:30:07Z",
    "title": "No, BBC did not criticize Chandrayaan 3. Old clip viral; false report ...",
    "language": "en"
   }
@@ -114,8 +112,129 @@
    "language": "en"
   }
  ],
- "factcheck_search:[\"Vikram lander landing time GMT\", \"en\"]": [],
- "factcheck_search:[\"India first country lunar south pole landing\", \"\"]": [
+ "factcheck_search:[\"BBCNEWS fact check\", \"en\"]": [
+  {
+   "claim_text": "5g technology, not Covid-19, was behind hundreds of deaths in Nigeria",
+   "claimant": null,
+   "claim_date": "2020-06-09T00:00:00Z",
+   "url": "https://www.bbc.co.uk/news/resources/idt-e7e3acde-9cdf-4b53-b469-ef6e87a66411",
+   "publisher": "BBC",
+   "publisher_site": "bbc.co.uk",
+   "rating": "FALSE",
+   "review_date": "2020-06-09T00:00:00Z",
+   "title": "Fighting Covid-19 fake news in Africa",
+   "language": "en"
+  },
+  {
+   "claim_text": "\"The truth is that when we put Pakistan and Bangladesh on the red list, positivity among those arriving from those countries was three times higher than it was among those arriving from India.\"",
+   "claimant": "Matt Hancock",
+   "claim_date": "2021-05-17T00:00:00Z",
+   "url": "https://www.bbc.co.uk/news/57172793",
+   "publisher": "BBC",
+   "publisher_site": "bbc.co.uk",
+   "rating": "Mr Hancock's claim is not supported by the publicly available NHS Test and Trace figures.",
+   "review_date": "2021-05-19T00:00:00Z",
+   "title": "India variant: Matt Hancock's red list claim fact-checked",
+   "language": "en"
+  },
+  {
+   "claim_text": "Indian Council of Medical Research research shows 0.8m Indians would have caught coronavirus if the lockdown hadn't been imposed",
+   "claimant": "ABP News",
+   "claim_date": null,
+   "url": "https://www.bbc.co.uk/news/world-asia-india-51910099",
+   "publisher": "BBC",
+   "publisher_site": "bbc.co.uk",
+   "rating": "False. the Indian Health Ministry says there's no such study",
+   "review_date": "2020-04-19T00:00:00Z",
+   "title": "Coronavirus: Herbal remedies in India and other claims fact-checked",
+   "language": "en"
+  },
+  {
+   "claim_text": "\"Critically, the clear advice at the time was that there's only a limited period that people would put up with it, would put up with lockdown. Actually that proved to be wrong.\"",
+   "claimant": "Matt Hancock, UK health secretary",
+   "claim_date": "2021-06-11T00:00:00Z",
+   "url": "https://www.bbc.co.uk/news/57427777",
+   "publisher": "BBC",
+   "publisher_site": "bbc.co.uk",
+   "rating": "In March 2020, the chief medical officer did suggest this was a risk. However a report from the government's behavioural science advisers suggests they thought people would accept restrictions.",
+   "review_date": "2021-06-11T00:00:00Z",
+   "title": "Fact-checking Matt Hancock's Covid claims",
+   "language": "en"
+  },
+  {
+   "claim_text": "\"1.6% of the transmission into care homes came through this route [from hospital discharges]\"",
+   "claimant": "Matt Hancock, UK health secretary",
+   "claim_date": "2021-06-11T00:00:00Z",
+   "url": "https://www.bbc.co.uk/news/57427777",
+   "publisher": "BBC",
+   "publisher_site": "bbc.co.uk",
+   "rating": "The estimate comes with serious caveats. It is based on positive tests of care home residents but we know that, early on in the pandemic, testing in these settings was limited.",
+   "review_date": "2021-06-11T00:00:00Z",
+   "title": "Fact-checking Matt Hancock's Covid claims",
+   "language": "en"
+  },
+  {
+   "claim_text": "\"On borders, the position we took was based not just on World Health Organization [WHO] advice but on their international health regulations\"",
+   "claimant": "Matt Hancock, UK health secretary",
+   "claim_date": "2021-06-11T00:00:00Z",
+   "url": "https://www.bbc.co.uk/news/57427777",
+   "publisher": "BBC",
+   "publisher_site": "bbc.co.uk",
+   "rating": "This refers to a non-binding recommendation rather than forming part of the international health regulations.",
+   "review_date": "2021-06-11T00:00:00Z",
+   "title": "Fact-checking Matt Hancock's Covid claims",
+   "language": "en"
+  },
+  {
+   "claim_text": "\"There is no country in the world that uses only testing and doesn't have some form of lockdown as well\"",
+   "claimant": "Matt Hancock, UK health secretary",
+   "claim_date": "2021-06-11T00:00:00Z",
+   "url": "https://www.bbc.co.uk/news/57427777",
+   "publisher": "BBC",
+   "publisher_site": "bbc.co.uk",
+   "rating": "As pointed out by former health secretary Jeremy Hunt, South Korea relied on testing and did not implement a national lockdown. There were periods when some lockdown restrictions were imposed.",
+   "review_date": "2021-06-11T00:00:00Z",
+   "title": "Fact-checking Matt Hancock's Covid claims",
+   "language": "en"
+  },
+  {
+   "claim_text": "\"There was never a point at which NHS providers couldn't get access to PPE\"",
+   "claimant": "Matt Hancock, UK health secretary",
+   "claim_date": "2021-06-11T00:00:00Z",
+   "url": "https://www.bbc.co.uk/news/57427777",
+   "publisher": "BBC",
+   "publisher_site": "bbc.co.uk",
+   "rating": "A National Audit Office report cites surveys showing that a \"significant proportion of participating care workers, doctors and nurses reported having insufficient PPE, even in high-risk settings\".",
+   "review_date": "2021-06-11T00:00:00Z",
+   "title": "Fact-checking Matt Hancock's Covid claims",
+   "language": "en"
+  }
+ ],
+ "factcheck_search:[\"Chandrayaan-3 historic landing Moon south pole\", \"\"]": [
+  {
+   "claim_text": "Video shows a glimpse of Chandrayaan 3 captured by NASA.",
+   "claimant": "Social Media Users",
+   "claim_date": "2023-08-24T13:21:30Z",
+   "url": "https://www.boomlive.in/fact-check/viral-video-chandrayaan-3-isro-nasa-old-video-social-media-22850",
+   "publisher": "BOOM Fact Check",
+   "publisher_site": "boomlive.in",
+   "rating": "False",
+   "review_date": "2023-08-24T13:21:30Z",
+   "title": "Animation Video Peddled As NASA Releasing Footage Of ...",
+   "language": "en"
+  },
+  {
+   "claim_text": "The video is recent and shows live visuals of the moon captured by ISRO's Chandrayaan-3.",
+   "claimant": "Facebook,Twitter,X",
+   "claim_date": "2023-08-28T11:33:28Z",
+   "url": "https://www.thequint.com/news/webqoof/live-visuals-of-moon-isro-chandrayaan-3-viral-video-fact-check",
+   "publisher": "The Quint",
+   "publisher_site": "thequint.com",
+   "rating": "False",
+   "review_date": "2023-08-28T11:33:28Z",
+   "title": "Unrelated Visuals Passed Off as Live Visuals of Moon Captured by ...",
+   "language": "en"
+  },
   {
    "claim_text": "China was the first country to land on the moon's South Pole a few years ago",
    "claimant": "X, WhatsApp users",
@@ -127,6 +246,164 @@
    "review_date": "2023-08-29T11:52:58Z",
    "title": "Claims Of China Being The First Country To Land On The South ...",
    "language": "en"
+  },
+  {
+   "claim_text": "NASA released footage of CHandrayaan landing on moon; Ashoka Stambh will be imprinted on lunar surface",
+   "claimant": "social media users",
+   "claim_date": "2016-06-20T00:00:00Z",
+   "url": "https://www.altnews.in/nasa-footage-ashoka-stambh-on-lunar-surface-fake-visuals-related-to-chandrayaan-3-flood-social-media/",
+   "publisher": "Alt News",
+   "publisher_site": "altnews.in",
+   "rating": "False",
+   "review_date": "2023-08-28T00:00:00Z",
+   "title": "'NASA footage', 'Ashoka Stambh on lunar surface': Fake visuals ...",
+   "language": "en"
+  },
+  {
+   "claim_text": "NASA released footage of CHandrayaan landing on moon; Ashoka Stambh will be imprinted on lunar surface",
+   "claimant": null,
+   "claim_date": null,
+   "url": "https://www.altnews.in/nasa-footage-ashoka-stambh-on-lunar-surface-fake-visuals-related-to-chandrayaan-3-flood-social-media/",
+   "publisher": "Alt News",
+   "publisher_site": "altnews.in",
+   "rating": "False",
+   "review_date": "2023-08-28T14:29:43Z",
+   "title": "'NASA footage', 'Ashoka Stambh on lunar surface': Fake visuals ...",
+   "language": "en"
+  },
+  {
+   "claim_text": "Video shows Chandrayaan-3's Vikram lander landing on the Moon's south pole.",
+   "claimant": "YouTube, Facebook users",
+   "claim_date": "2023-08-27T11:26:30Z",
+   "url": "https://www.boomlive.in/fact-check/chandrayaan-3-vikram-lander-lunar-south-pole-moon-mission-animated-22877",
+   "publisher": "BOOM Fact Check",
+   "publisher_site": "boomlive.in",
+   "rating": "False",
+   "review_date": "2023-08-27T11:26:30Z",
+   "title": "Animated Clip Of Blue Moon Lander Viral As Chandrayaan-3 ...",
+   "language": "en"
+  },
+  {
+   "claim_text": "Live image of the Moon's South Pole.",
+   "claimant": "FB User-Bhuwanesh Sharma",
+   "claim_date": "2023-09-05T08:39:26Z",
+   "url": "https://www.vishvasnews.com/english/viral/fact-check-video-depicting-south-pole-of-moon-created-with-ai-tool-by-mixing-visuals-of-mars-shared-by-nasa/",
+   "publisher": null,
+   "publisher_site": "vishvasnews.com",
+   "rating": "Half true",
+   "review_date": "2023-09-05T08:39:26Z",
+   "title": "Fact Check: Video Depicting South Pole Of Moon Created With AI ...",
+   "language": "en"
+  },
+  {
+   "claim_text": "India's lunar spacecraft Chandrayaan 3 sent footage of Earth",
+   "claimant": "Several persons",
+   "claim_date": "2023-08-21T00:00:00Z",
+   "url": "https://factcheck.afp.com/doc.afp.com.33TA7C4",
+   "publisher": "AFP Fact Check",
+   "publisher_site": "factcheck.afp.com",
+   "rating": "False",
+   "review_date": "2023-08-28T09:00:00Z",
+   "title": "Fake video of Earth was not captured by India's spacecraft",
+   "language": "en"
+  }
+ ],
+ "factcheck_search:[\"BBCNEWS\", \"\"]": [
+  {
+   "claim_text": "5g technology, not Covid-19, was behind hundreds of deaths in Nigeria",
+   "claimant": null,
+   "claim_date": "2020-06-09T00:00:00Z",
+   "url": "https://www.bbc.co.uk/news/resources/idt-e7e3acde-9cdf-4b53-b469-ef6e87a66411",
+   "publisher": "BBC",
+   "publisher_site": "bbc.co.uk",
+   "rating": "FALSE",
+   "review_date": "2020-06-09T00:00:00Z",
+   "title": "Fighting Covid-19 fake news in Africa",
+   "language": "en"
+  },
+  {
+   "claim_text": "\"The truth is that when we put Pakistan and Bangladesh on the red list, positivity among those arriving from those countries was three times higher than it was among those arriving from India.\"",
+   "claimant": "Matt Hancock",
+   "claim_date": "2021-05-17T00:00:00Z",
+   "url": "https://www.bbc.co.uk/news/57172793",
+   "publisher": "BBC",
+   "publisher_site": "bbc.co.uk",
+   "rating": "Mr Hancock's claim is not supported by the publicly available NHS Test and Trace figures.",
+   "review_date": "2021-05-19T00:00:00Z",
+   "title": "India variant: Matt Hancock's red list claim fact-checked",
+   "language": "en"
+  },
+  {
+   "claim_text": "\"20,000 people came into the UK from India\"",
+   "claimant": "Keir Starmer, UK Labour Party leader",
+   "claim_date": "2021-06-16T00:00:00Z",
+   "url": "https://www.bbc.co.uk/news/57500637",
+   "publisher": "BBC",
+   "publisher_site": "bbc.co.uk",
+   "rating": "According to the Civil Aviation Authority, a total of 42,406 people travelled between India and the UK in April. It does not say how many of these were arriving or departing.",
+   "review_date": "2021-06-16T00:00:00Z",
+   "title": "Delta variant: Fact-checking claims about Covid and borders",
+   "language": "en"
+  },
+  {
+   "claim_text": "\"The rate of the Delta variant is much higher here than in other countries... tragically, the UK has - once again - the highest infection rate in Europe\"",
+   "claimant": "Keir Starmer, Labour Party Leader",
+   "claim_date": "2021-06-16T00:00:00Z",
+   "url": "https://www.bbc.co.uk/news/57500637",
+   "publisher": "BBC",
+   "publisher_site": "bbc.co.uk",
+   "rating": "A database showed more cases of the Delta variant in the UK than much of the world, but it is not a definitive record of how many cases there are.",
+   "review_date": "2021-06-16T00:00:00Z",
+   "title": "Delta variant: Fact-checking claims about Covid and borders",
+   "language": "en"
+  },
+  {
+   "claim_text": "\"He [Starmer] was attacking quarantine only recently and saying it was a 'blunt instrument' and that it should be lessened\"",
+   "claimant": "Boris Johnson, UK Prime Minister",
+   "claim_date": "2021-06-16T00:00:00Z",
+   "url": "https://www.bbc.co.uk/news/57500637",
+   "publisher": "BBC",
+   "publisher_site": "bbc.co.uk",
+   "rating": "Mr Starmer called quarantine a \"blunt instrument\" a year ago. But his position on quarantine for arrivals has toughened since.",
+   "review_date": "2021-06-16T00:00:00Z",
+   "title": "Delta variant: Fact-checking claims about Covid and borders",
+   "language": "en"
+  },
+  {
+   "claim_text": "A herbal mix of camphor, clove, carom seeds and eucalyptus oil will be beneficial in maintaining oxygen levels.",
+   "claimant": "A doctor of Indian traditional Ayurvedic medicine",
+   "claim_date": "2021-04-20T00:00:00Z",
+   "url": "https://www.bbc.co.uk/news/world-asia-india-56925650",
+   "publisher": "BBC",
+   "publisher_site": "bbc.co.uk",
+   "rating": "There is no evidence that this can help people who are infected with Covid-19.",
+   "review_date": "2021-05-02T00:00:00Z",
+   "title": "India Covid-19: Fact-checking misleading claims on oxygen treatments",
+   "language": "en"
+  },
+  {
+   "claim_text": "Two drops of lemon juice in the nose can increase oxygen saturation levels.",
+   "claimant": "Vijay Sankeshwar",
+   "claim_date": "2021-04-25T00:00:00Z",
+   "url": "https://www.bbc.co.uk/news/world-asia-india-56925650",
+   "publisher": "BBC",
+   "publisher_site": "bbc.co.uk",
+   "rating": "There is no evidence of this treatment having any effect on oxygen saturation levels in the blood.",
+   "review_date": "2021-05-02T00:00:00Z",
+   "title": "India Covid-19: Fact-checking misleading claims on oxygen treatments",
+   "language": "en"
+  },
+  {
+   "claim_text": "\"I'll show you magic\" to improve oxygen saturation levels at home",
+   "claimant": "Baba Ramdev",
+   "claim_date": "2021-04-24T00:00:00Z",
+   "url": "https://www.bbc.co.uk/news/world-asia-india-56925650",
+   "publisher": "BBC",
+   "publisher_site": "bbc.co.uk",
+   "rating": "This is misleading. Medical oxygen (which is nearly 100% pure oxygen) is recommended by the World Health Organization (WHO).",
+   "review_date": "2021-05-02T00:00:00Z",
+   "title": "India Covid-19: Fact-checking misleading claims on oxygen treatments",
+   "language": "en"
   }
  ],
  "vision_web_detection:[\"path:link-cbf41df55bb1.jpeg\", null]": {
@@ -134,15 +411,22 @@
    "crowd"
   ],
   "entities": [
+   "Crowd",
+   "Human",
    "Chandrayaan-3",
    "ISRO",
-   "Human",
-   "Crowd",
    "Organization",
    "create",
-   "possible"
+   "ready"
   ],
   "pages": [
+   {
+    "url": "https://www.youtube.com/watch?v=7OxRWZB6SXY",
+    "title": "Crowd Control Trailer [Dropout Exclusive Series] - YouTube",
+    "full_matches": 0,
+    "partial_matches": 0,
+    "published_at": null
+   },
    {
     "url": "https://www.youtube.com/watch?v=pVAmZGCvIRM",
     "title": "How Crowds Cross the Point of No Return - YouTube",
@@ -158,15 +442,15 @@
     "published_at": null
    },
    {
-    "url": "https://www.youtube.com/watch?v=4ckyH3oIzlU",
-    "title": "Dimension - Crowd Reaction - YouTube",
+    "url": "https://www.facebook.com/KeyAndPeele/posts/learning-the-craft-of-crowd-work-keyandpeele/1490183546476553/",
+    "title": "Learning the craft of crowd-work. #KeyandPeele - Facebook",
     "full_matches": 0,
     "partial_matches": 0,
     "published_at": null
    },
    {
-    "url": "https://www.youtube.com/watch?v=ZQqCLgvUrvE",
-    "title": "Why is Crowd work everywhere now? - YouTube",
+    "url": "https://www.youtube.com/watch?v=T8p0SvaVJaI",
+    "title": "The Crowd - YouTube",
     "full_matches": 0,
     "partial_matches": 0,
     "published_at": null
@@ -186,8 +470,8 @@
     "published_at": null
    },
    {
-    "url": "https://www.amazon.com/Crowd-Move/dp/B0H9ZL6YQF",
-    "title": "Crowd Move by Darco on Amazon Music",
+    "url": "https://www.amazon.com/crowd-Explicit/dp/B0G54DB9W1",
+    "title": "Play crowd by flocko9ine on Amazon Music",
     "full_matches": 0,
     "partial_matches": 0,
     "published_at": null
@@ -196,13 +480,6 @@
     "url": "https://www.shutterstock.com/video/clip-3434120205-crowd-silhouette-people-club-concert-sports-event",
     "title": "Crowd Silhouette People Club Concert Sports Stock Footage Video ...",
     "full_matches": 0,
-    "partial_matches": 0,
-    "published_at": null
-   },
-   {
-    "url": "https://www.bbc.com/news/live/world-asia-india-47640058?page=47",
-    "title": "India news stream - BBC",
-    "full_matches": 1,
     "partial_matches": 0,
     "published_at": null
    },
@@ -229,392 +506,10 @@
    }
   ]
  },
- "factcheck_search:[\"Vikram lander landing time GMT\", \"\"]": [],
- "factcheck_search:[\"India Moon mission south pole landing\", \"en\"]": [
-  {
-   "claim_text": "Video shows a glimpse of Chandrayaan 3 captured by NASA.",
-   "claimant": "Social Media Users",
-   "claim_date": "2023-08-24T13:21:30Z",
-   "url": "https://www.boomlive.in/fact-check/viral-video-chandrayaan-3-isro-nasa-old-video-social-media-22850",
-   "publisher": "BOOM Fact Check",
-   "publisher_site": "boomlive.in",
-   "rating": "False",
-   "review_date": "2023-08-24T13:21:30Z",
-   "title": "Animation Video Peddled As NASA Releasing Footage Of ...",
-   "language": "en"
-  },
-  {
-   "claim_text": "NASA released footage of CHandrayaan landing on moon; Ashoka Stambh will be imprinted on lunar surface",
-   "claimant": "social media users",
-   "claim_date": "2016-06-20T00:00:00Z",
-   "url": "https://www.altnews.in/nasa-footage-ashoka-stambh-on-lunar-surface-fake-visuals-related-to-chandrayaan-3-flood-social-media/",
-   "publisher": "Alt News",
-   "publisher_site": "altnews.in",
-   "rating": "False",
-   "review_date": "2023-08-28T00:00:00Z",
-   "title": "'NASA footage', 'Ashoka Stambh on lunar surface': Fake visuals ...",
-   "language": "en"
-  },
-  {
-   "claim_text": "NASA released footage of CHandrayaan landing on moon; Ashoka Stambh will be imprinted on lunar surface",
-   "claimant": null,
-   "claim_date": null,
-   "url": "https://www.altnews.in/nasa-footage-ashoka-stambh-on-lunar-surface-fake-visuals-related-to-chandrayaan-3-flood-social-media/",
-   "publisher": "Alt News",
-   "publisher_site": "altnews.in",
-   "rating": "False",
-   "review_date": "2023-08-28T14:29:43Z",
-   "title": "'NASA footage', 'Ashoka Stambh on lunar surface': Fake visuals ...",
-   "language": "en"
-  },
-  {
-   "claim_text": "Animation of India's lunar rocket proves its Moon landing was faked.",
-   "claimant": "Multiple sources",
-   "claim_date": "2023-09-06T00:00:00Z",
-   "url": "https://factcheck.afp.com/doc.afp.com.33U48GT",
-   "publisher": "AFP Fact Check",
-   "publisher_site": "factcheck.afp.com",
-   "rating": "False",
-   "review_date": "2023-09-06T07:13:00Z",
-   "title": "Simulation of India's lunar mission falsely shared as proof of 'Moon ...",
-   "language": "en"
-  },
-  {
-   "claim_text": "BBC slammed Indian's Chandrayaan 3 mission in view of poverty",
-   "claimant": "Anand Mahindra, MeghUpdates, Mint, Times Now",
-   "claim_date": "2016-06-20T00:00:00Z",
-   "url": "https://www.altnews.in/no-bbc-did-not-criticize-chandrayaan-3-old-clip-viral-false-report-by-times-now-india-tv-zee-news-other-outlets/",
-   "publisher": "Alt News",
-   "publisher_site": "altnews.in",
-   "rating": "False",
-   "review_date": "2023-08-25T00:00:00Z",
-   "title": "No, BBC did not criticize Chandrayaan 3. Old clip viral; false report ...",
-   "language": "en"
-  },
-  {
-   "claim_text": "BBC slammed Indian's Chandrayaan 3 mission in view of poverty",
-   "claimant": null,
-   "claim_date": null,
-   "url": "https://www.altnews.in/no-bbc-did-not-criticize-chandrayaan-3-old-clip-viral-false-report-by-times-now-india-tv-zee-news-other-outlets/",
-   "publisher": "Alt News",
-   "publisher_site": "altnews.in",
-   "rating": "False",
-   "review_date": "2023-08-25T11:30:07Z",
-   "title": "No, BBC did not criticize Chandrayaan 3. Old clip viral; false report ...",
-   "language": "en"
-  },
-  {
-   "claim_text": "This is a visual of the moon's surface from Chandrayaan-3",
-   "claimant": "Social Media Users",
-   "claim_date": "2023-08-23T13:38:06Z",
-   "url": "https://www.boomlive.in/fact-check/stock-footage-shared-as-moon-surface-video-captured-from-chandrayaan-3-22838",
-   "publisher": "BOOM Fact Check",
-   "publisher_site": "boomlive.in",
-   "rating": "False",
-   "review_date": "2023-08-23T13:38:06Z",
-   "title": "Stock Video Misleadingly Shared As First Lunar Visuals From ...",
-   "language": "en"
-  },
-  {
-   "claim_text": "Photo of the Earth shot from the Moon’s surface by Chandrayaan-3.",
-   "claimant": "Social media users",
-   "claim_date": "2023-08-28T00:00:00Z",
-   "url": "https://www.indiatoday.in/fact-check/story/captivating-photo-of-earth-from-moon-was-not-taken-chandrayaan-3-ai-generated-2427906-2023-08-28",
-   "publisher": "India Today",
-   "publisher_site": "indiatoday.in",
-   "rating": "False",
-   "review_date": null,
-   "title": "Fact Check: This captivating photo of Earth from the Moon was not ...",
-   "language": "en"
-  }
- ],
- "factcheck_search:[\"India Moon mission south pole landing\", \"\"]": [
-  {
-   "claim_text": "Video shows a glimpse of Chandrayaan 3 captured by NASA.",
-   "claimant": "Social Media Users",
-   "claim_date": "2023-08-24T13:21:30Z",
-   "url": "https://www.boomlive.in/fact-check/viral-video-chandrayaan-3-isro-nasa-old-video-social-media-22850",
-   "publisher": "BOOM Fact Check",
-   "publisher_site": "boomlive.in",
-   "rating": "False",
-   "review_date": "2023-08-24T13:21:30Z",
-   "title": "Animation Video Peddled As NASA Releasing Footage Of ...",
-   "language": "en"
-  },
-  {
-   "claim_text": "NASA released footage of CHandrayaan landing on moon; Ashoka Stambh will be imprinted on lunar surface",
-   "claimant": null,
-   "claim_date": null,
-   "url": "https://www.altnews.in/nasa-footage-ashoka-stambh-on-lunar-surface-fake-visuals-related-to-chandrayaan-3-flood-social-media/",
-   "publisher": "Alt News",
-   "publisher_site": "altnews.in",
-   "rating": "False",
-   "review_date": "2023-08-28T14:29:43Z",
-   "title": "'NASA footage', 'Ashoka Stambh on lunar surface': Fake visuals ...",
-   "language": "en"
-  },
-  {
-   "claim_text": "NASA released footage of CHandrayaan landing on moon; Ashoka Stambh will be imprinted on lunar surface",
-   "claimant": "social media users",
-   "claim_date": "2016-06-20T00:00:00Z",
-   "url": "https://www.altnews.in/nasa-footage-ashoka-stambh-on-lunar-surface-fake-visuals-related-to-chandrayaan-3-flood-social-media/",
-   "publisher": "Alt News",
-   "publisher_site": "altnews.in",
-   "rating": "False",
-   "review_date": "2023-08-28T00:00:00Z",
-   "title": "'NASA footage', 'Ashoka Stambh on lunar surface': Fake visuals ...",
-   "language": "en"
-  },
-  {
-   "claim_text": "Animation of India's lunar rocket proves its Moon landing was faked.",
-   "claimant": "Multiple sources",
-   "claim_date": "2023-09-06T00:00:00Z",
-   "url": "https://factcheck.afp.com/doc.afp.com.33U48GT",
-   "publisher": "AFP Fact Check",
-   "publisher_site": "factcheck.afp.com",
-   "rating": "False",
-   "review_date": "2023-09-06T07:13:00Z",
-   "title": "Simulation of India's lunar mission falsely shared as proof of 'Moon ...",
-   "language": "en"
-  },
-  {
-   "claim_text": "BBC slammed Indian's Chandrayaan 3 mission in view of poverty",
-   "claimant": "Anand Mahindra, MeghUpdates, Mint, Times Now",
-   "claim_date": "2016-06-20T00:00:00Z",
-   "url": "https://www.altnews.in/no-bbc-did-not-criticize-chandrayaan-3-old-clip-viral-false-report-by-times-now-india-tv-zee-news-other-outlets/",
-   "publisher": "Alt News",
-   "publisher_site": "altnews.in",
-   "rating": "False",
-   "review_date": "2023-08-25T00:00:00Z",
-   "title": "No, BBC did not criticize Chandrayaan 3. Old clip viral; false report ...",
-   "language": "en"
-  },
-  {
-   "claim_text": "BBC slammed Indian's Chandrayaan 3 mission in view of poverty",
-   "claimant": null,
-   "claim_date": null,
-   "url": "https://www.altnews.in/no-bbc-did-not-criticize-chandrayaan-3-old-clip-viral-false-report-by-times-now-india-tv-zee-news-other-outlets/",
-   "publisher": "Alt News",
-   "publisher_site": "altnews.in",
-   "rating": "False",
-   "review_date": "2023-08-25T11:30:07Z",
-   "title": "No, BBC did not criticize Chandrayaan 3. Old clip viral; false report ...",
-   "language": "en"
-  },
-  {
-   "claim_text": "This is a visual of the moon's surface from Chandrayaan-3",
-   "claimant": "Social Media Users",
-   "claim_date": "2023-08-23T13:38:06Z",
-   "url": "https://www.boomlive.in/fact-check/stock-footage-shared-as-moon-surface-video-captured-from-chandrayaan-3-22838",
-   "publisher": "BOOM Fact Check",
-   "publisher_site": "boomlive.in",
-   "rating": "False",
-   "review_date": "2023-08-23T13:38:06Z",
-   "title": "Stock Video Misleadingly Shared As First Lunar Visuals From ...",
-   "language": "en"
-  },
-  {
-   "claim_text": "Photo of the Earth shot from the Moon’s surface by Chandrayaan-3.",
-   "claimant": "Social media users",
-   "claim_date": "2023-08-28T00:00:00Z",
-   "url": "https://www.indiatoday.in/fact-check/story/captivating-photo-of-earth-from-moon-was-not-taken-chandrayaan-3-ai-generated-2427906-2023-08-28",
-   "publisher": "India Today",
-   "publisher_site": "indiatoday.in",
-   "rating": "False",
-   "review_date": null,
-   "title": "Fact Check: This captivating photo of Earth from the Moon was not ...",
-   "language": "en"
-  }
- ],
- "factcheck_search:[\"Chandrayaan-3 historic landing\", \"en\"]": [
-  {
-   "claim_text": "Video shows a glimpse of Chandrayaan 3 captured by NASA.",
-   "claimant": "Social Media Users",
-   "claim_date": "2023-08-24T13:21:30Z",
-   "url": "https://www.boomlive.in/fact-check/viral-video-chandrayaan-3-isro-nasa-old-video-social-media-22850",
-   "publisher": "BOOM Fact Check",
-   "publisher_site": "boomlive.in",
-   "rating": "False",
-   "review_date": "2023-08-24T13:21:30Z",
-   "title": "Animation Video Peddled As NASA Releasing Footage Of ...",
-   "language": "en"
-  },
-  {
-   "claim_text": "Actual video of Chandrayaan-3 landing by NASA.",
-   "claimant": "Facebook,WhatsApp,Twitter",
-   "claim_date": "2023-08-24T14:30:00Z",
-   "url": "https://www.thequint.com/news/webqoof/old-video-shared-as-nasa-footage-of-chandrayaan-3-fact-check",
-   "publisher": "The Quint",
-   "publisher_site": "thequint.com",
-   "rating": "False",
-   "review_date": "2023-08-24T14:30:00Z",
-   "title": "Fact-Check | No, This Is Not NASA's Footage of Chandrayaan-3 ...",
-   "language": "en"
-  },
-  {
-   "claim_text": "The video is recent and shows visuals of the moon that were captured by Chandrayaan-3.",
-   "claimant": "Facebook,Twitter,X",
-   "claim_date": "2023-08-22T08:09:17Z",
-   "url": "https://www.thequint.com/news/webqoof/chandrayaan-3-stunning-moon-visuals-animation-viral-video-fact-check",
-   "publisher": "The Quint",
-   "publisher_site": "thequint.com",
-   "rating": "False",
-   "review_date": "2023-08-22T08:09:17Z",
-   "title": "Fact-Check: Old Stock Video Shared as Visuals of Moon Captured ...",
-   "language": "en"
-  },
-  {
-   "claim_text": "BBC slammed Indian's Chandrayaan 3 mission in view of poverty",
-   "claimant": "Anand Mahindra, MeghUpdates, Mint, Times Now",
-   "claim_date": "2016-06-20T00:00:00Z",
-   "url": "https://www.altnews.in/no-bbc-did-not-criticize-chandrayaan-3-old-clip-viral-false-report-by-times-now-india-tv-zee-news-other-outlets/",
-   "publisher": "Alt News",
-   "publisher_site": "altnews.in",
-   "rating": "False",
-   "review_date": "2023-08-25T00:00:00Z",
-   "title": "No, BBC did not criticize Chandrayaan 3. Old clip viral; false report ...",
-   "language": "en"
-  },
-  {
-   "claim_text": "BBC slammed Indian's Chandrayaan 3 mission in view of poverty",
-   "claimant": null,
-   "claim_date": null,
-   "url": "https://www.altnews.in/no-bbc-did-not-criticize-chandrayaan-3-old-clip-viral-false-report-by-times-now-india-tv-zee-news-other-outlets/",
-   "publisher": "Alt News",
-   "publisher_site": "altnews.in",
-   "rating": "False",
-   "review_date": "2023-08-25T11:30:07Z",
-   "title": "No, BBC did not criticize Chandrayaan 3. Old clip viral; false report ...",
-   "language": "en"
-  },
-  {
-   "claim_text": "Visuals of the Vikram lander making soft landing on moon captured by NASA",
-   "claimant": "SOCIAL MEDIA POST",
-   "claim_date": "2023-08-24T00:00:00Z",
-   "url": "https://factly.in/viral-video-shows-animated-apollo-11-landing-visuals-not-nasas-chandrayaan-3-footage/",
-   "publisher": "FACTLY",
-   "publisher_site": "factly.in",
-   "rating": "FALSE",
-   "review_date": "2023-08-25T00:00:00Z",
-   "title": "Unrelated visuals shared as Chandrayaan-3's landing footage",
-   "language": "en"
-  },
-  {
-   "claim_text": "Video shows Chandrayaan-3's Vikram lander landing on the Moon's south pole.",
-   "claimant": "YouTube, Facebook users",
-   "claim_date": "2023-08-27T11:26:30Z",
-   "url": "https://www.boomlive.in/fact-check/chandrayaan-3-vikram-lander-lunar-south-pole-moon-mission-animated-22877",
-   "publisher": "BOOM Fact Check",
-   "publisher_site": "boomlive.in",
-   "rating": "False",
-   "review_date": "2023-08-27T11:26:30Z",
-   "title": "Animated Clip Of Blue Moon Lander Viral As Chandrayaan-3 ...",
-   "language": "en"
-  },
-  {
-   "claim_text": "The video is recent and shows live visuals of the moon captured by ISRO's Chandrayaan-3.",
-   "claimant": "Facebook,Twitter,X",
-   "claim_date": "2023-08-28T11:33:28Z",
-   "url": "https://www.thequint.com/news/webqoof/live-visuals-of-moon-isro-chandrayaan-3-viral-video-fact-check",
-   "publisher": "The Quint",
-   "publisher_site": "thequint.com",
-   "rating": "False",
-   "review_date": "2023-08-28T11:33:28Z",
-   "title": "Unrelated Visuals Passed Off as Live Visuals of Moon Captured by ...",
-   "language": "en"
-  }
- ],
- "page_date:[\"https://www.bbc.com/news/live/world-asia-india-47640058?page=47\"]": null,
- "page_date:[\"https://www.bbc.co.uk/news/uk-wales-66687056\"]": null,
- "factcheck_search:[\"Chandrayaan-3 touchdown 18:04 local time\", \"en\"]": [],
- "factcheck_search:[\"Chandrayaan-3 landing time\", \"en\"]": [
-  {
-   "claim_text": "Chandrayaan-3 has landed on the moon and discovered pure water on the moon’s surface",
-   "claimant": "Social Media Users",
-   "claim_date": "2023-08-11T13:21:22Z",
-   "url": "https://www.telugupost.com/english-factcheck/reports-of-chandrayaan-3-landing-on-the-moon-and-discovering-pure-water-on-its-surface-are-false-1489249",
-   "publisher": "Telugu Post",
-   "publisher_site": "telugupost.com",
-   "rating": "False",
-   "review_date": "2023-08-11T13:21:22Z",
-   "title": "Fact Check: Reports of Chandrayaan-3 landing on the moon and ...",
-   "language": "en"
-  },
-  {
-   "claim_text": "Video shows a glimpse of Chandrayaan 3 captured by NASA.",
-   "claimant": "Social Media Users",
-   "claim_date": "2023-08-24T13:21:30Z",
-   "url": "https://www.boomlive.in/fact-check/viral-video-chandrayaan-3-isro-nasa-old-video-social-media-22850",
-   "publisher": "BOOM Fact Check",
-   "publisher_site": "boomlive.in",
-   "rating": "False",
-   "review_date": "2023-08-24T13:21:30Z",
-   "title": "Animation Video Peddled As NASA Releasing Footage Of ...",
-   "language": "en"
-  },
-  {
-   "claim_text": "BBC slammed Indian's Chandrayaan 3 mission in view of poverty",
-   "claimant": "Anand Mahindra, MeghUpdates, Mint, Times Now",
-   "claim_date": "2016-06-20T00:00:00Z",
-   "url": "https://www.altnews.in/no-bbc-did-not-criticize-chandrayaan-3-old-clip-viral-false-report-by-times-now-india-tv-zee-news-other-outlets/",
-   "publisher": "Alt News",
-   "publisher_site": "altnews.in",
-   "rating": "False",
-   "review_date": "2023-08-25T00:00:00Z",
-   "title": "No, BBC did not criticize Chandrayaan 3. Old clip viral; false report ...",
-   "language": "en"
-  },
-  {
-   "claim_text": "BBC slammed Indian's Chandrayaan 3 mission in view of poverty",
-   "claimant": null,
-   "claim_date": null,
-   "url": "https://www.altnews.in/no-bbc-did-not-criticize-chandrayaan-3-old-clip-viral-false-report-by-times-now-india-tv-zee-news-other-outlets/",
-   "publisher": "Alt News",
-   "publisher_site": "altnews.in",
-   "rating": "False",
-   "review_date": "2023-08-25T11:30:07Z",
-   "title": "No, BBC did not criticize Chandrayaan 3. Old clip viral; false report ...",
-   "language": "en"
-  },
-  {
-   "claim_text": "Photo of the Earth shot from the Moon’s surface by Chandrayaan-3.",
-   "claimant": "Social media users",
-   "claim_date": "2023-08-28T00:00:00Z",
-   "url": "https://www.indiatoday.in/fact-check/story/captivating-photo-of-earth-from-moon-was-not-taken-chandrayaan-3-ai-generated-2427906-2023-08-28",
-   "publisher": "India Today",
-   "publisher_site": "indiatoday.in",
-   "rating": "False",
-   "review_date": null,
-   "title": "Fact Check: This captivating photo of Earth from the Moon was not ...",
-   "language": "en"
-  },
-  {
-   "claim_text": "The video is recent and shows visuals of the moon that were captured by Chandrayaan-3.",
-   "claimant": "Facebook,Twitter,X",
-   "claim_date": "2023-08-22T08:09:17Z",
-   "url": "https://www.thequint.com/news/webqoof/chandrayaan-3-stunning-moon-visuals-animation-viral-video-fact-check",
-   "publisher": "The Quint",
-   "publisher_site": "thequint.com",
-   "rating": "False",
-   "review_date": "2023-08-22T08:09:17Z",
-   "title": "Fact-Check: Old Stock Video Shared as Visuals of Moon Captured ...",
-   "language": "en"
-  },
-  {
-   "claim_text": "Moon Inside View capture by Chandrayaan-3",
-   "claimant": "FB User Sonu Golden Bhai’",
-   "claim_date": "2023-08-24T08:22:51Z",
-   "url": "https://www.vishvasnews.com/english/viral/fact-check-nasa-video-based-on-apollo-mission-data-falsely-circulated-as-chandrayaan-3-footage/",
-   "publisher": null,
-   "publisher_site": "vishvasnews.com",
-   "rating": "False",
-   "review_date": "2023-08-24T08:22:51Z",
-   "title": "Fact Check: NASA Video Based On Apollo Mission Data Falsely ...",
-   "language": "en"
-  }
- ],
+ "page_date:[\"https://www.amazon.com/Crowd/dp/B07NVSP139\"]": null,
  "page_date:[\"https://www.linkedin.com/posts/sowmya-subramanian-pro_chandrayaan-3-india-makes-historic-landing-activity-7100100522522615808-fU2H\"]": null,
- "page_date:[\"https://www.youtube.com/watch?v=ZQqCLgvUrvE\"]": null,
- "page_date:[\"https://www.amazon.com/Crowd-Move/dp/B0H9ZL6YQF\"]": null,
- "page_date:[\"https://za.linkedin.com/in/chernayj\"]": null
+ "page_date:[\"https://www.youtube.com/watch?v=T8p0SvaVJaI\"]": null,
+ "page_date:[\"https://za.linkedin.com/in/chernayj\"]": null,
+ "page_date:[\"https://www.bbc.co.uk/news/uk-wales-66687056\"]": null,
+ "page_date:[\"https://www.facebook.com/KeyAndPeele/posts/learning-the-craft-of-crowd-work-keyandpeele/1490183546476553/\"]": null
 }

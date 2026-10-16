@@ -1,7 +1,7 @@
 {
   "prompt_version": "source-cred-1.1+shared-1.1",
-  "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-09T12:13:54+00:00",
+  "model_id": "gemini-3.8-flash",
+  "recorded_at": "2026-10-16T20:07:21+00:00",
   "outputs": [
     {
       "agent": "source_credibility",
@@ -13,11 +13,11 @@
         "repeat_offender_examples": [],
         "domain_age_days": null,
         "red_flags": [],
-        "note_en": "The content originates from bbc.com, which is a known news outlet. The user provided a direct link to an article on this domain."
+        "note_en": "The content originates from bbc.com, the official domain of BBC News, classified as a known outlet with no recorded repeat offender instances in the database."
       },
       "ai_generation_signals": null,
       "earliest_appearance": null,
-      "notes_en": "",
+      "notes_en": "Source assessed as BBC News based on URL and origin hints.",
       "timed_out": false
     }
   ]

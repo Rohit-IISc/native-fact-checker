@@ -1,82 +1,62 @@
 {
   "prompt_version": "web-search-classify-1.5+shared-1.1",
-  "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-09T12:04:09+00:00",
+  "model_id": "gemini-3.8-flash",
+  "recorded_at": "2026-10-16T20:04:57+00:00",
   "outputs": [
     {
       "items": [
         {
           "source_n": 1,
           "claim_id": "c1",
-          "publisher": null,
-          "title": null,
-          "published_at": "2021-10-11",
-          "language": null,
-          "snippet_en": "Mayo Clinic News Network stated that assertions about microchips in COVID-19 vaccines are false, and there is no way for the vaccine to track people or gather personal information. This myth originated from Bill Gates' comments about a digital certificate of vaccine records, not a microchip.",
+          "publisher": "U.S. Centers for Disease Control and Prevention (CDC)",
+          "title": "Myths and Facts about COVID-19 Vaccines",
+          "published_at": "2023-02-16",
+          "language": "en",
+          "snippet_en": "The CDC confirms that COVID-19 vaccines do not contain microchips and are not used to track people's movement. Vaccines work only to stimulate the immune system to produce antibodies and contain no tracking components.",
           "stance": "CONTRADICTS"
         },
         {
           "source_n": 2,
           "claim_id": "c1",
-          "publisher": null,
-          "title": null,
-          "published_at": "2026-08-30",
-          "language": null,
-          "snippet_en": "Mayo Clinic clarified that COVID-19 vaccines are made only with ingredients that help the body recognize and clear out the virus, and it is a myth that they contain microchips to track location or movement.",
+          "publisher": "Kementerian Komunikasi dan Informatika RI (Kominfo) via Pemprov DKI Jakarta (Jalahoaks)",
+          "title": "[HOAKS] - Vaksin COVID-19 Memiliki Chip Yang Dapat Melacak Keberadaan Orang",
+          "published_at": "2021-01-21",
+          "language": "id",
+          "snippet_en": "Official spokespersons stated that claims regarding COVID-19 vaccines containing tracking microchips are false. Tracking elements and barcodes exist strictly on packaging and distribution logistics to track vaccine vials, not inside the vaccines administered to recipients.",
           "stance": "CONTRADICTS"
         },
         {
           "source_n": 3,
           "claim_id": "c1",
-          "publisher": null,
-          "title": null,
-          "published_at": "2020-12-15",
-          "language": null,
-          "snippet_en": "FactCheck.org reported that a video falsely claiming COVID-19 vaccine vials have a microchip to track patients misrepresented an interview about a chip attached to a plastic vial to store information about the vaccine dose, not to track people.",
+          "publisher": "AFP Fact Check",
+          "title": "Covid-19 vaccines do not contain tracking devices",
+          "published_at": "2021-07-02",
+          "language": "en",
+          "snippet_en": "Infectious disease specialists and health regulators in the United States and Canada confirmed that authorized COVID-19 vaccines do not contain microchips or tracking devices, debunking claims circulating on social media.",
           "stance": "CONTRADICTS"
         },
         {
           "source_n": 4,
           "claim_id": "c1",
-          "publisher": null,
-          "title": null,
-          "published_at": "2021-01-12",
-          "language": null,
-          "snippet_en": "KSAT reported that local medical experts in San Antonio warned about the prevalence of misinformation, including the unfounded social media theory that COVID-19 vaccines contain microchips and tracking devices, which they determined to be untrue.",
+          "publisher": "FactCheck.org",
+          "title": "COVID-19 Vaccines Don’t Have Microchips",
+          "published_at": "2020-12-15",
+          "language": "en",
+          "snippet_en": "The fact-check confirms COVID-19 vaccines do not contain microchips. Claims stemmed from misleading interpretations of optional RFID tags used on external syringe packaging for supply chain tracking, which carry no patient data and cannot be injected.",
           "stance": "CONTRADICTS"
         },
         {
           "source_n": 5,
           "claim_id": "c1",
-          "publisher": null,
-          "title": null,
-          "published_at": "2021-07-02",
-          "language": null,
-          "snippet_en": "AFP Fact Check stated that social media posts claiming COVID-19 vaccines contain trackers are false, and health authorities confirm no chip is in any vaccine product.",
-          "stance": "CONTRADICTS"
-        },
-        {
-          "source_n": 6,
-          "claim_id": "c1",
-          "publisher": null,
-          "title": null,
-          "published_at": "2021-01-21",
-          "language": null,
-          "snippet_en": "Jala Hoaks Jakarta clarified that claims of COVID-19 vaccines containing chips to track people are false, explaining that barcodes on vaccine products are for tracking distribution, not individuals.",
-          "stance": "CONTRADICTS"
-        },
-        {
-          "source_n": 7,
-          "claim_id": "c1",
-          "publisher": null,
-          "title": null,
-          "published_at": "2026-03-07",
-          "language": null,
-          "snippet_en": "CSIRT Bulelengkab clarified that claims of COVID-19 vaccines containing chips to track people are false, explaining that barcodes on vaccine products are for tracking distribution, not individuals.",
+          "publisher": "Mayo Clinic Health System",
+          "title": "COVID-19 vaccine myths debunked",
+          "published_at": "2021-10-11",
+          "language": "en",
+          "snippet_en": "Mayo Clinic medical directors confirmed that there are no microchips in COVID-19 vaccines, nor any mechanism to track or gather personal information through vaccination.",
           "stance": "CONTRADICTS"
         }
       ],
-      "notes_en": ""
+      "notes_en": "All sources directly contradict the claim that COVID-19 vaccines contain microchips to track individuals."
     }
   ]
 }

@@ -1,32 +1,32 @@
 {
   "prompt_version": "packager-1.1+shared-1.1",
-  "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-09T12:01:31+00:00",
+  "model_id": "gemini-3.8-flash",
+  "recorded_at": "2026-10-16T20:03:56+00:00",
   "outputs": [
     {
       "briefs": [
         {
           "claim_id": "c1",
-          "claim_en": "Prime Minister Modi is providing 3 months of free mobile recharge to all Indians.",
+          "claim_en": "Prime Minister Modi is offering all Indians 3 months of free mobile recharge.",
           "claim_type": null,
           "claimed_date": null,
-          "place": null,
-          "brief_en": "Multiple fact-checking organizations and government sources, including the Press Information Bureau (PIB) Fact Check Unit, have debunked the claim that Prime Minister Modi is providing 3 months of free mobile recharge to all Indians. These sources consistently state that no such scheme has been announced by the Prime Minister or the Government of India. They warn that viral messages circulating on social media, often leading to suspicious websites, are fake and attempts to defraud users through phishing scams. Some variations of the claim have been linked to specific events like Raksha Bandhan or the Mahakumbh Mela, and others to general election campaigns, all of which have been identified as false.",
+          "place": "India",
+          "brief_en": "Multiple news reports and fact-checking organisations consistently report that the claim alleging Prime Minister Narendra Modi is providing three months of free mobile recharge to all Indians is false. Vishvas News debunked recurring iterations of this message in October 2023, January 2024, November 2024, January 2025, and August 2025, determining that circulating links are fraudulent schemes designed to steal user data. On 2025-11-25, BOOM reported that an accompanying viral clip of the Prime Minister announcing the offer was edited. On 2024-06-07, NDTV found no record of such a government scheme following the general election. In September 2026, ET Now, TV9 Hindi, and the Press Information Bureau's fact-checking unit reiterated that the Government of India operates no such program and warned that the viral links are phishing scams.",
           "evidence_ids": [
+            "fc-1",
+            "fc-6",
+            "fc-5",
+            "fc-4",
             "fc-2",
             "fc-3",
-            "fc-4",
-            "fc-5",
-            "fc-6",
-            "fc-7",
-            "fc-8",
-            "fc-9",
-            "fc-10",
-            "fc-11",
-            "ws-1",
-            "ws-6"
+            "ws-4",
+            "ws-2",
+            "ws-3",
+            "ws-1"
           ],
-          "gaps_en": []
+          "gaps_en": [
+            "No official government notification or announcement exists supporting the claim."
+          ]
         }
       ]
     }

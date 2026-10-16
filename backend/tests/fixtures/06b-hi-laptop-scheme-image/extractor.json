@@ -1,35 +1,34 @@
 {
   "prompt_version": "extractor-1.13+shared-1.1",
   "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-09T12:02:58+00:00",
+  "recorded_at": "2026-10-16T20:04:29+00:00",
   "outputs": [
     {
       "content_language": "hi-IN",
       "content_script": "Deva",
-      "summary_en": "The image announces a 'Prime Minister Free Laptop Scheme 2026' which claims to provide free laptops to all students from the government. It states that the last date to apply is October 15 and instructs users to click on a provided link (www.pm-free-laptop-yojana.in) to register their name. The post also urges users to forward it to all groups.",
+      "summary_en": "A message claims that under the 'Prime Minister Free Laptop Scheme 2026', the government is providing free laptops to all students. It states the last date to apply is October 15 and asks users to register via a provided link and forward the message.",
       "checkable": true,
       "non_checkable_type": null,
       "claims": [
         {
           "claim_id": "claim1",
           "claim_original": "प्रधानमंत्री मुफ्त लैपटॉप योजना 2026 सभी छात्रों को सरकार की ओर से मुफ्त लैपटॉप दिया जा रहा है।",
-          "claim_en": "The 'Prime Minister Free Laptop Scheme 2026' is providing free laptops to all students from the government.",
+          "claim_en": "Under the Prime Minister Free Laptop Scheme 2026, the government is providing free laptops to all students.",
           "claim_type": "GOVERNMENT_SCHEME",
           "entities": [
             "Prime Minister",
-            "government",
-            "students"
+            "government"
           ],
           "place": "India",
           "claimed_date": null,
           "time_sensitivity": "EVERGREEN",
           "search_queries_original": [
             "प्रधानमंत्री मुफ्त लैपटॉप योजना 2026",
-            "मुफ्त लैपटॉप योजना सरकार"
+            "फ्री लैपटॉप योजना सरकार"
           ],
           "search_queries_en": [
-            "Prime Minister Free Laptop Scheme 2026",
-            "government free laptop scheme"
+            "Prime Minister Free Laptop Scheme 2026 fact check",
+            "Government free laptop scheme India"
           ],
           "search_queries_regional": [
             {
@@ -38,40 +37,42 @@
             },
             {
               "language": "kn",
-              "query": "ಪ್ರಧಾನಮಂತ್ರಿ ಉಚಿತ ಲ್ಯಾಪ್‌ಟಾಪ್ ಯೋಜನೆ 2026"
+              "query": "ಪ್ರಧಾನ ಮಂತ್ರಿ ಉಚಿತ ಲ್ಯಾಪ್‌ಟಾಪ್ ಯೋಜನೆ 2026"
             }
           ]
         },
         {
           "claim_id": "claim2",
           "claim_original": "आवेदन की अंतिम तिथि: 15 अक्टूबर",
-          "claim_en": "The last date to apply for the scheme is October 15.",
+          "claim_en": "The last date to apply for the Prime Minister Free Laptop Scheme 2026 is October 15.",
           "claim_type": "GOVERNMENT_SCHEME",
           "entities": [],
           "place": null,
-          "claimed_date": null,
-          "time_sensitivity": "EVERGREEN",
+          "claimed_date": "2026-10-15",
+          "time_sensitivity": "LIVE_EVENT",
           "search_queries_original": [
-            "लैपटॉप योजना आवेदन अंतिम तिथि"
+            "प्रधानमंत्री मुफ्त लैपटॉप योजना आवेदन अंतिम तिथि",
+            "15 अक्टूबर लैपटॉप योजना"
           ],
           "search_queries_en": [
-            "laptop scheme application last date"
+            "PM free laptop scheme application deadline October 15",
+            "Free laptop scheme last date"
           ],
           "search_queries_regional": [
             {
               "language": "ta",
-              "query": "லேப்டாப் திட்டம் விண்ணப்ப கடைசி தேதி"
+              "query": "பிரதம மந்திரி இலவச லேப்டாப் திட்டம் விண்ணப்ப கடைசி தேதி"
             },
             {
               "language": "kn",
-              "query": "ಲ್ಯಾಪ್‌ಟಾಪ್ ಯೋಜನೆ ಅರ್ಜಿ ಕೊನೆಯ ದಿನಾಂಕ"
+              "query": "ಪ್ರಧಾನ ಮಂತ್ರಿ ಉಚಿತ ಲ್ಯಾಪ್‌ಟಾಪ್ ಯೋಜನೆ ಅರ್ಜಿ ಕೊನೆಯ ದಿನಾಂಕ"
             }
           ]
         },
         {
           "claim_id": "claim3",
           "claim_original": "नीचे दिए लिंक पर क्लिक करके अपना नाम दर्ज करें। www.pm-free-laptop-yojana.in",
-          "claim_en": "Users must click on the link www.pm-free-laptop-yojana.in to register their name for the scheme.",
+          "claim_en": "Users should click on the link www.pm-free-laptop-yojana.in to register for the scheme.",
           "claim_type": "GOVERNMENT_SCHEME",
           "entities": [],
           "place": null,
@@ -79,11 +80,11 @@
           "time_sensitivity": "EVERGREEN",
           "search_queries_original": [
             "pm-free-laptop-yojana.in वेबसाइट",
-            "मुफ्त लैपटॉप योजना पंजीकरण लिंक"
+            "प्रधानमंत्री मुफ्त लैपटॉप योजना रजिस्ट्रेशन लिंक"
           ],
           "search_queries_en": [
-            "pm-free-laptop-yojana.in website",
-            "free laptop scheme registration link"
+            "pm-free-laptop-yojana.in website fact check",
+            "PM free laptop scheme registration link"
           ],
           "search_queries_regional": [
             {
@@ -98,9 +99,9 @@
         }
       ],
       "extra_claims_not_checked": [],
-      "ocr_text": "□□ बड़ी खुशखबरी प्रधानमंत्री मुफ्त लैपटॉप योजना 2026 सभी छात्रों को सरकार की ओर से मुफ्त लैपटॉप दिया जा रहा है। आवेदन की अंतिम तिथि: 15 अक्टूबर नीचे दिए लिंक पर क्लिक करके अपना नाम दर्ज करें। www.pm-free-laptop-yojana.in इसे सभी ग्रुप में फॉरवर्ड करें",
+      "ocr_text": "□□ बड़ी खुशखबरी □□ प्रधानमंत्री मुफ्त लैपटॉप योजना 2026 सभी छात्रों को सरकार की ओर से मुफ्त लैपटॉप दिया जा रहा है। आवेदन की अंतिम तिथि: 15 अक्टूबर नीचे दिए लिंक पर क्लिक करके अपना नाम दर्ज करें। www.pm-free-laptop-yojana.in इसे सभी ग्रुप में फॉरवर्ड करें",
       "transcript": null,
-      "visual_description_en": "The image is a digital graphic with a plain orange header at the top and a white background for the main text. The header contains the text '□□ बड़ी खुशखबरी □□' (Big Good News). The main body of the text, in black, announces 'प्रधानमंत्री मुफ्त लैपटॉप योजना 2026' (Prime Minister Free Laptop Scheme 2026), stating that 'सभी छात्रों को सरकार की ओर से मुफ्त लैपटॉप दिया जा रहा है।' (Free laptops are being given to all students by the government). It also mentions 'आवेदन की अंतिम तिथि: 15 अक्टूबर' (Last date for application: 15 October) and instructs to 'नीचे दिए लिंक पर क्लिक करके अपना नाम दर्ज करें।' (Click on the link below to register your name). A blue URL 'www.pm-free-laptop-yojana.in' is prominently displayed. At the bottom, in red text, it says 'इसे सभी ग्रुप में फॉरवर्ड करें' (Forward this to all groups).",
+      "visual_description_en": "The image is a digital graphic with an orange header and white background. The header reads \"बड़ी खुशखबरी\" (Big Good News). The main text, in Hindi, announces the \"प्रधानमंत्री मुफ्त लैपटॉप योजना 2026\" (Prime Minister Free Laptop Scheme 2026), stating that the government is providing free laptops to all students. It mentions an application deadline of \"15 अक्टूबर\" (October 15) and instructs users to click a link, \"www.pm-free-laptop-yojana.in\", to register. The bottom of the image has a red line asking to forward the message to all groups.",
       "ai_generation_signals": null,
       "origin_hints": [],
       "media_markers": []

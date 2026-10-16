@@ -1,7 +1,7 @@
 {
   "prompt_version": "packager-1.1+shared-1.1",
-  "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-09T12:04:09+00:00",
+  "model_id": "gemini-3.8-flash",
+  "recorded_at": "2026-10-16T20:04:57+00:00",
   "outputs": [
     {
       "briefs": [
@@ -11,22 +11,22 @@
           "claim_type": null,
           "claimed_date": null,
           "place": null,
-          "brief_en": "Multiple fact-checking organizations and medical institutions have debunked the claim that COVID-19 vaccines contain microchips for tracking individuals. FactCheck.org, in December 2020, clarified that a video misrepresenting a chip attached to a vaccine vial was for dose information, not patient tracking. The Mayo Clinic, in October 2021 and August 2026, stated that vaccines only contain ingredients to fight the virus and cannot track people. AFP Fact Check, in July 2021, confirmed that health authorities deny any chips in vaccine products. Jala Hoaks Jakarta and CSIRT Bulelengkab, in January 2021 and March 2026 respectively, explained that barcodes on vaccine products are for distribution tracking, not individual tracking. Claims linking Bill Gates to microchipped vaccines were also debunked by Tempo.co in April 2020 and AFP Fact Check in June 2020. Videos purporting to show magnets sticking to vaccinated arms or microchip readers detecting chips have been identified as false or spoofed by FactCheck.org and Full Fact in 2021.",
+          "brief_en": "Official public health authorities and independent fact-checkers consistently state that COVID-19 vaccines do not contain microchips or tracking mechanisms. The U.S. Centers for Disease Control and Prevention stated on 2023-02-16 that authorized vaccines contain no microchips and function solely to stimulate immune antibody production. In Indonesia, the Ministry of Communication and Information Technology stated on 2021-01-21 that tracking devices and barcodes exist solely on supply chain packaging and vials, not within injectable vaccines. Fact-checking organizations, including AFP Fact Check on 2021-07-02 and FactCheck.org on 2020-12-15, noted that claims stemmed from misinterpretations of external RFID packaging sensors and health monitoring research, confirming vaccines possess no capability to track individuals.",
           "evidence_ids": [
+            "ws-1",
             "ws-3",
-            "ws-5",
-            "ws-6",
-            "ws-7",
-            "fc-1",
-            "fc-2",
+            "ws-2",
+            "ws-4",
+            "fc-4",
             "fc-3",
+            "fc-2",
             "fc-5",
-            "fc-6",
-            "fc-8",
-            "fc-9",
-            "fc-10"
+            "ws-5",
+            "fc-6"
           ],
-          "gaps_en": []
+          "gaps_en": [
+            "No evidence supporting the presence of microchips or tracking devices in any authorized COVID-19 vaccine was identified."
+          ]
         }
       ]
     }

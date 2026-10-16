@@ -1,0 +1,75 @@
+{
+  "prompt_version": "judge-1.4+shared-1.1",
+  "model_id": "gemini-3.1-pro-preview",
+  "recorded_at": "2026-10-16T20:04:29+00:00",
+  "outputs": [
+    {
+      "verdicts": [
+        {
+          "claim_id": "c1",
+          "label": "SCAM",
+          "confidence": 100,
+          "what_is_true_en": "The Indian government has not launched a 'Prime Minister Free Laptop Scheme'. Official bodies and fact-checkers have repeatedly confirmed this is a phishing scam.",
+          "event_date": null,
+          "evidence_for_ids": [],
+          "evidence_against_ids": [
+            "ws-4",
+            "fc-2",
+            "fc-4",
+            "fc-1",
+            "ws-1",
+            "ws-9",
+            "fc-5",
+            "ws-6"
+          ],
+          "cited_ids": [
+            "ws-4",
+            "fc-2",
+            "fc-4"
+          ],
+          "reasoning_en": "Multiple Tier 1 sources, including the AICTE and fact-checking organisations, confirm that the 'Prime Minister Free Laptop Scheme' does not exist and is a recurring phishing scam.",
+          "ai_generation": null
+        },
+        {
+          "claim_id": "c2",
+          "label": "SCAM",
+          "confidence": 100,
+          "what_is_true_en": "There is no application deadline because the free laptop scheme does not exist. The deadline is fabricated as part of a scam.",
+          "event_date": null,
+          "evidence_for_ids": [],
+          "evidence_against_ids": [
+            "ws-2",
+            "ws-7"
+          ],
+          "cited_ids": [
+            "ws-2"
+          ],
+          "reasoning_en": "Since the scheme itself is a known scam, any associated application deadlines are entirely fabricated to create a false sense of urgency.",
+          "ai_generation": null
+        },
+        {
+          "claim_id": "c3",
+          "label": "SCAM",
+          "confidence": 100,
+          "what_is_true_en": "The provided link is a fraudulent phishing site designed to steal personal and banking information. The government has warned against clicking such links.",
+          "event_date": null,
+          "evidence_for_ids": [],
+          "evidence_against_ids": [
+            "ws-5",
+            "fc-3",
+            "ws-3",
+            "ws-10",
+            "ws-8"
+          ],
+          "cited_ids": [
+            "ws-5",
+            "fc-3",
+            "ws-3"
+          ],
+          "reasoning_en": "Official warnings from AICTE and PIB Fact Check, along with independent fact-checks, confirm that registration links for this fake scheme are phishing attempts aimed at harvesting user data and causing financial loss.",
+          "ai_generation": null
+        }
+      ]
+    }
+  ]
+}

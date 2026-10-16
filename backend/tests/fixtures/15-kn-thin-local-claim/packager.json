@@ -1,25 +1,26 @@
 {
   "prompt_version": "packager-1.1+shared-1.1",
-  "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-09T12:16:02+00:00",
+  "model_id": "gemini-3.8-flash",
+  "recorded_at": "2026-10-16T20:08:23+00:00",
   "outputs": [
     {
       "briefs": [
         {
           "claim_id": "c1",
-          "claim_en": "Two crocodiles were spotted yesterday evening in Kukkarahalli Lake in Mysuru.",
+          "claim_en": "Two crocodiles were seen in Kukkarahalli Lake in Mysuru yesterday evening.",
           "claim_type": null,
-          "claimed_date": "2026-10-08",
-          "place": "Kukkarahalli Lake, Mysuru",
-          "brief_en": "While the claim states two crocodiles were spotted on October 8, 2026, the provided evidence does not confirm this specific event. However, multiple sources indicate that crocodiles are frequently sighted in Kukkarahalli Lake. A \"huge crocodile\" was photographed there on December 1, 2024, according to starofmysore.com. Another report from January 28, 2026, also from starofmysore.com, mentions a recent crocodile sighting, with an environmentalist claiming to have seen it four times. Inshorts.com reported in September 2026 that visitors were warned about crocodile attacks at the lake, suggesting their continued presence.",
+          "claimed_date": "2026-10-15",
+          "place": "Mysuru",
+          "brief_en": "Available local news reports establish that Kukkarahalli Lake in Mysuru is a documented habitat for mugger crocodiles, with occasional sightings reported over time. The Hindu reported a marsh crocodile sighting near the lake bund on March 26, 2010. Star of Mysore documented individual sightings on December 1, 2024, and on January 28, 2026, near Rangayana. A subsequent report by Star of Mysore on September 7, 2026, noted visitor safety concerns and warning signs around the water body. However, none of the retrieved reports corroborate a sighting of two crocodiles occurring specifically on the evening of October 15, 2026.",
           "evidence_ids": [
+            "ws-4",
             "ws-1",
             "ws-2",
             "ws-3"
           ],
           "gaps_en": [
-            "No evidence directly confirms the sighting of two crocodiles on October 8, 2026.",
-            "The exact number of crocodiles and the specific date of the claimed sighting are not corroborated by the provided sources."
+            "No news reports or official statements found regarding crocodile sightings on October 15, 2026.",
+            "No corroboration found regarding the presence of two crocodiles simultaneously."
           ]
         }
       ]
