@@ -50,15 +50,29 @@
       "photo": "ಫೋಟೋ",
       "video": "ವಿಡಿಯೋ",
       "audio": "ಆಡಿಯೋ",
-      "link": "ಲಿಂಕ್"
-    }
+      "link": "ಲಿಂಕ್",
+      "screenshot": "ಸ್ಕ್ರೀನ್‌ಶಾಟ್",
+      "whatsapp": "ವಾಟ್ಸಾಪ್"
+    },
+    "quotaTitle": "ಇಂದು ಉಳಿದ ಪರಿಶೀಲನೆಗಳು",
+    "quotaPill": "{{limit}}ರಲ್ಲಿ {{left}} ಉಳಿದಿವೆ",
+    "shareLine": "ವಾಟ್ಸಾಪ್‌ನಲ್ಲಿ ಸಂದೇಶವನ್ನು ಒತ್ತಿ ಹಿಡಿದು, ಹಂಚಿಕೊಳ್ಳಿ ಒತ್ತಿ, ನಂತರ CHCKR ಆರಿಸಿ.",
+    "recentEmpty": "ಇನ್ನೂ ಯಾವುದೇ ಪರಿಶೀಲನೆ ಇಲ್ಲ."
   },
   "check": {
     "title": "ನಿಮ್ಮ ಫಾರ್ವರ್ಡ್ ಪರಿಶೀಲಿಸಲಾಗುತ್ತಿದೆ",
     "leaveNote": "ನೀವು ಈ ಪರದೆಯನ್ನು ಬಿಡಬಹುದು. ಉತ್ತರ ಸಿದ್ಧವಾದಾಗ ನಾವು ತಿಳಿಸುತ್ತೇವೆ.",
     "failed": "ಕ್ಷಮಿಸಿ, ಈ ಪರಿಶೀಲನೆ ಪೂರ್ಣಗೊಳ್ಳಲಿಲ್ಲ. ಇದನ್ನು ನಿಮ್ಮ ದೈನಂದಿನ ಮಿತಿಯಲ್ಲಿ ಎಣಿಸಲಾಗಿಲ್ಲ.",
     "tryAgain": "ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ",
-    "sending": "ಕಳುಹಿಸಲಾಗುತ್ತಿದೆ…"
+    "sending": "ಕಳುಹಿಸಲಾಗುತ್ತಿದೆ…",
+    "agents": "ಪ್ರತಿ ಪರಿಶೀಲಕ ಏನು ಮಾಡುತ್ತಿದೆ",
+    "agentState": {
+      "done": "ಮುಗಿದಿದೆ",
+      "running": "ನಡೆಯುತ್ತಿದೆ…",
+      "skipped": "ಅಗತ್ಯವಿಲ್ಲ",
+      "waiting": "ಕಾಯುತ್ತಿದೆ",
+      "missed": "ಪೂರ್ಣವಾಗಿಲ್ಲ"
+    }
   },
   "stage": {
     "received": "ಸ್ವೀಕರಿಸಲಾಗಿದೆ",
@@ -119,7 +133,28 @@
     "verifiedNote_other": "{{count}} ವಿಶ್ವಾಸಾರ್ಹ ಮೂಲಗಳು",
     "tier1": "ಹಂತ 1",
     "tier2": "ಹಂತ 2",
-    "tier3": "ಹಂತ 3"
+    "tier3": "ಹಂತ 3",
+    "pause": "ನಿಲ್ಲಿಸಿ",
+    "listen": "ಕೇಳಿ",
+    "audioPosition": "ಆಡಿಯೋ ಸ್ಥಾನ",
+    "audioFailed": "ಆಡಿಯೋ ಲಭ್ಯವಿಲ್ಲ",
+    "reviewers": "2 ಪರಿಶೀಲಕರು ಪರಿಶೀಲಿಸಿದ್ದಾರೆ",
+    "sourceCount_one": "{{count}} ಮೂಲ",
+    "sourceCount_other": "{{count}} ಮೂಲಗಳು",
+    "statFor": "ಪರವಾಗಿ",
+    "statAgainst": "ವಿರುದ್ಧವಾಗಿ",
+    "statSources": "ಮೂಲಗಳು",
+    "sections": "ಉತ್ತರದ ಭಾಗಗಳು",
+    "tab": {
+      "answer": "ಉತ್ತರ",
+      "evidence": "ಸಾಕ್ಷ್ಯ",
+      "sources": "ಮೂಲಗಳು"
+    },
+    "shareTitle": "ಹಂಚಿಕೊಳ್ಳಿ",
+    "shareWhatsApp": "ವಾಟ್ಸಾಪ್",
+    "shareCardShort": "ಕಾರ್ಡ್",
+    "copyLinkShort": "ಲಿಂಕ್ ನಕಲಿಸಿ",
+    "showNativeShort": "ಮೂಲ ಭಾಷೆ"
   },
   "limit": {
     "title": "ಇಂದಿನ ಪರಿಶೀಲನೆಗಳು ಮುಗಿದಿವೆ",
@@ -253,5 +288,11 @@
         ]
       }
     ]
+  },
+  "agentShort": {
+    "web_search": "ಸುದ್ದಿ",
+    "factcheck_sites": "ಸತ್ಯಪರಿಶೀಲನೆ",
+    "source_credibility": "ಮೂಲ",
+    "media_provenance": "ಚಿತ್ರ"
   }
 }

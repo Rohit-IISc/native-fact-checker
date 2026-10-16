@@ -26,12 +26,14 @@ export function PublicResult() {
       {result && (
         <ClaimCard
           claim={{ label: result.label, confidence: result.confidence, result_url: window.location.href,
-                   panel_outcome: result.panel_outcome }}
+                   panel_outcome: result.panel_outcome, evidence_for_ids: result.evidence_for_ids,
+                   evidence_against_ids: result.evidence_against_ids }}
           answer={result.answer}
           answerEn={result.answer_en}
           audioUrl={result.audio_url}
           cardUrl={result.card_url}
           sources={result.sources}
+          aiGeneration={result.ai_generation}
         />
       )}
       <Link className="button primary" to="/">

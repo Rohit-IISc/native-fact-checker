@@ -50,15 +50,29 @@
       "photo": "Photo",
       "video": "Video",
       "audio": "Audio",
-      "link": "Link"
-    }
+      "link": "Link",
+      "screenshot": "Screenshot",
+      "whatsapp": "WhatsApp"
+    },
+    "quotaTitle": "Checks left today",
+    "quotaPill": "{{left}} of {{limit}} left",
+    "shareLine": "In WhatsApp, long-press the message, tap Share, then pick CHCKR.",
+    "recentEmpty": "No checks yet."
   },
   "check": {
     "title": "Checking your forward",
     "leaveNote": "You can leave this screen. We will notify you when the answer is ready.",
     "failed": "Sorry, we could not finish this check. It did not count against your daily limit.",
     "tryAgain": "Try again",
-    "sending": "Sending…"
+    "sending": "Sending…",
+    "agents": "What each checker is doing",
+    "agentState": {
+      "done": "Done",
+      "running": "Working…",
+      "skipped": "Not needed",
+      "waiting": "Waiting",
+      "missed": "Not finished"
+    }
   },
   "stage": {
     "received": "Received",
@@ -119,7 +133,28 @@
     "verifiedNote_other": "{{count}} trusted sources",
     "tier1": "Tier 1",
     "tier2": "Tier 2",
-    "tier3": "Tier 3"
+    "tier3": "Tier 3",
+    "pause": "Pause",
+    "listen": "Listen",
+    "audioPosition": "Audio position",
+    "audioFailed": "Audio unavailable",
+    "reviewers": "Checked by 2 reviewers",
+    "sourceCount_one": "{{count}} source",
+    "sourceCount_other": "{{count}} sources",
+    "statFor": "For",
+    "statAgainst": "Against",
+    "statSources": "Sources",
+    "sections": "Answer sections",
+    "tab": {
+      "answer": "Answer",
+      "evidence": "Evidence",
+      "sources": "Sources"
+    },
+    "shareTitle": "Share",
+    "shareWhatsApp": "WhatsApp",
+    "shareCardShort": "Card",
+    "copyLinkShort": "Copy link",
+    "showNativeShort": "Original"
   },
   "limit": {
     "title": "You have used today's checks",
@@ -253,5 +288,11 @@
         ]
       }
     ]
+  },
+  "agentShort": {
+    "web_search": "News",
+    "factcheck_sites": "Fact sites",
+    "source_credibility": "Source",
+    "media_provenance": "Image"
   }
 }

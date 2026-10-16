@@ -50,15 +50,29 @@
       "photo": "Foto",
       "video": "Video",
       "audio": "Audio",
-      "link": "Tautan"
-    }
+      "link": "Tautan",
+      "screenshot": "Tangkapan layar",
+      "whatsapp": "WhatsApp"
+    },
+    "quotaTitle": "Sisa cek hari ini",
+    "quotaPill": "{{left}} dari {{limit}} tersisa",
+    "shareLine": "Di WhatsApp, tekan lama pesannya, ketuk Bagikan, lalu pilih CHCKR.",
+    "recentEmpty": "Belum ada cek."
   },
   "check": {
     "title": "Memeriksa pesan Anda",
     "leaveNote": "Anda boleh meninggalkan layar ini. Kami akan memberi tahu saat jawabannya siap.",
     "failed": "Maaf, pemeriksaan ini tidak dapat diselesaikan. Ini tidak dihitung dalam batas harian Anda.",
     "tryAgain": "Coba lagi",
-    "sending": "Mengirim…"
+    "sending": "Mengirim…",
+    "agents": "Yang sedang dikerjakan tiap pemeriksa",
+    "agentState": {
+      "done": "Selesai",
+      "running": "Berjalan…",
+      "skipped": "Tidak perlu",
+      "waiting": "Menunggu",
+      "missed": "Tidak selesai"
+    }
   },
   "stage": {
     "received": "Diterima",
@@ -119,7 +133,28 @@
     "verifiedNote_other": "{{count}} sumber tepercaya",
     "tier1": "Tingkat 1",
     "tier2": "Tingkat 2",
-    "tier3": "Tingkat 3"
+    "tier3": "Tingkat 3",
+    "pause": "Jeda",
+    "listen": "Dengarkan",
+    "audioPosition": "Posisi audio",
+    "audioFailed": "Audio tidak tersedia",
+    "reviewers": "Dicek oleh 2 peninjau",
+    "sourceCount_one": "{{count}} sumber",
+    "sourceCount_other": "{{count}} sumber",
+    "statFor": "Mendukung",
+    "statAgainst": "Menyangkal",
+    "statSources": "Sumber",
+    "sections": "Bagian jawaban",
+    "tab": {
+      "answer": "Jawaban",
+      "evidence": "Bukti",
+      "sources": "Sumber"
+    },
+    "shareTitle": "Bagikan",
+    "shareWhatsApp": "WhatsApp",
+    "shareCardShort": "Kartu",
+    "copyLinkShort": "Salin tautan",
+    "showNativeShort": "Bahasa asli"
   },
   "limit": {
     "title": "Jatah pemeriksaan hari ini sudah habis",
@@ -253,5 +288,11 @@
         ]
       }
     ]
+  },
+  "agentShort": {
+    "web_search": "Berita",
+    "factcheck_sites": "Cek fakta",
+    "source_credibility": "Sumber",
+    "media_provenance": "Gambar"
   }
 }

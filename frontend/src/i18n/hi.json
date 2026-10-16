@@ -50,15 +50,29 @@
       "photo": "फ़ोटो",
       "video": "वीडियो",
       "audio": "ऑडियो",
-      "link": "लिंक"
-    }
+      "link": "लिंक",
+      "screenshot": "स्क्रीनशॉट",
+      "whatsapp": "व्हाट्सऐप"
+    },
+    "quotaTitle": "आज की बची जाँचें",
+    "quotaPill": "{{limit}} में से {{left}} बाकी",
+    "shareLine": "व्हाट्सऐप में मैसेज को दबाकर रखें, शेयर पर टैप करें, फिर CHCKR चुनें।",
+    "recentEmpty": "अभी तक कोई जाँच नहीं।"
   },
   "check": {
     "title": "आपके फ़ॉरवर्ड की जाँच हो रही है",
     "leaveNote": "आप यह स्क्रीन छोड़ सकते हैं। जवाब तैयार होने पर हम आपको सूचना देंगे।",
     "failed": "माफ़ कीजिए, यह जाँच पूरी नहीं हो सकी। यह आपकी आज की सीमा में नहीं गिनी गई।",
     "tryAgain": "फिर से कोशिश करें",
-    "sending": "भेजा जा रहा है…"
+    "sending": "भेजा जा रहा है…",
+    "agents": "हर जाँचकर्ता क्या कर रहा है",
+    "agentState": {
+      "done": "हो गया",
+      "running": "चल रहा है…",
+      "skipped": "ज़रूरत नहीं",
+      "waiting": "इंतज़ार",
+      "missed": "पूरा नहीं हुआ"
+    }
   },
   "stage": {
     "received": "मिल गया",
@@ -119,7 +133,28 @@
     "verifiedNote_other": "{{count}} भरोसेमंद स्रोत",
     "tier1": "स्तर 1",
     "tier2": "स्तर 2",
-    "tier3": "स्तर 3"
+    "tier3": "स्तर 3",
+    "pause": "रोकें",
+    "listen": "सुनें",
+    "audioPosition": "ऑडियो की जगह",
+    "audioFailed": "ऑडियो उपलब्ध नहीं",
+    "reviewers": "2 समीक्षकों ने जाँचा",
+    "sourceCount_one": "{{count}} स्रोत",
+    "sourceCount_other": "{{count}} स्रोत",
+    "statFor": "पक्ष में",
+    "statAgainst": "विरोध में",
+    "statSources": "स्रोत",
+    "sections": "जवाब के हिस्से",
+    "tab": {
+      "answer": "जवाब",
+      "evidence": "सबूत",
+      "sources": "स्रोत"
+    },
+    "shareTitle": "शेयर करें",
+    "shareWhatsApp": "व्हाट्सऐप",
+    "shareCardShort": "कार्ड",
+    "copyLinkShort": "लिंक कॉपी",
+    "showNativeShort": "मूल भाषा"
   },
   "limit": {
     "title": "आज की जाँचें पूरी हो गईं",
@@ -253,5 +288,11 @@
         ]
       }
     ]
+  },
+  "agentShort": {
+    "web_search": "समाचार",
+    "factcheck_sites": "फ़ैक्ट-चेक",
+    "source_credibility": "स्रोत",
+    "media_provenance": "तस्वीर"
   }
 }

@@ -80,16 +80,10 @@ export function CheckPage() {
   return (
     <main className="screen">
       {!done && !failed && (
-        <section className="card">
-          <h2>{t('check.title')}</h2>
-          {check?.claims_preview?.[0] && (
-            <p className="quote" lang={check.content_language ?? undefined}>
-              {check.claims_preview[0]}
-            </p>
-          )}
-          <ProgressSteps check={check} />
-          {showLeave && <p className="muted small">{t('check.leaveNote')}</p>}
-        </section>
+        <>
+          <ProgressSteps check={check} preview={check?.claims_preview?.[0]} />
+          {showLeave && <p className="muted leave">{t('check.leaveNote')}</p>}
+        </>
       )}
       {failed && (
         <section className="card" role="alert">

@@ -34,6 +34,9 @@ export interface AnswerText {
   card_lines: string[]
   /** Only when the reviewers disagreed (panel_outcome SPLIT): one item per reading. */
   panel_readings?: string[]
+  /** The AI-generation signals in this answer's language (composer-1.4); older verdicts lack them. */
+  ai_signals_ai?: string[]
+  ai_signals_real?: string[]
 }
 
 export interface AIGeneration {
@@ -133,6 +136,9 @@ export interface PublicResult {
   answer: AnswerText
   answer_en: AnswerText
   sources: Pick<Evidence, 'evidence_id' | 'url' | 'domain' | 'publisher' | 'title' | 'tier' | 'stance'>[]
+  evidence_for_ids?: string[]
+  evidence_against_ids?: string[]
+  ai_generation?: AIGeneration | null
   audio_url?: string | null
   card_url?: string | null
   created_at?: string

@@ -1,23 +1,26 @@
 import { type FormEvent, useEffect, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { Link, useNavigate } from 'react-router-dom'
-import { VerdictBadge } from '../components/VerdictBadge'
-import { ApiError, createCheck, getHistory, getQuota } from '../lib/api'
+import { useNavigate } from 'react-router-dom'
+import { FeedList } from '../components/FeedList'
+import { ApiError, createCheck, getQuota, getRecent } from '../lib/api'
 import { useAuth } from '../lib/auth'
 import { config } from '../lib/config'
-import type { HistoryItem, Quota } from '../lib/types'
+import type { FeedItem, Quota } from '../lib/types'
 import { Limit } from './Limit'
 import { enablePush } from '../lib/push'
 import { Icon, type IconName } from '../components/Icon'
 import { rememberCheck } from '../lib/lastCheck'
 
 const ALL_MEDIA = 'image/*,video/*,audio/*,.opus,.ogg'
-const TILES: { key: string; icon: IconName; accept?: string }[] = [
+// Only inputs the pipeline supports. Screenshot is a photo; WhatsApp points to the share guide below.
+const TILES: { key: string; icon: IconName; accept?: string; guide?: boolean }[] = [
   { key: 'text', icon: 'text' },
   { key: 'photo', icon: 'image', accept: 'image/*' },
   { key: 'video', icon: 'video', accept: 'video/*' },
   { key: 'audio', icon: 'mic', accept: 'audio/*,.opus,.ogg' },
   { key: 'link', icon: 'link' },
+  { key: 'screenshot', icon: 'camera', accept: 'image/*' },
+  { key: 'whatsapp', icon: 'chat', guide: true },
 ]
 
 interface InstallPrompt extends Event {
@@ -34,15 +37,16 @@ export function Home() {
   const [error, setError] = useState<string | null>(null)
   const [limitAt, setLimitAt] = useState<string | null>(null)
   const [quota, setQuota] = useState<Quota | null>(null)
-  const [recent, setRecent] = useState<HistoryItem[]>([])
+  const [recent, setRecent] = useState<FeedItem[] | null>(null)
   const [install, setInstall] = useState<InstallPrompt | null>(null)
   const fileInput = useRef<HTMLInputElement>(null)
   const pasteBox = useRef<HTMLTextAreaElement>(null)
+  const guide = useRef<HTMLParagraphElement>(null)
 
   useEffect(() => {
     if (!user) return
     getQuota(user).then(setQuota).catch(() => undefined)
-    getHistory(user).then((h) => setRecent(h.items.slice(0, 3))).catch(() => undefined)
+    getRecent(user).then((r) => setRecent(r.items)).catch(() => setRecent([]))
   }, [user])
 
   useEffect(() => {
@@ -81,7 +85,11 @@ export function Home() {
   }
 
   // A tile opens the file picker for that kind of media, or puts the cursor in the paste box.
-  const pick = (accept?: string) => {
+  const pick = (accept?: string, toGuide?: boolean) => {
+    if (toGuide) {
+      guide.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+      return guide.current?.focus()
+    }
     if (!accept) return pasteBox.current?.focus()
     if (fileInput.current) {
       fileInput.current.accept = accept
@@ -92,94 +100,74 @@ export function Home() {
   const left = quota ? Math.max(0, quota.limit - quota.used) : null
 
   return (
-    <main className="screen">
+    <main className="screen home">
       {limitAt !== null && <Limit resetsAt={limitAt || undefined} />}
-      {left !== null && quota && (
-        <div className="banner" role="status">
-          <b>{left}</b>
-          <span>{t('home.quota', { left, limit: quota.limit })}</span>
-        </div>
-      )}
-      <form className="card" onSubmit={submit}>
-        <label htmlFor="paste" className="label">
+      <form className="paste" onSubmit={submit}>
+        <label htmlFor="paste" className="sr-only">
           {t('home.pasteLabel')}
         </label>
         <textarea
           ref={pasteBox}
           id="paste"
-          rows={6}
+          rows={2}
           maxLength={config.limits.maxTextChars}
           placeholder={t('home.pastePlaceholder')}
           value={text}
           onChange={(e) => setText(e.target.value)}
         />
-        <input
-          ref={fileInput}
-          type="file"
-          hidden
-          multiple
-          accept={ALL_MEDIA}
-          onChange={(e) => setFiles(Array.from(e.target.files ?? []))}
-        />
-        <div className="tiles" role="group" aria-label={t('home.whatCheck')}>
-          {TILES.map((x) => (
-            <button key={x.key} type="button" className="tile" onClick={() => pick(x.accept)}>
-              <Icon name={x.icon} />
-              {t(`home.tiles.${x.key}`)}
-            </button>
-          ))}
-        </div>
-        <div className="row">
-          <button type="button" className="secondary" onClick={() => pick(ALL_MEDIA)}>
-            {t('home.upload')}
-          </button>
-          {files.length > 0 && (
-            <span className="muted">
-              {t('home.filesSelected', { count: files.length })}{' '}
-              <button type="button" className="link" onClick={() => setFiles([])}>
-                {t('home.clearFiles')}
-              </button>
-            </span>
-          )}
-        </div>
-        {error && (
-          <p className="error" role="alert">
-            {error}
-          </p>
-        )}
-        <button className="primary" type="submit" disabled={busy}>
+        <button className="go" type="submit" disabled={busy}>
           {busy ? t('check.sending') : t('home.check')}
         </button>
       </form>
-
-      {recent.length > 0 && (
-        <section className="card">
-          <h3>{t('home.recent')}</h3>
-          <ul className="history">
-            {recent.map((h) => (
-              <li key={h.check_id}>
-                <Link to={`/check/${h.check_id}`}>
-                  <VerdictBadge label={h.label} /> <span lang={h.content_language ?? undefined}>{h.headline}</span>
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </section>
-      )}
-
-      <section className="card">
-        <h3>{t('home.howToShare')}</h3>
-        <ol className="howto">
-          <li>{t('home.step1')}</li>
-          <li>{t('home.step2')}</li>
-          <li>{t('home.step3')}</li>
-        </ol>
-        {install && (
-          <button className="secondary" onClick={() => void install.prompt()}>
-            {t('home.install')}
+      <input
+        ref={fileInput}
+        type="file"
+        hidden
+        multiple
+        accept={ALL_MEDIA}
+        onChange={(e) => setFiles(Array.from(e.target.files ?? []))}
+      />
+      {files.length > 0 && (
+        <p className="files" role="status">
+          {t('home.filesSelected', { count: files.length })}{' '}
+          <button type="button" className="link" onClick={() => setFiles([])}>
+            {t('home.clearFiles')}
           </button>
-        )}
-      </section>
+        </p>
+      )}
+      {error && (
+        <p className="error" role="alert">
+          {error}
+        </p>
+      )}
+      {left !== null && quota && (
+        <div className="banner" role="status">
+          <span>{t('home.quotaTitle')}</span>
+          <b className="go-pill">{t('home.quotaPill', { left, limit: quota.limit })}</b>
+        </div>
+      )}
+      <h2 className="sech">{t('home.whatCheck')}</h2>
+      <div className="grid4" role="group" aria-label={t('home.whatCheck')}>
+        {TILES.map((x) => (
+          <button key={x.key} type="button" className="tile" onClick={() => pick(x.accept, x.guide)}>
+            <Icon name={x.icon} />
+            {t(`home.tiles.${x.key}`)}
+          </button>
+        ))}
+      </div>
+      <p className="guide" ref={guide} tabIndex={-1}>
+        <Icon name="chat" />
+        <span>{t('home.shareLine')}</span>
+      </p>
+      {install && (
+        <button className="secondary install" onClick={() => void install.prompt()}>
+          {t('home.install')}
+        </button>
+      )}
+      <h2 className="sech">{t('home.recent')}</h2>
+      {recent === null && <p className="muted">…</p>}
+      {recent !== null && recent.length === 0 && <p className="muted">{t('home.recentEmpty')}</p>}
+      {recent !== null && recent.length > 0 && <FeedList items={recent} />}
     </main>
   )
 }

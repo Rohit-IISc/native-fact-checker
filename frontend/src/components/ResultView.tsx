@@ -2,37 +2,45 @@ import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { contentLng } from '../i18n'
 import type { AnswerText, CheckResult, ClaimResult, Evidence } from '../lib/types'
+import { AudioPlayer } from './AudioPlayer'
+import { Icon } from './Icon'
 import { VerdictBadge } from './VerdictBadge'
 import { monogram } from '../lib/monogram'
 import { TrustSeal } from './TrustSeal'
 
 const TIER_ORDER = { TIER_1: 0, TIER_2: 1, TIER_3: 2, NOT_A_SOURCE: 3 } as const
 const TIER_KEY = { TIER_1: 'tier1', TIER_2: 'tier2', TIER_3: 'tier3', NOT_A_SOURCE: 'tier3' } as const
+// Outcomes where both the Judge and the Critic read the evidence (a downgrade can follow a failed stage).
+const TWO_REVIEWERS = new Set(['AGREED', 'AGREED_AFTER_REVISION', 'SPLIT'])
 
-function Sources({ evidence, lang }: { evidence: Pick<Evidence, 'evidence_id' | 'url' | 'domain' | 'publisher' | 'title' | 'tier'>[]; lang: string }) {
+type Source = Pick<Evidence, 'evidence_id' | 'url' | 'domain' | 'publisher' | 'title' | 'tier'>
+type Tab = 'answer' | 'evidence' | 'sources' | 'english'
+
+/** The sources we show and count: with a link, credible tiers first. */
+export function listedSources(evidence: Source[]): Source[] {
+  return evidence.filter((e) => e.url && e.tier !== 'NOT_A_SOURCE').sort((a, b) => TIER_ORDER[a.tier] - TIER_ORDER[b.tier])
+}
+
+function Sources({ items, lang }: { items: Source[]; lang: string }) {
   const { t } = useTranslation(undefined, { lng: contentLng(lang) })
-  const items = evidence.filter((e) => e.url && e.tier !== 'NOT_A_SOURCE').sort((a, b) => TIER_ORDER[a.tier] - TIER_ORDER[b.tier])
-  if (!items.length) return null
+  if (!items.length) return <p className="muted">{t('result.none')}</p>
   return (
-    <section>
-      <h3>{t('result.sources')}</h3>
-      <ul className="sources">
-        {items.map((e) => (
-          <li key={e.evidence_id} className="source">
-            <span className="slogo" aria-hidden="true">
-              {monogram(e.publisher || e.domain || '?')}
-            </span>
-            <div>
-              <a href={e.url ?? undefined} target="_blank" rel="noopener noreferrer">
-                {e.publisher || e.domain || e.url}
-              </a>
-              <span className={`tier tier-${TIER_KEY[e.tier]}`}>{t(`result.${TIER_KEY[e.tier]}`)}</span>
-              {e.title && <div className="muted small">{e.title}</div>}
-            </div>
-          </li>
-        ))}
-      </ul>
-    </section>
+    <ul className="sources">
+      {items.map((e) => (
+        <li key={e.evidence_id} className="source">
+          <span className="slogo" aria-hidden="true">
+            {monogram(e.publisher || e.domain || '?')}
+          </span>
+          <div>
+            <a href={e.url ?? undefined} target="_blank" rel="noopener noreferrer">
+              {e.publisher || e.domain || e.url}
+            </a>
+            <span className={`tier tier-${TIER_KEY[e.tier]}`}>{t(`result.${TIER_KEY[e.tier]}`)}</span>
+            {e.title && <div className="muted small">{e.title}</div>}
+          </div>
+        </li>
+      ))}
+    </ul>
   )
 }
 
@@ -54,6 +62,27 @@ function List({ title, items, lang }: { title: string; items: string[]; lang: st
   )
 }
 
+function AiSection({ a, ai }: { a: AnswerText; ai: NonNullable<ClaimResult['ai_generation']> }) {
+  const { t: tc } = useTranslation(undefined, { lng: contentLng(a.language) })
+  // The answer carries the signals in its own language (composer-1.4). Older verdicts have only the English
+  // list: shown in an English answer, left out of other languages rather than mixing English in.
+  const english = a.language.split('-')[0] === 'en'
+  const sigAi = a.ai_signals_ai?.length ? a.ai_signals_ai : english ? ai.signals_ai : []
+  const sigReal = a.ai_signals_real?.length ? a.ai_signals_real : english ? ai.signals_real : []
+  return (
+    <section lang={a.language} className="ai">
+      <h3>{tc('result.aiTitle')}</h3>
+      <p>{tc('result.aiLikelihood', { n: ai.likelihood_ai })}</p>
+      {(sigAi.length > 0 || sigReal.length > 0) && (
+        <>
+          <List title={tc('result.aiSignalsAi')} items={sigAi} lang={a.language} />
+          <List title={tc('result.aiSignalsReal')} items={sigReal} lang={a.language} />
+        </>
+      )}
+    </section>
+  )
+}
+
 export function ClaimCard({
   claim,
   answer,
@@ -64,23 +93,28 @@ export function ClaimCard({
   sources,
   aiGeneration,
 }: {
-  claim: Pick<ClaimResult, 'label' | 'confidence' | 'result_url'> & Partial<Pick<ClaimResult, 'panel_outcome'>>
+  claim: Pick<ClaimResult, 'label' | 'confidence' | 'result_url'> &
+    Partial<Pick<ClaimResult, 'panel_outcome' | 'evidence_for_ids' | 'evidence_against_ids'>>
   answer: AnswerText
   answerEn: AnswerText
   audioUrl?: string | null
   audioPending?: boolean
   cardUrl?: string | null
-  sources: Pick<Evidence, 'evidence_id' | 'url' | 'domain' | 'publisher' | 'title' | 'tier'>[]
+  sources: Source[]
   aiGeneration?: ClaimResult['ai_generation']
 }) {
-  // t: UI chrome in the display language. tc: the answer itself, in the language of the post
-  // (decision 15), so headings match the text under them whatever the display language is.
+  // t: UI chrome in the display language. tc / te: the answer itself, in the language of the post
+  // (decision 15) or in English, so headings match the text under them whatever the display language is.
   const { t } = useTranslation()
-  const [english, setEnglish] = useState(false)
+  const [tab, setTab] = useState<Tab>('answer')
   const [copied, setCopied] = useState(false)
   const sameLanguage = answer.language.split('-')[0] === answerEn.language.split('-')[0]
-  const a = english ? answerEn : answer
-  const { t: tc } = useTranslation(undefined, { lng: contentLng(a.language) })
+  const a = tab === 'english' ? answerEn : answer
+  const { t: tc } = useTranslation(undefined, { lng: contentLng(answer.language) })
+  const { t: ta } = useTranslation(undefined, { lng: contentLng(a.language) })
+  const listed = listedSources(sources)
+  const reviewers = Boolean(claim.panel_outcome && TWO_REVIEWERS.has(claim.panel_outcome))
+  const tabs: Tab[] = sameLanguage ? ['answer', 'evidence', 'sources'] : ['answer', 'evidence', 'sources', 'english']
 
   const copy = async () => {
     try {
@@ -109,73 +143,130 @@ export function ClaimCard({
     window.open(url, '_blank', 'noopener')
   }
 
+  const whatsapp = `https://wa.me/?text=${encodeURIComponent(`${a.headline}\n${claim.result_url}`)}`
+
   return (
-    <article className="card claim">
-      {audioUrl ? (
-        <audio className="audio" controls src={audioUrl} preload="none" />
+    <article className="claim">
+      <div className={`vbanner vb-${claim.label.toLowerCase()}`}>
+        <div className="vmain">
+          <b lang={answer.language}>{tc(`label.${claim.label}`)}</b>
+          {/* A "not confirmed" verdict has no meaningful confidence: "0/100" there only confused people (Oct 16). */}
+          {claim.label !== 'NOT_ENOUGH_EVIDENCE' && (
+            <span lang={answer.language}>{tc('result.confidence', { n: claim.confidence })}</span>
+          )}
+        </div>
+        <span className="vmeta" lang={answer.language}>
+          {reviewers && <span>{tc('result.reviewers')}</span>}
+          <span>{tc('result.sourceCount', { count: listed.length })}</span>
+        </span>
+      </div>
+      <TrustSeal outcome={claim.panel_outcome} evidence={sources} lang={answer.language} />
+      {audioUrl && tab !== 'english' ? (
+        <AudioPlayer src={audioUrl} lang={answer.language} />
       ) : (
-        audioPending && (
+        audioPending &&
+        tab !== 'english' && (
           <p className="muted small" role="status" lang={answer.language}>
             {tc('result.audioSoon')}
           </p>
         )
       )}
-      <div className={`vbanner vb-${claim.label.toLowerCase()}`}>
-        <b lang={a.language}>{tc(`label.${claim.label}`)}</b>
-        {/* A "not confirmed" verdict has no meaningful confidence: "0/100" there only confused people (Oct 16). */}
-        {claim.label !== 'NOT_ENOUGH_EVIDENCE' && (
-          <span lang={a.language}>{tc('result.confidence', { n: claim.confidence })}</span>
-        )}
-      </div>
-      <TrustSeal outcome={claim.panel_outcome} evidence={sources} lang={a.language} />
-      <h2 lang={a.language}>{a.headline}</h2>
+      <h2 className="headline" lang={a.language}>
+        {a.headline}
+      </h2>
       <p lang={a.language} className="lead">
         {a.summary}
       </p>
-      <section lang={a.language}>
-        <h3>{tc('result.whatPostClaims')}</h3>
-        <p>{a.what_post_claims}</p>
-        <h3>{tc('result.whatIsTrue')}</h3>
-        <p>{a.what_is_true}</p>
-      </section>
-      {claim.panel_outcome === 'SPLIT' && (a.panel_readings?.length ?? 0) > 0 && (
-        <section lang={a.language} className="split">
-          <h3>{tc('result.splitTitle')}</h3>
-          <p className="muted">{tc('result.splitNote')}</p>
-          <ul>
-            {a.panel_readings?.map((r, i) => (
-              <li key={i}>{r}</li>
-            ))}
-          </ul>
-        </section>
-      )}
-      <div lang={a.language}>
-        <List title={tc('result.evidenceFor')} items={a.evidence_for} lang={a.language} />
-        <List title={tc('result.evidenceAgainst')} items={a.evidence_against} lang={a.language} />
+      <div className="stat3" lang={a.language}>
+        <div className="stat">
+          <b>{claim.evidence_for_ids?.length ?? a.evidence_for.length}</b>
+          {ta('result.statFor')}
+        </div>
+        <div className="stat">
+          <b>{claim.evidence_against_ids?.length ?? a.evidence_against.length}</b>
+          {ta('result.statAgainst')}
+        </div>
+        <div className="stat">
+          <b>{listed.length}</b>
+          {ta('result.statSources')}
+        </div>
       </div>
-      {aiGeneration && (
-        <section lang={a.language}>
-          <h3>{tc('result.aiTitle')}</h3>
-          <p>{tc('result.aiLikelihood', { n: aiGeneration.likelihood_ai })}</p>
-          <List title={tc('result.aiSignalsAi')} items={aiGeneration.signals_ai} lang={a.language} />
-          <List title={tc('result.aiSignalsReal')} items={aiGeneration.signals_real} lang={a.language} />
-        </section>
-      )}
-      <Sources evidence={sources} lang={a.language} />
-      <div className="actions">
-        {!sameLanguage && (
-          <button className="secondary" onClick={() => setEnglish((v) => !v)}>
-            {english ? t('result.showNative') : t('result.showEnglish')}
+
+      <div className="tabs" role="tablist" aria-label={t('result.sections')}>
+        {tabs.map((k) => (
+          <button
+            key={k}
+            type="button"
+            role="tab"
+            id={`tab-${k}`}
+            aria-selected={tab === k}
+            aria-controls="tabpanel"
+            className={tab === k ? 'on' : undefined}
+            onClick={() => setTab(k)}
+          >
+            {k === 'english' ? 'English' : t(`result.tab.${k}`)}
           </button>
+        ))}
+      </div>
+
+      <div id="tabpanel" role="tabpanel" aria-labelledby={`tab-${tab}`} className="card tabpanel" lang={a.language}>
+        {(tab === 'answer' || tab === 'english') && (
+          <>
+            <section>
+              <h3>{ta('result.whatPostClaims')}</h3>
+              <p>{a.what_post_claims}</p>
+              <h3>{ta('result.whatIsTrue')}</h3>
+              <p>{a.what_is_true}</p>
+            </section>
+            {claim.panel_outcome === 'SPLIT' && (a.panel_readings?.length ?? 0) > 0 && (
+              <section className="split">
+                <h3>{ta('result.splitTitle')}</h3>
+                <p className="muted">{ta('result.splitNote')}</p>
+                <ul>
+                  {a.panel_readings?.map((r, i) => (
+                    <li key={i}>{r}</li>
+                  ))}
+                </ul>
+              </section>
+            )}
+            {aiGeneration && <AiSection a={a} ai={aiGeneration} />}
+          </>
         )}
+        {tab === 'evidence' && (
+          <>
+            <List title={ta('result.evidenceFor')} items={a.evidence_for} lang={a.language} />
+            <List title={ta('result.evidenceAgainst')} items={a.evidence_against} lang={a.language} />
+          </>
+        )}
+        {tab === 'sources' && (
+          <section>
+            <h3>{ta('result.sources')}</h3>
+            <Sources items={listed} lang={a.language} />
+          </section>
+        )}
+      </div>
+
+      <div className="share" role="group" aria-label={t('result.shareTitle')}>
+        <a href={whatsapp} target="_blank" rel="noopener noreferrer">
+          <Icon name="chat" />
+          {t('result.shareWhatsApp')}
+        </a>
         {cardUrl && (
-          <button className="primary" onClick={shareCard}>
-            {t('result.shareCard')}
+          <button type="button" onClick={shareCard}>
+            <Icon name="image" />
+            {t('result.shareCardShort')}
           </button>
         )}
-        <button className="secondary" onClick={copy}>
-          {copied ? t('result.copied') : t('result.copyLink')}
+        <button type="button" onClick={copy}>
+          <Icon name="link" />
+          {copied ? t('result.copied') : t('result.copyLinkShort')}
         </button>
+        {!sameLanguage && (
+          <button type="button" onClick={() => setTab(tab === 'english' ? 'answer' : 'english')} aria-pressed={tab === 'english'}>
+            <Icon name="globe" />
+            {tab === 'english' ? t('result.showNativeShort') : 'English'}
+          </button>
+        )}
       </div>
     </article>
   )
@@ -236,7 +327,7 @@ export function ResultView({ result, onFeedback }: { result: CheckResult; onFeed
               {[true, false].map((v) => (
                 <button
                   key={String(v)}
-                  className="secondary"
+                  className="link"
                   onClick={() => {
                     setSent(true)
                     onFeedback(v)
