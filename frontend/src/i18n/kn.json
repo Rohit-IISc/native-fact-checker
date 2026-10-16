@@ -77,7 +77,7 @@
     "NOT_CHECKABLE": "ಪರಿಶೀಲಿಸಲು ಏನೂ ಇಲ್ಲ"
   },
   "result": {
-    "confidence": "ವಿಶ್ವಾಸ 100 ರಲ್ಲಿ {{n}}",
+    "confidence": "ವಿಶ್ವಾಸ {{n}}/100",
     "whatPostClaims": "ಪೋಸ್ಟ್ ಹೇಳುವುದು",
     "whatIsTrue": "ನಿಜ ಏನು",
     "evidenceFor": "ಹೇಳಿಕೆಯ ಪರವಾದ ಸಾಕ್ಷ್ಯ",

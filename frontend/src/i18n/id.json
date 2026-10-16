@@ -77,7 +77,7 @@
     "NOT_CHECKABLE": "Tidak ada yang perlu diperiksa"
   },
   "result": {
-    "confidence": "Keyakinan {{n}} dari 100",
+    "confidence": "Keyakinan {{n}}/100",
     "whatPostClaims": "Klaim unggahan",
     "whatIsTrue": "Yang sebenarnya",
     "evidenceFor": "Bukti yang mendukung klaim",

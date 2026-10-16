@@ -77,7 +77,7 @@
     "NOT_CHECKABLE": "Nothing to check"
   },
   "result": {
-    "confidence": "Confidence {{n}} out of 100",
+    "confidence": "Confidence {{n}}/100",
     "whatPostClaims": "What the post claims",
     "whatIsTrue": "What is true",
     "evidenceFor": "Evidence for the claim",

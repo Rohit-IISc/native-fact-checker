@@ -122,7 +122,10 @@ export function ClaimCard({
       )}
       <div className={`vbanner vb-${claim.label.toLowerCase()}`}>
         <b lang={a.language}>{tc(`label.${claim.label}`)}</b>
-        <span lang={a.language}>{tc('result.confidence', { n: claim.confidence })}</span>
+        {/* A "not confirmed" verdict has no meaningful confidence: "0/100" there only confused people (Oct 16). */}
+        {claim.label !== 'NOT_ENOUGH_EVIDENCE' && (
+          <span lang={a.language}>{tc('result.confidence', { n: claim.confidence })}</span>
+        )}
       </div>
       <TrustSeal outcome={claim.panel_outcome} evidence={sources} lang={a.language} />
       <h2 lang={a.language}>{a.headline}</h2>

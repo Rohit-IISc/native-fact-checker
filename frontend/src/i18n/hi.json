@@ -77,7 +77,7 @@
     "NOT_CHECKABLE": "जाँचने लायक कुछ नहीं"
   },
   "result": {
-    "confidence": "भरोसा 100 में से {{n}}",
+    "confidence": "भरोसा {{n}}/100",
     "whatPostClaims": "पोस्ट का दावा",
     "whatIsTrue": "सच क्या है",
     "evidenceFor": "दावे के पक्ष में सबूत",

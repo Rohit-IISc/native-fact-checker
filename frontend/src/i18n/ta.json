@@ -77,7 +77,7 @@
     "NOT_CHECKABLE": "சரிபார்க்க எதுவும் இல்லை"
   },
   "result": {
-    "confidence": "நம்பகத்தன்மை 100 இல் {{n}}",
+    "confidence": "நம்பகத்தன்மை {{n}}/100",
     "whatPostClaims": "பதிவு கூறுவது",
     "whatIsTrue": "உண்மை என்ன",
     "evidenceFor": "கூற்றுக்கு ஆதரவான ஆதாரம்",
