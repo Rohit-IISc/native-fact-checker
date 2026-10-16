@@ -22,7 +22,7 @@ timeouts_s:
   sub_agent: 36                 # web search: grounded search 8-9 s or 30+ s (hedged at 12 s) + classify 6 s
   packager: 15                  # measured Oct 5: 6 s
   same_media: 8                 # one Flash call, only when a media claim has background fact checks
-  judge: 30                     # gemini-2.5-pro: 9-25 s by pack size (hedged at 14 s)
+  judge: 45                     # Oct 16: 30 cut off 2 of 24 3.1 Pro judge calls; still capped by the 90 s total budget
   critic: 20
   judge_revision: 20
   composer: 20                  # measured 7-18 s (hedged at 9 s)

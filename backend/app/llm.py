@@ -245,7 +245,9 @@ class GeminiLLM:
         call.cost_usd = model_cost(model["key"], call.input_tokens, call.output_tokens, call.thinking_tokens)
         out = await grounded_text(resp)
         call.grounding_queries = out.queries
-        current_ledger().grounding_queries += out.queries
+        ledger = current_ledger()
+        ledger.grounding_queries += out.queries
+        ledger.grounding_cost_usd += grounding_cost(fallback_model(model) if call.fallback else model, out.queries)
         _record(call)
         return out
 
@@ -261,6 +263,14 @@ def _retryable(e: BaseException) -> bool:
 
 
 RETRY_DELAYS_S = (1.0, 3.0, 6.0)
+
+
+def grounding_cost(model: dict[str, Any] | None, queries: int) -> float:
+    """List price of one grounded call. Gemini 3: per search query; 2.5 (model `grounding.unit: prompt`): per
+    grounded prompt, whatever the number of queries. Free allowances are not subtracted here."""
+    g = (model or {}).get("grounding") or get_config().models["grounding"]
+    units = (1 if queries else 0) if g.get("unit") == "prompt" else queries
+    return units * float(g["price_per_1000"]) / 1000
 
 
 FALLBACK_MIN_S = 5.0

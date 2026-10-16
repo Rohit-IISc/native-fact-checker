@@ -66,4 +66,16 @@ Bank SMS, phishing emails, scam checker agent, human escalation, iOS share targe
 
 ## Later (for the deck's future slide)
 
+Cost (added Oct 16, after the cost review in docs/13):
+- **Cascade judge:** a cheap judge (Flash) decides first and escalates to Pro only when unsure (low confidence,
+  weak grounding score, or a label that always gets the full panel). Pro is about half of a full check's model cost.
+- **Check Grounding gate before the Critic:** score the Judge's answer against the evidence with Vertex AI check
+  grounding; skip the Critic only when every statement is well supported, confidence is high and the label is
+  not SCAM. Prototyped and unit-tested on Oct 16, not shipped (the eval was too noisy to prove it safe).
+- **Fewer grounded searches per check:** grounding is about half of a full check's cost (2.4-4.2 search queries,
+  billed per query on Gemini 3); merge the claim's queries into fewer searches or skip web search when a
+  fact check already answers the claim.
+- **On-device Gemma for extraction:** run claim extraction on the phone (Gemma on Android), sending the server
+  only the claims and media fingerprints. Cuts the extractor cost and keeps more of the forward on the device.
+
 LLM router that picks which sub-agents to call (cost), WhatsApp bot, Android and iOS apps, B2B API for platforms, newsrooms and telcos, bank SMS and phishing checks, satellite verification, voice line for basic phones, more languages.

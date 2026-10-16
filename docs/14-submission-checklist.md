@@ -18,12 +18,37 @@ The template has 16 slides. Slide 2 is an instruction slide; delete it before su
 | 13 | Future development | Doc 01 "Later" list, cost optimizations from doc 13, revenue paths | Docs 01, 13 |
 | 14 | Links | Public GitHub repo, 3-minute demo video, live product link | Oct 17 |
 
+## Deck notes (frozen config, Oct 16)
+
+**Slide 12, benchmark.** When search doesn't find a fact check, the system abstains (NOT_ENOUGH_EVIDENCE)
+instead of guessing. Case 01 passes about 2 in 3 runs on a cold cache; repeats answer from cache. Gold set:
+57 published fact checks (dataset v3); one item is 1.75 points, and identical runs move up to 9 items, so
+differences under about 5 points are noise.
+
+**Slide 10, cost per check by lane** (USD, list prices, measured from tokens in BigQuery `model_calls`,
+Oct 9-16; final config = decision 48, extractor on 2.5 Flash):
+
+| Lane | Models | Grounding (list) | Audio | Vision | Total, list | Total, after the free grounding tier |
+| --- | --- | --- | --- | --- | --- | --- |
+| Tier 1 cache hit | ~0 (0.0025 when translated) | 0 | 0 (0.01 in a new language) | 0 | ~0.000-0.013 | same |
+| Tier 2 cache hit | 0.0036 | 0 | 0 (0.01 in a new language) | 0 | 0.004-0.014 | same |
+| Full check, text or link | 0.042 | 0.029 | 0.01 | 0 | 0.081 | 0.052 |
+| Full check, image | 0.048 | 0.056 | 0.01 | 0.0035 | 0.118 | 0.062 |
+| Full check, video | 0.039 | 0.056 | 0.01 | 0.0035 | 0.108 | 0.052 |
+
+Old config (decision 47, extractor on 3.8 Flash) to final: extractor cost per full check fell 43-60%
+(image 0.0092 to 0.0046, video 0.0107 to 0.0061, text 0.0072 to 0.0029); video p50 latency 83 s to 59 s.
+Grounding is about half of a full check at list price (2-4 search queries per full check, 14 USD per 1,000 on Gemini 3),
+but the first 5,000 queries a month are free: at current volume (about 3-4 queries per full check, roughly
+1,500 full checks a month) grounding costs nothing. Audio is about 0.01 per spoken answer, Vision about 0.0035
+per image or video check.
+
 ## Things often missed (check each)
 
 - [ ] Benchmark numbers are real and dated, with the eval set size stated (judges weight technical merit at 40%)
 - [ ] Cost slide filled even though optional
 - [ ] Live link works for a judge on a laptop (no share sheet there): paste and upload work, and judge emails are on the allowlist with 50 checks per day
-- [ ] Demo examples pre-cached so the first thing a judge tries is instant
+- [x] Demo examples pre-cached so the first thing a judge tries is instant (Oct 16: all 20 acceptance shares; NOT_ENOUGH_EVIDENCE ones expire after 3 days, so rerun `scripts/seed_demo_cache.py` before judging)
 - [ ] Responsible AI note: abstains when evidence is thin, two-model review, source policy, no generated imagery, media deleted in 24 hours, consent screen. Put it on slide 13 or as a line on slide 5
 - [ ] Limitations stated honestly: Android-only share target, Meta links often give caption only, satellite checks limited by imagery revisit time
 - [ ] Repo is public, has README with architecture diagram, setup steps, and a LICENSE (Apache 2.0 suggested); `gitleaks` clean; no API keys in history

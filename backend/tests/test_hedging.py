@@ -214,3 +214,11 @@ async def test_hedge_duplicate_goes_to_the_fallback_model():
 
     out = await _hedged(_alternating(PRO, make), 1.0, 0.05, "judge")
     assert out == "fallback answered" and seen == ["gemini-3.1-pro-preview", "gemini-2.5-pro"]
+
+
+def test_grounding_is_billed_by_the_answering_models_unit():
+    from app.llm import grounding_cost
+
+    per_prompt = {"id": "gemini-2.5-flash", "grounding": {"unit": "prompt", "price_per_1000": 35.0}}
+    assert grounding_cost(per_prompt, 4) == 0.035 and grounding_cost(per_prompt, 0) == 0
+    assert grounding_cost({"id": "gemini-3.8-flash"}, 4) == 4 * 14.0 / 1000  # default: per search query

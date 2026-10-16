@@ -19,13 +19,14 @@ models:
     search_hedge_after_s: 12  # grounded search: 8-9 s or 35-55 s for the same request (Oct 5)
   flash_think:
     # The extractor needs a little reasoning: with thinking off it took a sarcastic caption ("Gujarat model of
-    # development in Mumbai") as the claim instead of what the photo shows (4/4 runs on Oct 7, 2.5 Flash);
-    # with a 512-token budget it made the media claim (5/5). Gemini 3: thinking medium.
-    id: gemini-3.8-flash
-    thinking: medium
-    fallback: {id: gemini-2.5-flash, thinking_budget: 512}
-    price_in: 0.75
-    price_out: 3.75
+    # development in Mumbai") as the claim instead of what the photo shows (4/4 runs on Oct 7); with a
+    # 512-token budget it made the media claim (5/5). Oct 16 (Rohit): back on 2.5 Flash, because 3.8 Flash
+    # took 18-28 s on video (2.5: 10-13 s) and costs about 0.0083 vs 0.0047 USD per extraction.
+    id: gemini-2.5-flash
+    thinking_budget: 512
+    fallback: {id: gemini-3.8-flash, thinking: medium}
+    price_in: 0.30
+    price_out: 2.50
     hedge_after_s: 16
   pro:
     # Oct 9: 3.1 Pro preview judged in 4.8 s p50 (10.6 s p90) vs 10.7 s for 2.5 Pro, using about a third of
@@ -56,7 +57,11 @@ priority:
   enabled: false
   stages: [judge, critic, judge_revision]
 
+# Grounding with Google Search, default (Gemini 3 and newer): billed per search query. A model entry can
+# override it with its own `grounding` (2.5 models bill per grounded prompt). Costs are list prices: the
+# free allowances are not subtracted per check.
 grounding:
+  unit: query
   free_queries_per_month: 5000
   price_per_1000: 14.00
 vision:
@@ -64,7 +69,7 @@ vision:
 stage_models:
   extractor: flash_think
   near_match: flash
-  web_search: flash
+  web_search: flash                 # Oct 16: 2.5 Flash tested (per-prompt grounding) and reverted: it missed the fact checks the flood cases need
   web_search_classify: flash
   factcheck_sites: flash
   source_credibility: flash
