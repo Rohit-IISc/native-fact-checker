@@ -16,7 +16,7 @@ from fastapi.responses import JSONResponse
 from pydantic import BaseModel
 
 from app import feed, quota
-from app.auth import User, current_user, verify_pubsub_push
+from app.auth import User, current_user, delete_sign_in, verify_pubsub_push
 from app.cache import tier1
 from app.ids import ulid
 from app.intake import media
@@ -328,14 +328,19 @@ async def set_language(body: Language, user: User = Depends(current_user)) -> Re
 
 @app.delete("/v1/me", status_code=204)
 async def delete_me(user: User = Depends(current_user)) -> Response:
-    """Remove the user doc, history and today's usage. Shared verdicts hold no personal data."""
+    """Remove the user doc, history, check records (they hold the shared text or link), today's usage and the
+    sign-in record. Shared verdicts hold no personal data and stay."""
     store = get_store()
     col = f"users/{user.uid}/history"
     while items := await store.list_recent(col, "created_at", 100):
         for doc_id, _ in items:
             await store.delete(col, doc_id)
+    while ids := await store.ids_where(CHECKS, "uid", user.uid, 100):
+        for doc_id in ids:
+            await store.delete(CHECKS, doc_id)
     await store.delete("users", user.uid)
     await store.delete(quota.USAGE, quota.usage_doc_id(user.uid))
+    await delete_sign_in(user.uid)
     return Response(status_code=204)
 
 

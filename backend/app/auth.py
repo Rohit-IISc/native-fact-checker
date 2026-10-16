@@ -37,6 +37,18 @@ class User:
         return bool(self.email and self.email.lower() in allow)
 
 
+async def delete_sign_in(uid: str) -> None:
+    """Remove the Firebase Auth record (name, email) when a user deletes their account."""
+    if get_settings().auth_mode == "dev":
+        return
+    from firebase_admin import auth as fb_auth
+
+    try:
+        await asyncio.to_thread(fb_auth.delete_user, uid, _firebase())
+    except fb_auth.UserNotFoundError:
+        pass
+
+
 def _bearer(authorization: str | None) -> str:
     if not authorization or not authorization.lower().startswith("bearer "):
         raise HTTPException(401, detail={"error_code": "UNAUTHENTICATED"})
