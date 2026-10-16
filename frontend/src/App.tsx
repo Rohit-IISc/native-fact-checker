@@ -12,6 +12,7 @@ import { CheckPage, SharedCheck } from './screens/CheckPage'
 import { History } from './screens/History'
 import { Home } from './screens/Home'
 import { LatestCheck } from './screens/LatestCheck'
+import { Legal } from './screens/Legal'
 import { PublicResult } from './screens/PublicResult'
 import { Trending } from './screens/Trending'
 import { Welcome } from './screens/Welcome'
@@ -63,12 +64,15 @@ function Gate() {
 
   const languageSheet = <LanguageSheet open={sheet} onClose={() => setSheet(false)} onChoose={choose} />
 
-  if (location.pathname.startsWith('/r/')) {
+  // Public pages: no sign-in needed.
+  if (location.pathname.startsWith('/r/') || location.pathname === '/privacy' || location.pathname === '/terms') {
     return (
       <>
         <Header onLanguage={() => setSheet(true)} />
         <Routes>
           <Route path="/r/:verdictId" element={<PublicResult />} />
+          <Route path="/privacy" element={<Legal kind="privacy" />} />
+          <Route path="/terms" element={<Legal kind="terms" />} />
         </Routes>
         {languageSheet}
       </>

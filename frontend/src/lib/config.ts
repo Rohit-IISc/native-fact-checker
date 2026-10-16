@@ -16,6 +16,8 @@ export const config = {
   },
   vapidKey: env.VITE_FIREBASE_VAPID_KEY as string | undefined,
   recaptchaSiteKey: env.VITE_RECAPTCHA_ENTERPRISE_SITE_KEY as string | undefined,
+  contactEmail: 'rohitsainice@gmail.com',
+  legalUpdated: '2026-10-16', // /privacy and /terms: change when the text changes
   limits: {
     maxShareBytes: 50 * 1024 * 1024,
     maxImages: 10,

@@ -155,8 +155,103 @@
     "checks_other": "{{count}} checks"
   },
   "checks": {
-    "title": "Your latest check",
-    "empty": "You have not checked anything yet.",
-    "start": "Check a forward"
+    "title": "Current check",
+    "empty": "No check is currently underway.",
+    "start": "Check a forward",
+    "history": "See past checks"
+  },
+  "account": {
+    "delete": "Delete my account",
+    "confirm": "This deletes your profile, history, check records and sign-in. Shared fact checks stay, without your name. This cannot be undone.",
+    "keep": "Keep my account",
+    "deleteNow": "Delete now"
+  },
+  "legal": {
+    "updated": "Last updated: {{date}}",
+    "contact": "Contact",
+    "prototype": "CHCKR is a prototype built for the AI Builder Cup 2026.",
+    "back": "Back to CHCKR"
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "intro": "This page explains in plain words what CHCKR does with your data. CHCKR is a prototype built for the AI Builder Cup 2026.",
+    "sections": [
+      {
+        "h": "What we collect",
+        "items": [
+          "Your Google account name and email, when you sign in.",
+          "What you share to check: text, links, photos, videos and audio.",
+          "How many checks you have used today, for the daily limit.",
+          "A notification token for your device, if you allow notifications, so we can tell you when an answer is ready."
+        ]
+      },
+      {
+        "h": "How long we keep it",
+        "items": [
+          "Photos, videos and audio you share are deleted automatically within 24 hours.",
+          "The text or link you shared is kept with your check, so you can open the answer again from History. It is deleted when you delete your account.",
+          "We keep the claims we find in a post and our verdicts. Before they are saved, phone numbers, email addresses, home addresses and names of private people are replaced with [redacted]. This is done automatically and can sometimes miss something. Names of public figures and organisations stay."
+        ]
+      },
+      {
+        "h": "What other users see",
+        "items": [
+          "Claims and verdicts are shared with all users as fact checks, so the next person with the same forward gets an answer faster.",
+          "Recent checks and Trending show only the verdict and the claim text. They never show your photos, videos or audio, your name, or who checked what."
+        ]
+      },
+      {
+        "h": "Where your data is processed",
+        "items": [
+          "CHCKR runs on Google Cloud. Our servers, database (Firestore) and file storage (Cloud Storage) are in India (Mumbai).",
+          "Reading posts and writing answers uses Google's Gemini models on Vertex AI, through Google's global service, which may process data outside India.",
+          "Sign-in uses Firebase Authentication. Evidence searches use Google Search and the Google Fact Check Tools API. Images are checked with Google Cloud Vision, and audio answers are made with Google text-to-speech.",
+          "To check a link, our server opens the page you shared. That website sees our server, not you.",
+          "We record the time and cost of each check with a scrambled user ID. These records never include your name, email or what you shared."
+        ]
+      },
+      {
+        "h": "What we never do",
+        "items": [
+          "No ads.",
+          "We do not sell your data.",
+          "We do not share your data with anyone except Google Cloud, which processes it for us."
+        ]
+      },
+      {
+        "h": "Delete your account",
+        "items": [
+          "In the app: tap Language in the bottom bar, then \"Delete my account\". This deletes your profile, history, check records and sign-in.",
+          "Shared claims and verdicts stay, because they are fact checks for everyone and do not say who asked.",
+          "Or email {{email}} and we will delete your account for you."
+        ]
+      }
+    ]
+  },
+  "terms": {
+    "title": "Terms of Use",
+    "intro": "By using CHCKR you agree to these terms. CHCKR is a free prototype built for the AI Builder Cup 2026.",
+    "sections": [
+      {
+        "h": "Verdicts can be wrong",
+        "items": [
+          "Verdicts are made automatically by AI and can be wrong.",
+          "Always open the cited sources before you rely on an answer or forward it."
+        ]
+      },
+      {
+        "h": "Not for important decisions",
+        "items": [
+          "Do not use CHCKR for medical, legal or financial decisions. Ask a qualified professional."
+        ]
+      },
+      {
+        "h": "Fair use",
+        "items": [
+          "Each person can make up to {{limit}} checks a day.",
+          "Do not try to get around this limit or overload the service."
+        ]
+      }
+    ]
   }
 }

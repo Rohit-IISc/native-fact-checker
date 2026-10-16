@@ -9,6 +9,20 @@ Updated after every task (see CLAUDE.md, "How to work"). Newest state only; hist
 **Deployed:** https://chckr.web.app (Firebase Hosting site `chckr`) -> Cloud Run `factcheck-api` (asia-south1). The old https://ai-builder-2026.web.app redirects every page there and still serves `/api` (old links, cards and audio keep working).
 **Audio samples for native speakers:** https://claude.ai/artifact/3uKEHUsp5hdXoVFo87SJeo (private; share it).
 
+
+## Oct 16 evening: UI brief round 1 live, privacy and terms pages
+
+- Round 1 (landing with instant language chips, yellow header with language sheet, five-item dock, Trending v1,
+  Checks = the check now running) approved by Rohit and deployed. Rounds 2 (Home, Checking, Result, AI-signal
+  language fix) and 3 (Daily limit, History, Trending polish) next, each on preview channel `bazaar-bright` first.
+- New read-only API: `PUT /v1/me/language`, `GET /v1/me/history/stats`, `GET /v1/feed/recent`, `GET /v1/feed/trending`
+  (`backend/app/feed.py`, limits in `config/limits.yaml` `feed`).
+- `/privacy` and `/terms` public pages in 5 languages (`frontend/src/screens/Legal.tsx`), linked from landing,
+  consent screen and the language sheet. In-app "Delete my account" in the language sheet.
+- `DELETE /v1/me` now also deletes the user's check records and Firebase Auth record (api-sa has
+  `roles/firebaseauth.admin`).
+- Waiting on Rohit: OAuth client and consent-screen settings (item 9), "delete" for cache junk (item 10).
+
 ## Done
 
 - **Oct 16 evening, live at https://chckr.web.app** (decision 49): Bazaar Bright design and CHCKR name merged;

@@ -1,7 +1,9 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { UI_LANGUAGES } from '../i18n'
+import { deleteAccount } from '../lib/api'
 import { useAuth } from '../lib/auth'
+import { LegalLinks } from '../screens/Legal'
 import { Icon } from './Icon'
 
 /** Bottom sheet opened from the header's language button and the dock. Sign out lives here too. */
@@ -9,13 +11,36 @@ export function LanguageSheet({ open, onClose, onChoose }: { open: boolean; onCl
   const { t, i18n } = useTranslation()
   const { user, signOut } = useAuth()
   const ref = useRef<HTMLDialogElement>(null)
+  const [confirming, setConfirming] = useState(false)
+  const [deleting, setDeleting] = useState(false)
+  const [failed, setFailed] = useState(false)
 
   useEffect(() => {
     const d = ref.current
     if (!d) return
     if (open && !d.open) d.showModal()
     if (!open && d.open) d.close()
+    if (!open) {
+      setConfirming(false)
+      setFailed(false)
+    }
   }, [open])
+
+  const remove = () => {
+    if (!user) return
+    setDeleting(true)
+    setFailed(false)
+    deleteAccount(user)
+      .then(() => {
+        onClose()
+        void signOut()
+      })
+      .catch((e: unknown) => {
+        console.error('DELETE /v1/me failed', e)
+        setFailed(true)
+      })
+      .finally(() => setDeleting(false))
+  }
 
   return (
     <dialog
@@ -68,6 +93,26 @@ export function LanguageSheet({ open, onClose, onChoose }: { open: boolean; onCl
           {t('nav.signOut')}
         </button>
       )}
+      {user && !confirming && (
+        <button type="button" className="link danger" onClick={() => setConfirming(true)}>
+          {t('account.delete')}
+        </button>
+      )}
+      {user && confirming && (
+        <div className="confirm" role="alert">
+          <p>{t('account.confirm')}</p>
+          {failed && <p className="error">{t('errors.generic')}</p>}
+          <div className="row">
+            <button type="button" className="secondary" onClick={() => setConfirming(false)} disabled={deleting}>
+              {t('account.keep')}
+            </button>
+            <button type="button" className="danger-btn" onClick={remove} disabled={deleting}>
+              {t('account.deleteNow')}
+            </button>
+          </div>
+        </div>
+      )}
+      <LegalLinks />
     </dialog>
   )
 }

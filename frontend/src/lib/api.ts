@@ -124,3 +124,4 @@ export const saveLanguage = (user: AppUser, uiLanguage: string) =>
 export const getHistoryStats = (user: AppUser) => request<HistoryStats>(user, '/v1/me/history/stats')
 export const getRecent = (user: AppUser) => request<{ items: FeedItem[] }>(user, '/v1/feed/recent')
 export const getTrending = (user: AppUser) => request<{ window: string; items: FeedItem[] }>(user, '/v1/feed/trending')
+export const deleteAccount = (user: AppUser) => request<void>(user, '/v1/me', { method: 'DELETE' })

@@ -2,6 +2,7 @@ import { useTranslation } from 'react-i18next'
 import { Icon, type IconName } from '../components/Icon'
 import { UI_LANGUAGES } from '../i18n'
 import { config } from '../lib/config'
+import { LegalLinks } from './Legal'
 
 const FEATURES: { key: string; icon: IconName }[] = [
   { key: 'share', icon: 'share' },
@@ -66,6 +67,7 @@ export function Welcome({ signedIn, onSignIn, onAgree, onLanguage, busy, error }
             {t('welcome.signin')}
           </button>
         )}
+        <LegalLinks />
       </div>
     </main>
   )

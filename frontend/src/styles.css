@@ -226,3 +226,15 @@ button, .button {
 .sw-scam { background: var(--scam); } .sw-not_enough_evidence { background: var(--nee); }
 .rank { width: 32px; height: 32px; flex: none; display: grid; place-items: center; border-radius: 50%; background: var(--primary); color: #fff; font-weight: 900; }
 .feed li:nth-child(even) .rank { background: var(--hot-text); }
+
+/* ---------- privacy, terms, account ---------- */
+.legal h2 { margin-top: 0; }
+.legal ul { margin: 0; padding-left: 1.2rem; display: flex; flex-direction: column; gap: 6px; }
+.legal-links { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; margin: 14px 0 0; font-weight: 800; }
+.legal-links a { min-height: 40px; display: inline-flex; align-items: center; }
+.link.danger { color: var(--false); width: 100%; margin-top: 6px; }
+.confirm { margin-top: 10px; padding: 12px; border: 2px solid var(--false); border-radius: var(--radius); background: #fff; }
+.confirm p { margin: 0 0 8px; }
+.confirm .row { margin: 0; }
+.confirm .row > button { flex: 1; }
+.danger-btn { background: var(--false); color: #fff; border: 1px solid #a3101d; font-weight: 900; box-shadow: 0 3px 0 #a3101d; }

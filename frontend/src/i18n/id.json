@@ -155,8 +155,103 @@
     "checks_other": "{{count}} cek"
   },
   "checks": {
-    "title": "Cek terakhir Anda",
-    "empty": "Anda belum mengecek apa pun.",
-    "start": "Cek pesan terusan"
+    "title": "Cek saat ini",
+    "empty": "Tidak ada cek yang sedang berjalan.",
+    "start": "Cek pesan terusan",
+    "history": "Lihat cek sebelumnya"
+  },
+  "account": {
+    "delete": "Hapus akun saya",
+    "confirm": "Ini menghapus profil, riwayat, catatan cek, dan data masuk Anda. Cek fakta yang dibagikan tetap ada, tanpa nama Anda. Tindakan ini tidak bisa dibatalkan.",
+    "keep": "Simpan akun saya",
+    "deleteNow": "Hapus sekarang"
+  },
+  "legal": {
+    "updated": "Terakhir diperbarui: {{date}}",
+    "contact": "Kontak",
+    "prototype": "CHCKR adalah prototipe yang dibuat untuk AI Builder Cup 2026.",
+    "back": "Kembali ke CHCKR"
+  },
+  "privacy": {
+    "title": "Kebijakan Privasi",
+    "intro": "Halaman ini menjelaskan dengan kata-kata sederhana apa yang dilakukan CHCKR dengan data Anda. CHCKR adalah prototipe yang dibuat untuk AI Builder Cup 2026.",
+    "sections": [
+      {
+        "h": "Yang kami kumpulkan",
+        "items": [
+          "Nama dan email akun Google Anda, saat Anda masuk.",
+          "Yang Anda bagikan untuk dicek: teks, tautan, foto, video, dan audio.",
+          "Berapa banyak cek yang sudah Anda pakai hari ini, untuk batas harian.",
+          "Token notifikasi perangkat Anda, jika Anda mengizinkan notifikasi, agar kami bisa memberi tahu saat jawaban siap."
+        ]
+      },
+      {
+        "h": "Berapa lama kami menyimpannya",
+        "items": [
+          "Foto, video, dan audio yang Anda bagikan dihapus otomatis dalam 24 jam.",
+          "Teks atau tautan yang Anda bagikan disimpan bersama cek Anda, agar Anda bisa membuka jawabannya lagi dari Riwayat. Data ini dihapus saat Anda menghapus akun.",
+          "Kami menyimpan klaim yang kami temukan dalam sebuah postingan dan putusan kami. Sebelum disimpan, nomor telepon, alamat email, alamat rumah, dan nama orang biasa diganti dengan [redacted]. Ini dilakukan otomatis dan kadang bisa terlewat. Nama tokoh publik dan organisasi tetap ada."
+        ]
+      },
+      {
+        "h": "Yang dilihat pengguna lain",
+        "items": [
+          "Klaim dan putusan dibagikan ke semua pengguna sebagai cek fakta, agar orang berikutnya dengan pesan terusan yang sama mendapat jawaban lebih cepat.",
+          "Cek terbaru dan Trending hanya menampilkan putusan dan teks klaim. Keduanya tidak pernah menampilkan foto, video, atau audio Anda, nama Anda, atau siapa mengecek apa."
+        ]
+      },
+      {
+        "h": "Tempat data Anda diproses",
+        "items": [
+          "CHCKR berjalan di Google Cloud. Server, basis data (Firestore), dan penyimpanan file (Cloud Storage) kami ada di India (Mumbai).",
+          "Membaca postingan dan menulis jawaban memakai model Gemini dari Google di Vertex AI, melalui layanan global Google, yang bisa memproses data di luar India.",
+          "Masuk memakai Firebase Authentication. Pencarian bukti memakai Google Search dan Google Fact Check Tools API. Gambar dicek dengan Google Cloud Vision, dan jawaban audio dibuat dengan text-to-speech Google.",
+          "Untuk mengecek tautan, server kami membuka halaman yang Anda bagikan. Situs itu melihat server kami, bukan Anda.",
+          "Kami mencatat waktu dan biaya setiap cek dengan ID pengguna yang diacak (hash). Catatan ini tidak pernah berisi nama, email, atau apa yang Anda bagikan."
+        ]
+      },
+      {
+        "h": "Yang tidak pernah kami lakukan",
+        "items": [
+          "Tidak ada iklan.",
+          "Kami tidak menjual data Anda.",
+          "Kami tidak membagikan data Anda kepada siapa pun selain Google Cloud, yang memprosesnya untuk kami."
+        ]
+      },
+      {
+        "h": "Menghapus akun Anda",
+        "items": [
+          "Di aplikasi: ketuk Bahasa di bilah bawah, lalu \"Hapus akun saya\". Ini menghapus profil, riwayat, catatan cek, dan data masuk Anda.",
+          "Klaim dan putusan yang dibagikan tetap ada, karena itu cek fakta untuk semua orang dan tidak menyebut siapa yang bertanya.",
+          "Atau kirim email ke {{email}} dan kami akan menghapus akun Anda."
+        ]
+      }
+    ]
+  },
+  "terms": {
+    "title": "Ketentuan Penggunaan",
+    "intro": "Dengan memakai CHCKR, Anda menyetujui ketentuan ini. CHCKR adalah prototipe gratis yang dibuat untuk AI Builder Cup 2026.",
+    "sections": [
+      {
+        "h": "Putusan bisa salah",
+        "items": [
+          "Putusan dibuat otomatis oleh AI dan bisa salah.",
+          "Selalu buka sumber yang dikutip sebelum Anda mengandalkan jawaban atau meneruskannya."
+        ]
+      },
+      {
+        "h": "Bukan untuk keputusan penting",
+        "items": [
+          "Jangan gunakan CHCKR untuk keputusan medis, hukum, atau keuangan. Tanyakan kepada ahli yang berwenang."
+        ]
+      },
+      {
+        "h": "Penggunaan wajar",
+        "items": [
+          "Setiap orang bisa melakukan hingga {{limit}} cek per hari.",
+          "Jangan mencoba mengakali batas ini atau membebani layanan."
+        ]
+      }
+    ]
   }
 }
