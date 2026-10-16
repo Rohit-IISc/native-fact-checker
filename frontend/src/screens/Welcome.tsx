@@ -10,6 +10,9 @@ export function Welcome({ signedIn, onSignIn, onAgree, busy, error }: {
   const { t } = useTranslation()
   return (
     <main className="screen welcome">
+      <div className="hero">
+        <img src="/brand/chckr-logo.png" alt={t('app.name')} width={210} height={210} />
+      </div>
       <h1>{t('welcome.title')}</h1>
       <ol className="points">
         <li>{t('welcome.point1')}</li>

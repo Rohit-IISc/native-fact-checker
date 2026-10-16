@@ -1,6 +1,15 @@
 {
-  "app": { "name": "Sach Check", "tagline": "Is that forward true? Check it in your own language." },
-  "nav": { "home": "Home", "history": "History", "signOut": "Sign out", "language": "Language" },
+  "app": {
+    "name": "CHCKR",
+    "tagline": "Is that forward true? Check it in your own language."
+  },
+  "nav": {
+    "home": "Home",
+    "history": "History",
+    "signOut": "Sign out",
+    "language": "Language",
+    "main": "Main navigation"
+  },
   "welcome": {
     "title": "Check any forward before you share it",
     "point1": "Share a WhatsApp forward, photo, video or link to this app",
@@ -19,11 +28,19 @@
     "howToShare": "How to check a WhatsApp forward",
     "step1": "Add this app to your home screen (menu ⋮ then 'Install app')",
     "step2": "In WhatsApp, long-press the message and tap Share",
-    "step3": "Pick Sach Check from the list",
+    "step3": "Pick CHCKR from the list",
     "install": "Install app",
     "recent": "Recent checks",
     "filesSelected": "{{count}} file(s) added",
-    "clearFiles": "Remove"
+    "clearFiles": "Remove",
+    "whatCheck": "What are you checking?",
+    "tiles": {
+      "text": "Text",
+      "photo": "Photo",
+      "video": "Video",
+      "audio": "Audio",
+      "link": "Link"
+    }
   },
   "check": {
     "title": "Checking your forward",
@@ -85,14 +102,29 @@
     "aiTitle": "Is this image AI-made?",
     "aiLikelihood": "{{n}} out of 100 likely AI-made",
     "aiSignalsAi": "Signs it may be AI-made",
-    "aiSignalsReal": "Signs it is a real photo"
+    "aiSignalsReal": "Signs it is a real photo",
+    "verifiedBy": "Verified by 2 reviewers",
+    "verifiedNote_one": "{{count}} trusted source",
+    "verifiedNote_other": "{{count}} trusted sources",
+    "tier1": "Tier 1",
+    "tier2": "Tier 2",
+    "tier3": "Tier 3"
   },
   "limit": {
     "title": "You have used today's checks",
     "body": "You can check again after {{time}}."
   },
-  "history": { "title": "Your checks", "empty": "No checks yet.", "more": "Load more" },
-  "public": { "cta": "Check your own forward", "notFound": "This result was not found." },
+  "history": {
+    "title": "Your checks",
+    "empty": "No checks yet.",
+    "more": "Load more",
+    "all": "All",
+    "filter": "Filter by verdict"
+  },
+  "public": {
+    "cta": "Check your own forward",
+    "notFound": "This result was not found."
+  },
   "errors": {
     "TOO_LARGE": "This is too large. The limit is 50 MB per share.",
     "TOO_MANY_FILES": "Share up to 10 photos, or one video or audio clip.",

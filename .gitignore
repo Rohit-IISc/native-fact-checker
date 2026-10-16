@@ -36,3 +36,6 @@ runs/
 
 # Real test media (third-party content; never commit, the repo is public)
 samples/
+
+# Design kits and source logos dropped in by hand (not part of the app; needed files are copied into frontend/)
+artifacts/

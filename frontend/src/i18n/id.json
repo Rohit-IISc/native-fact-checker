@@ -1,6 +1,15 @@
 {
-  "app": { "name": "Sach Check", "tagline": "Apakah pesan terusan itu benar? Periksa dalam bahasa Anda." },
-  "nav": { "home": "Beranda", "history": "Riwayat", "signOut": "Keluar", "language": "Bahasa" },
+  "app": {
+    "name": "CHCKR",
+    "tagline": "Apakah pesan terusan itu benar? Periksa dalam bahasa Anda."
+  },
+  "nav": {
+    "home": "Beranda",
+    "history": "Riwayat",
+    "signOut": "Keluar",
+    "language": "Bahasa",
+    "main": "Navigasi utama"
+  },
   "welcome": {
     "title": "Periksa setiap pesan terusan sebelum membagikannya",
     "point1": "Bagikan pesan terusan WhatsApp, foto, video, atau tautan ke aplikasi ini",
@@ -19,11 +28,19 @@
     "howToShare": "Cara memeriksa pesan terusan WhatsApp",
     "step1": "Tambahkan aplikasi ini ke layar utama (menu ⋮ lalu 'Instal aplikasi')",
     "step2": "Di WhatsApp, tekan lama pesan lalu ketuk Bagikan",
-    "step3": "Pilih Sach Check dari daftar",
+    "step3": "Pilih CHCKR dari daftar",
     "install": "Instal aplikasi",
     "recent": "Pemeriksaan terbaru",
     "filesSelected": "{{count}} berkas ditambahkan",
-    "clearFiles": "Hapus"
+    "clearFiles": "Hapus",
+    "whatCheck": "Apa yang ingin Anda periksa?",
+    "tiles": {
+      "text": "Teks",
+      "photo": "Foto",
+      "video": "Video",
+      "audio": "Audio",
+      "link": "Tautan"
+    }
   },
   "check": {
     "title": "Memeriksa pesan Anda",
@@ -85,11 +102,29 @@
     "aiTitle": "Apakah gambar ini buatan AI?",
     "aiLikelihood": "Kemungkinan buatan AI: {{n}} dari 100",
     "aiSignalsAi": "Tanda-tanda buatan AI",
-    "aiSignalsReal": "Tanda-tanda foto asli"
+    "aiSignalsReal": "Tanda-tanda foto asli",
+    "verifiedBy": "Diverifikasi oleh 2 peninjau",
+    "verifiedNote_one": "{{count}} sumber tepercaya",
+    "verifiedNote_other": "{{count}} sumber tepercaya",
+    "tier1": "Tingkat 1",
+    "tier2": "Tingkat 2",
+    "tier3": "Tingkat 3"
   },
-  "limit": { "title": "Jatah pemeriksaan hari ini sudah habis", "body": "Anda dapat memeriksa lagi setelah {{time}}." },
-  "history": { "title": "Pemeriksaan Anda", "empty": "Belum ada pemeriksaan.", "more": "Muat lagi" },
-  "public": { "cta": "Periksa pesan terusan Anda sendiri", "notFound": "Hasil ini tidak ditemukan." },
+  "limit": {
+    "title": "Jatah pemeriksaan hari ini sudah habis",
+    "body": "Anda dapat memeriksa lagi setelah {{time}}."
+  },
+  "history": {
+    "title": "Pemeriksaan Anda",
+    "empty": "Belum ada pemeriksaan.",
+    "more": "Muat lagi",
+    "all": "Semua",
+    "filter": "Saring menurut hasil"
+  },
+  "public": {
+    "cta": "Periksa pesan terusan Anda sendiri",
+    "notFound": "Hasil ini tidak ditemukan."
+  },
   "errors": {
     "TOO_LARGE": "Terlalu besar. Batasnya 50 MB per kiriman.",
     "TOO_MANY_FILES": "Bagikan hingga 10 foto, atau satu video atau audio.",

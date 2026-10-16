@@ -8,7 +8,7 @@ demo_languages:
     tts_voice: Kore
     font: NotoSansDevanagari
     card:                       # correction card text (same words as frontend/src/i18n/hi.json)
-      app_name: "सच चेक"
+      app_name: "CHCKR"
       what_is_true: "सच क्या है"
       sources: "स्रोत"
       labels:
@@ -25,7 +25,7 @@ demo_languages:
     tts_voice: Kore
     font: NotoSansTamil
     card:                       # correction card text (same words as frontend/src/i18n/ta.json)
-      app_name: "சச் செக்"
+      app_name: "CHCKR"
       what_is_true: "உண்மை என்ன"
       sources: "ஆதாரங்கள்"
       labels:
@@ -42,7 +42,7 @@ demo_languages:
     tts_voice: Kore
     font: NotoSansKannada
     card:                       # correction card text (same words as frontend/src/i18n/kn.json)
-      app_name: "ಸಚ್ ಚೆಕ್"
+      app_name: "CHCKR"
       what_is_true: "ನಿಜ ಏನು"
       sources: "ಮೂಲಗಳು"
       labels:
@@ -59,7 +59,7 @@ demo_languages:
     tts_voice: Kore
     font: NotoSans
     card:                       # correction card text (same words as frontend/src/i18n/id.json)
-      app_name: "Sach Check"
+      app_name: "CHCKR"
       what_is_true: "Yang sebenarnya"
       sources: "Sumber"
       labels:
@@ -76,7 +76,7 @@ demo_languages:
     tts_voice: Kore
     font: NotoSans
     card:                       # correction card text (same words as frontend/src/i18n/en.json)
-      app_name: "Sach Check"
+      app_name: "CHCKR"
       what_is_true: "What is true"
       sources: "Sources"
       labels:

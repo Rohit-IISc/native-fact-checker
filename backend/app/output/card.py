@@ -110,7 +110,7 @@ def render(claim: ClaimResult) -> bytes:
 
     # Band: app name, then the label as big as fits.
     d.rectangle([0, 0, W, BAND_H], fill=color)
-    d.text((MARGIN, 52), text.get("app_name", "Sach Check"), font=_font(family, 36, bold=True), fill="#ffffff")
+    d.text((MARGIN, 52), text.get("app_name", "CHCKR"), font=_font(family, 36, bold=True), fill="#ffffff")
     size = 120
     while size > 56 and d.textlength(label, font=_font(family, size, bold=True)) > inner:
         size -= 8

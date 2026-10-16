@@ -27,6 +27,7 @@ export default defineConfig({
     strictPort: true,
     allowedHosts: codespace ? [`.${forwardDomain}`] : undefined,
     hmr: codespace ? { host: `${codespace}-5173.${forwardDomain}`, protocol: 'wss', clientPort: 443 } : undefined,
-    proxy: { '/api': { target: 'http://127.0.0.1:8080', changeOrigin: true } },
+    // API_PROXY_TARGET lets a second local stack run beside `make dev` (e.g. offline screenshots on :8090).
+    proxy: { '/api': { target: process.env.API_PROXY_TARGET ?? 'http://127.0.0.1:8080', changeOrigin: true } },
   },
 })

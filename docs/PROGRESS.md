@@ -2,12 +2,24 @@
 
 Updated after every task (see CLAUDE.md, "How to work"). Newest state only; history is in git.
 
-**Last updated:** Fri Oct 9, 2026
+**Last updated:** Fri Oct 16, 2026
 **Build-plan day:** Day 6 work on Fri Oct 9: Days 0 to 5 done; Day 6 (measure) deployed; pushes to main deploy via Cloud Build.
 **Deployed:** https://ai-builder-2026.web.app -> Cloud Run `factcheck-api` (asia-south1), commit 2d0803c+.
 **Audio samples for native speakers:** https://claude.ai/artifact/3uKEHUsp5hdXoVFo87SJeo (private; share it).
 
 ## Done
+
+- **Oct 16, branch `ui/bazaar-bright` (not merged, not on main):** Bazaar Bright frontend design from the
+  kit in `artifacts/` (patch applied cleanly), app renamed to **CHCKR** everywhere (UI in all five
+  languages, tab title, PWA manifest, correction-card name in `config/languages.yaml` and `card.py`),
+  logo and favicon from `artifacts/chckr_logo_hd_v2.png` (full logo on sign-in; eagle-only crop for the
+  header, favicon and app icons; colours untouched). 15 new strings translated into hi/ta/kn/id
+  (**native-speaker review needed for Hindi, Tamil, Kannada**). Fixes found at 360 px: header too wide (one
+  row now; duplicate History link removed, the dock has it), kit CSS cropped the logo, Tamil tile labels
+  collided (tiles now size to their label), two colours below 4.5:1 darkened, press animation off under
+  reduced motion, tile group got `role="group"`, domain monograms ("thequint.com" read "TC").
+  Preview (real backend and production data, expires Oct 23):
+  https://ai-builder-2026--bazaar-bright-3p5hkmt8.web.app . Waiting for Rohit's go-ahead.
 
 - Days 0-3 (see git history): deploy, text/media/link lanes, tier 1 + tier 2 caches, four evidence agents,
   offender list, dev loop (`make dev/try/accept/record/test/smoke`).
@@ -119,6 +131,9 @@ is kept for history. Details: eval/TESTS-TO-DO.md section 5.
 
 ## Next step
 
+0. Rohit: review the Bazaar Bright preview and give the go-ahead (or changes); then merge `ui/bazaar-bright`
+   into main (deploys) and redeploy the backend for the CHCKR name on the correction card. Open questions:
+   self-hosting Nunito for offline use; Gemini 3 recall drift (Oct 9 eval) still to investigate.
 1. Rohit: phone tests in eval/TESTS-TO-DO.md section 1 (share sheet, push, card in WhatsApp).
 2. Latency on slow Vertex days: video extraction alone took 57 s in one run (first call timed out). Look
    at a lower extraction hedge for video, or Provisioned Throughput (decision 41).

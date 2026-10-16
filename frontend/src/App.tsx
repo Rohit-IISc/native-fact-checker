@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { BrowserRouter, Link, NavLink, Route, Routes, useLocation } from 'react-router-dom'
+import { BrowserRouter, Link, Route, Routes, useLocation } from 'react-router-dom'
+import { BrandMark } from './components/BrandMark'
+import { Dock } from './components/Dock'
 import { UI_LANGUAGES } from './i18n'
 import { ApiError, getMe, giveConsent } from './lib/api'
 import { AuthProvider, useAuth } from './lib/auth'
@@ -33,10 +35,10 @@ function Header() {
   return (
     <header className="topbar">
       <Link to="/" className="brand">
+        <BrandMark />
         {t('app.name')}
       </Link>
       <nav>
-        {user && <NavLink to="/history">{t('nav.history')}</NavLink>}
         <LanguagePicker />
         {user && (
           <button className="link" onClick={() => void signOut()}>
@@ -103,13 +105,16 @@ function Gate() {
     )
   }
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/check" element={<SharedCheck />} />
-      <Route path="/check/:checkId" element={<CheckPage />} />
-      <Route path="/history" element={<History />} />
-      <Route path="*" element={<Home />} />
-    </Routes>
+    <>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/check" element={<SharedCheck />} />
+        <Route path="/check/:checkId" element={<CheckPage />} />
+        <Route path="/history" element={<History />} />
+        <Route path="*" element={<Home />} />
+      </Routes>
+      <Dock />
+    </>
   )
 }
 

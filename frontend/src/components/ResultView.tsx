@@ -3,8 +3,11 @@ import { useTranslation } from 'react-i18next'
 import { contentLng } from '../i18n'
 import type { AnswerText, CheckResult, ClaimResult, Evidence } from '../lib/types'
 import { VerdictBadge } from './VerdictBadge'
+import { monogram } from '../lib/monogram'
+import { TrustSeal } from './TrustSeal'
 
 const TIER_ORDER = { TIER_1: 0, TIER_2: 1, TIER_3: 2, NOT_A_SOURCE: 3 } as const
+const TIER_KEY = { TIER_1: 'tier1', TIER_2: 'tier2', TIER_3: 'tier3', NOT_A_SOURCE: 'tier3' } as const
 
 function Sources({ evidence, lang }: { evidence: Pick<Evidence, 'evidence_id' | 'url' | 'domain' | 'publisher' | 'title' | 'tier'>[]; lang: string }) {
   const { t } = useTranslation(undefined, { lng: contentLng(lang) })
@@ -15,11 +18,17 @@ function Sources({ evidence, lang }: { evidence: Pick<Evidence, 'evidence_id' | 
       <h3>{t('result.sources')}</h3>
       <ul className="sources">
         {items.map((e) => (
-          <li key={e.evidence_id}>
-            <a href={e.url ?? undefined} target="_blank" rel="noopener noreferrer">
-              {e.publisher || e.domain || e.url}
-            </a>
-            {e.title && <div className="muted small">{e.title}</div>}
+          <li key={e.evidence_id} className="source">
+            <span className="slogo" aria-hidden="true">
+              {monogram(e.publisher || e.domain || '?')}
+            </span>
+            <div>
+              <a href={e.url ?? undefined} target="_blank" rel="noopener noreferrer">
+                {e.publisher || e.domain || e.url}
+              </a>
+              <span className={`tier tier-${TIER_KEY[e.tier]}`}>{t(`result.${TIER_KEY[e.tier]}`)}</span>
+              {e.title && <div className="muted small">{e.title}</div>}
+            </div>
           </li>
         ))}
       </ul>
@@ -89,7 +98,7 @@ export function ClaimCard({
     url.searchParams.set('lang', a.language)
     try {
       const blob = await (await fetch(url)).blob()
-      const file = new File([blob], 'sach-check.png', { type: 'image/png' })
+      const file = new File([blob], 'chckr.png', { type: 'image/png' })
       if (navigator.canShare?.({ files: [file] })) {
         await navigator.share({ files: [file], text: claim.result_url })
         return
@@ -111,12 +120,11 @@ export function ClaimCard({
           </p>
         )
       )}
-      <div className="claim-head">
-        <VerdictBadge label={claim.label} large lang={a.language} />
-        <span className="muted" lang={a.language}>
-          {tc('result.confidence', { n: claim.confidence })}
-        </span>
+      <div className={`vbanner vb-${claim.label.toLowerCase()}`}>
+        <b lang={a.language}>{tc(`label.${claim.label}`)}</b>
+        <span lang={a.language}>{tc('result.confidence', { n: claim.confidence })}</span>
       </div>
+      <TrustSeal outcome={claim.panel_outcome} evidence={sources} lang={a.language} />
       <h2 lang={a.language}>{a.headline}</h2>
       <p lang={a.language} className="lead">
         {a.summary}

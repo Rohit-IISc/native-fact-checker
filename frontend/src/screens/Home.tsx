@@ -8,6 +8,16 @@ import { config } from '../lib/config'
 import type { HistoryItem, Quota } from '../lib/types'
 import { Limit } from './Limit'
 import { enablePush } from '../lib/push'
+import { Icon, type IconName } from '../components/Icon'
+
+const ALL_MEDIA = 'image/*,video/*,audio/*,.opus,.ogg'
+const TILES: { key: string; icon: IconName; accept?: string }[] = [
+  { key: 'text', icon: 'text' },
+  { key: 'photo', icon: 'image', accept: 'image/*' },
+  { key: 'video', icon: 'video', accept: 'video/*' },
+  { key: 'audio', icon: 'mic', accept: 'audio/*,.opus,.ogg' },
+  { key: 'link', icon: 'link' },
+]
 
 interface InstallPrompt extends Event {
   prompt: () => Promise<void>
@@ -26,6 +36,7 @@ export function Home() {
   const [recent, setRecent] = useState<HistoryItem[]>([])
   const [install, setInstall] = useState<InstallPrompt | null>(null)
   const fileInput = useRef<HTMLInputElement>(null)
+  const pasteBox = useRef<HTMLTextAreaElement>(null)
 
   useEffect(() => {
     if (!user) return
@@ -67,16 +78,32 @@ export function Home() {
     }
   }
 
+  // A tile opens the file picker for that kind of media, or puts the cursor in the paste box.
+  const pick = (accept?: string) => {
+    if (!accept) return pasteBox.current?.focus()
+    if (fileInput.current) {
+      fileInput.current.accept = accept
+      fileInput.current.click()
+    }
+  }
+
   const left = quota ? Math.max(0, quota.limit - quota.used) : null
 
   return (
     <main className="screen">
       {limitAt !== null && <Limit resetsAt={limitAt || undefined} />}
+      {left !== null && quota && (
+        <div className="banner" role="status">
+          <b>{left}</b>
+          <span>{t('home.quota', { left, limit: quota.limit })}</span>
+        </div>
+      )}
       <form className="card" onSubmit={submit}>
         <label htmlFor="paste" className="label">
           {t('home.pasteLabel')}
         </label>
         <textarea
+          ref={pasteBox}
           id="paste"
           rows={6}
           maxLength={config.limits.maxTextChars}
@@ -89,11 +116,19 @@ export function Home() {
           type="file"
           hidden
           multiple
-          accept="image/*,video/*,audio/*,.opus,.ogg"
+          accept={ALL_MEDIA}
           onChange={(e) => setFiles(Array.from(e.target.files ?? []))}
         />
+        <div className="tiles" role="group" aria-label={t('home.whatCheck')}>
+          {TILES.map((x) => (
+            <button key={x.key} type="button" className="tile" onClick={() => pick(x.accept)}>
+              <Icon name={x.icon} />
+              {t(`home.tiles.${x.key}`)}
+            </button>
+          ))}
+        </div>
         <div className="row">
-          <button type="button" className="secondary" onClick={() => fileInput.current?.click()}>
+          <button type="button" className="secondary" onClick={() => pick(ALL_MEDIA)}>
             {t('home.upload')}
           </button>
           {files.length > 0 && (
@@ -113,7 +148,6 @@ export function Home() {
         <button className="primary" type="submit" disabled={busy}>
           {busy ? t('check.sending') : t('home.check')}
         </button>
-        {left !== null && quota && <p className="muted small center">{t('home.quota', { left, limit: quota.limit })}</p>}
       </form>
 
       {recent.length > 0 && (
