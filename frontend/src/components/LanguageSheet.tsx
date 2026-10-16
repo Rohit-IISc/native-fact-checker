@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next'
 import { UI_LANGUAGES } from '../i18n'
 import { deleteAccount } from '../lib/api'
 import { useAuth } from '../lib/auth'
-import { LegalLinks } from '../screens/Legal'
+import { LegalLinks } from './LegalLinks'
 import { Icon } from './Icon'
 
 /** Bottom sheet in two modes. "language" (the header's language button): only the language list.

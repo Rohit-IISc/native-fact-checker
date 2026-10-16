@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next'
 import { Icon, type IconName } from '../components/Icon'
 import { UI_LANGUAGES } from '../i18n'
 import { config } from '../lib/config'
-import { LegalLinks } from './Legal'
+import { LegalLinks } from '../components/LegalLinks'
 
 const FEATURES: { key: string; icon: IconName }[] = [
   { key: 'share', icon: 'share' },
@@ -24,7 +24,10 @@ export function Welcome({ signedIn, onSignIn, onAgree, onLanguage, busy, error }
   return (
     <main className="welcome">
       <div className="hero">
-        <img src="/brand/chckr-logo.png" alt={t('app.name')} width={200} height={200} />
+        <picture>
+          <source srcSet="/brand/chckr-logo-312.webp" type="image/webp" />
+          <img src="/brand/chckr-logo-312.png" alt={t('app.name')} width={156} height={156} fetchPriority="high" />
+        </picture>
       </div>
       <p className="tick">{t('welcome.ticker', { limit: config.limits.dailyChecks })}</p>
       <div className="screen-pad">

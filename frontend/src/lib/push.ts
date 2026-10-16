@@ -1,4 +1,3 @@
-import { getMessaging, getToken, isSupported } from 'firebase/messaging'
 import { registerFcmToken } from './api'
 import type { AppUser } from './auth'
 import { config } from './config'
@@ -15,6 +14,7 @@ export async function enablePush(user: AppUser): Promise<void> {
   if (asked || config.devAuth || !config.vapidKey || !('Notification' in window)) return
   asked = true
   try {
+    const { getMessaging, getToken, isSupported } = await import('firebase/messaging') // loaded only when needed
     if (!(await isSupported())) return
     const permission = Notification.permission === 'default' ? await Notification.requestPermission() : Notification.permission
     if (permission !== 'granted') return

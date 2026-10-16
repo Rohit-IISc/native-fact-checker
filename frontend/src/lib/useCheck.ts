@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 import { getCheck } from './api'
 import type { AppUser } from './auth'
 import { config } from './config'
-import { db } from './firebase'
+import { db } from './firestore'
 import type { CheckDoc } from './types'
 
 const TERMINAL = new Set(['DONE', 'FAILED', 'LIMIT'])

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { lazy, Suspense, useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { BrowserRouter, Link, Route, Routes, useLocation } from 'react-router-dom'
 import { BrandMark } from './components/BrandMark'
@@ -8,14 +8,18 @@ import { UI_LANGUAGES } from './i18n'
 import { ApiError, getMe, giveConsent, saveLanguage } from './lib/api'
 import { AuthProvider, useAuth } from './lib/auth'
 import { chooseLanguage } from './lib/language'
-import { CheckPage, SharedCheck } from './screens/CheckPage'
-import { History } from './screens/History'
 import { Home } from './screens/Home'
-import { LatestCheck } from './screens/LatestCheck'
-import { Legal } from './screens/Legal'
-import { PublicResult } from './screens/PublicResult'
-import { Trending } from './screens/Trending'
 import { Welcome } from './screens/Welcome'
+
+// Screens other than the landing page and Home load on first use (smaller first download).
+const CheckPage = lazy(() => import('./screens/CheckPage').then((m) => ({ default: m.CheckPage })))
+const SharedCheck = lazy(() => import('./screens/CheckPage').then((m) => ({ default: m.SharedCheck })))
+const History = lazy(() => import('./screens/History').then((m) => ({ default: m.History })))
+const LatestCheck = lazy(() => import('./screens/LatestCheck').then((m) => ({ default: m.LatestCheck })))
+const Legal = lazy(() => import('./screens/Legal').then((m) => ({ default: m.Legal })))
+const PublicResult = lazy(() => import('./screens/PublicResult').then((m) => ({ default: m.PublicResult })))
+const Trending = lazy(() => import('./screens/Trending').then((m) => ({ default: m.Trending })))
+const screenFallback = <main className="screen center muted">…</main>
 
 function Header({ onLanguage }: { onLanguage: () => void }) {
   const { t, i18n } = useTranslation()
@@ -69,11 +73,13 @@ function Gate() {
     return (
       <>
         <Header onLanguage={() => setSheet('language')} />
+        <Suspense fallback={screenFallback}>
         <Routes>
           <Route path="/r/:verdictId" element={<PublicResult />} />
           <Route path="/privacy" element={<Legal kind="privacy" />} />
           <Route path="/terms" element={<Legal kind="terms" />} />
         </Routes>
+        </Suspense>
         {languageSheet}
       </>
     )
@@ -110,6 +116,7 @@ function Gate() {
   return (
     <>
       <Header onLanguage={() => setSheet('language')} />
+      <Suspense fallback={screenFallback}>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/check" element={<SharedCheck />} />
@@ -119,6 +126,7 @@ function Gate() {
         <Route path="/history" element={<History />} />
         <Route path="*" element={<Home />} />
       </Routes>
+      </Suspense>
       <Dock onSettings={() => setSheet('settings')} />
       {languageSheet}
     </>

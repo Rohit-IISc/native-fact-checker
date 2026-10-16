@@ -224,7 +224,7 @@ button, .button {
 /* ---------- privacy, terms, account ---------- */
 .legal h2 { margin-top: 0; }
 .legal ul { margin: 0; padding-left: 1.2rem; display: flex; flex-direction: column; gap: 6px; }
-.legal-links { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; margin: 14px 0 0; font-weight: 800; }
+.legal-links { display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; margin: 14px 0 0; font-weight: 800; }
 .legal-links a { min-height: 40px; display: inline-flex; align-items: center; }
 .link.danger { color: var(--false); width: 100%; margin-top: 6px; }
 .confirm { margin-top: 10px; padding: 12px; border: 2px solid var(--false); border-radius: var(--radius); background: #fff; }

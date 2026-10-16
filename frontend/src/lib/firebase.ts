@@ -1,7 +1,6 @@
 import { type FirebaseApp, initializeApp } from 'firebase/app'
 import { type AppCheck, getToken as getAppCheckToken, initializeAppCheck, ReCaptchaEnterpriseProvider } from 'firebase/app-check'
 import { type Auth, getAuth } from 'firebase/auth'
-import { type Firestore, getFirestore } from 'firebase/firestore'
 import { config } from './config'
 
 let app: FirebaseApp | null = null
@@ -26,10 +25,6 @@ export function firebaseApp(): FirebaseApp {
 
 export function auth(): Auth {
   return getAuth(firebaseApp())
-}
-
-export function db(): Firestore {
-  return getFirestore(firebaseApp(), config.firestoreDb)
 }
 
 /**
