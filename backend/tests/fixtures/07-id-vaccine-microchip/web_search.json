@@ -1,48 +1,38 @@
 {
   "prompt_version": "web-search-2.2+shared-1.1",
-  "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-09T12:04:09+00:00",
+  "model_id": "gemini-3.8-flash",
+  "recorded_at": "2026-10-16T20:04:57+00:00",
   "outputs": [
     {
-      "text": "c1:\nMayo Clinic News Network stated on October 11, 2021, that assertions about microchips in COVID-19 vaccines are false, and there is no way for the vaccine to track people or gather personal information. [1] This myth originated from comments made by Bill Gates about a digital certificate of vaccine records, which was not a microchip and was not implemented in COVID-19 vaccines. [1] Mayo Clinic further clarified on August 30, 2026, that COVID-19 vaccines are made only with ingredients that help the body recognize and clear out the virus, and it is a myth that they contain microchips to track location or movement. [2] FactCheck.org reported on December 15, 2020, that a video falsely claiming COVID-19 vaccine vials have a microchip to track patients misrepresented an interview about a chip attached to a plastic vial to store information about the vaccine dose, not to track people. [3] KSAT reported on January 12, 2021, that local medical experts in San Antonio warned about the prevalence of misinformation, including the unfounded social media theory that COVID-19 vaccines contain microchips and tracking devices, which they determined to be untrue. [4] AFP Fact Check stated on July 2, 2021, that social media posts claiming COVID-19 vaccines contain trackers are false, and health authorities confirm no chip is in any vaccine product. [5] Jala Hoaks Jakarta, on January 21, 2021, and CSIRT Bulelengkab, on March 7, 2026, both clarified that claims of COVID-19 vaccines containing chips to track people are false, explaining that barcodes on vaccine products are for tracking distribution, not individuals. [6] [7]",
+      "text": "**Source 1:**  \nPublisher: U.S. Centers for Disease Control and Prevention (CDC)  \nTitle: Myths and Facts about COVID-19 Vaccines  \nPublish Date: February 16, 2023  \nDetails: For claim c1, the CDC states that COVID-19 vaccines do not contain microchips and are not administered to track individuals' movements [1]. The agency explains that vaccines work strictly to stimulate the immune system to produce antibodies and do not contain tracking components [1].\n\n**Source 2:**  \nPublisher: Kementerian Komunikasi dan Informatika RI (Kominfo) via Pemprov DKI Jakarta (Jalahoaks)  \nTitle: [HOAKS] - Vaksin COVID-19 Memiliki Chip Yang Dapat Melacak Keberadaan Orang  \nPublish Date: January 21, 2021  \nDetails: For claim c1, official spokespersons clarified that claims stating COVID-19 vaccines contain a microchip to track individuals are false (hoaks) [2]. The authorities explained that barcodes and tracking elements belong strictly to packaging and distribution logistics (such as tracking vaccine vials) and do not enter or remain in vaccinated recipients [2].\n\n**Source 3:**  \nPublisher: AFP Fact Check  \nTitle: Covid-19 vaccines do not contain tracking devices  \nPublish Date: July 2, 2021  \nDetails: For claim c1, infectious disease specialists and health regulators in the United States and Canada confirmed that authorized COVID-19 vaccines do not contain microchips or tracking devices [3]. The report notes that false claims circulating on social media regarding microchip detection in vaccine recipients stem from fabricated or misrepresented videos [3].\n\n**Source 4:**  \nPublisher: FactCheck.org  \nTitle: COVID-19 Vaccines Don’t Have Microchips  \nPublish Date: December 15, 2020  \nDetails: For claim c1, the fact-check clarifies that viral assertions about microchip tracking originated from misleading interpretations of optional RFID tags used on external syringe packaging [4]. Those tags serve strictly as serial barcodes for vaccine vial logistics and expiration management, containing no patient information and possessing no ability to be injected or track human movement [4].\n\n**Source 5:**  \nPublisher: Mayo Clinic Health System  \nTitle: COVID-19 vaccine myths debunked  \nPublish Date: October 11, 2021  \nDetails: For claim c1, medical directors confirmed there are no microchips in COVID-19 vaccines, nor any mechanism to track or gather personal information through an injection [5]. The article traces the conspiracy theory back to distorted remarks regarding digital records, emphasizing that no tracking microchip technology is part of the vaccine formulation [5].",
       "sources": [
         {
           "n": 1,
-          "url": "https://newsnetwork.mayoclinic.org/discussion/covid-queries-altered-dna-and-microchips/",
-          "domain": "mayoclinic.org"
+          "url": "https://archive.cdc.gov/www_cdc_gov/coronavirus/2019-ncov/vaccines/facts.html",
+          "domain": "cdc.gov"
         },
         {
           "n": 2,
-          "url": "https://www.mayoclinic.org/diseases-conditions/coronavirus/in-depth/coronavirus-myths/art-20485720",
-          "domain": "mayoclinic.org"
-        },
-        {
-          "n": 3,
-          "url": "https://www.factcheck.org/2020/12/covid-19-vaccines-dont-have-patient-tracking-devices/",
-          "domain": "factcheck.org"
-        },
-        {
-          "n": 4,
-          "url": "https://www.ksat.com/news/local/2021/01/12/trust-index-does-the-covid-19-vaccine-contain-a-tracking-device/",
-          "domain": "ksat.com"
-        },
-        {
-          "n": 5,
-          "url": "https://factcheck.afp.com/covid-19-vaccines-do-not-contain-tracking-devices",
-          "domain": "afp.com"
-        },
-        {
-          "n": 6,
           "url": "https://jalahoaks.jakarta.go.id/detail/HOAKS-Vaksin-Covid-19-Memiliki-Chip-yang-Dapat-Melacak-Keberadaan-Orang",
           "domain": "jakarta.go.id"
         },
         {
-          "n": 7,
-          "url": "https://csirt.bulelengkab.go.id/konten/detail/vaksin-covid-19-memiliki-chip-yang-dapat-melacak-keberadaan-orang-yang-telah-disuntikan-vaksin",
-          "domain": "bulelengkab.go.id"
+          "n": 3,
+          "url": "https://factcheck.afp.com/covid-19-vaccines-do-not-contain-tracking-devices",
+          "domain": "afp.com"
+        },
+        {
+          "n": 4,
+          "url": "https://www.factcheck.org/2020/12/covid-19-vaccines-dont-have-patient-tracking-devices/",
+          "domain": "factcheck.org"
+        },
+        {
+          "n": 5,
+          "url": "https://newsnetwork.mayoclinic.org/discussion/covid-queries-altered-dna-and-microchips/",
+          "domain": "mayoclinic.org"
         }
       ],
-      "queries": 4
+      "queries": 2
     }
   ]
 }

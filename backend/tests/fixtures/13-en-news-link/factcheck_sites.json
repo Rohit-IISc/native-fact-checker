@@ -1,7 +1,7 @@
 {
   "prompt_version": "factcheck-1.6+shared-1.1",
-  "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-09T12:13:54+00:00",
+  "model_id": "gemini-3.8-flash",
+  "recorded_at": "2026-10-16T20:07:21+00:00",
   "outputs": [
     {
       "agent": "factcheck_sites",
@@ -16,8 +16,8 @@
           "title": "Claims Of China Being The First Country To Land On The South ...",
           "published_at": "2023-08-29",
           "language": "en",
-          "snippet_en": "BOOM Fact Check rated as False the claim that China was the first country to land on the moon's South Pole a few years ago, contradicting the claim that India was the first.",
-          "stance": "CONTRADICTS",
+          "snippet_en": "BOOM debunked claims that China was the first country to land on the Moon's south pole, reiterating that India became the first country to land near the lunar south pole region with Chandrayaan-3.",
+          "stance": "SUPPORTS",
           "rating_text": "False",
           "tier": "TIER_1"
         }
@@ -25,7 +25,7 @@
       "source_assessment": null,
       "ai_generation_signals": null,
       "earliest_appearance": null,
-      "notes_en": "The provided fact checks primarily address misinformation related to Chandrayaan-3 visuals and claims about other countries landing on the moon's south pole. Only one fact check directly addresses the claim of India being the first to land on the lunar south pole by contradicting a claim that China was first.",
+      "notes_en": "Other fact checks in the search results debunked viral fake media and animations claiming to show Chandrayaan-3 visuals, or unrelated pandemic claims, and were excluded.",
       "timed_out": false
     }
   ]

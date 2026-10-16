@@ -1,0 +1,34 @@
+{
+  "prompt_version": "packager-1.1+shared-1.1",
+  "model_id": "gemini-3.8-flash",
+  "recorded_at": "2026-10-16T20:07:21+00:00",
+  "outputs": [
+    {
+      "briefs": [
+        {
+          "claim_id": "c1",
+          "claim_en": "India's Chandrayaan-3 mission successfully landed near the Moon's south pole, making it the first country to achieve this feat.",
+          "claim_type": null,
+          "claimed_date": null,
+          "place": "Moon's south pole",
+          "brief_en": "Official documentation from NASA and international reporting confirm that India's Chandrayaan-3 mission successfully achieved a soft landing near the lunar south pole on August 23, 2023. News reports from PBS NewsHour, The Guardian, and Global News specify that the Vikram lander touched down at 12:34 UTC (6:04 p.m. Indian Standard Time). These sources, along with the Swedish Space Corporation and Universe Today, verify that this touchdown made India the first nation to successfully land a spacecraft in the Moon's south pole region and the fourth nation overall to execute a lunar soft landing. Additionally, an August 2023 fact check by BOOM addressed previous false claims asserting that China had landed there first, confirming India's status.",
+          "evidence_ids": [
+            "ws-6",
+            "fc-1",
+            "ws-2",
+            "ws-7",
+            "mp-2",
+            "ws-1",
+            "ws-3",
+            "ws-4",
+            "ws-5",
+            "ws-8",
+            "ws-9",
+            "mp-1"
+          ],
+          "gaps_en": []
+        }
+      ]
+    }
+  ]
+}

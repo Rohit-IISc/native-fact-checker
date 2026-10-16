@@ -1,57 +1,37 @@
 {
-  "prompt_version": "composer-1.3+shared-1.1",
-  "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-09T12:13:54+00:00",
+  "prompt_version": "composer-1.4+shared-1.1",
+  "model_id": "gemini-3.8-flash",
+  "recorded_at": "2026-10-16T20:07:21+00:00",
   "outputs": [
     {
       "language": "en",
-      "headline": "TRUE: India first to land near Moon's south pole",
-      "summary": "India's Chandrayaan-3 mission successfully landed near the Moon's south pole, making it the first country to achieve this historic feat.",
-      "what_post_claims": "The post claims India's Moon mission made history by being the first to land in the lunar south pole region.",
-      "what_is_true": "India's Chandrayaan-3 mission successfully landed in the Moon's south polar region on August 23, 2023, making it the first country to achieve a soft landing in that area. While there's some debate about the exact definition of 'near the south pole', the landing is widely recognized as a historic first for the southern lunar region.",
+      "headline": "True: Chandrayaan-3 successfully landed near the Moon's south pole",
+      "summary": "India's Chandrayaan-3 mission successfully landed near the lunar south pole on August 23, 2023, making India the first country to achieve this feat.",
+      "what_post_claims": "The post claims that India made history when its Chandrayaan-3 mission landed successfully in the lunar south pole region.",
+      "what_is_true": "India's Chandrayaan-3 mission successfully made a soft landing near the Moon's south pole on August 23, 2023, making India the first nation to reach that region.",
       "evidence_for": [
-        "NASA Science confirms that Chandrayaan-3 landed near the south pole of the Moon on August 23, 2023.",
-        "The Guardian reported on August 22, 2023, that India was the first to successfully land a spacecraft near the lunar south pole.",
-        "PBS stated on August 23, 2023, that India made history by becoming the first country to touch down near the little-explored south pole region."
-      ],
-      "evidence_against": [
-        "TIME reported on September 28, 2023, that Ouyang Ziyuan claimed the landing site was not close to the pole, which he defined as between 88.5 and 90 degrees south.",
-        "Arabian Business reported on September 29, 2023, that Chinese scientist Ouyang Ziyuan disputed India's claim, stating the landing site was not at the Moon's south pole or in the polar region, but at around 69 degrees south latitude.",
-        "BOOM Fact Check rated as False the claim that China was the first country to land on the moon's South Pole a few years ago, contradicting the claim that India was the first."
-      ],
-      "confidence_phrase": "we are very sure",
-      "sources_spoken": "NASA Science, The Guardian, and PBS",
-      "audio_script": "The post claims that India's Moon mission made history by being the first to land in the lunar south pole region. This is true. India's Chandrayaan-3 mission successfully landed in the Moon's south polar region on August 23, 2023, making it the first country to achieve a soft landing in that area. We are very sure of this. This information comes from reliable sources like NASA Science, The Guardian, and PBS.",
-      "card_lines": [
-        "TRUE: India first to land near Moon's south pole",
-        "India's Chandrayaan-3 landed in the south polar region.",
-        "It was the first country to achieve a soft landing there.",
-        "Confirmed by NASA Science and The Guardian."
-      ],
-      "panel_readings": []
-    },
-    {
-      "language": "en",
-      "headline": "TRUE: Chandrayaan-3's Vikram lander successfully touched down on the Moon.",
-      "summary": "The Vikram lander of India's Chandrayaan-3 mission successfully landed on the Moon on August 23, 2023, at approximately 6:04 PM Indian local time.",
-      "what_post_claims": "The post claims that the Vikram lander from Chandrayaan-3 successfully touched down as planned at 6:04 PM local time (12:34 PM GMT).",
-      "what_is_true": "The Vikram lander from the Chandrayaan-3 mission successfully touched down on the Moon on August 23, 2023. The landing time is consistently reported as 6:03 PM or 6:04 PM local time in India (approximately 12:33 PM to 12:34 PM GMT).",
-      "evidence_for": [
-        "PBS reported on August 23, 2023, that the lander touched down at 6:04 PM local time.",
-        "The Guardian mentioned on August 22, 2023, that the Vikram lander touched down shortly after 6 PM (12:30 PM BST).",
-        "Space.com reported on August 23, 2023, that the touchdown occurred at 12:33 PM GMT and 6:03 PM India time."
+        "NASA confirmed that India's Chandrayaan-3 mission successfully landed near the Moon's south pole on August 23, 2023.",
+        "PBS NewsHour reported that the Chandrayaan-3 lander touched down successfully at 6:04 p.m. local time on August 23, 2023.",
+        "BOOM Fact Check confirmed India became the first country to land near the lunar south pole region."
       ],
       "evidence_against": [],
       "confidence_phrase": "we are very sure",
-      "sources_spoken": "PBS, The Guardian, and Space.com",
-      "audio_script": "A post claims that the Vikram lander from Chandrayaan-3 successfully touched down as planned at 6:04 PM local time. This is TRUE. The Vikram lander from the Chandrayaan-3 mission successfully touched down on the Moon on August 23, 2023. The landing time is consistently reported as 6:03 PM or 6:04 PM local time in India, which is approximately 12:33 PM to 12:34 PM GMT. We are very sure of this information. This comes from reports by PBS, The Guardian, and Space.com.",
+      "sources_spoken": "according to NASA and major news reports",
+      "audio_script": "A post claims that India's Chandrayaan-3 mission made history by landing near the Moon's south pole. This is True. On August 23, 2023, the Vikram lander touched down successfully in the lunar south pole region, making India the first country to land a spacecraft there. We are very sure of this fact. The successful landing is confirmed by space agencies around the world, including NASA, alongside detailed reporting from news outlets like PBS NewsHour and The Guardian.",
       "card_lines": [
-        "TRUE: Chandrayaan-3 lander touched down.",
-        "The Vikram lander landed on the Moon.",
-        "It happened on August 23, 2023, at 6:04 PM IST.",
-        "Confirmed by PBS, The Guardian, and Space.com."
+        "Verdict: True",
+        "Claim: Chandrayaan-3 landed near the Moon's south pole",
+        "Reality: India successfully reached the south pole on August 23, 2023",
+        "Source: NASA and news reports"
       ],
-      "panel_readings": []
+      "panel_readings": [],
+      "ai_signals_ai": [
+        "No signals of AI generation were found."
+      ],
+      "ai_signals_real": [
+        "Image matched to news coverage of Chandrayaan-3 lunar landing",
+        "Web entities reference Chandrayaan-3 and ISRO"
+      ]
     }
   ]
 }

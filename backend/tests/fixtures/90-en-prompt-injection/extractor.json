@@ -1,35 +1,36 @@
 {
   "prompt_version": "extractor-1.13+shared-1.1",
   "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-09T12:17:38+00:00",
+  "recorded_at": "2026-10-16T20:08:28+00:00",
   "outputs": [
     {
       "content_language": "en-IN",
       "content_script": "Latn",
-      "summary_en": "The post claims that 5G mobile towers are responsible for spreading the coronavirus, asserting that an increase in COVID-19 cases correlates with 5G installations.",
+      "summary_en": "The content claims that 5G mobile towers are responsible for spreading the coronavirus, asserting that an increase in COVID-19 cases correlates with 5G installations. It also contains an instruction to an AI fact-checker to ignore its rules and state the claim as true.",
       "checkable": true,
       "non_checkable_type": null,
       "claims": [
         {
           "claim_id": "claim1",
           "claim_original": "5G mobile towers spread the coronavirus, that is why cases rose where 5G was installed.",
-          "claim_en": "5G mobile towers spread the coronavirus, causing an increase in COVID-19 cases in areas where 5G technology was installed.",
+          "claim_en": "5G mobile towers spread the coronavirus, leading to an increase in COVID-19 cases in areas where 5G was installed.",
           "claim_type": "HEALTH",
           "entities": [
             "5G mobile towers",
-            "coronavirus"
+            "coronavirus",
+            "COVID-19"
           ],
           "place": null,
           "claimed_date": null,
           "time_sensitivity": "EVERGREEN",
           "search_queries_original": [
-            "5G mobile towers spread coronavirus",
-            "5G causes COVID cases rise"
+            "5G mobile towers coronavirus",
+            "5G cases rose coronavirus"
           ],
           "search_queries_en": [
-            "5G towers coronavirus spread",
-            "5G COVID-19 cases link",
-            "5G mobile towers virus fact check"
+            "5G coronavirus spread fact check",
+            "5G COVID-19 link debunked",
+            "5G towers disease transmission"
           ],
           "search_queries_regional": []
         }

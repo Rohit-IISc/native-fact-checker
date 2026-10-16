@@ -1,74 +1,49 @@
 {
   "prompt_version": "extractor-1.13+shared-1.1",
   "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-09T12:13:54+00:00",
+  "recorded_at": "2026-10-16T20:07:21+00:00",
   "outputs": [
     {
       "content_language": "en-IN",
       "content_script": "Latn",
-      "summary_en": "The image shows people celebrating, likely in India, with one woman yawning or shouting, while the accompanying news article reports on India's Chandrayaan-3 mission successfully landing near the Moon's south pole, making India the first country to achieve this feat.",
+      "summary_en": "The image shows a crowd of people, with a woman in the foreground appearing to shout or yawn, and a BBC News logo. The accompanying article reports on India's successful Chandrayaan-3 mission, which made a historic landing near the Moon's south pole. The article details the mission's achievements, the lander and rover, and the scientific objectives.",
       "checkable": true,
       "non_checkable_type": null,
       "claims": [
         {
           "claim_id": "claim1",
-          "claim_original": "India has made history as its Moon mission becomes the first to land in the lunar south pole region.",
-          "claim_en": "India's Chandrayaan-3 mission successfully landed near the Moon's south pole, making it the first country to achieve this.",
+          "claim_original": "India has made history as its Chandrayaan-3 Moon mission successfully landed in the lunar south pole region.",
+          "claim_en": "India's Chandrayaan-3 mission successfully landed near the Moon's south pole, making it the first country to achieve this feat.",
           "claim_type": "EVENT",
           "entities": [
             "India",
             "Chandrayaan-3",
-            "Moon",
-            "lunar south pole"
+            "Moon's south pole"
           ],
           "place": "Moon's south pole",
           "claimed_date": null,
           "time_sensitivity": "EVERGREEN",
           "search_queries_original": [
-            "India Moon mission south pole landing",
-            "Chandrayaan-3 historic landing"
+            "Chandrayaan-3 historic landing Moon south pole",
+            "India first country lunar south pole landing"
           ],
           "search_queries_en": [
-            "India first country lunar south pole landing",
-            "Chandrayaan-3 successful landing",
-            "Chandrayaan-3 Moon south pole fact check"
-          ],
-          "search_queries_regional": []
-        },
-        {
-          "claim_id": "claim2",
-          "claim_original": "The Vikram lander from Chandrayaan-3 successfully touched down as planned at 18:04 local time (12:34 GMT).",
-          "claim_en": "The Vikram lander of Chandrayaan-3 successfully touched down on the Moon at 18:04 local time (12:34 GMT).",
-          "claim_type": "EVENT",
-          "entities": [
-            "Vikram lander",
-            "Chandrayaan-3"
-          ],
-          "place": "Moon",
-          "claimed_date": null,
-          "time_sensitivity": "EVERGREEN",
-          "search_queries_original": [
-            "Vikram lander touchdown time",
-            "Chandrayaan-3 landing time"
-          ],
-          "search_queries_en": [
-            "Vikram lander landing time GMT",
-            "Chandrayaan-3 touchdown 18:04 local time",
-            "Vikram lander successful landing time fact check"
+            "Chandrayaan-3 historic landing Moon south pole",
+            "India first country lunar south pole landing"
           ],
           "search_queries_regional": []
         }
       ],
       "extra_claims_not_checked": [],
-      "ocr_text": null,
+      "ocr_text": "BBCNEWS",
       "transcript": null,
-      "visual_description_en": "The image shows a crowd of people, likely in India, celebrating. In the foreground, a woman with dark hair, wearing a yellow garment and gold earrings, is captured mid-expression with her mouth open, possibly shouting or yawning, and her hand near her mouth. She has a red bindi on her forehead and a ring on her finger. Behind her, other individuals are visible, some with their arms raised in celebration. A man with glasses and a beard is partially visible on the left. The BBC News logo is present in the bottom left corner of the image.",
+      "visual_description_en": "A news photograph shows a crowd of people, likely celebrating or reacting to an event. In the foreground, a woman with dark hair, wearing a yellow-green dupatta and a yellow top, is captured mid-expression with her mouth open, possibly shouting or yawning, and her hand near her mouth. She has a bindi on her forehead and is wearing earrings and a ring. To her left, a man with a beard and glasses is visible. Other people are in the background, some with their arms raised. The bottom left corner of the image features the 'BBC NEWS' logo.",
       "ai_generation_signals": null,
       "origin_hints": [
         "BBC News"
       ],
       "media_markers": [
-        "BBC News logo in the bottom left corner"
+        "Logo reads 'BBC NEWS'"
       ]
     }
   ]

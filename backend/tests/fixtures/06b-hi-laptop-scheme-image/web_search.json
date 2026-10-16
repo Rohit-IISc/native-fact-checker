@@ -1,10 +1,10 @@
 {
   "prompt_version": "web-search-2.2+shared-1.1",
-  "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-09T12:02:58+00:00",
+  "model_id": "gemini-3.8-flash",
+  "recorded_at": "2026-10-16T20:04:29+00:00",
   "outputs": [
     {
-      "text": "For claim c1:\nPIB Fact Check, published on September 21, 2026, states that a WhatsApp message claiming the government is providing free laptops under the 'National Student Laptop Scheme 2026' is fake and no such program has been announced by the Government of India. [1] Careerindia.com, on September 13, 2026, also reports that a WhatsApp forward about a \"Free Laptop Scheme 2026\" is a scam, and no central laptop scheme has been announced. [2] They advise that legitimate national benefits would appear on official government portals (ending in .gov.in) and through Press Information Bureau updates. [2] However, some state governments in India do have their own free laptop schemes. Buddy4study.com, on August 25, 2026, mentions that while there is no central government free laptop scheme, several Indian states like Tamil Nadu and Uttar Pradesh have their own programs for eligible students. [3] For example, the Tamil Nadu Government's \"Ulagam Ungal Kaiyil\" scheme and Uttar Pradesh's \"Swami Vivekananda Yuva Sashaktikaran Yojana\" (Mission DigiShakti) provide laptops or tablets to high-performing students from low-income families. [3] Similarly, the Government of Goa has a \"Laptop Scheme for Meritorious Students of SC/ST\" as of September 18, 2026. [4] Pakistan also has a \"PM's National Laptop Scheme\" run by the Higher Education Commission (HEC). [5] [6]\n\nFor claim c2:\nCareerindia.com, on September 13, 2026, warns that scam messages about free laptop schemes often include \"urgent application deadlines\" to create panic. [2] While the claim mentions October 15 as the last date, some legitimate scholarship and laptop schemes have varying deadlines. For instance, a YouTube video from October 4, 2026, mentions a scholarship with an application deadline of October 15. [7] Another YouTube video from July 29, 2026, mentions a scholarship program with a deadline of July 30. [8] The Asianet Laptop Scheme, for students in Kerala, has a submission deadline of March 31, 2027. [9] The Info Tech Corporation of Goa's Laptop Scheme for Meritorious Students of SC/ST announces its start and last dates for applications annually. [4]\n\nFor claim c3:\nCareerindia.com, on September 13, 2026, states that scam forwards for free laptop schemes often use non-government URLs and advise checking for .gov.in domains for authentic notices. [2] The website \"www.pm-free-laptop-yojana.in\" mentioned in the claim does not appear to be an official government domain. The Press Information Bureau (PIB) has repeatedly debunked claims about a \"PM Free Laptop Scheme,\" confirming them as scams designed to collect personal information. [3] [1] They advise citizens to verify news only from government sources. [10] Official government schemes, like those in Tamil Nadu and Uttar Pradesh, do not involve direct student applications through such links; instead, colleges identify eligible students and upload their data to official systems. [3]",
+      "text": "**Livemint** | \"The Centre dismisses 'fake' claims on free laptop scheme\" | Published: September 21, 2026 [1]\nReports that the Government of India, via the Press Information Bureau (PIB) Fact Check unit, dismissed viral messages offering free laptops under schemes such as the 'National Student Laptop Scheme 2026' as fake [1]. PIB stated that the government has neither announced any such scheme nor invited applications from students, warning the public that these are phishing scams meant to harvest personal and banking details [1]. (Claims c1, c2, c3)\n\n**All India Council for Technical Education (AICTE)** | \"Awareness Regarding Fake News of Pradhanmantri Free Laptop Scheme\" | Published: April 29, 2024 [2]\nAICTE issued an official circular notifying students and institutions that messages and circulars claiming the Government of India is operating a \"Pradhanmantri Free Laptop Scheme\" are fake [3] [2]. The statutory body cautioned that no such central scheme exists and warned against fraudulent registration portals [3] [2]. (Claims c1, c2, c3)\n\n**ABP Live** | \"PIB Fact Check: वायरल हो रहे मैसेज में दावा किया जा रहा है कि केंद्र सरकार छात्रों को फ्री लैपटॉप दे रही है\" | Published: August 11, 2026 [4]\nDebunks viral social media messages claiming the Central government is providing free laptops to students and directing them to an online link [4]. PIB Fact Check warned that the Central government runs no such scheme, the application deadlines and links are fraudulent, and clicking them risks compromising personal data and money [4]. (Claims c1, c2, c3)\n\n**Hindustan Times** | \"'Fake': PIB Fact Check debunks claims of 'National Student Laptop Scheme'\" | Published: June 4, 2026 [5]\nDetails a PIB Fact Check alert warning citizens against circulating WhatsApp messages claiming registration is open for free student laptops [5]. The agency reiterated that the Government of India has not launched any free laptop scheme, confirming the circulating application links are fraudulent mechanisms to collect user data [5]. (Claims c1, c2, c3)",
       "sources": [
         {
           "n": 1,
@@ -13,51 +13,26 @@
         },
         {
           "n": 2,
-          "url": "https://www.careerindia.com/features/free-laptop-scheme-2026-scam-alert-how-to-verify-government-schemes-and-protect-your-data-from-fraud-011-65515.html",
-          "domain": "careerindia.com"
+          "url": "https://www.aicte.gov.in/node/3042",
+          "domain": "aicte.gov.in"
         },
         {
           "n": 3,
-          "url": "https://www.buddy4study.com/article/free-laptop-scheme-for-students",
-          "domain": "buddy4study.com"
+          "url": "https://www.facebook.com/pibfactcheck/videos/%E0%A4%A6%E0%A4%BE%E0%A4%B5%E0%A4%BE-%E0%A4%95%E0%A5%87%E0%A4%82%E0%A4%A6%E0%A5%8D%E0%A4%B0-%E0%A4%B8%E0%A4%B0%E0%A4%95%E0%A4%BE%E0%A4%B0-%E0%A4%A6%E0%A5%8D%E0%A4%B5%E0%A4%BE%E0%A4%B0%E0%A4%BE-pm-%E0%A4%A1%E0%A4%BF%E0%A4%9C%E0%A4%BF%E0%A4%9F%E0%A4%B2-%E0%A4%B2%E0%A5%88%E0%A4%AA%E0%A4%9F%E0%A5%89%E0%A4%AA-%E0%A4%AF%E0%A5%8B%E0%A4%9C%E0%A4%A8%E0%A4%BE-%E0%A4%95%E0%A5%87-%E0%A4%A4%E0%A4%B9%E0%A4%A4-15-%E0%A4%B8%E0%A4%BE%E0%A4%B2-%E0%A4%B8%E0%A5%87-%E0%A4%85%E0%A4%A7%E0%A4%BF%E0%A4%95-%E0%A4%89%E0%A4%AE%E0%A5%8D%E0%A4%B0-%E0%A4%95%E0%A5%87-%E0%A4%B8%E0%A4%AD/1630670098057060/",
+          "domain": "facebook.com"
         },
         {
           "n": 4,
-          "url": "https://www.myscheme.gov.in/schemes/lsmsscst",
-          "domain": "myscheme.gov.in"
+          "url": "https://www.abplive.com/education/pib-fact-check-free-laptop-scheme-to-students-modi-government-know-what-did-ministry-of-education-say-3173087",
+          "domain": "abplive.com"
         },
         {
           "n": 5,
-          "url": "https://www.hec.gov.pk/english/services/students/pmnls/Pages/default.aspx",
-          "domain": "hec.gov.pk"
-        },
-        {
-          "n": 6,
-          "url": "https://www.hec.gov.pk/english/services/students/pmnls/Pages/How-to-Apply.aspx",
-          "domain": "hec.gov.pk"
-        },
-        {
-          "n": 7,
-          "url": "https://www.youtube.com/watch?v=xIIVZUxo-TQ",
-          "domain": "youtube.com"
-        },
-        {
-          "n": 8,
-          "url": "https://www.youtube.com/watch?v=gvr0hD8XORM",
-          "domain": "youtube.com"
-        },
-        {
-          "n": 9,
-          "url": "https://asianet.co.in/laptop-scheme/",
-          "domain": "asianet.co.in"
-        },
-        {
-          "n": 10,
-          "url": "https://newsonair.gov.in/hi/government-refutes-message-of-free-laptop-distribution-under-student-laptop-scheme-2026/",
-          "domain": "newsonair.gov.in"
+          "url": "https://www.hindustantimes.com/india-news/fake-pib-fact-check-debunks-claims-of-national-student-laptop-scheme-101780581246426.html",
+          "domain": "hindustantimes.com"
         }
       ],
-      "queries": 10
+      "queries": 3
     }
   ]
 }

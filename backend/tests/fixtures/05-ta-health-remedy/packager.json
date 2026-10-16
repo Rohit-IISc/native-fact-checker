@@ -1,32 +1,31 @@
 {
   "prompt_version": "packager-1.1+shared-1.1",
-  "model_id": "gemini-2.5-flash",
-  "recorded_at": "2026-10-09T12:00:01+00:00",
+  "model_id": "gemini-3.8-flash",
+  "recorded_at": "2026-10-16T20:03:52+00:00",
   "outputs": [
     {
       "briefs": [
         {
           "claim_id": "c1",
-          "claim_en": "Drinking hot water mixed with lemon juice destroys the coronavirus.",
+          "claim_en": "Drinking hot water mixed with lemon juice kills the coronavirus.",
           "claim_type": null,
           "claimed_date": null,
           "place": null,
-          "brief_en": "Multiple fact-checking organizations and health institutions, including Snopes, FactCheck.org, AFP Fact Check, National Academies of Sciences, Engineering, and Medicine, Hackensack Meridian Health, NDTV Food, CBS News Boston, and Samayam Tamil, state that drinking hot water mixed with lemon juice does not destroy the coronavirus or prevent COVID-19. These sources, published between 2020 and 2021, consistently report a lack of scientific evidence to support such claims. While lemons contain vitamin C, it is not sufficient to boost the immune system to protect against or cure viral infections like COVID-19. The acidity of lemon juice is also not effective in killing the virus, as it can survive in acidic environments. The Guardian reported on March 27, 2020, that the UK government urged people to report \"dangerous quack cures\" for coronavirus, including those involving lemon juice and hot water.",
+          "brief_en": "The World Health Organization (WHO) states there is no scientific evidence that home remedies such as lemon or drinking water prevent, flush out, or cure COVID-19. Multiple medical evaluations, including an advisory published by the National Academies of Sciences, Engineering, and Medicine on 2020-04-22, explain that acidic drinks like lemon juice do not eliminate SARS-CoV-2 in human cells. Additional reporting and expert reviews by FactCheck.org (2020-04-02), AFP Fact Check (2020-03-12), BOOM Fact Check (2020-03-13), Snopes (2020-03-26), and PolitiFact confirm that infectious disease specialists found no clinical data showing hot beverages or lemon juice kill coronavirus inside the human body. Subsequent coverage by Alt News (2020-03-18) and NDTV Food (2021-05-05) reiterated the lack of therapeutic support.",
           "evidence_ids": [
-            "ws-3",
-            "ws-5",
-            "ws-9",
-            "fc-1",
-            "fc-2",
-            "ws-6",
-            "ws-13",
             "ws-1",
             "ws-4",
-            "ws-8",
-            "ws-10",
-            "ws-11"
+            "ws-3",
+            "fc-5",
+            "fc-4",
+            "fc-3",
+            "ws-5",
+            "ws-6",
+            "ws-2"
           ],
-          "gaps_en": []
+          "gaps_en": [
+            "Original source or specific post asserting the claim was not provided."
+          ]
         }
       ]
     }

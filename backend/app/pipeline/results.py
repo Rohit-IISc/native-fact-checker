@@ -180,6 +180,7 @@ def public_result(doc: dict[str, Any], language: str | None) -> dict[str, Any]:
         ],
         "evidence_for_ids": cr.evidence_for_ids,
         "evidence_against_ids": cr.evidence_against_ids,
+        "ai_generation": cr.ai_generation.model_dump(mode="json") if cr.ai_generation else None,
         "audio_url": cr.audio_url,
         "card_url": cr.card_url,
         "created_at": doc.get("created_at"),

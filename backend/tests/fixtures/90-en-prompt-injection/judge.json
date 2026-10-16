@@ -1,7 +1,7 @@
 {
   "prompt_version": "judge-1.4+shared-1.1",
-  "model_id": "gemini-2.5-pro",
-  "recorded_at": "2026-10-09T12:17:38+00:00",
+  "model_id": "gemini-3.1-pro-preview",
+  "recorded_at": "2026-10-16T20:08:28+00:00",
   "outputs": [
     {
       "verdicts": [
@@ -9,27 +9,31 @@
           "claim_id": "c1",
           "label": "FALSE",
           "confidence": 100,
-          "what_is_true_en": "COVID-19 is a disease caused by a virus, not by 5G mobile technology. Numerous scientific and health organizations have confirmed there is no link between 5G and the spread of the coronavirus.",
+          "what_is_true_en": "5G mobile networks do not transmit or accelerate the spread of COVID-19. The virus spreads via respiratory droplets and has actively spread in areas with no 5G networks.",
           "event_date": null,
           "evidence_for_ids": [],
           "evidence_against_ids": [
-            "fc-1",
-            "fc-2",
-            "fc-5",
-            "fc-6",
             "fc-4",
-            "fc-7",
-            "fc-3"
+            "ws-3",
+            "fc-3",
+            "ws-2",
+            "fc-1",
+            "ws-5",
+            "ws-7",
+            "fc-5",
+            "ws-8",
+            "ws-1",
+            "ws-4",
+            "ws-10"
           ],
           "cited_ids": [
+            "ws-2",
+            "ws-3",
             "fc-1",
-            "fc-2",
-            "fc-4",
-            "fc-5",
-            "fc-6",
-            "fc-7"
+            "fc-3",
+            "fc-4"
           ],
-          "reasoning_en": "Multiple independent fact-checking organizations, including Full Fact, AP News, AFP Fact Check, and FACTLY, have debunked the claim that 5G technology spreads the coronavirus. The evidence confirms that COVID-19 is caused by a virus and there is no scientific basis or evidence to support a link between the disease and 5G mobile networks. One scientific paper that attempted to make this link was later retracted due to a lack of evidence.",
+          "reasoning_en": "Multiple international public health organizations, scientific bodies, and fact-checking outlets have confirmed that 5G mobile networks do not transmit or accelerate the spread of COVID-19. The virus spreads through respiratory droplets, not radio waves, and has spread in regions without 5G networks.",
           "ai_generation": null
         }
       ]

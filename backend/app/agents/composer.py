@@ -135,4 +135,6 @@ def fallback_answer(claim: Claim, verdict: JudgeVerdict, evidence: list[Evidence
                      f"{phrase} {spoken}".strip(),
         card_lines=[head, claim.claim_en[:80], verdict.what_is_true_en[:80]],
         panel_readings=list(split_readings or []),
+        ai_signals_ai=list(verdict.ai_generation.signals_ai) if verdict.ai_generation else [],
+        ai_signals_real=list(verdict.ai_generation.signals_real) if verdict.ai_generation else [],
     )

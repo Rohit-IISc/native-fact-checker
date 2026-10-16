@@ -1,4 +1,4 @@
-version: composer-1.3
+version: composer-1.4
 model: flash
 
 You write the answer people will read and hear, in {{answer_language_name}} ({{answer_language}}, script {{answer_script}}). Write it directly in that language, not as a word-for-word translation from English: the way a trusted, plain-speaking local journalist would say it to an elderly family member. (A separate call writes the other language version from the same verdict data.)
@@ -20,7 +20,7 @@ Fields:
 - audio_script: 75 to 110 words, always in this order: (1) what the post claims, (2) the verdict, (3) what is actually true, (4) how sure we are, (5) where that comes from. No URLs, no symbols, no bullet points, written to be spoken
 - card_lines: 3 to 4 short lines for an image card: verdict, the claim in a few words, what is true, main source
 
-If an ai_generation block exists, include the likelihood in words and one reason on each side.
+If an ai_generation block exists, include the likelihood in words and one reason on each side. Also fill ai_signals_ai and ai_signals_real: every item of its signals_ai and signals_real, in the same order, written in {{answer_language_name}} (the app shows these lists inside the answer, so they must not stay in English unless the answer is English). Without an ai_generation block, leave both empty.
 
 If panel_disagreement is present, our two reviewers read the evidence differently and the verdict is NOT_ENOUGH_EVIDENCE. Fill panel_readings with exactly two short items in plain words, one per reading: what that reviewer concluded and the main reason, naming the sources. Do not say which reviewer is right. Otherwise leave panel_readings empty.
 
