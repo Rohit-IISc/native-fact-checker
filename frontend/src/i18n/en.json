@@ -12,7 +12,10 @@
     "checks": "Checks",
     "trending": "Trending",
     "chooseLanguage": "Choose your language",
-    "close": "Close"
+    "close": "Close",
+    "settings": "Settings",
+    "account": "Account",
+    "displayLanguage": "Display language"
   },
   "welcome": {
     "title": "Check any forward before you share it",
@@ -157,15 +160,27 @@
     "showNativeShort": "Original"
   },
   "limit": {
-    "title": "You have used today's checks",
-    "body": "You can check again after {{time}}."
+    "title": "Checks used up",
+    "body": "You can check again after {{time}}.",
+    "sub": "You have used today's checks",
+    "back": "Back",
+    "used": "Used",
+    "left": "Left",
+    "hours": "{{n}}h",
+    "toReset": "To reset",
+    "whileYouWait": "While you wait",
+    "seeAll": "See all"
   },
   "history": {
     "title": "Your checks",
     "empty": "No checks yet.",
     "more": "Load more",
     "all": "All",
-    "filter": "Filter by verdict"
+    "filter": "Filter by verdict",
+    "checked": "Checked",
+    "false": "False",
+    "scams": "Scams",
+    "noneForFilter": "No checks with this verdict yet."
   },
   "public": {
     "cta": "Check your own forward",
@@ -187,7 +202,8 @@
     "window7d": "Most-checked claims in the last 7 days",
     "empty": "Nothing has been checked in the last 7 days.",
     "checks_one": "{{count}} check",
-    "checks_other": "{{count}} checks"
+    "checks_other": "{{count}} checks",
+    "note": "Counted from checks by all users. Only the verdict and the claim are shown, never anyone's post or photos."
   },
   "checks": {
     "title": "Current check",
@@ -256,7 +272,7 @@
       {
         "h": "Delete your account",
         "items": [
-          "In the app: tap Language in the bottom bar, then \"Delete my account\". This deletes your profile, history, check records and sign-in.",
+          "In the app: tap Settings in the bottom bar, then \"Delete my account\". This deletes your profile, history, check records and sign-in.",
           "Shared claims and verdicts stay, because they are fact checks for everyone and do not say who asked.",
           "Or email {{email}} and we will delete your account for you."
         ]

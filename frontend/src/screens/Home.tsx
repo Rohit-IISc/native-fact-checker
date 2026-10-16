@@ -99,9 +99,17 @@ export function Home() {
 
   const left = quota ? Math.max(0, quota.limit - quota.used) : null
 
+  // Out of checks (the API said so, or today's real count is used up): the limit screen instead of the form.
+  if (limitAt !== null || left === 0) {
+    return (
+      <main className="screen home">
+        <Limit resetsAt={limitAt || quota?.resets_at || undefined} />
+      </main>
+    )
+  }
+
   return (
     <main className="screen home">
-      {limitAt !== null && <Limit resetsAt={limitAt || undefined} />}
       <form className="paste" onSubmit={submit}>
         <label htmlFor="paste" className="sr-only">
           {t('home.pasteLabel')}

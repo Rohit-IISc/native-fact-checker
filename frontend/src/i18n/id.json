@@ -12,7 +12,10 @@
     "checks": "Cek",
     "trending": "Trending",
     "chooseLanguage": "Pilih bahasa Anda",
-    "close": "Tutup"
+    "close": "Tutup",
+    "settings": "Pengaturan",
+    "account": "Akun",
+    "displayLanguage": "Bahasa tampilan"
   },
   "welcome": {
     "title": "Periksa setiap pesan terusan sebelum membagikannya",
@@ -157,15 +160,27 @@
     "showNativeShort": "Bahasa asli"
   },
   "limit": {
-    "title": "Jatah pemeriksaan hari ini sudah habis",
-    "body": "Anda dapat memeriksa lagi setelah {{time}}."
+    "title": "Cek habis",
+    "body": "Anda dapat memeriksa lagi setelah {{time}}.",
+    "sub": "Anda sudah memakai semua cek hari ini",
+    "back": "Kembali",
+    "used": "Terpakai",
+    "left": "Sisa",
+    "hours": "{{n}} jam",
+    "toReset": "Sampai reset",
+    "whileYouWait": "Sambil menunggu",
+    "seeAll": "Lihat semua"
   },
   "history": {
     "title": "Pemeriksaan Anda",
     "empty": "Belum ada pemeriksaan.",
     "more": "Muat lagi",
     "all": "Semua",
-    "filter": "Saring menurut hasil"
+    "filter": "Saring menurut hasil",
+    "checked": "Dicek",
+    "false": "Salah",
+    "scams": "Penipuan",
+    "noneForFilter": "Belum ada cek dengan putusan ini."
   },
   "public": {
     "cta": "Periksa pesan terusan Anda sendiri",
@@ -187,7 +202,8 @@
     "window7d": "Klaim yang paling sering dicek dalam 7 hari terakhir",
     "empty": "Belum ada yang dicek dalam 7 hari terakhir.",
     "checks_one": "{{count}} cek",
-    "checks_other": "{{count}} cek"
+    "checks_other": "{{count}} cek",
+    "note": "Dihitung dari cek semua pengguna. Hanya putusan dan klaim yang ditampilkan, tidak pernah postingan atau foto siapa pun."
   },
   "checks": {
     "title": "Cek saat ini",
@@ -256,7 +272,7 @@
       {
         "h": "Menghapus akun Anda",
         "items": [
-          "Di aplikasi: ketuk Bahasa di bilah bawah, lalu \"Hapus akun saya\". Ini menghapus profil, riwayat, catatan cek, dan data masuk Anda.",
+          "Di aplikasi: ketuk Pengaturan di bilah bawah, lalu \"Hapus akun saya\". Ini menghapus profil, riwayat, catatan cek, dan data masuk Anda.",
           "Klaim dan putusan yang dibagikan tetap ada, karena itu cek fakta untuk semua orang dan tidak menyebut siapa yang bertanya.",
           "Atau kirim email ke {{email}} dan kami akan menghapus akun Anda."
         ]

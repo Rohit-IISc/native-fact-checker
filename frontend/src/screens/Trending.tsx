@@ -20,10 +20,13 @@ export function Trending() {
   return (
     <main className="screen">
       <h1>{t('trending.title')}</h1>
-      {data && <p className="muted">{t(data.window === '24h' ? 'trending.window24h' : 'trending.window7d')}</p>}
+      {data && (
+        <p className="window-pill">{t(data.window === '24h' ? 'trending.window24h' : 'trending.window7d')}</p>
+      )}
       {failed && <p className="error">{t('errors.generic')}</p>}
       {data && !data.items.length && <p className="card muted">{t('trending.empty')}</p>}
       {data && data.items.length > 0 && <FeedList items={data.items} counts />}
+      {data && data.items.length > 0 && <p className="muted small">{t('trending.note')}</p>}
       {!data && !failed && <p className="muted">…</p>}
     </main>
   )

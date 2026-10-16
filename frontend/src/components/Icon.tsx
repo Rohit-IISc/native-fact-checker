@@ -15,6 +15,7 @@ const PATHS = {
   logout: 'M14 4h5v16h-5M10 8l-4 4 4 4M6 12h10',
   close: 'M6 6l12 12M18 6L6 18',
   check: 'M5 12.5l4.5 4.5L19 7.5',
+  gear: 'M12 9a3 3 0 100 6 3 3 0 000-6zM19.4 13.5l1.6 1.2-1.8 3.1-1.9-.7a7 7 0 01-1.7 1l-.3 2h-3.6l-.3-2a7 7 0 01-1.7-1l-1.9.7L5 14.7l1.6-1.2a7 7 0 010-3L5 9.3l1.8-3.1 1.9.7a7 7 0 011.7-1l.3-2h3.6l.3 2a7 7 0 011.7 1l1.9-.7L19 9.3l-1.6 1.2a7 7 0 010 3z',
 } as const
 
 export type IconName = keyof typeof PATHS

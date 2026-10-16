@@ -3,7 +3,7 @@ import { NavLink, useLocation } from 'react-router-dom'
 import { Icon } from './Icon'
 
 /** Bottom navigation for signed-in screens. Thumb-reach on a phone, one tap to each main screen. */
-export function Dock({ onLanguage }: { onLanguage: () => void }) {
+export function Dock({ onSettings }: { onSettings: () => void }) {
   const { t } = useTranslation()
   const { pathname } = useLocation()
   const onCheck = pathname === '/checks' || pathname.startsWith('/check/') || pathname === '/check'
@@ -25,9 +25,9 @@ export function Dock({ onLanguage }: { onLanguage: () => void }) {
         <Icon name="clock" />
         {t('nav.history')}
       </NavLink>
-      <button type="button" onClick={onLanguage}>
-        <Icon name="globe" />
-        {t('nav.language')}
+      <button type="button" onClick={onSettings} aria-haspopup="dialog">
+        <Icon name="gear" />
+        {t('nav.settings')}
       </button>
     </nav>
   )

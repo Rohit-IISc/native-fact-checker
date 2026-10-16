@@ -40,7 +40,7 @@ function Gate() {
   const [consented, setConsented] = useState<boolean | null>(null)
   const [busy, setBusy] = useState(false)
   const [error, setError] = useState<string | null>(null)
-  const [sheet, setSheet] = useState(false)
+  const [sheet, setSheet] = useState<'language' | 'settings' | null>(null)
   const choose = (code: string) => chooseLanguage(code, user, Boolean(consented))
 
   useEffect(() => {
@@ -62,13 +62,13 @@ function Gate() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user])
 
-  const languageSheet = <LanguageSheet open={sheet} onClose={() => setSheet(false)} onChoose={choose} />
+  const languageSheet = <LanguageSheet mode={sheet} onClose={() => setSheet(null)} onChoose={choose} />
 
   // Public pages: no sign-in needed.
   if (location.pathname.startsWith('/r/') || location.pathname === '/privacy' || location.pathname === '/terms') {
     return (
       <>
-        <Header onLanguage={() => setSheet(true)} />
+        <Header onLanguage={() => setSheet('language')} />
         <Routes>
           <Route path="/r/:verdictId" element={<PublicResult />} />
           <Route path="/privacy" element={<Legal kind="privacy" />} />
@@ -109,7 +109,7 @@ function Gate() {
   }
   return (
     <>
-      <Header onLanguage={() => setSheet(true)} />
+      <Header onLanguage={() => setSheet('language')} />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/check" element={<SharedCheck />} />
@@ -119,7 +119,7 @@ function Gate() {
         <Route path="/history" element={<History />} />
         <Route path="*" element={<Home />} />
       </Routes>
-      <Dock onLanguage={() => setSheet(true)} />
+      <Dock onSettings={() => setSheet('settings')} />
       {languageSheet}
     </>
   )

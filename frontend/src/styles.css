@@ -296,3 +296,20 @@ button, .button {
 .share a, .share button { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; min-height: 64px; padding: 6px 2px; background: #fff; color: var(--text); border: 1px dashed var(--border-strong); border-radius: 8px; font-weight: 800; font-size: 0.8rem; text-decoration: none; text-align: center; overflow-wrap: anywhere; }
 .share svg { width: 22px; height: 22px; color: var(--primary); }
 .feedback { justify-content: center; }
+.sheet h3 { margin: 14px 0 6px; }
+
+/* ---------- round 3: daily limit, history, trending ---------- */
+.limit-screen { display: flex; flex-direction: column; gap: 10px; }
+.limit-banner { display: flex; justify-content: space-between; align-items: center; gap: 10px; padding: 14px; border-radius: var(--radius); background: var(--hot-text); color: #fff; }
+.limit-banner b { display: block; font-size: 1.6rem; font-weight: 900; line-height: 1.1; }
+.limit-banner span { font-weight: 700; font-size: 0.9rem; }
+.limit-banner .back { text-align: right; flex: none; max-width: 45%; }
+.limit-screen .card p { margin: 0 0 10px; font-weight: 700; }
+.sech-row { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
+.sech-row a { font-weight: 800; min-height: 40px; display: inline-flex; align-items: center; }
+.limit-screen h3, .sech-row h3 { margin: 4px 0; }
+.history-screen h1 { margin-bottom: 10px; }
+.history-screen .stat3 { margin-bottom: 10px; }
+.more { width: 100%; }
+.window-pill { display: inline-block; margin: 0 0 12px; padding: 4px 12px; border-radius: 999px; background: #fff; border: 1px dashed var(--border-strong); font-weight: 800; color: var(--text); }
+.lang-select { width: 100%; min-height: 48px; padding: 0 12px; border-radius: 8px; border: 2px solid var(--primary); background: #fff; color: var(--text); font: inherit; font-weight: 800; font-size: 1.05rem; margin-bottom: 4px; }
