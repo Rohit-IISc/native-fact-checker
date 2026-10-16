@@ -28,6 +28,19 @@ Production: https://chckr.web.app (since Oct 16; the old ai-builder-2026.web.app
       video PUT in 0.6 s via a signed URL, read back intact, refused for another user
 - [ ] A share just under 24 MB still goes the old way (one request) and works
 
+## 1b. Phone check after the move to chckr.web.app (Oct 16)
+
+Remove the old CHCKR / Sach Check app from the home screen first (long-press, Remove or Uninstall), then open
+https://chckr.web.app in Chrome and install it again (menu ⋮, Install app). The old install keeps a separate
+copy and its own share-sheet entry.
+
+- [ ] Sign-in with Google works; the language picker and Sign out fit in one row
+- [ ] WhatsApp: share a photo and a video to CHCKR from the share sheet (only one CHCKR entry should appear)
+- [ ] Leave the app while it checks: a push notification "Result ready" arrives; tapping it opens the result
+- [ ] "Share card to WhatsApp" sends the card; it shows CHCKR at the top (no boxes) and chckr.web.app at the bottom
+- [ ] Copy the result link, open it in a private window (signed out): the page loads on chckr.web.app with audio
+- [ ] An old link (ai-builder-2026.web.app/r/...) opens and lands on chckr.web.app
+
 ## 2. Verdict quality (real models, costs money: `make accept`)
 
 Latest full run: 14/20 (Oct 9 night, guard shipped): 13 passed (TRUE) for the first time, 15 passes; 01/02/03 abstained once (see below), 06b and 12 lost to timeouts, 01b gave FALSE. Best Oct 9: 18/20. Run with

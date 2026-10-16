@@ -11,6 +11,14 @@ Updated after every task (see CLAUDE.md, "How to work"). Newest state only; hist
 
 ## Done
 
+- **Oct 16 evening, live at https://chckr.web.app** (decision 49): Bazaar Bright design and CHCKR name merged;
+  old ai-builder-2026.web.app redirects every page (301, path kept) and still serves `/api`. Firebase Auth
+  domains, CORS (API and media bucket) and PUBLIC_BASE_URL updated; the reCAPTCHA key allows all domains.
+  Correction-card fix: Latin words on hi/ta/kn cards drew as boxes (fonts per script run now). All 32
+  cards of the 16 seeded verdicts regenerated with the new URL; 25 stored audio links moved to the new host
+  (15 pointed at a Codespace from the seed run; the seed script now forces the production URL). Seed
+  report: all 20 demo shares answer from cache. Smoke test passed.
+
 - **Final config (decision 48, frozen Oct 16):** extractor gemini-2.5-flash (512 thinking tokens); web search,
   other agents, packager and composer gemini-3.8-flash; Judge, Critic and revision gemini-3.1-pro-preview;
   fallbacks the other generation (docs/02 "Models per stage"). Judge limit 45 s. Critic on every check.
@@ -147,6 +155,10 @@ is kept for history. Details: eval/TESTS-TO-DO.md section 5.
       for gemini-2.5-pro and flash in the project, then decide with Rohit (it costs money).
 
 ## Next step
+
+- **Morning of Sun Oct 18, before submitting:** rerun `scripts/seed_demo_cache.py` (report, then `--seed`):
+  case 15's NOT_ENOUGH_EVIDENCE verdict expires 3 days after Oct 16.
+- Rohit: phone checklist in eval/TESTS-TO-DO.md section 1b (reinstall from chckr.web.app first).
 
 - Frozen: no model or pipeline changes. Remaining: UI changes and the app URL (Rohit), merge of
   `ui/bazaar-bright` when approved, deck and video, phone tests, re-seed the demo cache before judging.

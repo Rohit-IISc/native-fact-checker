@@ -18,10 +18,17 @@ from __future__ import annotations
 
 import argparse
 import asyncio
+import os
 import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
+PUBLIC = "https://chckr.web.app"
+
+# Seeded verdicts store absolute audio links, so they must be built with the production address. In a
+# Codespace the settings prefer the forwarded dev URL (Oct 16: 15 seeded audio links pointed at it).
+os.environ.pop("CODESPACE_NAME", None)
+os.environ["PUBLIC_BASE_URL"] = PUBLIC
 
 from app.agents.tools import default_tools  # noqa: E402
 from app.devtools import harness  # noqa: E402
@@ -67,6 +74,8 @@ async def main(seed: bool, tries: int, only: str | None) -> int:
     s = get_settings()
     if s.store != "firestore" or s.firestore_db != "(default)":
         raise SystemExit('Run with STORE=firestore FIRESTORE_DB="(default)": the demo cache is production')
+    if s.public_base_url != PUBLIC:
+        raise SystemExit(f"public base URL is {s.public_base_url}, not {PUBLIC}: links stored now would be wrong")
     store, llm = get_store(), get_llm()
     rows = []
     for case in load_cases():
