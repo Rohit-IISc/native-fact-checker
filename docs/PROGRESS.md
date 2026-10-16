@@ -10,6 +10,22 @@ Updated after every task (see CLAUDE.md, "How to work"). Newest state only; hist
 **Audio samples for native speakers:** https://claude.ai/artifact/3uKEHUsp5hdXoVFo87SJeo (private; share it).
 
 
+## Oct 16 night: UI brief rounds 1-3 live (Bazaar Bright), sign-in on chckr.web.app
+
+- Live on chckr.web.app: landing with instant language chips; header language button (language list only);
+  dock Home, Checks (running check only), Trending, History, Settings (gear: display language dropdown,
+  sign out, delete account, privacy, terms); Home (paste box, real checks left, 7 input tiles, WhatsApp line,
+  Recent checks from all users); Checking (ring, agent tiles, steps); Result (banner with real reviewer and
+  source counts, audio player with duration, For/Against/Sources, tabs, share buttons); Daily limit; History
+  (real counts, chips); Trending (24 h, widens to 7 days below 3 items).
+- Composer 1.4 writes AI-generation signals in the answer language (make record 19/20, 01b the known flaky
+  case). Tag `submission-freeze` moved to 3c31562.
+- Sign-in: authDomain is the page's own host (chckr.web.app, preview channels), same-window redirect on those
+  hosts (the popup looped on Android with the app installed); the service worker skips /__/. Firebase browser
+  key restricted to our referrers (exact preview host: Google does not match mid-host wildcards).
+- `scripts/check_secrets.sh` as pre-commit hook (`make hooks`); history scanned clean.
+- Waiting on Rohit: "delete" for cache junk (item 10). Then: Lighthouse and share-target check.
+
 ## Oct 16 evening: UI brief round 1 live, privacy and terms pages
 
 - Round 1 (landing with instant language chips, yellow header with language sheet, five-item dock, Trending v1,
