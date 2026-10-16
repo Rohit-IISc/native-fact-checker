@@ -2,7 +2,7 @@
 # Backend config precedence: environment variables (Codespaces secrets) > backend/.env (optional,
 # gitignored) > backend/.env.defaults. Frontend: VITE_* env vars > frontend/.env.development.
 SHELL := /bin/bash
-.PHONY: load-test deploy-ops dev dev-offline backend frontend test test-live lint deploy eval check-models install try accept record smoke
+.PHONY: load-test deploy-ops dev dev-offline backend frontend test test-live lint deploy eval check-models install try accept record smoke hooks
 # Free text goes to the CLI through the environment so quotes and commas survive.
 export TEXT URL
 
@@ -88,3 +88,7 @@ eval:
 
 check-models:
 	cd backend && uv run python ../scripts/check_models.py
+
+# Block commits that contain secret-looking strings or private files (scripts/check_secrets.sh).
+hooks:
+	@ln -sf ../../scripts/check_secrets.sh .git/hooks/pre-commit && echo "pre-commit secret check installed"
