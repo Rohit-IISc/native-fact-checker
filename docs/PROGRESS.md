@@ -6,7 +6,7 @@ Updated after every task (see CLAUDE.md, "How to work"). Newest state only; hist
 **Build-plan day:** Test week; **submission freeze** (tag `submission-freeze`): no model or pipeline changes before Oct 18.
 **Last updated:** Fri Oct 16, 2026
 **Build-plan day:** Day 6 work on Fri Oct 9: Days 0 to 5 done; Day 6 (measure) deployed; pushes to main deploy via Cloud Build.
-**Deployed:** https://ai-builder-2026.web.app -> Cloud Run `factcheck-api` (asia-south1), commit 2d0803c+.
+**Deployed:** https://chckr.web.app (Firebase Hosting site `chckr`) -> Cloud Run `factcheck-api` (asia-south1). The old https://ai-builder-2026.web.app redirects every page there and still serves `/api` (old links, cards and audio keep working).
 **Audio samples for native speakers:** https://claude.ai/artifact/3uKEHUsp5hdXoVFo87SJeo (private; share it).
 
 ## Done

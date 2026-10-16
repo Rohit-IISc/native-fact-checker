@@ -1,0 +1,17 @@
+{
+  "projects": {
+    "default": "ai-builder-2026"
+  },
+  "targets": {
+    "ai-builder-2026": {
+      "hosting": {
+        "app": [
+          "chckr"
+        ],
+        "legacy": [
+          "ai-builder-2026"
+        ]
+      }
+    }
+  }
+}

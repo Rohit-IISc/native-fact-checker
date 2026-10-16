@@ -79,7 +79,7 @@ def report(n, d):
     for c in r.get("claims", [])[:1]:
         print(f"             headline: {c['answer']['headline']}")
         if c.get("audio_url"):
-            a = httpx.get(c["audio_url"].replace(get_settings().public_base_url, f"https://{P}.web.app"), timeout=20)
+            a = httpx.get(c["audio_url"], timeout=20, follow_redirects=True)
             kind = a.headers.get("content-type")
             print(f"             audio: HTTP {a.status_code} {kind} {len(a.content) // 1024} KB")
         else:

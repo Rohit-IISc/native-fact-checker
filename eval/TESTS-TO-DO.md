@@ -6,7 +6,7 @@ end for reference. Sources: CLAUDE.md "Definition of done", docs/12-build-plan.m
 
 ## 1. On a real Android phone (only Rohit can do these)
 
-Production: https://ai-builder-2026.web.app. Install the PWA first (Chrome menu, "Add to Home screen").
+Production: https://chckr.web.app (since Oct 16; the old ai-builder-2026.web.app redirects). Install the PWA from the new address (Chrome menu, "Add to Home screen"); remove the old install first.
 
 - [ ] Share a WhatsApp **image** to the PWA from the share sheet: verdict in the post's language, audio,
       sources and a correction card in under 90 s

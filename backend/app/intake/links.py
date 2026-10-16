@@ -27,7 +27,7 @@ MAX_BODY = 5 * 1024 * 1024
 MAX_REDIRECTS = 5
 # An honest link-preview bot UA. Instagram and Facebook serve Open Graph tags (caption, author,
 # date, photo) to link-preview bots and a login wall to browser UAs.
-UA = "Mozilla/5.0 (compatible; FactCheckBot/1.0; +https://ai-builder-2026.web.app)"
+UA = "Mozilla/5.0 (compatible; FactCheckBot/1.0; +https://chckr.web.app)"
 META_GRAPH = "https://graph.facebook.com/v25.0"
 # Instagram og:description: '143 likes, 0 comments - pibfactcheck on September 13, 2026: "caption..."'
 _IG_DESC = re.compile(

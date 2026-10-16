@@ -26,7 +26,7 @@ gcloud run deploy "$SERVICE" \
   --allow-unauthenticated \
   --cpu=2 --memory=2Gi --concurrency=10 --timeout=300 \
   --min-instances="$MIN_INSTANCES" --max-instances=20 \
-  --set-env-vars="^;^GCP_PROJECT=${PROJECT_ID};REGION=${REGION};FIRESTORE_DB=(default);PIPELINE_MODE=pubsub;STORE=firestore;AUTH_MODE=firebase;LLM_MODE=gemini;BIGQUERY_ENABLED=1;APP_CHECK_ENFORCE=true;LOG_LEVEL=INFO;PUSH_SA=${PUSH_SA};PUBLIC_BASE_URL=${PUBLIC_BASE_URL:-https://${PROJECT_ID}.web.app};CORS_ORIGINS=${CORS_ORIGINS:-https://${PROJECT_ID}.web.app,https://${PROJECT_ID}.firebaseapp.com}" \
+  --set-env-vars="^;^GCP_PROJECT=${PROJECT_ID};REGION=${REGION};FIRESTORE_DB=(default);PIPELINE_MODE=pubsub;STORE=firestore;AUTH_MODE=firebase;LLM_MODE=gemini;BIGQUERY_ENABLED=1;APP_CHECK_ENFORCE=true;LOG_LEVEL=INFO;PUSH_SA=${PUSH_SA};PUBLIC_BASE_URL=${PUBLIC_BASE_URL:-https://chckr.web.app};CORS_ORIGINS=${CORS_ORIGINS:-https://chckr.web.app,https://chckr.firebaseapp.com,https://${PROJECT_ID}.web.app,https://${PROJECT_ID}.firebaseapp.com}" \
   --project="$PROJECT_ID" \
   --set-secrets="$SECRETS"
 
