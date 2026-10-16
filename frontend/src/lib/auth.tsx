@@ -1,4 +1,11 @@
-import { GoogleAuthProvider, onAuthStateChanged, signInWithPopup, signOut as fbSignOut } from 'firebase/auth'
+import {
+  getRedirectResult,
+  GoogleAuthProvider,
+  onAuthStateChanged,
+  signInWithPopup,
+  signInWithRedirect,
+  signOut as fbSignOut,
+} from 'firebase/auth'
 import { createContext, type ReactNode, useCallback, useContext, useEffect, useMemo, useState } from 'react'
 import { config } from './config'
 import { auth } from './firebase'
@@ -44,6 +51,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       setLoading(false)
       return
     }
+    // Back from a sign-in redirect: the user arrives through onAuthStateChanged; only errors need a look.
+    getRedirectResult(auth()).catch((e: unknown) => console.error('sign-in redirect failed', e))
     return onAuthStateChanged(auth(), (u) => {
       setUser(
         u
@@ -63,6 +72,12 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         /* private mode: session-only sign-in */
       }
       setUser(devUser(uid))
+      return
+    }
+    // On our own domain: a same-window redirect. A popup there opens a chckr.web.app address, which Android
+    // hands to the installed app, which opens again and again (sign-in loop, Oct 16).
+    if (config.firebase.authDomain === window.location.hostname) {
+      await signInWithRedirect(auth(), new GoogleAuthProvider())
       return
     }
     await signInWithPopup(auth(), new GoogleAuthProvider())

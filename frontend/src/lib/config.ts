@@ -1,5 +1,10 @@
 const env = import.meta.env
 
+// Our Hosting site and its preview channels serve Firebase's sign-in handler at /__/auth/, so sign-in runs on
+// the address the user is on (the account picker shows it) and can use a same-window redirect.
+const host = typeof location === 'undefined' ? '' : location.hostname
+const ownHost = host === 'chckr.web.app' || /^chckr--[a-z0-9-]+\.web\.app$/.test(host)
+
 export const config = {
   devAuth: env.VITE_AUTH_MODE === 'dev',
   apiBaseUrl: ((env.VITE_API_BASE_URL as string | undefined) || '/api').replace(/\/$/, ''),
@@ -8,7 +13,7 @@ export const config = {
   firestoreDb: (env.VITE_FIRESTORE_DB as string | undefined) || '(default)',
   firebase: {
     apiKey: env.VITE_FIREBASE_API_KEY as string | undefined,
-    authDomain: env.VITE_FIREBASE_AUTH_DOMAIN as string | undefined,
+    authDomain: ownHost ? host : (env.VITE_FIREBASE_AUTH_DOMAIN as string | undefined),
     projectId: env.VITE_FIREBASE_PROJECT_ID as string | undefined,
     storageBucket: env.VITE_FIREBASE_STORAGE_BUCKET as string | undefined,
     appId: env.VITE_FIREBASE_APP_ID as string | undefined,
