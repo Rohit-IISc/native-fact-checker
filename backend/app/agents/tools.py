@@ -78,14 +78,18 @@ class Tools:
             image = {"content": base64.b64encode(data).decode()}
         body = {"requests": [{"image": image, "features": [{"type": "WEB_DETECTION", "maxResults": 15}]}]}
         try:
-            token, is_user = await asyncio.to_thread(_access_token)
-            headers = {"Authorization": f"Bearer {token}"}
-            if is_user:
-                # Local dev with user credentials needs a quota project; Cloud Run's service account
-                # does not (and would need serviceusage.consumer to send this header).
-                headers["x-goog-user-project"] = get_settings().gcp_project
-            async with httpx.AsyncClient(timeout=15.0) as c:
-                r = await c.post(VISION_URL, json=body, headers=headers)
+            for attempt in range(2):
+                token, is_user = await asyncio.to_thread(_access_token, attempt > 0)
+                headers = {"Authorization": f"Bearer {token}"}
+                if is_user:
+                    # Local dev with user credentials needs a quota project; Cloud Run's service account
+                    # does not (and would need serviceusage.consumer to send this header).
+                    headers["x-goog-user-project"] = get_settings().gcp_project
+                async with httpx.AsyncClient(timeout=15.0) as c:
+                    r = await c.post(VISION_URL, json=body, headers=headers)
+                if r.status_code != 401:
+                    break
+                # Oct 16: one production call got 401 with a cached token; a fresh token fixes that.
             r.raise_for_status()
         except Exception as e:  # noqa: BLE001  provenance is one lane; never fail the check
             log.warning("vision web detection failed: %s", e)
@@ -142,15 +146,15 @@ class Tools:
 _creds = None
 
 
-def _access_token() -> tuple[str, bool]:
-    """(token, is_user_credentials)."""
+def _access_token(force_refresh: bool = False) -> tuple[str, bool]:
+    """(token, is_user_credentials). force_refresh: after a 401, fetch a new token even if it looks valid."""
     global _creds
     import google.auth
     import google.auth.transport.requests
 
     if _creds is None:
         _creds, _ = google.auth.default(scopes=["https://www.googleapis.com/auth/cloud-platform"])
-    if not _creds.valid:
+    if force_refresh or not _creds.valid:
         _creds.refresh(google.auth.transport.requests.Request())
     return _creds.token, getattr(_creds, "service_account_email", None) is None
 

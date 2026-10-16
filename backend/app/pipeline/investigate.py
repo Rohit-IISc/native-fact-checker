@@ -37,6 +37,7 @@ from app.models import (
     Claim,
     CriticOutput,
     CriticReview,
+    Evidence,
     EvidencePack,
     Extraction,
     FetchedPost,
@@ -44,7 +45,9 @@ from app.models import (
     JudgeVerdict,
     Label,
     PanelOutcome,
+    SourceTier,
     Stage,
+    Stance,
 )
 from app.observability.logging import log_event
 from app.pipeline import panel, stub
@@ -135,10 +138,14 @@ async def fan_out(store: Store, llm: LLM, tools: Tools, req: CheckRequest, extra
 
 # ---------- stage 6: panel ----------
 
-def _nee(claim: Claim, reason: str) -> JudgeVerdict:
+def _nee(claim: Claim, reason: str, evidence: list[Evidence] | None = None) -> JudgeVerdict:
+    """NOT_ENOUGH_EVIDENCE without a judge's reading. Evidence for and against still follows each item's
+    classified stance (rule 4): Oct 16, a judge timeout showed "nothing found" next to a PTI fact check."""
+    mine = [e for e in evidence or [] if e.claim_id == claim.claim_id and e.tier != SourceTier.NOT_A_SOURCE]
     return JudgeVerdict(claim_id=claim.claim_id, label=Label.NOT_ENOUGH_EVIDENCE, confidence=0,
-                        what_is_true_en=reason, evidence_for_ids=[], evidence_against_ids=[], cited_ids=[],
-                        reasoning_en=reason)
+                        what_is_true_en=reason, cited_ids=[], reasoning_en=reason,
+                        evidence_for_ids=[e.evidence_id for e in mine if e.stance == Stance.SUPPORTS],
+                        evidence_against_ids=[e.evidence_id for e in mine if e.stance == Stance.CONTRADICTS])
 
 
 async def run_panel(llm: LLM, claims: list[Claim], pack: EvidencePack, budget: Budget, inv: Investigation
@@ -151,7 +158,7 @@ async def run_panel(llm: LLM, claims: list[Claim], pack: EvidencePack, budget: B
         log_event(log, "judge failed", logging.WARNING, reason=str(e)[:300])
         inv.stage_errors["judge"] = str(e)[:300]
         inv.degraded = True
-        return {c.claim_id: PanelDecision(_nee(c, "We could not complete the review of the evidence."),
+        return {c.claim_id: PanelDecision(_nee(c, "We could not complete the review of the evidence.", evidence),
                                           PanelOutcome.POLICY_DOWNGRADE, policy_reason="judge unavailable")
                 for c in claims}
     by_claim = {v.claim_id: v for v in judged.verdicts}

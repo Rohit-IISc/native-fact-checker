@@ -139,7 +139,8 @@ class GeminiLLM:
             try:
                 resp = await _with_fallback(
                     lambda m, t, c=contents, call=call: _retry_transient(lambda: _hedged(
-                        lambda: self._client.aio.models.generate_content(model=m["id"], contents=c, config=gen_cfg(m)),
+                        _alternating(m, lambda mm: self._client.aio.models.generate_content(
+                            model=mm["id"], contents=c, config=gen_cfg(mm))),
                         t, m.get("hedge_after_s"), stage), budget_s=t, call=call),
                     model, timeout_s, call)
             except TimeoutError as e:
@@ -220,7 +221,8 @@ class GeminiLLM:
             # Measured Oct 5: identical searches take 8-9 s or 35-55 s (server side), so hedge early.
             # A hedge duplicates the grounding queries (billed per query); watch the cost.
             resp = await _with_fallback(lambda m, t: _retry_transient(lambda: _hedged(
-                lambda: self._client.aio.models.generate_content(model=m["id"], contents=prompt, config=gen_cfg(m)),
+                _alternating(m, lambda mm: self._client.aio.models.generate_content(
+                    model=mm["id"], contents=prompt, config=gen_cfg(mm))),
                 t, m.get("search_hedge_after_s"), stage), budget_s=t, call=call), model, timeout_s, call)
         except TimeoutError as e:
             call.success = False
@@ -299,6 +301,19 @@ async def _with_fallback(run: Callable[[dict[str, Any], float], Awaitable[Any]],
                   fallback=fb["id"], code=getattr(e, "code", None), left_s=round(left, 1))
         call.model_id, call.fallback = fb["id"], True
         return await run(fb, left)
+
+
+def _alternating(model: dict[str, Any],
+                 make: Callable[[dict[str, Any]], Awaitable[Any]]) -> Callable[[], Awaitable[Any]]:
+    """For _hedged: the first call goes to `model`, the duplicate to its fallback (other Vertex capacity).
+    Oct 16: a 3.1 Pro judge call and its same-model duplicate both stalled past 30 s; 2.5 Pro answers in
+    about 12 s, so a hedge on the fallback usually lands inside the budget."""
+    order = [model, fallback_model(model) or model]
+
+    def next_call() -> Awaitable[Any]:
+        m = order.pop(0) if len(order) > 1 else order[0]
+        return make(m)
+    return next_call
 
 
 def error_code(e: BaseException) -> str:

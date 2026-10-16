@@ -145,3 +145,19 @@ def test_factcheck_search_also_uses_text_printed_on_the_media():
     plan = search_plan(ext)
     assert ("DELHI संकट मे", "") in plan and ("DELHI संकट मे fact check", "en") in plan
     assert ("பெங்களூரு வெள்ளம்", "ta") in plan and ("Bengaluru flood today", "") in plan
+
+
+def test_without_a_judge_the_answer_still_lists_evidence_by_stance():
+    """Oct 16: a judge timeout gave "nothing found" for and against next to a PTI fact check (rule 4)."""
+    from app.models import Claim
+    from app.pipeline.investigate import _nee
+
+    claim = Claim.model_validate({"claim_id": "c1", "claim_original": "x", "claim_en": "The video shows Delhi",
+                                  "claim_type": "EVENT", "time_sensitivity": "LIVE_EVENT"})
+    evidence = [ev("ws-1", SourceTier.TIER_1, "PTI Fact Check"),
+                ev("ws-2", SourceTier.TIER_2, "NDTV", stance=Stance.SUPPORTS),
+                ev("ws-3", SourceTier.NOT_A_SOURCE, "X user"),
+                ev("mi-c1", SourceTier.NOT_A_SOURCE, "item", stance=Stance.CONTEXT)]
+    v = _nee(claim, "We could not complete the review of the evidence.", evidence)
+    assert v.label == Label.NOT_ENOUGH_EVIDENCE and v.cited_ids == []
+    assert v.evidence_against_ids == ["ws-1"] and v.evidence_for_ids == ["ws-2"]

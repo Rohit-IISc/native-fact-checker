@@ -163,8 +163,8 @@ def _call():
     return ModelCall(check_id="c", stage="judge", model_id="gemini-2.5-pro", prompt_version="v")
 
 
-PRO = {"id": "gemini-2.5-pro", "thinking_budget": 1024, "hedge_after_s": 14,
-       "fallback": {"id": "gemini-3.1-pro-preview", "thinking": "low"}}
+PRO = {"id": "gemini-3.1-pro-preview", "thinking": "medium", "hedge_after_s": 14,
+       "fallback": {"id": "gemini-2.5-pro", "thinking_budget": 1024}}
 
 
 async def test_final_429_moves_to_the_fallback_with_its_own_thinking_settings():
@@ -176,14 +176,14 @@ async def test_final_429_moves_to_the_fallback_with_its_own_thinking_settings():
 
     async def run(m, t):
         seen.append((m["id"], m.get("thinking"), m.get("thinking_budget"), m.get("hedge_after_s")))
-        if m["id"] == "gemini-2.5-pro":
+        if m["id"] == "gemini-3.1-pro-preview":
             raise errors.ClientError(429, {"error": {"message": "RESOURCE_EXHAUSTED"}})
         return "ok"
 
     call = _call()
     assert await _with_fallback(run, PRO, 30, call) == "ok"
-    assert seen[1] == ("gemini-3.1-pro-preview", "low", None, 14)
-    assert call.fallback and call.model_id == "gemini-3.1-pro-preview"
+    assert seen[1] == ("gemini-2.5-pro", None, 1024, 14)
+    assert call.fallback and call.model_id == "gemini-2.5-pro"
 
 
 async def test_no_fallback_on_timeout_bad_request_or_too_little_time():
@@ -198,3 +198,19 @@ async def test_no_fallback_on_timeout_bad_request_or_too_little_time():
 
         with pytest.raises(type(exc)):
             await _with_fallback(run, PRO, budget, _call())
+
+
+async def test_hedge_duplicate_goes_to_the_fallback_model():
+    from app.llm import _alternating, _hedged
+
+    seen = []
+
+    async def make(m):
+        seen.append(m["id"])
+        if m["id"] == "gemini-2.5-pro":
+            await asyncio.sleep(0.01)
+            return "fallback answered"
+        await asyncio.sleep(5)  # the primary stalls
+
+    out = await _hedged(_alternating(PRO, make), 1.0, 0.05, "judge")
+    assert out == "fallback answered" and seen == ["gemini-3.1-pro-preview", "gemini-2.5-pro"]

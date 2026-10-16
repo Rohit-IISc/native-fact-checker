@@ -119,6 +119,13 @@ is kept for history. Details: eval/TESTS-TO-DO.md section 5.
 
 ## Next step
 
+- (Oct 16 fixes on main) A 3.1 Pro judge call and its same-model hedge both stalled past 30 s (2 of 24 judge
+  calls since the switch), so the check fell back to NOT_ENOUGH_EVIDENCE and showed "nothing found" next to
+  PTI's tier 1 fact check. Now: the hedge duplicate goes to the fallback model (2.5), and a judge failure
+  still lists evidence for and against by stance. Vision got one 401 in production with a cached token: it
+  now refreshes and retries once. Follow-up: video extraction on 3.8 Flash takes 18-28 s (2.5: 10-13 s);
+  record whether the hedge fired (it logs at INFO only).
+
 1. Rohit: phone tests in eval/TESTS-TO-DO.md section 1 (share sheet, push, card in WhatsApp).
 2. Latency on slow Vertex days: video extraction alone took 57 s in one run (first call timed out). Look
    at a lower extraction hedge for video, or Provisioned Throughput (decision 41).
