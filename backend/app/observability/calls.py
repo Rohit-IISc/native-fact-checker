@@ -42,6 +42,7 @@ class CheckLedger:
 
     calls: list[ModelCall] = field(default_factory=list)
     grounding_queries: int = 0
+    grounding_cost_usd: float = 0.0  # by the answering model's billing unit (llm.grounding_cost)
     vision_calls: int = 0
     tts_chars: int = 0
     stage_latency_ms: dict[str, int] = field(default_factory=dict)
@@ -53,7 +54,7 @@ class CheckLedger:
     @property
     def total_cost_usd(self) -> float:
         cfg = get_config().models
-        grounding = self.grounding_queries * cfg["grounding"]["price_per_1000"] / 1000
+        grounding = self.grounding_cost_usd
         vision = self.vision_calls * cfg["vision"]["web_detection_price_per_1000"] / 1000
         tts = cfg["models"]["tts"].get("est_cost_per_answer", 0) if self.tts_chars else 0
         return round(self.model_cost_usd + grounding + vision + tts, 6)

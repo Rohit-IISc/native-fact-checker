@@ -11,7 +11,7 @@
 | Firestore (Native, asia-south1) | Firestore | Checks, verdicts, cache, vector index, users, quotas, sources, config |
 | Cloud Storage `{project}-media` | asia-south1 | Raw uploads, 24 h lifecycle delete |
 | Cloud Storage `{project}-outputs` | asia-south1 | Audio and card images, kept with verdicts |
-| Vertex AI Gemini | `global` endpoint | Flash for extraction and sub-agents, Pro for Judge and Critic, embeddings |
+| Vertex AI Gemini | `global` endpoint | 2.5 Flash for extraction, 3.8 Flash for sub-agents and answers, 3.1 Pro for Judge and Critic, embeddings (see "Models per stage") |
 | Gemini TTS | Cloud Text-to-Speech API | Native-language audio |
 | Cloud Vision | API | Web detection (reverse image search) |
 | Fact Check Tools API | API key in Secret Manager | Published fact checks by text and image |
@@ -93,8 +93,26 @@ Video and audio rule: Gemini tokenizes video at about 300 tokens per second at d
 
 On timeout:
 - A sub-agent timeout: continue with the others; packager notes the missing lane
-- Judge or Critic timeout: retry once on Flash with the same prompt, mark `degraded: true`
+- Judge failure (after its hedge to the fallback model): NOT_ENOUGH_EVIDENCE, `degraded: true`, evidence for and against still listed by stance. Critic failure: the policy-checked Judge verdict stands with confidence capped below HIGH
 - Whole budget exceeded: return NOT_ENOUGH_EVIDENCE with the partial evidence, then run one background retry with a 120 s budget. If the retry gets a different verdict, update the check and push "Updated result". Retries do not count against the user's quota
+
+## Models per stage (final, frozen Oct 16, 2026; decisions 47 and 48)
+
+IDs live only in `config/models.yaml`. After retries, a final 429 or 5xx moves a call to the stage's fallback
+once; a slow call's hedge (duplicate request) also goes to the fallback, which has separate Vertex capacity.
+
+| Stage | Model | Fallback | Limit |
+| --- | --- | --- | --- |
+| Extractor | gemini-2.5-flash, 512 thinking tokens | gemini-3.8-flash (medium) | 30 s + 0.2 s per media second |
+| Web search (grounded) and its classify step | gemini-3.8-flash (low) | gemini-2.5-flash | 36 s for the agent |
+| Fact-check sites, source credibility, media provenance, same-media | gemini-3.8-flash (low) | gemini-2.5-flash | 36 s per agent |
+| Packager, composer, translation, near-match | gemini-3.8-flash (low) | gemini-2.5-flash | 20 s composer |
+| Judge, Critic, Judge revision | gemini-3.1-pro-preview (medium) | gemini-2.5-pro (1,024 thinking tokens) | Judge 45 s, Critic 20 s, revision 20 s |
+| Tier 2 embedding | gemini-embedding-001 | | 4 s |
+| Spoken answer | gemini-2.5-flash-tts | | 40 s, after DONE |
+
+The Critic runs on every check (a grounding-check gate to skip it was considered and left for later).
+Grounding with Google Search on Gemini 3 is billed per search query (5,000 free a month, then 14 USD per 1,000).
 
 ## Local development
 
