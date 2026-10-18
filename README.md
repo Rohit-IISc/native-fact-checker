@@ -58,6 +58,25 @@ wires and official sources are tier 1; established news is tier 2; social media 
 - A new claim depends on live search, so two fresh checks of the same claim can find different evidence; a
   repeat share is answered from the cache and stays consistent.
 
+## What's next
+
+The prototype works end to end; these are the known gaps we would close next.
+
+- **Leaner, smarter agent workflow.** Every new claim runs all four evidence agents plus a Judge and a Critic.
+  The internal agentic workflow needs refinement for cost (route each claim only to the agents it needs,
+  merge searches, use a cheaper first-pass judge) and for better routing, so that fewer answers end as "Not
+  confirmed" when the evidence exists but was not found or weighed well.
+- **Answers in each reader's own language.** Today a verdict is written in the language of the post that was
+  checked, and everyone who sees it gets that language. If one user checks a Hindi video, the verdict and audio
+  are in Hindi, but another user who sees it in Recent checks or Trending may not read Hindi. The verdict, the
+  claim and everything visible should follow each reader's display language, with the original kept one tap
+  away. This also fixes "Try an example": the buttons follow the display language, but the answer behind them
+  opens in the language of the original post.
+- **Localised Recent checks and Trending.** Show each reader the claims checked in their language (or
+  translated into it) first, so the feed is not crowded with languages they do not read.
+- **Evidence score calibration** (decision 50): fit the weights on the gold set and agreed verdicts, and group
+  copies by shared sentences and wire bylines instead of embeddings.
+
 ## How it works
 
 ```mermaid
