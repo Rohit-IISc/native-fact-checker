@@ -3,7 +3,8 @@
 **/node_modules
 frontend/
 docs/
-tests/
+tests/*
+!tests/acceptance/
 .git
 .env
 *.env

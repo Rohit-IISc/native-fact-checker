@@ -6,7 +6,7 @@ REGION="asia-south1"
 SERVICE="factcheck-api"
 API_SA="api-sa@${PROJECT_ID}.iam.gserviceaccount.com"
 PUSH_SA="push-sa@${PROJECT_ID}.iam.gserviceaccount.com"
-MIN_INSTANCES="${MIN_INSTANCES:-0}"   # set to 1 during judging
+MIN_INSTANCES="${MIN_INSTANCES:-1}"   # 1 during judging (19 Oct to 6 Nov); back to 0 after 7 Nov
 
 # Mount only secrets that have a version (meta-oembed-token stays empty until Instagram/Facebook
 # links need it); an empty secret would fail the whole deploy.

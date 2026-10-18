@@ -27,7 +27,7 @@ def _usable(verdict: dict[str, Any], now: datetime) -> bool:
     if verdict.get("status") != "ACTIVE":
         return False
     expires = verdict.get("expires_at")
-    if expires and datetime.fromisoformat(expires) <= now:
+    if expires and not verdict.get("pinned") and datetime.fromisoformat(expires) <= now:
         return False
     return True
 

@@ -69,3 +69,14 @@ async def test_tier1_non_checkable_entry(store):
     await tier1.write(store, ["text:gm"], [], non_checkable={"type": "GREETING", "message": "hi"})
     hit = await tier1.lookup(store, ["text:gm"])
     assert hit["non_checkable"]["type"] == "GREETING"
+
+
+def test_pinned_demo_verdict_never_expires():
+    from datetime import UTC, datetime, timedelta
+
+    from app.cache.tier1 import _usable
+
+    now = datetime.now(UTC)
+    past = (now - timedelta(days=1)).isoformat()
+    assert not _usable({"status": "ACTIVE", "expires_at": past}, now)
+    assert _usable({"status": "ACTIVE", "expires_at": past, "pinned": True}, now)
