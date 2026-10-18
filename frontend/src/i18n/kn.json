@@ -161,7 +161,8 @@
     "evidenceScore": "ಸಾಕ್ಷ್ಯ ಅಂಕ: 100ರಲ್ಲಿ {{score}}",
     "independentReports_one": "{{count}} ಸ್ವತಂತ್ರ ವರದಿ",
     "independentReports_other": "{{count}} ಸ್ವತಂತ್ರ ವರದಿಗಳು",
-    "againstCount": "{{count}} ವಿರುದ್ಧ"
+    "againstCount": "{{count}} ವಿರುದ್ಧ",
+    "cachedOn": "ಹಿಂದಿನ ಪರಿಶೀಲನೆಯಿಂದ ಉತ್ತರ · {{date}}"
   },
   "limit": {
     "title": "ಪರಿಶೀಲನೆಗಳು ಮುಗಿದಿವೆ",
@@ -314,5 +315,18 @@
     "factcheck_sites": "ಸತ್ಯಪರಿಶೀಲನೆ",
     "source_credibility": "ಮೂಲ",
     "media_provenance": "ಚಿತ್ರ"
+  },
+  "examples": {
+    "title": "ಒಂದು ಉದಾಹರಣೆ ನೋಡಿ",
+    "note": "ಹಿಂದೆ ಪರಿಶೀಲಿಸಿದ ನಿಜವಾದ ಫಾರ್ವರ್ಡ್‌ಗಳು. ತಕ್ಷಣ ಉತ್ತರ ಸಿಗುತ್ತದೆ, ನಿಮ್ಮ ದೈನಂದಿನ ಪರಿಶೀಲನೆಗಳು ಕಡಿಮೆಯಾಗುವುದಿಲ್ಲ.",
+    "tag": "ಉದಾಹರಣೆ: {{name}}",
+    "back": "ಮುಖಪುಟಕ್ಕೆ ಹಿಂತಿರುಗಿ",
+    "items": {
+      "flood_video": "ಪ್ರವಾಹದ ವಿಡಿಯೋ",
+      "old_photo": "ಹಳೆಯ ಫೋಟೋ",
+      "fake_quote": "ನಕಲಿ ಹೇಳಿಕೆ",
+      "ai_image": "AI ಚಿತ್ರ",
+      "scam": "ವಂಚನೆ ಸಂದೇಶ"
+    }
   }
 }

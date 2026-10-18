@@ -18,8 +18,18 @@ const History = lazy(() => import('./screens/History').then((m) => ({ default: m
 const LatestCheck = lazy(() => import('./screens/LatestCheck').then((m) => ({ default: m.LatestCheck })))
 const Legal = lazy(() => import('./screens/Legal').then((m) => ({ default: m.Legal })))
 const PublicResult = lazy(() => import('./screens/PublicResult').then((m) => ({ default: m.PublicResult })))
+const Example = lazy(() => import('./screens/Example').then((m) => ({ default: m.Example })))
 const Trending = lazy(() => import('./screens/Trending').then((m) => ({ default: m.Trending })))
 const screenFallback = <main className="screen center muted">…</main>
+
+/** A new screen opens at its top (the browser keeps the old scroll position on client-side navigation). */
+function ScrollToTop() {
+  const { pathname } = useLocation()
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [pathname])
+  return null
+}
 
 function Header({ onLanguage }: { onLanguage: () => void }) {
   const { t, i18n } = useTranslation()
@@ -123,6 +133,7 @@ function Gate() {
         <Route path="/check/:checkId" element={<CheckPage />} />
         <Route path="/checks" element={<LatestCheck />} />
         <Route path="/trending" element={<Trending />} />
+        <Route path="/example/:key" element={<Example />} />
         <Route path="/history" element={<History />} />
         <Route path="*" element={<Home />} />
       </Routes>
@@ -137,6 +148,7 @@ export default function App() {
   return (
     <AuthProvider>
       <BrowserRouter>
+        <ScrollToTop />
         <Gate />
       </BrowserRouter>
     </AuthProvider>

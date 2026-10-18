@@ -1,8 +1,8 @@
 import { type FormEvent, useEffect, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { FeedList } from '../components/FeedList'
-import { ApiError, createCheck, getQuota, getRecent } from '../lib/api'
+import { ApiError, createCheck, getExamples, getQuota, getRecent } from '../lib/api'
 import { useAuth } from '../lib/auth'
 import { config } from '../lib/config'
 import type { FeedItem, Quota } from '../lib/types'
@@ -37,6 +37,7 @@ export function Home() {
   const [limitAt, setLimitAt] = useState<string | null>(null)
   const [quota, setQuota] = useState<Quota | null>(null)
   const [recent, setRecent] = useState<FeedItem[] | null>(null)
+  const [examples, setExamples] = useState<string[]>([])
   const [install, setInstall] = useState<InstallPrompt | null>(null)
   const fileInput = useRef<HTMLInputElement>(null)
   const pasteBox = useRef<HTMLTextAreaElement>(null)
@@ -45,6 +46,7 @@ export function Home() {
     if (!user) return
     getQuota(user).then(setQuota).catch(() => undefined)
     getRecent(user).then((r) => setRecent(r.items)).catch(() => setRecent([]))
+    getExamples(user).then((r) => setExamples(r.items.map((i) => i.key))).catch(() => undefined)
   }, [user])
 
   useEffect(() => {
@@ -165,6 +167,21 @@ export function Home() {
         <button className="secondary install" onClick={() => void install.prompt()}>
           {t('home.install')}
         </button>
+      )}
+      {examples.length > 0 && (
+        <section aria-labelledby="examples-title">
+          <h2 className="sech" id="examples-title">
+            {t('examples.title')}
+          </h2>
+          <p className="muted small">{t('examples.note')}</p>
+          <div className="examples">
+            {examples.map((k) => (
+              <Link key={k} to={`/example/${k}`} className="example-btn">
+                {t(`examples.items.${k}`)}
+              </Link>
+            ))}
+          </div>
+        </section>
       )}
       <h2 className="sech">{t('home.recent')}</h2>
       {recent === null && <p className="muted">…</p>}

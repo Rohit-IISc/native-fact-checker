@@ -161,7 +161,8 @@
     "evidenceScore": "Skor bukti: {{score}} dari 100",
     "independentReports_one": "{{count}} laporan independen",
     "independentReports_other": "{{count}} laporan independen",
-    "againstCount": "{{count}} menyangkal"
+    "againstCount": "{{count}} menyangkal",
+    "cachedOn": "Dijawab dari cek sebelumnya · {{date}}"
   },
   "limit": {
     "title": "Cek habis",
@@ -314,5 +315,18 @@
     "factcheck_sites": "Cek fakta",
     "source_credibility": "Sumber",
     "media_provenance": "Gambar"
+  },
+  "examples": {
+    "title": "Coba contoh",
+    "note": "Pesan terusan asli yang sudah kami cek. Jawabannya langsung muncul dan tidak memakai jatah cek harian Anda.",
+    "tag": "Contoh: {{name}}",
+    "back": "Kembali ke Beranda",
+    "items": {
+      "flood_video": "Video banjir",
+      "old_photo": "Foto lama",
+      "fake_quote": "Kutipan palsu",
+      "ai_image": "Gambar AI",
+      "scam": "Pesan penipuan"
+    }
   }
 }

@@ -62,8 +62,10 @@ export interface ClaimResult {
   audio_url?: string | null
   card_url?: string | null
   result_url: string
-  /** Display only until after judging (decision 50). */
+  /** Only where the evidence score upgraded the verdict (decision 50). */
   evidence_score?: EvidenceScoreView | null
+  /** When this verdict was first made (answers from the cache show it). */
+  checked_at?: string | null
 }
 
 export interface EvidenceScoreView {

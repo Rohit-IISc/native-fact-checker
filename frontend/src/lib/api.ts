@@ -125,3 +125,5 @@ export const getHistoryStats = (user: AppUser) => request<HistoryStats>(user, '/
 export const getRecent = (user: AppUser) => request<{ items: FeedItem[] }>(user, '/v1/feed/recent')
 export const getTrending = (user: AppUser) => request<{ window: string; items: FeedItem[] }>(user, '/v1/feed/trending')
 export const deleteAccount = (user: AppUser) => request<void>(user, '/v1/me', { method: 'DELETE' })
+export const getExamples = (user: AppUser) => request<{ items: { key: string }[] }>(user, '/v1/examples')
+export const getExample = (user: AppUser, key: string) => request<CheckDoc>(user, `/v1/examples/${encodeURIComponent(key)}`)
