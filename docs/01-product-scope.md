@@ -78,6 +78,10 @@ Cost (added Oct 16, after the cost review in docs/13):
 - **On-device Gemma for extraction:** run claim extraction on the phone (Gemma on Android), sending the server
   only the claims and media fingerprints. Cuts the extractor cost and keeps more of the forward on the device.
 
+Evidence score (added Oct 18, decision 50):
+- **Fit the weights by logistic regression** on the gold set plus agreed verdicts (features: tier, fact-check
+  rating, direction, group size), replacing the initial hand-set weights; then turn on live gating.
+
 Sign-in (added Oct 16, UI brief):
 - **Sign in with phone number (OTP):** Firebase phone auth as a second option next to Google, for users without
   a Google account on the phone. Not built: SMS costs money per sign-in and needs abuse limits.
