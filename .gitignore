@@ -39,3 +39,7 @@ samples
 
 # Design kits and source logos dropped in by hand (not part of the app; needed files are copied into frontend/)
 artifacts
+
+# Submission deck export (local only, never committed)
+deck-export/
+*.zip
