@@ -3,8 +3,9 @@
 Runs only for a claim the panel left at NOT_ENOUGH_EVIDENCE without a split. The deterministic score
 (verify/source_policy.evidence_score) must clear the harm cutoff with at least two independent supporting
 origin groups and no tier 1 or tier 2 contradiction; then one Critic call (prompts/15_score_upgrade.md)
-checks that the kept reports are about this exact claim and independent. The upgraded verdict still has to
-pass the source policy, or it stays NOT_ENOUGH_EVIDENCE. Never raises; never touches any other label.
+checks that the kept reports are about this exact claim and independent. For a low-harm claim that upgrade
+satisfies the source policy (Rohit, Oct 18: CLAUDE.md rule 1); a high-harm claim must still pass the 1 tier 1 /
+2 tier 2 rule, or it stays NOT_ENOUGH_EVIDENCE. Never raises; never touches any other label.
 """
 from __future__ import annotations
 
@@ -66,7 +67,9 @@ async def run(llm: LLM, claim: Claim, verdict: JudgeVerdict, outcome: PanelOutco
     if rescored.p_true < rescored.cutoff or len(rescored.groups_for) < 2 or rescored.strong_against:
         return None
     upgraded = upgraded.model_copy(update={"confidence": min(99, round(100 * rescored.p_true))})
-    policy = source_policy.check(upgraded, evidence)
+    # Low harm: p >= cutoff, 2+ independent groups, no tier 1/2 against and the Critic's yes satisfy the source
+    # policy. High harm keeps the 1 tier 1 / 2 tier 2 rule.
+    policy = source_policy.check(upgraded, evidence) if rescored.high_harm else source_policy.PolicyResult(True)
     if not policy.passed:
         log_event(log, "score upgrade blocked by source policy", claim_id=claim.claim_id, reason=policy.reason)
         return None

@@ -1,6 +1,16 @@
 from app.agents import score_upgrade
-from app.models import Claim, ClaimType, Evidence, JudgeVerdict, Label, PanelOutcome, ScoreUpgradeReview, SourceTier, \
-    Stance, TimeSensitivity
+from app.models import (
+    Claim,
+    ClaimType,
+    Evidence,
+    JudgeVerdict,
+    Label,
+    PanelOutcome,
+    ScoreUpgradeReview,
+    SourceTier,
+    Stance,
+    TimeSensitivity,
+)
 
 T1, T2, T3 = SourceTier.TIER_1, SourceTier.TIER_2, SourceTier.TIER_3
 
@@ -44,13 +54,15 @@ async def test_critic_declines():
     assert await score_upgrade.run(llm, CLAIM, nee(["a", "b"]), PanelOutcome.AGREED, pack, 20) is None
 
 
-async def test_source_policy_still_blocks():
-    # 1 tier 2 + tier 3s can clear the score but not the source policy (Mahadevan)
+async def test_low_harm_upgrade_satisfies_policy_high_harm_does_not():
+    # 1 tier 2 + tier 3s (Mahadevan): enough for a low-harm claim, not for a high-harm one
     pack = [ev("a", T2, "Hindustan Times", "Opened"), ev("b", T3, "The Print", "Malgudi"),
             ev("c", T3, "Business Today", "Dream"), ev("d", T3, "Big News", "Other words")]
     llm = StubLLM(ScoreUpgradeReview(accept=True, kept_ids=["a", "b", "c", "d"], reason_en="ok"))
-    assert await score_upgrade.run(llm, CLAIM, nee(["a", "b", "c", "d"]), PanelOutcome.AGREED, pack, 20) is None
-    assert llm.calls == 1
+    up = await score_upgrade.run(llm, CLAIM, nee(["a", "b", "c", "d"]), PanelOutcome.AGREED, pack, 20)
+    assert up and up[0].label == Label.TRUE
+    health = CLAIM.model_copy(update={"claim_type": ClaimType.HEALTH})
+    assert await score_upgrade.run(llm, health, nee(["a", "b", "c", "d"]), PanelOutcome.AGREED, pack, 20) is None
 
 
 async def test_never_for_split_or_other_labels():
