@@ -44,7 +44,7 @@ Out of scope for the prototype: bank SMS and phishing, scam checker agent, human
 
 ## Stack
 
-- Backend: Python 3.12, FastAPI, Google ADK (`google-adk`), Google Gen AI SDK (`google-genai`) on Vertex AI, Pydantic v2, `uv` for deps, `ruff` and `pytest`
+- Backend: Python 3.12, FastAPI, Google Gen AI SDK (`google-genai`) on Vertex AI, Pydantic v2, `uv` for deps, `ruff` and `pytest`
 - Frontend: React + Vite + TypeScript (strict), `vite-plugin-pwa`, Firebase JS SDK (Auth, Firestore, Messaging, App Check), i18n with `i18next`
 - GCP: Cloud Run (asia-south1), Pub/Sub, Firestore Native (asia-south1, with vector search), Cloud Storage, Vertex AI (Gemini via `global` endpoint), Gemini TTS, Cloud Vision, Fact Check Tools API, BigQuery, Secret Manager, Cloud Scheduler, Cloud Build, Artifact Registry, Firebase Hosting/Auth/FCM/App Check
 - Infra: plain `gcloud` and `firebase` CLI scripts in `scripts/` (no Terraform; see `docs/11-gcp-setup-and-deploy.md`)
@@ -66,7 +66,7 @@ repo/
       intake/               upload handling, hashing, link fetch ladder, SSRF guard
       cache/                tier 1 exact hash, tier 2 vector search, near-match check
       pipeline/             run_check(): stage runner, deadlines, progress updates
-      agents/               ADK agents: extractor, web_search, factcheck_sites,
+      agents/               Gemini agents (Gen AI SDK): extractor, web_search, factcheck_sites,
                             source_credibility, media_provenance, packager, judge, critic, composer
       verify/source_policy.py
       output/               tts.py, card.py (Pillow + libraqm + Noto), notify.py (FCM)

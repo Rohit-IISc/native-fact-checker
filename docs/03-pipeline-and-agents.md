@@ -1,6 +1,6 @@
 # 03. Pipeline and agents
 
-Each stage: input, output, model, prompt file, timeout. All outputs are Pydantic models in `schemas/models.py`. All agents are ADK `LlmAgent`s, composed with `SequentialAgent` and `ParallelAgent`, except stages marked "code".
+Each stage: input, output, model, prompt file, timeout. All outputs are Pydantic models in `schemas/models.py`. All agents are Gemini agents built with the Google Gen AI SDK, running four evidence agents in parallel (`asyncio` fan-out), except stages marked "code".
 
 ## Stage 0. Intake (code)
 
@@ -34,13 +34,13 @@ Store `source_url`, `platform`, `fetched_at`, `published_at`, `author_handle` wh
 
 Embed `claim_en` per claim, vector search, near-match check with `prompts/02_near_match.md`. Details in doc 04. Claims that hit are answered from cache; only the rest continue.
 
-## Stage 4. Fan-out (ADK ParallelAgent, all Gemini Flash)
+## Stage 4. Fan-out (four evidence agents in parallel, Gemini Flash)
 
 Each agent gets the `Extraction` and returns `AgentFindings`: a list of `Evidence` items (id, url, domain, title, publisher, published_at, language, snippet in English, stance SUPPORTS / CONTRADICTS / CONTEXT / UNRELATED, which claim it relates to, source tier filled by code later) plus notes.
 
 | Agent | Prompt | Tools | Notes |
 | --- | --- | --- | --- |
-| Web search | `03_web_search_agent.md` | ADK built-in `google_search` (Grounding with Google Search) | Search in the original language first, then English. Max 4 grounded queries per check. Built-in google_search cannot share an agent with other tools in ADK, so this agent has only that tool |
+| Web search | `03_web_search_agent.md` | Grounding with Google Search (the `google_search` tool of the Google Gen AI SDK) | Search in the original language first, then English. Max 4 grounded queries per check. Grounded search runs in its own call, without other tools, so this agent has only that tool |
 | Fact-check sites | `04_factcheck_agent.md` | Function tools: `factcheck_text_search(query, language_code)` and `factcheck_image_search(image_uri)` calling the Fact Check Tools API (`claims:search`, `claims:imageSearch`) | Query in original language, English, and Hindi if content is in another Indian language. Returns ClaimReview ratings with publisher and URL |
 | Source credibility | `05_source_credibility_agent.md` | Function tools: `lookup_source(domain_or_handle)` reading Firestore `sources`, `domain_info(domain)` (domain age via RDAP) | Rates the origin of the post (account, domain, outlet). Verification badges are treated as near-zero signal |
 | Media provenance | `06_media_provenance_agent.md` | Function tool: `vision_web_detection(image_uri)` (Cloud Vision); keyframes for video | Finds earliest appearances of the image or keyframes: the core of the "old war or riot photo with new caption" case. Also reports AI-generation signals with reasons both ways. Skipped for text-only shares |

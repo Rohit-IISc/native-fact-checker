@@ -38,7 +38,7 @@ Cost of one eval run: about 25 US dollars. Recall at 5 uses the free Fact Check 
 ## Observability
 
 - Structured JSON logs to Cloud Logging, every line with `check_id`, `stage`, `uid_hash`
-- OpenTelemetry tracing to Cloud Trace (ADK emits spans), one trace per check
+- Structured logs per model call (check_id, stage, model, tokens, latency) and BigQuery `check_runs`, one row per check
 - BigQuery tables `check_runs` and `model_calls` (doc 05)
 - Log-based metrics and alert policies: error rate over 5% in 15 minutes, p95 full-check latency over 120 s, daily spend over budget fraction
 - A Looker Studio dashboard on BigQuery for the deck's benchmark slide: latency by lane, cost per check, verdict mix, languages, cache hit rate

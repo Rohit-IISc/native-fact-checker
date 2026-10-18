@@ -29,7 +29,7 @@ Decided with Rohit and Shubham on Oct 4, 2026. If anything elsewhere conflicts, 
 | 22 | Escalation | Dropped for now |
 | 23 | Platform | Android-first PWA |
 | 24 | Progress | Live progress screen plus push |
-| 25 | Stack | React + Vite PWA, Python + ADK on Cloud Run |
+| 25 | Stack | React + Vite PWA, Python + Google Gen AI SDK on Cloud Run. ADK was planned but not used: the agents are plain Gemini calls with structured output, run in parallel with asyncio (Oct 18: unused dependency removed) |
 | 26 | Sign-in | Mandatory Google sign-in + App Check + server quota + global daily cap (doc 08) |
 | 27 | History | Yes, behind sign-in |
 | 28 | API | Documented only |

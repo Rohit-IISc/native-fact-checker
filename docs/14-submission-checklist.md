@@ -10,8 +10,8 @@ The template has 16 slides. Slide 2 is an instruction slide; delete it before su
 | 5 | Features | Share sheet intake, 5 input types, live progress, 5-label verdict with confidence, evidence for and against, audio in 5 languages, correction card, shareable result page, history, AI-generated media assessment with both sides | Doc 01 |
 | 6 | Process flow | Customer journey + app workflow (your two diagrams, updated with the cache tiers and the panel) | Your diagrams + doc 02 Mermaid |
 | 7 | Wireframes (optional) | Screenshots of the 7 screens | Your call |
-| 8 | Architecture diagram | GCP architecture: PWA, Cloud Run, Pub/Sub, Firestore, Vertex AI, ADK agents, TTS, Vision, Fact Check API, BigQuery | Export doc 02 Mermaid, then redraw cleanly |
-| 9 | Technologies | Gemini Flash and Pro on Vertex AI, ADK, Grounding with Google Search, Gemini TTS, Gemini embeddings, Firestore vector search, Cloud Vision, Fact Check Tools API, Cloud Run, Pub/Sub, Firebase, BigQuery, Cloud Build | CLAUDE.md stack |
+| 8 | Architecture diagram | GCP architecture: PWA, Cloud Run, Pub/Sub, Firestore, Vertex AI, Gemini agents (Google Gen AI SDK), TTS, Vision, Fact Check API, BigQuery | Export doc 02 Mermaid, then redraw cleanly |
+| 9 | Technologies | Gemini Flash and Pro on Vertex AI, Gemini agents built with the Google Gen AI SDK, Grounding with Google Search, Gemini TTS, Gemini embeddings, Firestore vector search, Cloud Vision, Fact Check Tools API, Cloud Run, Pub/Sub, Firebase, BigQuery, Cloud Build | CLAUDE.md stack |
 | 10 | Estimated cost (optional, do it) | Cost per check by lane, prototype month total, cost at 100K checks per day before and after optimizations | Doc 13 |
 | 11 | Snapshots | Real screenshots: share from WhatsApp, live progress, result in Hindi, Tamil, Kannada, Indonesian, English, correction card in WhatsApp | Oct 15 |
 | 12 | Performance and benchmark | Recall at 5 by language pair, verdict accuracy, abstention curve, panel agreement, p50 and p95 latency by lane, cost per check, cache hit rate | BigQuery + eval run on Oct 15 |
@@ -67,4 +67,4 @@ per image or video check.
 | 1:25 to 1:45 | Forward the correction card back to the group | The correction travels back to where the rumour started |
 | 1:45 to 2:05 | A friend shares the same video in Kannada; answer in 3 seconds | Shared cache across languages |
 | 2:05 to 2:25 | Tamil health remedy: NOT_ENOUGH_EVIDENCE, or AI image with evidence both ways | It says when it is not sure, and shows both sides |
-| 2:25 to 2:50 | Architecture and benchmark slide | Gemini, ADK, review panel, recall at 5, latency, cost per check |
+| 2:25 to 2:50 | Architecture and benchmark slide | Gemini agents (Google Gen AI SDK), review panel, recall at 5, latency, cost per check |
