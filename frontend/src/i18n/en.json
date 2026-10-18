@@ -157,7 +157,11 @@
     "shareWhatsApp": "WhatsApp",
     "shareCardShort": "Card",
     "copyLinkShort": "Copy link",
-    "showNativeShort": "Original"
+    "showNativeShort": "Original",
+    "evidenceScore": "Evidence score: {{score}} out of 100",
+    "independentReports_one": "{{count}} independent report",
+    "independentReports_other": "{{count}} independent reports",
+    "againstCount": "{{count}} against"
   },
   "limit": {
     "title": "Checks used up",

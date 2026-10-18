@@ -157,7 +157,11 @@
     "shareWhatsApp": "व्हाट्सऐप",
     "shareCardShort": "कार्ड",
     "copyLinkShort": "लिंक कॉपी",
-    "showNativeShort": "मूल भाषा"
+    "showNativeShort": "मूल भाषा",
+    "evidenceScore": "सबूत स्कोर: 100 में से {{score}}",
+    "independentReports_one": "{{count}} स्वतंत्र रिपोर्ट",
+    "independentReports_other": "{{count}} स्वतंत्र रिपोर्ट",
+    "againstCount": "{{count}} विरोध में"
   },
   "limit": {
     "title": "आज की जाँचें खत्म",

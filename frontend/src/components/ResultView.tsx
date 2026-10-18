@@ -94,7 +94,7 @@ export function ClaimCard({
   aiGeneration,
 }: {
   claim: Pick<ClaimResult, 'label' | 'confidence' | 'result_url'> &
-    Partial<Pick<ClaimResult, 'panel_outcome' | 'evidence_for_ids' | 'evidence_against_ids'>>
+    Partial<Pick<ClaimResult, 'panel_outcome' | 'evidence_for_ids' | 'evidence_against_ids' | 'evidence_score'>>
   answer: AnswerText
   answerEn: AnswerText
   audioUrl?: string | null
@@ -160,6 +160,15 @@ export function ClaimCard({
           <span>{tc('result.sourceCount', { count: listed.length })}</span>
         </span>
       </div>
+      {claim.evidence_score && claim.label !== 'NOT_ENOUGH_EVIDENCE' && (
+        <p className="escore" lang={answer.language}>
+          {[
+            tc('result.evidenceScore', { score: claim.evidence_score.score }),
+            tc('result.independentReports', { count: claim.evidence_score.reports }),
+            tc('result.againstCount', { count: claim.evidence_score.against }),
+          ].join(' · ')}
+        </p>
+      )}
       <TrustSeal outcome={claim.panel_outcome} evidence={sources} lang={answer.language} />
       {audioUrl && tab !== 'english' ? (
         <AudioPlayer src={audioUrl} lang={answer.language} />

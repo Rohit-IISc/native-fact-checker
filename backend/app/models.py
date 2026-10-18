@@ -302,6 +302,12 @@ class ComposerOutput(BaseModel):
     english: AnswerText
 
 
+class EvidenceScoreView(BaseModel):
+    score: int
+    reports: int
+    against: int
+
+
 class ClaimResult(BaseModel):
     verdict_id: str
     claim_original: str
@@ -319,6 +325,9 @@ class ClaimResult(BaseModel):
     audio_url: str | None = None
     card_url: str | None = None
     result_url: str
+    # Display only until after judging (decision 50): score out of 100 for the verdict, independent reports
+    # agreeing with it, and against it.
+    evidence_score: EvidenceScoreView | None = None
 
 
 class CheckResult(BaseModel):

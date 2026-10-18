@@ -149,3 +149,26 @@ not_a_source:
     - tiktok.com
     - linkedin.com
 default_tier: tier_3
+
+# Evidence score (decision 50). Weights are INITIAL, TO BE CALIBRATED: fit by logistic regression on the gold
+# set plus agreed verdicts once there is enough data (docs/01 "Later"). Replay only on Oct 18; the score does
+# not gate live verdicts until after judging (7 Nov). Log-odds: positive supports the claim, negative
+# contradicts it; probability = 1 / (1 + exp(-score)).
+evidence_score:
+  support: {TIER_1: 3.0, TIER_2: 1.5, TIER_3: 0.7, NOT_A_SOURCE: 0.0, factcheck_true: 3.0}
+  contradict: {TIER_1: -3.0, TIER_2: -1.5, TIER_3: -0.7, NOT_A_SOURCE: 0.0, factcheck_false: -3.5}
+  # Items that share one origin (same wire copy or press release, near-identical text, one citing the other)
+  # count once: the strongest item plus this much per extra item.
+  extra_in_group: 0.2
+  same_origin_similarity: 0.9          # cosine similarity of title + snippet embeddings
+  young_domain_days: 90                # younger domains, and repeat offenders, add nothing when supporting
+  cutoffs:                             # TRUE if p >= cutoff, FALSE if p <= 1 - cutoff, else NOT_ENOUGH_EVIDENCE
+    high_harm: 0.95
+    other: 0.85
+  high_harm_claim_types: [HEALTH, GOVERNMENT_SCHEME, FINANCIAL_OFFER]
+  # EVENT claims are high harm when about disasters, communal violence or elections (matched in claim_en).
+  high_harm_event_terms: [flood, earthquake, cyclone, landslide, tsunami, fire, blast, explosion, collapse,
+    stampede, disaster, drought, storm, riot, communal, mob, lynch, clash, temple, mosque, church, hindu, muslim,
+    christian, sikh, violence, attack, election, vote, voting, voter, ballot, evm, poll, polling, candidate]
+  factcheck_false_words: ["not true", "untrue", "not correct", "false", "fake", "misleading", "incorrect", "wrong", "fabricated", "altered", "edited", "morphed", "doctored", "manipulated", "satire", "scam", "hoax", "baseless", "pants on fire", "mostly false"]
+  factcheck_true_words: ["true", "correct", "accurate", "mostly true", "verified"]

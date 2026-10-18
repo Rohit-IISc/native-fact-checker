@@ -62,6 +62,14 @@ export interface ClaimResult {
   audio_url?: string | null
   card_url?: string | null
   result_url: string
+  /** Display only until after judging (decision 50). */
+  evidence_score?: EvidenceScoreView | null
+}
+
+export interface EvidenceScoreView {
+  score: number
+  reports: number
+  against: number
 }
 
 export interface CheckResult {
@@ -138,6 +146,7 @@ export interface PublicResult {
   sources: Pick<Evidence, 'evidence_id' | 'url' | 'domain' | 'publisher' | 'title' | 'tier' | 'stance'>[]
   evidence_for_ids?: string[]
   evidence_against_ids?: string[]
+  evidence_score?: EvidenceScoreView | null
   ai_generation?: AIGeneration | null
   audio_url?: string | null
   card_url?: string | null
