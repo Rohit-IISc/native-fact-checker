@@ -11,19 +11,53 @@ Updated after every task (see CLAUDE.md, "How to work"). Newest state only; hist
 
 
 
-## Oct 18: submission day
+## Oct 18: submitted (tag `submitted` on 6f6c666)
 
-- Phase A (branch `scoring/evidence-score`, not live): evidence score in `verify/source_policy.py`, weights in
-  `config/source_tiers.yaml` (initial, to be calibrated), replay in `docs/replay-evidence-score.md`. Final
-  config: 0 blocks, 3 NEE to the Critic (1 matches gold). Grouping by embeddings above 0.9 merges independent
-  outlets; a fact-check rating can belong to a different claim. Live gating waits until after 7 Nov.
-- Phase B (main): demo verdicts pinned (18 cases, no expiry); `seed_demo_cache.py --check` as Cloud Run Job
-  `demo-cache-check`, daily 06:00 IST, media from private `gs://ai-builder-2026-eval/demo-media/`; 12 junk
-  verdicts deleted (stubs, early tests); min instances 1 (deploy script default during judging); README for
-  judges and Apache 2.0 LICENSE; examples API live, "Try an example" UI on branch `ui/try-example` (preview).
-- gitleaks: 58 commits, no leaks. check-models and TTS OK.
-- After submission: tag `submitted`; only critical fixes on main until 7 Nov. Set min instances back to 0
-  after 7 Nov (`deploy_backend.sh` default) and pause `demo-cache-check-daily`.
+Current state: submitted to the AI Builder Cup; judging 19 Oct to 6 Nov at https://chckr.web.app. Only
+critical fixes on main until 7 Nov (docs-only commits since the tag: README and future notes).
+
+Live on production:
+- **Evidence score, upgrade-only (decision 50):** NOT_ENOUGH_EVIDENCE can become TRUE only when the score
+  clears the cutoff (0.85 low harm, 0.95 high harm) with 2+ independent supporting groups and no tier 1/2
+  against, and the Critic agrees (`prompts/15_score_upgrade.md`, outcome `UPGRADED_BY_SCORE`, no trust seal).
+  For low-harm claims that satisfies the source policy (CLAUDE.md rule 1 exception); high harm keeps 1 tier 1 /
+  2 tier 2. Never changes any other label. Weights initial, to be calibrated; grouping threshold kept at 0.9.
+  Replay and Critic re-check: `docs/replay-evidence-score.md` (final config: 1 change, a fix; no proposal wrong
+  against gold). Result page shows "Evidence score: N out of 100 · N independent reports · N against" only on
+  upgraded verdicts.
+- **Try an example** buttons on Home (5 demo shares, `GET /v1/examples`); hidden while the demo set is empty.
+  Cached answers show "Answered from an earlier check · date". New screens open at the top.
+- **README for judges**, Apache 2.0 LICENSE, "What's next" section. ADK removed from docs and dependencies (it
+  was never used; agents are Gemini agents built with the Google Gen AI SDK).
+- **Ops:** min instances 1 (deploy script default during judging); account deletion and secrets checks as
+  before; gitleaks on all history clean; `.gitignore`, `.gcloudignore`, `.dockerignore` and the pre-commit
+  check now block samples/artifacts/runs as folders or links.
+
+Cache: **cleared after submission at Rohit's request** (all verdicts, claim index, cache keys, image
+fingerprints, demo set, audio and cards). It builds over time from judges' checks. `demo-cache-check-daily`
+(Cloud Run Job `demo-cache-check`, demo media in private `gs://ai-builder-2026-eval/demo-media/`) is
+**paused**; resume with `gcloud scheduler jobs resume demo-cache-check-daily --location=asia-south1`, or seed
+once with `scripts/seed_demo_cache.py --seed` (about 30 min, about 2.50 USD).
+
+Latest checks:
+- make accept on the deployed code: 15/20, language 20/20, 2.02 USD. Failures are live-search variance, not
+  the score step (it never fired): 01 flood video (and re-shares 02, 03), 10b NEE, 13 BBC link MISLEADING
+  (a 2019 Chandrayaan-2 photo story; the morning smoke test on the old code failed the same way).
+  Earlier today on the branch: 18/20. make record (composer 1.4): 19/20.
+- Smoke test on production: 6/6 completed. check-models and Gemini TTS OK.
+
+Not done / known issues:
+- Mahadevan (production claim) does not upgrade: at 0.9 the three independent newsrooms (0.91-0.93
+  embedding similarity) count as one origin. Rohit kept 0.9; grouping by shared sentences and wire bylines is a
+  future note.
+- The 57-item eval gold set keeps no evidence, so it cannot be replayed without model calls.
+
+After 7 Nov (exact next steps):
+1. Set min instances back to 0 (`scripts/deploy_backend.sh` default `MIN_INSTANCES`).
+2. Decide whether to resume `demo-cache-check-daily` or delete the job.
+3. Calibrate the evidence score (logistic regression on gold + agreed verdicts) and replace embedding grouping.
+4. Future notes in `docs/01-product-scope.md` "Later": leaner agent routing, answers in each reader's display
+   language, localised Recent checks and Trending.
 
 ## Oct 16 night: UI brief rounds 1-3 live (Bazaar Bright), sign-in on chckr.web.app
 
