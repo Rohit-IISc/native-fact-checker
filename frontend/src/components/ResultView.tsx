@@ -160,7 +160,7 @@ export function ClaimCard({
           <span>{tc('result.sourceCount', { count: listed.length })}</span>
         </span>
       </div>
-      {claim.evidence_score && claim.label !== 'NOT_ENOUGH_EVIDENCE' && (
+      {claim.evidence_score && (
         <p className="escore" lang={answer.language}>
           {[
             tc('result.evidenceScore', { score: claim.evidence_score.score }),

@@ -68,6 +68,7 @@ class PanelOutcome(str, Enum):
     SPLIT = "SPLIT"
     POLICY_DOWNGRADE = "POLICY_DOWNGRADE"
     CACHED = "CACHED"
+    UPGRADED_BY_SCORE = "UPGRADED_BY_SCORE"   # NOT_ENOUGH_EVIDENCE -> TRUE: evidence score + Critic (decision 50)
 
 
 # ---------- Intake and extraction ----------
@@ -266,6 +267,13 @@ class CriticReview(BaseModel):
     proposed_label: Label
     proposed_confidence: int = Field(ge=0, le=100)
     objections_en: list[str] = []
+
+
+class ScoreUpgradeReview(BaseModel):
+    accept: bool
+    kept_ids: list[str] = []
+    what_is_true_en: str = ""
+    reason_en: str = ""
 
 
 class CriticOutput(BaseModel):

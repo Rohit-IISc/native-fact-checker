@@ -20,7 +20,6 @@ from app.models import (
 from app.output.card import card_url
 from app.settings import get_config, get_settings
 from app.store import Store
-from app.verify import source_policy
 
 VERDICTS = "verdicts"
 CLAIMS = "claims"
@@ -60,6 +59,7 @@ async def persist_verdict(
     policy_reason: str | None = None,
     split_readings: list[str] | None = None,
     is_stub: bool = False,
+    evidence_score: dict[str, int] | None = None,
 ) -> str:
     now = datetime.now(UTC)
     verdict_id = ulid()
@@ -101,11 +101,8 @@ async def persist_verdict(
         "prompt_versions": prompt_versions,
         "is_stub": is_stub,
     }
-    # Display only (decision 50): the score never changes the label until gating is approved after judging.
-    s = await source_policy.evidence_score(verdict, kept[:max_items], claim_type=claim.claim_type,
-                                           claim_en=claim.claim_en)
-    pct, reports, against = s.for_verdict(verdict.label)
-    doc["evidence_score"] = {"score": pct, "reports": reports, "against": against}
+    if evidence_score:  # only where the evidence score was used (decision 50, upgrade-only)
+        doc["evidence_score"] = evidence_score
     await store.set(VERDICTS, verdict_id, doc)
     await store.set(CLAIMS, f"{verdict_id}_{claim.claim_id}", {
         "verdict_id": verdict_id,

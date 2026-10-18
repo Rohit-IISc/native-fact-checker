@@ -63,6 +63,7 @@ async def score_one(source: str, ref: str, label: str, outcome: str | None, clai
         "high_harm": s.high_harm, "cutoff": s.cutoff, "score_label": s.score_label.value, "action": d.action,
         "proposed": d.proposed.value if d.proposed else None, "would_be": d.label.value,
         "groups_for": s.groups_for, "groups_against": s.groups_against,
+        "strong_against": s.strong_against,
         "items": [{"id": i.evidence_id, "dir": i.direction, "w": i.weight, "why": i.why,
                    "publisher": by_id[i.evidence_id].publisher, "tier": by_id[i.evidence_id].tier.value,
                    "title": (by_id[i.evidence_id].title or "")[:90]} for i in s.items],
@@ -121,14 +122,13 @@ def report(rows: list[dict]) -> str:
     gold = [r for r in rows if r["expected"]]
     out.append(f"\nGold (acceptance runs with expected labels): {len(gold)} main claims")
     changed = [r for r in gold if r["action"] in ("blocked", "to_critic")]
-    good_block = sum(r["action"] == "blocked" and r["label"] not in r["expected"] for r in changed)
-    bad_block = sum(r["action"] == "blocked" and r["label"] in r["expected"] for r in changed)
     fix = sum(r["action"] == "to_critic" and r["proposed"] in r["expected"] for r in changed)
     harm = sum(r["action"] == "to_critic" and r["proposed"] not in r["expected"] for r in changed)
     wrong_now = [r for r in gold if r["label"] not in r["expected"]]
     out.append(f"- currently wrong against gold: {len(wrong_now)}")
-    out.append(f"- blocked TRUE/FALSE that were wrong (good): {good_block}; that were right (bad): {bad_block}")
-    out.append(f"- NEE sent to Critic where the proposal matches gold: {fix}; where it does not: {harm}")
+    out.append(f"- changes to answers that are right today: {sum(r['label'] in r['expected'] for r in changed)}")
+    out.append(f"- NEE sent to Critic for TRUE where gold is TRUE (fix): {fix}; where it is not (would be wrong "
+               f"if the Critic accepts): {harm}")
     out.append("\nEvery change against gold:\n\n| run | judge label | expected | score | p(true) | action | proposed |"
                "\n|---|---|---|---|---|---|---|")
     for r in changed:

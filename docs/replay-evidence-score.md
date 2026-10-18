@@ -1,5 +1,27 @@
 # Evidence score replay (Oct 18, decision 50)
 
+## Upgrade-only rules (second replay, 12:35 IST)
+
+The score now only proposes NOT_ENOUGH_EVIDENCE -> TRUE through the Critic; it never blocks or changes TRUE,
+FALSE, MISLEADING or SCAM and never proposes FALSE. CONTEXT items count 0; a fact check counts only when its
+rating agrees with the side the Judge placed it on. An upgrade needs p >= cutoff, at least 2 independent
+supporting origin groups and no tier 1 or tier 2 contradiction, then the Critic, then the source policy.
+
+| Set | Changes | Fixes (gold TRUE) | Would be wrong if accepted | Pass the source policy |
+|---|---|---|---|---|
+| (a) final config, Oct 16 runs, 72 gold | 1 | 1 (Chandrayaan) | 0 | 1 |
+| (b) all saved runs, 571 gold | 6 vs gold (8 runs proposed) | 4 (BBC link x3 Oct 7-9, Chandrayaan) | 1 (16 X quote tweet, Oct 8) | 3 of the 4 fixes; not the wrong one |
+| (c) production, 26 verdicts | 1 (Mahadevan) | n/a | n/a | no: 1 tier 2 + tier 3 only |
+
+Before (first rules): (b) blocked 17 correct TRUE/FALSE answers; now nothing is blocked. BBC (final config) and
+01b no longer change. Chandrayaan still upgrades. Mahadevan is still proposed, but the source policy (1 tier 1
+or 2 tier 2) keeps it NOT_ENOUGH_EVIDENCE in the live path unless the policy changes.
+
+make accept on the branch with the upgrade step wired in: 18/20 (01b NEE, the known flaky case; 13 BBC NEE,
+thin evidence this run: one off-topic BBC item and a LinkedIn post). No upgrade fired.
+
+## First replay (block and upgrade rules)
+
 Replay only: the score was recomputed on stored evidence with `scripts/replay_evidence_score.py`. No LLM
 calls (embeddings only, for grouping). Live gating stays off until after judging (7 Nov). Weights are the
 initial ones in `config/source_tiers.yaml` (`evidence_score`), to be calibrated.
@@ -208,5 +230,71 @@ Production and dev verdicts that would change:
 | 01M4BSP9ZM | NOT_ENOUGH_EVIDENCE | There are 78 places where one can launch a startup for free. | 2.3 | 0.909 | to_critic | TRUE |
 | 01M4G0XW92 | NOT_ENOUGH_EVIDENCE | The final date for birth registration is April 27, 2026, and this dead | -3.5 | 0.029 | to_critic | FALSE |
 | 01M4GYFYNC | NOT_ENOUGH_EVIDENCE | The graphic in this post is a genuine ABP Live news report stating tha | 1.9 | 0.87 | to_critic | TRUE |
+| 01M53YRTSB | NOT_ENOUGH_EVIDENCE | Shankar Mahadevan opened a new South Indian restaurant named Malgudi i | 2.6 | 0.931 | to_critic | TRUE |
+
+
+## Upgrade-only, all runs
+
+same_origin_similarity 0.9, runs accept-*
+
+Scored 765 verdicts: firestore:(default) 26, firestore:dev-db 6, accept 733
+
+| source | action | proposed | count |
+|---|---|---|---|
+| accept | to_critic | TRUE | 8 |
+| accept | unchanged |  | 725 |
+| firestore | to_critic | TRUE | 1 |
+| firestore | unchanged |  | 31 |
+
+Gold (acceptance runs with expected labels): 571 main claims
+- currently wrong against gold: 164
+- changes to answers that are right today: 1
+- NEE sent to Critic for TRUE where gold is TRUE (fix): 4; where it is not (would be wrong if the Critic accepts): 1
+
+Every change against gold:
+
+| run | judge label | expected | score | p(true) | action | proposed |
+|---|---|---|---|---|---|---|
+| accept-20261007-170950/20261007-171507-13-en-news-link.json | NOT_ENOUGH_EVIDENCE | TRUE | 2.8 | 0.943 | to_critic | TRUE |
+| rep1/20261008-060549-16-en-x-quote-tweet.json | NOT_ENOUGH_EVIDENCE | NOT_CHECKABLE/NOT_ENOUGH_EVIDENCE | 2.3 | 0.909 | to_critic | TRUE |
+| accept-20261009-093239/20261009-095103-13-en-news-link.json | NOT_ENOUGH_EVIDENCE | TRUE | 3.4 | 0.968 | to_critic | TRUE |
+| accept-20261009-101930/20261009-103055-13-en-news-link.json | NOT_ENOUGH_EVIDENCE | TRUE | 2.6 | 0.931 | to_critic | TRUE |
+| accept-20261016-160339/20261016-160915-08-en-chandrayaan3-landing.json | NOT_ENOUGH_EVIDENCE | TRUE | 4.9 | 0.993 | to_critic | TRUE |
+
+Production and dev verdicts that would change:
+
+| verdict | label | claim | score | p(true) | action | proposed |
+|---|---|---|---|---|---|---|
+| 01M53YRTSB | NOT_ENOUGH_EVIDENCE | Shankar Mahadevan opened a new South Indian restaurant named Malgudi i | 2.6 | 0.931 | to_critic | TRUE |
+
+
+## Upgrade-only, final config
+
+same_origin_similarity 0.9, runs accept-20261016-*
+
+Scored 118 verdicts: firestore:(default) 26, firestore:dev-db 6, accept 86
+
+| source | action | proposed | count |
+|---|---|---|---|
+| accept | to_critic | TRUE | 1 |
+| accept | unchanged |  | 85 |
+| firestore | to_critic | TRUE | 1 |
+| firestore | unchanged |  | 31 |
+
+Gold (acceptance runs with expected labels): 72 main claims
+- currently wrong against gold: 12
+- changes to answers that are right today: 0
+- NEE sent to Critic for TRUE where gold is TRUE (fix): 1; where it is not (would be wrong if the Critic accepts): 0
+
+Every change against gold:
+
+| run | judge label | expected | score | p(true) | action | proposed |
+|---|---|---|---|---|---|---|
+| accept-20261016-160339/20261016-160915-08-en-chandrayaan3-landing.json | NOT_ENOUGH_EVIDENCE | TRUE | 4.9 | 0.993 | to_critic | TRUE |
+
+Production and dev verdicts that would change:
+
+| verdict | label | claim | score | p(true) | action | proposed |
+|---|---|---|---|---|---|---|
 | 01M53YRTSB | NOT_ENOUGH_EVIDENCE | Shankar Mahadevan opened a new South Indian restaurant named Malgudi i | 2.6 | 0.931 | to_critic | TRUE |
 

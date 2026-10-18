@@ -162,7 +162,7 @@ async def _investigate(store, llm, tools, req, extraction, fetched, budget, cach
                 store, check_id=req.check_id, claim=claim, verdict=d.verdict, outcome=d.outcome,
                 evidence=inv.pack.evidence if inv.pack else [], answer=native, answer_en=english,
                 prompt_versions=versions, model_versions=models, policy_reason=d.policy_reason,
-                split_readings=d.split_readings,
+                split_readings=d.split_readings, evidence_score=d.evidence_score,
             )
             if not degraded:
                 await tier2.index(store, vid, claim.claim_id, t2.embeddings.get(claim.claim_id))

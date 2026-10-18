@@ -108,6 +108,7 @@ class EvidenceScore:
     items: list[ScoredItem]
     high_harm: bool
     cutoff: float
+    strong_against: int = 0           # tier 1 or tier 2 items that contradict the claim (weight != 0)
 
     @property
     def score_label(self) -> Label:
@@ -160,15 +161,23 @@ def _rating(text: str | None) -> int:
 
 
 def item_weight(ev: Evidence, direction: int, discounted_domains: set[str]) -> ScoredItem:
+    """Only evidence the Judge placed for or against the claim reaches here (its same-claim matching).
+    Background (CONTEXT) items count 0. A fact check counts only when its rating agrees with the side the
+    Judge put it on; otherwise it reviewed a different claim (Chandrayaan: "China landed first" rated false,
+    placed against "India landed first") and counts 0."""
     cfg = _cfg()
     table = cfg["support"] if direction > 0 else cfg["contradict"]
+    if ev.stance == Stance.CONTEXT:
+        return ScoredItem(ev.evidence_id, direction, 0.0, "background (CONTEXT)")
     w = float(table.get(ev.tier.value, 0.0))
     why = ev.tier.value
     rating = _rating(ev.rating_text)
-    if direction > 0 and rating > 0 and ev.tier != SourceTier.NOT_A_SOURCE:
-        w, why = max(w, float(table["factcheck_true"])), "fact check rated true"
-    if direction < 0 and rating < 0 and ev.tier != SourceTier.NOT_A_SOURCE:
-        w, why = min(w, float(table["factcheck_false"])), "fact check rated false"
+    if rating and ev.tier != SourceTier.NOT_A_SOURCE:
+        if rating != direction:
+            return ScoredItem(ev.evidence_id, direction, 0.0, "fact check of a different claim")
+        key = "factcheck_true" if direction > 0 else "factcheck_false"
+        w = max(w, float(table[key])) if direction > 0 else min(w, float(table[key]))
+        why = "fact check rated true" if direction > 0 else "fact check rated false"
     host = host_of(ev.domain or ev.url or "")
     if direction > 0 and host and host in discounted_domains:
         w, why = 0.0, "repeat offender or young domain"
@@ -253,7 +262,9 @@ async def evidence_score(verdict: JudgeVerdict, evidence: list[Evidence], *, cla
     high = is_high_harm(claim_type, claim_en)
     cutoff = float(cfg["cutoffs"]["high_harm" if high else "other"])
     p = 1 / (1 + math.exp(-total))
-    return EvidenceScore(total, p, grouped[1], grouped[-1], list(scored.values()), high, cutoff)
+    strong = sum(1 for e in sides[-1] if e.tier in (SourceTier.TIER_1, SourceTier.TIER_2)
+                 and scored[e.evidence_id].weight != 0)
+    return EvidenceScore(total, p, grouped[1], grouped[-1], list(scored.values()), high, cutoff, strong)
 
 
 @dataclass(frozen=True)
@@ -264,14 +275,11 @@ class ScoreDecision:
 
 
 def gate(judge_label: Label, s: EvidenceScore) -> ScoreDecision:
-    """The score can always block a TRUE or FALSE; it never decides MISLEADING or SCAM; an upgrade from
-    NOT_ENOUGH_EVIDENCE goes to the Critic, which accepts it only if the cited items are about the same claim
-    and independent."""
-    proposed = s.score_label
-    if judge_label in (Label.TRUE, Label.FALSE):
-        if proposed != judge_label:
-            return ScoreDecision(Label.NOT_ENOUGH_EVIDENCE, "blocked")
-        return ScoreDecision(judge_label, "kept")
-    if judge_label == Label.NOT_ENOUGH_EVIDENCE and proposed in (Label.TRUE, Label.FALSE):
-        return ScoreDecision(Label.NOT_ENOUGH_EVIDENCE, "to_critic", proposed)
+    """Upgrade-only (decision 50): the score never blocks or changes TRUE, FALSE, MISLEADING or SCAM and never
+    proposes FALSE. It proposes NOT_ENOUGH_EVIDENCE -> TRUE, which only the Critic may accept, when p clears
+    the cutoff, at least two independent origin groups support the claim, and no tier 1 or tier 2 source
+    contradicts it."""
+    if judge_label == Label.NOT_ENOUGH_EVIDENCE and s.p_true >= s.cutoff and len(s.groups_for) >= 2 \
+            and s.strong_against == 0:
+        return ScoreDecision(Label.NOT_ENOUGH_EVIDENCE, "to_critic", Label.TRUE)
     return ScoreDecision(judge_label, "unchanged")

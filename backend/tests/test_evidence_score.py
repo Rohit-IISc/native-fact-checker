@@ -23,7 +23,7 @@ async def test_three_independent_tier1_contradictions_make_false():
     s = await score(Label.FALSE, [], ["a", "b", "c"], pack)
     assert math.isclose(s.score, -9.0)
     assert s.score_label == Label.FALSE and len(s.groups_against) == 3
-    assert sp.gate(Label.FALSE, s).action == "kept"
+    assert sp.gate(Label.FALSE, s).action == "unchanged"  # upgrade-only: never touches FALSE
 
 
 async def test_wire_copies_count_once_plus_extra():
@@ -35,7 +35,7 @@ async def test_wire_copies_count_once_plus_extra():
 
 
 async def test_factcheck_rating_false_weighs_more():
-    pack = [e("f", T1, "BOOM", "Fact check", rating="False", agent="factcheck_sites")]
+    pack = [e("f", T1, "BOOM", "Fact check", rating="False", agent="factcheck_sites")]  # rating agrees: against
     s = await score(Label.FALSE, [], ["f"], pack)
     assert math.isclose(s.score, -3.5)
 
@@ -51,7 +51,7 @@ async def test_single_tier2_cannot_carry_false_and_blocks():
     s = await score(Label.FALSE, [], ["a"], pack)
     assert s.score_label == Label.NOT_ENOUGH_EVIDENCE
     d = sp.gate(Label.FALSE, s)
-    assert d.action == "blocked" and d.label == Label.NOT_ENOUGH_EVIDENCE
+    assert d.action == "unchanged" and d.label == Label.FALSE  # never blocks
 
 
 async def test_high_harm_needs_more():
@@ -93,3 +93,29 @@ async def test_for_verdict_display():
     s = await score(Label.FALSE, [], ["a", "b"], pack)
     pct, agree, against = s.for_verdict(Label.FALSE)
     assert pct == 99 and agree == 2 and against == 0
+
+
+async def test_nee_never_proposes_false():
+    pack = [e("a", T1, "Reuters", "One"), e("b", T1, "AP", "Two")]
+    s = await score(Label.NOT_ENOUGH_EVIDENCE, [], ["a", "b"], pack)
+    assert s.score_label == Label.FALSE and sp.gate(Label.NOT_ENOUGH_EVIDENCE, s).action == "unchanged"
+
+
+async def test_upgrade_needs_two_groups_and_no_strong_contradiction():
+    sup = Stance.SUPPORTS
+    one = [e("a", T1, "Reuters", "Same", stance=sup), e("b", T1, "AP", "Same", stance=sup)]  # one origin
+    s = await score(Label.NOT_ENOUGH_EVIDENCE, ["a", "b"], [], one)
+    assert len(s.groups_for) == 1 and sp.gate(Label.NOT_ENOUGH_EVIDENCE, s).action == "unchanged"
+    pack = [e("a", T1, "Reuters", "One", stance=sup), e("b", T1, "AP", "Two", stance=sup),
+            e("c", T1, "AFP", "Three", stance=sup), e("x", T2, "Paper", "Denial")]
+    s = await score(Label.NOT_ENOUGH_EVIDENCE, ["a", "b", "c"], ["x"], pack)
+    assert s.p_true >= 0.85 and s.strong_against == 1
+    assert sp.gate(Label.NOT_ENOUGH_EVIDENCE, s).action == "unchanged"
+
+
+async def test_context_and_other_claim_fact_checks_count_zero():
+    pack = [e("a", T1, "Reuters", "Background", stance=Stance.CONTEXT),
+            e("f", T1, "BOOM", "Other claim", rating="True", agent="factcheck_sites")]
+    s = await score(Label.TRUE, ["a"], ["f"], pack)  # rated true but placed against: a different claim
+    assert s.score == 0 and s.strong_against == 0
+    assert {i.why for i in s.items} == {"background (CONTEXT)", "fact check of a different claim"}
