@@ -12,3 +12,7 @@ tests/*
 backend/.env
 backend/.env.*
 **/.env.development*
+# Third-party test media, design kits and local runs never leave this machine (rule: repo is public)
+samples/
+artifacts/
+runs/
