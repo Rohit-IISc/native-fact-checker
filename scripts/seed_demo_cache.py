@@ -93,11 +93,16 @@ def media_file(rel: str) -> Path | None:
     return dest
 
 
-async def pin(store, hit: dict | None) -> list[str]:
+DEMO_SET = ("config", "demo_set")  # case id -> pinned verdict ids, read by GET /v1/examples
+
+
+async def pin(store, hit: dict | None, case_id: str) -> list[str]:
     """Pinned verdicts never expire (tier1._usable ignores expires_at for them)."""
     ids = [v["verdict_id"] for v in (hit or {}).get("verdicts") or []]
     for vid in ids:
         await store.set(VERDICTS, vid, {"pinned": True, "expires_at": None}, merge=True)
+    if ids:
+        await store.set(*DEMO_SET, {case_id: ids}, merge=True)
     return ids
 
 
@@ -122,7 +127,7 @@ async def main(seed: bool, tries: int, only: str | None) -> int:
         hit = await harness._tier1_lookup(store, req, keys)
         cached = labels_of(hit)
         if passes(cached, case.expected):
-            await pin(store, hit)
+            await pin(store, hit, case.id)
             rows.append((case.id, "already cached, pinned", "/".join(cached)))
             continue
         if not seed:
@@ -139,7 +144,7 @@ async def main(seed: bool, tries: int, only: str | None) -> int:
             print(f"  {case.id} attempt {attempt}: {got}", flush=True)
             if passes([run.primary_label], case.expected) and run.result and not run.result.degraded:
                 status = f"seeded (attempt {attempt}), pinned"
-                await pin(store, await harness._tier1_lookup(store, req, keys))
+                await pin(store, await harness._tier1_lookup(store, req, keys), case.id)
                 break
             await delete_run(store, req.check_id)
         rows.append((case.id, status, got))

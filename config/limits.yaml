@@ -41,6 +41,12 @@ cache:
   tier2_weak_distance: 0.18
   live_event_active_days: 90
   not_enough_evidence_ttl_days: 3
+examples:  # Home "Try an example": pinned demo shares answered from the cache (scripts/seed_demo_cache.py)
+  - {key: flood_video, case: 01-kn-bengaluru-flood-video}
+  - {key: old_photo, case: 04-hi-delhi-police-dhaka-photo}
+  - {key: fake_quote, case: 09-hi-amit-shah-fake-graphic}
+  - {key: ai_image, case: 10a-en-mumbai-flyover-bus-ai}
+  - {key: scam, case: 06-hi-free-recharge-scheme}
 feed:  # Home "Recent checks" and Trending: shared verdicts only, never a user's post or media
   recent_items: 10
   trending_items: 10

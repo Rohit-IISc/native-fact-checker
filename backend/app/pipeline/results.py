@@ -144,6 +144,7 @@ def claim_result_from_doc(doc: dict[str, Any], language: str | None = None) -> C
         audio_url=(answer or {}).get("audio_url"),
         card_url=card_url(doc["verdict_id"], answer["language"]) if answer else None,
         result_url=result_url(doc["verdict_id"]),
+        checked_at=doc.get("created_at"),
     )
 
 

@@ -26,7 +26,7 @@ from app.models import CheckRequest, CheckResult, MediaRef, Stage
 from app.observability.logging import check_id_var, log_event, setup_logging
 from app.pipeline.dispatch import dispatch
 from app.pipeline.progress import CHECKS, PROGRESS, now_iso
-from app.pipeline.results import VERDICTS, claim_result_from_doc, public_result
+from app.pipeline.results import VERDICTS, cached_result, claim_result_from_doc, public_result
 from app.settings import get_config, get_settings
 from app.store import get_store
 
@@ -268,6 +268,27 @@ async def my_history_stats(user: User = Depends(current_user)) -> dict:
     rows = await get_store().list_recent(f"users/{user.uid}/history", "created_at", 2000, fields=["label"])
     labels = Counter(v.get("label") for _, v in rows)
     return {"checked": len(rows), "by_label": dict(labels)}
+
+
+@app.get("/v1/examples")
+async def examples(user: User = Depends(current_user)) -> dict:
+    """Home "Try an example": the demo shares the cache answers (pinned by scripts/seed_demo_cache.py)."""
+    demo = await get_store().get("config", "demo_set") or {}
+    return {"items": [{"key": e["key"]} for e in get_config().limits.get("examples") or [] if demo.get(e["case"])]}
+
+
+@app.get("/v1/examples/{key}")
+async def example(key: str, user: User = Depends(current_user)) -> dict:
+    """A demo share answered from the cache, like a repeat share; no check is created and no quota used."""
+    store = get_store()
+    case = next((e["case"] for e in get_config().limits.get("examples") or [] if e["key"] == key), None)
+    ids = ((await store.get("config", "demo_set")) or {}).get(case or "") or []
+    docs = [d for d in [await store.get(VERDICTS, i) for i in ids] if d and d.get("status") == "ACTIVE"]
+    if not docs:
+        raise HTTPException(404, detail={"error_code": "NOT_FOUND"})
+    result = cached_result(f"example-{key}", {"non_checkable": None, "verdicts": docs})
+    return {"check_id": result.check_id, "status": "DONE", "stage": "done", "progress": 100,
+            "cache_tier_hit": "T1", "result": result.model_dump(mode="json")}
 
 
 @app.get("/v1/feed/recent")

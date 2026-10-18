@@ -85,3 +85,27 @@ async def test_history_stats(store, llm):
         assert r.json() == {"checked": 4, "by_label": {"FALSE": 2, "SCAM": 1, "TRUE": 1}}
         assert (await c.get("/v1/feed/recent", headers={"Authorization": "Bearer dev:alice"})).status_code == 200
         assert (await c.get("/v1/feed/trending")).status_code == 401
+
+
+async def test_examples_answer_from_pinned_demo_verdicts(store, llm):
+    import httpx
+
+    from app.main import app
+
+    ans = {"language": "kn-IN", "headline": "h", "summary": "s", "what_post_claims": "c", "what_is_true": "t",
+           "evidence_for": [], "evidence_against": [], "confidence_phrase": "p", "sources_spoken": "",
+           "audio_script": "a", "card_lines": []}
+    await verdict(store, "vflood", label="MISLEADING", pinned=True, expires_at=None, claim_type="EVENT",
+                  claim_en="Flood video", confidence=90, band="HIGH", panel_outcome="AGREED", evidence_for_ids=[],
+                  evidence_against_ids=[], answers={"kn-IN": ans, "en": dict(ans, language="en")},
+                  content_language="kn-IN", answer_en_key="en", evidence=[])
+    await store.set("config", "demo_set", {"01-kn-bengaluru-flood-video": ["vflood"]})
+    h = {"Authorization": "Bearer dev:alice"}
+    async with httpx.AsyncClient(transport=httpx.ASGITransport(app=app), base_url="http://test") as c:
+        keys = [i["key"] for i in (await c.get("/v1/examples", headers=h)).json()["items"]]
+        assert keys == ["flood_video"]
+        r = (await c.get("/v1/examples/flood_video", headers=h)).json()
+        assert r["status"] == "DONE" and r["result"]["cache_tier_hit"] == "T1"
+        assert r["result"]["claims"][0]["label"] == "MISLEADING" and r["result"]["claims"][0]["checked_at"]
+        assert (await c.get("/v1/examples/scam", headers=h)).status_code == 404
+        assert (await store.get("users/alice/history", "x")) is None  # no check, no history, no quota

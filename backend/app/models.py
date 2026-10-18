@@ -319,6 +319,7 @@ class ClaimResult(BaseModel):
     audio_url: str | None = None
     card_url: str | None = None
     result_url: str
+    checked_at: str | None = None   # when this verdict was first made (shown on answers from the cache)
 
 
 class CheckResult(BaseModel):
