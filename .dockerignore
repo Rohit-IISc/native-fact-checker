@@ -13,6 +13,6 @@ backend/.env
 backend/.env.*
 **/.env.development*
 # Third-party test media, design kits and local runs never go into an image
-samples/
-artifacts/
-runs/
+samples
+artifacts
+runs
