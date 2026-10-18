@@ -78,6 +78,19 @@ Cost (added Oct 16, after the cost review in docs/13):
 - **On-device Gemma for extraction:** run claim extraction on the phone (Gemma on Android), sending the server
   only the claims and media fingerprints. Cuts the extractor cost and keeps more of the forward on the device.
 
+After submission (added Oct 18, Rohit):
+- **Leaner, smarter agent workflow:** route each claim only to the evidence agents it needs, merge searches,
+  use a cheaper first-pass judge, and route better so fewer answers end as NOT_ENOUGH_EVIDENCE when the
+  evidence exists but was not found or weighed well.
+- **Answers in each reader's display language:** a verdict is written in the language of the checked post,
+  and every user who sees it (Recent checks, Trending, a shared link, a cache hit) gets that language. One
+  user checks a Hindi video; another user who reads only Kannada sees Hindi text and audio. The verdict, claim,
+  audio and all visible text should follow each reader's display language, with the original one tap away.
+  This also fixes "Try an example", whose buttons follow the display language while the answer opens in the
+  original post's language.
+- **Localised Recent checks and Trending:** show each reader the claims checked in their language (or
+  translated into it) first, so the feed is not crowded with languages they do not read.
+
 Evidence score (added Oct 18, decision 50):
 - **Independence grouping:** replace embedding similarity with shared exact sentences (long n-gram overlap)
   plus wire bylines (PTI/IANS/ANI) and identical lead paragraphs; independent newsrooms on one event score
