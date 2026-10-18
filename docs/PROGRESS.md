@@ -10,6 +10,21 @@ Updated after every task (see CLAUDE.md, "How to work"). Newest state only; hist
 **Audio samples for native speakers:** https://claude.ai/artifact/3uKEHUsp5hdXoVFo87SJeo (private; share it).
 
 
+
+## Oct 18: submission day
+
+- Phase A (branch `scoring/evidence-score`, not live): evidence score in `verify/source_policy.py`, weights in
+  `config/source_tiers.yaml` (initial, to be calibrated), replay in `docs/replay-evidence-score.md`. Final
+  config: 0 blocks, 3 NEE to the Critic (1 matches gold). Grouping by embeddings above 0.9 merges independent
+  outlets; a fact-check rating can belong to a different claim. Live gating waits until after 7 Nov.
+- Phase B (main): demo verdicts pinned (18 cases, no expiry); `seed_demo_cache.py --check` as Cloud Run Job
+  `demo-cache-check`, daily 06:00 IST, media from private `gs://ai-builder-2026-eval/demo-media/`; 12 junk
+  verdicts deleted (stubs, early tests); min instances 1 (deploy script default during judging); README for
+  judges and Apache 2.0 LICENSE; examples API live, "Try an example" UI on branch `ui/try-example` (preview).
+- gitleaks: 58 commits, no leaks. check-models and TTS OK.
+- After submission: tag `submitted`; only critical fixes on main until 7 Nov. Set min instances back to 0
+  after 7 Nov (`deploy_backend.sh` default) and pause `demo-cache-check-daily`.
+
 ## Oct 16 night: UI brief rounds 1-3 live (Bazaar Bright), sign-in on chckr.web.app
 
 - Live on chckr.web.app: landing with instant language chips; header language button (language list only);
