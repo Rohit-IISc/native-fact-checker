@@ -79,6 +79,9 @@ Cost (added Oct 16, after the cost review in docs/13):
   only the claims and media fingerprints. Cuts the extractor cost and keeps more of the forward on the device.
 
 Evidence score (added Oct 18, decision 50):
+- **Independence grouping:** replace embedding similarity with shared exact sentences (long n-gram overlap)
+  plus wire bylines (PTI/IANS/ANI) and identical lead paragraphs; independent newsrooms on one event score
+  0.91-0.93 on embeddings, so embeddings can't separate copies from independent reporting.
 - **Fit the weights by logistic regression** on the gold set plus agreed verdicts (features: tier, fact-check
   rating, direction, group size), replacing the initial hand-set weights; then turn on live gating.
 
