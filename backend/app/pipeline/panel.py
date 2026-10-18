@@ -20,6 +20,7 @@ class PanelDecision:
     outcome: PanelOutcome
     policy_reason: str | None = None
     split_readings: list[str] | None = None
+    evidence_score: dict | None = None   # {score, reports, against}, only where the score was used (decision 50)
 
 
 # Which stances may back each decisive label. CONTEXT can back any (an old photo's real origin is CONTEXT

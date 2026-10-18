@@ -14,9 +14,13 @@ cited to explain what the item is, but are ignored when counting: they never sat
 """
 from __future__ import annotations
 
+import math
+import re
+from collections.abc import Awaitable, Callable
 from dataclasses import dataclass
 
-from app.models import Evidence, JudgeVerdict, Label, SourceTier, Stance
+from app.models import ClaimType, Evidence, JudgeVerdict, Label, SourceTier, Stance
+from app.settings import get_config
 from app.verify.source_tiers import host_of
 
 DECISIVE = {Label.TRUE, Label.FALSE, Label.MISLEADING, Label.SCAM}
@@ -73,3 +77,209 @@ def apply(verdict: JudgeVerdict, evidence: list[Evidence]) -> tuple[JudgeVerdict
         "reasoning_en": f"{verdict.reasoning_en}\n[Source policy: {result.reason}]",
     })
     return downgraded, result
+
+
+# ---------- Evidence score (decision 50; replay only until after judging) ----------
+#
+# A deterministic log-odds score over the evidence the Judge placed for and against the claim. The Judge
+# still decides stance and same-claim matching (which items go in evidence_for_ids / evidence_against_ids)
+# and MISLEADING / SCAM; the score can block a TRUE or FALSE, and can propose an upgrade from
+# NOT_ENOUGH_EVIDENCE that only the Critic may accept. Weights: config/source_tiers.yaml evidence_score.
+
+
+
+Embedder = Callable[[list[str]], Awaitable[list[list[float]]]]
+
+
+@dataclass(frozen=True)
+class ScoredItem:
+    evidence_id: str
+    direction: int        # +1 supports the claim, -1 contradicts it
+    weight: float         # signed log-odds contribution before grouping
+    why: str
+
+
+@dataclass(frozen=True)
+class EvidenceScore:
+    score: float                      # log-odds that the claim is true
+    p_true: float
+    groups_for: list[list[str]]       # independent groups of evidence ids, strongest first
+    groups_against: list[list[str]]
+    items: list[ScoredItem]
+    high_harm: bool
+    cutoff: float
+    strong_against: int = 0           # tier 1 or tier 2 items that contradict the claim (weight != 0)
+
+    @property
+    def score_label(self) -> Label:
+        if self.p_true >= self.cutoff:
+            return Label.TRUE
+        if self.p_true <= 1 - self.cutoff:
+            return Label.FALSE
+        return Label.NOT_ENOUGH_EVIDENCE
+
+    def for_verdict(self, label: Label) -> tuple[int, int, int]:
+        """(score out of 100 for the verdict, independent reports agreeing, independent reports against).
+        Shown between 1 and 99: evidence never makes an answer certain."""
+        def pct(p: float) -> int:
+            return min(99, max(1, round(100 * p)))
+
+        if label == Label.TRUE:
+            return pct(self.p_true), len(self.groups_for), len(self.groups_against)
+        if label in (Label.FALSE, Label.MISLEADING, Label.SCAM):
+            return pct(1 - self.p_true), len(self.groups_against), len(self.groups_for)
+        fors, againsts = len(self.groups_for), len(self.groups_against)
+        return pct(max(self.p_true, 1 - self.p_true)), max(fors, againsts), min(fors, againsts)
+
+
+def _cfg() -> dict:
+    return get_config().source_tiers["evidence_score"]
+
+
+def is_high_harm(claim_type: ClaimType | str | None, claim_en: str) -> bool:
+    cfg = _cfg()
+    ct = claim_type.value if isinstance(claim_type, ClaimType) else (claim_type or "")
+    if ct in cfg["high_harm_claim_types"]:
+        return True
+    if ct == ClaimType.EVENT.value:
+        text = claim_en.lower()
+        return any(re.search(rf"\b{re.escape(t)}(s|es|ed|ing)?\b", text) for t in cfg["high_harm_event_terms"])
+    return False
+
+
+def _rating(text: str | None) -> int:
+    """+1 a fact check rated the claim true, -1 rated it false (or misleading, altered...), 0 no rating."""
+    if not text:
+        return 0
+    t = text.lower()
+    cfg = _cfg()
+    if any(re.search(rf"\b{re.escape(w)}\b", t) for w in cfg["factcheck_false_words"]):
+        return -1
+    if any(re.search(rf"\b{re.escape(w)}\b", t) for w in cfg["factcheck_true_words"]):
+        return 1
+    return 0
+
+
+def item_weight(ev: Evidence, direction: int, discounted_domains: set[str]) -> ScoredItem:
+    """Only evidence the Judge placed for or against the claim reaches here (its same-claim matching).
+    Background (CONTEXT) items count 0. A fact check counts only when its rating agrees with the side the
+    Judge put it on; otherwise it reviewed a different claim (Chandrayaan: "China landed first" rated false,
+    placed against "India landed first") and counts 0."""
+    cfg = _cfg()
+    table = cfg["support"] if direction > 0 else cfg["contradict"]
+    if ev.stance == Stance.CONTEXT:
+        return ScoredItem(ev.evidence_id, direction, 0.0, "background (CONTEXT)")
+    w = float(table.get(ev.tier.value, 0.0))
+    why = ev.tier.value
+    rating = _rating(ev.rating_text)
+    if rating and ev.tier != SourceTier.NOT_A_SOURCE:
+        if rating != direction:
+            return ScoredItem(ev.evidence_id, direction, 0.0, "fact check of a different claim")
+        key = "factcheck_true" if direction > 0 else "factcheck_false"
+        w = max(w, float(table[key])) if direction > 0 else min(w, float(table[key]))
+        why = "fact check rated true" if direction > 0 else "fact check rated false"
+    host = host_of(ev.domain or ev.url or "")
+    if direction > 0 and host and host in discounted_domains:
+        w, why = 0.0, "repeat offender or young domain"
+    return ScoredItem(ev.evidence_id, direction, w, why)
+
+
+def _norm_title(t: str | None) -> str:
+    return re.sub(r"[^a-z0-9]+", " ", (t or "").lower()).strip()[:80]
+
+
+def _cites(a: Evidence, b: Evidence) -> bool:
+    """a names b's publisher or domain (e.g. a report 'according to PTI')."""
+    text = f"{a.title or ''} {a.snippet_en}".lower()
+    names = {n for n in ((b.publisher or "").lower().split("(")[0].strip(), host_of(b.domain or b.url or "")) if n}
+    return any(len(n) >= 3 and re.search(rf"\b{re.escape(n)}\b", text) for n in names)
+
+
+def _cosine(u: list[float], v: list[float]) -> float:
+    dot = sum(x * y for x, y in zip(u, v, strict=False))
+    nu, nv = math.sqrt(sum(x * x for x in u)), math.sqrt(sum(x * x for x in v))
+    return dot / (nu * nv) if nu and nv else 0.0
+
+
+async def group_same_origin(items: list[Evidence], embed: Embedder | None) -> list[list[Evidence]]:
+    """Union of: same normalized title, embedding similarity above the threshold, one citing the other."""
+    n = len(items)
+    parent = list(range(n))
+
+    def find(i: int) -> int:
+        while parent[i] != i:
+            parent[i] = parent[parent[i]]
+            i = parent[i]
+        return i
+
+    def union(i: int, j: int) -> None:
+        parent[find(i)] = find(j)
+
+    vecs: list[list[float]] | None = None
+    if embed and n > 1:
+        try:
+            vecs = await embed([f"{e.title or ''}. {e.snippet_en}" for e in items])
+        except Exception:  # noqa: BLE001  grouping falls back to titles and citations
+            vecs = None
+    threshold = float(_cfg()["same_origin_similarity"])
+    for i in range(n):
+        for j in range(i + 1, n):
+            a, b = items[i], items[j]
+            same_title = _norm_title(a.title) and _norm_title(a.title) == _norm_title(b.title)
+            similar = vecs is not None and _cosine(vecs[i], vecs[j]) > threshold
+            if same_title or similar or _cites(a, b) or _cites(b, a):
+                union(i, j)
+    groups: dict[int, list[Evidence]] = {}
+    for i, e in enumerate(items):
+        groups.setdefault(find(i), []).append(e)
+    return list(groups.values())
+
+
+async def evidence_score(verdict: JudgeVerdict, evidence: list[Evidence], *, claim_type: ClaimType | str | None,
+                         claim_en: str, discounted_domains: set[str] | None = None,
+                         embed: Embedder | None = None) -> EvidenceScore:
+    cfg = _cfg()
+    by_id = {e.evidence_id: e for e in evidence if e.agent != "media_itself"}
+    discounted = discounted_domains or set()
+    scored: dict[str, ScoredItem] = {}
+    sides: dict[int, list[Evidence]] = {1: [], -1: []}
+    for direction, ids in ((1, verdict.evidence_for_ids), (-1, verdict.evidence_against_ids)):
+        for i in dict.fromkeys(ids):
+            if i in by_id and i not in scored:
+                scored[i] = item_weight(by_id[i], direction, discounted)
+                sides[direction].append(by_id[i])
+    extra = float(cfg["extra_in_group"])
+    total = 0.0
+    grouped: dict[int, list[list[str]]] = {1: [], -1: []}
+    for direction, items in sides.items():
+        for group in await group_same_origin(items, embed):
+            weights = sorted((scored[e.evidence_id].weight for e in group), key=abs, reverse=True)
+            if weights[0] == 0:
+                continue  # nothing credible in this group (social posts, discounted domains)
+            total += weights[0] + direction * extra * (len(group) - 1)
+            grouped[direction].append([e.evidence_id for e in sorted(
+                group, key=lambda e: abs(scored[e.evidence_id].weight), reverse=True)])
+    high = is_high_harm(claim_type, claim_en)
+    cutoff = float(cfg["cutoffs"]["high_harm" if high else "other"])
+    p = 1 / (1 + math.exp(-total))
+    strong = sum(1 for e in sides[-1] if e.tier in (SourceTier.TIER_1, SourceTier.TIER_2)
+                 and scored[e.evidence_id].weight != 0)
+    return EvidenceScore(total, p, grouped[1], grouped[-1], list(scored.values()), high, cutoff, strong)
+
+
+@dataclass(frozen=True)
+class ScoreDecision:
+    label: Label            # what the verdict would become with gating on
+    action: str             # kept, blocked, to_critic, unchanged
+    proposed: Label | None = None
+
+
+def gate(judge_label: Label, s: EvidenceScore) -> ScoreDecision:
+    """Upgrade-only (decision 50): the score never blocks or changes TRUE, FALSE, MISLEADING or SCAM and never
+    proposes FALSE. It proposes NOT_ENOUGH_EVIDENCE -> TRUE, which only the Critic may accept, when p clears
+    the cutoff, at least two independent origin groups support the claim, and no tier 1 or tier 2 source
+    contradicts it."""
+    if judge_label == Label.NOT_ENOUGH_EVIDENCE and s.p_true >= s.cutoff and len(s.groups_for) >= 2 \
+            and s.strong_against == 0:
+        return ScoreDecision(Label.NOT_ENOUGH_EVIDENCE, "to_critic", Label.TRUE)
+    return ScoreDecision(judge_label, "unchanged")

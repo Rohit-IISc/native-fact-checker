@@ -68,6 +68,7 @@ class PanelOutcome(str, Enum):
     SPLIT = "SPLIT"
     POLICY_DOWNGRADE = "POLICY_DOWNGRADE"
     CACHED = "CACHED"
+    UPGRADED_BY_SCORE = "UPGRADED_BY_SCORE"   # NOT_ENOUGH_EVIDENCE -> TRUE: evidence score + Critic (decision 50)
 
 
 # ---------- Intake and extraction ----------
@@ -268,6 +269,13 @@ class CriticReview(BaseModel):
     objections_en: list[str] = []
 
 
+class ScoreUpgradeReview(BaseModel):
+    accept: bool
+    kept_ids: list[str] = []
+    what_is_true_en: str = ""
+    reason_en: str = ""
+
+
 class CriticOutput(BaseModel):
     reviews: list[CriticReview]
 
@@ -302,6 +310,12 @@ class ComposerOutput(BaseModel):
     english: AnswerText
 
 
+class EvidenceScoreView(BaseModel):
+    score: int
+    reports: int
+    against: int
+
+
 class ClaimResult(BaseModel):
     verdict_id: str
     claim_original: str
@@ -320,6 +334,9 @@ class ClaimResult(BaseModel):
     card_url: str | None = None
     result_url: str
     checked_at: str | None = None   # when this verdict was first made (shown on answers from the cache)
+    # Only where the evidence score upgraded the verdict (decision 50): score out of 100, independent reports
+    # agreeing, reports against.
+    evidence_score: EvidenceScoreView | None = None
 
 
 class CheckResult(BaseModel):

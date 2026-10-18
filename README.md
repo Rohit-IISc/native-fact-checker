@@ -39,7 +39,9 @@ wires and official sources are tier 1; established news is tier 2; social media 
 **Guardrails:**
 - The source policy is code, not a prompt ([`backend/app/verify/source_policy.py`](backend/app/verify/source_policy.py)):
   no TRUE, FALSE, MISLEADING or SCAM without 1 tier 1 or 2 independent tier 2 sources that confirm or
-  contradict the claim; otherwise the answer is "Not confirmed".
+  contradict the claim; otherwise the answer is "Not confirmed". One narrow exception for low-harm claims: an
+  evidence-score upgrade (at least two independent reports, none credible against, and the Critic agrees) can
+  turn "Not confirmed" into TRUE ([decision 50](docs/16-decisions-log.md)). It never changes any other answer.
 - Two reviewers: a Judge (Gemini 3.1 Pro) sees only the evidence pack, never the post's persuasion; a Critic
   checks the Judge. If they disagree, the answer is "Not confirmed" with both readings and all evidence shown.
 - It abstains when evidence is thin, and every answer lists evidence for and against.

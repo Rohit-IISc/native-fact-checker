@@ -157,7 +157,11 @@
     "shareWhatsApp": "வாட்ஸ்அப்",
     "shareCardShort": "கார்டு",
     "copyLinkShort": "இணைப்பை நகலெடு",
-    "showNativeShort": "மூல மொழி"
+    "showNativeShort": "மூல மொழி",
+    "evidenceScore": "சான்று மதிப்பெண்: 100-இல் {{score}}",
+    "independentReports_one": "{{count}} தனி அறிக்கை",
+    "independentReports_other": "{{count}} தனி அறிக்கைகள்",
+    "againstCount": "{{count}} எதிராக"
   },
   "limit": {
     "title": "சரிபார்ப்புகள் தீர்ந்தன",

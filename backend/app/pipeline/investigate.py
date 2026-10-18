@@ -25,6 +25,7 @@ from app.agents import (
     packager,
     panel_agents,
     same_media,
+    score_upgrade,
     source_credibility,
     web_search,
 )
@@ -197,6 +198,30 @@ async def run_panel(llm: LLM, claims: list[Claim], pack: EvidencePack, budget: B
     return decisions
 
 
+async def _score_upgrades(llm: LLM, claims: list[Claim], inv: Investigation, budget: Budget) -> None:
+    """Decision 50, upgrade-only: a NOT_ENOUGH_EVIDENCE claim may become TRUE if the evidence score and the
+    Critic both agree and the source policy passes. Never changes any other label."""
+    if not inv.pack:
+        return
+    for c in claims:
+        d = inv.decisions.get(c.claim_id)
+        if not d or d.verdict.label != Label.NOT_ENOUGH_EVIDENCE:
+            continue
+        try:
+            up = await score_upgrade.run(llm, c, d.verdict, d.outcome, inv.pack.evidence, budget.stage("score_upgrade"))
+        except Exception as e:  # noqa: BLE001  an upgrade attempt must never take the check down
+            log.exception("score upgrade crashed", exc_info=e)
+            inv.stage_errors["score_upgrade"] = repr(e)[:300]
+            continue
+        if up:
+            verdict, s = up
+            pct, reports, against = s.for_verdict(Label.TRUE)
+            inv.decisions[c.claim_id] = PanelDecision(verdict, PanelOutcome.UPGRADED_BY_SCORE,
+                                                      evidence_score={"score": pct, "reports": reports,
+                                                                      "against": against})
+            inv.prompt_versions["score_upgrade"] = load_prompt(score_upgrade.PROMPT).version
+
+
 # ---------- entry ----------
 
 async def investigate(store: Store, llm: LLM, tools: Tools, req: CheckRequest, extraction: Extraction,
@@ -229,6 +254,7 @@ async def investigate(store: Store, llm: LLM, tools: Tools, req: CheckRequest, e
 
     await set_stage(store, req.check_id, Stage.JUDGING)
     inv.decisions = await timed("judging", run_panel(llm, claims, inv.pack, budget, inv))
+    await timed("score_upgrade", _score_upgrades(llm, claims, inv, budget))
 
     await set_stage(store, req.check_id, Stage.COMPOSING)
 

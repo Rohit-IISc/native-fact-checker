@@ -80,6 +80,7 @@ stage_models:
   judge_revision: pro
   composer: flash
   same_media: flash              # second look at background items for claims about the post's own media
+  score_upgrade: pro             # the Critic's check on an evidence-score upgrade (decision 50)
   translator: flash
   panel_timeout_fallback: flash
   eval_query: flash            # eval runner only: restate a benchmark claim in another language

@@ -157,7 +157,11 @@
     "shareWhatsApp": "WhatsApp",
     "shareCardShort": "Kartu",
     "copyLinkShort": "Salin tautan",
-    "showNativeShort": "Bahasa asli"
+    "showNativeShort": "Bahasa asli",
+    "evidenceScore": "Skor bukti: {{score}} dari 100",
+    "independentReports_one": "{{count}} laporan independen",
+    "independentReports_other": "{{count}} laporan independen",
+    "againstCount": "{{count}} menyangkal"
   },
   "limit": {
     "title": "Cek habis",

@@ -157,7 +157,11 @@
     "shareWhatsApp": "ವಾಟ್ಸಾಪ್",
     "shareCardShort": "ಕಾರ್ಡ್",
     "copyLinkShort": "ಲಿಂಕ್ ನಕಲಿಸಿ",
-    "showNativeShort": "ಮೂಲ ಭಾಷೆ"
+    "showNativeShort": "ಮೂಲ ಭಾಷೆ",
+    "evidenceScore": "ಸಾಕ್ಷ್ಯ ಅಂಕ: 100ರಲ್ಲಿ {{score}}",
+    "independentReports_one": "{{count}} ಸ್ವತಂತ್ರ ವರದಿ",
+    "independentReports_other": "{{count}} ಸ್ವತಂತ್ರ ವರದಿಗಳು",
+    "againstCount": "{{count}} ವಿರುದ್ಧ"
   },
   "limit": {
     "title": "ಪರಿಶೀಲನೆಗಳು ಮುಗಿದಿವೆ",

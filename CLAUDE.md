@@ -31,7 +31,7 @@ Out of scope for the prototype: bank SMS and phishing, scam checker agent, human
 
 ## Non-negotiable rules
 
-1. No TRUE, FALSE, MISLEADING or SCAM verdict without credible sources. The source policy in `docs/09-source-credibility.md` is enforced in code (`source_policy.py`), not only in prompts. If the policy fails, the verdict becomes NOT_ENOUGH_EVIDENCE.
+1. No TRUE, FALSE, MISLEADING or SCAM verdict without credible sources. The source policy in `docs/09-source-credibility.md` is enforced in code (`source_policy.py`), not only in prompts. If the policy fails, the verdict becomes NOT_ENOUGH_EVIDENCE. One exception (decision 50, Oct 18): for a low-harm claim, an evidence-score upgrade from NOT_ENOUGH_EVIDENCE to TRUE (p >= 0.85, at least 2 independent origin groups, no tier 1 or tier 2 source against, and the Critic agrees) satisfies the policy in place of the 1 tier 1 / 2 tier 2 rule. High-harm claims keep the rule unchanged.
 2. Social media posts, forums and video platforms are never a primary source (X, Reddit, Facebook, Instagram, YouTube uploads by non-official channels, Telegram, ShareChat, WhatsApp).
 3. The Judge sees only the evidence pack, never the raw post's persuasion. The Critic sees the evidence pack and the Judge's output.
 4. Every verdict lists evidence for and evidence against, even when confident.

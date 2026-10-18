@@ -25,6 +25,7 @@ timeouts_s:
   judge: 45                     # Oct 16: 30 cut off 2 of 24 3.1 Pro judge calls; still capped by the 90 s total budget
   critic: 20
   judge_revision: 20
+  score_upgrade: 20             # Critic check of an evidence-score upgrade, NOT_ENOUGH_EVIDENCE only (decision 50)
   composer: 20                  # measured 7-18 s (hedged at 9 s)
   tts: 40                       # Gemini TTS measured 18-24 s per 60-80 word answer (Oct 7); runs after DONE
   card: 12

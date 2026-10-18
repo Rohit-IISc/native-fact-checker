@@ -59,6 +59,7 @@ async def persist_verdict(
     policy_reason: str | None = None,
     split_readings: list[str] | None = None,
     is_stub: bool = False,
+    evidence_score: dict[str, int] | None = None,
 ) -> str:
     now = datetime.now(UTC)
     verdict_id = ulid()
@@ -100,6 +101,8 @@ async def persist_verdict(
         "prompt_versions": prompt_versions,
         "is_stub": is_stub,
     }
+    if evidence_score:  # only where the evidence score was used (decision 50, upgrade-only)
+        doc["evidence_score"] = evidence_score
     await store.set(VERDICTS, verdict_id, doc)
     await store.set(CLAIMS, f"{verdict_id}_{claim.claim_id}", {
         "verdict_id": verdict_id,
@@ -145,6 +148,7 @@ def claim_result_from_doc(doc: dict[str, Any], language: str | None = None) -> C
         card_url=card_url(doc["verdict_id"], answer["language"]) if answer else None,
         result_url=result_url(doc["verdict_id"]),
         checked_at=doc.get("created_at"),
+        evidence_score=doc.get("evidence_score"),
     )
 
 
@@ -181,6 +185,7 @@ def public_result(doc: dict[str, Any], language: str | None) -> dict[str, Any]:
         ],
         "evidence_for_ids": cr.evidence_for_ids,
         "evidence_against_ids": cr.evidence_against_ids,
+        "evidence_score": cr.evidence_score.model_dump() if cr.evidence_score else None,
         "ai_generation": cr.ai_generation.model_dump(mode="json") if cr.ai_generation else None,
         "audio_url": cr.audio_url,
         "card_url": cr.card_url,

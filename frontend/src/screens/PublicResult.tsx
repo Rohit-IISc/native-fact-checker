@@ -27,7 +27,7 @@ export function PublicResult() {
         <ClaimCard
           claim={{ label: result.label, confidence: result.confidence, result_url: window.location.href,
                    panel_outcome: result.panel_outcome, evidence_for_ids: result.evidence_for_ids,
-                   evidence_against_ids: result.evidence_against_ids }}
+                   evidence_against_ids: result.evidence_against_ids, evidence_score: result.evidence_score }}
           answer={result.answer}
           answerEn={result.answer_en}
           audioUrl={result.audio_url}
