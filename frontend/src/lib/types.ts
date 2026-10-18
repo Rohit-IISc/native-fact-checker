@@ -62,6 +62,8 @@ export interface ClaimResult {
   audio_url?: string | null
   card_url?: string | null
   result_url: string
+  /** When this verdict was first made (answers from the cache show it). */
+  checked_at?: string | null
 }
 
 export interface CheckResult {

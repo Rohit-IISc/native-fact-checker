@@ -157,7 +157,8 @@
     "shareWhatsApp": "WhatsApp",
     "shareCardShort": "Kartu",
     "copyLinkShort": "Salin tautan",
-    "showNativeShort": "Bahasa asli"
+    "showNativeShort": "Bahasa asli",
+    "cachedOn": "Dijawab dari cek sebelumnya · {{date}}"
   },
   "limit": {
     "title": "Cek habis",
@@ -310,5 +311,18 @@
     "factcheck_sites": "Cek fakta",
     "source_credibility": "Sumber",
     "media_provenance": "Gambar"
+  },
+  "examples": {
+    "title": "Coba contoh",
+    "note": "Pesan terusan asli yang sudah kami cek. Jawabannya langsung muncul dan tidak memakai jatah cek harian Anda.",
+    "tag": "Contoh: {{name}}",
+    "back": "Kembali ke Beranda",
+    "items": {
+      "flood_video": "Video banjir",
+      "old_photo": "Foto lama",
+      "fake_quote": "Kutipan palsu",
+      "ai_image": "Gambar AI",
+      "scam": "Pesan penipuan"
+    }
   }
 }

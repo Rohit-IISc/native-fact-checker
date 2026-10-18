@@ -273,14 +273,26 @@ export function ClaimCard({
 }
 
 export function ResultView({ result, onFeedback }: { result: CheckResult; onFeedback?: (helpful: boolean) => void }) {
-  const { t } = useTranslation()
+  const { t, i18n } = useTranslation()
   // Part of the answer, so in the post's language; the display language if we could not read the post.
   const { t: tc } = useTranslation(undefined, { lng: contentLng(result.content_language) })
   const [sent, setSent] = useState(false)
 
   return (
     <div className="result">
-      {result.cache_tier_hit !== 'NONE' && <p className="pill">{t('result.cached')}</p>}
+      {result.cache_tier_hit !== 'NONE' && (
+        <p className="pill">
+          {result.claims[0]?.checked_at
+            ? t('result.cachedOn', {
+                date: new Date(result.claims[0].checked_at).toLocaleDateString(i18n.resolvedLanguage, {
+                  day: 'numeric',
+                  month: 'short',
+                  year: 'numeric',
+                }),
+              })
+            : t('result.cached')}
+        </p>
+      )}
       {result.media_missing_prompt && (
         <p className="card notice" role="status" lang={result.content_language ?? undefined}>
           {tc('result.mediaMissing')}

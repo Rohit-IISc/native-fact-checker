@@ -157,7 +157,8 @@
     "shareWhatsApp": "व्हाट्सऐप",
     "shareCardShort": "कार्ड",
     "copyLinkShort": "लिंक कॉपी",
-    "showNativeShort": "मूल भाषा"
+    "showNativeShort": "मूल भाषा",
+    "cachedOn": "पहले की जाँच से जवाब · {{date}}"
   },
   "limit": {
     "title": "आज की जाँचें खत्म",
@@ -310,5 +311,18 @@
     "factcheck_sites": "फ़ैक्ट-चेक",
     "source_credibility": "स्रोत",
     "media_provenance": "तस्वीर"
+  },
+  "examples": {
+    "title": "कोई उदाहरण आज़माएँ",
+    "note": "पहले जाँचे गए असली फ़ॉरवर्ड। जवाब तुरंत मिलता है और आपकी रोज़ की जाँच नहीं घटती।",
+    "tag": "उदाहरण: {{name}}",
+    "back": "होम पर वापस",
+    "items": {
+      "flood_video": "बाढ़ का वीडियो",
+      "old_photo": "पुरानी तस्वीर",
+      "fake_quote": "नकली बयान",
+      "ai_image": "AI तस्वीर",
+      "scam": "धोखे वाला मैसेज"
+    }
   }
 }

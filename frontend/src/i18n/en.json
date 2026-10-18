@@ -157,7 +157,8 @@
     "shareWhatsApp": "WhatsApp",
     "shareCardShort": "Card",
     "copyLinkShort": "Copy link",
-    "showNativeShort": "Original"
+    "showNativeShort": "Original",
+    "cachedOn": "Answered from an earlier check · {{date}}"
   },
   "limit": {
     "title": "Checks used up",
@@ -310,5 +311,18 @@
     "factcheck_sites": "Fact sites",
     "source_credibility": "Source",
     "media_provenance": "Image"
+  },
+  "examples": {
+    "title": "Try an example",
+    "note": "Real forwards we checked earlier. They answer instantly and do not use your daily checks.",
+    "tag": "Example: {{name}}",
+    "back": "Back to Home",
+    "items": {
+      "flood_video": "Flood video",
+      "old_photo": "Old photo",
+      "fake_quote": "Fake quote",
+      "ai_image": "AI image",
+      "scam": "Scam message"
+    }
   }
 }
