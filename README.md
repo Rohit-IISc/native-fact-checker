@@ -8,18 +8,21 @@ Hindi, Tamil, Kannada, Indonesian and English.
 
 ## For judges
 
-**Sign in** with any Google account. Each account gets **10 checks a day** (answers from the cache and the
-examples below do not use them). The app is a PWA and works best on an Android phone; it also works in a
-desktop browser.
+**Sign in** with any Google account. Each account gets **10 checks a day**. The app is a PWA and works best on
+an Android phone; it also works in a desktop browser.
 
 **Install and share from WhatsApp (Android):**
 1. Open https://chckr.web.app in Chrome, sign in, then menu ⋮ → **Install app** (or "Add to Home screen").
 2. In WhatsApp, long-press a message, photo or video → **Share** → pick **CHCKR**.
 3. Watch the live progress screen, or leave it: a notification arrives when the answer is ready (about
-   40 to 60 seconds for a new claim; a forward that was checked before answers in a second or two).
+   40 to 70 seconds for a new claim; a forward that was checked before answers in a second or two).
 
-**Try an example:** the Home screen has five buttons (Flood video, Old photo, Fake quote, AI image, Scam
-message) that answer real, earlier-checked shares from the cache.
+**The shared cache builds over time.** The cache was cleared on submission day (Oct 18), so it starts empty
+and fills as people check things: the first check of a claim runs the full pipeline (about 40 to 70 seconds),
+and every later share of the same or a slightly edited post, by anyone, is answered from the cache in a
+second or two, translated into the new post's language if needed. Recent checks and Trending on Home fill the
+same way. (The Home screen's "Try an example" buttons appear only when the demo set is seeded with
+`scripts/seed_demo_cache.py --seed`.)
 
 **Paste one of these into the Home box** (expected labels from our acceptance cases):
 
