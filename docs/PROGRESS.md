@@ -34,7 +34,7 @@ Live on production:
   check now block samples/artifacts/runs as folders or links.
 
 Cache: **cleared after submission at Rohit's request** (all verdicts, claim index, cache keys, image
-fingerprints, demo set, audio and cards). It builds over time from judges' checks. `demo-cache-check-daily`
+fingerprints, demo set, audio and cards). It builds over time from judges' checks. **Cleared again on Oct 24** at Rohit's request (8 verdicts, 8 claims, 1 cache key, 24 image fingerprints, 8 audio files); check records, history, quotas, users and sources kept. `demo-cache-check-daily`
 (Cloud Run Job `demo-cache-check`, demo media in private `gs://ai-builder-2026-eval/demo-media/`) is
 **paused**; resume with `gcloud scheduler jobs resume demo-cache-check-daily --location=asia-south1`, or seed
 once with `scripts/seed_demo_cache.py --seed` (about 30 min, about 2.50 USD).
