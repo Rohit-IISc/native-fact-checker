@@ -8,11 +8,11 @@ Hindi, Tamil, Kannada, Indonesian and English.
 
 ## For judges
 
-**Sign in** with any Google account. Each account gets **10 checks a day**. The app is a PWA and works best on
+**Continue as guest** with no sign-in, or **sign in** with any Google account. Each guest or account gets **10 checks a day**. The app is a PWA and works best on
 an Android phone; it also works in a desktop browser.
 
 **Install and share from WhatsApp (Android):**
-1. Open https://chckr.web.app in Chrome, sign in, then menu ⋮ → **Install app** (or "Add to Home screen").
+1. Open https://chckr.web.app in Chrome, continue as guest or sign in, then menu ⋮ → **Install app** (or "Add to Home screen").
 2. In WhatsApp, long-press a message, photo or video → **Share** → pick **CHCKR**.
 3. Watch the live progress screen, or leave it: a notification arrives when the answer is ready (about
    40 to 70 seconds for a new claim; a forward that was checked before answers in a second or two).

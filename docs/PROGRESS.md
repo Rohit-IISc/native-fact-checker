@@ -11,13 +11,15 @@ Updated after every task (see CLAUDE.md, "How to work"). Newest state only; hist
 
 
 
-## Nov 1: guest mode on preview, not live (branch `ui/guest-mode`, not pushed)
+## Nov 1: guest access live (critical fix, decision 51)
 
-"Continue as guest" (Firebase Anonymous Auth) next to Google sign-in; one-line notice in place of a consent step for
-guests; frontend only (`lib/auth.tsx`, `App.tsx`, `Welcome.tsx`, `LanguageSheet.tsx`, i18n in 5 languages).
-Preview: https://chckr--guest-mode-ov7wyg9b.web.app (expires Nov 8). Live site unchanged.
-Next step: Rohit enables the Anonymous provider and allows the preview host on the browser API key, then tests on Android.
-Hindi, Tamil and Kannada strings need native review. Decision 26 (mandatory sign-in) to be updated if this ships.
+"Continue as guest" (Firebase Anonymous Auth) next to Google sign-in, so judges can use the app without signing in or
+revealing their identity. One-line notice in place of a consent step for guests. Frontend only
+(`lib/auth.tsx`, `App.tsx`, `Welcome.tsx`, `LanguageSheet.tsx`, i18n in 5 languages), deployed with
+`firebase deploy --only hosting:app`; no backend or pipeline change.
+Tested by Rohit on the preview channel: guest flow works. Google sign-in could not be tested there (preview host not
+allowed for it). Hindi, Tamil and Kannada strings still need native review.
+Cache: Rohit's Nov 1 test check removed (2 verdicts, 2 claims, 1 cache key, 2 audio files).
 
 ## Oct 18: submitted (tag `submitted` on 6f6c666)
 

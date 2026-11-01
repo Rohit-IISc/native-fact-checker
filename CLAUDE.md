@@ -17,7 +17,7 @@ Follow `docs/12-build-plan.md` day by day. If a day slips, cut scope in the orde
 
 In scope:
 - Android-first PWA on Firebase Hosting with Web Share Target (appears in the Android share sheet, including WhatsApp)
-- Mandatory Google sign-in, 10 checks per user per day, check history
+- Google sign-in or guest access (decision 51), 10 checks per user per day, check history
 - Inputs: text, up to 10 images, one video or audio up to 3 minutes, links. Max 50 MB per share
 - Two-tier cache shared by all users (exact hash, then semantic match)
 - Information extractor (Gemini Flash, multimodal) that outputs each claim in the original language and in English
