@@ -24,6 +24,8 @@
     "point3": "You get the answer in your language, to read or to listen",
     "privacy": "Your photos and videos are deleted within 24 hours. We keep only the claims and verdicts, without any personal details, so others with the same forward get an answer faster.",
     "agree": "I agree. Continue",
+    "guest": "Continue as guest",
+    "notice": "By continuing you accept our Terms and Privacy Policy.",
     "signin": "Sign in with Google",
     "ticker": "Free · 5 languages · Text, photos, video, audio and links · {{limit}} checks a day",
     "feature": {
@@ -217,6 +219,7 @@
     "history": "See past checks"
   },
   "account": {
+    "guestNote": "You are using CHCKR as a guest. Your history stays in this browser only, and signing in with Google starts a separate history.",
     "delete": "Delete my account",
     "confirm": "This deletes your profile, history, check records and sign-in. Shared fact checks stay, without your name. This cannot be undone.",
     "keep": "Keep my account",
@@ -236,6 +239,8 @@
         "h": "What we collect",
         "items": [
           "Your Google account name and email, when you sign in.",
+          "If you continue as a guest: a random ID instead of your name and email.",
+          "Technical logs from our servers, including IP address and browser type, kept for about 30 days.",
           "What you share to check: text, links, photos, videos and audio.",
           "How many checks you have used today, for the daily limit.",
           "A notification token for your device, if you allow notifications, so we can tell you when an answer is ready."

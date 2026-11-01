@@ -3,6 +3,7 @@ import {
   GoogleAuthProvider,
   onAuthStateChanged,
   signInWithPopup,
+  signInAnonymously,
   signInWithRedirect,
   signOut as fbSignOut,
 } from 'firebase/auth'
@@ -15,6 +16,7 @@ export interface AppUser {
   name: string | null
   email: string | null
   photoURL: string | null
+  isGuest: boolean
   getIdToken: () => Promise<string>
 }
 
@@ -22,14 +24,16 @@ interface AuthState {
   user: AppUser | null
   loading: boolean
   signIn: () => Promise<void>
+  continueAsGuest: () => Promise<void>
   signOut: () => Promise<void>
 }
 
 const AuthContext = createContext<AuthState | null>(null)
 const DEV_KEY = 'devUid'
+const DEV_GUEST = 'dev-guest'
 
 function devUser(uid: string): AppUser {
-  return { uid, name: uid, email: `${uid}@dev.local`, photoURL: null, getIdToken: async () => `dev:${uid}` }
+  return { uid, name: uid, email: `${uid}@dev.local`, photoURL: null, isGuest: uid === DEV_GUEST, getIdToken: async () => `dev:${uid}` }
 }
 
 function readDevUid(): string | null {
@@ -56,7 +60,14 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     return onAuthStateChanged(auth(), (u) => {
       setUser(
         u
-          ? { uid: u.uid, name: u.displayName, email: u.email, photoURL: u.photoURL, getIdToken: () => u.getIdToken() }
+          ? {
+              uid: u.uid,
+              name: u.displayName,
+              email: u.email,
+              photoURL: u.photoURL,
+              isGuest: u.isAnonymous,
+              getIdToken: () => u.getIdToken(),
+            }
           : null,
       )
       setLoading(false)
@@ -83,6 +94,20 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     await signInWithPopup(auth(), new GoogleAuthProvider())
   }, [])
 
+  // A random Firebase ID with no name or email. Only on tap, so a look at the landing page creates no account.
+  const continueAsGuest = useCallback(async () => {
+    if (config.devAuth) {
+      try {
+        localStorage.setItem(DEV_KEY, DEV_GUEST)
+      } catch {
+        /* private mode: session-only guest */
+      }
+      setUser(devUser(DEV_GUEST))
+      return
+    }
+    await signInAnonymously(auth())
+  }, [])
+
   const signOut = useCallback(async () => {
     if (config.devAuth) {
       try {
@@ -96,7 +121,10 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     await fbSignOut(auth())
   }, [])
 
-  const value = useMemo(() => ({ user, loading, signIn, signOut }), [user, loading, signIn, signOut])
+  const value = useMemo(
+    () => ({ user, loading, signIn, continueAsGuest, signOut }),
+    [user, loading, signIn, continueAsGuest, signOut],
+  )
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>
 }
 

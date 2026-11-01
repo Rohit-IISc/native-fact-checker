@@ -99,6 +99,8 @@ button, .button {
 .welcome .points li { counter-increment: pt; display: flex; gap: 10px; align-items: flex-start; margin-bottom: 10px; }
 .welcome .points li::before { content: counter(pt); flex: none; width: 24px; height: 24px; border-radius: 4px; background: var(--primary); color: #fff; display: grid; place-items: center; font-weight: 900; font-size: 0.85rem; border: 1px solid var(--primary-dark); }
 .privacy { color: var(--muted); font-size: 0.95rem; margin: 0 0 4px; }
+.welcome-google { width: 100%; margin-top: 10px; }
+.welcome-notice { margin-top: 10px; }
 
 /* ---------- home ---------- */
 /* Tiles size to their label: five in a row in English, a second row when a language's words are long (Tamil). */

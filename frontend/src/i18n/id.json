@@ -24,6 +24,8 @@
     "point3": "Jawaban dalam bahasa Anda, untuk dibaca atau didengarkan",
     "privacy": "Foto dan video Anda dihapus dalam 24 jam. Kami hanya menyimpan klaim dan hasil pemeriksaan, tanpa data pribadi, agar orang lain yang menerima pesan yang sama mendapat jawaban lebih cepat.",
     "agree": "Saya setuju. Lanjutkan",
+    "guest": "Lanjutkan sebagai tamu",
+    "notice": "Dengan melanjutkan, Anda menerima Ketentuan dan Kebijakan Privasi kami.",
     "signin": "Masuk dengan Google",
     "ticker": "Gratis · 5 bahasa · Teks, foto, video, audio, dan tautan · {{limit}} cek per hari",
     "feature": {
@@ -217,6 +219,7 @@
     "history": "Lihat cek sebelumnya"
   },
   "account": {
+    "guestNote": "Anda memakai CHCKR sebagai tamu. Riwayat Anda hanya tersimpan di browser ini, dan masuk dengan Google memulai riwayat terpisah.",
     "delete": "Hapus akun saya",
     "confirm": "Ini menghapus profil, riwayat, catatan cek, dan data masuk Anda. Cek fakta yang dibagikan tetap ada, tanpa nama Anda. Tindakan ini tidak bisa dibatalkan.",
     "keep": "Simpan akun saya",
@@ -236,6 +239,8 @@
         "h": "Yang kami kumpulkan",
         "items": [
           "Nama dan email akun Google Anda, saat Anda masuk.",
+          "Jika Anda melanjutkan sebagai tamu: ID acak, bukan nama dan email Anda.",
+          "Log teknis server kami, termasuk alamat IP dan jenis browser, disimpan sekitar 30 hari.",
           "Yang Anda bagikan untuk dicek: teks, tautan, foto, video, dan audio.",
           "Berapa banyak cek yang sudah Anda pakai hari ini, untuk batas harian.",
           "Token notifikasi perangkat Anda, jika Anda mengizinkan notifikasi, agar kami bisa memberi tahu saat jawaban siap."

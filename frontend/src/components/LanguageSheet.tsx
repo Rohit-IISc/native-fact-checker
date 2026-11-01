@@ -16,7 +16,7 @@ export function LanguageSheet({ mode, onClose, onChoose }: {
 }) {
   const open = mode !== null
   const { t, i18n } = useTranslation()
-  const { user, signOut } = useAuth()
+  const { user, signIn, signOut } = useAuth()
   const ref = useRef<HTMLDialogElement>(null)
   const [confirming, setConfirming] = useState(false)
   const [deleting, setDeleting] = useState(false)
@@ -109,7 +109,20 @@ export function LanguageSheet({ mode, onClose, onChoose }: {
             ))}
           </select>
           {user && <h3>{t('nav.account')}</h3>}
-          {user && (
+          {user?.isGuest && <p className="privacy">{t('account.guestNote')}</p>}
+          {user?.isGuest && (
+            <button
+              type="button"
+              className="signout"
+              onClick={() => {
+                onClose()
+                void signIn()
+              }}
+            >
+              {t('welcome.signin')}
+            </button>
+          )}
+          {user && !user.isGuest && (
             <button
               type="button"
               className="signout"

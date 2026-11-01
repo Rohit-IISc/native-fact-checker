@@ -11,6 +11,14 @@ Updated after every task (see CLAUDE.md, "How to work"). Newest state only; hist
 
 
 
+## Nov 1: guest mode on preview, not live (branch `ui/guest-mode`, not pushed)
+
+"Continue as guest" (Firebase Anonymous Auth) next to Google sign-in; one-line notice in place of a consent step for
+guests; frontend only (`lib/auth.tsx`, `App.tsx`, `Welcome.tsx`, `LanguageSheet.tsx`, i18n in 5 languages).
+Preview: https://chckr--guest-mode-ov7wyg9b.web.app (expires Nov 8). Live site unchanged.
+Next step: Rohit enables the Anonymous provider and allows the preview host on the browser API key, then tests on Android.
+Hindi, Tamil and Kannada strings need native review. Decision 26 (mandatory sign-in) to be updated if this ships.
+
 ## Oct 18: submitted (tag `submitted` on 6f6c666)
 
 Current state: submitted to the AI Builder Cup; judging 19 Oct to 6 Nov at https://chckr.web.app. Only

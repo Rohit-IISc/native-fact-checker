@@ -48,7 +48,7 @@ function Header({ onLanguage }: { onLanguage: () => void }) {
 }
 
 function Gate() {
-  const { user, loading, signIn } = useAuth()
+  const { user, loading, signIn, continueAsGuest } = useAuth()
   const { i18n, t } = useTranslation()
   const location = useLocation()
   const [consented, setConsented] = useState<boolean | null>(null)
@@ -62,7 +62,8 @@ function Gate() {
     if (!user) return
     getMe(user)
       .then((me) => {
-        setConsented(Boolean(me.consent_at))
+        // Guests accept the terms by tapping Continue as guest; no consent record is kept for them.
+        setConsented(Boolean(me.consent_at) || user.isGuest)
         // The choice made on this device before signing in wins; the profile keeps it for notifications.
         const lng = i18n.resolvedLanguage
         if (me.consent_at && lng && me.ui_language !== lng) {
@@ -71,7 +72,7 @@ function Gate() {
       })
       .catch((e: unknown) => {
         console.error('GET /v1/me failed', e)
-        setConsented(false)
+        setConsented(user.isGuest)
       })
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user])
@@ -106,6 +107,16 @@ function Gate() {
           setBusy(true)
           setError(null)
           signIn().finally(() => setBusy(false))
+        }}
+        onGuest={() => {
+          setBusy(true)
+          setError(null)
+          continueAsGuest()
+            .catch((e: unknown) => {
+              console.error('guest sign-in failed', e)
+              setError(t('errors.generic'))
+            })
+            .finally(() => setBusy(false))
         }}
         onAgree={() => {
           if (!user) return

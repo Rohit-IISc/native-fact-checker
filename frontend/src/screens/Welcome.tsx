@@ -12,9 +12,10 @@ const FEATURES: { key: string; icon: IconName }[] = [
 ]
 
 /** Landing and consent. The language chips switch every word on this screen at once. */
-export function Welcome({ signedIn, onSignIn, onAgree, onLanguage, busy, error }: {
+export function Welcome({ signedIn, onSignIn, onGuest, onAgree, onLanguage, busy, error }: {
   signedIn: boolean
   onSignIn: () => void
+  onGuest: () => void
   onAgree: () => void
   onLanguage: (code: string) => void
   busy: boolean
@@ -66,9 +67,15 @@ export function Welcome({ signedIn, onSignIn, onAgree, onLanguage, busy, error }
             {t('welcome.agree')}
           </button>
         ) : (
-          <button className="primary" onClick={onSignIn} disabled={busy}>
-            {t('welcome.signin')}
-          </button>
+          <>
+            <button className="primary" onClick={onGuest} disabled={busy}>
+              {t('welcome.guest')}
+            </button>
+            <button className="secondary welcome-google" onClick={onSignIn} disabled={busy}>
+              {t('welcome.signin')}
+            </button>
+            <p className="privacy welcome-notice">{t('welcome.notice')}</p>
+          </>
         )}
         <LegalLinks />
       </div>
